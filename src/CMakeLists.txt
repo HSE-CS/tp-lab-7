@@ -1,5 +1,5 @@
 set(header_path "${${PROJECT_NAME}_SOURCE_DIR}/include")
-set(header ${header_path}/Space.h ${header_path}/Objects.h ${header_path}/common.h)
+set(header ${header_path}/Space.h ${header_path}/Objects.h ${header_path}/common.h ${header_path}/scenes.h)
 set(src Space.cpp Objects.cpp)
 
 

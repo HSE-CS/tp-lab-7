@@ -179,6 +179,9 @@
 		<Unit filename="G:/Projects/tp-lab-7/include/common.h">
 			<Option target="tp-lab-7"/>
 		</Unit>
+		<Unit filename="G:/Projects/tp-lab-7/include/scenes.h">
+			<Option target="tp-lab-7"/>
+		</Unit>
 		<Unit filename="G:/Projects/tp-lab-7/src/Objects.cpp">
 			<Option target="tp-lab-7"/>
 		</Unit>

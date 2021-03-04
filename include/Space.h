@@ -22,8 +22,15 @@ private:
     char filler;
     int symbolColor;
     int backgroundColor;
+    int priority;
+    int posX;
+    int posY;
 public:
-    explicit Cell(Object *object1);
+    explicit Cell(int X,
+                  int Y,
+                  char filler,
+                  int backgroundColor1,
+                  int symbolColor1);
 
     ~Cell();
 
@@ -34,10 +41,40 @@ public:
     Object *getObject();
 
     void setObject(Object *object1);
+
+    [[nodiscard]] int getSymbolColor() const;
+
+    void setSymbolColor(int color);
+
+    [[nodiscard]] int getBackgroundColor() const;
+
+    void setBackgroundColor(int color);
 };
+
 
 class Space {
 private:
+    std::vector<std::vector<Cell *>> space;
+    std::vector<std::vector<char>> prevCondition;
+    std::vector<std::vector<char>> nextCondition;
+public:
+    explicit Space();
+
+    void setCell(int x, int y, Cell *cell);
+
+    Cell *getCell(int x, int y);
+};
+
+class Scene {
+private:
+    std::vector<std::vector<char>> prevCondition;
+    std::vector<std::vector<char>> nextCondition;
+    AbstractScene scene_;
+public:
+    explicit Scene(int sceneNumber);
+
+    void rawOut();
+
 };
 
 

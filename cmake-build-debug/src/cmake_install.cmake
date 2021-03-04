@@ -51,6 +51,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "G:/Projects/tp-lab-7/include/Space.h"
     "G:/Projects/tp-lab-7/include/Objects.h"
     "G:/Projects/tp-lab-7/include/common.h"
+    "G:/Projects/tp-lab-7/include/scenes.h"
     )
 endif()
 

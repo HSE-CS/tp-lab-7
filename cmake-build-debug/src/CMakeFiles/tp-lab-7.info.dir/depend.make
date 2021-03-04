@@ -3,5 +3,7 @@
 
 src/CMakeFiles/tp-lab-7.info.dir/main.cpp.obj: ../include/Objects.h
 src/CMakeFiles/tp-lab-7.info.dir/main.cpp.obj: ../include/Space.h
+src/CMakeFiles/tp-lab-7.info.dir/main.cpp.obj: ../include/common.h
+src/CMakeFiles/tp-lab-7.info.dir/main.cpp.obj: ../include/scenes.h
 src/CMakeFiles/tp-lab-7.info.dir/main.cpp.obj: ../src/main.cpp
 

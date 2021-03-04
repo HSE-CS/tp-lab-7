@@ -1,5 +1,7 @@
 // copyright 2021 JediCouncil
 
+#include "../include/Objects.h"
+
 /*
 
  common.h: all trash
@@ -9,12 +11,19 @@
 
  */
 
-#include "Objects.h"
+template<typename T>
+void print(T t) {
+    std::cout << t << '\n';
+}
 
 signed main() {
-    Object o;
+//    TestShip t;
+//
+//    Object o(t);
+//    print(o.getColors()[0][1]);
 
-    Cell c(&o);
+    Scene s(TEST);
+    s.rawOut();
 
     return 0;
 }

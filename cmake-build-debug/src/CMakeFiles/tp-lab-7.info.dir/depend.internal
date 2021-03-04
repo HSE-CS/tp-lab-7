@@ -4,4 +4,6 @@
 src/CMakeFiles/tp-lab-7.info.dir/main.cpp.obj
  ../include/Objects.h
  ../include/Space.h
+ ../include/common.h
+ ../include/scenes.h
  G:/Projects/tp-lab-7/src/main.cpp
