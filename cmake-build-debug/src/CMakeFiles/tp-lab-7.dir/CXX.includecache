@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Objects.h
+Space.h
+../include/Space.h
+
+../include/Space.h
+iostream
+-
+cmath
+-
+vector
+-
+string
+-
+random
+-
+windows.h
+-
+
+G:/Projects/tp-lab-7/include/Space.h
+iostream
+-
+cmath
+-
+vector
+-
+string
+-
+random
+-
+windows.h
+-
+
+G:/Projects/tp-lab-7/src/Space.cpp
+../include/Space.h
+G:/Projects/tp-lab-7/include/Space.h
+Objects.h
+G:/Projects/tp-lab-7/src/Objects.h
+
