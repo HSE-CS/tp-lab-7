@@ -17,13 +17,15 @@ void print(T t) {
 }
 
 signed main() {
-//    TestShip t;
-//
-//    Object o(t);
-//    print(o.getColors()[0][1]);
+
+    Movie::setStartDisplayCondition();
+    Movie::setStartDisplayColors();
+    Movie::renderStartDisplay();
 
     Scene s(TEST);
-    s.rawOut();
+    s.render(1000);
+    Scene t(TEST);
+    t.render(1000);
 
     return 0;
 }

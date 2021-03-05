@@ -69,12 +69,33 @@ class Scene {
 private:
     std::vector<std::vector<char>> prevCondition;
     std::vector<std::vector<char>> nextCondition;
+    std::vector<std::vector<int>> prevConditionColor;
+    std::vector<std::vector<int>> nextConditionColor;
     AbstractScene scene_;
 public:
     explicit Scene(int sceneNumber);
 
-    void rawOut();
+    void rawRender();
 
+    void render(int frequency);
+
+};
+
+class Movie {
+public:
+    static void setStartDisplayCondition();
+
+    static void setStartDisplayColors();
+
+    static void renderStartDisplay();
+
+    static void wait(int seconds);
+
+    static void setAreaToNormalCondition(int startX, int startY, int finishX, int finishY);
+
+    void setDisplayToSpace();
+
+    void renderSpaceDisplay();
 };
 
 
