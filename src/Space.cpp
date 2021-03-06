@@ -102,7 +102,6 @@ Scene::Scene(int sceneNumber) {
             this->nextCondition[i].push_back(display[i][j]);
             this->nextConditionColor[i].push_back(displayColor[i][j]);
         }
-
     }
     if (sceneNumber == TEST) {
         this->scene_.framesCount = __s_test::framesCount;
@@ -110,6 +109,13 @@ Scene::Scene(int sceneNumber) {
         this->scene_.frames.push_back(__s_test::__s_test_2());
         this->scene_.frames.push_back(__s_test::__s_test_3());
         this->scene_.frames.push_back(__s_test::__s_test_4());
+    }
+
+    if (sceneNumber == INTRO) {
+        this->scene_.framesCount = __s_intro::framesCount;
+        for (int i = 0; i < this->scene_.framesCount; ++i) {
+            this->scene_.frames.push_back(__s_intro::__s_intro_());
+        }
     }
 }
 
@@ -135,65 +141,70 @@ void Scene::rawRender() {
     }
 }
 
-void Scene::render(int frequency) {
+void Scene::render(int frequency, bool safe) {
     for (int i = 0; i < this->scene_.framesCount; ++i) {
         if (i > 0) {
 
-            // TODO: оптимизировать затирание прошлой сцены
+            // TODO: оптимизировать затирание прошлой сцены (+- сделал)
+
+            // this->scene_.frames[i - 1].yPadding + j
+            // this->scene_.frames[i - 1].xPadding + k
+            // this->scene_.frames[i].yPadding + j
+            // this->scene_.frames[i].xPadding + k
 
             for (int j = 0; j < this->scene_.frames[i - 1].sizeY; ++j) {
                 for (int k = 0; k < this->scene_.frames[i - 1].sizeX; ++k) {
-                    setCursorPosition(this->scene_.frames[i - 1].xPadding + k, this->scene_.frames[i - 1].yPadding + j);
-                    setConsoleColour(
-                        displayColor[this->scene_.frames[i - 1].yPadding + j][this->scene_.frames[i - 1].xPadding + k]);
-                    std::cout
-                        << display[this->scene_.frames[i - 1].xPadding + k][this->scene_.frames[i - 1].yPadding + j];
+                    if (this->scene_.frames[i - 1].color[j][k] != -1 && this->scene_.frames[i].color[j][k] == -1) {
+                        setCursorPosition(this->scene_.frames[i - 1].xPadding + k,
+                                          this->scene_.frames[i - 1].yPadding + j);
+                        setConsoleColour(
+                            displayColor[this->scene_.frames[i - 1].yPadding + j][this->scene_.frames[i - 1].xPadding +
+                                                                                  k]);
+                        std::cout
+                            << display[this->scene_.frames[i - 1].yPadding + j][this->scene_.frames[i - 1].xPadding +
+                                                                                k];
+                    }
                 }
             }
         }
         for (int j = 0; j < this->scene_.frames[i].sizeY; ++j) {
             for (int k = 0; k < this->scene_.frames[i].sizeX; ++k) {
-                nextCondition[this->scene_.frames[i - 1].xPadding + k][this->scene_.frames[i - 1].yPadding +
-                                                                       j] = this->scene_.frames[i].image[j][k];
-                nextConditionColor[this->scene_.frames[i - 1].xPadding + k][this->scene_.frames[i - 1].yPadding +
-                                                                            j] = this->scene_.frames[i].color[j][k];
-                if (nextCondition[this->scene_.frames[i - 1].xPadding + k][this->scene_.frames[i - 1].yPadding + j] !=
-                    prevCondition[this->scene_.frames[i - 1].xPadding + k][this->scene_.frames[i - 1].yPadding + j] ||
-                    nextConditionColor[this->scene_.frames[i - 1].xPadding + k][this->scene_.frames[i - 1].yPadding +
-                                                                                j] !=
-                    prevConditionColor[this->scene_.frames[i - 1].xPadding + k][this->scene_.frames[i - 1].yPadding +
-                                                                                j]) {
+                nextCondition[this->scene_.frames[i].yPadding + j][this->scene_.frames[i].xPadding +
+                                                                   k] = this->scene_.frames[i].image[j][k];
+                nextConditionColor[this->scene_.frames[i].yPadding + j][this->scene_.frames[i].xPadding +
+                                                                        k] = this->scene_.frames[i].color[j][k];
+                if (nextCondition[this->scene_.frames[i].yPadding + j][this->scene_.frames[i].xPadding + k] !=
+                    prevCondition[this->scene_.frames[i].yPadding + j][this->scene_.frames[i].xPadding + k] ||
+                    nextConditionColor[this->scene_.frames[i].yPadding + j][this->scene_.frames[i].xPadding + k] !=
+                    prevConditionColor[this->scene_.frames[i].yPadding + j][this->scene_.frames[i].xPadding + k]) {
                     setCursorPosition(this->scene_.frames[i].xPadding + k, this->scene_.frames[i].yPadding + j);
                     setConsoleColour(this->scene_.frames[i].color[j][k]);
-
                     if (this->scene_.frames[i].image[j][k] != ' ' && this->scene_.frames[i].color[j][k] != -1) {
                         std::cout << this->scene_.frames[i].image[j][k];
-
-                        prevCondition[this->scene_.frames[i - 1].xPadding + k][this->scene_.frames[i - 1].yPadding +
-                                                                               j] = nextCondition[
-                            this->scene_.frames[i - 1].xPadding + k][this->scene_.frames[i - 1].yPadding + j];
-                        prevConditionColor[this->scene_.frames[i - 1].xPadding + k][
-                            this->scene_.frames[i - 1].yPadding +
-                            j] = nextConditionColor[
-                            this->scene_.frames[i - 1].xPadding + k][this->scene_.frames[i - 1].yPadding +
-                                                                     j];
+                        prevCondition[this->scene_.frames[i].yPadding + j][this->scene_.frames[i].xPadding +
+                                                                           k] = nextCondition[
+                            this->scene_.frames[i].yPadding + j][this->scene_.frames[i].xPadding + k];
+                        prevConditionColor[this->scene_.frames[i].yPadding + j][this->scene_.frames[i].xPadding +
+                                                                                k] = nextConditionColor[
+                            this->scene_.frames[i].yPadding + j][this->scene_.frames[i].xPadding + k];
                     }
                 }
             }
         }
         Sleep(frequency);
     }
-    for (int j = 0; j < this->scene_.frames[this->scene_.framesCount - 1].sizeY; ++j) {
-        for (int k = 0; k < this->scene_.frames[this->scene_.framesCount - 1].sizeX; ++k) {
-            setCursorPosition(this->scene_.frames[this->scene_.framesCount - 1].xPadding + k,
-                              this->scene_.frames[this->scene_.framesCount - 1].yPadding + j);
-            setConsoleColour(displayColor[this->scene_.frames[this->scene_.framesCount - 1].xPadding + k][
-                                 this->scene_.frames[this->scene_.framesCount - 1].yPadding + j]);
-            std::cout << display[this->scene_.frames[this->scene_.framesCount - 1].xPadding + k][
-                this->scene_.frames[this->scene_.framesCount - 1].yPadding + j];
+    if (!safe) {
+        for (int j = 0; j < this->scene_.frames[this->scene_.framesCount - 1].sizeY; ++j) {
+            for (int k = 0; k < this->scene_.frames[this->scene_.framesCount - 1].sizeX; ++k) {
+                setCursorPosition(this->scene_.frames[this->scene_.framesCount - 1].xPadding + k,
+                                  this->scene_.frames[this->scene_.framesCount - 1].yPadding + j);
+                setConsoleColour(displayColor[this->scene_.frames[this->scene_.framesCount - 1].xPadding + k][
+                                     this->scene_.frames[this->scene_.framesCount - 1].yPadding + j]);
+                std::cout << display[this->scene_.frames[this->scene_.framesCount - 1].xPadding + k][
+                    this->scene_.frames[this->scene_.framesCount - 1].yPadding + j];
+            }
         }
     }
-
     // TODO: Вернуть вектора в стартовое положение
 }
 
@@ -207,10 +218,10 @@ void Movie::setStartDisplayCondition() {
 
 void Movie::setStartDisplayColors() {
     std::random_device gen;
-    for (auto &i : displayColor) {
+    for (int i = 0; i < displayHeight; ++i) {
         for (int j = 0; j < displayWidth; ++j) {
-//            i[j] = cc(black, black);
-            i[j] = 28;// static_cast<signed>(gen() % 256);
+            displayColor[i][j] = cc(black, black);
+//            i[j] = 28;// static_cast<signed>(gen() % 256);
         }
     }
 }

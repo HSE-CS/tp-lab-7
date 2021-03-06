@@ -77,7 +77,7 @@ public:
 
     void rawRender();
 
-    void render(int frequency);
+    void render(int frequency, bool safe);
 
 };
 

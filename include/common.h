@@ -16,14 +16,6 @@
 static char __hitbox_void = '-';
 static char __hitbox_solid = '+';
 
-enum SceneNumber {
-    TEST,
-    INTRO,
-    ALONGTIMEAGO,
-    STARWARSTITLE,
-    STARTCREDITS,
-    ENDCREDITS,
-};
 
 enum Priority {
     LOW_PRIORITY,

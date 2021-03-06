@@ -22,10 +22,16 @@ signed main() {
     Movie::setStartDisplayColors();
     Movie::renderStartDisplay();
 
-    Scene s(TEST);
-    s.render(1000);
-    Scene t(TEST);
-    t.render(1000);
+    Scene s(INTRO);
+    s.render(1, true);
 
+    Movie::renderStartDisplay();
+
+//    Scene t(TEST);
+//    t.render(1000, false);
+
+    system("color 07");
     return 0;
 }
+
+// g++ -std=c++17 src/main.cpp include/scenes.h include/common.h include/Objects.h include/Space.h src/Objects.cpp src/Space.cpp -o main -w
