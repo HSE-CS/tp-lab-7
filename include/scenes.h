@@ -93,7 +93,7 @@ namespace __s_logo_back {
     };
 
     static int sceneNumber = 0;
-    static int angleProp = 1;
+    static int angleProp = 100;
 
     static int c1 = cc(gray, dark_white);
     static int c2 = cc(dark_white, white);
@@ -109,7 +109,7 @@ namespace __s_logo_back {
         int (&color)[U][V], int sizeX
     ) {
         for (int i = 0; i < 15; ++i) {
-            for (int j = sceneNumber; j > sceneNumber - 3; --j) {
+            for (int j = sceneNumber + i; j > sceneNumber - 3; --j) {
                 if (j > -1 && j + i / angleProp < sizeX) {
                     if (cxx_logo[i][j + i / angleProp] == bodySymbol) {
                         scene[i][j + i / angleProp] = filler;
@@ -117,7 +117,7 @@ namespace __s_logo_back {
                     }
                 }
             }
-            for (int j = sceneNumber - 3; j > sceneNumber - 6; --j) {
+            for (int j = sceneNumber - 3 + i; j > sceneNumber - 6; --j) {
                 if (j > -1 && j + i / angleProp < sizeX) {
                     if (cxx_logo[i][j + i / angleProp] == bodySymbol) {
                         scene[i][j + i / angleProp] = filler;
@@ -125,7 +125,7 @@ namespace __s_logo_back {
                     }
                 }
             }
-            for (int j = sceneNumber - 6; j > sceneNumber - 9; --j) {
+            for (int j = sceneNumber - 6 + i; j > sceneNumber - 9; --j) {
                 if (j > -1 && j + i / angleProp < sizeX) {
                     if (cxx_logo[i][j + i / angleProp] == bodySymbol) {
                         scene[i][j + i / angleProp] = filler;
@@ -133,7 +133,7 @@ namespace __s_logo_back {
                     }
                 }
             }
-            for (int j = sceneNumber - 9; j > sceneNumber - 12; --j) {
+            for (int j = sceneNumber - 9 + i; j > sceneNumber - 12; --j) {
                 if (j > -1 && j + i / angleProp < sizeX) {
                     if (cxx_logo[i][j + i / angleProp] == bodySymbol) {
                         scene[i][j + i / angleProp] = filler;
@@ -141,7 +141,7 @@ namespace __s_logo_back {
                     }
                 }
             }
-            for (int j = sceneNumber - 12; j > sceneNumber - 15; --j) {
+            for (int j = sceneNumber - 12 + i; j > sceneNumber - 15; --j) {
                 if (j > -1 && j + i / angleProp < sizeX) {
                     if (cxx_logo[i][j + i / angleProp] == bodySymbol) {
                         scene[i][j + i / angleProp] = filler;
@@ -149,7 +149,7 @@ namespace __s_logo_back {
                     }
                 }
             }
-            for (int j = sceneNumber - 15; j > sceneNumber - 18; --j) {
+            for (int j = sceneNumber - 15 + i; j > sceneNumber - 18; --j) {
                 if (j > -1 && j + i / angleProp < sizeX) {
                     if (cxx_logo[i][j + i / angleProp] == bodySymbol) {
                         scene[i][j + i / angleProp] = filler;
@@ -157,7 +157,7 @@ namespace __s_logo_back {
                     }
                 }
             }
-            for (int j = sceneNumber - 18; j > -1; --j) {
+            for (int j = sceneNumber - 18 + i; j > -1; --j) {
                 if (cxx_logo[i][j + i / angleProp] == bodySymbol) {
                     scene[i][j + i / angleProp] = filler;
                     color[i][j + i / angleProp] = c7;
