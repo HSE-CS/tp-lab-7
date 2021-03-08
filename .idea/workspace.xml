@@ -2,8 +2,8 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="tp-lab-7" targetName="tp-lab-7.info" />
       <config projectName="tp-lab-7" targetName="tp-lab-7" />
+      <config projectName="tp-lab-7" targetName="tp-lab-7.info" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -13,9 +13,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3394e718-d3c4-4a57-b27e-888fadba13d6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/S1.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cxx_intro_1.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/saber_on_1.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/saber_on_1.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/starwars_theme.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/starwars_theme.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Space.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Space.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/scenes.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/scenes.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/main.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Space.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Space.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +51,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/CMakeLists.txt" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
@@ -90,7 +100,9 @@
       <option name="presentableId" value="Default" />
       <updated>1614851161951</updated>
       <workItem from="1614851164869" duration="45077000" />
-      <workItem from="1615032481765" duration="12165000" />
+      <workItem from="1615032481765" duration="12765000" />
+      <workItem from="1615159769245" duration="38000" />
+      <workItem from="1615163539911" duration="16663000" />
     </task>
     <servers />
   </component>

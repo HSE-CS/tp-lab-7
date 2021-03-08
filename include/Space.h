@@ -89,13 +89,13 @@ public:
 
     static void renderStartDisplay();
 
-    static void wait(int seconds);
+    static void wait(float seconds);
 
     static void setAreaToNormalCondition(int startX, int startY, int finishX, int finishY);
 
-    void setDisplayToSpace();
+    static void setDisplayToSpace();
 
-    void renderSpaceDisplay();
+    static void renderSpaceDisplay();
 };
 
 

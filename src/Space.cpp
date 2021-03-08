@@ -117,6 +117,25 @@ Scene::Scene(int sceneNumber) {
             this->scene_.frames.push_back(__s_intro::__s_intro_());
         }
     }
+    if (sceneNumber == LIGHTSABER) {
+        this->scene_.framesCount = __s_light_saber::framesCount;
+        for (int i = 0; i < this->scene_.framesCount; ++i) {
+            this->scene_.frames.push_back(__s_light_saber::__s_light_saber_());
+        }
+    }
+    if (sceneNumber == ALONGTIMEAGO) {
+        this->scene_.framesCount = __s_far_far_away::framesCount;
+        for (int i = 0; i < this->scene_.framesCount; ++i) {
+            this->scene_.frames.push_back(__s_far_far_away::__s_far_far_away_());
+        }
+    }
+
+    if (sceneNumber == STARWARSTITLE) {
+        this->scene_.framesCount = __s_star_wars_title::framesCount;
+        for (int i = 0; i < this->scene_.framesCount; ++i) {
+            this->scene_.frames.push_back(__s_star_wars_title::__s_star_wars_title_());
+        }
+    }
 }
 
 void Scene::rawRender() {
@@ -145,7 +164,7 @@ void Scene::render(int frequency, bool safe) {
     for (int i = 0; i < this->scene_.framesCount; ++i) {
         if (i > 0) {
 
-            // TODO: оптимизировать затирание прошлой сцены (+- сделал)
+            // TODO: оптимизировать затирание прошлой сцены (-+ сделал)
 
             // this->scene_.frames[i - 1].yPadding + j
             // this->scene_.frames[i - 1].xPadding + k
@@ -238,8 +257,8 @@ void Movie::renderStartDisplay() {
     }
 }
 
-void Movie::wait(int seconds) {
-    Sleep(seconds * 1000);
+void Movie::wait(float seconds) {
+    Sleep((int) (seconds * 1000));
 }
 
 void Movie::setAreaToNormalCondition(int startX, int startY, int finishX, int finishY) {
@@ -249,6 +268,33 @@ void Movie::setAreaToNormalCondition(int startX, int startY, int finishX, int fi
             setConsoleColour(displayColor[i][j]);
             std::cout << display[i][j];
         }
+    }
+}
+
+void Movie::setDisplayToSpace() {
+    for (int i = 0; i < displayHeight; ++i) {
+        for (int j = 0; j < displayWidth; ++j) {
+            if (startSpacePicture[i][j] == '*') {
+                displayColor[i][j] = cc(black, white);
+                display[i][j] = '*';
+            } else {
+                displayColor[i][j] = cc(black, black);
+                display[i][j] = ' ';
+            }
+        }
+    }
+}
+
+void Movie::renderSpaceDisplay() {
+    for (int i = 0; i < displayHeight; ++i) {
+//        for (int j = 0; j < displayWidth; ++j) {
+//            setConsoleColour(displayColor[i][j]);
+//            setCursorPosition(j, i);
+//            std::cout << display[i][j];
+//        }
+        setCursorPosition(0, i);
+        setConsoleColour(cc(black, white));
+        std::cout << display[i];
     }
 }
 
