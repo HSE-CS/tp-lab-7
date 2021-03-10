@@ -153,7 +153,9 @@ void Scene::rawRender() {
             for (int k = 0; k < this->scene_.frames[i].sizeX; ++k) {
                 setCursorPosition(this->scene_.frames[i].xPadding + k, this->scene_.frames[i].yPadding + j);
                 setConsoleColour(this->scene_.frames[i].color[j][k]);
-                std::cout << this->scene_.frames[i].image[j][k];
+                if (this->scene_.frames[i].color[j][k] != -1)
+                    std::cout << this->scene_.frames[i].image[j][k];
+                Sleep(1);
             }
         }
         Sleep(1000);
@@ -198,15 +200,16 @@ void Scene::render(int frequency, bool safe) {
                     prevConditionColor[this->scene_.frames[i].yPadding + j][this->scene_.frames[i].xPadding + k]) {
                     setCursorPosition(this->scene_.frames[i].xPadding + k, this->scene_.frames[i].yPadding + j);
                     setConsoleColour(this->scene_.frames[i].color[j][k]);
-                    if (this->scene_.frames[i].image[j][k] != ' ' && this->scene_.frames[i].color[j][k] != -1) {
+                    if (this->scene_.frames[i].color[j][k] != -1) {
                         std::cout << this->scene_.frames[i].image[j][k];
-                        prevCondition[this->scene_.frames[i].yPadding + j][this->scene_.frames[i].xPadding +
-                                                                           k] = nextCondition[
-                            this->scene_.frames[i].yPadding + j][this->scene_.frames[i].xPadding + k];
-                        prevConditionColor[this->scene_.frames[i].yPadding + j][this->scene_.frames[i].xPadding +
-                                                                                k] = nextConditionColor[
-                            this->scene_.frames[i].yPadding + j][this->scene_.frames[i].xPadding + k];
                     }
+                    prevCondition[this->scene_.frames[i].yPadding + j][this->scene_.frames[i].xPadding +
+                                                                       k] = nextCondition[
+                        this->scene_.frames[i].yPadding + j][this->scene_.frames[i].xPadding + k];
+                    prevConditionColor[this->scene_.frames[i].yPadding + j][this->scene_.frames[i].xPadding +
+                                                                            k] = nextConditionColor[
+                        this->scene_.frames[i].yPadding + j][this->scene_.frames[i].xPadding + k];
+
                 }
             }
         }

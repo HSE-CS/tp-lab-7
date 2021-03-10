@@ -66,66 +66,44 @@ static int _c_bl_ye = cc(0, 0xe);
 
 namespace __s_logo_back {
 
-    static char starWarsLogo[displayHeight][displayWidth + 1] = {
-        "                                                                                                                                                                                                        ",
-        "                                                                                                                                                                                                        ",
-        "                                                                                                                                                                                                        ",
-        "                                                                                                                                                                                                        ",
-        "                                                                                                                                                                                                        ",
-        "                                                                                                                                                                                                        ",
-        "                                                                                                                                                                                                        ",
-        "                                                                                                                                                                                                        ",
-        "                                                                                                                                                                                                        ",
-        "                                                                                                                                                                                               ",
-        "                                   xxxxXXXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXX      XXXXXXXXXXXX           XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                     ",
-        "                                  xxxxxXXXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXX     XXXXXXXXXXXXXX          XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                             ",
-        "                                 xxxxxxXXXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXX     XXXXXXXXXXXXXX          XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                            ",
-        "                                xxxxxxxXXXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXX    XXXXXXXXXXXXXXXX         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                           ",
-        "                               xxxxxxxxXXXxxxx              XXXXXXXXXX                       XXXXXXXXXXXXXXXX         XXXXXXXXX                 XXXXXXXXX                                          ",
-        "                               xxxxxxxxXXXxx                XXXXXXXXXX                      XXXXXXXXXXXXXXXXXX        XXXXXXXXX                  XXXXXXXX                                         ",
-        "                               xxxxxxxxXXXxxx               XXXXXXXXXX                      XXXXXXXX  XXXXXXXX        XXXXXXXXX                 XXXXXXXXX                                         ",
-        "                                xxxxxxxXXXxxxx              XXXXXXXXXX                     XXXXXXXXX  XXXXXXXXX       XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                             ",
-        "                                 xxxxxxXXXxxxxx             XXXXXXXXXX                     XXXXXXXX    XXXXXXXX       XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                              ",
-        "                                  xxxxxXXXxxxxxx            XXXXXXXXXX                    XXXXXXXXX    XXXXXXXXX      XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                              ",
-        "                                   xxxxXXXxxxxxxx           XXXXXXXXXX                    XXXXXXXX      XXXXXXXX      XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                ",
-        "                                    xxxXXXxxxxxxxx          XXXXXXXXXX                   XXXXXXXXXXXXXXXXXXXXXXXX     XXXXXXXXXXXXXXXXXXXX                                                         ",
-        "                                     xxXXXxxxxxxxx          XXXXXXXXXX                   XXXXXXXXXXXXXXXXXXXXXXXX     XXXXXXXXXXXXXXXXXXXXXXX                                                       ",
-        "                                    xxxXXXxxxxxxxx          XXXXXXXXXX                  XXXXXXXXXXXXXXXXXXXXXXXXXX    XXXXXXXXX XXXXXXXXXXXXXXXX                                                    ",
-        "      xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXXXxxxxxxx           XXXXXXXXXX                  XXXXXXXX          XXXXXXXX    XXXXXXXXX    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                         ",
-        "      xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXXXxxxxxx            XXXXXXXXXX                 XXXXXXXXX          XXXXXXXXX   XXXXXXXXX       XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                      ",
-        "      xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXXXxxxxx             XXXXXXXXXX                 XXXXXXXX            XXXXXXXX   XXXXXXXXX          XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                  ",
-        "      xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXXXxxxx              XXXXXXXXXX                 XXXXXXXX            XXXXXXXX   XXXXXXXXX             XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                      ",
-        "                                                                                                                                                                                               ",
-        "      XXXXXXXXX            XXXXXXXXXXXXXX            XXXXXXXXX        XXXXXXXXXXXX           XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX           xxxXXXxxxxxxxxxXXXXXXXXXXXXXXXXXXXXXXXX              ",
-        "      XXXXXXXXXX          XXXXXXXXXXXXXXXX          XXXXXXXXXX       XXXXXXXXXXXXXX          XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX         xxxxXXXxxxxxxxxxXXXXXXXXXXXXXXXXXXXXXXXX              ",
-        "      XXXXXXXXXX          XXXXXXXXXXXXXXXX          XXXXXXXXXX       XXXXXXXXXXXXXX          XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX       xxxxxXXXxxxxxxxxxXXXXXXXXXXXXXXXXXXXXXXXX              ",
-        "       XXXXXXXXXX         XXXXXXXXXXXXXXXXX         XXXXXXXXX       XXXXXXXXXXXXXXXX         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX     xxxxxxXXXxxxxxxxxxXXXXXXXXXXXXXXXXXXXXXXXX              ",
-        "       XXXXXXXXXX        XXXXXXXXXXXXXXXXXX        XXXXXXXXXX       XXXXXXXXXXXXXXXX         XXXXXXXXX                 XXXXXXXXX   xxxxxxxXXXxxxxx                                              ",
-        "        XXXXXXXXXX      XXXXXXXXXXXXXXXXXXXX      XXXXXXXXXX       XXXXXXXXXXXXXXXXXX        XXXXXXXXX                  XXXXXXXX   xxxxxxxXXXxxx                                                 ",
-        "        XXXXXXXXXX      XXXXXXXXXXXXXXXXXXXX      XXXXXXXXXX       XXXXXXXX  XXXXXXXX        XXXXXXXXX                 XXXXXXXXX   xxxxxxxXXXxxxx                                                ",
-        "         XXXXXXXXXX    XXXXXXXXXX  XXXXXXXXXX    XXXXXXXXXX       XXXXXXXXX  XXXXXXXXX       XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX     xxxxxxXXXxxxxx                                               ",
-        "         XXXXXXXXXX    XXXXXXXXXX  XXXXXXXXXX    XXXXXXXXXX       XXXXXXXX    XXXXXXXX       XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX       xxxxxXXXxxxxxx                                              ",
-        "          XXXXXXXXXX  XXXXXXXXXX    XXXXXXXXXX  XXXXXXXXXX       XXXXXXXXX    XXXXXXXXX      XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX         xxxxXXXxxxxxxx                                             ",
-        "          XXXXXXXXXX  XXXXXXXXXX    XXXXXXXXXX  XXXXXXXXXX       XXXXXXXX      XXXXXXXX      XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX           xxxXXXxxxxxxxx                                            ",
-        "           XXXXXXXXXXXXXXXXXXXX      XXXXXXXXXXXXXXXXXXXX       XXXXXXXXXXXXXXXXXXXXXXXX     XXXXXXXXXXXXXXXXXXXX                       xxXXXxxxxxxxxx                                           ",
-        "           XXXXXXXXXXXXXXXXXXXX      XXXXXXXXXXXXXXXXXXXX       XXXXXXXXXXXXXXXXXXXXXXXX     XXXXXXXXXXXXXXXXXXXXXXX                     xXXXxxxxxxxxx                                           ",
-        "            XXXXXXXXXXXXXXXXXX        XXXXXXXXXXXXXXXXXX       XXXXXXXXXXXXXXXXXXXXXXXXXX    XXXXXXXXX XXXXXXXXXXXXXXXX                 xxXXXxxxxxxxxx                                           ",
-        "            XXXXXXXXXXXXXXXXXX        XXXXXXXXXXXXXXXXXX       XXXXXXXX          XXXXXXXX    XXXXXXXXX    XXXXXXXXXXXXXXXXXXXXXXxxxxxxxxxxXXXxxxxxxxx                                            ",
-        "             XXXXXXXXXXXXXXXX          XXXXXXXXXXXXXXXX       XXXXXXXXX          XXXXXXXXX   XXXXXXXXX       XXXXXXXXXXXXXXXXXXXxxxxxxxxxxXXXxxxxxxx                                             ",
-        "             XXXXXXXXXXXXXXXX          XXXXXXXXXXXXXXXX       XXXXXXXX            XXXXXXXX   XXXXXXXXX          XXXXXXXXXXXXXXXXxxxxxxxxxxXXXxxxxxx                                              ",
-        "              XXXXXXXXXXXXXX            XXXXXXXXXXXXXX        XXXXXXXX            XXXXXXXX   XXXXXXXXX             XXXXXXXXXXXXXxxxxxxxxxxXXXxxxxx                                               ",
-        "                                                                                                                                                                                                        ",
-        "                                                                                                                                                                                                        ",
-        "                                                                                                                                                                                                        ",
-        "                                                                                                                                                                                                        ",
-        "                                                                                                                                                                                                        ",
-        "                                                                                                                                                                                                        ",
-        "                                                                                                                                                                                                        ",
-        "                                                                                                                                                                                                        ",
-        "                                                                                                                                                                                                        ",
-        "                                                                                                                                                                                                        ",
-        "                                                                                                                                                                                                        ",
-        "                                                                                                                                                                                                        ",
+    static char starWarsLogo[37][169] = {
+        "                             xxxxXXXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXX      XXXXXXXXXXXX           XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                         ",
+        "                            xxxxxXXXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXX     XXXXXXXXXXXXXX          XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                        ",
+        "                           xxxxxxXXXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXX     XXXXXXXXXXXXXX          XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                       ",
+        "                          xxxxxxxXXXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXX    XXXXXXXXXXXXXXXX         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                      ",
+        "                         xxxxxxxxXXXxxxx              XXXXXXXXXX                       XXXXXXXXXXXXXXXX         XXXXXXXXX                 XXXXXXXXX                     ",
+        "                         xxxxxxxxXXXxx                XXXXXXXXXX                      XXXXXXXXXXXXXXXXXX        XXXXXXXXX                  XXXXXXXX                     ",
+        "                         xxxxxxxxXXXxxx               XXXXXXXXXX                      XXXXXXXX  XXXXXXXX        XXXXXXXXX                 XXXXXXXXX                     ",
+        "                          xxxxxxxXXXxxxx              XXXXXXXXXX                     XXXXXXXXX  XXXXXXXXX       XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                      ",
+        "                           xxxxxxXXXxxxxx             XXXXXXXXXX                     XXXXXXXX    XXXXXXXX       XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                       ",
+        "                            xxxxxXXXxxxxxx            XXXXXXXXXX                    XXXXXXXXX    XXXXXXXXX      XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                        ",
+        "                             xxxxXXXxxxxxxx           XXXXXXXXXX                    XXXXXXXX      XXXXXXXX      XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                         ",
+        "                              xxxXXXxxxxxxxx          XXXXXXXXXX                   XXXXXXXXXXXXXXXXXXXXXXXX     XXXXXXXXXXXXXXXXXXXX                                    ",
+        "                               xxXXXxxxxxxxx          XXXXXXXXXX                   XXXXXXXXXXXXXXXXXXXXXXXX     XXXXXXXXXXXXXXXXXXXXXXX                                 ",
+        "                              xxxXXXxxxxxxxx          XXXXXXXXXX                  XXXXXXXXXXXXXXXXXXXXXXXXXX    XXXXXXXXX XXXXXXXXXXXXXXXX                              ",
+        "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXXXxxxxxxx           XXXXXXXXXX                  XXXXXXXX          XXXXXXXX    XXXXXXXXX    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXXXxxxxxx            XXXXXXXXXX                 XXXXXXXXX          XXXXXXXXX   XXXXXXXXX       XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXXXxxxxx             XXXXXXXXXX                 XXXXXXXX            XXXXXXXX   XXXXXXXXX          XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXXXxxxx              XXXXXXXXXX                 XXXXXXXX            XXXXXXXX   XXXXXXXXX             XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "                                                                                                                                                                        ",
+        "XXXXXXXXX            XXXXXXXXXXXXXX            XXXXXXXXX        XXXXXXXXXXXX           XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX           xxxXXXxxxxxxxxxXXXXXXXXXXXXXXXXXXXXXXXX",
+        "XXXXXXXXXX          XXXXXXXXXXXXXXXX          XXXXXXXXXX       XXXXXXXXXXXXXX          XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX         xxxxXXXxxxxxxxxxXXXXXXXXXXXXXXXXXXXXXXXX",
+        "XXXXXXXXXX          XXXXXXXXXXXXXXXX          XXXXXXXXXX       XXXXXXXXXXXXXX          XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX       xxxxxXXXxxxxxxxxxXXXXXXXXXXXXXXXXXXXXXXXX",
+        " XXXXXXXXXX         XXXXXXXXXXXXXXXXX         XXXXXXXXX       XXXXXXXXXXXXXXXX         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX     xxxxxxXXXxxxxxxxxxXXXXXXXXXXXXXXXXXXXXXXXX",
+        " XXXXXXXXXX        XXXXXXXXXXXXXXXXXX        XXXXXXXXXX       XXXXXXXXXXXXXXXX         XXXXXXXXX                 XXXXXXXXX   xxxxxxxXXXxxxxx                            ",
+        "  XXXXXXXXXX      XXXXXXXXXXXXXXXXXXXX      XXXXXXXXXX       XXXXXXXXXXXXXXXXXX        XXXXXXXXX                  XXXXXXXX   xxxxxxxXXXxxx                              ",
+        "  XXXXXXXXXX      XXXXXXXXXXXXXXXXXXXX      XXXXXXXXXX       XXXXXXXX  XXXXXXXX        XXXXXXXXX                 XXXXXXXXX   xxxxxxxXXXxxxx                             ",
+        "   XXXXXXXXXX    XXXXXXXXXX  XXXXXXXXXX    XXXXXXXXXX       XXXXXXXXX  XXXXXXXXX       XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX     xxxxxxXXXxxxxx                            ",
+        "   XXXXXXXXXX    XXXXXXXXXX  XXXXXXXXXX    XXXXXXXXXX       XXXXXXXX    XXXXXXXX       XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX       xxxxxXXXxxxxxx                           ",
+        "    XXXXXXXXXX  XXXXXXXXXX    XXXXXXXXXX  XXXXXXXXXX       XXXXXXXXX    XXXXXXXXX      XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX         xxxxXXXxxxxxxx                          ",
+        "    XXXXXXXXXX  XXXXXXXXXX    XXXXXXXXXX  XXXXXXXXXX       XXXXXXXX      XXXXXXXX      XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX           xxxXXXxxxxxxxx                         ",
+        "     XXXXXXXXXXXXXXXXXXXX      XXXXXXXXXXXXXXXXXXXX       XXXXXXXXXXXXXXXXXXXXXXXX     XXXXXXXXXXXXXXXXXXXX                       xxXXXxxxxxxxxx                        ",
+        "     XXXXXXXXXXXXXXXXXXXX      XXXXXXXXXXXXXXXXXXXX       XXXXXXXXXXXXXXXXXXXXXXXX     XXXXXXXXXXXXXXXXXXXXXXX                     xXXXxxxxxxxxx                        ",
+        "      XXXXXXXXXXXXXXXXXX        XXXXXXXXXXXXXXXXXX       XXXXXXXXXXXXXXXXXXXXXXXXXX    XXXXXXXXX XXXXXXXXXXXXXXXX                 xxXXXxxxxxxxxx                        ",
+        "      XXXXXXXXXXXXXXXXXX        XXXXXXXXXXXXXXXXXX       XXXXXXXX          XXXXXXXX    XXXXXXXXX    XXXXXXXXXXXXXXXXXXXXXXxxxxxxxxxxXXXxxxxxxxx                         ",
+        "       XXXXXXXXXXXXXXXX          XXXXXXXXXXXXXXXX       XXXXXXXXX          XXXXXXXXX   XXXXXXXXX       XXXXXXXXXXXXXXXXXXXxxxxxxxxxxXXXxxxxxxx                          ",
+        "       XXXXXXXXXXXXXXXX          XXXXXXXXXXXXXXXX       XXXXXXXX            XXXXXXXX   XXXXXXXXX          XXXXXXXXXXXXXXXXxxxxxxxxxxXXXxxxxxx                           ",
+        "        XXXXXXXXXXXXXX            XXXXXXXXXXXXXX        XXXXXXXX            XXXXXXXX   XXXXXXXXX             XXXXXXXXXXXXXxxxxxxxxxxXXXxxxxx                            ",
     };
 
     static char bodySymbol = 'a';
@@ -358,6 +336,7 @@ namespace __s_logo_back {
         char (&scene)[U][V],
         int (&color)[U][V], int sizeX
     ) {
+
         for (int i = 0; i < displayHeight; ++i) {
             for (int j = 0; j < displayWidth; ++j) {
                 if (farFar[i][j] == 'x') {
@@ -372,22 +351,57 @@ namespace __s_logo_back {
     }
 
     template<std::size_t U, std::size_t V>
+    static void reduceStarWarsLogo(
+        char (&scene)[U][V],
+        int (&color)[U][V], int framesCount
+    ) {
+        if (SWSceneNumber == 0) {
+            SWSceneNumber++;
+            return;
+        }
+        int newX = (168 * (framesCount - SWSceneNumber)) / framesCount;
+        int newY = (37 * (framesCount - SWSceneNumber)) / framesCount;
+        for (int i = 0; i < U; ++i) {
+            for (int j = 0; j < V - 1; ++j) {
+                color[i][j] = -1;
+            }
+        }
+        int paddingX, paddingY;
+        paddingY = 18 - (18 * (framesCount - SWSceneNumber)) / framesCount;
+        paddingX = 84 - (84 * (framesCount - SWSceneNumber)) / framesCount;
+        for (int i = 0; i < newY; ++i) {
+            for (int j = 0; j < newX; ++j) {
+                int indI = (i * (37 - 1)) / newY;
+                int indJ = (j * (168 - 1)) / newX;
+                char s = starWarsLogo[indI][indJ];
+                if (s == 'X' or s == 'x') {
+                    color[(i + paddingY) % 37][(j + paddingX) % 168] = cc(yellow, black);
+                } else {
+                    color[(i + paddingY) % 37][(j + paddingX) % 168] = -1;
+                }
+            }
+        }
+        SWSceneNumber++;
+    }
+
+    template<std::size_t U, std::size_t V>
     static void setStarWars(
         char (&scene)[U][V],
         int (&color)[U][V], int sizeX
     ) {
-        for (int i = 0; i < displayHeight; ++i) {
-            for (int j = 0; j < displayWidth; ++j) {
-                if (starWarsLogo[i][j] == 'x' or starWarsLogo[i][j] == 'X') {
-                    color[i][j] = cc(yellow, black);
-                } else {
-                    color[i][j] = -1;
-                    scene[i][j] = ' ';
+        if (SWSceneNumber == 0) {
+            for (int i = 0; i < displayHeight; ++i) {
+                for (int j = 0; j < displayWidth; ++j) {
+                    if (starWarsLogo[i][j] == 'x' or starWarsLogo[i][j] == 'X') {
+                        color[i][j] = cc(yellow, black);
+                    } else {
+                        color[i][j] = -1;
+                    }
                 }
             }
         }
+        reduceStarWarsLogo(scene, color, 20);
     }
-
 }
 
 typedef struct Frame {
@@ -539,7 +553,7 @@ const int color[][] = {
 };
 
 typedef struct __s_intro_ : public Frame {
-    __s_intro_() : Frame(this->sizeX, this->sizeY, this->xPadding, this->yPadding, image, color) {}
+    __s_intro_() : Frame(this->sizeX, this->sizeY, this->xPadding, this->yPadding, image, color, type) {}
 
     static const int sizeX = ;
     static const int sizeY = ;
@@ -759,10 +773,10 @@ namespace __s_star_wars_title {
         __s_star_wars_title_() : Frame(this->sizeX, this->sizeY, this->xPadding, this->yPadding, image1, color1,
                                        STARWARSTITLE) {}
 
-        static const int sizeX = displayWidth;
-        static const int sizeY = displayHeight;
-        static const int xPadding = 0;
-        static const int yPadding = 0;
+        static const int sizeX = 168;
+        static const int sizeY = 37;
+        static const int xPadding = 15;
+        static const int yPadding = 10;
     } __s_star_wars_title_;
 }
 

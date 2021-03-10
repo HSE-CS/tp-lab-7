@@ -18,29 +18,30 @@ void print(T t) {
 
 signed main() {
 
-    Movie::setStartDisplayCondition();
-    Movie::setStartDisplayColors();
-    Movie::renderStartDisplay();
-    playMusicFile("cxx_intro_1.wav");
-    Scene s(INTRO);
-    s.render(1, true);
-    Movie::wait(2);
-
-    Scene l(LIGHTSABER);
-    stopMusic();
-    playMusicFile("saber_on_1.wav");
-    l.render(10, true);
-    Movie::wait(1.5);
-    stopMusic();
-    Scene f(ALONGTIMEAGO);
-    f.render(3 * 1000, true);
-    Movie::renderStartDisplay();
+//    Movie::setStartDisplayCondition();
+//    Movie::setStartDisplayColors();
+//    Movie::renderStartDisplay();
+//    playMusicFile("cxx_intro_1.wav");
+//    Movie::wait(1.25);
+//    Scene s(INTRO);
+//    s.render(10, true);
+//    Movie::wait(1.75);
+//    Scene l(LIGHTSABER);
+//    stopMusic();
+//    playMusicFile("saber_on_1.wav");
+//    l.render(10, true);
+//    Movie::wait(2);
+//    stopMusic();
+//    Scene f(ALONGTIMEAGO);
+//    f.render(3 * 1000, true);
+//    Movie::renderStartDisplay();
     Movie::setDisplayToSpace();
     Movie::renderSpaceDisplay();
     Scene sw(STARWARSTITLE);
-    playMusicFile("starwars_theme.wav");
-    sw.render(10000, true);
+     playMusicFile("starwars_theme.wav");
+//     sw.rawRender();
 
+    sw.render(450, true);
 
 //    Movie::wait(3);
 
