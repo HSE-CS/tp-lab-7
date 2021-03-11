@@ -13,8 +13,8 @@ struct Pair {
   int y;  // 0..N-1
 };
 
-const int N = 3;
-const int M = 3;
+const int N = 30;
+const int M = 100;
 
 const int LTPrey = 10;
 const int LTPredator = 30;

@@ -9,7 +9,7 @@ Prey::Prey(Cell* cell) : Object(cell) {
 
 void Prey::live() {
   move();
-  if (livetime < 0.5 * LTPrey) copulation();
+  if (livetime < LTPrey / 2) copulation();
   livetime--;
 }
 

@@ -7,6 +7,7 @@
 #include "prey.h"
 #include "stone.h"
 #include <vector>
+#include <list>
 
 class Ocean {
  private:
