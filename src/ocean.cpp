@@ -22,7 +22,7 @@ void Ocean::print() const {
                         ? cells[i][j].getObject()->getSymbol()
                         : '.');
     }
-    std::cout << std::endl;
+    std::cout << "\n";
   }
 }
 
@@ -55,7 +55,7 @@ void Ocean::addObjects(unsigned int n, ObjType type) {
 
 void Ocean::run() {
   while (1) {
-    system("cls");
+    std::cout << "\n";
     clock_t now = clock();
     print();
     while (clock() < now + CLOCKS_PER_SEC / 10);
@@ -73,7 +73,7 @@ void Ocean::run() {
 }
 
 bool Ocean::DeleteObj(Object *obj) {
-  if (obj->isLive() == 0) {
+  if (obj->getLive() == 0) {
     obj->getCell()->killMe();
     return false;
   }

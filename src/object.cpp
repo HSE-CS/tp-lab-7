@@ -4,14 +4,11 @@ Object::Object(Cell* cell) { this->cell = cell; }
 
 void Object::setCell(Cell* cell) { this->cell = cell; }
 
-int Object::getLiveTime()
-{ return this->livetime; }
 
 Cell* Object::getCell() { return this->cell; }
 
 bool Object::isLive() {
-  if (this->dead == true) return false;
-  return true;
+  return dead;
 }
 void Object::setLive(int lifetime)
 {
@@ -24,3 +21,8 @@ void Object::readytodie()
 }
 
 ObjType Object::getType() { return this->type; }
+
+unsigned int Object::getLive()
+{
+	return livetime;
+}

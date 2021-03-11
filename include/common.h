@@ -13,10 +13,10 @@ struct Pair {
   int y;  // 0..N-1
 };
 
-const int N = 20;
-const int M = 50;
+const int N = 3;
+const int M = 3;
 
-const int LTPrey = 20;
+const int LTPrey = 10;
 const int LTPredator = 30;
 const int LTStone = 10000;
 

@@ -14,7 +14,7 @@ class Prey : public Object {
 
  public:
   Prey(Cell *cell);
-  ~Prey();
+  ~Prey(){};
   void live() override;
   void move();
   void copulation();
