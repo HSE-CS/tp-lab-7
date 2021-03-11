@@ -12,7 +12,7 @@
 class Ocean {
  private:
   Cell **cells;
-  std::vector<Object *> stuff;
+  std::list<Object *> stuff;
 
  public:
   Ocean();

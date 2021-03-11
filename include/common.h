@@ -1,23 +1,29 @@
 #ifndef _COMMON_H_
 #define _COMMON_H_
 
-#include <string>
+#include <iostream>
+#include <list>
 #include <vector>
 #include <ctime>
 #include <time.h>
-#include <iostream>
-// typedef size_t coord_t;
+#include <iterator>
+#include <algorithm>
+#include  <string>
 
-struct Pair {
-  int x;  // 0..M-1
-  int y;  // 0..N-1
+typedef size_t coord_t;
+
+struct Pair
+{
+	int x;
+	int y;
 };
 
-const int N = 30;
-const int M = 100;
-
-const int LTPrey = 10;
+const int LTPrey = 20;
 const int LTPredator = 30;
 const int LTStone = 10000;
+
+
+const size_t N = 50;
+const  size_t M = 60;
 
 #endif
