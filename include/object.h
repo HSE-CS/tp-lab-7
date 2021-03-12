@@ -5,7 +5,7 @@
 
 #define STONE_N '#'
 #define CORAL_N '*'
-#define PREY_N 'f'
+#define PREY_N 'O'
 #define PREDATOR_N 'S'
 #define WALL_NW '|'
 #define WALL_NG '~'
@@ -30,5 +30,6 @@ public:
 	virtual void live() = 0; // жизнь объекта
 	virtual void print_object() = 0;
 	void setCell(Cell* cl);
+	virtual int get_objType() = 0;
 };
 #endif

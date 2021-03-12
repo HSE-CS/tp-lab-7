@@ -21,7 +21,10 @@ public:
 	void init(Pair p, Ocean* oc);
 	Object* getObject() const;
 	void setObject(Object*);
-	void killMe();
+	Ocean* getOcean();
+	void killMe(Object*);
+	void delObj();
+	Pair getCord();
 
 };
 #endif

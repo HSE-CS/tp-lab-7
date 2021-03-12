@@ -1,18 +1,18 @@
 
 #include "common.h"
 #include "ocean.h"
-
+#include "Windows.h"
 
 Ocean::Ocean() {
-
+	this->time = 1;
 	this->cells = new Cell * [N];
 	for (int i = 0; i < N; i++) {
 		cells[i] = new Cell[M];
 		for (int j = 0; j < M; j++) {
-			Pair now_cord;
-			now_cord.x = j;
-			now_cord.y = i;
-			cells[i][j].init(now_cord, this);
+			Pair* now_cord = new Pair;
+			now_cord->i = i;
+			now_cord->j = j;
+			cells[i][j].init(*now_cord, this);
 			if (i == 0 || i == N - 1) {
 				Wall_G* wall_g = new Wall_G;
 				wall_g->setCell(&cells[i][j]);
@@ -52,7 +52,48 @@ void Ocean::print() const {
 		}
 		std::cout << std::endl;
 	}
+	std::cout << this->time << std::endl;
+
+	std::cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 };
 
+void Ocean::delObj(const Object* obj) {
+	this->objects.erase(std::remove(this->objects.begin(),
+		this->objects.end(), obj), this->objects.end());
+	size_t size = this->objects.size();
+	this->objects.resize(size - 1);
+}
+
+Cell* Ocean::get_cell(Pair p) {
+	int i = p.i;
+	int j = p.j;
+	return &this->cells[p.i][p.j];
+}
+
+void Ocean::addObject(Object* obj) {
+	this->objects.push_back(obj);
+}
+
 void addObjects();
-void run();
+
+void Ocean::run() {
+	while (true) {
+		int k = 0;
+		if (time == 34) {
+			//std::cout << "Help";
+		}
+		this->objects.erase(std::remove_if(objects.begin(), objects.end(), [](auto* x) {
+			x->live();
+			if (x->get_objType() == -1)
+			{
+				x->~Object();
+				return true;
+			}
+			return false;
+			}), objects.end());
+
+		this->print();
+		this->time++;
+		Sleep(100);
+	}
+}

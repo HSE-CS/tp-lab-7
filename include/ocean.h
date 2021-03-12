@@ -1,83 +1,30 @@
+//Copyright soda 2021
+
+#ifndef _OCEAN_H_
+#define _OCEAN_H_
 
 #include "common.h"
+#include "Cell.h"
 #include "object.h"
-#include "cell.h"
-#include "ocean.h"
+#include "stone.h"
+#include "prey.h"
+#include <list>
 
-class Wall_W : public Object
+class Ocean
 {
+
 private:
+	Cell** cells;
+	std::list<Object*> objects;
 	size_t time;
 public:
-	//Wall_W() {
-	   // cell = nullptr;
-	   // time = 1;
-	   // objType = 4;
-	//}
-
-	//~Wall_W() {
-	   // this->time = 0;
-	   // this->cell = nullptr;
-	//}
-
-	void set_time() {
-		this->time = 1;
-	}
-
-	void set_objType() {
-		this->objType = 5;
-	}
-
-	void live() {
-		time++;
-		if (time == 100000)
-			time = 1;
-	} // жизнь объекта
-
-	void print_object() {
-		std::cout << WALL_NW;
-	}
-
-	void setCell(Cell* c) {
-		this->cell = c;
-	}
+	Ocean();
+	~Ocean();
+	void print() const;
+	void addObjects(...);
+	void addObject(Object*);
+	void delObj(const Object*);
+	void run();
+	Cell* get_cell(Pair);
 };
-
-
-class Wall_G : public Object
-{
-private:
-	size_t time;
-public:
-	//Wall_G() {
-	//	this->cell = nullptr;
-	//	this->time = 1;
-	//	this->objType = 5;
-	//}
-
-	//~Wall_G() {
-	//	this->time = 0;
-	//	this->cell = nullptr;
-	//}
-	void set_time() {
-		this->time = 1;
-	}
-
-	void set_objType() {
-		this->objType = 5;
-	}
-
-	void live() {
-		time++;
-		if (time == 100000)
-			time = 1;
-	} // жизнь объекта
-
-	void print_object() {
-		std::cout << WALL_NG;
-	}
-
-	void setCell(Cell* c) {
-		this->cell = c;
-	}
-};
+#endif

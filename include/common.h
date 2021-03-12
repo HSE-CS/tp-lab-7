@@ -7,11 +7,11 @@ typedef size_t coord_t;
 
 struct Pair
 {
-	coord_t x; // 0..M-1
-	coord_t y; // 0..N-1
+	coord_t i; // 0..M-1
+	coord_t j; // 0..N-1
 };
 
-const size_t N = 6;
-const size_t M = 6;
+const size_t N = 10;
+const size_t M = 20;
 
 #endif
