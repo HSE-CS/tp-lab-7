@@ -17,13 +17,13 @@ static const int displayWidth = 200;
 //static const int displayHeight = 30;
 //static const int displayWidth = 50;
 
-//static void playMusicFile(char *name) {
-//    PlaySound(name, NULL, SND_FILENAME | SND_ASYNC);
-//}
-//
-//static void stopMusic() {
-//    PlaySound(NULL, 0, 0);
-//}
+static void playMusicFile(char *name) {
+    PlaySound(name, NULL, SND_FILENAME | SND_ASYNC);
+}
+
+static void stopMusic() {
+    PlaySound(NULL, 0, 0);
+}
 
 enum SceneNumber {
     TEST,
@@ -431,7 +431,7 @@ namespace __s_logo_back {
         reduceStarWarsLogo(scene, color, 20);
     }
 
-    static char **bigTitle;
+    static char bigTitle[60][260];
 
 
     template<std::size_t U, std::size_t V>
@@ -441,34 +441,29 @@ namespace __s_logo_back {
     ) {
         if (STSceneNumber == 0) {
             {
-                STSceneNumber++;
-                for (int i = 0; i < 30; ++i) {
+                for (int i = 0; i < 60; ++i) {
                     for (int j = 0; j < 200; ++j) {
                         scene[i][j] = ' ';
                         color[i][j] = -1;
                     }
                 }
             }
-            bigTitle = new char *[60];
-            for (int i = 0; i < 60; ++i) {
-                bigTitle[i] = new char[260 + 1];
-            }
             for (int i = 0; i < 60; ++i) {
                 for (int j = 0; j < 260; ++j) {
                     if (startCredits[i / 2][j / 2] == 'x') {
                         bigTitle[i][j] = 'x';
-                    }
+                    } else bigTitle[i][j] = ' ';
                 }
             }
         } else {
-            for (int i = 0; i < 200; ++i) {
-                for (int j = 0; j < 60; ++j) {
+            for (int i = 0; i < 60; ++i) {
+                for (int j = 0; j < 200; ++j) {
                     color[i][j] = -1;
                 }
             }
             int newX, newY;
-            newX = (200 * (framesCount - STSceneNumber)) / framesCount;
-            newY = (60 * (framesCount - STSceneNumber)) / framesCount;
+            newX = ((200 * (framesCount - STSceneNumber)) / framesCount) * 1.5;
+            newY = ((60 * (framesCount - STSceneNumber)) / framesCount) * 1.5;
             for (int i = 0; i < newY; ++i) {
                 for (int j = 0; j < newX; ++j) {
                     int indI, indJ;
@@ -477,12 +472,15 @@ namespace __s_logo_back {
                     char c = bigTitle[indI][indJ];
                     if (c == 'x') {
 //                        scene[i][j];
-                        color[i][j] = cc(yellow, black);
+                        int indI2 = i + 25 - (STSceneNumber * 25) / 30;
+                        int indJ2 = j - 45 + (STSceneNumber - 1) * 4.5;
+                        if (indI2 < 60 && indJ2 < 200 && indJ2 > -1) {
+                            color[indI2][indJ2] = cc(yellow, black);
+                        }
                     }
                 }
             }
         }
-        std::cout << STSceneNumber << std::endl;
         STSceneNumber++;
     }
 
@@ -880,9 +878,9 @@ namespace __s_start_credits {
                                      STARTCREDITS) {}
 
         static const int sizeX = 200;
-        static const int sizeY = 24;
+        static const int sizeY = 35;
         static const int xPadding = 0;
-        static const int yPadding = 0;
+        static const int yPadding = 25;
     } __s_start_credits_;
 }
 
