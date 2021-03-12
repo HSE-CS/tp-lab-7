@@ -17,13 +17,13 @@ static const int displayWidth = 200;
 //static const int displayHeight = 30;
 //static const int displayWidth = 50;
 
-static void playMusicFile(char *name) {
-    PlaySound(name, NULL, SND_FILENAME | SND_ASYNC);
-}
-
-static void stopMusic() {
-    PlaySound(NULL, 0, 0);
-}
+//static void playMusicFile(char *name) {
+//    PlaySound(name, NULL, SND_FILENAME | SND_ASYNC);
+//}
+//
+//static void stopMusic() {
+//    PlaySound(NULL, 0, 0);
+//}
 
 enum SceneNumber {
     TEST,
@@ -104,6 +104,33 @@ namespace __s_logo_back {
         "       XXXXXXXXXXXXXXXX          XXXXXXXXXXXXXXXX       XXXXXXXXX          XXXXXXXXX   XXXXXXXXX       XXXXXXXXXXXXXXXXXXXxxxxxxxxxxXXXxxxxxxx                          ",
         "       XXXXXXXXXXXXXXXX          XXXXXXXXXXXXXXXX       XXXXXXXX            XXXXXXXX   XXXXXXXXX          XXXXXXXXXXXXXXXXxxxxxxxxxxXXXxxxxxx                           ",
         "        XXXXXXXXXXXXXX            XXXXXXXXXXXXXX        XXXXXXXX            XXXXXXXX   XXXXXXXXX             XXXXXXXXXXXXXxxxxxxxxxxXXXxxxxx                            ",
+    };
+
+    static char startCredits[30][130 + 1]{
+        "                                                                                                                                  ",
+        "                                                                                                                                  ",
+        "                              xxxxxx                xxxxx                  xx              xxx     xxx                            ",
+        "                              xxxxxx           xx  xxxxxxx                 xx   xxxxx       xxx   xxx                             ",
+        "                              xx      xx xxx       xx        xxxxxx    xxx xx  xxxxxxx       xxx xxx                              ",
+        "                              xxxxx   xxxxxxx  xx  xxxxxx   xxxxxxxx  xxxxxxx  xx   xx        xxxxx                               ",
+        "                              xxxxx   xxx  xx  xx   xxxxxx  xx    xx  xx   xx  xxxxxx         xxxxx                               ",
+        "                              xx      xxxxxxx  xx       xx  xx    xx  xx   xx  xx            xxx xxx                              ",
+        "                              xxxxxx  xxxxxx   xx  xxxxxxx  xxxxxxxx  xxxxxxx  xxxxxxx      xxx   xxx                             ",
+        "                              xxxxxx  xx       xx   xxxxx    xxxxxx    xxxxxx   xxxxx      xxx     xxx                            ",
+        "                                      xx                                                                                          ",
+        "                                      xx                                                                                          ",
+        "                                                                                                                                  ",
+        "                                                                                                                                  ",
+        "xxxxxx   xxxxxx xx   xx xxxxxx xxx   xx xxxxxxx xxxxxx    xxxxx  xxxxxx   xxxxxxxx xx  xx xxxxxx    xxxxx   xxxxx  xxxxxx   xxxxxx",
+        "xxxxxxx  xxxxxx xx   xx xxxxxx xxxx  xx xxxxxxx xxxxxx   xxxxxxx xxxxxx   xxxxxxxx xx  xx xxxxxx   xxxxxxx xxxxxxx xxxxxxx  xxxxxx",
+        "xx   xx  xx     xx   xx xx     xxxx  xx xx      xx       xx   xx xx          xx    xx  xx xx       xx   xx xx   xx xx  xxx  xx    ",
+        "xxxxxxx  xxxxx  xx   xx xxxxx  xxxxx xx xx      xxxxx    xx   xx xxxxx       xx    xxxxxx xxxxx    xx      xx   xx xx   xxx xxxxx ",
+        "xxxxxx   xxxxx   xx xx  xxxxx  xx xxxxx xx  xxx xxxxx    xx   xx xxxxx       xx    xxxxxx xxxxx    xx      xx   xx xx   xxx xxxxx ",
+        "xxxxx    xx      xx xx  xx     xx  xxxx xx   xx xx       xx   xx xx          xx    xx  xx xx       xx   xx xx   xx xx  xxx  xx    ",
+        "xx xxx   xxxxxx  xxxxx  xxxxxx xx  xxxx xxxxxxx xxxxxx   xxxxxxx xx          xx    xx  xx xxxxxx   xxxxxxx xxxxxxx xxxxxxx  xxxxxx",
+        "xx  xxxx xxxxxx   xxx   xxxxxx xx   xxx xxxxxxx xxxxxx    xxxxx  xx          xx    xx  xx xxxxxx    xxxxx   xxxxx  xxxxxx   xxxxxx",
+        "                                                                                                                                  ",
+        "                                                                                                                                  ",
     };
 
     static char bodySymbol = 'a';
@@ -212,6 +239,7 @@ namespace __s_logo_back {
     static int sceneNumber = 0;
     static int lsSceneNumber = 0;
     static int SWSceneNumber = 0;
+    static int STSceneNumber = 0;
 
     static int angleProp = 100;
 
@@ -402,6 +430,62 @@ namespace __s_logo_back {
         }
         reduceStarWarsLogo(scene, color, 20);
     }
+
+    static char **bigTitle;
+
+
+    template<std::size_t U, std::size_t V>
+    static void reduceStartTitle(
+        char (&scene)[U][V],
+        int (&color)[U][V], int framesCount
+    ) {
+        if (STSceneNumber == 0) {
+            {
+                STSceneNumber++;
+                for (int i = 0; i < 30; ++i) {
+                    for (int j = 0; j < 200; ++j) {
+                        scene[i][j] = ' ';
+                        color[i][j] = -1;
+                    }
+                }
+            }
+            bigTitle = new char *[60];
+            for (int i = 0; i < 60; ++i) {
+                bigTitle[i] = new char[260 + 1];
+            }
+            for (int i = 0; i < 60; ++i) {
+                for (int j = 0; j < 260; ++j) {
+                    if (startCredits[i / 2][j / 2] == 'x') {
+                        bigTitle[i][j] = 'x';
+                    }
+                }
+            }
+        } else {
+            for (int i = 0; i < 200; ++i) {
+                for (int j = 0; j < 60; ++j) {
+                    color[i][j] = -1;
+                }
+            }
+            int newX, newY;
+            newX = (200 * (framesCount - STSceneNumber)) / framesCount;
+            newY = (60 * (framesCount - STSceneNumber)) / framesCount;
+            for (int i = 0; i < newY; ++i) {
+                for (int j = 0; j < newX; ++j) {
+                    int indI, indJ;
+                    indI = (i * (60 - 1)) / newY;
+                    indJ = (j * (260 - 1)) / newX;
+                    char c = bigTitle[indI][indJ];
+                    if (c == 'x') {
+//                        scene[i][j];
+                        color[i][j] = cc(yellow, black);
+                    }
+                }
+            }
+        }
+        std::cout << STSceneNumber << std::endl;
+        STSceneNumber++;
+    }
+
 }
 
 typedef struct Frame {
@@ -429,6 +513,10 @@ typedef struct Frame {
 
         if (scene == STARWARSTITLE) {
             __s_logo_back::setStarWars(img, col, x);
+        }
+
+        if (scene == STARTCREDITS) {
+            __s_logo_back::reduceStartTitle(img, col, 30);
         }
 
         this->sizeX = x;
@@ -778,6 +866,24 @@ namespace __s_star_wars_title {
         static const int xPadding = 15;
         static const int yPadding = 10;
     } __s_star_wars_title_;
+}
+
+namespace __s_start_credits {
+    static int framesCount = 30;
+
+    static char image1[60][200 + 1]{' '};
+
+    static int color1[60][200 + 1] = {-1};
+
+    typedef struct __s_start_credits_ : public Frame {
+        __s_start_credits_() : Frame(this->sizeX, this->sizeY, this->xPadding, this->yPadding, image1, color1,
+                                     STARTCREDITS) {}
+
+        static const int sizeX = 200;
+        static const int sizeY = 24;
+        static const int xPadding = 0;
+        static const int yPadding = 0;
+    } __s_start_credits_;
 }
 
 static char display[displayHeight][displayWidth + 1]{};

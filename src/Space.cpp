@@ -129,11 +129,16 @@ Scene::Scene(int sceneNumber) {
             this->scene_.frames.push_back(__s_far_far_away::__s_far_far_away_());
         }
     }
-
     if (sceneNumber == STARWARSTITLE) {
         this->scene_.framesCount = __s_star_wars_title::framesCount;
         for (int i = 0; i < this->scene_.framesCount; ++i) {
             this->scene_.frames.push_back(__s_star_wars_title::__s_star_wars_title_());
+        }
+    }
+    if (sceneNumber == STARTCREDITS) {
+        this->scene_.framesCount = __s_start_credits::framesCount;
+        for (int i = 0; i < this->scene_.framesCount; ++i) {
+            this->scene_.frames.push_back(__s_start_credits::__s_start_credits_());
         }
     }
 }

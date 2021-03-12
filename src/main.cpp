@@ -1,5 +1,6 @@
 // copyright 2021 JediCouncil
 
+#include <windows.h>
 #include "../include/Objects.h"
 
 /*
@@ -17,6 +18,7 @@ void print(T t) {
 }
 
 signed main() {
+
 
 //    Movie::setStartDisplayCondition();
 //    Movie::setStartDisplayColors();
@@ -37,11 +39,14 @@ signed main() {
 //    Movie::renderStartDisplay();
     Movie::setDisplayToSpace();
     Movie::renderSpaceDisplay();
-    Scene sw(STARWARSTITLE);
-     playMusicFile("starwars_theme.wav");
+//    Scene sw(STARWARSTITLE);
+//    playMusicFile("starwars_theme.wav");
 //     sw.rawRender();
 
-    sw.render(450, true);
+//    sw.render(450, true);
+
+    Scene st(STARTCREDITS);
+    st.render(1000, true);
 
 //    Movie::wait(3);
 

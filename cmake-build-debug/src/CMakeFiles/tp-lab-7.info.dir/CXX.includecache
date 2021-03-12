@@ -55,6 +55,8 @@ MMSystem.h
 -
 
 G:/Projects/tp-lab-7/src/main.cpp
+windows.h
+-
 ../include/Objects.h
 G:/Projects/tp-lab-7/include/Objects.h
 
