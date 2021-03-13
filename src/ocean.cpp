@@ -54,7 +54,7 @@ void Ocean::print() const {
 	}
 	std::cout << this->time << std::endl;
 
-	std::cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+	//std::cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 };
 
 void Ocean::delObj(const Object* obj) {
@@ -78,22 +78,87 @@ void addObjects();
 
 void Ocean::run() {
 	while (true) {
-		int k = 0;
-		if (time == 34) {
-			//std::cout << "Help";
-		}
+
 		this->objects.erase(std::remove_if(objects.begin(), objects.end(), [](auto* x) {
-			x->live();
 			if (x->get_objType() == -1)
 			{
 				x->~Object();
 				return true;
 			}
+			x->live();
 			return false;
 			}), objects.end());
 
 		this->print();
 		this->time++;
-		Sleep(100);
+		Sleep(500);
+	}
+}
+
+void Ocean::Create_WORLD() {
+	int area = N * M;
+
+	int num_stone = rand() % (((area) / 100) * 3);
+	for (int index = 0; index < num_stone; index++) {
+		Stone* n_stone = new Stone;
+		Pair p;
+		p.i = 0;
+		p.j = 0;
+		while (this->get_cell(p)->getObject() != nullptr) {
+			p.i = (rand() % (N - 2)) + 1;
+			p.j = (rand() % (M - 2)) + 1;
+		}
+		Cell* cell = this->get_cell(p);
+		n_stone->init(cell);
+		cell->setObject(n_stone);
+		this->addObject(n_stone);
+	}
+
+	int num_coral = rand() % (((area) / 100) * 5);
+	for (int index = 0; index < num_coral; index++) {
+		Coral* n_coral = new Coral;
+		Pair p;
+		p.i = 0;
+		p.j = 0;
+		while (this->get_cell(p)->getObject() != nullptr) {
+			p.i = (rand() % (N - 2)) + 1;
+			p.j = (rand() % (M - 2)) + 1;
+		}
+		Cell* cell = this->get_cell(p);
+		n_coral->init(cell);
+		cell->setObject(n_coral);
+		this->addObject(n_coral);
+	}
+
+	int num_fish = rand() % (((area) / 100) * 31);
+	for (int index = 0; index < num_fish; index++) {
+		Prey* n_fish = new Prey;
+		Pair p;
+		p.i = 0;
+		p.j = 0;
+		while (this->get_cell(p)->getObject() != nullptr) {
+			p.i = (rand() % (N - 2)) + 1;
+			p.j = (rand() % (M - 2)) + 1;
+		}
+		Cell* cell = this->get_cell(p);
+		n_fish->init(cell);
+		cell->setObject(n_fish);
+		this->addObject(n_fish);
+	}
+
+	int num_pred = rand() % (((area) / 100) * 7);
+	for (int index = 0; index < num_pred; index++) {
+		Predator* n_pred = new Predator;
+		Pair p;
+		p.i = 0;
+		p.j = 0;
+		while (this->get_cell(p)->getObject() != nullptr) {
+			p.i = (rand() % (N - 2)) + 1;
+			p.j = (rand() % (M - 2)) + 1;
+		}
+		Cell* cell = this->get_cell(p);
+		n_pred->init(cell);
+		cell->setObject(n_pred);
+		this->addObject(n_pred);
 	}
 }

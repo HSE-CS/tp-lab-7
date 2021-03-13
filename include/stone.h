@@ -110,4 +110,24 @@ public:
     int get_objType();
 };
 
+class Coral : public Object
+{
+private:
+    size_t time;
+    size_t reprod_posib;
+public:
+    void set_time();
+    void set_objType();
+    void setReprod();
+    void live();
+    void reproduction();
+    void die();
+    void print_object();
+    void setCell(Cell* c);
+    void init(Cell* c);
+    size_t* getReprod();
+    int get_objType();
+};
+
+
 #endif

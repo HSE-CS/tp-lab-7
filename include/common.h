@@ -11,7 +11,7 @@ struct Pair
 	coord_t j; // 0..N-1
 };
 
-const size_t N = 10;
-const size_t M = 20;
+const size_t N = 48;
+const size_t M = 210;
 
 #endif

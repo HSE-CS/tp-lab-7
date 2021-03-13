@@ -8,6 +8,7 @@
 #include "object.h"
 #include "stone.h"
 #include "prey.h"
+#include "predator.h"
 #include <list>
 
 class Ocean
@@ -22,6 +23,7 @@ public:
 	~Ocean();
 	void print() const;
 	void addObjects(...);
+	void Create_WORLD();
 	void addObject(Object*);
 	void delObj(const Object*);
 	void run();

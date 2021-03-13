@@ -6,7 +6,7 @@
 #define STONE_N '#'
 #define CORAL_N '*'
 #define PREY_N 'O'
-#define PREDATOR_N 'S'
+#define PREDATOR_N '0'
 #define WALL_NW '|'
 #define WALL_NG '~'
 
