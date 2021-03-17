@@ -1,14 +1,16 @@
-//
-// Created by freeb on 15.03.2021.
-//
+// Copyright 2021 valvarl
 
-#ifndef TP_LAB_7_PREDATOR_H
-#define TP_LAB_7_PREDATOR_H
+#ifndef INCLUDE_PREDATOR_H_
+#define INCLUDE_PREDATOR_H_
 
+#include "prey.h"
 
-class predator {
-
+class Predator: public Prey {
+public:
+    explicit Predator(Cell* _cell);
+    void live() override;
+    void hunt();
 };
 
 
-#endif //TP_LAB_7_PREDATOR_H
+#endif  // INCLUDE_PREDATOR_H_

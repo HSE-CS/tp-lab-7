@@ -1,24 +1,29 @@
-//
-// Created by freeb on 15.03.2021.
-//
+// Copyright 2021 valvarl
 
-#ifndef TP_LAB_7_OCEAN_H
-#define TP_LAB_7_OCEAN_H
+#ifndef INCLUDE_OCEAN_H_
+#define INCLUDE_OCEAN_H_
 
 #include "common.h"
 #include "cell.h"
-#include <list>
+#include <vector>
+
+#include "prey.h"
+#include "predator.h"
+#include "stone.h"
 
 class Ocean {
 private:
     Cell **cells;
-    std::list<Object*> stuff;
+    std::vector<Object*> stuff;
 public:
+    std::vector<Object*> temporary_stuff;
+    std::minstd_rand simple_rand;
     Ocean();
+    void print() const;
+    void addObjects();
+    void run();
+    Cell **getCells() const;
     ~Ocean();
-    void  print() const;
-    void addObjects(...);
-    void  run();
 };
 
-#endif //TP_LAB_7_OCEAN_H
+#endif  // INCLUDE_OCEAN_H_

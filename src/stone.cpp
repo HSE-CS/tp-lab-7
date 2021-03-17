@@ -1,5 +1,15 @@
-//
-// Created by freeb on 15.03.2021.
-//
+// Copyright 2021 valvarl
 
-#include "../include/stone.h"
+#include "stone.h"
+
+Stone::~Stone() {
+    delete this;
+}
+
+void Stone::live() {
+
+}
+
+Stone::Stone(Cell *_cell) : Object(_cell) {
+    type = ObjType::STONE;
+}

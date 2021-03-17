@@ -1,9 +1,7 @@
-//
-// Created by freeb on 15.03.2021.
-//
+// Copyright 2021 valvarl
 
-#ifndef TP_LAB_7_CELL_H
-#define TP_LAB_7_CELL_H
+#ifndef INCLUDE_CELL_H_
+#define INCLUDE_CELL_H_
 
 #include "common.h"
 #include "object.h"
@@ -19,13 +17,15 @@ private:
     Ocean *ocean;
 public:
     explicit Cell(Pair p = { 0, 0 }, Ocean* oc = nullptr) :
-    crd(p),
-    obj(nullptr),
-    ocean(oc) {}
+    crd(p), obj(nullptr), ocean(oc) {}
     void init(Pair p, Ocean* oc);
     Object* getObject() const;
     void setObject(Object*);
     void killMe();
+
+    Ocean *getOcean() const;
+
+    const Pair &getCrd() const;
 };
 
-#endif //TP_LAB_7_CELL_H
+#endif  // INCLUDE_CELL_H_

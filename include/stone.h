@@ -1,14 +1,16 @@
-//
-// Created by freeb on 15.03.2021.
-//
+// Copyright 2021 valvarl
 
-#ifndef TP_LAB_7_STONE_H
-#define TP_LAB_7_STONE_H
+#ifndef INCLUDE_STONE_H_
+#define INCLUDE_STONE_H_
 
+#include "object.h"
 
-class stone {
+class Stone: public Object {
+public:
+    explicit Stone(Cell* _cell);
+    ~Stone() override;
 
+    void live() override;
 };
 
-
-#endif //TP_LAB_7_STONE_H
+#endif  // INCLUDE_STONE_H_

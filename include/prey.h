@@ -1,14 +1,23 @@
-//
-// Created by freeb on 15.03.2021.
-//
+// Copyright 2021 valvarl
 
-#ifndef TP_LAB_7_PREY_H
-#define TP_LAB_7_PREY_H
+#ifndef INCLUDE_PREY_H_
+#define INCLUDE_PREY_H_
 
+#include "common.h"
+#include "object.h"
 
-class prey {
-
+class Prey: public Object {
+public:
+    explicit Prey(Cell * _cell);
+    void live() override;
+    void move();
+    ~Prey() override;
 };
 
+class Coral: public Prey {
+public:
+    explicit Coral(Cell * _cell);
+    void live() override;
+};
 
-#endif //TP_LAB_7_PREY_H
+#endif  // INCLUDE_PREY_H_
