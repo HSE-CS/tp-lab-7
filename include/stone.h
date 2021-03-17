@@ -6,7 +6,7 @@
 #include "object.h"
 
 class Stone: public Object {
-public:
+ public:
     explicit Stone(Cell* _cell);
     ~Stone() override;
 

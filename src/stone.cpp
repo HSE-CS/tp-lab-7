@@ -2,13 +2,9 @@
 
 #include "stone.h"
 
-Stone::~Stone() {
-    delete this;
-}
+Stone::~Stone() {}
 
-void Stone::live() {
-
-}
+void Stone::live() {}
 
 Stone::Stone(Cell *_cell) : Object(_cell) {
     type = ObjType::STONE;

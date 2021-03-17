@@ -4,13 +4,11 @@
 #include "cell.h"
 #include "ocean.h"
 
-Prey::~Prey() {
-
-}
+Prey::~Prey() {}
 
 void Prey::live() {
     int x = cell->getCrd().x, y = cell->getCrd().y;
-    if (remain_live-- > 0){
+    if (remain_live-- > 0) {
         move();
     }
     if (!cell->getOcean()->getCells()[x][y].getObject() &&
@@ -93,7 +91,8 @@ Coral::Coral(Cell *_cell) : Prey(_cell) {
 void Coral::live() {
     int x = cell->getCrd().x, y = cell->getCrd().y;
     if (remain_live-- > 0 &&
-            cell->getOcean()->simple_rand() % 100 < CORAL_GENERATE_PROBABILITY) {
+            cell->getOcean()->simple_rand() % 100 <
+            CORAL_GENERATE_PROBABILITY) {
         move();
         if (x != cell->getCrd().x || y != cell->getCrd().y) {
             Cell *_cell = &cell->getOcean()->getCells()[x][y];

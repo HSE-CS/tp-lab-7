@@ -4,11 +4,12 @@
 #define INCLUDE_COMMON_H_
 
 #include <cstddef>
+#include <random>
+// #include <chrono>
 
 typedef size_t coord_t;
 
-struct Pair
-{
+struct Pair {
     coord_t x;
     coord_t y;
 };
@@ -32,8 +33,5 @@ const size_t PREDATOR_LIFE_DURATION = 8;
 const size_t  ENTITY_SPAWN_PROBABILITY = 4;
 
 const size_t PREDATOR_EATING_REWARD = 6;
-
-#include <random>
-#include <chrono>
 
 #endif  // INCLUDE_COMMON_H_

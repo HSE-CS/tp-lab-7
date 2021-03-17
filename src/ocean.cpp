@@ -6,9 +6,9 @@
 #include "ocean.h"
 
 Ocean::Ocean() {
-    simple_rand.seed(
-            std::chrono::system_clock::now().time_since_epoch().count());
-    //simple_rand.seed(44);
+// simple_rand.seed(
+// std::chrono::system_clock::now().time_since_epoch().count());
+    simple_rand.seed(44);
     stuff = std::vector<Object*>{};
     cells = new Cell*[N];
     for (int i = 0; i < N; i++) {
@@ -25,8 +25,7 @@ void Ocean::addObjects() {
             if (simple_rand() % 100 <= ENTITY_SPAWN_PROBABILITY) {
                 int entity_type = static_cast<int>(simple_rand() % (
                         STONE_SPAWN_PROBABILITY + CORAL_SPAWN_PROBABILITY +
-                        PREDATOR_SPAWN_PROBABILITY + PREY_SPAWN_PROBABILITY
-                        ));
+                        PREDATOR_SPAWN_PROBABILITY + PREY_SPAWN_PROBABILITY));
                 if (entity_type >= STONE_SPAWN_PROBABILITY +
                 CORAL_SPAWN_PROBABILITY + PREY_SPAWN_PROBABILITY) {
                     cells[i][j].obj = new Predator{&cells[i][j]};
@@ -38,7 +37,7 @@ void Ocean::addObjects() {
                 } else {
                     cells[i][j].setObject(new Stone{&cells[i][j]});
                 }
-                if (cells[i][j].obj->getType() != ObjType::STONE){
+                if (cells[i][j].obj->getType() != ObjType::STONE) {
                     stuff.push_back(cells[i][j].obj);
                 }
             }
@@ -87,7 +86,8 @@ void Ocean::run() {
             if (stuff[i - deleted]->getRemainLive() <= 0) {
                 int x = stuff[i - deleted]->getCell()->crd.x;
                 int y = stuff[i - deleted]->getCell()->crd.y;
-                if (cells[x][y].getObject() && cells[x][y].getObject()->getType() == stuff[i-deleted]->getType()) {
+                if (cells[x][y].getObject() && cells[x][y].getObject()->
+                getType() == stuff[i-deleted]->getType()) {
                     this->cells[x][y].killMe();
                 }
                 delete stuff[i - deleted];
@@ -99,7 +99,8 @@ void Ocean::run() {
         for (int i = 0; i < stuff.size(); i++) {
             int x = stuff[i]->getCell()->crd.x;
             int y = stuff[i]->getCell()->crd.y;
-            if (cells[x][y].getObject() && cells[x][y].getObject()->getType() == stuff[i]->getType()) stuff[i]->live();
+            if (cells[x][y].getObject() && cells[x][y].getObject()->
+            getType() == stuff[i]->getType()) stuff[i]->live();
         }
 
         std::cout << stuff.size() << std::endl;

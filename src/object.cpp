@@ -10,9 +10,7 @@ void Object::setCell(Cell *c) {
     cell = c;
 }
 
-Object::~Object() {
-
-}
+Object::~Object() {}
 
 ObjType Object::getType() const {
     return type;

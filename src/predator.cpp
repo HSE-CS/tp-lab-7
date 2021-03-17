@@ -12,13 +12,13 @@ Predator::Predator(Cell* _cell) : Prey(_cell) {
 
 void Predator::live() {
     int x = cell->getCrd().x, y = cell->getCrd().y;
-    if (remain_live-- > 0)
-    {
+    if (remain_live-- > 0) {
         hunt();
         if (x == cell->getCrd().x && y == cell->getCrd().y) {
             move();
             if (!cell->getOcean()->getCells()[x][y].getObject() &&
-            cell->getOcean()->simple_rand() % 100 < PREDATOR_GENERATE_PROBABILITY) {
+            cell->getOcean()->simple_rand() % 100 <
+            PREDATOR_GENERATE_PROBABILITY) {
                 cell->getOcean()->getCells()[x][y].setObject(
                         new Predator{&cell->getOcean()->getCells()[x][y]});
                 cell->getOcean()->temporary_stuff.push_back(
