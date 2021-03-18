@@ -15,14 +15,14 @@ class Cell;
 
 class Object {
  protected:
-	Cell* cell;
-	ObjType obj_type;
+  Cell* cell;
+  ObjType obj_type;
 
  public:
-	virtual ~Object() = default;
-	virtual void live() = 0; // жизнь объекта
-	void setCell(Cell*);
-	Cell* getCell() const;
-	ObjType getObjectType();
+  virtual ~Object() = default;
+  virtual void live() = 0; // жизнь объекта
+  void setCell(Cell*);
+  Cell* getCell() const;
+  ObjType getObjectType();
 };
 #endif  // INCLUDE_OBJECT_H_
