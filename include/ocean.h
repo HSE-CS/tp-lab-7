@@ -10,6 +10,7 @@
 #include "prey.h"
 #include "predator.h"
 #include <list>
+#include <ctime>
 
 class Ocean
 {
@@ -29,4 +30,6 @@ public:
 	void run();
 	Cell* get_cell(Pair);
 };
+
+void swapObj(int fist, int second, std::list<Object*>& objects);
 #endif

@@ -33,5 +33,6 @@ public:
     size_t getHunger();
     void init(Cell* c);
     int get_objType();
+    char get_info_object();
 };
 #endif

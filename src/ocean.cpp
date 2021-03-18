@@ -2,6 +2,8 @@
 #include "common.h"
 #include "ocean.h"
 #include "Windows.h"
+#include <vector>
+
 
 Ocean::Ocean() {
 	this->time = 1;
@@ -43,17 +45,18 @@ Ocean::~Ocean() {
 }
 
 void Ocean::print() const {
+	std::string buf = "";
 	for (int i = 0; i < N; i++) {
 		for (int j = 0; j < M; j++) {
 			if (cells[i][j].getObject() == nullptr)
-				std::cout << ' ';
+				buf += ' ';
 			else
-				cells[i][j].getObject()->print_object();
+				buf += cells[i][j].getObject()->get_info_object();
 		}
-		std::cout << std::endl;
+		buf += '\n';
 	}
+	std::cout << buf;
 	std::cout << this->time << std::endl;
-
 	//std::cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 };
 
@@ -78,6 +81,18 @@ void addObjects();
 
 void Ocean::run() {
 	while (true) {
+		srand(std::time(0));
+		size_t size = this->objects.size();
+		for (size_t index = 0; index < size / 10; index++) {
+			int ind_f = rand() % size;
+			int ind_s = rand() % size;
+			if (ind_f == ind_s) {
+				while (ind_f == ind_s)
+					ind_s = rand() % size;
+			}
+			swapObj(ind_f + 1, ind_s + 1, this->objects);
+		}
+
 
 		this->objects.erase(std::remove_if(objects.begin(), objects.end(), [](auto* x) {
 			if (x->get_objType() == -1)
@@ -91,14 +106,17 @@ void Ocean::run() {
 
 		this->print();
 		this->time++;
-		Sleep(500);
+		Sleep(100);
 	}
 }
 
 void Ocean::Create_WORLD() {
-	int area = N * M;
-
+	int N_1 = N;
+	int M_1 = M;
+	int area = (N_1 - 1) * (M_1 - 1);
+	srand(std::time(0));
 	int num_stone = rand() % (((area) / 100) * 3);
+	//int num_stone = ((area) / 100) * 3;
 	for (int index = 0; index < num_stone; index++) {
 		Stone* n_stone = new Stone;
 		Pair p;
@@ -114,7 +132,8 @@ void Ocean::Create_WORLD() {
 		this->addObject(n_stone);
 	}
 
-	int num_coral = rand() % (((area) / 100) * 5);
+	int num_coral = rand() % (((area) / 100) * 1);
+	//int num_coral = ((area) / 100) * 1;
 	for (int index = 0; index < num_coral; index++) {
 		Coral* n_coral = new Coral;
 		Pair p;
@@ -130,7 +149,8 @@ void Ocean::Create_WORLD() {
 		this->addObject(n_coral);
 	}
 
-	int num_fish = rand() % (((area) / 100) * 31);
+	int num_fish = rand() % (((area) / 100) * 35);
+	//int num_fish = ((area) / 100) * 35;
 	for (int index = 0; index < num_fish; index++) {
 		Prey* n_fish = new Prey;
 		Pair p;
@@ -146,7 +166,8 @@ void Ocean::Create_WORLD() {
 		this->addObject(n_fish);
 	}
 
-	int num_pred = rand() % (((area) / 100) * 7);
+	int num_pred = rand() % (((area) / 100) * 5);
+	//int num_pred = ((area) / 100) * 5;
 	for (int index = 0; index < num_pred; index++) {
 		Predator* n_pred = new Predator;
 		Pair p;
@@ -161,4 +182,14 @@ void Ocean::Create_WORLD() {
 		cell->setObject(n_pred);
 		this->addObject(n_pred);
 	}
+}
+
+void swapObj(int fist, int second, std::list<Object*>& objects) {
+	std::list<Object*>::iterator it1 = objects.begin();
+	std::list<Object*>::iterator it2 = it1;
+	int x1 = fist;
+	int x2 = second;
+	for (auto i = 0; i < x1 - 1; i++) it1++; //Смещаем итераторы на нужные позиции
+	for (auto i = 0; i < x2 - 1; i++) it2++;
+	std::swap(*it1, *it2);  //меняем
 }

@@ -45,6 +45,10 @@ void Stone::die() {
     this->objType = -1;
 }
 
+char Stone::get_info_object() {
+    return STONE_N;
+}
+
 
 void Coral::set_time() {
     this->time = 1;
@@ -136,3 +140,8 @@ void Coral::die() {
     this->cell->killMe(this);
     this->objType = -1;
 }
+
+char Coral::get_info_object() {
+    return CORAL_N;
+}
+

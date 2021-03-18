@@ -29,6 +29,7 @@ public:
 	};
 	virtual void live() = 0; // жизнь объекта
 	virtual void print_object() = 0;
+	virtual char get_info_object() = 0;
 	void setCell(Cell* cl);
 	virtual int get_objType() = 0;
 };

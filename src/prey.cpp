@@ -181,3 +181,7 @@ void Prey::die() {
     this->cell->killMe(this);
     this->objType = -1;
 }
+
+char Prey::get_info_object() {
+    return PREY_N;
+}

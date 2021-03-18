@@ -49,6 +49,10 @@ public:
     int get_objType() {
         return objType;
     }
+
+    char get_info_object() {
+        return WALL_NW;
+    }
 };
 
 
@@ -93,6 +97,10 @@ public:
     int get_objType() {
         return objType;
     }
+
+    char get_info_object() {
+        return WALL_NG;
+    }
 };
 
 class Stone : public Object
@@ -108,6 +116,7 @@ public:
     void setCell(Cell* c);
     void init(Cell* c);
     int get_objType();
+    char get_info_object();
 };
 
 class Coral : public Object
@@ -127,6 +136,7 @@ public:
     void init(Cell* c);
     size_t* getReprod();
     int get_objType();
+    char get_info_object();
 };
 
 

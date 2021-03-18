@@ -294,7 +294,7 @@ void Predator::move() {
 void Predator::live() {
     size_t time_for_live = rand() % 100 + 150;
     if (time <= time_for_live && this->getHunger() < 60) {
-        if (this->getHunger() <= 10) {
+        if (this->getHunger() <= 4) {
             this->move();
         }
         else
@@ -313,6 +313,10 @@ void Predator::live() {
 
 void Predator::print_object() {
     std::cout << PREDATOR_N;
+}
+
+char Predator::get_info_object() {
+    return PREDATOR_N;
 }
 
 void Predator::setCell(Cell* c) {
