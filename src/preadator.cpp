@@ -27,7 +27,7 @@ void Predator::live() {
   move(cur_pos, new_pos, ocean);
   live_count -= 1;
   if (live_count <= 0) {
-    ocean->addObjectToDie((Object*)this);
+    ocean->addObjectToDie(reinterpret_cast<Object*>(this));
     cell->setObject(nullptr);
     ocean->decPredatorsNum();
     return;
@@ -69,9 +69,9 @@ void Predator::move(Pair cur_pos, Pair new_pos, Ocean* ocean) {
   }
   if (cell->isEmpty() && other == nullptr || isPrey) {
     this->cell = cell;
-    this->cell->setObject((Object*)this);
+    this->cell->setObject(reinterpret_cast<Object*>(this));
     this->cell->setIsEmpty(false);
     cells[cur_pos.x][cur_pos.y].setIsEmpty(true);
     cells[cur_pos.x][cur_pos.y].setObject(nullptr);
-  } 
+  }
 }

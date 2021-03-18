@@ -34,7 +34,7 @@ void Prey::live() {
   live_count -= 1;
   food_n_to_reproduce -= 1;
   if (live_count <= 0) {
-    ocean->addObjectToDie((Object*)this);
+    ocean->addObjectToDie(reinterpret_cast<Object*>(this));
     cell->setObject(nullptr);
     ocean->decPreysNum();
     return;
@@ -70,31 +70,31 @@ Pair Prey::findPosition(Ocean* ocean) {
   unsigned size_y = ocean->getSize_y();
   // Calculate new coords;
   switch (direction) {
-  case (int)Directions::TOP_LEFT:
+  case static_cast<int>(Directions::TOP_LEFT):
     i_prey -= 1;
     j_prey -= 1;
     break;
-  case (int)Directions::TOP:
+  case static_cast<int>(Directions::TOP):
     i_prey -= 1;
     break;
-  case (int)Directions::TOP_RIGHT:
+  case static_cast<int>(Directions::TOP_RIGHT):
     i_prey -= 1;
     j_prey += 1;
     break;
-  case (int)Directions::RIGHT:
+  case static_cast<int>(Directions::RIGHT):
     j_prey -= 1;
     break;
-  case (int)Directions::LEFT:
+  case static_cast<int>(Directions::LEFT):
     j_prey += 1;
     break;
-  case (int)Directions::BOTTOM_LEFT:
+  case static_cast<int>(Directions::BOTTOM_LEFT):
     i_prey += 1;
     j_prey -= 1;
     break;
-  case (int)Directions::BOTTOM:
+  case static_cast<int>(Directions::BOTTOM):
     i_prey += 1;
     break;
-  case (int)Directions::BOTTOM_RIGHT:
+  case static_cast<int>(Directions::BOTTOM_RIGHT):
     i_prey += 1;
     j_prey += 1;
     break;
@@ -119,7 +119,7 @@ void Prey::move(Pair cur_pos, Pair new_pos, Ocean* ocean) {
   Cell* new_cell = &cells[new_pos.x][new_pos.y];
   if (new_cell->isEmpty() && new_cell->getObject() == nullptr) {
     this->cell = new_cell;
-    this->cell->setObject((Object*)this);
+    this->cell->setObject(reinterpret_cast<Object*>(this));
     this->cell->setIsEmpty(false);
     cells[cur_pos.x][cur_pos.y].setIsEmpty(true);
     cells[cur_pos.x][cur_pos.y].setObject(nullptr);

@@ -9,6 +9,4 @@ Stone::Stone() {
   obj_type = ObjType::STONE;
 }
 
-void Stone::live() {
-
-}
+void Stone::live() {}
