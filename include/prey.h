@@ -1,8 +1,9 @@
 // Copyright 2020 GHA Test Team
 #ifndef INCLUDE_PREY_H_
 #define INCLUDE_PREY_H_
-#include "object.h"
+#include <utility>
 #include <iostream>
+#include "object.h"
 #include "cell.h"
 
 
