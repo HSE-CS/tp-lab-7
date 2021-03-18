@@ -1,6 +1,6 @@
 // Copyright 2020 GHA Test Team
-#ifndef _OBJECT_H_
-#define _OBJECT_H_
+#ifndef INCLUDE_OBJECT_H_
+#define INCLUDE_OBJECT_H_
 
 #include "common.h"
 
@@ -20,7 +20,7 @@ class Object {
 
  public:
   virtual ~Object() = default;
-  virtual void live() = 0; // жизнь объекта
+  virtual void live() = 0;
   void setCell(Cell*);
   Cell* getCell() const;
   ObjType getObjectType();

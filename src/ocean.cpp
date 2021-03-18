@@ -53,8 +53,7 @@ void Ocean::print() const {
     for (unsigned j = 0; j < size_y; j++) {
       if (cells[i][j].isEmpty()) {
         std::cout << EMPTY_CELL;
-      }
-      else {
+      } else {
         switch (cells[i][j].getObject()->getObjectType()) {
         case ObjType::STONE:
           std::cout << STONE_N;
@@ -70,7 +69,8 @@ void Ocean::print() const {
     }
     std::cout << std::endl;
   }
-  std::cout << "PREYS NUM: " << preys_n << "PREDATORS NUM: " << predators_n << std::endl;
+  std::cout << "PREYS NUM: " << preys_n << "PREDATORS NUM: "
+   << predators_n << std::endl;
   Sleep(print_delay);
 }
 

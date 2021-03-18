@@ -1,15 +1,15 @@
 // Copyright 2020 GHA Test Team
-#ifndef _OCEAN_H_
-#define _OCEAN_H_
+#ifndef INCLUDE_OCEAN_H_
+#define INCLUDE_OCEAN_H_
+#include <time.h>
+#include <list>
+#include <vector>
 #include "common.h"
 #include "Cell.h"
 #include "stone.h"
 #include "prey.h"
 #include "predator.h"
-#include <list>
-#include <vector>
 #include "windows.h"
-#include <time.h>
 
 
 class Ocean {

@@ -1,6 +1,6 @@
 // Copyright 2020 GHA Test Team
-#ifndef _STONE_H_
-#define _STONE_H_
+#ifndef INCLUDE_STONE_H_
+#define INCLUDE_STONE_H_
 #include "object.h"
 
 

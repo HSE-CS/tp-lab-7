@@ -1,6 +1,7 @@
 // Copyright 2020 GHA Test Team
-#ifndef _PREDATOR_H_
-#define _PREDATOR_H_
+#ifndef INCLUDE_PREDATOR_H_
+#define INCLUDE_PREDATOR_H_
+#include <utility>
 #include "prey.h"
 
 
