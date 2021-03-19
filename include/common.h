@@ -157,6 +157,50 @@ namespace tie_fighter {
     static const int priority = HIGH_PRIORITY;
 }
 
+namespace whizzbangRebels {
+    static const int sizeX = 3;
+    static const int sizeY = 3;
+    const char hitBox[sizeY][sizeX + 1] = {
+        "+++",
+        "+++",
+        "+++",
+    };
+    static char picture[sizeY][sizeX + 1]{
+        " | ",
+        "-X-",
+        " | ",
+    };
+    static const int color[sizeY][sizeX + 1] = {
+        {-1,               cc(red, orange),   -1},
+        {-cc(red, orange), cc(white, yellow), cc(red, orange)},
+        {-1,               cc(red, orange),   -1},
+    };
+    static const int side = REBELS;
+    static const int priority = HIGH_PRIORITY;
+}
+
+namespace whizzbangImpery {
+    static const int sizeX = 3;
+    static const int sizeY = 3;
+    const char hitBox[sizeY][sizeX + 1] = {
+        "+++",
+        "+++",
+        "+++",
+    };
+    static char picture[sizeY][sizeX + 1]{
+        " | ",
+        "-X-",
+        " | ",
+    };
+    static const int color[sizeY][sizeX + 1] = {
+        {-1,                cc(green, yellow), -1},
+        {cc(green, yellow), cc(white, yellow), cc(green, yellow)},
+        {-1,                cc(green, yellow), -1},
+    };
+    static const int side = IMPERY;
+    static const int priority = HIGH_PRIORITY;
+}
+
 static HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
 static void setCursorPosition(int x, int y) {
@@ -222,9 +266,9 @@ public:
     }
 
 
-    ~StaticObject() {
-        std::cout << "StaticObject End" << '\n';
-    }
+//    ~StaticObject() {
+//        std::cout << "StaticObject End" << '\n';
+//    }
 
     [[nodiscard]] int getSizeY() const {
         return sizeY;
@@ -328,6 +372,34 @@ public:
         tie_fighter::side,
         tie_fighter::priority
     ) {}
+};
+
+class WhizzbangRebels : public StaticObject {
+private:
+public:
+    WhizzbangRebels() : StaticObject(
+        whizzbangRebels::sizeX,
+        whizzbangRebels::sizeY,
+        whizzbangRebels::hitBox,
+        whizzbangRebels::picture,
+        whizzbangRebels::color,
+        whizzbangRebels::side,
+        whizzbangRebels::priority
+    ) {};
+};
+
+class WhizzbangImpery : public StaticObject {
+private:
+public:
+    WhizzbangImpery() : StaticObject(
+        whizzbangImpery::sizeX,
+        whizzbangImpery::sizeY,
+        whizzbangImpery::hitBox,
+        whizzbangImpery::picture,
+        whizzbangImpery::color,
+        whizzbangImpery::side,
+        whizzbangImpery::priority
+    ) {};
 };
 
 

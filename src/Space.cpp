@@ -57,6 +57,7 @@ Cell::Cell(int X,
 
 Space::Space() {
     this->prevCondition.resize(displayHeight);
+    this->space.resize(displayHeight);
     for (int i = 0; i < displayHeight; ++i) {
         for (int j = 0; j < displayWidth; ++j) {
             this->prevCondition[i].push_back(startSpacePicture[i][j]);
@@ -76,7 +77,7 @@ Space::Space() {
                 scolor = white;
             }
             Cell *cell = new Cell(j, i, this->prevCondition[i][j], bcolor, scolor);
-            this->space[i][j] = cell;
+            this->space[i].push_back(cell);
         }
     }
 }
@@ -87,6 +88,126 @@ void Space::setCell(int x, int y, Cell *cell) {
 
 Cell *Space::getCell(int x, int y) {
     return this->space[y][x];
+}
+
+void Space::move(Object *object, int iteration) {
+    if (object->getSpeed() == HIGH_SPEED) {
+        relativeMove(object);
+    }
+    if (object->getSpeed() == MEDIUM_SPEED) {
+        if (iteration % 2 == 0) {
+            relativeMove(object);
+        }
+    }
+    if (object->getSpeed() == LOW_SPEED) {
+        if (iteration % 3 == 0) {
+            relativeMove(object);
+        }
+    }
+}
+
+void Space::relativeMove(Object *object) {
+    Movie::setAreaToNormalCondition(
+        object->getPosX(),
+        object->getPosY(),
+        object->getPosX() + object->getSizeX(),
+        object->getPosY() + object->getSizeY()
+    );
+    switch (object->getDirection()) {
+        case UP:
+            moveUp(object);
+            break;
+        case DOWN:
+            moveDown(object);
+            break;
+        case LEFT:
+            moveLeft(object);
+            break;
+        case RIGHT:
+            moveRight(object);
+            break;
+    }
+}
+
+void Space::moveUp(Object *object) {
+    object->render(object->getPosX(), (object->getPosY() - 1 + displayHeight) % displayHeight);
+    object->setPosy((object->getPosY() - 1 + displayHeight) % displayHeight);
+    for (int i = object->getPosX(); i < object->getPosX() + object->getSizeX(); ++i) {
+        this->space[object->getPosY()][i % displayWidth]->setObject(object);
+        this->space[(object->getPosY() + object->getSizeY()) % displayHeight][i % displayWidth]->setObject(nullptr);
+    }
+}
+
+void Space::moveDown(Object *object) {
+    object->render(object->getPosX(), (object->getPosY() + 1) % displayHeight);
+    object->setPosy((object->getPosY() + 1) % displayHeight);
+    for (int i = object->getPosX(); i < object->getPosX() + object->getSizeX(); ++i) {
+        this->space[(object->getPosY() - 1 + displayHeight) % displayHeight][i % displayWidth]->setObject(nullptr);
+        this->space[(object->getPosY() + object->getSizeY() - 1) % displayHeight][i % displayWidth]->setObject(object);
+    }
+}
+
+void Space::moveLeft(Object *object) {
+    object->setPosX((object->getPosX() - 1 + displayWidth) % displayWidth);
+    object->render(object->getPosX(), object->getPosY());
+    for (int i = object->getPosY(); i < object->getPosY() + object->getSizeY(); ++i) {
+        this->space[i % displayHeight][(object->getPosX() + object->getSizeX() + 1) % displayWidth]->setObject(nullptr);
+        this->space[i % displayHeight][object->getPosX()]->setObject(object);
+    }
+}
+
+void Space::moveRight(Object *object) {
+    object->setPosX((object->getPosX() + 1) % displayWidth);
+    object->render(object->getPosX(), object->getPosY());
+    for (int i = object->getPosY(); i < object->getPosY() + object->getSizeY(); ++i) {
+        this->space[i % displayHeight][(object->getPosX() + object->getSizeX()) % displayWidth]->setObject(object);
+        this->space[i % displayHeight][(object->getPosX() - 1 + displayWidth) %
+                                       displayWidth]->setObject(nullptr);
+    }
+}
+
+Object *Space::shoot(Object *ship, Object *target) {
+    Object *whizzbang;
+    if (ship->getSide() == REBELS) {
+        whizzbang = new Object(WhizzbangRebels(), SUPER);
+    } else {
+        whizzbang = new Object(WhizzbangImpery(), SUPER);
+    }
+    whizzbang->setDirection(ship->getDirection());
+    return whizzbang;
+}
+
+void Space::destroy(Object *object) {
+
+}
+
+Object *Space::scan(Object *ship, int depth) {
+    int scanResult = 0;
+    if (ship->getDirection() == UP) {
+        for (int i = ship->getPosY() - 1; i > ship->getPosY() - 1 - depth; --i) {
+            for (int j = ship->getPosX(); j < ship->getPosX() + ship->getSizeX(); ++j) {
+                auto obj = this->space[(i + displayHeight) % displayHeight][j % displayWidth]->getObject();
+                if (obj != nullptr) {
+                    if (obj->getSide() != ship->getSide()) {
+                        return obj;
+                    }
+                }
+            }
+        }
+    }
+    if (ship->getDirection() == DOWN) {
+        for (int i = ship->getPosY() + ship->getSizeY(); i < ship->getPosY() + ship->getSizeY() + depth; ++i) {
+            for (int j = ship->getPosY(); j < ship->getPosX() + ship->getSizeX(); ++j) {
+                auto obj = this->space[(i + displayHeight) % displayHeight][j % displayWidth]->getObject();
+                if (obj != nullptr) {
+                    if (obj->getSide() != ship->getSide()) {
+                        return obj;
+                    }
+                }
+            }
+        }
+    }
+    return nullptr;
 }
 
 Scene::Scene(int sceneNumber) {
@@ -271,7 +392,7 @@ void Movie::wait(float seconds) {
 void Movie::setAreaToNormalCondition(int startX, int startY, int finishX, int finishY) {
     for (int i = startY; i < finishY; ++i) {
         for (int j = startX; j < finishX; ++j) {
-            setCursorPosition(j, i);
+            setCursorPosition(j % displayWidth, i % displayHeight);
             setConsoleColour(displayColor[i][j]);
             std::cout << display[i][j];
         }

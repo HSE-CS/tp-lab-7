@@ -8,6 +8,20 @@
 #include "Space.h"
 #include "scenes.h"
 
+enum Speed {
+    LOW_SPEED,
+    MEDIUM_SPEED,
+    HIGH_SPEED,
+    SUPER,
+};
+
+enum Direction {
+    LEFT,
+    RIGHT,
+    UP,
+    DOWN,
+    NONE,
+};
 
 class Object {
 private:
@@ -20,8 +34,16 @@ private:
     int priority;
     int id;
     std::string pilotName;
+    int posX, posY;
+    int speed, direction;
 public:
-    explicit Object(const StaticObject &object);
+    explicit Object(const StaticObject &object, int speed);
+
+    void render(int x, int y);
+
+    void turn(int side);
+
+    // Getters & setters:
 
     static int getId();
 
@@ -58,6 +80,20 @@ public:
     const std::vector<std::vector<int>> &getColors() const;
 
     void setColors(const std::vector<std::vector<int>> &colors);
+
+    int getSpeed();
+
+    int getDirection();
+
+    void setDirection(int direction);
+
+    int getPosX();
+
+    void setPosX(int x);
+
+    int getPosY();
+
+    void setPosy(int y);
 };
 
 #endif //TP_LAB_7_OBJECTS_H

@@ -60,6 +60,26 @@ private:
 public:
     explicit Space();
 
+    Object *shoot(Object *ship, Object *target);
+
+    void destroy(Object *object);
+
+    void destroyWithExplosion(Object *object);
+
+    Object *scan(Object *ship, int depth);
+
+    void move(Object *object, int iteration);
+
+    void relativeMove(Object *object);
+
+    void moveUp(Object *object);
+
+    void moveDown(Object *object);
+
+    void moveLeft(Object *object);
+
+    void moveRight(Object *object);
+
     void setCell(int x, int y, Cell *cell);
 
     Cell *getCell(int x, int y);
