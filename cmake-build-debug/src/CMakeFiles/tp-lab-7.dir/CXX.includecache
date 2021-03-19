@@ -47,6 +47,8 @@ iostream
 -
 map
 -
+string
+-
 random
 -
 windows.h

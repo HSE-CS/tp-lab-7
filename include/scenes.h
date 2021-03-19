@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <map>
+#include <string>
 #include <random>
 #include <windows.h>
 #include <MMSystem.h>
@@ -34,6 +35,12 @@ enum SceneNumber {
     STARTCREDITS,
     ENDCREDITS,
 };
+
+static std::string to_dos(std::string from) {
+    char buffer[1000];
+    OemToCharA(from.c_str(), buffer);
+    return buffer;
+}
 
 enum Color {
     black = 0,
@@ -235,6 +242,24 @@ namespace __s_logo_back {
         "bbbcc ",
         "cccc  ",
     };
+
+    static std::string introduction[14]{
+        "SESSION! Software engineering shudders under attack",
+        "ruthless master of algorithms, Count BYCHKOV.",
+        "Students fight on both sides.",
+        "Deadlines are everywhere.",
+        "",
+        "Backed by an army of undergraduates, the merciless",
+        "General FEDOTKIN infiltrated the capital of HSE - Rodionova",
+        "and stole all the grades -",
+        "last hope for a SKIDKA",
+        " ",
+        "While the undergraduate army tries to hide",
+        "from the building on Rodionova Street,",
+        "2 DSC KNIGHTS aboard 'Fusion-1' perform",
+        "mission to rescue lost credits...",
+    };
+
 
     static int sceneNumber = 0;
     static int lsSceneNumber = 0;

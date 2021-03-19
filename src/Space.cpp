@@ -5,7 +5,6 @@
 #include "../include/Space.h"
 #include "../include/Objects.h"
 
-
 Cell::~Cell() {
     this->object = nullptr;
 }
@@ -303,6 +302,28 @@ void Movie::renderSpaceDisplay() {
         setCursorPosition(0, i);
         setConsoleColour(cc(black, white));
         std::cout << display[i];
+    }
+}
+
+void Movie::renderIntroduction() {
+    int leftPadding = 65;
+    for (int i = 0; i < 45; ++i) {
+        int posY = 59 - i;
+        for (int j = 0; j < 14; j++) {
+            if (posY + j < 60 && posY + j > 29) {
+                setCursorPosition(leftPadding, posY + j);
+                setConsoleColour(cc(black, yellow));
+                std::cout << __s_logo_back::introduction[j];
+            }
+        }
+        Movie::wait(1);
+        for (int j = 0; j < 14; ++j) {
+            if (posY + j < 60 && posY + j > 29) {
+                setCursorPosition(0, posY + j);
+                setConsoleColour(cc(black, white));
+                std::cout << display[posY + j];
+            }
+        }
     }
 }
 

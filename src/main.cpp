@@ -18,7 +18,10 @@ void print(T t) {
 }
 
 signed main() {
-    system("color 07");
+    ShowConsoleCursor(false);
+
+    setlocale(LC_ALL, "Russian");
+
 
     Movie::setStartDisplayCondition();
     Movie::setStartDisplayColors();
@@ -44,13 +47,16 @@ signed main() {
     sw.render(450, true);
     Movie::setAreaToNormalCondition(93, 28, 102, 32);
     Scene st(STARTCREDITS);
-    st.render(500, true);
+    st.render(400, true);
     Movie::setAreaToNormalCondition(80, 25, 120, 35);
-    Movie::wait(30);
+    Movie::renderIntroduction();
+
+
+    Movie::wait(60);
 
 //    Scene t(TEST);
 //    t.render(1000, false);
-
+    ShowConsoleCursor(true);
     system("color 07");
     return 0;
 }

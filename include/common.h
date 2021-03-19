@@ -101,6 +101,62 @@ namespace test_ship {
     static const int priority = HIGH_PRIORITY;
 }
 
+namespace x_wing {
+    static const int sizeX = 5;
+    static const int sizeY = 5;
+    const char hitBox[sizeY][sizeX + 1] = {
+        "--+--",
+        "--+--",
+        "+-+-+",
+        "+++++",
+        "-+-+-",
+    };
+    static char picture[sizeY][sizeX + 1]{
+        "  ^  ",
+        "  |  ",
+        "! A !",
+        "==V==",
+        " # # ",
+    };
+    static const int color[sizeY][sizeX + 1] = {
+        {-1,              -1,                  cc(dark_white, black), -1,                  -1},
+        {-1,              -1,                  cc(white, black),      -1,                  -1},
+        {cc(gray, black), -1,                  cc(blue, white),       -1,                  cc(gray, black)},
+        {cc(white, red),  cc(dark_white, red), cc(gray, white),       cc(dark_white, red), cc(white, red)},
+        {-1,              cc(yellow, orange),  -1,                    cc(yellow, orange),  -1},
+    };
+    static const int side = REBELS;
+    static const int priority = HIGH_PRIORITY;
+}
+
+namespace tie_fighter {
+    static const int sizeX = 5;
+    static const int sizeY = 5;
+    const char hitBox[sizeY][sizeX + 1] = {
+        "+---+",
+        "+-+-+",
+        "+++++",
+        "+-+-+",
+        "+---+",
+    };
+    static char picture[sizeY][sizeX + 1]{
+        "/   \\",
+        "|   |",
+        "|-O-|",
+        "|   |",
+        "\\   /",
+    };
+    static const int color[sizeY][sizeX + 1] = {
+        {cc(gray, black), -1,                    -1,                    -1,                    cc(gray, black)},
+        {cc(gray, black), -1,                    cc(dark_white, black), -1,                    cc(gray, black)},
+        {cc(gray, black), cc(dark_white, black), cc(blue, white),       cc(dark_white, black), cc(gray, black)},
+        {cc(gray, black), -1,                    cc(dark_white, black), -1,                    cc(gray, black)},
+        {cc(gray, black), -1,                    -1,                    -1,                    cc(gray, black)},
+    };
+    static const int side = IMPERY;
+    static const int priority = HIGH_PRIORITY;
+}
+
 static HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
 static void setCursorPosition(int x, int y) {
@@ -114,6 +170,16 @@ static void setConsoleColour(unsigned short colour) {
     static const HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
     std::cout.flush();
     SetConsoleTextAttribute(hOut, colour);
+}
+
+static void ShowConsoleCursor(bool showFlag) {
+    HANDLE out = GetStdHandle(STD_OUTPUT_HANDLE);
+
+    CONSOLE_CURSOR_INFO cursorInfo;
+
+    GetConsoleCursorInfo(out, &cursorInfo);
+    cursorInfo.bVisible = showFlag;
+    SetConsoleCursorInfo(out, &cursorInfo);
 }
 
 
@@ -132,7 +198,6 @@ public:
                  int sizeY1,
                  const char (&hitBox1)[U][V],
                  char (&picture1)[U][V],
-//                const char(*picture1)[U][V]
                  const int (&colors1)[U][V],
                  int side1,
                  int priority1) {
@@ -230,13 +295,39 @@ public:
                               test_ship::color,
                               TestShipS::side,
                               TestShipS::priority) {
-        std::cout << *p.picture << '\n';
     }
 
     ~TestShip() {
         std::cout << "TestShip End" << std::endl;
     }
+};
 
+class XWing : public StaticObject {
+private:
+public:
+    XWing() : StaticObject(
+        x_wing::sizeX,
+        x_wing::sizeY,
+        x_wing::hitBox,
+        x_wing::picture,
+        x_wing::color,
+        x_wing::side,
+        x_wing::priority
+    ) {};
+};
+
+class TieFighter : public StaticObject {
+private:
+public:
+    TieFighter() : StaticObject(
+        tie_fighter::sizeX,
+        tie_fighter::sizeY,
+        tie_fighter::hitBox,
+        tie_fighter::picture,
+        tie_fighter::color,
+        tie_fighter::side,
+        tie_fighter::priority
+    ) {}
 };
 
 

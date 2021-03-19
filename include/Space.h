@@ -96,7 +96,9 @@ public:
     static void setDisplayToSpace();
 
     static void renderSpaceDisplay();
+
+    static void renderIntroduction();
 };
 
 
-#endif //TP_LAB_7_SPACE_H
+#endif // TP_LAB_7_SPACE_H
