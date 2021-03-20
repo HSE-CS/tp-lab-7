@@ -1,4 +1,4 @@
-//Copyright soda 2021
+//Copyright SoDa 2021
 
 #ifndef _OCEAN_H_
 #define _OCEAN_H_
@@ -14,12 +14,12 @@
 
 class Ocean
 {
-
-private:
+ private:
 	Cell** cells;
 	std::list<Object*> objects;
 	size_t time;
-public:
+
+ public:
 	Ocean();
 	~Ocean();
 	void print() const;

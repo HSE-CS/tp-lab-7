@@ -1,4 +1,3 @@
-
 #ifndef _PREDATOR_H_
 #define _PREDATOR_H_
 
@@ -10,12 +9,14 @@
 
 class Predator : public Object
 {
-private:
+//fields: - (1) lifetime; (3) number of descendants available for reproduction.
+ private:
     size_t time;
     size_t gender;
     size_t reprod_posib;
     size_t hunger;
-public:
+
+ public:
     void set_time();
     void set_objType();
     void setGender();

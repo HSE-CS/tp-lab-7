@@ -9,16 +9,13 @@ void Predator::set_objType() {
     this->objType = 3;
 }
 
-void Predator::setHuger(size_t hung) {
-    this->hunger = hung;
+void Predator::setCell(Cell* c) {
+    this->cell = c;
 }
 
-int Predator::get_objType() {
-    return objType;
-}
-
-size_t Predator::getGender() {
-    return this->gender;
+void Predator::setGender() {
+    size_t gend = rand() % 2 + 1;
+    this->gender = gend;
 }
 
 void Predator::setPosib() {
@@ -28,10 +25,21 @@ void Predator::setPosib() {
         this->reprod_posib = rand() % 3 + 1;
 }
 
-size_t* Predator::get_posib() {
-    return &(this->reprod_posib);
+void Predator::setHuger(size_t hung) {
+    this->hunger = hung;
 }
 
+void Predator::init(Cell* c) {
+    this->set_time();
+    this->set_objType();
+    this->setCell(c);
+    this->setGender();
+    this->setPosib();
+    this->setHuger(0);
+}
+
+
+// Just like Prey
 void Predator::reproduction() {
     if (this->getGender() == 2) {
         if (this->reprod_posib > 0) {
@@ -118,7 +126,9 @@ void Predator::reproduction() {
     }
 }
 
-
+// If a fish is found in a radius of 1, then we immediately eat it, if not,
+// then we check the radius of 2, and start chasing, if there are no fish in a radius of 2, 
+// then we just move.
 void Predator::hant() {
     Pair p = this->cell->getCord();
     int fishes = 0;
@@ -259,7 +269,7 @@ void Predator::hant() {
     }
 }
 
-
+// Just like Prey
 void Predator::move() {
     Pair p = this->cell->getCord();
     for (int n = 0; n <= 8; n++) {
@@ -290,7 +300,8 @@ void Predator::move() {
     }
 }
 
-// жизнь объекта
+// Predator lives on average 175 times, has a hunger field, hunts when hungry,
+// breeds less than Prey, can die of hunger
 void Predator::live() {
     size_t time_for_live = rand() % 100 + 150;
     if (time <= time_for_live && this->getHunger() < 60) {
@@ -311,37 +322,31 @@ void Predator::live() {
     }
 }
 
-void Predator::print_object() {
-    std::cout << PREDATOR_N;
+void Predator::die() {
+    this->cell->killMe(this);
+    this->objType = -1;
 }
 
-char Predator::get_info_object() {
-    return PREDATOR_N;
+int Predator::get_objType() {
+    return objType;
 }
 
-void Predator::setCell(Cell* c) {
-    this->cell = c;
-}
-
-void Predator::setGender() {
-    size_t gend = rand() % 2 + 1;
-    this->gender = gend;
-}
-
-void Predator::init(Cell* c) {
-    this->set_time();
-    this->set_objType();
-    this->setCell(c);
-    this->setGender();
-    this->setPosib();
-    this->setHuger(0);
+size_t Predator::getGender() {
+    return this->gender;
 }
 
 size_t Predator::getHunger() {
     return this->hunger;
 }
 
-void Predator::die() {
-    this->cell->killMe(this);
-    this->objType = -1;
+size_t* Predator::get_posib() {
+    return &(this->reprod_posib);
+}
+
+void Predator::print_object() {
+    std::cout << PREDATOR_N;
+}
+
+char Predator::get_info_object() {
+    return PREDATOR_N;
 }

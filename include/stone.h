@@ -1,5 +1,3 @@
-
-
 #ifndef _STONE_H_
 #define _STONE_H_
 
@@ -8,22 +6,14 @@
 #include "cell.h"
 #include "ocean.h"
 
+
+//Vertical wall class, for the ocean border
 class Wall_W : public Object
 {
-private:
+ private:
     size_t time = 0;
-public:
-    //Wall_W() {
-    // cell = nullptr;
-    // time = 1;
-    // objType = 4;
-    //}
 
-     //~Wall_W() {
-     // this->time = 0;
-     // this->cell = nullptr;
-     //}
-
+ public:
     void set_time() {
         this->time = 1;
     }
@@ -36,7 +26,7 @@ public:
         time++;
         if (time == 100000)
             time = 1;
-    } // жизнь объекта
+    }
 
     void print_object() {
         std::cout << WALL_NW;
@@ -56,21 +46,13 @@ public:
 };
 
 
+//Horizontal wall class, for the ocean border
 class Wall_G : public Object
 {
-private:
+ private:
     size_t time = 0;
-public:
-    //Wall_G() {
-    //	this->cell = nullptr;
-    //	this->time = 1;
-    //   this->objType = 5;
-    //}
 
-    //~Wall_G() {
-    //	this->time = 0;
-    //	this->cell = nullptr;
-    //}
+ public:
     void set_time() {
         this->time = 1;
     }
@@ -79,7 +61,6 @@ public:
         this->objType = 4;
     }
 
-    // жизнь объекта
     void live() {
         time++;
         if (time == 100000)
@@ -103,11 +84,13 @@ public:
     }
 };
 
+
 class Stone : public Object
 {
-private:
+ private:
     size_t time;
-public:
+
+ public:
     void set_time();
     void set_objType();
     void live();
@@ -119,12 +102,14 @@ public:
     char get_info_object();
 };
 
+
 class Coral : public Object
 {
 private:
     size_t time;
     size_t reprod_posib;
-public:
+
+ public:
     void set_time();
     void set_objType();
     void setReprod();
@@ -138,6 +123,4 @@ public:
     int get_objType();
     char get_info_object();
 };
-
-
 #endif

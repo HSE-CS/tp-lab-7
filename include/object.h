@@ -13,12 +13,14 @@
 enum class ObjType { STONE, CORAL, PREY, PREDATOR, WALL_W, WALL_G };
 
 class Cell;
+
 class Object
 {
-protected:
+ protected:
 	Cell* cell;
 	int objType;
-public:
+
+ public:
 	Object() {
 		cell = nullptr;
 		objType = -1;
@@ -27,7 +29,7 @@ public:
 		cell = nullptr;
 		objType = -1;
 	};
-	virtual void live() = 0; // жизнь объекта
+	virtual void live() = 0;
 	virtual void print_object() = 0;
 	virtual char get_info_object() = 0;
 	void setCell(Cell* cl);

@@ -9,12 +9,13 @@ void Prey::set_objType() {
     this->objType = 2;
 }
 
-int Prey::get_objType() {
-    return objType;
+void Prey::setCell(Cell* c) {
+    this->cell = c;
 }
 
-size_t Prey::getGender() {
-    return this->gender;
+void Prey::setGender() {
+    size_t gend = rand() % 2 + 1;
+    this->gender = gend;
 }
 
 void Prey::setPosib() {
@@ -24,10 +25,16 @@ void Prey::setPosib() {
         this->reprod_posib = rand() % 9 + 1;
 }
 
-size_t* Prey::get_posib() {
-    return &(this->reprod_posib);
+void Prey::init(Cell* c) {
+    this->set_time();
+    this->set_objType();
+    this->setCell(c);
+    this->setGender();
+    this->setPosib();
 }
 
+//If a fish of the opposite gender is found nearby, ready for reproduction, 
+//then we try to create a new representative of the Prey class
 void Prey::reproduction() {
     if (this->getGender() == 2) {
         if (this->reprod_posib > 0) {
@@ -113,6 +120,7 @@ void Prey::reproduction() {
     }
 }
 
+//Attempt to move to a random cell nearby
 void Prey::move() {
     Pair p = this->cell->getCord();
     for (int n = 0; n <= 8; n++) {
@@ -143,7 +151,8 @@ void Prey::move() {
     }
 }
 
-// жизнь объекта
+// Movement and reproduction of fish with an average life time of 75 times, 
+//if they get together in flocks, they form a large colony.
 void Prey::live() {
     size_t time_for_live = rand() % 50 + 50;
     if (time <= time_for_live) {
@@ -156,32 +165,27 @@ void Prey::live() {
     }
 }
 
-void Prey::print_object() {
-    std::cout << PREY_N;
-}
-
-void Prey::setCell(Cell* c) {
-    this->cell = c;
-}
-
-void Prey::setGender() {
-    size_t gend = rand() % 2 + 1;
-    this->gender = gend;
-}
-
-void Prey::init(Cell* c) {
-    this->set_time();
-    this->set_objType();
-    this->setCell(c);
-    this->setGender();
-    this->setPosib();
-}
-
 void Prey::die() {
     this->cell->killMe(this);
     this->objType = -1;
 }
 
+int Prey::get_objType() {
+    return objType;
+}
+
+size_t Prey::getGender() {
+    return this->gender;
+}
+
+size_t* Prey::get_posib() {
+    return &(this->reprod_posib);
+}
+
 char Prey::get_info_object() {
     return PREY_N;
+}
+
+void Prey::print_object() {
+    std::cout << PREY_N;
 }

@@ -1,33 +1,13 @@
 #include "stone.h"
 
+//Stone
+
 void Stone::set_time() {
     this->time = 1;
 }
 
 void Stone::set_objType() {
     this->objType = 0;
-}
-
-int Stone::get_objType() {
-    return this->objType;
-}
-
-
-// жизнь объекта
-void Stone::live() {
-    time++;
-    if (time == 100000) {
-        int res = rand() % 2;
-        if (res)
-            time = 1;
-        else {
-            this->die();
-        }
-    }
-}
-
-void Stone::print_object() {
-    std::cout << STONE_N;
 }
 
 void Stone::setCell(Cell* c) {
@@ -40,15 +20,38 @@ void Stone::init(Cell* c) {
     this->setCell(c);
 }
 
+void Stone::live() {
+    time++;
+    if (time == 100000) {
+        int res = rand() % 2;
+        if (res)
+            time = 1;
+        else {
+            this->die();
+        }
+    }
+}
+
 void Stone::die() {
     this->cell->killMe(this);
     this->objType = -1;
+}
+
+void Stone::print_object() {
+    std::cout << STONE_N;
+}
+
+int Stone::get_objType() {
+    return this->objType;
 }
 
 char Stone::get_info_object() {
     return STONE_N;
 }
 
+
+
+//Coral
 
 void Coral::set_time() {
     this->time = 1;
@@ -58,11 +61,22 @@ void Coral::set_objType() {
     this->objType = 1;
 }
 
-int Coral::get_objType() {
-    return this->objType;
+void Coral::setCell(Cell* c) {
+    this->cell = c;
 }
 
+void Coral::setReprod() {
+    this->reprod_posib = rand() % 7 + 1;
+}
 
+void Coral::init(Cell* c) {
+    this->set_time();
+    this->set_objType();
+    this->setCell(c);
+    this->setReprod();
+}
+
+//If a free cell is found nearby, we try to add a new coral once every 150 years
 void Coral::reproduction() {
     if (this->reprod_posib > 0) {
         if (this->time > 50) {
@@ -100,9 +114,10 @@ void Coral::reproduction() {
     }
 }
 
-// жизнь объекта
+//The average life time of a corolla is 300 times, which is about reproducing 2 descendants,
+//in general, the coral colony will grow slowly, but it is possible that the corals will die out.
 void Coral::live() {
-    size_t time_for_live = rand() % 151 + 301;
+    size_t time_for_live = (rand() % 312) + 139;
     if (time <= time_for_live) {
         time++;
         if (time % 150 == 0)
@@ -113,32 +128,21 @@ void Coral::live() {
     }
 }
 
-void Coral::print_object() {
-    std::cout << CORAL_N;
+void Coral::die() {
+    this->cell->killMe(this);
+    this->objType = -1;
 }
 
-void Coral::setCell(Cell* c) {
-    this->cell = c;
-}
-
-void Coral::setReprod() {
-    this->reprod_posib = rand() % 7 + 1;
-}
-
-void Coral::init(Cell* c) {
-    this->set_time();
-    this->set_objType();
-    this->setCell(c);
-    this->setReprod();
+int Coral::get_objType() {
+    return this->objType;
 }
 
 size_t* Coral::getReprod() {
     return &(this->reprod_posib);
 }
 
-void Coral::die() {
-    this->cell->killMe(this);
-    this->objType = -1;
+void Coral::print_object() {
+    std::cout << CORAL_N;
 }
 
 char Coral::get_info_object() {

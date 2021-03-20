@@ -1,4 +1,3 @@
-
 #ifndef _PREY_H_
 #define _PREY_H_
 
@@ -10,11 +9,13 @@
 
 class Prey : public Object
 {
-private:
+    //fields: - (1) lifetime; (3) number of descendants available for reproduction.
+ private:
     size_t time;
     size_t gender;
     size_t reprod_posib;
-public:
+
+ public:
     void set_time();
     void set_objType();
     void reproduction();

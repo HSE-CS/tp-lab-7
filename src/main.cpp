@@ -1,7 +1,8 @@
 #include "ocean.h"
 
+//Ñreating and launching an ocean
 int main() {
-	Ocean demo;
-	demo.Create_WORLD();
-	demo.run();
+	Ocean MyOcean;
+	MyOcean.Create_WORLD();
+	MyOcean.run();
 }

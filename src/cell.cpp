@@ -1,9 +1,8 @@
-
 #include "cell.h"
 #include "ocean.h"
 
-Object* Cell::getObject() const {
-	return this->obj;
+void Cell::setObject(Object* obj) {
+	this->obj = obj;
 }
 
 void Cell::init(Pair p, Ocean* oc) {
@@ -11,12 +10,16 @@ void Cell::init(Pair p, Ocean* oc) {
 	ocean = oc;
 }
 
-void Cell::setObject(Object* obj) {
-	this->obj = obj;
+Object* Cell::getObject() const {
+	return this->obj;
 }
 
 Ocean* Cell::getOcean() {
 	return this->ocean;
+}
+
+Pair Cell::getCord() {
+	return this->crd;
 }
 
 void Cell::killMe(Object* fdel) {
@@ -25,8 +28,4 @@ void Cell::killMe(Object* fdel) {
 
 void Cell::delObj() {
 	this->obj = nullptr;
-}
-
-Pair Cell::getCord() {
-	return this->crd;
 }

@@ -1,20 +1,23 @@
-
+//Copyright SoDa 2021
 #include "common.h"
 #include "ocean.h"
 #include "Windows.h"
 #include <vector>
 
-
+// Ocean constructor, with the creation of cells and boundary walls
 Ocean::Ocean() {
 	this->time = 1;
 	this->cells = new Cell * [N];
+
 	for (int i = 0; i < N; i++) {
 		cells[i] = new Cell[M];
+
 		for (int j = 0; j < M; j++) {
 			Pair* now_cord = new Pair;
 			now_cord->i = i;
 			now_cord->j = j;
 			cells[i][j].init(*now_cord, this);
+
 			if (i == 0 || i == N - 1) {
 				Wall_G* wall_g = new Wall_G;
 				wall_g->setCell(&cells[i][j]);
@@ -33,8 +36,6 @@ Ocean::Ocean() {
 			}
 		}
 	}
-
-
 }
 
 Ocean::~Ocean() {
@@ -44,72 +45,10 @@ Ocean::~Ocean() {
 	delete[] cells;
 }
 
-void Ocean::print() const {
-	std::string buf = "";
-	for (int i = 0; i < N; i++) {
-		for (int j = 0; j < M; j++) {
-			if (cells[i][j].getObject() == nullptr)
-				buf += ' ';
-			else
-				buf += cells[i][j].getObject()->get_info_object();
-		}
-		buf += '\n';
-	}
-	std::cout << buf;
-	std::cout << this->time << std::endl;
-	//std::cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
-};
-
-void Ocean::delObj(const Object* obj) {
-	this->objects.erase(std::remove(this->objects.begin(),
-		this->objects.end(), obj), this->objects.end());
-	size_t size = this->objects.size();
-	this->objects.resize(size - 1);
-}
-
-Cell* Ocean::get_cell(Pair p) {
-	int i = p.i;
-	int j = p.j;
-	return &this->cells[p.i][p.j];
-}
-
-void Ocean::addObject(Object* obj) {
-	this->objects.push_back(obj);
-}
-
-void addObjects();
-
-void Ocean::run() {
-	while (true) {
-		srand(std::time(0));
-		size_t size = this->objects.size();
-		for (size_t index = 0; index < size / 10; index++) {
-			int ind_f = rand() % size;
-			int ind_s = rand() % size;
-			if (ind_f == ind_s) {
-				while (ind_f == ind_s)
-					ind_s = rand() % size;
-			}
-			swapObj(ind_f + 1, ind_s + 1, this->objects);
-		}
-
-
-		this->objects.erase(std::remove_if(objects.begin(), objects.end(), [](auto* x) {
-			if (x->get_objType() == -1)
-			{
-				x->~Object();
-				return true;
-			}
-			x->live();
-			return false;
-			}), objects.end());
-
-		this->print();
-		this->time++;
-		Sleep(100);
-	}
-}
-
+// Create a random number of fish, predators, rocks, corals, no more than a few percent of the area. 
+// Each time there is a new simulation, there are patterns, but it is impossible to predict the
+// overall result, it is possible that all three cases will appear. 
+// All filled with Prey, Predator ate all, or balance.
 void Ocean::Create_WORLD() {
 	int N_1 = N;
 	int M_1 = M;
@@ -184,12 +123,79 @@ void Ocean::Create_WORLD() {
 	}
 }
 
+// Shuffle a few random objects, as many as possible, but performance is greatly reduced, 
+// then delete the objects that died last time, if the object is alive, then let it live.
+void Ocean::run() {
+	while (true) {
+		srand(std::time(0));
+		size_t size = this->objects.size();
+		for (size_t index = 0; index < size / 10; index++) {
+			int ind_f = rand() % size;
+			int ind_s = rand() % size;
+			if (ind_f == ind_s) {
+				while (ind_f == ind_s)
+					ind_s = rand() % size;
+			}
+			swapObj(ind_f + 1, ind_s + 1, this->objects);
+		}
+
+		this->objects.erase(std::remove_if(objects.begin(), objects.end(), [](auto* x) {
+			if (x->get_objType() == -1)
+			{
+				x->~Object();
+				return true;
+			}
+			x->live();
+			return false;
+			}), objects.end());
+
+		this->print();
+		this->time++;
+		Sleep(500);
+	}
+}
+
+void Ocean::addObject(Object* obj) {
+	this->objects.push_back(obj);
+}
+
+void Ocean::print() const {
+	std::string buf = "";
+	for (int i = 0; i < N; i++) {
+		for (int j = 0; j < M; j++) {
+			if (cells[i][j].getObject() == nullptr)
+				buf += ' ';
+			else
+				buf += cells[i][j].getObject()->get_info_object();
+		}
+		buf += '\n';
+	}
+	std::cout << buf;
+	std::cout << this->time << std::endl;
+	//std::cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+};
+
+void Ocean::delObj(const Object* obj) {
+	this->objects.erase(std::remove(this->objects.begin(),
+		this->objects.end(), obj), this->objects.end());
+	size_t size = this->objects.size();
+	this->objects.resize(size - 1);
+}
+
+Cell* Ocean::get_cell(Pair p) {
+	int i = p.i;
+	int j = p.j;
+	return &this->cells[p.i][p.j];
+}
+
+void addObjects();
+
 void swapObj(int fist, int second, std::list<Object*>& objects) {
 	std::list<Object*>::iterator it1 = objects.begin();
 	std::list<Object*>::iterator it2 = it1;
 	int x1 = fist;
 	int x2 = second;
-	for (auto i = 0; i < x1 - 1; i++) it1++; //Смещаем итераторы на нужные позиции
+	for (auto i = 0; i < x1 - 1; i++) it1++;
 	for (auto i = 0; i < x2 - 1; i++) it2++;
-	std::swap(*it1, *it2);  //меняем
+	std::swap(*it1, *it2);
 }
