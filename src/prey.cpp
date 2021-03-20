@@ -33,16 +33,16 @@ void Prey::live() {
 
 /* move */
 void Prey::movePrey() {
-  // time to breed
+  //  time to breed
   if (this->getBreedCount() <= 0) {
     this->breedPrey();
   }
-  //time to die
+  //  time to die
   if (this->getHealth() <= 0) {
     killPrey();
     return;
   }
-  // move
+  //  move
   this->updateBreedCount();
   this->updateHealth();
   Cell *newPlace = this->cell->findPlace();
