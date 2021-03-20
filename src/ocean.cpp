@@ -76,27 +76,27 @@ Cell **Ocean::getMatrix() {
 }
 
 void Ocean::print() const {
-  HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+//  HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
   for (int i = 0; i < M; ++i) {
     for (int j = 0; j < N; ++j) {
       Object *object = cells[i][j].getObject();
       if (object == nullptr) {
-        SetConsoleTextAttribute(hConsole, 9);
-        std::cout << EMPTY_N;
+      // SetConsoleTextAttribute(hConsole, 9);
+        std::cout << BLUE << EMPTY_N << RESET;
       } else {
         ObjType type = object->getObjType();
         if (type == ObjType::PREY) {
-          SetConsoleTextAttribute(hConsole, 14);
-          std::cout << PREY_N;
+        //  SetConsoleTextAttribute(hConsole, 14);
+          std::cout << YELLOW << PREY_N << RESET;
         } else if (type == ObjType::PREDATOR) {
-          SetConsoleTextAttribute(hConsole, 13);
-          std::cout << PREDATOR_N;
+        //  SetConsoleTextAttribute(hConsole, 13);
+          std::cout << RED << PREDATOR_N << RESET;
         } else if (type == ObjType::STONE) {
-          SetConsoleTextAttribute(hConsole, 8);
-          std::cout << STONE_N;
+        //  SetConsoleTextAttribute(hConsole, 8);
+          std::cout << GREEN << STONE_N << RESET;
         } else if (type == ObjType::EMPTY) {
-          SetConsoleTextAttribute(hConsole, 9);
-          std::cout << EMPTY_N;
+        //  SetConsoleTextAttribute(hConsole, 9);
+          std::cout << BLUE << EMPTY_N << RESET;
         }
       }
     }

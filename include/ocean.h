@@ -1,7 +1,6 @@
 //// Copyright 2021 Ozhiganova Polina
 #ifndef INCLUDE_OCEAN_H_
 #define INCLUDE_OCEAN_H_
-#include <windows.h>
 #include <list>
 #include <vector>
 #include <iostream>
@@ -9,6 +8,11 @@
 #include "cell.h"
 #include "predator.h"
 #include "stone.h"
+#define RESET   "\033[0m"
+#define RED     "\033[31m"  /* Red */
+#define YELLOW  "\033[33m"  /* Yellow */
+#define BLUE    "\033[34m"  /* Blue */
+#define GREEN   "\033[32m"  /* Green */
 
 class Ocean {
  public:
