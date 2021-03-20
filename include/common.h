@@ -14,8 +14,8 @@ struct Pair {
 const size_t N = 10;
 const size_t M = 10;
 
-const size_t PREYLIFECYCLE = 10;
-const size_t PREYREPRODUCECYCLE = 9;
+const size_t PREYLIFECYCLE = 15;
+const size_t PREYREPRODUCECYCLE = 7;
 
 const size_t PREDATORLIFECYCLE = 10;
 const size_t PREDATORREPRODUCECYCLE = 9;

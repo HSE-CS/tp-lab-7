@@ -8,7 +8,7 @@
 class Predator : public Prey {
  public:
   Predator(Cell *cell);
-  bool live(){};
+  void live() override {};
 };
 
 #endif  // INCLUDE_PREDATOR_H_

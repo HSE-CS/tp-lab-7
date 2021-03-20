@@ -16,8 +16,13 @@ void Cell::setObject(Object *obj) {
 }
 
 void Cell::killMe() {
-  if (obj){
+  /*if (obj){
     delete obj;
+    obj = nullptr;
+  }*/
+
+  if (obj){
+    this->ocean->addToBlackList(obj);
     obj = nullptr;
   }
 }

@@ -9,7 +9,7 @@ class Stone : public Object {
   explicit Stone(Cell *cell) : Object(cell) {
     color = GREY;
   }
-  bool live() {};
+  void live() override {};
 };
 
 #endif  // INCLUDE_STONE_H_

@@ -1,7 +1,7 @@
 // Copyright 2021 VadMack
 
 #include <prey.h>
-bool Prey::live() {
+void Prey::live() {
   if (timeToDie-- > 0) {
     Cell *newCell = cell->findCellAround();
     if (newCell) {
@@ -10,11 +10,9 @@ bool Prey::live() {
       cell->setObject(this);
     }
     reproduce();
-    return true;
   } else {
-    /*cell->GetOcean()->removeObject(this);
-    cell->killMe();*/
-    return false;
+    //cell->GetOcean()->removeObject(this);
+    cell->killMe();
   }
 }
 

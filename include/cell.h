@@ -54,7 +54,7 @@ class Object {
   Object(Cell *cell = nullptr) : cell(cell) {
   }
   virtual ~Object() = default;
-  virtual bool live() = 0; // жизнь объекта
+  virtual void live() = 0; // жизнь объекта
 
   Cell *GetCell() const {
     return cell;

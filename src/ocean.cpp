@@ -107,21 +107,20 @@ Cell *Ocean::findCellAround(Pair coord) {
 void Ocean::run() {
   print();
   for (int i = 0; i < 1000; ++i) {
-    /*for (auto &obj : stuff) {
-      if (!obj->live()) {
-        stuff.erase(obj);
-      }
-    }*/
+    for (auto &obj : stuff) {
+      obj->live();
+    }
+    thinTheRanks();
 
-    int end = stuff.size();
-    int index = 0;
+    /*int end = stuff.size();
+    int index = 0;*/
 
-    for (auto obj = stuff.begin(); obj != stuff.end(); obj++) {
+    /*for (auto obj = stuff.begin(); obj != stuff.end(); obj++) {
       if (!(*obj)->live()) {
         stuff.erase(obj++);
         (*obj)->GetCell()->killMe();
       }
-    }
+    }*/
 
     system("clear");
     print();
@@ -135,6 +134,21 @@ void Ocean::addObject(Object *object) {
 
 void Ocean::removeObject(Object *object) {
   //stuff.erase(object);
+}
+
+void Ocean::addToBlackList(Object *obj){
+  if (obj) {
+    this->blackList.push_back(obj);
+  }
+}
+
+void Ocean::thinTheRanks() {
+  for (auto &elem : blackList) {
+
+    stuff.remove(elem);
+    delete(elem);
+  }
+  blackList.clear();
 }
 
 

@@ -11,7 +11,7 @@ class Prey : public Object {
   size_t timeToReproduce;
  public:
   Prey(Cell* cell);
-  bool live();
+  void live() override;
   void reproduce();
 
 };

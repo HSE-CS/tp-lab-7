@@ -15,6 +15,7 @@ class Ocean {
  private:
   Cell **cells;
   std::list<Object *> stuff;
+  std::list<Object *> blackList;
   int sizeN;
   int sizeM;
 
@@ -28,6 +29,9 @@ class Ocean {
 
   void addObject(Object *);
   void removeObject(Object *);
+
+  void addToBlackList(Object *obj);
+  void thinTheRanks();
 };
 
 #endif  // INCLUDE_OCEAN_H_
