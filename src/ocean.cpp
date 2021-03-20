@@ -127,6 +127,24 @@ void Ocean::Create_WORLD() {
 // then delete the objects that died last time, if the object is alive, then let it live.
 void Ocean::run() {
 	while (true) {
+		// breakpoint
+		size_t num_prey = 0;
+		size_t num_predator = 0;
+		for (auto* obj : this->objects) {
+			if (obj->get_objType() == 2)
+				num_prey++;
+			if (obj->get_objType() == 3)
+				num_predator++;
+		}
+		if (num_prey == 0) {
+			std::cout << "End of simulation. No Prey in the Ocean...\n";
+			break;
+		}
+		if (num_predator == 0) {
+			std::cout << "End of simulation. No Predator in the Ocean...\n";
+			break;
+		}
+
 		srand(std::time(0));
 		size_t size = this->objects.size();
 		for (size_t index = 0; index < size / 10; index++) {
