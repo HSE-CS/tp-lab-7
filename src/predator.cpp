@@ -37,12 +37,12 @@ void Predator::movePredator() {
   if (this->getBreedPredator() <= 0) {  // time to breed
     this->breedPredator();
   }
-  //time to die
+  //  time to die
   if (this->getHealthPredator() <= 0) {
     killPredator();
     return;
   }
-  // move
+  //  move
   updateHealthPredator();
   Cell *newPlace;
   newPlace = this->cell->goHunt();

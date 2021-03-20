@@ -1,6 +1,6 @@
 //// Copyright 2021 Ozhiganova Polina
-#include <random>
 #include <zconf.h>
+#include <random>
 #include "ocean.h"
 static std::mt19937_64 rng;
 
@@ -27,7 +27,7 @@ Ocean::~Ocean() {
 void Ocean::fullHouse(float preyPerc,
                       float predatorPerc,
                       float stonePerc) {
-  int preyAmount = int(preyPerc * M * N);
+  int preyAmount = static_cast<int>(preyPerc * M * N);
   for (int i = 0; i < preyAmount; ++i) {
     while (true) {
       int x = static_cast<int>(rng() % M);
@@ -41,7 +41,7 @@ void Ocean::fullHouse(float preyPerc,
       }
     }
   }
-  int predatorAmount = int(predatorPerc * M * N);
+  int predatorAmount = static_cast<int>(predatorPerc * M * N);
   for (int i = 0; i < predatorAmount; ++i) {
     while (true) {
       int x = static_cast<int>(rng() % M);
@@ -55,7 +55,7 @@ void Ocean::fullHouse(float preyPerc,
       }
     }
   }
-  int stoneAmount = int(stonePerc * M * N);
+  int stoneAmount = static_cast<int>(stonePerc * M * N);
   for (int i = 0; i < stoneAmount; ++i) {
     while (true) {
       int x = static_cast<int>(rng() % M);

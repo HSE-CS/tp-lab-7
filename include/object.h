@@ -1,6 +1,6 @@
+//// Copyright 2021 Ozhiganova Polina
 #ifndef INCLUDE_OBJECT_H_
 #define INCLUDE_OBJECT_H_
-
 #include "common.h"
 
 #define STONE_N '#'

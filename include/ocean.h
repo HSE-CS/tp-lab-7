@@ -1,11 +1,10 @@
 //// Copyright 2021 Ozhiganova Polina
 #ifndef INCLUDE_OCEAN_H_
 #define INCLUDE_OCEAN_H_
-
+#include <windows.h>
 #include <list>
 #include <vector>
 #include <iostream>
-#include <windows.h>
 #include "object.h"
 #include "cell.h"
 #include "predator.h"

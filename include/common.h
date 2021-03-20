@@ -5,8 +5,8 @@
 typedef int coord_t;
 
 struct Pair {
-  coord_t x; // 0..M-1
-  coord_t y; // 0..N-1
+  coord_t x;  //  0..M-1
+  coord_t y;  //  0..N-1
 };
 
 /* field size */

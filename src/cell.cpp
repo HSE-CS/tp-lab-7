@@ -48,7 +48,7 @@ Cell *Cell::findPlace() {
   } else {
     std::uniform_int_distribution<int>
         uni(0, emptyCells.size() - 1);
-    int random_integer = int(uni(rng));
+    int random_integer = uni(rng);
     return emptyCells[random_integer];
   }
 }
@@ -95,7 +95,7 @@ Cell *Cell::goHunt() const {
   } else {
     std::uniform_int_distribution<int>
         uni(0, emptyCells.size() - 1);
-    int random_integer = int(uni(rng));
+    int random_integer = uni(rng);
     return emptyCells[random_integer];
   }
 }

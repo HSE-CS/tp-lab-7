@@ -1,7 +1,6 @@
 //// Copyright 2021 Ozhiganova Polina
 #ifndef INCLUDE_PREY_H_
 #define INCLUDE_PREY_H_
-
 #include "stone.h"
 
 class Prey : public Stone {
@@ -10,7 +9,7 @@ class Prey : public Stone {
       Stone(type, cell),
       ot(type),
       breedCount(PREY_BREED_PERIOD),
-      healthCount(PREY_LIFE_PERIOD) {};
+      healthCount(PREY_LIFE_PERIOD) {}
   void live() override;
   /* work with breed */
   [[nodiscard]] int getBreedCount() const;
@@ -33,4 +32,4 @@ class Prey : public Stone {
   int healthCount;
 };
 
-#endif //TP_LAB_7_INCLUDE_PREY_H_
+#endif  //  INCLUDE_PREY_H_

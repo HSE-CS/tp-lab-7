@@ -56,7 +56,7 @@ void Prey::movePrey() {
 
 /* breed prey */
 void Prey::breedPrey() {
-  Cell *newPlace = this->cell->findPlace(); // for parent prey
+  Cell *newPlace = this->cell->findPlace();  //  for parent prey
   if (newPlace == nullptr) {
     return;
   }

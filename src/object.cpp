@@ -11,7 +11,6 @@ Object::~Object() {
 }
 
 void Object::live() {
-
 }
 
 void Object::setCell(Cell *cl) {

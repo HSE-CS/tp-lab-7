@@ -1,7 +1,6 @@
 //// Copyright 2021 Ozhiganova Polina
 #ifndef INCLUDE_PREDATOR_H_
 #define INCLUDE_PREDATOR_H_
-
 #include "prey.h"
 
 class Predator : public Prey {
@@ -10,7 +9,7 @@ class Predator : public Prey {
       Prey(type, cell),
       ot(type),
       breedCount(PREDATOR_BREED_PERIOD),
-      healthCount(PREDATOR_LIFE_PERIOD) {};
+      healthCount(PREDATOR_LIFE_PERIOD) {}
   void live() override;
   /* work with breed */
   [[nodiscard]] int getBreedPredator() const;
@@ -33,4 +32,4 @@ class Predator : public Prey {
   int healthCount;
 };
 
-#endif  //  TP_LAB_7_INCLUDE_PREDATOR_H_
+#endif  //  INCLUDE_PREDATOR_H_
