@@ -2,9 +2,9 @@
 #ifndef INCLUDE_OCEAN_H_
 #define INCLUDE_OCEAN_H_
 
+#include "Common.h"
 #include "Cell.h"
 #include <list>
-#include "common.h"
 
 class Object;
 class Cell;
