@@ -1,5 +1,5 @@
 // Copyright Baklanov 2021
-#include "cell.h"
+#include "Cell.h"
 
 void Cell::init(Pair p, Ocean* oc) {
     coord = p;

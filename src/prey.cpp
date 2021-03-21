@@ -1,6 +1,6 @@
 // Copyright Baklanov 2021
-#include "prey.h"
-#include "common.h"
+#include "Prey.h"
+#include "Common.h"
 #include <iostream>
 #include <random>
 

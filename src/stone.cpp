@@ -1,5 +1,5 @@
 // Copyright Baklanov 2021
-#include "stone.h"
+#include "Stone.h"
 
 void STONE::live() {
     fastness -= std::rand() % 1;

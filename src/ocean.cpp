@@ -1,10 +1,10 @@
 // Copyright Baklanov 2021
-#include "ocean.h"
-#include "cell.h"
-#include "prey.h"
-#include "predator.h"
-#include "stone.h"
-#include "common.h"
+#include "Ocean.h"
+#include "Cell.h"
+#include "Prey.h"
+#include "Predator.h"
+#include "Stone.h"
+#include "Common.h"
 #include <iostream>
 #include <list>
 

@@ -1,12 +1,12 @@
 // Copyright Baklanov 2021
-#include "predator.h"
-#include "prey.h"
+#include "Predator.h"
+#include "Prey.h"
 #include <cmath>
 
 Object* Predator::Searching(Ocean* ocean) {
     readyForCatch = false;
     Object* targetObj = nullptr;
-    double target = INT_MAX;
+    double target = 100000000;
     int targdiffX = 0;
     int targdiffY = 0;
     for (Object* obj : (*ocean).getStuff()) {
