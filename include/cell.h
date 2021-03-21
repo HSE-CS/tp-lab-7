@@ -2,9 +2,9 @@
 #ifndef INCLUDE_CELL_H_
 #define INCLUDE_CELL_H_
 
-#include <iostream>
 #include "common.h"
-#include "Ocean.h"
+#include "ocean.h"
+#include <iostream>
 
 class Ocean;
 class Object;

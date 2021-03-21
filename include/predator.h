@@ -2,7 +2,7 @@
 #ifndef INCLUDE_PREDATOR_H_
 #define INCLUDE_PREDATOR_H_
 
-#include "Ocean.h"
+#include "ocean.h"
 #include "common.h"
 
 class Object;

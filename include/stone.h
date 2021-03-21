@@ -2,9 +2,9 @@
 #ifndef INCLUDE_STONE_H_
 #define INCLUDE_STONE_H_
 
-#include "Cell.h"
-#include <list>
+#include "cell.h"
 #include "common.h"
+#include <list>
 
 class Object;
 
