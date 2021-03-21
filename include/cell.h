@@ -10,7 +10,6 @@ class Ocean;
 class Object;
 
 class Cell {
-    friend Ocean;
  private:
     Pair coord;
     Object* obj;
@@ -41,5 +40,6 @@ class Cell {
         isempty = true;
         delete obj;
     }
+    friend Ocean;
 };
 #endif  // INCLUDE_CELL_H_

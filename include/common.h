@@ -1,6 +1,14 @@
-﻿// Copyright Baklanov 2021
+﻿//  Copyright Baklanov 2021
 #ifndef INCLUDE_COMMON_H_
 #define INCLUDE_COMMON_H_
+
+#define STONE_N '#'
+#define CORAL_N '*'
+#define PREY_N 'f'
+#define PREDATOR_N 'S'
+
+#include "ocean.h"
+#include <string>
 
 typedef size_t coord_t;
 
@@ -12,19 +20,6 @@ struct Pair {
 
 const size_t N = 20;
 const size_t M = 50;
-#endif
-
-#ifndef _OBJECT_H_
-#define _OBJECT_H_
-
-#include <string>
-
-#define STONE_N '#'
-#define CORAL_N '*'
-#define PREY_N 'f'
-#define PREDATOR_N 'S'
-
-#include "Ocean.h"
 
 enum class ObjType { STONE, CORAL, PREY, PREDATOR };
 enum class Move {UPLEFT, UP, UPRIGHT, RIGHT,
