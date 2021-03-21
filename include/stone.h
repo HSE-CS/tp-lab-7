@@ -11,7 +11,7 @@
 
 class Stone : public Object {
  public:
-  Stone(Cell* startCell):
+  explicit Stone(Cell* startCell):
   Object(ObjType::CORAL, startCell) {}
   ~Stone() override;
   void live() override;

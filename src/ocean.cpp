@@ -101,7 +101,7 @@ void Ocean::createInitial(float preyPercent,
 void Ocean::run() {
   sleep(2);
   while (true) {
-    for (Object* obj : stuff){
+    for (Object* obj : stuff) {
       if (obj == nullptr || obj->isDead())
         continue;
       obj->live();
@@ -165,7 +165,7 @@ Cell* Ocean::find(Cell *centerCell, bool (*condition)(Cell*)) {
   // left
   if (crd.y > 0 && condition(getCell({crd.x, crd.y - 1})))
     availableCells.push_back(getCell({crd.x, crd.y - 1}));
-  //right
+  // right
   if (crd.y + 1 < size.y && condition(getCell({crd.x, crd.y + 1})))
     availableCells.push_back(getCell({crd.x, crd.y + 1}));
 
