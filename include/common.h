@@ -78,4 +78,4 @@ class Coral : public Object {
      ~Coral() {}
      void live() override;
 };
-#endif
+#endif  // INCLUDE_COMMON_H_

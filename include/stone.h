@@ -20,4 +20,4 @@ class STONE : public Object {
         return fastness;
     }
 };
-#endif
+#endif  // INCLUDE_STONE_H_

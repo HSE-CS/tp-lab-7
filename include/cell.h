@@ -11,13 +11,13 @@ class Object;
 
 class Cell {
     friend Ocean;
-private:
+ private:
     Pair coord;
     Object* obj;
     Ocean* ocean;
     bool isempty;
 
-public:
+ public:
     explicit Cell(Pair p = { 0, 0 }, Ocean* oc = nullptr) :
         coord(p),
         obj(nullptr),
