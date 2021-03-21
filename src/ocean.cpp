@@ -48,7 +48,7 @@ Ocean::~Ocean() {
 }
 
 void Ocean::print() const {
-  system("cls");
+  // system("cls");
   for (unsigned i = 0; i < size_x; i++) {
     for (unsigned j = 0; j < size_y; j++) {
       if (cells[i][j].isEmpty()) {
