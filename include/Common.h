@@ -14,6 +14,17 @@ enum class ObjType { STONE, CORAL, PREY, PREDATOR };
 enum class Move {UPLEFT, UP, UPRIGHT, RIGHT,
     DOWNRIGHT, DOWN, DOWNLEFT, LEFT, STAY};
 
+typedef size_t coord_t;
+
+
+struct Pair {
+    coord_t x;
+    coord_t y;
+};
+
+const size_t N = 20;
+const size_t M = 50;
+
 class Cell;
 class Ocean;
 
@@ -62,15 +73,4 @@ class Coral : public Object {
      ~Coral() {}
      void live() override;
 };
-
-typedef size_t coord_t;
-
-
-struct Pair {
-    coord_t x;
-    coord_t y;
-};
-
-const size_t N = 20;
-const size_t M = 50;
 #endif  // INCLUDE_COMMON_H_
