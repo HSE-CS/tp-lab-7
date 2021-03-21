@@ -1,7 +1,7 @@
 //  Copyright © 2020 Сапожников Андрей Михайлович. All rights reserved.
 
-#ifndef _OBJECT_H_
-#define _OBJECT_H_
+#ifndef INCLUDE_OBJECT_H_
+#define INCLUDE_OBJECT_H_
 
 #include "common.h"
 
@@ -26,4 +26,4 @@ class Object {
   bool isDead();
 };
 
-#endif // _OBJECT_H_
+#endif // INCLUDE_OBJECT_H_

@@ -1,7 +1,7 @@
 //  Copyright © 2020 Сапожников Андрей Михайлович. All rights reserved.
 
-#ifndef _CELL_H_
-#define _CELL_H_
+#ifndef INCLUDE_CELL_H_
+#define INCLUDE_CELL_H_
 
 //#include "common.h"
 #include "object.h"
@@ -27,4 +27,4 @@ class Cell {
   friend Ocean;
 };
 
-#endif // _CELL_H_
+#endif // INCLUDE_CELL_H_

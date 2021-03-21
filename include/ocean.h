@@ -1,7 +1,7 @@
 //  Copyright © 2020 Сапожников Андрей Михайлович. All rights reserved.
 
-#ifndef _OCEAN_H_
-#define _OCEAN_H_
+#ifndef INCLUDE_OCEAN_H_
+#define INCLUDE_OCEAN_H_
 
 #include <list>
 #include <vector>
@@ -40,4 +40,4 @@ class Ocean
   Cell* findPrey(Cell* centerCell);
   Cell* getCell(Pair crd);
 };
-#endif // _OCEAN_H_
+#endif // INCLUDE_OCEAN_H_
