@@ -5,7 +5,7 @@
 #include <list>
 #include <vector>
 #include "../include/common.h"
-#include "../include/Cell.h"
+#include "../include/cell.h"
 #include "../include/stone.h"
 #include "../include/prey.h"
 #include "../include/predator.h"
