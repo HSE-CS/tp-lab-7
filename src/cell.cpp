@@ -1,6 +1,6 @@
 // Copyright 2021 VadMack
 
-#include "cell.h"
+#include "../include/cell.h"
 
 Object *Cell::getObject() const {
   return obj;
@@ -11,14 +11,14 @@ void Cell::setObject(Object *obj) {
 }
 
 void Cell::killMe() {
-  if (obj){
+  if (obj) {
     this->ocean->addToBlackList(obj);
     obj = nullptr;
   }
 }
 
 Cell *Cell::findCellAround() {
-    return ocean->findCellAround({crd.x, crd.y});
+  return ocean->findCellAround({crd.x, crd.y});
 }
 
 Cell *Cell::findCellWithPrey() {
@@ -33,7 +33,7 @@ void Cell::SetOcean(Ocean *ocean) {
   Cell::ocean = ocean;
 }
 
-void Cell::init(Pair p, Ocean* oc){
+void Cell::init(Pair p, Ocean *oc) {
   this->crd = p;
   this->ocean = oc;
 }

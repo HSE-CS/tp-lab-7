@@ -9,7 +9,11 @@
 #include "../include/stone.h"
 unsigned int seed = time(nullptr);
 
-Ocean::Ocean(int sizeM, int sizeN, int numOfStones, int numOfPreys, int numOfPredators) {
+Ocean::Ocean(int sizeM,
+             int sizeN,
+             int numOfStones,
+             int numOfPreys, int
+             numOfPredators) {
   this->sizeM = sizeM;
   this->sizeN = sizeN;
   cells = new Cell *[sizeM];
@@ -26,7 +30,6 @@ Ocean::Ocean(int sizeM, int sizeN, int numOfStones, int numOfPreys, int numOfPre
 
 void Ocean::addObjects(ObjType type, int number) {
   for (int i = 0; i < number;) {
-
     int x = rand_r(&seed) % sizeM;
     int y = rand_r(&seed) % sizeN;
 

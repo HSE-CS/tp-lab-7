@@ -13,15 +13,15 @@ class Object {
   std::string color;
 
  public:
-  Object(Cell *cell = nullptr);
+  explicit Object(Cell *cell = nullptr);
   virtual ~Object();
-  virtual void live() = 0; // жизнь объекта
+  virtual void live() = 0;
 
   Cell *GetCell() const {
     return cell;
   }
 
-  void setCell(Cell *cell){
+  void setCell(Cell *cell) {
     this->cell = cell;
   }
 
@@ -31,7 +31,6 @@ class Object {
   void SetColor(const std::string &color) {
     Object::color = color;
   }
-
 };
 
 #endif  // INCLUDE_OBJECT_H_

@@ -3,11 +3,11 @@
 #ifndef INCLUDE_PREDATOR_H_
 #define INCLUDE_PREDATOR_H_
 
-#include "prey.h"
-#include "cell.h"
+#include "../include/prey.h"
+#include "../include/cell.h"
 class Predator : public Prey {
  public:
-  Predator(Cell *cell);
+  explicit Predator(Cell *cell);
   void live() override;
   void reproduce() override;
 };

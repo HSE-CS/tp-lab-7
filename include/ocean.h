@@ -3,15 +3,15 @@
 #ifndef INCLUDE_OCEAN_H_
 #define INCLUDE_OCEAN_H_
 
-#include "common.h"
-#include "cell.h"
 #include <list>
+#include "../include/common.h"
+#include "../include/cell.h"
+
 
 class Cell;
 class Object;
 enum class ObjType;
 class Ocean {
-
  private:
   Cell **cells;
   std::list<Object *> stuff;
@@ -20,7 +20,11 @@ class Ocean {
   int sizeM;
 
  public:
-  Ocean(int sizeN, int sizeM, int numOfStones, int numOfPreys, int numOfPredators);
+  Ocean(int sizeN,
+        int sizeM,
+        int numOfStones,
+        int numOfPreys,
+        int numOfPredators);
   ~Ocean() = default;
   void print() const;
   void addObjects(ObjType type, int number);
