@@ -1,5 +1,5 @@
 //// Copyright 2021 Ozhiganova Polina
-#include "object.h"
+#include "../include/object.h"
 
 Object::Object(ObjType type, Cell *cl) {
   this->ot = type;

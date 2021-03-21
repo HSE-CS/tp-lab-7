@@ -1,5 +1,5 @@
 //// Copyright 2021 Ozhiganova Polina
-#include "ocean.h"
+#include "../include/ocean.h"
 
 int main() {
   Ocean *ocean = new Ocean();

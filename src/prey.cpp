@@ -1,7 +1,7 @@
 //// Copyright 2021 Ozhiganova Polina
-#include "prey.h"
-#include "cell.h"
-#include "ocean.h"
+#include "../include/prey.h"
+#include "../include/cell.h"
+#include "../include/ocean.h"
 
 /* breed */
 int Prey::getBreedCount() const {

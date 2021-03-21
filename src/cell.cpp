@@ -1,7 +1,7 @@
 //// Copyright 2021 Ozhiganova Polina
 #include <random>
-#include "cell.h"
-#include "ocean.h"
+#include "../include/cell.h"
+#include "../include/ocean.h"
 
 std::random_device rd;
 std::mt19937 rng(rd());

@@ -1,7 +1,7 @@
 //// Copyright 2021 Ozhiganova Polina
-#include "predator.h"
-#include "ocean.h"
-#include "cell.h"
+#include "../include/predator.h"
+#include "../include/ocean.h"
+#include "../include/cell.h"
 
 /* breed */
 int Predator::getBreedPredator() const {

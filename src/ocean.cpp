@@ -1,7 +1,7 @@
 //// Copyright 2021 Ozhiganova Polina
 #include <zconf.h>
 #include <random>
-#include "ocean.h"
+#include "../include/ocean.h"
 static std::mt19937_64 rng;
 
 /* OCEAN */
