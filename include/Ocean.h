@@ -1,24 +1,22 @@
 // Copyright Baklanov 2021
-#ifndef _OCEAN_H_
-#define _OCEAN_H_
+#ifndef INCLUDE_OCEAN_H_
+#define INCLUDE_OCEAN_H_
 
-#include "common.h"
 #include "Cell.h"
+#include "common.h"
 #include <list>
 
 class Object;
 class Cell;
 
-class Ocean
-{
-
-private:
+class Ocean {
+ private:
     Cell** cells;
     std::list<Object*> stuff;
     int size_x;
     int size_y;
 
-public:
+ public:
     Ocean(int x, int y);
     ~Ocean() {
         stuff.clear();
@@ -38,4 +36,4 @@ public:
     }
     friend Object;
 };
-#endif
+#endif  // INCLUDE_OCEAN_H_

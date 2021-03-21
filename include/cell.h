@@ -1,15 +1,15 @@
-#ifndef _CELL_H_
-#define _CELL_H_
+// Copyright Baklanov 2021
+#ifndef INCLUDE_CELL_H_
+#define INCLUDE_CELL_H_
 
-#include "common.h"
 #include "Ocean.h"
 #include <iostream>
+#include "common.h"
 
 class Ocean;
 class Object;
 
-class Cell
-{
+class Cell {
     friend Ocean;
 private:
     Pair coord;
@@ -26,22 +26,20 @@ public:
     void init(Pair p, Ocean* oc);
     Object* getObject() {
         return obj;
-    };
+    }
     void setObject(Object* a) {
         obj = a;
         if (a)
             isempty = false;
         else
-            isempty=true;
-
-    };
+            isempty = true;
+    }
     bool isEmpty() {
         return isempty;
-    };
+    }
     void killMe() {
         isempty = true;
         delete obj;
     }
-
 };
-#endif
+#endif  // INCLUDE_CELL_H_

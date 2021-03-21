@@ -1,13 +1,13 @@
-﻿#ifndef _COMMON_H_
-#define _COMMON_H_
+﻿// Copyright Baklanov 2021
+#ifndef INCLUDE_COMMON_H_
+#define INCLUDE_COMMON_H_
 
 typedef size_t coord_t;
 
 
-struct Pair
-{
-    coord_t x; // 0..M-1
-    coord_t y; // 0..N-1
+struct Pair {
+    coord_t x;
+    coord_t y;
 };
 
 const size_t N = 20;
@@ -27,26 +27,26 @@ const size_t M = 50;
 #include "Ocean.h"
 
 enum class ObjType { STONE, CORAL, PREY, PREDATOR };
-enum class Move {UPLEFT, UP, UPRIGHT, RIGHT, DOWNRIGHT, DOWN, DOWNLEFT, LEFT, STAY};
+enum class Move {UPLEFT, UP, UPRIGHT, RIGHT,
+    DOWNRIGHT, DOWN, DOWNLEFT, LEFT, STAY};
 
 class Cell;
 class Ocean;
 
-class Object
-{
-protected:
+class Object {
+ protected:
     Cell* cell;
     ObjType type;
     Pair coord;
     Move prepairForMove;
 
-public:
+ public:
     Object(ObjType type, Pair coord_, Cell* cell_) :
-        type(type), coord(coord_), cell(cell_), prepairForMove(Move::STAY) {};
+        type(type), coord(coord_), cell(cell_), prepairForMove(Move::STAY) {}
     virtual ~Object();
-    void Reproduction(Ocean& ocean_);
-    void PrepForMOVE(Move move, Ocean& ocean_);
-    virtual void live() = 0; // жизнь объекта
+    void Reproduction(Ocean* ocean_);
+    void PrepForMOVE(Move move, Ocean* ocean_);
+    virtual void live() = 0;
     void setCell(Cell* a);
     ObjType getType() {
         return type;
@@ -75,9 +75,7 @@ class Coral : public Object {
  public:
      Coral(Pair coord, Cell* cell) :
          Object(ObjType::CORAL, coord, cell) {}
-     ~Coral() {
-
-     }
+     ~Coral() {}
      void live() override;
 };
 #endif

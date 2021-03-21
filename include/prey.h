@@ -1,10 +1,10 @@
 // Copyright Baklanov 2021
-#ifndef _PREY_H_
-#define _PREY_H_
+#ifndef INCLUDE_PREY_H_
+#define INCLUDE_PREY_H_
 
-#include "common.h"
 #include "Cell.h"
 #include <list>
+#include "common.h"
 
 class Object;
 
@@ -15,5 +15,5 @@ class Prey: public Object {
     ~Prey() override;
     void live() override;
 };
-#endif
+#endif  // INCLUDE_PREY_H_
 
