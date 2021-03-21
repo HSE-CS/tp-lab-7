@@ -7,5 +7,4 @@ Stone::Stone(Cell *cell) : Object(cell) {
 }
 
 void Stone::live() {
-
 }

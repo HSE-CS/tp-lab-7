@@ -20,7 +20,9 @@ void Prey::live() {
             this->cell->setObject(this);
         }
         this->giveBirth();
-    } else this->cell->killMe();
+    } else {
+        this->cell->killMe();
+    }
 }
 
 void Prey::giveBirth() {

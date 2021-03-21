@@ -31,10 +31,10 @@ Ocean *Cell::getOcean() {
 }
 
 Cell *Cell::findEmptyCell() {
-    return this->ocean->findEmptyCell({this->crd.x,this->crd.y});
+    return this->ocean->findEmptyCell({this->crd.x, this->crd.y});
 }
 
 Cell *Cell::findPrey() {
-    return this->ocean->findPrey({this->crd.x,this->crd.y});
+    return this->ocean->findPrey({this->crd.x, this->crd.y});
 }
 
