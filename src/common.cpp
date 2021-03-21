@@ -67,7 +67,8 @@ void Object::Reproduction(Ocean* ocean_) {
             }
             break;
         case Move::DOWNRIGHT:
-            if ((coord.x != ocean_->getSizeX()) && (coord.y != ocean_->getSizeY())
+            if ((coord.x != ocean_->getSizeX())
+                && (coord.y != ocean_->getSizeY())
                 &&(ocean_->cells[coord.x + 1][coord.y + 1].isEmpty())) {
                 newObject->MoveDOWNRIGHT();
                 flag = 1;

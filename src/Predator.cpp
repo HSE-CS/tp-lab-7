@@ -21,7 +21,8 @@ Object* Predator::Searching(Ocean* ocean) {
                 target = bufTarget;
                 readyForCatch = true;
                 break;
-            } else if ((obj->getType() == ObjType::PREY) && (target > bufTarget)) {
+            } else if ((obj->getType() == ObjType::PREY)
+                && (target > bufTarget)) {
                 targetObj = obj;
                 targdiffX = diffX;
                 targdiffY = diffY;
