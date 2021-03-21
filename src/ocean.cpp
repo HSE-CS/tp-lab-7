@@ -71,7 +71,7 @@ void Ocean::print() const {
   }
   std::cout << "PREYS NUM: " << preys_n << "PREDATORS NUM: "
    << predators_n << std::endl;
-  Sleep(print_delay);
+  // Sleep(print_delay);
 }
 
 void Ocean::createObjects() {
