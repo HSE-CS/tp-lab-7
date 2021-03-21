@@ -5,25 +5,25 @@
 #include "../include/ocean.h"
 
 Object::~Object() {
-	cell->setObject(nullptr);
+  cell->setObject(nullptr);
 }
 
 void Object::move() {
-	return;
+  return;
 }
 
 void Object::setCell(Cell* newCell) {
-	this->cell = newCell;
+  this->cell = newCell;
 }
 
 ObjType Object::getObjType() {
-	return this->objType;
+  return this->objType;
 }
 
 void Object::live() {
-	return;
+  return;
 }
 
 bool Object::isDead() {
-	return objType == ObjType::DEAD;
+  return objType == ObjType::DEAD;
 }

@@ -10,11 +10,11 @@
 
 class Stone : public Object {
  public:
-	explicit Stone(Cell* startCell):
-		Object(ObjType::CORAL, startCell) {}
-	~Stone() override;
-	void live() override;
-	void death() override;
+  explicit Stone(Cell* startCell):
+    Object(ObjType::CORAL, startCell) {}
+  ~Stone() override;
+  void live() override;
+  void death() override;
 };
 
 #endif  // INCLUDE_STONE_H_

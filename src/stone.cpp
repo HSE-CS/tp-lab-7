@@ -5,15 +5,15 @@
 #include "../include/ocean.h"
 
 Stone::~Stone() {
-	return;
+  return;
 }
 
 void Stone::live() {
-	Object::live();
+  Object::live();
 }
 
 void Stone::death() {
-	cell->getOcean()->addDeleteCandidate(this);
-	objType = ObjType::DEAD;
+  cell->getOcean()->addDeleteCandidate(this);
+  objType = ObjType::DEAD;
 }
 
