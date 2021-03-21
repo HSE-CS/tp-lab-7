@@ -1,6 +1,6 @@
 // Copyright Baklanov 2021
-#include "Predator.h"
-#include "Prey.h"
+#include "predator.h"
+#include "prey.h"
 #include <cmath>
 
 Object* Predator::Searching(Ocean* ocean) {
