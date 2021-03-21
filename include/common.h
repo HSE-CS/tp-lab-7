@@ -8,4 +8,4 @@ struct Pair {
   int y;
 };
 
-#endif // INCLUDE_COMMON_H_
+#endif  // INCLUDE_COMMON_H_

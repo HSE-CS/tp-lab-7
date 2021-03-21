@@ -3,8 +3,7 @@
 #ifndef INCLUDE_CELL_H_
 #define INCLUDE_CELL_H_
 
-//#include "common.h"
-#include "object.h"
+#include "../include/object.h"
 
 class Ocean;
 
@@ -27,4 +26,4 @@ class Cell {
   friend Ocean;
 };
 
-#endif // INCLUDE_CELL_H_
+#endif  // INCLUDE_CELL_H_

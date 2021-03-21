@@ -7,13 +7,12 @@
 #include <vector>
 #include <iostream>
 #include <string>
-//#include "common.h"
-#include "cell.h"
-#include "predator.h"
-#include "stone.h"
 
-class Ocean
-{
+#include "../include/cell.h"
+#include "../include/predator.h"
+#include "../include/stone.h"
+
+class Ocean {
  private:
   Pair size;
   Cell **cells;
@@ -25,7 +24,7 @@ class Ocean
   void deleteCandidates();
 
  public:
-  Ocean(Pair newSize);
+  explicit Ocean(Pair newSize);
   ~Ocean();
   void print() const;
   void createInitial(float preyPercent,
@@ -40,4 +39,4 @@ class Ocean
   Cell* findPrey(Cell* centerCell);
   Cell* getCell(Pair crd);
 };
-#endif // INCLUDE_OCEAN_H_
+#endif  // INCLUDE_OCEAN_H_

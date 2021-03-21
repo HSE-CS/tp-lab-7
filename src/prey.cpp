@@ -1,8 +1,8 @@
 //  Copyright © 2020 Сапожников Андрей Михайлович. All rights reserved.
 
-#include "predator.h"
-#include "cell.h"
-#include "ocean.h"
+#include "../include/predator.h"
+#include "../include/cell.h"
+#include "../include/ocean.h"
 
 Prey::~Prey() {
   return;
@@ -27,7 +27,7 @@ void Prey::breed() {
 }
 
 void Prey::live() {
-  if (healthPoints == 0){
+  if (healthPoints == 0) {
     death();
     return;
   }

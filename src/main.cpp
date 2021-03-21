@@ -1,6 +1,7 @@
 //  Copyright © 2020 Сапожников Андрей Михайлович. All rights reserved.
 #include <string>
-#include "ocean.h"
+
+#include "../include/ocean.h"
 
 int main() {
   unsigned seed = 13;

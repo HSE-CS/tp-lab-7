@@ -3,9 +3,9 @@
 #ifndef INCLUDE_OBJECT_H_
 #define INCLUDE_OBJECT_H_
 
-#include "common.h"
+#include "../include/common.h"
 
-enum class ObjType {CORAL,PREY,PREDATOR, DEAD};
+enum class ObjType {CORAL, PREY, PREDATOR, DEAD};
 
 class Cell;
 
@@ -16,7 +16,7 @@ class Object {
   virtual void move();
 
  public:
-  Object(ObjType newObjType, Cell* startCell = nullptr):
+  explicit Object(ObjType newObjType, Cell* startCell = nullptr):
   cell(startCell), objType(newObjType) {}
   virtual ~Object();
   virtual void live() = 0;
@@ -26,4 +26,4 @@ class Object {
   bool isDead();
 };
 
-#endif // INCLUDE_OBJECT_H_
+#endif  // INCLUDE_OBJECT_H_

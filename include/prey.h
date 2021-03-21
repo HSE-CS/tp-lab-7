@@ -5,7 +5,8 @@
 
 #include <string>
 #include <iostream>
-#include "object.h"
+
+#include "../include/object.h"
 
 class Prey : public Object {
  protected:

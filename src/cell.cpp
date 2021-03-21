@@ -1,6 +1,6 @@
 //  Copyright © 2020 Сапожников Андрей Михайлович. All rights reserved.
 
-#include "cell.h"
+#include "../include/cell.h"
 
 void Cell::init(Pair p, Ocean* oc) {
   this->crd = p;

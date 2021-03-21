@@ -1,18 +1,18 @@
 //  Copyright © 2020 Сапожников Андрей Михайлович. All rights reserved.
 
-#include "ocean.h"
 #include <stdlib.h>
 #include <unistd.h>
-
 #include <ctime>    // For time()
 #include <cstdlib>  // For srand() and rand()
+
+#include "../include/ocean.h"
 
 Ocean::Ocean(Pair newSize) {
   size = newSize;
   cells = new Cell*[size.x];
-  for (int i = 0; i < size.x; i++){
+  for (int i = 0; i < size.x; i++) {
     cells[i] = new Cell[size.y];
-    for (int j = 0; j < size.y; j++){
+    for (int j = 0; j < size.y; j++) {
       cells[i][j].init({i, j}, this);
     }
   }
@@ -31,7 +31,6 @@ void Ocean::print() const {
       std::string cell_v = "";
 
       if (cells[i][j].obj == nullptr)
-//        cell_v = "  ";
           cell_v = "~~";
       else if (cells[i][j].obj->getObjType() == ObjType::CORAL)
         cell_v = "\U0001F5FF";
@@ -39,8 +38,6 @@ void Ocean::print() const {
         cell_v = "\U0001F419";
       else if (cells[i][j].obj->getObjType() == ObjType::PREDATOR)
         cell_v = "\U0001F988";
-//        cell_v = "\U0001F60B";
-      
 
       std::cout << cell_v;
     }
@@ -175,8 +172,9 @@ Cell* Ocean::find(Cell *centerCell, bool (*condition)(Cell*)) {
   if (availableCells.size() == 0)
     return nullptr;
 
-  srand(time(0));
-  unsigned random_choice = rand() % availableCells.size();
+  unsigned seed = time(0);
+  unsigned* seed_p = &seed;
+  unsigned random_choice = rand_r(seed_p) % availableCells.size();
   return availableCells[random_choice];
 }
 

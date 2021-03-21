@@ -1,8 +1,8 @@
 //  Copyright © 2020 Сапожников Андрей Михайлович. All rights reserved.
 
-#include "predator.h"
-#include "cell.h"
-#include "ocean.h"
+#include "../include/predator.h"
+#include "../include/cell.h"
+#include "../include/ocean.h"
 
 Predator::~Predator() {
   return;
@@ -10,7 +10,7 @@ Predator::~Predator() {
 
 void Predator::attack() {
   Cell* newCell = cell->getOcean()->findPrey(cell);
-  if (newCell == nullptr){
+  if (newCell == nullptr) {
       if (hungerPoints > 0)
           hungerPoints--;
       move();

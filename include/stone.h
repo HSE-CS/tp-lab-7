@@ -6,7 +6,8 @@
 #include <string>
 #include <vector>
 #include <iostream>
-#include "object.h"
+
+#include "../include/object.h"
 
 class Stone : public Object {
  public:
