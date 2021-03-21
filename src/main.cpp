@@ -1,5 +1,5 @@
+// Copyright Baklanov 2021
 #include "cell.h"
-#include "common.h"
 #include "Ocean.h"
 #include "Predator.h"
 #include "prey.h"
@@ -8,6 +8,7 @@
 #include <cstdlib>
 #include <list>
 #include "windows.h"
+#include "common.h"
 
 int main() {
     Ocean a(40, 80);
@@ -36,8 +37,7 @@ int main() {
         if (!PreyCounter) {
             std::cout << "There's no more preyers" << std::endl;
             break;
-        }
-        else if (!PredatorCounter) {
+        } else if (!PredatorCounter) {
             std::cout << "There's no more predators" << std::endl;
             break;
         }
@@ -46,12 +46,4 @@ int main() {
         Sleep(200);
         SetConsoleCursorPosition(hd, cd);
     }
-    /*std::list<int> a{ 1,10,12,124,3,215,2,5,346,35 };
-    for (auto it = a.begin(); it != a.end(); ++it) {
-        if(*it==10)
-            it = a.erase(it);
-    }
-    for (auto it : a) {
-        std::cout << it << std::endl;
-    }*/
 }

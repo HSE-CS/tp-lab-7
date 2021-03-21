@@ -1,10 +1,11 @@
-#include <iostream>
-#include <list>
+// Copyright Baklanov 2021
 #include "Ocean.h"
 #include "cell.h"
 #include "prey.h"
 #include "Predator.h"
 #include "stone.h"
+#include <iostream>
+#include <list>
 #include "common.h"
 
 Ocean::Ocean(int x, int y) {
@@ -76,11 +77,9 @@ void Ocean::print() const {
                     std::cout << CORAL_N << " ";
                     break;
                 }
-            }
-            else {
+            } else {
                 std::cout << " " << " ";
             }
-
         }
         std::cout << std::endl;
     }
@@ -90,15 +89,18 @@ void Ocean::run() {
     int i = stuff.size();
     for (Object* obj : stuff) {
         Move move = static_cast<Move>(std::rand() % 9);
-        if (obj->getType() == ObjType::PREY)
-            obj->PrepForMOVE(move, *this);
-        else if ((obj->getType() == ObjType::PREDATOR)) {
-            Object* target = dynamic_cast<Predator*>(obj)->Searching(*this);
+        if (obj->getType() == ObjType::PREY) {
+            obj->PrepForMOVE(move, this);
+        } else if ((obj->getType() == ObjType::PREDATOR)) {
+            Object* target = dynamic_cast<Predator*>(obj)->Searching(this);
             if (target) {
                 if (dynamic_cast<Predator*>(obj)->readyForCatch) {
-                    obj->setCell(&cells[target->getCoord().x][target->getCoord().y]);
-                    cells[obj->getCoord().x][obj->getCoord().y].setObject(nullptr);
-                    cells[target->getCoord().x][target->getCoord().y].setObject(obj);
+                    obj->setCell(&cells[target->getCoord().x]
+                        [target->getCoord().y]);
+                    cells[obj->getCoord().x]
+                        [obj->getCoord().y].setObject(nullptr);
+                    cells[target->getCoord().x]
+                        [target->getCoord().y].setObject(obj);
                     dynamic_cast<Predator*>(obj)->coord = target->getCoord();
                     auto it = stuff.begin();
                     for (it = stuff.begin(); it != stuff.end(); it++) {
@@ -111,33 +113,33 @@ void Ocean::run() {
                     delete target;
                 }
             }
-            
         }
-        if ((obj->getMovePrep() != Move::STAY)&&(obj->getType()!=ObjType::STONE)) {
+        if ((obj->getMovePrep() != Move::STAY)
+            &&(obj->getType() != ObjType::STONE)) {
             cells[obj->getCoord().x][obj->getCoord().y].setObject(nullptr);
         }
     }
     for (auto obj = stuff.begin(); obj != stuff.end(); ++obj) {
-        /*auto obj = stuff.begin();*/
-        //advance(obj, i);
         if (((*obj)->getType() == ObjType::PREDATOR)
             || ((*obj)->getType() == ObjType::PREY)) {
             int randBorn = std::rand() % 25;
             if (!randBorn) {
-                (*obj)->Reproduction(*this);
+                (*obj)->Reproduction(this);
             }
         }
         (*obj)->live();
         if (((*obj)->getType() == ObjType::PREDATOR)
-            && (dynamic_cast<Predator*>(*obj)->hunger==0)) {
-            cells[(*obj)->getCoord().x][(*obj)->getCoord().y].setObject(nullptr);
+            && (dynamic_cast<Predator*>(*obj)->hunger == 0)) {
+            cells[(*obj)->getCoord().x][(*obj)->
+                getCoord().y].setObject(nullptr);
             obj = stuff.erase(obj);
         } else if (((*obj)->getType() == ObjType::STONE)
             && (dynamic_cast<STONE*>(*obj)->getFastness() == 0)) {
-            cells[(*obj)->getCoord().x][(*obj)->getCoord().y].setObject(nullptr);
+            cells[(*obj)->getCoord().x][(*obj)->
+                getCoord().y].setObject(nullptr);
             obj = stuff.erase(obj);
-        } else if (((*obj)->getMovePrep() != Move::STAY) && ((*obj)->getType() != ObjType::STONE)) {
-
+        } else if (((*obj)->getMovePrep() != Move::STAY)
+            && ((*obj)->getType() != ObjType::STONE)) {
             cells[(*obj)->getCoord().x][(*obj)->getCoord().y].setObject(*obj);
         }
     }
