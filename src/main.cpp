@@ -4,7 +4,7 @@
 #include "Predator.h"
 #include "Prey.h"
 #include "Stone.h"
-#include "common.h"
+#include "Common.h"
 #include <iostream>
 #include <cstdlib>
 #include <list>
