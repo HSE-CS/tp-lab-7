@@ -1,8 +1,8 @@
 // Copyright 2021 BekusovMikhail
 
-#include "prey.h"
-#include "common.h"
-#include "ocean.h"
+#include "../include/prey.h"
+#include "../include/common.h"
+#include "../include/ocean.h"
 
 Prey::Prey(Cell *cell) : Object(cell) {
     this->leftTime = PreyLife;

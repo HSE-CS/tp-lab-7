@@ -1,6 +1,6 @@
 // Copyright 2021 BekusovMikhail
 
-#include "object.h"
+#include "../include/object.h"
 
 Object::Object(Cell *cell) {
     this->cell = cell;

@@ -1,7 +1,7 @@
 // Copyright 2021 BekusovMikhail
 
 #include <iostream>
-#include "ocean.h"
+#include "../include/ocean.h"
 
 int main() {
     Ocean ocean(M, N, quantity);

@@ -4,8 +4,8 @@
 #define INCLUDE_OCEAN_H_
 
 #include <list>
-#include "common.h"
-#include "cell.h"
+#include "../include/common.h"
+#include "../include/cell.h"
 
 
 class Ocean {

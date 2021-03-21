@@ -58,6 +58,7 @@ void Ocean::addObjects(int quantity) {
             obj = new Stone(&cells[x][y]);
         } else if (type >= bounder2) {
             obj = new Prey(&cells[x][y]);
+            obj = new Prey(&cells[x][y]);
         }
 
         this->cells[x][y].setObject(obj);
@@ -93,7 +94,7 @@ void Ocean::start() {
         }
         this->clearKillList();
         this->print();
-        _sleep(100);
+//        _sleep(100);
     }
 }
 

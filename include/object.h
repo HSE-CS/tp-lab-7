@@ -10,15 +10,18 @@
 #define PREDATOR_N 'S'
 #define EMPTY_N '.'
 
-enum class ObjType {STONE,PREY,PREDATOR};
+enum class ObjType {
+    STONE, PREY, PREDATOR
+};
 
 class Cell;
 
 class Object {
-protected:
+ protected:
     Cell *cell;
     char type;
-public:
+
+ public:
     explicit Object(Cell *cell = nullptr);
 
     virtual ~Object();
@@ -27,7 +30,7 @@ public:
 
     void setCell(Cell *cell);
 
-    Cell* getCell();
+    Cell *getCell();
 
     char getType();
 

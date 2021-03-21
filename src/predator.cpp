@@ -1,7 +1,7 @@
 // Copyright 2021 BekusovMikhail
 
-#include "predator.h"
-#include "cell.h"
+#include "../include/predator.h"
+#include "../include/cell.h"
 
 Predator::Predator(Cell *cell) : Prey(cell) {
     this->type = PREDATOR_N;
