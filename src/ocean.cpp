@@ -41,3 +41,7 @@ unsigned int Ocean::lenX() {
 unsigned int Ocean::lenY() {
     return this->cells[0].size();
 }
+
+Object * Ocean::removeFromStuff(Object *obj) {
+    return nullptr;
+}

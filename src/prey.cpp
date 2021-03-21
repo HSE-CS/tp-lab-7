@@ -5,6 +5,7 @@
 void Prey::live() {
     if (--this->life_time < 1) {
         this->cell->setObject(nullptr);
+
         delete this;
     }
     this->goToCell(this->getNextCell());

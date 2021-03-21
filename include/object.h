@@ -18,6 +18,7 @@ public:
     virtual void live() = 0;
     void setCell(Cell *c);
     Cell *getCell();
+    virtual char getCharacter() { return 'O'; }
 };
 
 #endif //TP_LAB_7_OBJECT_H

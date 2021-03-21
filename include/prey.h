@@ -16,6 +16,8 @@ public:
 
     virtual Cell *getNextCell();
     virtual void goToCell(Cell *c);
+
+    char getCharacter() { return 'f'; }
 };
 
 

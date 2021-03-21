@@ -19,6 +19,7 @@ public:
 	Cell *get(unsigned int x, unsigned int y);
 	unsigned int lenX();
     unsigned int lenY();
+    Object *removeFromStuff(Object *obj);
 };
 
 #endif // _OCEAN_H_
