@@ -4,10 +4,11 @@
 #include <list>
 #include <vector>
 #include <iostream>
-#include "object.h"
-#include "cell.h"
-#include "predator.h"
-#include "stone.h"
+#include "../include/object.h"
+#include "../include/cell.h"
+#include "../include/predator.h"
+#include "../include/stone.h"
+
 #define RESET   "\033[0m"
 #define RED     "\033[31m"  /* Red */
 #define YELLOW  "\033[33m"  /* Yellow */

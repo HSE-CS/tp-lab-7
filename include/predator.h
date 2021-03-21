@@ -1,7 +1,7 @@
 //// Copyright 2021 Ozhiganova Polina
 #ifndef INCLUDE_PREDATOR_H_
 #define INCLUDE_PREDATOR_H_
-#include "prey.h"
+#include "../include/prey.h"
 
 class Predator : public Prey {
  public:

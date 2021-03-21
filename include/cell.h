@@ -1,8 +1,8 @@
 //// Copyright 2021 Ozhiganova Polina
 #ifndef INCLUDE_CELL_H_
 #define INCLUDE_CELL_H_
-#include "common.h"
-#include "object.h"
+#include "../include/common.h"
+#include "../include/object.h"
 
 class Ocean;
 
