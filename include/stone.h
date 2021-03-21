@@ -1,7 +1,5 @@
 // Copyright 2021 Rogov Andrey
 
-#include "cell.h"
-
 #ifndef INCLUDE_STONE_H_
 #define INCLUDE_STONE_H_
 

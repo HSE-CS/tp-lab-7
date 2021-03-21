@@ -39,4 +39,4 @@ public:
     Cell* findPrey(Cell* centerCell);
     Cell* getCell(Pair crd);
 };
-#endif // INCLUDE_OCEAN_H_
+#endif  // INCLUDE_OCEAN_H_

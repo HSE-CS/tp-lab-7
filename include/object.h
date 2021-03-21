@@ -26,4 +26,4 @@ public:
 	bool isDead();
 };
 
-#endif // INCLUDE_OBJECT_H_
+#endif  // INCLUDE_OBJECT_H_

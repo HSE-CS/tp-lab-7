@@ -43,12 +43,10 @@ void Predator::live() {
         if (breedCounter >= breedRate) {
             breedCounter = 0;
             breed();
-        }
-        else {
+        } else {
             breedCounter++;
         }
-    }
-    else {
+    } else {
         healthPoints--;
     }
 }

@@ -35,8 +35,7 @@ void Prey::live() {
     if (breedCounter >= breedRate) {
         breedCounter = 0;
         breed();
-    }
-    else {
+    } else {
         breedCounter++;
         move();
     }
