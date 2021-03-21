@@ -1,8 +1,8 @@
 // Copyright Baklanov 2021
+#include "Common.h"
 #include "Ocean.h"
 #include "Predator.h"
 #include "Prey.h"
-#include "Common.h"
 #include <iostream>
 
 void Object::Reproduction(Ocean* ocean_) {
