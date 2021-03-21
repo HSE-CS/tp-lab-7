@@ -1,12 +1,13 @@
 // Copyright 2021 VadMack
 
+#include <zconf.h>
 #include <ocean.h>
 #include <iostream>
 #include <vector>
-#include <zconf.h>
-#include "predator.h"
-#include "prey.h"
-#include "stone.h"
+#include "../include/predator.h"
+#include "../include/prey.h"
+#include "../include/stone.h"
+unsigned int seed = time(nullptr);
 
 Ocean::Ocean(int sizeM, int sizeN, int numOfStones, int numOfPreys, int numOfPredators) {
   this->sizeM = sizeM;
@@ -25,8 +26,9 @@ Ocean::Ocean(int sizeM, int sizeN, int numOfStones, int numOfPreys, int numOfPre
 
 void Ocean::addObjects(ObjType type, int number) {
   for (int i = 0; i < number;) {
-    int x = rand() % sizeM;
-    int y = rand() % sizeN;
+
+    int x = rand_r(&seed) % sizeM;
+    int y = rand_r(&seed) % sizeN;
 
     if (cells[x][y].getObject())
       continue;
@@ -158,10 +160,9 @@ void Ocean::run() {
       obj->live();
     }
     thinTheRanks();
-
-    system("clear");
+    // system("clear");
     print();
-    usleep(500000);
+    usleep(100000);
   }
 }
 
@@ -171,10 +172,6 @@ void Ocean::addObject(Object *object) {
 
 void Ocean::addToBlackList(Object *obj) {
   if (obj) {
-    bool found = (std::find(blackList.begin(), blackList.end(), obj) != blackList.end());
-    if (found) {
-
-    }
     this->blackList.push_back(obj);
   }
 }
@@ -182,7 +179,7 @@ void Ocean::addToBlackList(Object *obj) {
 void Ocean::thinTheRanks() {
   for (auto &elem : blackList) {
     stuff.remove(elem);
-    //delete elem;
+    // delete elem;
     elem->setCell(nullptr);
   }
   blackList.clear();

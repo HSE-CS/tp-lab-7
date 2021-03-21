@@ -39,7 +39,6 @@ void Predator::live() {
     }
   }
   reproduce();
-
 }
 
 void Predator::reproduce() {
