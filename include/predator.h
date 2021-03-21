@@ -7,7 +7,7 @@
 
 class Predator : public Prey {
  private:
-    size_t eatenPreys;
+    unsigned int eatenPreys;
  public:
     explicit Predator(Cell *cell);
 

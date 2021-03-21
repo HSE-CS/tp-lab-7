@@ -9,7 +9,6 @@
 
 
 class Ocean {
-
  private:
     Cell **cells;
     std::list<Object *> stuff;
@@ -17,7 +16,7 @@ class Ocean {
     int M, N, objectsQuantity;
 
  public:
-    Ocean(size_t M, size_t N,
+    Ocean(unsigned int M, unsigned int N,
           int objectsQuantity);
 
     ~Ocean() = default;

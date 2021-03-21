@@ -11,7 +11,7 @@
 
 unsigned int tmpSeed = time(nullptr);
 
-Ocean::Ocean(size_t M, size_t N,
+Ocean::Ocean(unsigned int M, unsigned int N,
              int objectsQuantity) {
     this->N = N;
     this->M = M;
@@ -19,8 +19,8 @@ Ocean::Ocean(size_t M, size_t N,
     for (auto i = 0; i < this->M; i++) {
         this->cells[i] = new Cell[this->N];
         for (auto j = 0; j < this->N; j++) {
-            this->cells[i][j].init({static_cast<coord_t>(i),
-                                    static_cast<coord_t>(j)}, this);
+            this->cells[i][j].init({static_cast<unsigned int>(i),
+                                    static_cast<unsigned int>(j)}, this);
         }
     }
     addObjects(objectsQuantity);

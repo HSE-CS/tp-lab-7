@@ -7,8 +7,8 @@
 
 class Prey : public Object {
  protected:
-    size_t leftTime;
-    size_t leftToBirth;
+    unsigned int leftTime;
+    unsigned int leftToBirth;
  public:
     explicit Prey(Cell *cell);
 
