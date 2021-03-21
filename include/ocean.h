@@ -4,11 +4,11 @@
 #include <time.h>
 #include <list>
 #include <vector>
-#include "common.h"
-#include "Cell.h"
-#include "stone.h"
-#include "prey.h"
-#include "predator.h"
+#include "../include/common.h"
+#include "../include/Cell.h"
+#include "../include/stone.h"
+#include "../include/prey.h"
+#include "../include/predator.h"
 #include "windows.h"
 
 

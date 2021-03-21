@@ -1,6 +1,6 @@
 // Copyright 2020 GHA Test Team
-#include "prey.h"
-#include "ocean.h"
+#include "../include/prey.h"
+#include "../include/ocean.h"
 
 
 enum class Directions{

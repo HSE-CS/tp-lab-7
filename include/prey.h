@@ -3,8 +3,8 @@
 #define INCLUDE_PREY_H_
 #include <utility>
 #include <iostream>
-#include "object.h"
-#include "cell.h"
+#include "../include/object.h"
+#include "../include/cell.h"
 
 
 

@@ -1,6 +1,6 @@
 // Copyright 2020 GHA Test Team
-#include "stone.h"
-#include "cell.h"
+#include "../include/stone.h"
+#include "../include/cell.h"
 
 
 Stone::Stone() {

@@ -1,5 +1,5 @@
 // Copyright 2020 GHA Test Team
-#include "ocean.h"
+#include "../include/ocean.h"
 
 
 int main() {

@@ -1,5 +1,5 @@
 // Copyright 2020 GHA Test Team
-#include "object.h"
+#include "../include/object.h"
 
 
 void Object::setCell(Cell* cell) {

@@ -1,6 +1,6 @@
 // Copyright 2020 GHA Test Team
-#include "predator.h"
-#include "ocean.h"
+#include "../include/predator.h"
+#include "../include/ocean.h"
 
 
 Predator::Predator() {

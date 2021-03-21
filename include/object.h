@@ -2,7 +2,7 @@
 #ifndef INCLUDE_OBJECT_H_
 #define INCLUDE_OBJECT_H_
 
-#include "common.h"
+#include "../include/common.h"
 
 #define STONE_N (char)254
 #define EMPTY_CELL '~'

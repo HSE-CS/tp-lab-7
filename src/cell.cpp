@@ -1,5 +1,5 @@
 // Copyright 2020 GHA Test Team
-#include "cell.h"
+#include "../include/cell.h"
 
 
 Cell::Cell() :
