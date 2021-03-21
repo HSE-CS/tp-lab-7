@@ -34,6 +34,5 @@ int main() {
         }
         PredatorCounter = 0;
         PreyCounter = 0;
-        Sleep(200);
     }
 }
