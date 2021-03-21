@@ -9,7 +9,7 @@
 #include "../include/object.h"
 
 class Stone : public Object {
-public:
+ public:
 	explicit Stone(Cell* startCell):
 		Object(ObjType::CORAL, startCell) {}
 	~Stone() override;

@@ -13,7 +13,7 @@
 #include "../include/stone.h"
 
 class Ocean {
-private:
+ private:
     Pair size;
     Cell** cells;
     std::list<Object*> stuff;
@@ -23,7 +23,7 @@ private:
     static bool isEmptyCell(Cell* checkCell);
     void deleteCandidates();
 
-public:
+ public:
     explicit Ocean(Pair newSize);
     ~Ocean();
     void print() const;

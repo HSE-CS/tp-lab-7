@@ -4,8 +4,8 @@
 #define INCLUDE_COMMON_H_
 
 struct Pair {
-	int x;
-	int y;
+ int x;
+ int y;
 };
 
 #endif  // INCLUDE_COMMON_H_

@@ -10,12 +10,12 @@ enum class ObjType { CORAL, PREY, PREDATOR, DEAD };
 class Cell;
 
 class Object {
-protected:
+ protected:
 	Cell* cell;
 	ObjType objType;
 	virtual void move();
 
-public:
+ public:
 	explicit Object(ObjType newObjType, Cell* startCell = nullptr):
 		cell(startCell), objType(newObjType) {}
 	virtual ~Object();
