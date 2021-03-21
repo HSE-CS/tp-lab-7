@@ -104,27 +104,64 @@ Cell *Ocean::findCellAround(Pair coord) {
   }
 }
 
+Cell *Ocean::findCellWithPrey(Pair coord) {
+  std::vector<Cell *> cellsWithPrey;
+
+  size_t startX = 0;
+  size_t finishX = 0;
+  if (coord.x - 1 < 0) {
+    startX = 0;
+  } else {
+    startX = coord.x - 1;
+  }
+  if (coord.x + 1 > sizeN - 1) {
+    finishX = sizeN - 1;
+  } else {
+    finishX = coord.x + 1;
+  }
+
+  size_t startY = 0;
+  size_t finishY = 0;
+
+  if (coord.y - 1 < 0) {
+    startY = 0;
+  } else {
+    startY = coord.y - 1;
+  }
+  if (coord.y + 1 > sizeM - 1) {
+    finishY = sizeM - 1;
+  } else {
+    finishY = coord.y + 1;
+  }
+
+  for (int i = startX; i <= finishX; ++i) {
+    for (int j = startY; j <= finishY; ++j) {
+      if (cells[i][j].getObject()) {
+        if (cells[i][j].getObject()->GetColor() == PINK) {
+          cellsWithPrey.push_back(&cells[i][j]);
+        }
+      }
+    }
+  }
+
+  if (!cellsWithPrey.empty()) {
+    return cellsWithPrey[rand() % cellsWithPrey.size()];
+  } else {
+    return nullptr;
+  }
+}
+
 void Ocean::run() {
   print();
-  for (int i = 0; i < 1000; ++i) {
+  while (!stuff.empty()) {
     for (auto &obj : stuff) {
       obj->live();
     }
     thinTheRanks();
 
-    /*int end = stuff.size();
-    int index = 0;*/
-
-    /*for (auto obj = stuff.begin(); obj != stuff.end(); obj++) {
-      if (!(*obj)->live()) {
-        stuff.erase(obj++);
-        (*obj)->GetCell()->killMe();
-      }
-    }*/
-
     system("clear");
     print();
-    usleep(100000);
+    usleep(500000);
   }
 }
 
@@ -132,21 +169,21 @@ void Ocean::addObject(Object *object) {
   stuff.push_back(object);
 }
 
-void Ocean::removeObject(Object *object) {
-  //stuff.erase(object);
-}
-
-void Ocean::addToBlackList(Object *obj){
+void Ocean::addToBlackList(Object *obj) {
   if (obj) {
+    bool found = (std::find(blackList.begin(), blackList.end(), obj) != blackList.end());
+    if (found) {
+
+    }
     this->blackList.push_back(obj);
   }
 }
 
 void Ocean::thinTheRanks() {
   for (auto &elem : blackList) {
-
     stuff.remove(elem);
-    delete(elem);
+    //delete elem;
+    elem->setCell(nullptr);
   }
   blackList.clear();
 }

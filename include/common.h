@@ -14,10 +14,10 @@ struct Pair {
 const size_t N = 10;
 const size_t M = 10;
 
-const size_t PREYLIFECYCLE = 15;
-const size_t PREYREPRODUCECYCLE = 7;
+const size_t PREYLIFECYCLE = 20;
+const size_t PREYREPRODUCECYCLE = 4;
 
-const size_t PREDATORLIFECYCLE = 10;
-const size_t PREDATORREPRODUCECYCLE = 9;
+const size_t PREDATORLIFECYCLE = 8;
+const size_t PREDATORREPRODUCECYCLE = 6;
 
 #endif  // INCLUDE_COMMON_H_

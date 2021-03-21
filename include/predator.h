@@ -8,7 +8,8 @@
 class Predator : public Prey {
  public:
   Predator(Cell *cell);
-  void live() override {};
+  void live() override;
+  void reproduce() override;
 };
 
 #endif  // INCLUDE_PREDATOR_H_

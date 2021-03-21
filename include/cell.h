@@ -40,37 +40,8 @@ class Cell
   Ocean *GetOcean() const;
   void SetOcean(Ocean *ocean);
 
+  Cell *findCellWithPrey();
 };
 
-enum class ObjType { STONE, CORAL, PREY, PREDATOR };
-
-class Cell;
-class Object {
- protected:
-  Cell *cell;
-  std::string color;
-
- public:
-  Object(Cell *cell = nullptr) : cell(cell) {
-  }
-  virtual ~Object() = default;
-  virtual void live() = 0; // жизнь объекта
-
-  Cell *GetCell() const {
-    return cell;
-  }
-
-  void setCell(Cell *cell){
-    this->cell = cell;
-  }
-
-  const std::string &GetColor() const {
-    return color;
-  }
-  void SetColor(const std::string &color) {
-    Object::color = color;
-  }
-
-};
 
 #endif  // INCLUDE_CELL_H_

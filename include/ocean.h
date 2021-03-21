@@ -28,10 +28,10 @@ class Ocean {
   void run();
 
   void addObject(Object *);
-  void removeObject(Object *);
 
   void addToBlackList(Object *obj);
   void thinTheRanks();
+  Cell *findCellWithPrey(Pair coord);
 };
 
 #endif  // INCLUDE_OCEAN_H_

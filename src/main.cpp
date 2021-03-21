@@ -4,7 +4,6 @@
 #include <ocean.h>
 int main() {
   srand(time(0));
-  Ocean ocean(10, 10, 1, 2, 3);
-  //ocean.print();
+  Ocean ocean(50, 50, 12, 90, 45);
   ocean.run();
 }

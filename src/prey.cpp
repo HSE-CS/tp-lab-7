@@ -11,7 +11,6 @@ void Prey::live() {
     }
     reproduce();
   } else {
-    //cell->GetOcean()->removeObject(this);
     cell->killMe();
   }
 }
@@ -32,3 +31,8 @@ void Prey::reproduce() {
     }
   }
 }
+size_t Prey::GetTimeToDie() const {
+  return timeToDie;
+}
+
+
