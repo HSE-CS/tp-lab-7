@@ -1,4 +1,4 @@
-﻿//  Copyright Baklanov 2021
+﻿  // Copyright Baklanov 2021
 #ifndef INCLUDE_COMMON_H_
 #define INCLUDE_COMMON_H_
 
