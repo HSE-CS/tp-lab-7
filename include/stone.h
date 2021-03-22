@@ -6,12 +6,16 @@
 #include "cell.h"
 
 class Stone : public Object{
+protected:
+    ObjectType type = ObjectType::STONE;
+
 public:
     static const unsigned int std_life_time = 1;
     Stone(Cell *c) : Object(c) {
         this->life_time = 1;
     };
     void live() override;
+    char getCharacter() override { return '.'; }
 };
 
 

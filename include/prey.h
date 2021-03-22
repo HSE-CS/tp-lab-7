@@ -6,7 +6,10 @@
 #include "object.h"
 #include "cell.h"
 
-class Prey : Object {
+class Prey : public Object {
+protected:
+    ObjectType type = ObjectType::PREY;
+
 public:
     static const unsigned int std_life_time = 10;
     Prey(Cell *c, unsigned int lt) : Object(c) {
@@ -17,7 +20,7 @@ public:
     virtual Cell *getNextCell();
     virtual void goToCell(Cell *c);
 
-    char getCharacter() { return 'f'; }
+    char getCharacter() override { return 'f'; }
 };
 
 
