@@ -2,6 +2,7 @@
 
 #include <chrono>
 #include <thread>
+#include <algorithm>
 
 #include "ocean.h"
 #include "cell.h"
