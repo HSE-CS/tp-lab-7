@@ -20,25 +20,25 @@ void timer(int seconds) {
 
 Ocean::Ocean() {
   this->cells = new Cell*[N];
-  for (size_t i = 0; i < N; i++) {
+  for (int i = 0; i < N; i++) {
     this->cells[i] = new Cell[M];
-    for (size_t j = 0; j < M; j++) {
+    for (int j = 0; j < M; j++) {
       this->cells[i][j].init({j, i}, this);
     }
   }
 }
 
 Ocean::~Ocean() {
-  for (size_t i = 0; i < N; i++) {
+  for (int i = 0; i < N; i++) {
     delete[] this->cells[i];
   }
   delete[] this->cells;
 }
 
 void Ocean::print() const {
-  for (size_t i = 0; i < N; i++) {
+  for (int i = 0; i < N; i++) {
     // std::cout << i << ' ';  // showing line numbers for debug improving
-    for (size_t j = 0; j < M; j++) {
+    for (int j = 0; j < M; j++) {
       if (this->cells[i][j].obj) {
         this->cells[i][j].obj->print();
       } else {
@@ -49,13 +49,13 @@ void Ocean::print() const {
   }
 }
 
-void Ocean::addObjects(Object* objects, size_t size) {
+void Ocean::addObjects(Object* objects, int size) {
   std::random_device rd;
   std::mt19937 mersenne(rd());
 
   if (objects && size > 0 && size == N * M) {
-    for (size_t i = 0; i < N; i++) {
-      for (size_t j = 0; j < M; j++) {
+    for (int i = 0; i < N; i++) {
+      for (int j = 0; j < M; j++) {
         this->cells[i][j].obj = &(*objects);
         this->cells[i][j].obj->setCell(&this->cells[i][j]);
         this->stuff.push_back(&(*objects));
@@ -63,8 +63,8 @@ void Ocean::addObjects(Object* objects, size_t size) {
       }
     }
   } else {
-    for (size_t i = 0; i < N; i++) {
-      for (size_t j = 0; j < M; j++) {
+    for (int i = 0; i < N; i++) {
+      for (int j = 0; j < M; j++) {
         switch (mersenne() % 4) {
           case 0:
             this->cells[i][j].obj = new Stone;
@@ -96,7 +96,7 @@ void Ocean::run() {
     for (auto it : this->stuff) {
       it->live();
     }
-    for (size_t i = 0; i < this->almostDead.size(); i++) {  // cleaning stuff
+    for (int i = 0; i < this->almostDead.size(); i++) {  // cleaning stuff
       for (auto it = this->stuff.begin(); it != this->stuff.end();) {
         if (!(*it)->getCell()) {
           it = this->stuff.erase(std::remove(this->stuff.begin(),

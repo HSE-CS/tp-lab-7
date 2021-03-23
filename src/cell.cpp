@@ -29,8 +29,8 @@ void Cell::killMe() {
   }
 }
 
-size_t Cell::calcObjectsNear(ObjType obj) {
-  size_t objectCount = 0;
+int Cell::calcObjectsNear(ObjType obj) {
+  int objectCount = 0;
   Pair coord = this->getCoord();
 
   if (coord.x > 0 && coord.y > 0 && this->getNeighbour(coord.y - 1,

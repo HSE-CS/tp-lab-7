@@ -16,7 +16,7 @@ class Ocean {
   Ocean();
   ~Ocean();
   void print() const;
-  void addObjects(Object* objects = nullptr, size_t size = 0);
+  void addObjects(Object* objects = nullptr, int size = 0);
   void run();
   Cell** getCells();
   std::list<Object*>& getStuff();

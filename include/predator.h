@@ -13,6 +13,6 @@ class Predator : public Prey {
   virtual void print();
 
  private:
-  size_t starvingLevel = STARVING;
+  int starvingLevel = STARVING;
 };
 #endif  // INCLUDE_PREDATOR_H_

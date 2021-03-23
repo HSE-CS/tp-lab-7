@@ -14,7 +14,7 @@ class Object {
  protected:
   Cell *cell;
   ObjType type;
-  size_t lifetime;
+  int lifetime;
  public:
   explicit Object(Cell * = nullptr);
   virtual ~Object();

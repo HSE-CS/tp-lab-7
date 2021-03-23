@@ -30,6 +30,6 @@ class Cell {
   void killMe();
   Cell& getNeighbour(coord_t row, coord_t column);
   Cell* getAnyNeighbourCell(ObjType* habitant = nullptr);
-  size_t calcObjectsNear(ObjType obj);
+  int calcObjectsNear(ObjType obj);
 };
 #endif  // INCLUDE_CELL_H_
