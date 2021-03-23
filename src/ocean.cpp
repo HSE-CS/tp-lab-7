@@ -1,5 +1,5 @@
 // Copyright 2021 Khoroshavina Ekaterina
-#include "ocean.h"
+#include "../include/ocean.h"
 #include <time.h>
 #include <iostream>
 #include <cstdlib>
@@ -96,8 +96,8 @@ void Ocean::run() {
 }
 
 Cell* Ocean::newCell(Pair crd) {
-    //int new_x = (crd.x + rand() % 2) % N;
-    //int new_y = (crd.y + rand() % 2) % M;
+    // int new_x = (crd.x + rand() % 2) % N;
+    // int new_y = (crd.y + rand() % 2) % M;
     unsigned int seed = time(nullptr);
     int new_x = (crd.x + rand_r(&seed) % 2) % N;
     int new_y = (crd.y + rand_r(&seed) % 2) % M;
