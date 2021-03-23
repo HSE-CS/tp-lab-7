@@ -9,7 +9,7 @@ class Stone : public Object {
   friend Cell;
 
  public:
-  Stone(Cell* c);
+  Stone(Cell *c);
   ~Stone(){};
   void live() override;
   char getSymbol() override;

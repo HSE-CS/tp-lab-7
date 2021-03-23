@@ -1,5 +1,5 @@
 #include "stone.h"
-Stone::Stone(Cell* c) : Object(c) {
+Stone::Stone(Cell *c) : Object(c) {
   this->livetime = LTStone;
   type = ObjType::STONE;
 };

@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-Prey::Prey(Cell* cell) : Object(cell) {
+Prey::Prey(Cell *cell) : Object(cell) {
   this->livetime = LTPrey;
   this->type = ObjType::PREY;
 }
@@ -16,7 +16,7 @@ void Prey::live() {
 char Prey::getSymbol() { return PREY_N; }
 
 void Prey::move() {
-  Cell* newCell = cell->FREE();
+  Cell *newCell = cell->FREE();
   if (newCell) {
     this->getCell()->Moving();
     newCell->setObject(this);
@@ -25,9 +25,9 @@ void Prey::move() {
 }
 
 void Prey::copulation() {
-  Cell* newCell = cell->FREE();
+  Cell *newCell = cell->FREE();
   if (newCell) {
-    Object* child = new Prey(newCell);
+    Object *child = new Prey(newCell);
     newCell->setObject(child);
     cell->getOcean()->AddStuff(child);
   }
