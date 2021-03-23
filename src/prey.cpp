@@ -1,5 +1,5 @@
 // Copyright 2021 Khoroshavina Ekaterina
-#include "prey.h"
+#include "../include/prey.h"
 
 Prey::Prey(ObjType newObjType, Cell* cell) : Object(newObjType, cell) {
     this->objType = newObjType;
