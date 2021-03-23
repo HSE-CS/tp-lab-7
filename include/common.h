@@ -14,4 +14,4 @@ const int M = 50;
 const int HP_STONE = 500;
 const int HP_PREY = 25;
 const int HP_PREDATOR = 40;
-#endif // INCLUDE_COMMON_H_
+#endif  // INCLUDE_COMMON_H_
