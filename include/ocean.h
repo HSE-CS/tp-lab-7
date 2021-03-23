@@ -3,10 +3,10 @@
 #ifndef INCLUDE_OCEAN_H_
 #define INCLUDE_OCEAN_H_
 
+#include <list>
+
 #include "../include/common.h"
 #include "../include/cell.h"
-
-#include <list>
 
 class Ocean {
  private:
@@ -16,7 +16,8 @@ class Ocean {
   pair size;
 
  public:
-  Ocean(unsigned N, unsigned M, unsigned PredNum, unsigned PreyNum, unsigned StoneNum);
+  Ocean(unsigned N, unsigned M, unsigned PredNum, unsigned PreyNum,
+        unsigned StoneNum);
   ~Ocean();
 
   void print() const;
@@ -35,8 +36,5 @@ class Ocean {
 
   Cell *findEmpty(pair coord);
 };
-
-
-
 
 #endif  // INCLUDE_OCEAN_H_

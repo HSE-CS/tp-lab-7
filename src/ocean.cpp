@@ -1,13 +1,14 @@
 // Copyright by Egor Bodrov 2021
 
-#include "../include/ocean.h"
-#include "../include/stone.h"
-#include "../include/predator.h"
-#include "../include/prey.h"
 #include <iostream>
 #include <random>
 #include <vector>
 #include <ctime>
+
+#include "../include/ocean.h"
+#include "../include/stone.h"
+#include "../include/predator.h"
+#include "../include/prey.h"
 
 Ocean::Ocean(unsigned N, unsigned M, unsigned PredNum, unsigned PreyNum,
              unsigned StoneNum)
@@ -57,12 +58,10 @@ void Ocean::addObjects(int num, ObjectType type) {
   for (int i = 0; i < num; i++) {
     x = gen() % this->size.x;
     y = gen() % this->size.y;
-    
     while (this->surface[x][y].getObject() != nullptr) {
       x = gen() % this->size.x;
       y = gen() % this->size.y;
     }
-    
     Object *new_object{nullptr};
     switch (type) {
       case ObjectType::STONE:
