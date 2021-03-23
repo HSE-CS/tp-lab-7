@@ -1,7 +1,7 @@
 // Copyright <Roman Balayan> @ 2021
 
-#include <chrono>
-#include <thread>
+#include <chrono> // NOLINT [build/c++11]
+#include <thread> // NOLINT [build/c++11]
 #include <algorithm>
 
 #include "../include/ocean.h"
@@ -9,6 +9,7 @@
 #include "../include/common.h"
 #include "../include/prey.h"
 #include "../include/predator.h"
+#include "../include/stone.h"
 
 Ocean::Ocean() {
 }
