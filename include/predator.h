@@ -1,19 +1,26 @@
 // Copyright 2021 Ilya Urtyukov
 #ifndef INCLUDE_PREDATOR_H_
 #define INCLUDE_PREDATOR_H_
-#include <utility>
-#include "prey.h"
 
+#include "ocean.h"
+#include "common.h"
 
-class Predator : public Prey {
+class Object;
+
+class Predator : public Object {
+ private:
+     int hunger;
+     bool readyForCatch;
+
  public:
-  Predator();
-  Predator(unsigned, unsigned);
-  ~Predator() = default;
-  Predator(const Predator&) = default;
-  Predator& operator=(const Predator&) = default;
-  void live() override;
-  void move(Pair cur_pos, Pair new_pos, Ocean* ocean) override;
-  bool reproduce(Pair new_pos, Ocean* ocean) override;
+     Predator(Pair coord, Cell* cell) :
+         Object(ObjType::PREDATOR, coord, cell) {
+          hunger = 10;
+          readyForCatch = false
+          }
+     ~Predator() {}
+     Object* Searching(Ocean* ocean);
+     friend Ocean;
+     void live() override;
 };
 #endif  // INCLUDE_PREDATOR_H_

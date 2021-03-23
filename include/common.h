@@ -1,26 +1,75 @@
 // Copyright 2021 Ilya Urtyukov
 #ifndef INCLUDE_COMMON_H_
 #define INCLUDE_COMMON_H_
-#include <iostream>
 
-typedef size_t crd_t;
+#define STONE_N '#'
+#define CORAL_N '*'
+#define PREY_N 'f'
+#define PREDATOR_N 'S'
+
+#include "ocean.h"
+#include <string>
+
+typedef size_t coord_t;
 
 struct Pair {
-  Pair() {
-    x = 0;
-    y = 0;
-  }
-  Pair(unsigned x, unsigned y) {
-    this->x = x;
-    this->y = y;
-  }
-  ~Pair() = default;
-  Pair(const Pair&) = default;
-  Pair& operator=(const Pair&) = default;
-  crd_t x;
-  crd_t y;
+    coord_t x;
+    coord_t y;
 };
 
 const size_t N = 20;
 const size_t M = 50;
+
+enum class ObjType { STONE, CORAL, PREY, PREDATOR };
+enum class Move {UPLEFT, UP, UPRIGHT, RIGHT,
+    DOWNRIGHT, DOWN, DOWNLEFT, LEFT, STAY};
+
+class Cell;
+class Ocean;
+
+class Object {
+ protected:
+    Cell* cell;
+    ObjType type;
+    Pair coord;
+    Move prepairForMove;
+
+ public:
+    Object(ObjType type, Pair coord_, Cell* cell_) :
+        type(type), coord(coord_), cell(cell_), prepairForMove(Move::STAY) {}
+    virtual ~Object();
+    void Reproduction(Ocean* ocean_);
+    void PrepForMOVE(Move move, Ocean* ocean_);
+    virtual void live() = 0;
+    void setCell(Cell* a);
+    ObjType getType() {
+        return type;
+    }
+    void MoveUP();
+    void MoveUPLEFT();
+    void MoveUPRIGHT();
+    void MoveRIGHT();
+    void MoveDOWNRIGHT();
+    void MoveDOWN();
+    void MoveDOWNLEFT();
+    void MoveLEFT();
+    void MoveSTAY();
+    Pair getCoord() {
+        return coord;
+    }
+    Move getMovePrep() {
+        return this->prepairForMove;
+    }
+    void setCoord(Pair coord_) {
+        coord = coord_;
+    }
+};
+
+class Coral : public Object {
+ public:
+     Coral(Pair coord, Cell* cell) :
+         Object(ObjType::CORAL, coord, cell) {}
+     ~Coral() {}
+     void live() override;
+};
 #endif  // INCLUDE_COMMON_H_

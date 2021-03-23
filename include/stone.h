@@ -1,15 +1,23 @@
 // Copyright 2021 Ilya Urtyukov
 #ifndef INCLUDE_STONE_H_
 #define INCLUDE_STONE_H_
-#include "object.h"
 
+#include "cell.h"
+#include "common.h"
+#include <list>
 
-class Stone : public Object {
+class Object;
+
+class STONE : public Object {
+ private:
+     int fastness;
  public:
-  Stone();
-  ~Stone() = default;
-  Stone(const Stone&) = default;
-  Stone& operator=(const Stone&) = default;
-  void live();
+    STONE(Pair coord, Cell* cell) :
+        Object(ObjType::STONE, coord, cell) {fastness = 10}
+    ~STONE() {}
+    void live() override;
+    int getFastness() {
+        return fastness;
+    }
 };
 #endif  // INCLUDE_STONE_H_

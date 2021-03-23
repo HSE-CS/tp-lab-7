@@ -1,25 +1,39 @@
 // Copyright 2021 Ilya Urtyukov
+#include "cell.h"
 #include "ocean.h"
+#include "predator.h"
+#include "prey.h"
+#include "stone.h"
+#include "common.h"
+#include <iostream>
+#include <cstdlib>
+#include <list>
 
 
 int main() {
-  unsigned size_x = 0, size_y = 0;
-  unsigned stones_n = 0, preys_n = 0, predators_n = 0;
-  unsigned prey_live_num = 0, predator_live_num = 0;
-  unsigned prey_food_n_to_reproduce = 0, predator_food_n_to_reproduce = 0;
-  std::cout << "Enter ocean params: " << std::endl;
-  std::cout << "Ocean size (n * m): >> ";
-  std::cin >> size_x >> size_y;
-  std::cout << "Ocean objects numbers:(stones, preys, predators): >> ";
-  std::cin >> stones_n >> preys_n >> predators_n;
-  std::cout << "Prey's and Predators's live counts: >> ";
-  std::cin >> prey_live_num >> predator_live_num;
-  std::cout << "Prey's and Predators's numbers of food to reproduce: >> ";
-  std::cin >> prey_food_n_to_reproduce >> predator_food_n_to_reproduce;
-  Ocean* ocean = new Ocean(size_x, size_y, stones_n, preys_n, predators_n,
-    prey_live_num, prey_food_n_to_reproduce, predator_live_num,
-    predator_food_n_to_reproduce);
-  // Ocean* ocean = new Ocean(20, 60, 100, 450, 200, 8, 3, 6, 3, 3000);
-  ocean->run();
-  return 0;
+    Ocean a(20, 40);
+    a.addObjects(60, 20, 10);
+    int PreyCounter = 0;
+    int PredatorCounter = 0;
+    for (int i = 0; i < 100; ++i) {
+        a.run();
+        a.print();
+        for (Object* obj : a.getStuff()) {
+            if (obj->getType() == ObjType::PREY)
+                ++PreyCounter;
+            else if (obj->getType() == ObjType::PREDATOR)
+                ++PredatorCounter;
+        }
+        std::cout << PreyCounter << "-----" << PredatorCounter << std::endl;
+        std::cout << i << std::endl;
+        if (!PreyCounter) {
+            std::cout << "There's no more preyers" << std::endl;
+            break;
+        } else if (!PredatorCounter) {
+            std::cout << "There's no more predators" << std::endl;
+            break;
+        }
+        PredatorCounter = 0;
+        PreyCounter = 0;
+    }
 }

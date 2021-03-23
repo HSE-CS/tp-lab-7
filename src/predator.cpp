@@ -1,79 +1,79 @@
 // Copyright 2021 Ilya Urtyukov
 #include "predator.h"
-#include "ocean.h"
+#include "prey.h"
+#include <cmath>
 
-
-Predator::Predator() {
-  this->cell = nullptr;
-  live_count = 0;
-  food_n_to_reproduce = 0;
-  max_live_count = 0;
-  init_food_n_to_reproduce = 0;
-  obj_type = ObjType::PREDATOR;
-}
-
-Predator::Predator(unsigned live_count,
-  unsigned food_n_to_reproduce) {
-  this->cell = nullptr;
-  this->live_count = live_count;
-  this->food_n_to_reproduce = food_n_to_reproduce;
-  this->max_live_count = live_count;
-  this->init_food_n_to_reproduce = food_n_to_reproduce;
-  obj_type = ObjType::PREDATOR;
+Object* Predator::Searching(Ocean* ocean) {
+    readyForCatch = false;
+    Object* targetObj = nullptr;
+    double target = 100000000;
+    int targdiffX = 0;
+    int targdiffY = 0;
+    for (Object* obj : (*ocean).getStuff()) {
+        if (obj->getType() == ObjType::PREY) {
+            int diffX = (obj->getCoord().x - coord.x);
+            int diffY = (obj->getCoord().y - coord.y);
+            double bufTarget = sqrt(diffX*diffX + diffY*diffY);
+            if (bufTarget < 2) {
+                targetObj = obj;
+                targdiffX = diffX;
+                targdiffY = diffY;
+                target = bufTarget;
+                readyForCatch = true;
+                break;
+            } else if ((obj->getType() == ObjType::PREY)
+                && (target > bufTarget)) {
+                targetObj = obj;
+                targdiffX = diffX;
+                targdiffY = diffY;
+                target = bufTarget;
+            }
+        }
+    }
+    if (!readyForCatch) {
+        if ((targdiffX > 0) && (targdiffY > 0))
+            PrepForMOVE(Move::DOWNRIGHT, ocean);
+        else if ((targdiffX > 0) && (targdiffY == 0))
+            PrepForMOVE(Move::DOWN, ocean);
+        else if ((targdiffX > 0) && (targdiffY < 0))
+            PrepForMOVE(Move::DOWNLEFT, ocean);
+        else if ((targdiffX == 0) && (targdiffY < 0))
+            PrepForMOVE(Move::LEFT, ocean);
+        else if ((targdiffX < 0) && (targdiffY < 0))
+            PrepForMOVE(Move::UPLEFT, ocean);
+        else if ((targdiffX < 0) && (targdiffY == 0))
+            PrepForMOVE(Move::UP, ocean);
+        else if ((targdiffX < 0) && (targdiffY > 0))
+            PrepForMOVE(Move::UPRIGHT, ocean);
+        else if ((targdiffX == 0) && (targdiffY > 0))
+            PrepForMOVE(Move::RIGHT, ocean);
+    } else {
+        hunger += 5;
+    }
+    return targetObj;
 }
 
 void Predator::live() {
-  Ocean* ocean = cell->getOcean();
-  Pair cur_pos = *(new Pair(cell->getCrd().x, cell->getCrd().y));
-  Pair new_pos = findPosition(ocean);
-  move(cur_pos, new_pos, ocean);
-  live_count -= 1;
-  if (live_count <= 0) {
-    ocean->addObjectToDie(reinterpret_cast<Object*>(this));
-    cell->setObject(nullptr);
-    ocean->decPredatorsNum();
-    return;
-  }
-  if (food_n_to_reproduce <= 0) {
-    food_n_to_reproduce = init_food_n_to_reproduce;
-    Pair new_pos = findPosition(ocean);
-    if (reproduce(new_pos, ocean)) {
-      ocean->incPredatorsNum();
+    hunger--;
+
+     if (!readyForCatch) {
+        switch (this->prepairForMove) {
+        case Move::DOWN:this->MoveDOWN();
+            break;
+        case Move::DOWNLEFT:this->MoveDOWNLEFT();
+            break;
+        case Move::LEFT:this->MoveLEFT();
+            break;
+        case Move::UPLEFT:this->MoveUPLEFT();
+            break;
+        case Move::UP:this->MoveUP();
+            break;
+        case Move::UPRIGHT:this->MoveUPRIGHT();
+            break;
+        case Move::RIGHT:this->MoveRIGHT();
+            break;
+        case Move::DOWNRIGHT:this->MoveDOWNRIGHT();
+            break;
+        }
     }
-  }
-}
-
-bool Predator::reproduce(Pair new_pos, Ocean* ocean) {
-  Cell** cells = ocean->getCells();
-  Cell* cell = &cells[new_pos.x][new_pos.y];
-  if (cell->isEmpty() && cell->getObject() == nullptr) {
-    Object* other = cell->getObject();
-    Object* child = new Predator(max_live_count, init_food_n_to_reproduce);
-    child->setCell(cell);
-    ocean->addObjectToReproduce(child);
-    cell->setIsEmpty(false);
-    return true;
-  }
-  return false;
-}
-
-void Predator::move(Pair cur_pos, Pair new_pos, Ocean* ocean) {
-  Cell** cells = ocean->getCells();
-  Cell* cell = &cells[new_pos.x][new_pos.y];
-  Object* other = cells[new_pos.x][new_pos.y].getObject();
-  bool isPrey = !cell->isEmpty() && other != nullptr &&
-    other->getObjectType() == ObjType::PREY;
-  if (isPrey) {
-    food_n_to_reproduce -= 1;
-    live_count = max_live_count;
-    ocean->addObjectToDie(other);
-    ocean->decPreysNum();
-  }
-  if (cell->isEmpty() && other == nullptr || isPrey) {
-    this->cell = cell;
-    this->cell->setObject(reinterpret_cast<Object*>(this));
-    this->cell->setIsEmpty(false);
-    cells[cur_pos.x][cur_pos.y].setIsEmpty(true);
-    cells[cur_pos.x][cur_pos.y].setObject(nullptr);
-  }
 }

@@ -1,212 +1,163 @@
 // Copyright 2021 Ilya Urtyukov
 #include "ocean.h"
+#include "cell.h"
+#include "prey.h"
+#include "predator.h"
+#include "stone.h"
+#include "common.h"
 #include <iostream>
+#include <list>
 
-
-Ocean::Ocean() {
-  size_x = 0;
-  size_y = 0;
-  stones_n = 0;
-  preys_n = 0;
-  predators_n = 0;
-  prey_live_num = 0;
-  predator_live_num = 0;
-  prey_food_n_to_reproduce = 0;
-  predator_food_n_to_reproduce = 0;
-  objects_num = 0;
-  print_delay = 0;
-  cells = nullptr;
-}
-
-Ocean::Ocean(unsigned int size_x, unsigned size_y, unsigned stones_n,
-  unsigned preys_n, unsigned predators_n, unsigned prey_live_num,
-  unsigned prey_food_n_to_reproduce, unsigned predator_live_num,
-  unsigned predator_food_n_to_reproduce, int print_delay) {
-  this->size_x = size_x;
-  this->size_y = size_y;
-  this->stones_n = stones_n;
-  this->preys_n = preys_n;
-  this->objects_num = stones_n + preys_n + predators_n;
-  this->predators_n = predators_n;
-  this->prey_live_num = prey_live_num;
-  this->predator_live_num = predator_live_num;
-  this->prey_food_n_to_reproduce = prey_food_n_to_reproduce;
-  this->predator_food_n_to_reproduce = predator_food_n_to_reproduce;
-  this->print_delay = print_delay;
-  init_cells();
-  addObjects();
-}
-
-void Ocean::init_cells() {
-  cells = new Cell * [size_x];
-  for (unsigned i = 0; i < size_x; i++) {
-    cells[i] = new Cell[size_y];
-    for (unsigned j = 0; j < size_y; j++) {
-      cells[i][j].init(*(new Pair(i, j)), this);
+Ocean::Ocean(int x, int y) {
+    size_x = x-1;
+    size_y = y-1;
+    cells = new Cell*[x];
+    for (int i = 0; i < x; ++i) {
+        cells[i] = new Cell[y];
     }
-  }
+    for (int i = 0; i < x; ++i) {
+        for (int j = 0; j < y; ++j) {
+            Pair coord;
+            coord.x = i;
+            coord.y = j;
+            cells[i][j].init(coord, this);
+        }
+    }
 }
 
 Ocean::~Ocean() {
-  for (unsigned i = 0; i < size_x; i++) {
-    delete[] cells[i];
-  }
-  delete[] cells;
+    stuff.clear();
+    delete[] cells;
 }
+
+int Ocean::getSizeX() {
+    return size_x;
+}
+
+int Ocean::getSizeY() {
+    return size_y;
+}
+
+std::list<Object*> Ocean::getStuff() {
+    return stuff;
+}
+
+void Ocean::addObjects(int mountprey, int mountstone, int mountpredator) {
+    Pair coor;
+    for (int i = 0; i < mountprey; ++i) {
+        coor.x = std::rand()%this->size_x;
+        coor.y = std::rand() % this->size_y;
+        if (cells[coor.x][coor.y].isEmpty()) {
+            Prey* a = new Prey(coor, &cells[coor.x][coor.y]);
+            stuff.push_back(a);
+            cells[coor.x][coor.y].setObject(a);
+        }
+    }
+    for (int i = 0; i < mountstone; ++i) {
+        coor.x = std::rand() % this->size_x;
+        coor.y = std::rand() % this->size_y;
+        if (cells[coor.x][coor.y].isEmpty()) {
+            STONE* stone = new STONE(coor, &cells[coor.x][coor.y]);
+            stuff.push_back(stone);
+            cells[coor.x][coor.y].setObject(stone);
+        }
+    }
+    for (int i = 0; i < mountpredator; ++i) {
+        coor.x = std::rand() % this->size_x;
+        coor.y = std::rand() % this->size_y;
+        if (cells[coor.x][coor.y].isEmpty()) {
+            Predator* b = new Predator(coor, &cells[coor.x][coor.y]);
+            stuff.push_back(b);
+            cells[coor.x][coor.y].setObject(b);
+        }
+    }
+}
+
 
 void Ocean::print() const {
-  system("cls");
-  for (unsigned i = 0; i < size_x; i++) {
-    for (unsigned j = 0; j < size_y; j++) {
-      if (cells[i][j].isEmpty()) {
-        std::cout << EMPTY_CELL;
-      } else {
-        switch (cells[i][j].getObject()->getObjType()) {
-        case ObjType::STONE:
-          std::cout << STONE_N;
-          break;
-        case ObjType::PREY:
-          std::cout << PREY_N;
-          break;
-        case ObjType::PREDATOR:
-          std::cout << PREDATOR_N;
-          break;
+    ObjType typ;
+    for (int i = 0; i < size_x + 1; ++i) {
+        for (int j = 0; j < size_y + 1; ++j) {
+            if (cells[i][j].obj) {
+                typ = cells[i][j].obj->getType();
+                switch (typ) {
+                case ObjType::PREY:
+                    std::cout << PREY_N << " ";
+                    break;
+                case ObjType::PREDATOR:
+                    std::cout << PREDATOR_N << " ";
+                    break;
+                case ObjType::STONE:
+                    std::cout << STONE_N << " ";
+                    break;
+                case ObjType::CORAL:
+                    std::cout << CORAL_N << " ";
+                    break;
+                }
+            } else {
+                std::cout << " " << " ";
+            }
         }
-      }
+        std::cout << std::endl;
     }
-    std::cout << std::endl;
-  }
-  std::cout << "PREYS NUM: " << preys_n << "PREDATORS NUM: "
-   << predators_n << std::endl;
-  Sleep(print_delay);
-}
-
-void Ocean::createObjects() {
-  srand(time(NULL));
-  std::vector<Object*> objects;
-  for (unsigned i = 0; i < stones_n; i++) {
-    Object* stone = new Stone();
-    objects.push_back(stone);
-  }
-  for (unsigned i = 0; i < preys_n; i++) {
-    Object* prey = new Prey(prey_live_num,
-      prey_food_n_to_reproduce);
-    objects.push_back(prey);
-  }
-  for (unsigned i = 0; i < predators_n; i++) {
-    Object* predator = new Predator(predator_live_num,
-      predator_food_n_to_reproduce);
-    objects.push_back(predator);
-  }
-  unsigned len = objects_num;
-  for (unsigned i = 0; i < objects_num; i++) {
-    unsigned index = std::rand() % len;
-    stuff.push_back(objects.at(index));
-    len--;
-    objects.erase(objects.begin() + index);
-  }
-}
-
-void Ocean::addObjects() {
-  createObjects();
-  srand(time(NULL));
-  for (Object* obj : stuff) {
-    int i_index = std::rand() % size_x;
-    int j_index = std::rand() % size_y;
-    int k = 0;
-    bool exit = false;
-    while (cells[i_index][j_index].getObject() != nullptr && k < 5) {
-      i_index = std::rand() % size_x;
-      j_index = std::rand() % size_y;
-      k++;
-    }
-    if (cells[i_index][j_index].getObject() != nullptr) {
-      for (int i = 0; i < size_x; i++) {
-        if (exit) {
-          break;
-        }
-        for (int j = 0; j < size_y; j++) {
-          if (cells[i][j].getObject() == nullptr) {
-            exit = true;
-            i_index = i;
-            j_index = j;
-            break;
-          }
-        }
-      }
-    }
-    obj->setCell(&cells[i_index][j_index]);
-    cells[i_index][j_index].setObject(obj);
-    cells[i_index][j_index].setIsEmpty(false);
-  }
 }
 
 void Ocean::run() {
-  print();
-  while (true) {
+    int i = stuff.size();
     for (Object* obj : stuff) {
-      obj->live();
+        Move move = static_cast<Move>(std::rand() % 9);
+        if (obj->getType() == ObjType::PREY) {
+            obj->PrepForMOVE(move, this);
+        } else if ((obj->getType() == ObjType::PREDATOR)) {
+            Object* target = dynamic_cast<Predator*>(obj)->Searching(this);
+            if (target) {
+                if (dynamic_cast<Predator*>(obj)->readyForCatch) {
+                    obj->setCell(&cells[target->getCoord().x]
+                        [target->getCoord().y]);
+                    cells[obj->getCoord().x]
+                        [obj->getCoord().y].setObject(nullptr);
+                    cells[target->getCoord().x]
+                        [target->getCoord().y].setObject(obj);
+                    dynamic_cast<Predator*>(obj)->coord = target->getCoord();
+                    auto it = stuff.begin();
+                    for (it = stuff.begin(); it != stuff.end(); it++) {
+                        if (*it == target) {
+                            it = stuff.erase(it);
+                            break;
+                        }
+                    }
+                    target->~Object();
+                    delete target;
+                }
+            }
+        }
+        if ((obj->getMovePrep() != Move::STAY)
+            &&(obj->getType() != ObjType::STONE)) {
+            cells[obj->getCoord().x][obj->getCoord().y].setObject(nullptr);
+        }
     }
-    killObjects();
-    reproduceObjects();
-    print();
-    if (preys_n <= 0 || predators_n <= 0) {
-      break;
+    for (auto obj = stuff.begin(); obj != stuff.end(); ++obj) {
+        if (((*obj)->getType() == ObjType::PREDATOR)
+            || ((*obj)->getType() == ObjType::PREY)) {
+            int randBorn = std::rand() % 25;
+            if (!randBorn) {
+                (*obj)->Reproduction(this);
+            }
+        }
+        (*obj)->live();
+        if (((*obj)->getType() == ObjType::PREDATOR)
+            && (dynamic_cast<Predator*>(*obj)->hunger == 0)) {
+            cells[(*obj)->getCoord().x][(*obj)->
+                getCoord().y].setObject(nullptr);
+            obj = stuff.erase(obj);
+        } else if (((*obj)->getType() == ObjType::STONE)
+            && (dynamic_cast<STONE*>(*obj)->getFastness() == 0)) {
+            cells[(*obj)->getCoord().x][(*obj)->
+                getCoord().y].setObject(nullptr);
+            obj = stuff.erase(obj);
+        } else if (((*obj)->getMovePrep() != Move::STAY)
+            && ((*obj)->getType() != ObjType::STONE)) {
+            cells[(*obj)->getCoord().x][(*obj)->getCoord().y].setObject(*obj);
+        }
     }
-  }
-}
-
-unsigned Ocean::getSize_x() const {
-  return size_x;
-}
-
-unsigned Ocean::getSize_y() const {
-  return size_y;
-}
-
-Cell** Ocean::getCells() const {
-  return cells;
-}
-
-void Ocean::addObjectToDie(Object* obj) {
-  objectsToDie.push_back(obj);
-}
-
-void Ocean::addObjectToReproduce(Object* obj) {
-  objectsToReproduce.push_back(obj);
-}
-
-void Ocean::killObjects() {
-  for (Object* obj : objectsToDie) {
-    Cell* cell = obj->getCell();
-    stuff.remove(obj);
-    cell->setIsEmpty(true);
-  }
-  objectsToDie.clear();
-}
-
-void Ocean::reproduceObjects() {
-  for (Object* obj : objectsToReproduce) {
-    Cell* cell = obj->getCell();
-    cell->setObject(obj);
-    cell->setIsEmpty(false);
-    stuff.push_back(obj);
-  }
-  objectsToReproduce.clear();
-}
-
-void Ocean::decPreysNum() {
-  preys_n--;
-}
-
-void Ocean::incPreysNum() {
-  preys_n++;
-}
-
-void Ocean::decPredatorsNum() {
-  predators_n--;
-}
-
-void Ocean::incPredatorsNum() {
-  predators_n++;
 }

@@ -1,43 +1,35 @@
 // Copyright 2021 Ilya Urtyukov
 #include "cell.h"
 
-
-Cell::Cell() {
-  crd(0, 0);
-  object = nullptr;
-  ocean = nullptr;
-  isEmpty_ = true; 
+Cell::Cell(Pair p, Ocean* oc){
+    coord = p;
+    obj = nullptr;
+    ocean = oc;
+    isempty = true;
 }
 
-void Cell::init(Pair crd, Ocean* ocean) {
-  this->crd = crd;
-  this->ocean = ocean;
+void Cell::init(Pair p, Ocean* oc) {
+    coord = p;
+    ocean = oc;
 }
 
-Object* Cell::getObject() const {
-  return object;
+Object* Cell::getObject() {
+    return obj;
 }
 
-void Cell::setObject(Object* object) {
-  this->object = object;
+void Cell::setObject(Object* a) {
+    obj = a;
+    if (a)
+      isempty = false;
+    else
+      isempty = true;
+}
+
+bool Cell::isEmpty() {
+    return isempty;
 }
 
 void Cell::killMe() {
-  delete object;
-}
-
-Pair Cell::getCrd() const {
-  return crd;
-}
-
-Ocean* Cell::getOcean() const {
-  return ocean;
-}
-
-bool Cell::isEmpty() const {
-  return isEmpty_;
-}
-
-void Cell::setIsEmpty(bool value) {
-  isEmpty_ = value;
+    isempty = true;
+    delete obj;
 }

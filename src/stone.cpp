@@ -1,12 +1,13 @@
 // Copyright 2021 Ilya Urtyukov
 #include "stone.h"
-#include "cell.h"
 
-
-Stone::Stone() {
-  this->cell = nullptr;
-  obj_type = ObjType::STONE;
+void STONE::live() {
+    fastness -= std::rand() % 1;
+    if (fastness == 0) {
+        cell->setObject(nullptr);
+    }
 }
 
-void Stone::live() {}
-
+int STONE::getFastness() {
+    return fastness;
+}
