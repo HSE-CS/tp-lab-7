@@ -70,7 +70,7 @@ Cell *Predator::getNextCell() {
     if (eat.empty()) {
         if (free.empty())
             return this->cell;
-        i = rand() % free.size();
+        i = cell->getOcean()->RANDOMER() % free.size();
         return free[i];
     }
     i = cell->getOcean()->RANDOMER() % eat.size();
