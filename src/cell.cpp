@@ -25,7 +25,7 @@ void Cell::killMe() {
   if (obj) {
     delete obj;
     this->obj = nullptr;
-	}
+  }
 }
 Cell* Cell::moveToCell() {
   return ocean->moveObj(crd);

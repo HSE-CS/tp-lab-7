@@ -33,7 +33,7 @@ void Ocean::print() const {
 }
 
 void Ocean::addObjects(unsigned int n, ObjType type) {
-  for(int i = n; i > 0; i--) {
+  for (int i = n; i > 0; i--) {
     unsigned int seed = time(nullptr);
     unsigned int x = rand_r(&seed) % M;
     unsigned int y = rand_r(&seed) % N;
@@ -41,7 +41,7 @@ void Ocean::addObjects(unsigned int n, ObjType type) {
       i++;
       continue;
     } else {
-	  	Object* obj = nullptr;
+      Object* obj = nullptr;
       if (type == ObjType::PREY) {
         obj = new Prey(&cells[y][x]);
       } else if (type == ObjType::STONE) {
@@ -60,8 +60,9 @@ void Ocean::run() {
     std::cout << "\x1b[0m";
     clock_t now = clock();
     print();
-    while { (clock() < now + CLOCKS_PER_SEC / 10);
-    }
+    while (clock() < now + CLOCKS_PER_SEC / 10) {
+      continue;
+    };
     for (std::list<Object*>::iterator i = stuff.begin();
       i != stuff.end(); ++i) {
       if ((*i)->getState()) {
