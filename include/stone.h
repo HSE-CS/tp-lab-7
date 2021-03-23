@@ -16,8 +16,6 @@ class STONE : public Object {
         Object(ObjType::STONE, coord, cell) {fastness = 10;}
     ~STONE() {}
     void live() override;
-    int getFastness() {
-        return fastness;
-    }
+    int getFastness()
 };
 #endif  // INCLUDE_STONE_H_
