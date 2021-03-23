@@ -1,12 +1,13 @@
 // Copyright 2021 Ilya Urtyukov
+#include <iostream>
+#include <list>
 #include "ocean.h"
 #include "cell.h"
 #include "prey.h"
 #include "predator.h"
 #include "stone.h"
 #include "common.h"
-#include <iostream>
-#include <list>
+
 
 Ocean::Ocean(int x, int y) {
     size_x = x-1;

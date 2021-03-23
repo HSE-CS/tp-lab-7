@@ -6,9 +6,9 @@
 #define CORAL_N '*'
 #define PREY_N 'f'
 #define PREDATOR_N 'S'
-
-#include "ocean.h"
 #include <string>
+#include "ocean.h"
+
 
 typedef size_t coord_t;
 

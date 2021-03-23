@@ -1,8 +1,9 @@
 // Copyright 2021 Ilya Urtyukov
-#include "prey.h"
-#include "common.h"
 #include <iostream>
 #include <random>
+#include "prey.h"
+#include "common.h"
+
 
 void Prey::live() {
     switch (this->prepairForMove) {

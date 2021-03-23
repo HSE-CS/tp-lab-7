@@ -1,10 +1,10 @@
 // Copyright 2021 Ilya Urtyukov
 #ifndef INCLUDE_PREY_H_
 #define INCLUDE_PREY_H_
-
-#include "Cell.h"
-#include "Common.h"
 #include <list>
+#include "cell.h"
+#include "common.h"
+
 
 class Object;
 

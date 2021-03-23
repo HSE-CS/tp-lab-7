@@ -1,13 +1,14 @@
 // Copyright 2021 Ilya Urtyukov
+#include <iostream>
+#include <cstdlib>
+#include <list>
 #include "cell.h"
 #include "ocean.h"
 #include "predator.h"
 #include "prey.h"
 #include "stone.h"
 #include "common.h"
-#include <iostream>
-#include <cstdlib>
-#include <list>
+
 
 
 int main() {

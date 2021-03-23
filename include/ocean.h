@@ -1,10 +1,10 @@
 // Copyright 2021 Ilya Urtyukov
 #ifndef INCLUDE_OCEAN_H_
 #define INCLUDE_OCEAN_H_
-
+#include <list>
 #include "common.h"
 #include "cell.h"
-#include <list>
+
 
 class Object;
 class Cell;

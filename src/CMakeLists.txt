@@ -1,6 +1,6 @@
 set(header_path "${${PROJECT_NAME}_SOURCE_DIR}/include")
 set(header ${header_path}/ocean.h ${header_path}/cell.h ${header_path}/common.h ${header_path}/prey.h ${header_path}/predator.h ${header_path}/stone.h)
-set(src ocean.cpp cell.cpp predator.cpp prey.cpp stone.cpp)
+set(src ocean.cpp cell.cpp predator.cpp prey.cpp stone.cpp common.cpp)
 
 
 add_library(${PROJECT_NAME} SHARED

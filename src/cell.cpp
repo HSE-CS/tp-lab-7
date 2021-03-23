@@ -1,7 +1,7 @@
 // Copyright 2021 Ilya Urtyukov
 #include "cell.h"
 
-Cell::Cell(Pair p, Ocean* oc){
+Cell::Cell(Pair p, Ocean* oc) {
     coord = p;
     obj = nullptr;
     ocean = oc;

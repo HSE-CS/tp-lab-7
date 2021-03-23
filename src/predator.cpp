@@ -1,7 +1,8 @@
 // Copyright 2021 Ilya Urtyukov
+#include <cmath>
 #include "predator.h"
 #include "prey.h"
-#include <cmath>
+
 
 Object* Predator::Searching(Ocean* ocean) {
     readyForCatch = false;

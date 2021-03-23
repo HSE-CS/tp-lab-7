@@ -1,8 +1,10 @@
+// Copyright 2021 Ilya Urtyukov
+#include <iostream>
 #include "ocean.h"
 #include "predator.h"
 #include "prey.h"
 #include "common.h"
-#include <iostream>
+
 
 void Object::Reproduction(Ocean* ocean_) {
     int randmount = std::rand() % 8;
