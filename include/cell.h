@@ -3,8 +3,8 @@
 #define INCLUDE_CELL_H_
 
 #include <list>
-#include "Common.h"
-#include "Object.h"
+#include "common.h"
+#include "object.h"
 
 class Ocean;
 

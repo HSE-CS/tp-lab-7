@@ -3,7 +3,7 @@
 #define INCLUDE_STONE_H_
 #include <iostream>
 #include <string>
-#include "Object.h"
+#include "object.h"
 
 class Stone : public Object {
  public:

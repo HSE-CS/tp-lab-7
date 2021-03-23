@@ -2,11 +2,11 @@
 #include <iostream>
 #include <random>
 #include <ctime>
-#include "Ocean.h"
-#include "Stone.h"
-#include "Predator.h"
-#include "Prey.h"
-#include "Common.h"
+#include "ocean.h"
+#include "stone.h"
+#include "predator.h"
+#include "prey.h"
+#include "common.h"
 
 void timer(int seconds) {
   // multple calls of time() to improve painting frequency

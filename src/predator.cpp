@@ -1,6 +1,6 @@
 // Copyright 2021 Dev-will-work
-#include "Predator.h"
-#include "Cell.h"
+#include "predator.h"
+#include "cell.h"
 
 Predator::Predator() {
   this->type = ObjType::PREDATOR;

@@ -1,6 +1,6 @@
 // Copyright 2021 Dev-will-work
-#include "Stone.h"
-#include "Cell.h"
+#include "stone.h"
+#include "cell.h"
 
 Stone::Stone() {
   this->type = ObjType::STONE;

@@ -1,6 +1,6 @@
 // Copyright 2021 Dev-will-work
-#include "Object.h"
-#include "Common.h"
+#include "object.h"
+#include "common.h"
 
 Object::Object(Cell* arg) {
   this->cell = arg;

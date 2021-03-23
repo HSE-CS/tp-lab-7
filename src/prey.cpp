@@ -1,5 +1,5 @@
 // Copyright 2021 Dev-will-work
-#include "Prey.h"
+#include "prey.h"
 
 Prey::Prey() {
   this->type = ObjType::PREY;
