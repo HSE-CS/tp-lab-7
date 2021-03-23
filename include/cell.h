@@ -28,7 +28,7 @@ class Cell {
   Ocean* getOcean();
   Pair getCoord();
   void killMe();
-  Cell& getNeighbour(coord_t row, coord_t column);
+  Cell& getNeighbour(int row, int column);
   Cell* getAnyNeighbourCell(ObjType* habitant = nullptr);
   int calcObjectsNear(ObjType obj);
 };

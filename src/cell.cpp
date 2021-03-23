@@ -140,6 +140,6 @@ Pair Cell::getCoord() {
   return this->crd;
 }
 
-Cell& Cell::getNeighbour(coord_t row, coord_t column) {
+Cell& Cell::getNeighbour(int row, int column) {
   return (*this->field)[row][column];
 }
