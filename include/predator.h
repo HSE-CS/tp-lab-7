@@ -8,9 +8,6 @@
 #include "cell.h"
 
 class Predator : public Prey {
-protected:
-    ObjectType type = ObjectType::PREDATOR;
-
 public:
     static const unsigned int std_life_time = 20;
     Predator(Cell *c, unsigned int lt) : Prey(c, lt) {};
@@ -20,6 +17,7 @@ public:
     void goToCell(Cell *c);
 
     char getCharacter() override { return 'S'; }
+    ObjectType getType() override { return ObjectType::PREDATOR; }
 };
 
 

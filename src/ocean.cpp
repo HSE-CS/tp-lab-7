@@ -8,12 +8,12 @@ Ocean::Ocean(unsigned int x_len, unsigned int y_len) {
         throw "X or Y out of range";
     }
     this->cells.resize(x_len);
-    for (std::vector<Cell *> &a : this->cells) {
+    for (auto &a : this->cells) {
         a.resize(y_len);
     }
     for (int i = 0; i < x_len; ++i) {
         for (int j = 0; j < y_len; ++j) {
-            this->cells[i][j] = new Cell(std::pair<int, int>(i, j), this);
+            cells[i][j] = new Cell(std::pair<int, int>{i, j}, this);
         }
     }
 }
@@ -30,11 +30,16 @@ Ocean::~Ocean() {
 }
 
 void Ocean::addObject(Object *object) {
-    this->stuff.insert(this->stuff.end(), object);
+    if (object != nullptr)
+        this->stuff.insert(this->stuff.end(), object);
 }
 
 void Ocean::addObjects(std::list<Object *> lst) {
-    this->stuff.insert(this->stuff.end(), lst.begin(), lst.end());
+    for (auto &obj : lst) {
+        if (obj != nullptr) {
+            this->stuff.insert(this->stuff.end(), obj);
+        }
+    }
 }
 
 Cell * Ocean::get(unsigned int x, unsigned int y) {
@@ -58,8 +63,9 @@ void Ocean::setObjectOnCell(Object *object, int i, int j) {
         delete removeFromStuff(cells[i][j]->object);
     }
     cells[i][j]->object = object;
-    object->cell = cells[i][j];
-    addObjects(std::list<Object *>{object, });
+    if (object != nullptr)
+        object->cell = cells[i][j];
+    addObject(object);
 }
 
 unsigned int Ocean::lenX() {
@@ -80,14 +86,18 @@ Object * Ocean::removeFromStuff(Object *obj) {
 }
 
 void Ocean::print() {
+    for (int i = 0; i < lenX() * lenY(); ++i) {
+        std::cout << "\n";
+    }
     std::cout << "------------\nOCEAN\n";
     for (auto &rows : cells) {
         for (auto &x : rows) {
-            std::cout << x;
+            if (x->getObject() != nullptr) {
+                std::cout << x->getObject()->getCharacter();
+            } else {
+                std::cout << " ";
+            }
         }
-        std::cout << "\n";
-    }
-    for (int i = 0; i < lenX() * lenY(); ++i) {
         std::cout << "\n";
     }
 }
@@ -120,8 +130,7 @@ void Ocean::run() {
     }
 
     std::map<ObjectType, unsigned int> m = getObjectsCount();
-    while (m[ObjectType::PREY] > 0 &&
-    m[ObjectType::PREDATOR] > 0) {
+    while (m[ObjectType::PREY] > 0 && m[ObjectType::PREDATOR] > 0) {
         print();
         for (auto &x : stuff) {
             x->live();

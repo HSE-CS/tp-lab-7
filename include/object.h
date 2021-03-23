@@ -6,8 +6,6 @@
 class Cell;
 
 class Object {
-protected:
-    ObjectType type = ObjectType::OBJECT;
 public:
     Cell *cell;
     unsigned int life_time;
@@ -18,7 +16,7 @@ public:
     void setCell(Cell *c);
     Cell *getCell();
     virtual char getCharacter() { return 'O'; }
-    ObjectType getType() {return type; }
+    virtual ObjectType getType() {return ObjectType::OBJECT; }
 };
 
 #endif //TP_LAB_7_OBJECT_H

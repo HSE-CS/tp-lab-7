@@ -3,6 +3,6 @@
 
 int main() {
     srand(time(nullptr));
-    auto *ocean = new Ocean(70, 70);
+    auto *ocean = new Ocean(1, 2);
     ocean->run();
 }
