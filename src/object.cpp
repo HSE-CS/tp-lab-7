@@ -1,5 +1,5 @@
 // Copyright 2021 Khoroshavina Ekaterina
-#include "object.h"
+#include "../include/object.h"
 
 Object::Object(ObjType newObjType, Cell* cell) {
     this->cell = cell;
