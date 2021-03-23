@@ -1,10 +1,11 @@
 // Copyright 2021 LongaBonga
+#include <iostream>
+#include <random>
 
 #include "ocean.h"
 #include "object.h"
 #include "stone.h"
-#include <iostream>
-#include <random>
+
 
 unsigned int seed = 42;
 Ocean::Ocean() {
@@ -30,9 +31,9 @@ void Ocean::addObjects(unsigned int n, ObjType type) {
   while (n > 0) {
     unsigned int x = rand_r(&seed) % M;
     unsigned int y = rand_r(&seed) % N;
-    if (cells[y][x].getObject())
+    if (cells[y][x].getObject()) {
       continue;
-    else {
+    } else {
       Object *born = nullptr;
       switch (type) {
         case ObjType::STONE:
