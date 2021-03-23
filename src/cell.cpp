@@ -23,8 +23,7 @@ void Cell::killMe() {
   }
 }
 
-void Cell::Moving()  // clean past cell
-{
+void Cell::Moving() {  // clean past cell
   obj->setCell(nullptr);
   obj = nullptr;
 }

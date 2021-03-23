@@ -3,7 +3,7 @@
 #include <iostream>
 
 #include "ocean.h"
-using namespace std;
+// using namespace std;
 int main() {
   Ocean *oc = new Ocean;
   oc->addObjects(1500, ObjType::PREY);

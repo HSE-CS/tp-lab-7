@@ -21,7 +21,7 @@ class Object {
 
  public:
   explicit Object(Cell * = nullptr);
-  virtual ~Object(){}
+  virtual ~Object() {}
   virtual void live() = 0;  // жизнь объекта
   void setCell(Cell *);
   virtual char getSymbol() = 0;
