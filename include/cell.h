@@ -15,6 +15,7 @@ class Cell {
   Object *obj;
   Ocean *ocean;
   Cell ***field;
+
  public:
   explicit Cell(Pair p = { 0, 0 }, Ocean* oc = nullptr) :
     crd(p),
