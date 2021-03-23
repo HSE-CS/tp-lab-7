@@ -1,6 +1,6 @@
 // Copyright 2021 Khoroshavina Ekaterina
 #include <iostream>
-#include "ocean.h"
+#include "../include/ocean.h"
 
 int main() {
     Ocean* oc = new Ocean;
