@@ -1,11 +1,11 @@
 // Copyright 2021 Khoroshavina Ekaterina
 #ifndef INCLUDE_PREY_H_
 #define INCLUDE_PREY_H_
-#include "object.h"
-#include "cell.h"
+#include "../include/object.h"
+#include "../include/cell.h"
 
 class Prey : public Object {
-public:
+ public:
     Prey(ObjType newObjType, Cell* cell);
     ~Prey();
     void live();
@@ -13,4 +13,4 @@ public:
     void breed();
 };
 
-#endif 
+#endif // INCLUDE_PREY_H_
