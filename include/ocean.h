@@ -2,8 +2,8 @@
 #ifndef INCLUDE_OCEAN_H_
 #define INCLUDE_OCEAN_H_
 
-#include "cell.h"
 #include <list>
+#include "include/cell.h"
 
 class Ocean {
   friend class Cell;

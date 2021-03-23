@@ -1,12 +1,13 @@
 // Copyright 2021 Dev-will-work
 #include <iostream>
+#include <algorithm>
 #include <random>
 #include <ctime>
-#include "ocean.h"
-#include "stone.h"
-#include "predator.h"
-#include "prey.h"
-#include "common.h"
+#include "include/ocean.h"
+#include "include/stone.h"
+#include "include/predator.h"
+#include "include/prey.h"
+#include "include/common.h"
 
 void timer(int seconds) {
   // multple calls of time() to improve painting frequency
@@ -87,9 +88,10 @@ void Ocean::addObjects(Object* objects, size_t size) {
 }
 
 void Ocean::run() {
+  int status = 0;
   while (true) {
     timer(1);
-    system("cls");
+    status = system("cls");
     this->print();
     for (auto it : this->stuff) {
       it->live();

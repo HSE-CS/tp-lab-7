@@ -3,9 +3,9 @@
 #define INCLUDE_PREY_H_
 #include <iostream>
 #include <string>
-#include "stone.h"
-#include "cell.h"
-#include "ocean.h"
+#include "include/stone.h"
+#include "include/cell.h"
+#include "include/ocean.h"
 
 class Prey : public Stone {
  public:
