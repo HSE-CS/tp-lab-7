@@ -9,8 +9,8 @@ class Predator : public Object {
  private:
   bool hungry;
  public:
-  Predator(Cell* c);
-  ~Predator() {};
+  explicit Predator(Cell* c);
+  ~Predator() {}
   void live();
   void move();
   void eat();

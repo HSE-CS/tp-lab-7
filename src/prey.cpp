@@ -1,6 +1,6 @@
 // Copyright 2020 Konina Tatiana
 
-#include "prey.h"
+#include "../include/prey.h"
 
 Prey::Prey(Cell* cell) : Object(cell) {
   setTimeOfLive(TIME_PREY);
@@ -15,7 +15,6 @@ void Prey::live() {
   } else if (!(time_of_life % 5)) {
     makeChild();
   }
- 
 }
 
 char Prey::getSymbol() {

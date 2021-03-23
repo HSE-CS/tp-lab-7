@@ -1,7 +1,8 @@
 // Copyright 2020 Konina Tatiana
 #ifndef INCLUDE_OBJECT_H_
 #define INCLUDE_OBJECT_H_
-#include "common.h"
+
+#include "../include/common.h"
 
 #define STONE_N '#'
 #define PREY_N 'f'
@@ -12,15 +13,15 @@ class Cell;
 enum class ObjType { STONE, CORAL, PREY, PREDATOR };
 
 class Object {
- protected:
+protected:
 	Cell* cell;
 	int time_of_life;
 	bool dead;
 	ObjType type;
- public:
-	Object(Cell*);
-	virtual ~Object() {};
-	virtual void live() = 0; // жизнь объекта
+public:
+	explicit Object(Cell*);
+	virtual ~Object() {}
+	virtual void live() = 0;
 	void setCell(Cell*);
 
 	virtual char getSymbol() = 0;

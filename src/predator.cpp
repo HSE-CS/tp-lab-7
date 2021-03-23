@@ -1,7 +1,7 @@
 // Copyright 2020 Konina Tatiana
 
-#include "predator.h"
-#include "cell.h"
+#include "../include/predator.h"
+#include "../include/cell.h"
 
 Predator::Predator(Cell* cell) : Object(cell) {
   setTimeOfLive(TIME_PREY);
@@ -14,14 +14,12 @@ void Predator::live() {
   time_of_life--;
   if (time_of_life % 5 == 0) {
     hungry = true;
-  }
-  if (hungry && time_of_life) {
+  } if (hungry && time_of_life) {
     eat();
   }
-  else if ( time_of_life % 4 == 0) {
+  else if (time_of_life % 4 == 0) {
     makeChild();
-  }
-  else if (time_of_life == 0) {
+  } else if (time_of_life == 0) {
     die();
   }
 }

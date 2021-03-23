@@ -1,15 +1,15 @@
 // Copyright 2020 Konina Tatiana
 
-#include "object.h"
+#include "../include/object.h"
 
 Object::Object(Cell* cell) {
 	this->cell = cell;
 	this->dead = false;
-};
+}
 
 void Object::setCell(Cell* cell) {
 	this->cell = cell;
-};
+}
 Cell* Object::getCell() {
 	return cell;
 }

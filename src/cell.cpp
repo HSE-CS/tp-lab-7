@@ -1,6 +1,6 @@
 // Copyright 2020 Konina Tatiana
 
-#include "cell.h"
+#include "../include/cell.h"
 
 
 void Cell::init(Pair p, Ocean* oc) {

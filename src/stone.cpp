@@ -1,5 +1,5 @@
 // Copyright 2020 Konina Tatiana
-#include "stone.h"
+#include "../include/stone.h"
 
 Stone::Stone(Cell* c) :Object(c) {
   setTimeOfLive(TIME_STONE);

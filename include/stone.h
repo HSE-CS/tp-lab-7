@@ -2,14 +2,14 @@
 #ifndef INCLUDE_STONE_H_
 #define INCLUDE_STONE_H_
 
-#include "object.h"
-#include "common.h"
-#include "cell.h"
+#include "../include/object.h"
+#include "../include/common.h"
+#include "../include/cell.h"
 
 class Stone : public Object {
  public:
   Stone(Cell* cell);
-  ~Stone() {};
+  ~Stone() {}
   void live();
   char getSymbol() override;
 };

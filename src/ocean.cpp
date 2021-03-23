@@ -1,12 +1,12 @@
 // Copyright 2020 Konina Tatiana
-
-#include <iostream>
-#include <random>
 #include <time.h>
+#include <iostream>
+#include <cstdlib>
 
-#include "ocean.h"
-#include "stone.h"
-#include "object.h"
+
+#include "../include/ocean.h"
+#include "../include/stone.h"
+#include "../include/object.h"
 
 Ocean::Ocean() {
 	cells = new Cell * [N];
@@ -16,7 +16,7 @@ Ocean::Ocean() {
 			cells[i][j].init(Pair{ i, j }, this);
 		}
 	}
-};
+}
 
 
 void Ocean::print() const {
@@ -30,17 +30,17 @@ void Ocean::print() const {
 		}
 		std::cout << std::endl;
 	}
-};
+}
 
 void Ocean::addObjects(unsigned int n, ObjType type) {
-	for(int i = n;i>0;i--) {
-		unsigned int x = rand() % M;
-		unsigned int y = rand() % N;
+	for(int i = n; i > 0; i--) {
+		unsigned int seed = time(nullptr);
+		unsigned int x = rand_r(&seed) % M;
+		unsigned int y = rand_r(&seed) % N;
 		if (cells[y][x].getObject()) {
 			i++;
 			continue;
-		} else
-		{
+		} else {
 			Object* obj = nullptr;
 			if (type == ObjType::PREY) {
 				obj = new Prey(&cells[y][x]);
@@ -53,12 +53,11 @@ void Ocean::addObjects(unsigned int n, ObjType type) {
 			stuff.push_back(obj);
 		}
 	}
-};
+}
 
-void Ocean::run()
-{
+void Ocean::run() {
 	while (true) {
-		system("cls");
+		std::cout << "\x1b[0m";
 		clock_t now = clock();
 		print();
 		while (clock() < now + CLOCKS_PER_SEC / 10);
@@ -73,10 +72,10 @@ void Ocean::run()
 		}
 	}
 };
-Cell* Ocean::moveObj(Pair crd)
-{
-	int xt = (crd.x + rand() % 3 - 1) % N;
-	int yt = (crd.y + rand() % 3 - 1) % M;
+Cell* Ocean::moveObj(Pair crd) {
+	unsigned int seed = time(nullptr);
+	int xt = (crd.x + rand_r(&seed) % 3 - 1) % N;
+	int yt = (crd.y + rand_r(&seed) % 3 - 1) % M;
 	return &cells[xt][yt];
 }
 Ocean::~Ocean() {
@@ -87,9 +86,12 @@ Ocean::~Ocean() {
 	for (auto i = stuff.begin(); i != stuff.end(); ++i) {
 		delete* i;
 	}
-};
+}
 
 
 void Ocean::addObj(Object* obj) {
 	stuff.push_back(obj);
 }
+
+
+
