@@ -62,7 +62,7 @@ void Ocean::run() {
     print();
     while (clock() < now + CLOCKS_PER_SEC / 10) {
       continue;
-    };
+    }
     for (std::list<Object*>::iterator i = stuff.begin();
       i != stuff.end(); ++i) {
       if ((*i)->getState()) {
@@ -72,7 +72,7 @@ void Ocean::run() {
          (*i)->live();
       }
     }
-	}
+  }
 }
 
 Cell* Ocean::moveObj(Pair crd) {
