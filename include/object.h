@@ -13,22 +13,22 @@ class Cell;
 enum class ObjType { STONE, CORAL, PREY, PREDATOR };
 
 class Object {
-protected:
-	Cell* cell;
-	int time_of_life;
-	bool dead;
-	ObjType type;
-public:
-	explicit Object(Cell*);
-	virtual ~Object() {}
-	virtual void live() = 0;
-	void setCell(Cell*);
+ protected:
+  Cell* cell;
+  int time_of_life;
+  bool dead;
+  ObjType type;
+ public:
+  explicit Object(Cell*);
+  virtual ~Object() {}
+  virtual void live() = 0;
+  void setCell(Cell*);
 
-	virtual char getSymbol() = 0;
-	void setTimeOfLive(int time);
-	void die();
-	Cell* getCell();
-	int getState() const;
+  virtual char getSymbol() = 0;
+  void setTimeOfLive(int time);
+  void die();
+  Cell* getCell();
+  int getState() const;
 };
 #endif  // INCLUDE_OBJECT_H_
 

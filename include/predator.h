@@ -1,7 +1,7 @@
 // Copyright 2020 Konina Tatiana
 #ifndef INCLUDE_PREDATOR_H_
 #define INCLUDE_PREDATOR_H_
-#include "object.h"
+#include "../include/object.h"
 class Cell;
 
 class Predator : public Object {

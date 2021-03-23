@@ -14,10 +14,10 @@ void Predator::live() {
   time_of_life--;
   if (time_of_life % 5 == 0) {
     hungry = true;
-  } if (hungry && time_of_life) {
-    eat();
   }
-  else if (time_of_life % 4 == 0) {
+  if (hungry && time_of_life) {
+    eat();
+  } else if (time_of_life % 4 == 0) {
     makeChild();
   } else if (time_of_life == 0) {
     die();
