@@ -8,7 +8,7 @@
 class Ocean;
 
 class Cell {
- friend Ocean;
+friend Ocean;
  private:
     Pair crd;
     Object* obj;
@@ -26,4 +26,4 @@ class Cell {
     Pair getCrd();
     Cell* makeNewCell();
 };
-#endif // INCLUDE_CELL_H_
+#endif  // INCLUDE_CELL_H_
