@@ -1,13 +1,13 @@
 // Copyright 2021 Khoroshavina Ekaterina
 #ifndef INCLUDE_PREDATOR_H_
 #define INCLUDE_PREDATOR_H_
-#include "object.h"
-#include "cell.h"
+#include "../include/object.h"
+#include "../include/cell.h"
 
 class Predator : public Object {
-protected:
+ protected:
     bool hungry;
-public:
+ public:
     Predator(ObjType newObjType, Cell* cell);
     ~Predator() override;
     void live() override;
@@ -16,4 +16,4 @@ public:
     void breed();
 };
 
-#endif
+#endif // INCLUDE_PREDATOR_H_
