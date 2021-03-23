@@ -3,8 +3,8 @@
 #ifndef INCLUDE_OCEAN_H_
 #define INCLUDE_OCEAN_H_
 
-#include "common.h"
-#include "cell.h"
+#include "../include/common.h"
+#include "../include/cell.h"
 
 #include <list>
 

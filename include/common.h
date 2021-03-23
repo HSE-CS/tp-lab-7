@@ -3,15 +3,13 @@
 #ifndef INCLUDE_COMMON_H_
 #define INCLUDE_COMMON_H_
 
-typedef size_t coord_t;
-
 struct pair {
   unsigned x;
   unsigned y;
 };
 
-const size_t N = 50;
-const size_t M = 80;
+const unsigned N = 50;
+const unsigned M = 80;
 
 const unsigned PreyLife = 6;
 const unsigned PreyReproduce = 2;

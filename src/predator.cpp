@@ -1,7 +1,7 @@
 // Copyright by Egor Bodrov 2021
 
-#include "predator.h"
-#include "cell.h"
+#include "../include/predator.h"
+#include "../include/cell.h"
 
 Predator::Predator(Cell* cell) : Prey{cell}, eaten {0} {
   this->setType(ObjectType::PREDATOR);

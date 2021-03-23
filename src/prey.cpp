@@ -1,8 +1,8 @@
 // Copyright by Egor Bodrov 2021
 
-#include "prey.h"
-#include "ocean.h"
-#include "common.h"
+#include "../include/prey.h"
+#include "../include/ocean.h"
+#include "../include/common.h"
 
 Prey::Prey(Cell* cell)
     : Object{cell}, timeToDie{PreyLife}, timeToReproduce{PreyReproduce} {

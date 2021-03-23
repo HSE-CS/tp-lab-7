@@ -1,6 +1,6 @@
 // Copyright by Egor Bodrov 2021
 
-#include "ocean.h"
+#include "../include/ocean.h"
 #include <iostream>
 
 int main() {

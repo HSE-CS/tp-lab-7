@@ -1,6 +1,6 @@
 // Copyright by Egor Bodrov 2021
 
-#include "cell.h"
+#include "../include/cell.h"
 
 Cell::Cell(pair coords, Ocean* ocean)
     : loc{coords}, ocean{ocean}, obj{nullptr} {}
