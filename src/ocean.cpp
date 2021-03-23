@@ -68,13 +68,9 @@ void Ocean::setObjectOnCell(Object *object, int i, int j) {
     addObject(object);
 }
 
-unsigned int Ocean::lenX() {
-    return this->cells.size();
-}
+unsigned int Ocean::lenX() { return this->cells.size(); }
 
-unsigned int Ocean::lenY() {
-    return this->cells[0].size();
-}
+unsigned int Ocean::lenY() { return this->cells[0].size(); }
 
 Object * Ocean::removeFromStuff(Object *obj) {
     Object *tmp = nullptr;
@@ -86,10 +82,6 @@ Object * Ocean::removeFromStuff(Object *obj) {
 }
 
 void Ocean::print() {
-    for (int i = 0; i < lenX() * lenY(); ++i) {
-        std::cout << "\n";
-    }
-    std::cout << "------------\nOCEAN\n";
     for (auto &rows : cells) {
         for (auto &x : rows) {
             if (x->getObject() != nullptr) {
@@ -100,6 +92,8 @@ void Ocean::print() {
         }
         std::cout << "\n";
     }
+    std::cout << "\n";
+
 }
 
 void Ocean::run() {
