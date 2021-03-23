@@ -1,5 +1,7 @@
-#ifndef _COMMON_H_
-#define _COMMON_H_
+// Copyright 2021 LongaBonga
+
+#ifndef INCLUDE_COMMON_H_
+#define INCLUDE_COMMON_H_
 
 #include <time.h>
 
@@ -25,4 +27,4 @@ const int LTStone = 10000;
 const size_t N = 50;
 const size_t M = 60;
 
-#endif
+#endif  // INCLUDE_COMMON_H_

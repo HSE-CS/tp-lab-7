@@ -1,5 +1,7 @@
-#ifndef _PREDATOR_H_
-#define _PREDATOR_H_
+// Copyright 2021 LongaBonga
+
+#ifndef INCLUDE_PREDATOR_H_
+#define INCLUDE_PREDATOR_H_
 
 #include "cell.h"
 #include "common.h"
@@ -9,8 +11,8 @@ class Predator : public Object {
   friend Cell;
 
  public:
-  Predator(Cell *c);
-  ~Predator(){};
+  explicit Predator(Cell *c);
+  ~Predator(){}
   void copulation();
   void live() override;
   void move();
@@ -18,4 +20,4 @@ class Predator : public Object {
   char getSymbol() override;
 };
 
-#endif
+#endif  // INCLUDE_PREDATOR_H_

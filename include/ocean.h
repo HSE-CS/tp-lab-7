@@ -1,5 +1,7 @@
-#ifndef _OCEAN_H_
-#define _OCEAN_H_
+// Copyright 2021 LongaBonga
+
+#ifndef INCLUDE_OCEAN_H_
+#define INCLUDE_OCEAN_H_
 
 #include <list>
 #include <vector>
@@ -26,4 +28,4 @@ class Ocean {
   Cell *Step(Pair crd);
   Cell *Radar(Pair cord);
 };
-#endif
+#endif  // INCLUDE_OCEAN_H_

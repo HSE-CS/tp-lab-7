@@ -1,5 +1,7 @@
-#ifndef _OBJECT_H_
-#define _OBJECT_H_
+// Copyright 2021 LongaBonga
+
+#ifndef INCLUDE_OBJECT_H_
+#define INCLUDE_OBJECT_H_
 
 #include "common.h"
 
@@ -18,8 +20,8 @@ class Object {
   ObjType type;
 
  public:
-  Object(Cell * = nullptr);
-  virtual ~Object(){};
+  explicit Object(Cell * = nullptr);
+  virtual ~Object(){}
   virtual void live() = 0;  // жизнь объекта
   void setCell(Cell *);
   virtual char getSymbol() = 0;
@@ -30,4 +32,4 @@ class Object {
   void readytodie();
   unsigned int getLive();
 };
-#endif
+#endif  // INCLUDE_OBJECT_H_
