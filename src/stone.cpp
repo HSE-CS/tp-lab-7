@@ -1,5 +1,5 @@
 // Copyright 2021 Khoroshavina Ekaterina
-#include "stone.h"
+#include "../include/stone.h"
 
 Stone::Stone(ObjType newObjType, Cell* cell) : Object(newObjType, cell) {
     this->objType = newObjType;
