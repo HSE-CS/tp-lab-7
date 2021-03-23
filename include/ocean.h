@@ -21,4 +21,4 @@ class Ocean {
     void run();
     Cell* newCell(Pair crd);
 };
-#endif // INCLUDE_OCEAN_H_
+#endif  // INCLUDE_OCEAN_H_
