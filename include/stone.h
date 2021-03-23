@@ -13,7 +13,7 @@ class STONE : public Object {
      int fastness;
  public:
     STONE(Pair coord, Cell* cell) :
-        Object(ObjType::STONE, coord, cell) {fastness = 10}
+        Object(ObjType::STONE, coord, cell) {fastness = 10;}
     ~STONE() {}
     void live() override;
     int getFastness() {

@@ -16,8 +16,8 @@ class Predator : public Object {
      Predator(Pair coord, Cell* cell) :
          Object(ObjType::PREDATOR, coord, cell) {
           hunger = 10;
-          readyForCatch = false
-          }
+          readyForCatch = false;
+          };
      ~Predator() {}
      Object* Searching(Ocean* ocean);
      friend Ocean;
