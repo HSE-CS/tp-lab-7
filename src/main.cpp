@@ -1,10 +1,10 @@
 // Copyright <Roman Balayan> @ 2021
 
-#include <iostream>
 #include <time.h>
+#include <iostream>
 #include <memory>
 
-#include "ocean.h"
+#include "../include/ocean.h"
 
 int main() {
     srand(time(0));

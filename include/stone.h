@@ -2,10 +2,12 @@
 
 #pragma once
 
-#include "object.h"
+#include <memory>
+
+#include "../include/object.h"
 
 class Stone : public Object {
-public:
-    Stone(std::weak_ptr<Cell> cell = std::weak_ptr<Cell>());
+ public:
+    explicit Stone(std::weak_ptr<Cell> cell = std::weak_ptr<Cell>());
     void live();
 };

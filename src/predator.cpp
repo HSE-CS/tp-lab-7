@@ -1,9 +1,9 @@
 // Copyright <Roman Balayan> @ 2021
 
-#include "predator.h"
-#include "common.h"
-#include "cell.h"
-#include "ocean.h"
+#include "../include/predator.h"
+#include "../include/common.h"
+#include "../include/cell.h"
+#include "../include/ocean.h"
 
 Predator::Predator(std::weak_ptr<Cell> cell) : Prey(cell) {
     this->type = ObjType::PREDATOR;
@@ -20,20 +20,18 @@ void Predator::live() {
         return;
     if (neighbourCell->getObjType() == ObjType::EMPTY) {
         this->moveTo(neighbourCell);
-    }
-    else if (neighbourCell->getObjType() == ObjType::PREY) {
+    } else if (neighbourCell->getObjType() == ObjType::PREY) {
         this->eat();
         neighbourCell->killMe();
         this->moveTo(neighbourCell);
-    }
-    else if (neighbourCell->getObjType() == ObjType::PREDATOR) {
+    } else if (neighbourCell->getObjType() == ObjType::PREDATOR) {
         this->reproduction();
     }
     //  in the case of stone do nothing
 }
 
 void Predator::reproduction() {
-    std::shared_ptr<Cell> emptyCell = 
+    std::shared_ptr<Cell> emptyCell =
           this->cell.lock()->getOcean()->getEmptyCellAround(this->cell.lock());
     if (!emptyCell) {
         int casino = rand() % 100;

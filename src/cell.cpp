@@ -1,9 +1,9 @@
 // Copyright <Roman Balayan> @ 2021
 
-#include "cell.h"
-#include "ocean.h"
-#include "common.h"
-#include "object.h"
+#include "../include/cell.h"
+#include "../include/ocean.h"
+#include "../include/common.h"
+#include "../include/object.h"
 
 Cell::Cell(Pair coords, std::shared_ptr<Ocean> oceanPtr) {
     this->coords = coords;
@@ -35,13 +35,11 @@ void Cell::killMe() {
     // old obj is automatically deleted
 }
 
-bool Cell::isEmpty()
-{
+bool Cell::isEmpty() {
     return obj ? false : true;
 }
 
-std::shared_ptr<Cell> Cell::getNeighbour()
-{
+std::shared_ptr<Cell> Cell::getNeighbour() {
     unsigned int direction = rand() % 4;
     int newY = this->coords.second, newX = this->coords.first;
     switch (direction) {

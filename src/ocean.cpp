@@ -4,17 +4,17 @@
 #include <thread>
 #include <algorithm>
 
-#include "ocean.h"
-#include "cell.h"
-#include "common.h"
-#include "prey.h"
-#include "predator.h"
+#include "../include/ocean.h"
+#include "../include/cell.h"
+#include "../include/common.h"
+#include "../include/prey.h"
+#include "../include/predator.h"
 
 Ocean::Ocean() {
 }
 
 void Ocean::print() const {
-    //system("cls");
+    //  system("cls");
     for (const auto& row : this->cells) {
         for (const auto& cell : row) {
             if (cell->getObjType() == ObjType::EMPTY) {
@@ -79,14 +79,13 @@ void Ocean::run() {
     this->print();
     int i = 0;
     while (1) {
-        for (auto& obj : this->stuff)
-        {
+        for (auto& obj : this->stuff) {
             if (obj)
                 obj->live();
         }
         this->print();
         std::cout << i++ << " iter\n";
-        //std::cin >> c;
+        //  std::cin >> c;
         std::this_thread::sleep_for(std::chrono::milliseconds(1500));
     }
 }
@@ -104,12 +103,11 @@ std::shared_ptr<Cell> Ocean::getEmptyCell() {
     return nullptr;
 }
 
-std::shared_ptr<Cell> Ocean::getEmptyCellAround(std::shared_ptr<Cell> target)
-{
+std::shared_ptr<Cell> Ocean::getEmptyCellAround(std::shared_ptr<Cell> target) {
     return std::shared_ptr<Cell>();
     auto x = target->coords.first;
     auto y = target->coords.second;
-    for(int i = -1; i <= 1; ++i)
+    for (int i = -1; i <= 1; ++i)
         for (int j = -1; j <= 1; ++j) {
             if (i == 0 && j == 0)
                 continue;
@@ -121,7 +119,7 @@ std::shared_ptr<Cell> Ocean::getEmptyCellAround(std::shared_ptr<Cell> target)
 }
 
 std::shared_ptr<Cell> Ocean::getCell(int x, int y) {
-    if(x >= 0 && x < Constants::X && y >= 0 && y < Constants::Y)
+    if (x >= 0 && x < Constants::X && y >= 0 && y < Constants::Y)
         return this->cells[y][x];
     return nullptr;
 }

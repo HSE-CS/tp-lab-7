@@ -1,9 +1,9 @@
 // Copyright <Roman Balayan> @ 2021
 
-#include "prey.h"
-#include "common.h"
-#include "cell.h"
-#include "ocean.h"
+#include "../include/prey.h"
+#include "../include/common.h"
+#include "../include/cell.h"
+#include "../include/ocean.h"
 
 Prey::Prey(std::weak_ptr<Cell> cell) : Object(cell) {
     this->type = ObjType::PREY;
@@ -29,7 +29,7 @@ void Prey::live() {
 }
 
 void Prey::reproduction() {
-    std::shared_ptr<Cell> emptyCell = 
+    std::shared_ptr<Cell> emptyCell =
         this->cell.lock()->getOcean()->getEmptyCellAround(this->cell.lock());
     if (!emptyCell) {
         int casino = rand() % 100;

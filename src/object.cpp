@@ -1,11 +1,11 @@
 // Copyright <Roman Balayan> @ 2021
 
-#include "object.h"
-#include "cell.h"
-#include "common.h"
+#include "../include/object.h"
+#include "../include/cell.h"
+#include "../include/common.h"
 
 Object::Object(std::weak_ptr<Cell> cell) : cell(cell)
-                                         , type(ObjType::EMPTY){
+                                         , type(ObjType::EMPTY) {
 }
 
 void Object::live() {

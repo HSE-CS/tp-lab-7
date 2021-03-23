@@ -4,19 +4,13 @@
 
 #include <memory>
 
-#include "object.h"
+#include "../include/object.h"
 
 class Prey : public Object {
-public:
-    Prey(std::weak_ptr<Cell> cell = std::weak_ptr<Cell>());
+ public:
+    explicit Prey(std::weak_ptr<Cell> cell = std::weak_ptr<Cell>());
     void live();
     void reproduction();
-protected:
+ protected:
     unsigned int health;
-};
-
-class Stone : public Object {
-public:
-    Stone(std::weak_ptr<Cell> cell = std::weak_ptr<Cell>());
-    void live();
 };

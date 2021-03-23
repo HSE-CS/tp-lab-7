@@ -2,14 +2,16 @@
 
 #pragma once
 
-#include "prey.h"
+#include <memory>
+
+#include "../include/prey.h"
 
 class Predator : public Prey {
-public:
-    Predator(std::weak_ptr<Cell> cell = std::weak_ptr<Cell>());
+ public:
+    explicit Predator(std::weak_ptr<Cell> cell = std::weak_ptr<Cell>());
     void live();
     void reproduction();
     void eat();
-private:
+ private:
     unsigned int health;
 };
