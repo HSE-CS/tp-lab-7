@@ -16,4 +16,4 @@ class Predator : public Object {
     void breed();
 };
 
-#endif // INCLUDE_PREDATOR_H_
+#endif  // INCLUDE_PREDATOR_H_
