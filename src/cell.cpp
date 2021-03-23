@@ -1,7 +1,7 @@
 // Copyright 2021 Dev-will-work
 #include <algorithm>
-#include "include/cell.h"
-#include "include/ocean.h"
+#include "../include/cell.h"
+#include "../include/ocean.h"
 
 Cell::~Cell() {
   delete this->obj;

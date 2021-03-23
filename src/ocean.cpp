@@ -3,11 +3,11 @@
 #include <algorithm>
 #include <random>
 #include <ctime>
-#include "include/ocean.h"
-#include "include/stone.h"
-#include "include/predator.h"
-#include "include/prey.h"
-#include "include/common.h"
+#include "../include/ocean.h"
+#include "../include/stone.h"
+#include "../include/predator.h"
+#include "../include/prey.h"
+#include "../include/common.h"
 
 void timer(int seconds) {
   // multple calls of time() to improve painting frequency

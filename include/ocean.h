@@ -3,7 +3,7 @@
 #define INCLUDE_OCEAN_H_
 
 #include <list>
-#include "include/cell.h"
+#include "../include/cell.h"
 
 class Ocean {
   friend class Cell;
