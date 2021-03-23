@@ -2,6 +2,7 @@
 
 #include "../include/predator.h"
 #include "../include/cell.h"
+#include "../include/ocean.h"
 
 Predator::Predator(Cell* cell) : Object(cell) {
   setTimeOfLive(TIME_PREY);
