@@ -1,4 +1,4 @@
-
+// Copyright 2021 Dmitry Vargin
 #include "../include/cell.h"
 
 Cell::Cell(std::pair<int, int> p, Ocean *oc) {

@@ -1,16 +1,17 @@
-#ifndef TP_LAB_7_PREDATOR_H
-#define TP_LAB_7_PREDATOR_H
+// Copyright 2021 Dmitry Vargin
+#ifndef INCLUDE_PREDATOR_H_
+#define INCLUDE_PREDATOR_H_
 
-#include "common.h"
-#include "ocean.h"
-#include "prey.h"
-#include "object.h"
-#include "cell.h"
+#include "../include/common.h"
+#include "../include/ocean.h"
+#include "../include/prey.h"
+#include "../include/object.h"
+#include "../include/cell.h"
 
 class Predator : public Prey {
-public:
+ public:
     static const unsigned int std_life_time = 20;
-    Predator(Cell *c, unsigned int lt) : Prey(c, lt) {};
+    Predator(Cell *c, unsigned int lt) : Prey(c, lt) {}
     void live() override;
 
     Cell *getNextCell();
@@ -21,4 +22,4 @@ public:
 };
 
 
-#endif //TP_LAB_7_PREDATOR_H
+#endif  // INCLUDE_PREDATOR_H_

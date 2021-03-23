@@ -1,6 +1,6 @@
-
+// Copyright 2021 Dmitry Vargin
 #include "../include/prey.h"
-#include "ocean.h"
+#include "../include/ocean.h"
 
 void Prey::live() {
     if (--this->life_time < 1) {
@@ -15,38 +15,29 @@ Cell *Prey::getNextCell() {
     if (cell->crd.first > 0 &&
             !this->cell->getOcean()->get(
                     this->cell->crd.first-1,
-                    this->cell->crd.second
-            )->hasObject()) {
+                    this->cell->crd.second)->hasObject()) {
         variants.push_back(
                 this->cell->getOcean()->get(
                         this->cell->crd.first-1,
-                        this->cell->crd.second
-                )
-        );
+                        this->cell->crd.second));
     }
     if (cell->crd.first < cell->getOcean()->lenX() - 1 &&
             !this->cell->getOcean()->get(
                     this->cell->crd.first+1,
-                    this->cell->crd.second
-            )->hasObject()) {
+                    this->cell->crd.second)->hasObject()) {
         variants.push_back(
                 this->cell->getOcean()->get(
                         this->cell->crd.first+1,
-                        this->cell->crd.second
-                )
-        );
+                        this->cell->crd.second));
     }
     if (cell->crd.second > 0 &&
             !this->cell->getOcean()->get(
                     this->cell->crd.first,
-                    this->cell->crd.second-1
-            )->hasObject()) {
+                    this->cell->crd.second-1)->hasObject()) {
         variants.push_back(
                 this->cell->getOcean()->get(
                         this->cell->crd.first,
-                        this->cell->crd.second-1
-                )
-        );
+                        this->cell->crd.second-1));
     }
     if (cell->crd.second < cell->getOcean()->lenY() - 1 &&
             !this->cell->getOcean()->get(
@@ -56,9 +47,7 @@ Cell *Prey::getNextCell() {
         variants.push_back(
                 this->cell->getOcean()->get(
                         this->cell->crd.first,
-                        this->cell->crd.second+1
-                )
-        );
+                        this->cell->crd.second+1));
     }
     if (variants.empty()) {
         return this->cell;

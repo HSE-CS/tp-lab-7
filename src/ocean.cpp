@@ -1,7 +1,7 @@
-
+// Copyright 2021 Dmitry Vargin
 #include "../include/ocean.h"
-#include "predator.h"
-#include "stone.h"
+#include "../include/predator.h"
+#include "../include/stone.h"
 
 Ocean::Ocean(unsigned int x_len, unsigned int y_len) {
     if (x_len < 1 || y_len < 1) {
@@ -24,7 +24,7 @@ Ocean::~Ocean() {
             delete j;
         }
     }
-    for (Object *a: this->stuff) {
+    for (Object *a : this->stuff) {
         delete a;
     }
 }
@@ -98,10 +98,10 @@ void Ocean::print() {
 
 void Ocean::run() {
     int max_cells = this->lenX() * this->lenY();
-    int r;
+    int sr = 123;
     for (int i = 0; i < lenX(); ++i) {
         for (int j = 0; j < lenY(); ++j) {
-            switch (rand() % ObjectTypeLen-1) {
+            switch (rand_r(sr) % ObjectTypeLen - 1) {
                 case -1:
                     setObjectOnCell(new Stone(get(i, j)), i, j);
                     break;

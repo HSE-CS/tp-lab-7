@@ -1,20 +1,21 @@
-#ifndef TP_LAB_7_STONE_H
-#define TP_LAB_7_STONE_H
+// Copyright 2021 Dmitry Vargin
+#ifndef INCLUDE_STONE_H_
+#define INCLUDE_STONE_H_
 
-#include "common.h"
-#include "object.h"
-#include "cell.h"
+#include "../include/common.h"
+#include "../include/object.h"
+#include "../include/cell.h"
 
 class Stone : public Object{
-public:
+ public:
     static const unsigned int std_life_time = 1;
-    Stone(Cell *c) : Object(c) {
+    explicit Stone(Cell *c) : Object(c) {
         this->life_time = 1;
-    };
+    }
     void live() override;
     char getCharacter() override { return '.'; }
     ObjectType getType() override { return ObjectType::STONE;}
 };
 
 
-#endif //TP_LAB_7_STONE_H
+#endif  // INCLUDE_STONE_H_

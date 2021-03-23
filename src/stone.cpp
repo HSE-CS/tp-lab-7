@@ -1,3 +1,4 @@
+// Copyright 2021 Dmitry Vargin
 #include "../include/stone.h"
 
 void Stone::live() {

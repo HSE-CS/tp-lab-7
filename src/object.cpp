@@ -1,4 +1,5 @@
-#include "object.h"
+// Copyright 2021 Dmitry Vargin
+#include "../include/object.h"
 
 Object::Object(Cell *cell) {
     this->cell = cell;

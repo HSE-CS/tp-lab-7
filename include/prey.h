@@ -1,17 +1,17 @@
+// Copyright 2021 Dmitry Vargin
+#ifndef INCLUDE_PREY_H_
+#define INCLUDE_PREY_H_
 
-#ifndef TP_LAB_7_PREY_H
-#define TP_LAB_7_PREY_H
-
-#include "common.h"
-#include "object.h"
-#include "cell.h"
+#include "../include/common.h"
+#include "../include/object.h"
+#include "../include/cell.h"
 
 class Prey : public Object {
-public:
+ public:
     static const unsigned int std_life_time = 10;
     Prey(Cell *c, unsigned int lt) : Object(c) {
         this->life_time = lt;
-    };
+    }
     void live() override;
 
     virtual Cell *getNextCell();
@@ -21,4 +21,4 @@ public:
 };
 
 
-#endif //TP_LAB_7_PREY_H
+#endif  // INCLUDE_PREY_H_

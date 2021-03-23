@@ -1,4 +1,4 @@
-
+// Copyright 2021 Dmitry Vargin
 #include "../include/predator.h"
 
 void Predator::live() {
@@ -19,7 +19,7 @@ Cell *Predator::getNextCell() {
                 cell->crd.first-1,
                 cell->crd.second);
         if (tmp_c->hasObject()) {
-            tmp_t = (int) tmp_c->getObject()->getType();
+            tmp_t = static_cast<int>(tmp_c->getObject()->getType());
             if (0 <= tmp_t && tmp_t <= 1) {
                 eat.push_back(tmp_c);
             }
@@ -32,7 +32,7 @@ Cell *Predator::getNextCell() {
                 cell->crd.first+1,
                 cell->crd.second);
         if (tmp_c->hasObject()) {
-            tmp_t = (int) tmp_c->getObject()->getType();
+            tmp_t = static_cast<int>(tmp_c->getObject()->getType());
             if (0 <= tmp_t && tmp_t <= 1) {
                 eat.push_back(tmp_c);
             }
@@ -45,7 +45,7 @@ Cell *Predator::getNextCell() {
                 cell->crd.first,
                 cell->crd.second-1);
         if (tmp_c->hasObject()) {
-            tmp_t = (int) tmp_c->getObject()->getType();
+            tmp_t = static_cast<int>(tmp_c->getObject()->getType());
             if (0 <= tmp_t && tmp_t <= 1) {
                 eat.push_back(tmp_c);
             }
@@ -58,7 +58,7 @@ Cell *Predator::getNextCell() {
                 cell->crd.first,
                 cell->crd.second+1);
         if (tmp_c->hasObject()) {
-            tmp_t = (int) tmp_c->getObject()->getType();
+            tmp_t = static_cast<int>(tmp_c->getObject()->getType());
             if (0 <= tmp_t && tmp_t <= 1) {
                 eat.push_back(tmp_c);
             }

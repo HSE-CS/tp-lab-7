@@ -1,26 +1,26 @@
-#ifndef _OBJECT_H_
-#define _OBJECT_H_
+// Copyright 2021 Dmitry Vargin
+#ifndef INCLUDE_CELL_H_
+#define INCLUDE_CELL_H_
 
-#include "common.h"
-#include "object.h"
+#include "../include/common.h"
+#include "../include/object.h"
 
 class Ocean;
 
 class Cell {
     friend Ocean;
     friend Object;
-private:
+ private:
     Object *object;
     Ocean *ocean;
-
-public:
+ public:
     std::pair<int, int> crd;
     explicit Cell(std::pair<int, int> p,
                   Ocean *oc);
     Object *getObject() const;
     void setObject(Object *obj);
     Ocean *getOcean();
-    bool hasObject() { return this->object != nullptr; } ;
+    bool hasObject() {return this->object != nullptr;}
 };
 
-#endif // _OBJECT_H_
+#endif  // INCLUDE_CELL_H_

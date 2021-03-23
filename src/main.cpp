@@ -1,9 +1,8 @@
-#include "common.h"
-#include "predator.h"
+// Copyright 2021 Dmitry Vargin
+#include "../include/common.h"
+#include "../include/predator.h"
 
 int main() {
-    srand(time(nullptr));
-
     auto *ocean = new Ocean(25, 200);
     ocean->run();
 }
