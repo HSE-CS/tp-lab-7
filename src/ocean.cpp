@@ -3,7 +3,6 @@
 #include "ocean.h"
 #include "object.h"
 #include "stone.h"
-using namespace std;
 #include <iostream>
 #include <random>
 
@@ -58,8 +57,7 @@ void Ocean::run() {
     clock_t now = clock();
     print();
     std::cout << "\n";
-    while (clock() < now + CLOCKS_PER_SEC / 2)
-      ;
+    while (clock() < now + CLOCKS_PER_SEC / 2) {}
     std::list<Object *>::iterator i = stuff.begin();
     while (i != stuff.end()) {
       bool isActive = DeleteObj(*i);
@@ -81,9 +79,8 @@ bool Ocean::DeleteObj(Object *obj) {
 }
 
 Cell *Ocean::Step(Pair crd) {
-  random_device ran;
-  int xt = crd.x + ran() % 3 - 1;
-  int yt = crd.y + ran() % 3 - 1;
+  int xt = crd.x + rand_r(&seed) % 3 - 1;
+  int yt = crd.y + rand_r(&seed) % 3 - 1;
   if (xt < N && yt < M) {
     if (cells[xt][yt].getObject() == nullptr) return &cells[xt][yt];
   }
@@ -91,11 +88,10 @@ Cell *Ocean::Step(Pair crd) {
 }
 
 Cell *Ocean::Radar(Pair crd) {
-  random_device ran;
   int i = 0;
   while (i != 8) {
-    int xt = crd.x + ran() % 3 - 1;
-    int yt = crd.y + ran() % 3 - 1;
+    int xt = crd.x + rand_r(&seed) % 3 - 1;
+    int yt = crd.y + rand_r(&seed) % 3 - 1;
 
     if (xt < N && yt < M) {
       if (cells[xt][yt].getObject() &&
