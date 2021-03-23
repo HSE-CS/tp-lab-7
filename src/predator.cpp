@@ -1,5 +1,5 @@
 // Copyright 2021 Khoroshavina Ekaterina
-#include "predator.h"
+#include "../include/predator.h"
 
 Predator::Predator(ObjType newObjType, Cell* cell) : Object(newObjType, cell) {
     this->objType = newObjType;
