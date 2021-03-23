@@ -39,7 +39,7 @@ void Ocean::addObjects() {
     for (unsigned int i{ 0 }; i < Constants::Y; ++i) {
         std::vector<std::shared_ptr<Cell> > row;
         for (unsigned int j{ 0 }; j < Constants::X; ++j) {
-            int casino = rand() % 100;
+            int casino = rand() % 100; // NOLINT [build/c++11]
             cell = std::make_shared<Cell>(Pair(j, i), shared_from_this());
             if (casino <= 30) {
                 object = std::make_shared<Object>(cell);

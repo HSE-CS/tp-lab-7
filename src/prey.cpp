@@ -32,7 +32,7 @@ void Prey::reproduction() {
     std::shared_ptr<Cell> emptyCell =
         this->cell.lock()->getOcean()->getEmptyCellAround(this->cell.lock());
     if (!emptyCell) {
-        int casino = rand() % 100;
+        int casino = rand() % 100; // NOLINT [build/c++11]
         if (casino >= 70) {
             emptyCell = this->cell.lock()->getOcean()->getEmptyCell();
         }

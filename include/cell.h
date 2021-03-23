@@ -1,4 +1,4 @@
-﻿//  Copyright <Roman Balayan> @ 2021
+﻿  //  Copyright <Roman Balayan> @ 2021
 
 #pragma once
 

@@ -19,7 +19,7 @@ ObjType Object::getType() {
     return this->type;
 }
 
-bool Object::moveTo(std::shared_ptr<Cell>& dest) {
+bool Object::moveTo(std::shared_ptr<Cell> dest) {
     if (dest->isEmpty() || dest->getObjType() == ObjType::EMPTY) {
         this->cell.lock()->setObject(dest->getObject());
         dest->setObject(shared_from_this());

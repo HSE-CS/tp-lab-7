@@ -40,7 +40,7 @@ bool Cell::isEmpty() {
 }
 
 std::shared_ptr<Cell> Cell::getNeighbour() {
-    unsigned int direction = rand() % 4;
+    unsigned int direction = rand() % 4; // NOLINT [build/c++11]
     int newY = this->coords.second, newX = this->coords.first;
     switch (direction) {
     case 0:
