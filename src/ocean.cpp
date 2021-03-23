@@ -14,7 +14,7 @@ Ocean::Ocean() {
 }
 
 void Ocean::print() const {
-    system("cls");
+    //system("cls");
     for (const auto& row : this->cells) {
         for (const auto& cell : row) {
             if (cell->getObjType() == ObjType::EMPTY) {
