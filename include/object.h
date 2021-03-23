@@ -11,7 +11,7 @@ class Object : public std::enable_shared_from_this<Object> {
  public:
     explicit Object(std::weak_ptr<Cell> = std::weak_ptr<Cell>());
     //  жизнь объекта, is not pure virtual coz of EMPTY obj
-	virtual void live();
+    virtual void live();
     void setCell(std::weak_ptr<Cell>);
     ObjType getType();
     bool moveTo(std::shared_ptr<Cell> dest);
