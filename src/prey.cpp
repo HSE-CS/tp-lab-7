@@ -1,3 +1,5 @@
+// Copyright 2021 LongaBonga
+
 #include "prey.h"
 
 #include <iostream>

@@ -1,3 +1,5 @@
+// Copyright 2021 LongaBonga
+
 #include "ocean.h"
 
 #include "object.h"
@@ -11,7 +13,7 @@ Ocean::Ocean() {
     cells[i] = new Cell[M];
     for (auto j = 0; j < M; j++) cells[i][j].init(Pair{i, j}, this);
   }
-};
+}
 void Ocean::AddStuff(Object *obj) { stuff.push_back(obj); }
 
 void Ocean::print() const {
@@ -23,7 +25,7 @@ void Ocean::print() const {
     }
     std::cout << std::endl;
   }
-};
+}
 void Ocean::addObjects(unsigned int n, ObjType type) {
   while (n > 0) {
     unsigned int x = rand() % M;
@@ -49,7 +51,7 @@ void Ocean::addObjects(unsigned int n, ObjType type) {
       n--;
     }
   }
-};
+}
 void Ocean::run() {
   while (1) {
     clock_t now = clock();
@@ -68,7 +70,7 @@ void Ocean::run() {
       }
     }
   }
-};
+}
 bool Ocean::DeleteObj(Object *obj) {
   if (obj->getLive() == 0) {
     obj->getCell()->killMe();
@@ -108,4 +110,4 @@ Ocean::~Ocean() {
   for (int i = 0; i < N; i++) delete[] cells[i];
   delete[] cells;
   for (auto i = stuff.begin(); i != stuff.end(); ++i) delete *i;
-};
+}

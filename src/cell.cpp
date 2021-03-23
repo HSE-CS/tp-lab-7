@@ -1,3 +1,5 @@
+// Copyright 2021 LongaBonga
+
 #include "cell.h"
 
 void Cell::init(Pair p, Ocean *oc) {

@@ -1,3 +1,5 @@
+// Copyright 2021 LongaBonga
+
 #include "predator.h"
 Predator::Predator(Cell *c) : Object(c) {
   this->livetime = LTPredator;

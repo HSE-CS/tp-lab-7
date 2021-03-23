@@ -12,7 +12,7 @@ class Predator : public Object {
 
  public:
   explicit Predator(Cell *c);
-  ~Predator(){}
+  ~Predator() {}
   void copulation();
   void live() override;
   void move();

@@ -1,3 +1,5 @@
+// Copyright 2021 LongaBonga
+
 #include "object.h"
 
 Object::Object(Cell *cell) { this->cell = cell; }

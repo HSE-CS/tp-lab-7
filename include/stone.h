@@ -1,5 +1,7 @@
-#ifndef _STONE_H_
-#define _STONE_H_
+// Copyright 2021 LongaBonga
+
+#ifndef INCLUDE_STONE_H_
+#define INCLUDE_STONE_H_
 
 #include "cell.h"
 #include "common.h"
@@ -9,9 +11,9 @@ class Stone : public Object {
   friend Cell;
 
  public:
-  Stone(Cell *c);
-  ~Stone(){};
+  explicit Stone(Cell *c);
+  ~Stone() {}
   void live() override;
   char getSymbol() override;
 };
-#endif
+#endif  // INCLUDE_STONE_H_

@@ -1,5 +1,7 @@
-#ifndef _PREY_H_
-#define _PREY_H_
+// Copyright 2021 LongaBonga
+
+#ifndef INCLUDE_PREY_H_
+#define INCLUDE_PREY_H_
 
 #include "cell.h"
 #include "common.h"
@@ -13,11 +15,11 @@ class Prey : public Object {
   friend class Ocean;
 
  public:
-  Prey(Cell *cell);
+  explicit Prey(Cell *cell);
   ~Prey(){};
   void live() override;
   void move();
   void copulation();
   char getSymbol() override;
 };
-#endif
+#endif  // INCLUDE_PREY_H_
