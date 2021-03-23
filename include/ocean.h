@@ -2,6 +2,10 @@
 #ifndef INCLUDE_OCEAN_H_
 #define INCLUDE_OCEAN_H_
 
+#include <vector>
+#include <list>
+#include <map>
+
 #include "../include/common.h"
 #include "../include/cell.h"
 
@@ -10,6 +14,7 @@ class Ocean {
     std::vector<std::vector<Cell*>> cells;
     std::list<Object*> stuff;
  public:
+    std::minstd_rand RANDOMER;
     Ocean(unsigned int x_len, unsigned int y_len);
     ~Ocean();
     void print();

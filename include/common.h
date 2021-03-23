@@ -13,6 +13,7 @@
 #include <list>
 #include <cmath>
 #include <utility>
+#include <random>
 
 enum class ObjectType {
     STONE = -1,
@@ -22,5 +23,8 @@ enum class ObjectType {
 };
 
 const int ObjectTypeLen = 4;
+
+static unsigned long next = 1;
+
 
 #endif  // INCLUDE_COMMON_H_

@@ -42,8 +42,7 @@ Cell *Prey::getNextCell() {
     if (cell->crd.second < cell->getOcean()->lenY() - 1 &&
             !this->cell->getOcean()->get(
                     this->cell->crd.first,
-                    this->cell->crd.second+1
-            )->hasObject()) {
+                    this->cell->crd.second+1)->hasObject()) {
         variants.push_back(
                 this->cell->getOcean()->get(
                         this->cell->crd.first,
@@ -52,7 +51,7 @@ Cell *Prey::getNextCell() {
     if (variants.empty()) {
         return this->cell;
     }
-    int i = rand() % variants.size();
+    int i = cell->getOcean()->RANDOMER() % variants.size();
     return variants[i];
 }
 
@@ -60,7 +59,7 @@ void Prey::goToCell(Cell *c) {
     this->cell->setObject(nullptr);
     float x = (this->std_life_time - this->life_time) * 1.0f;
     float chance = sqrt(x) / pow(sqrt(this->life_time), 3);
-    float r = rand() % RAND_MAX;
+    float r = cell->getOcean()->RANDOMER() % RAND_MAX;
     if (r < chance) {
         Cell *first_cell = this->cell;
         Cell *second_cell = getNextCell();

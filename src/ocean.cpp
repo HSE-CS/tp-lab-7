@@ -93,15 +93,16 @@ void Ocean::print() {
         std::cout << "\n";
     }
     std::cout << "\n";
-
 }
 
 void Ocean::run() {
     int max_cells = this->lenX() * this->lenY();
     int sr = 123;
+    RANDOMER.seed(time(nullptr));
     for (int i = 0; i < lenX(); ++i) {
         for (int j = 0; j < lenY(); ++j) {
-            switch (rand_r(sr) % ObjectTypeLen - 1) {
+            switch (static_cast<int>(
+                    RANDOMER() % ObjectTypeLen) - 1) {
                 case -1:
                     setObjectOnCell(new Stone(get(i, j)), i, j);
                     break;

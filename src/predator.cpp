@@ -73,7 +73,7 @@ Cell *Predator::getNextCell() {
         i = rand() % free.size();
         return free[i];
     }
-    i = rand() % eat.size();
+    i = cell->getOcean()->RANDOMER() % eat.size();
     return eat[i];
 }
 
@@ -83,7 +83,7 @@ void Predator::goToCell(Cell *c) {
     float x = (this->std_life_time - this->life_time) * 1.0f;
     float chance = sqrt(x) /
             pow(sqrt(sqrt(sqrt(this->life_time))), 3);
-    float r = rand() % RAND_MAX;
+    float r = cell->getOcean()->RANDOMER() % RAND_MAX;
     if (r < chance && canGiveOffSpring) {
         Cell *first_cell = this->cell;
         Cell *second_cell = getNextCell();

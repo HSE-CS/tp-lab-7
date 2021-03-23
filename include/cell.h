@@ -2,6 +2,8 @@
 #ifndef INCLUDE_CELL_H_
 #define INCLUDE_CELL_H_
 
+#include <utility>
+
 #include "../include/common.h"
 #include "../include/object.h"
 
