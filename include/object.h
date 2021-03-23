@@ -1,6 +1,6 @@
 // Copyright 2021 Khoroshavina Ekaterina
-#ifndef INCLUDE_OCEAN_H_
-#define INCLUDE_OCEAN_H_
+#ifndef INCLUDE_OBJECT_H_
+#define INCLUDE_OBJECT_H_
 #include "../include/common.h"
 
 #define STONE_N '#'
@@ -26,4 +26,4 @@ class Object {
     ObjType getType();
     bool isAlive() const;
 };
-#endif // INCLUDE_OCEAN_H_
+#endif  // INCLUDE_OBJECT_H_
