@@ -1,10 +1,10 @@
 // Copyright 2021 Igumnova Natasha
-#include "object.h"
-#include "cell.h"
-#include "ocean.h"
 #include <fstream>
 #include <string>
 #include <cmath>
+#include "../include/object.h"
+#include "../include/cell.h"
+#include "../include/ocean.h"
 
 void Object::setCell(Cell* cell_) {
     cell = cell_;

@@ -1,5 +1,5 @@
 // Copyright 2021 Igumnova Natasha
-#include "cell.h"
+#include "../include/cell.h"
 #include <fstream>
 #include <string>
 #include <cmath>

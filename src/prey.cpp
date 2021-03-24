@@ -1,10 +1,10 @@
 // Copyright 2021 Igumnova Natasha
-#include "prey.h"
-#include "cell.h"
-#include "ocean.h"
 #include <fstream>
 #include <string>
 #include <cmath>
+#include "../include/prey.h"
+#include "../include/cell.h"
+#include "../include/ocean.h"
 
 Prey::~Prey() {
     delete cell;
@@ -17,8 +17,7 @@ void Prey::live() {
     if (multCounter >= multiPoint) {
         multCounter = 0;
         multi();
-    }
-    else {
+    } else {
         multCounter++;
         move();
     }

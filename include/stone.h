@@ -4,13 +4,13 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "object.h"
+#include "../include/object.h"
 
 class Stone : public Object {
  protected:
     Cell* cell;
  public:
-    Stone(Cell* c) :Object(ObjType::STONE, c) {
+    explicit Stone(Cell* c) :Object(ObjType::STONE, c) {
         cell = c;
     }
     ~Stone() override {};

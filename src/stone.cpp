@@ -1,8 +1,9 @@
 // Copyright 2021 Igumnova Natasha
-#include "stone.h"
 #include <fstream>
 #include <string>
 #include <cmath>
+#include "../include/stone.h"
+
 
 void Stone::live() {
     return;

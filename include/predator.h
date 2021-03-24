@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "prey.h"
+#include "../include/prey.h"
 
 class Predator: public Prey {
  protected:

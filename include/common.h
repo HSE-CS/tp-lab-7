@@ -6,8 +6,8 @@
 #include <vector>
 
 struct Pair {
-    int x; // 0..M-1
-    int y; // 0..N-1
+    int x;
+    int y;
 };
 const size_t N = 20;
 const size_t M = 50;

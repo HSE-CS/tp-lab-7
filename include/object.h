@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "common.h"
+#include "../include/common.h"
 
 class Cell;
 
@@ -14,7 +14,8 @@ class Object {
     ObjType type;
     bool dead;
  public:
-    Object(ObjType type_, Cell* cell_): cell(cell_), type(type_), dead(false) {};
+    Object(ObjType type_, Cell* cell_): cell(cell_),
+        type(type_), dead(false) {}
     virtual ~Object();
     virtual void live() = 0;
     void setCell(Cell*);

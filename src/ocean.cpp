@@ -1,9 +1,9 @@
 // Copyright 2021 Igumnova Natasha
-#include "ocean.h"
 #include <fstream>
 #include <string>
 #include <cmath>
 #include <cstdlib>
+#include "../include/ocean.h"
 
 Ocean::Ocean(float preyP, float predatorP,
     float stoneP) {
@@ -19,8 +19,8 @@ Ocean::Ocean(float preyP, float predatorP,
     int stone = static_cast<int>(stoneP * N * M);
     for (int i = 0; i < prey; i++) {
         while (true) {
-            int x = rand() % N;
-            int y = rand() % M;
+            int x = rand_r(prey) % N;
+            int y = rand_r(prey) % M;
             if (cells[x][y].obj == nullptr) {
                 Prey* new_prey = new Prey(&cells[x][y]);
                 cells[x][y].obj = new_prey;
@@ -31,8 +31,8 @@ Ocean::Ocean(float preyP, float predatorP,
     }
     for (int i = 0; i < predator; i++) {
         while (true) {
-            int x = rand() % N;
-            int y = rand() % M;
+            int x = rand_r(predator) % N;
+            int y = rand_r(predator) % M;
             if (cells[x][y].obj == nullptr) {
                 Predator* new_pred = new Predator(&cells[x][y]);
                 cells[x][y].obj = new_pred;
@@ -43,8 +43,8 @@ Ocean::Ocean(float preyP, float predatorP,
     }
     for (int i = 0; i < stone; i++) {
         while (true) {
-            int x = rand() % N;
-            int y = rand() % M;
+            int x = rand_r(stone) % N;
+            int y = rand_r(stone) % M;
             if (cells[x][y].obj == nullptr) {
                 Stone* new_stone = new Stone(&cells[x][y]);
                 cells[x][y].obj = new_stone;
@@ -61,8 +61,8 @@ Ocean::~Ocean() {
     }
 }
 void Ocean::print() const {
-    for (int i = 0;i < N; i++) {
-        for (int j = 0;j < M;j++) {
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < M; j++) {
             if (cells[i][j].getObject() == nullptr)
                 std::cout << "-";
             else if (cells[i][j].getObject()->getType() == STONE)
@@ -80,17 +80,17 @@ void Ocean::addObject(Object* elem) {
 }
 void Ocean::run() {
     while (true) {
-        for (Object* o: stuff) {
+        for (Object* o : stuff) {
             if (o == nullptr)
                 continue;
             std::cout << o->getType();
             o->live();
-		}
+        }
         print();
     }
 }
 Cell* Ocean::findCell(Cell* cell) {
-    int x = (cell->getX() + rand()) % N;
-    int y = (cell->getY() + rand()) % M;
+    int x = (cell->getX() + rand_r(100)) % N;
+    int y = (cell->getY() + rand_r(100)) % M;
     return &cells[x][y];
 }

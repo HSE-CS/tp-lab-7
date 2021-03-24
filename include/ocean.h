@@ -4,17 +4,17 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "common.h"
-#include "cell.h"
-#include "predator.h"
-#include "stone.h"
 #include <list>
+#include "../include/common.h"
+#include "../include/cell.h"
+#include "../include/predator.h"
+#include "../include/stone.h"
 class Ocean {
  private:
     Cell** cells;
     std::list<Object*> stuff;
  public:
-    Ocean(float preyP,float predatorP,
+    Ocean(float preyP, float predatorP,
         float stoneP);
     ~Ocean();
     void print() const;
