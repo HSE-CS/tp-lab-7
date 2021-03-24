@@ -150,7 +150,8 @@ void Ocean::print() const {
   // system("clear");  // for mingw terminal
   system("cls");  // for powershell/cmd
 #elif defined(__linux__) || (defined(__APPLE__) && defined(__MACH__))
-  system("clear");
+  // system("clear");
+  std::cout << "\033[2J\033[1;1H" << std::endl;
 #endif
 
   for (size_t i = 0; i < OCEAN_SIZE_HEIGHT; ++i) {
