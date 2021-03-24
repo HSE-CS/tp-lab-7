@@ -1,7 +1,7 @@
 // Copyright 2021 soda
 
-#include "predator.h"
-#include "object.h"
+#include "../include/predator.h"
+#include "../include/object.h"
 
 void Predator::set_time() {
     this->time = 1;

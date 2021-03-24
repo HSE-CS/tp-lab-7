@@ -1,7 +1,7 @@
 // Copyright 2021 soda
 
-#include "prey.h"
-#include "object.h"
+#include "../include/prey.h"
+#include "../include/object.h"
 
 void Prey::set_time() {
     this->time = 1;

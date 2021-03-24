@@ -1,8 +1,9 @@
 // Copyright 2021 soda
 
-#include "ocean.h"
+#include "../include/ocean.h"
 
 // Creating and launching the ocean
+// Please activete comment windows.h and Sleep (in run) for right work
 
 int main() {
     Ocean MyOcean;

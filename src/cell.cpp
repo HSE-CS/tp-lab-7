@@ -1,7 +1,7 @@
 // Copyright 2021 soda
 
-#include "cell.h"
-#include "ocean.h"
+#include "../include/cell.h"
+#include "../include/ocean.h"
 
 void Cell::setObject(Object* obj) {
     this->obj = obj;

@@ -3,10 +3,10 @@
 #ifndef INCLUDE_PREDATOR_H_
 #define INCLUDE_PREDATOR_H_
 
-#include "common.h"
-#include "object.h"
-#include "cell.h"
-#include "ocean.h"
+#include "../include/common.h"
+#include "../include/object.h"
+#include "../include/cell.h"
+#include "../include/ocean.h"
 
 
 class Predator : public Object {

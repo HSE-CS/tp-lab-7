@@ -2,9 +2,9 @@
 
 #include <vector>
 
-#include "common.h"
-#include "ocean.h"
-#include "windows.h"
+#include "../include/common.h"
+#include "../include/ocean.h"
+// #include "windows.h"
 
 // Ocean constructor, with the creation of cells and boundary walls
 Ocean::Ocean() {
@@ -178,7 +178,7 @@ void Ocean::run() {
 
         this->print();
         this->time++;
-        Sleep(500);
+        // Sleep(500);
     }
 }
 

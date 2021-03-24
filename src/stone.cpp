@@ -1,6 +1,6 @@
 // Copyright 2021 soda
 
-#include "stone.h"
+#include "../include/stone.h"
 
 // Stone
 
