@@ -12,14 +12,14 @@ class Ocean {
     Cell** cells;
     std::list<Object*> stuff;
     std::list<Object*> ListOfTheDead;
-    size_t M, N, number_objects;
+    int M, N, number_objects;
 
  public:
-    Ocean(size_t M, size_t N,
-        size_t number_objects);
+    Ocean(int M, int N,
+        int number_objects);
     ~Ocean();
     void print() const;
-    void addObjects(size_t number_objects);
+    void addObjects(int number_objects);
     void run();
 
     Cell* seachEmptyPlace(Pair coordinate);

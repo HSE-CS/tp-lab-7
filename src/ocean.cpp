@@ -10,8 +10,8 @@
 #include "../include/ocean.h"
 
 
-Ocean::Ocean(size_t M, size_t N,
-     size_t number_objects) {
+Ocean::Ocean(int M, int N,
+     int number_objects) {
     this->N = N;
     this->M = M;
     cells = new Cell * [M];

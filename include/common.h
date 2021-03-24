@@ -2,18 +2,16 @@
 #ifndef INCLUDE_COMMON_H_
 #define INCLUDE_COMMON_H_
 
-typedef size_t coord_t;
-
 struct Pair {
-    coord_t x;
-    coord_t y;
+    int x;
+    int y;
 };
 
-const size_t M = 60;
-const size_t N = 70;
-const size_t number_objects = 3000;
+const int M = 60;
+const int N = 70;
+const int number_objects = 3000;
 
-const size_t probability_border_up = 60;
-const size_t probability_border_down = 40;
+const int probability_border_up = 60;
+const int probability_border_down = 40;
 
 #endif  // INCLUDE_COMMON_H_
