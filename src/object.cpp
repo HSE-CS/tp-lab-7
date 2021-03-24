@@ -1,5 +1,5 @@
 // Copyright 2021 FOM
-#include "object.h"
+#include "../include/object.h"
 
 Object::Object(Cell* cell) {
     this->cell = cell;

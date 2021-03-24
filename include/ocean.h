@@ -3,18 +3,18 @@
 #define INCLUDE_OCEAN_H_
 
 #include <list>
-#include "common.h"
-#include "cell.h"
+#include "../include/common.h"
+#include "../include/cell.h"
 
 
 class Ocean {
-private:
+ private:
     Cell** cells;
     std::list<Object*> stuff;
     std::list<Object*> ListOfTheDead;
     size_t M, N, number_objects;
 
-public:
+ public:
     Ocean(size_t M, size_t N,
         size_t number_objects);
     ~Ocean();

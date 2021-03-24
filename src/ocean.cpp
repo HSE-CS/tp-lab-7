@@ -3,11 +3,11 @@
 #include <iostream>
 #include <vector>
 
-#include "stone.h"
-#include "prey.h"
-#include "predator.h"
-#include "common.h"
-#include "ocean.h"
+#include "../include/stone.h"
+#include "../include/prey.h"
+#include "../include/predator.h"
+#include "../include/common.h"
+#include "../include/ocean.h"
 
 
 Ocean::Ocean(size_t M, size_t N,
@@ -18,7 +18,7 @@ Ocean::Ocean(size_t M, size_t N,
     for (size_t i = 0; i < M; i++) {
         cells[i] = new Cell[N];
         for (size_t j = 0; j < N; j++) {
-            cells[i][j].init(Pair{i,j}, this);
+            cells[i][j].init(Pair{i, j}, this);
         }
     }
     addObjects(number_objects);
@@ -26,21 +26,19 @@ Ocean::Ocean(size_t M, size_t N,
 void Ocean::addObjects(size_t number_objects) {
     for (size_t i = 0; i < number_objects; i++) {
         time(nullptr);
-        int x = rand() % M;
-        int y = rand() % N;
-        int type_probability = rand() % 100;
+        int x = rand_r() % M;
+        int y = rand_r() % N;
+        int type_probability = rand_r() % 100;
         if (this->cells[x][y].getObject()) {
             continue;
         }
         Object* obj = nullptr;
         if (type_probability > probability_border_up) {
             obj = new Predator(&cells[x][y]);
-        }
-        else if ((type_probability <= probability_border_up) &&
+        } else if ((type_probability <= probability_border_up) &&
             (type_probability >= probability_border_down)) {
             obj = new Stone(&cells[x][y]);
-        }
-        else if (type_probability < probability_border_down) {
+        } else if (type_probability < probability_border_down) {
             obj = new Prey(&cells[x][y]);
         }
         this->cells[x][y].setObject(obj);
@@ -125,8 +123,7 @@ Cell* Ocean::hunt(Pair coordinate) {
     }
     if (!preyCells.empty()) {
         return preyCells[rand() % preyCells.size()];
-    }
-    else {
+    } else {
         return nullptr;
     }
 }

@@ -1,7 +1,7 @@
 // Copyright 2021 FOM
-#include "prey.h"
-#include "common.h"
-#include "ocean.h"
+#include "../include/prey.h"
+#include "../include/common.h"
+#include "../include/ocean.h"
 
 Prey::Prey(Cell* cell) : Object(cell) {
     this->type = PREY_N;
@@ -18,8 +18,7 @@ void Prey::live() {
         }
         this->breeding();
         Life_time--;
-    }
-    else {
+    } else {
         this->cell->killMe();
     }
 }

@@ -1,5 +1,5 @@
 // Copyright 2021 FOM
-#include "stone.h"
+#include "../include/stone.h"
 
 Stone::Stone(Cell* cell) : Object(cell) {
     this->type = STONE_N;
@@ -7,4 +7,3 @@ Stone::Stone(Cell* cell) : Object(cell) {
 void Stone::live() {
     return;
 }
-
