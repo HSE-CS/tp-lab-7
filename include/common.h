@@ -1,4 +1,4 @@
-﻿//  Copyright © 2021 Ksuvot
+﻿// Copyright © 2021 Ksuvot
 #ifndef INCLUDE_COMMON_H_
 #define INCLUDE_COMMON_H_
 
