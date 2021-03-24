@@ -48,7 +48,7 @@ void Predator::multi() {
     Cell* cell_for_multi = cell->getOcean()->findCell(cell);
     if (cell_for_multi == nullptr) {
         return;
-	}
+    }
     Predator* predator = new Predator(cell_for_multi);
     cell_for_multi->setObject(predator);
     cell->getOcean()->addObject(predator);
