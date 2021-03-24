@@ -1,4 +1,5 @@
 // Copyright 2021 Igumnova Natasha
+#include <time.h>
 #include <fstream>
 #include <string>
 #include <cmath>
@@ -19,8 +20,9 @@ Ocean::Ocean(float preyP, float predatorP,
     int stone = static_cast<int>(stoneP * N * M);
     for (int i = 0; i < prey; i++) {
         while (true) {
-            int x = rand_r(&prey) % N;
-            int y = rand_r(&prey) % M;
+            unsigned int seed = time(nullptr);
+            int x = rand_r(&seed) % N;
+            int y = rand_r(&seed) % M;
             if (cells[x][y].obj == nullptr) {
                 Prey* new_prey = new Prey(&cells[x][y]);
                 cells[x][y].obj = new_prey;
@@ -31,8 +33,9 @@ Ocean::Ocean(float preyP, float predatorP,
     }
     for (int i = 0; i < predator; i++) {
         while (true) {
-            int x = rand_r(&predator) % N;
-            int y = rand_r(&predator) % M;
+            unsigned int seed = time(nullptr);
+            int x = rand_r(&seed) % N;
+            int y = rand_r(&seed) % M;
             if (cells[x][y].obj == nullptr) {
                 Predator* new_pred = new Predator(&cells[x][y]);
                 cells[x][y].obj = new_pred;
@@ -43,8 +46,9 @@ Ocean::Ocean(float preyP, float predatorP,
     }
     for (int i = 0; i < stone; i++) {
         while (true) {
-            int x = rand_r(&stone) % N;
-            int y = rand_r(&stone) % M;
+            unsigned int seed = time(nullptr);
+            int x = rand_r(&seed) % N;
+            int y = rand_r(&seed) % M;
             if (cells[x][y].obj == nullptr) {
                 Stone* new_stone = new Stone(&cells[x][y]);
                 cells[x][y].obj = new_stone;
@@ -90,7 +94,7 @@ void Ocean::run() {
     }
 }
 Cell* Ocean::findCell(Cell* cell) {
-    int seed = 100;
+    unsigned int seed = time(nullptr);
     int x = (cell->getX() + rand_r(&seed)) % N;
     int y = (cell->getY() + rand_r(&seed)) % M;
     return &cells[x][y];
