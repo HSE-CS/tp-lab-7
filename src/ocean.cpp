@@ -41,15 +41,12 @@ void Ocean::addObjects() {
         if (m < N * M * 0.10) {
             auto *stone = new Stone(&cells[i][j]);
             cells[i][j].setObject(stone);
-            stuff.push_back(stone);
         } else if (m < N * M * 0.50) {
             auto *prey = new Prey(&cells[i][j]);
             cells[i][j].setObject(prey);
-            stuff.push_back(prey);
         } else if (m < N * M * 0.65) {
             auto *predator = new Predator(&cells[i][j]);
             cells[i][j].setObject(predator);
-            stuff.push_back(predator);
         }
     }
 }
