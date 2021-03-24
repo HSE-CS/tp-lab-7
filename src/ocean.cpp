@@ -15,16 +15,16 @@ Ocean::Ocean(int M, int N,
     this->N = N;
     this->M = M;
     cells = new Cell * [M];
-    for (size_t i = 0; i < M; i++) {
+    for (int i = 0; i < M; i++) {
         cells[i] = new Cell[N];
-        for (size_t j = 0; j < N; j++) {
+        for (int j = 0; j < N; j++) {
             cells[i][j].init(Pair{i, j}, this);
         }
     }
     addObjects(number_objects);
 }
-void Ocean::addObjects(size_t number_objects) {
-    for (size_t i = 0; i < number_objects; i++) {
+void Ocean::addObjects(int number_objects) {
+    for (int i = 0; i < number_objects; i++) {
         unsigned int seed = time(nullptr);
         int x = rand_r(&seed) % M;
         int y = rand_r(&seed) % N;
@@ -46,8 +46,8 @@ void Ocean::addObjects(size_t number_objects) {
     }
 }
 void Ocean::print() const {
-    for (size_t i = 0; i < M; i++) {
-        for (size_t j = 0; j < N; j++) {
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
             if (!cells[i][j].getObject()) {
                 std::cout << '.';
             } else {
@@ -62,8 +62,8 @@ void Ocean::print() const {
 
 Cell* Ocean::seachEmptyPlace(Pair coordinate) {
     std::vector<Cell*> emptyCells;
-    for (size_t i = coordinate.x - 1; i <= coordinate.x + 1; i++) {
-        for (size_t j = coordinate.y - 1; j <= coordinate.y + 1; j++) {
+    for (int i = coordinate.x - 1; i <= coordinate.x + 1; i++) {
+        for (int j = coordinate.y - 1; j <= coordinate.y + 1; j++) {
             if (i >= 0 && i < M && j >= 0 && j < N) {
                 if (!this->cells[i][j].getObject()) {
                     emptyCells.push_back(&cells[i][j]);
