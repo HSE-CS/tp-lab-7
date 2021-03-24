@@ -4,7 +4,7 @@
 #define _OCEAN_H_
 
 #include "common.h"
-#include "Cell.h"
+#include "cell.h"
 #include "object.h"
 #include "stone.h"
 #include "prey.h"
