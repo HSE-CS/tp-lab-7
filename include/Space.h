@@ -61,6 +61,14 @@ private:
 public:
     explicit Space();
 
+    void generateArmy(int rebels, int impery);
+
+    void generateAsteroidField(int count);
+
+    void setCellsForObject(Object * obj);
+
+    int countSideObject(int side);
+
     static Object *shoot(Object *ship);
 
     void destroy(Object *object);
@@ -69,7 +77,7 @@ public:
 
     static void explode(int x, int y, int radius);
 
-    Object* scan(Object *whizzbang);  // Unsafe function
+    Object *scan(Object *whizzbang);  // Unsafe function
 
     void hit(Object *whizzbang, Object *target);
 
@@ -133,6 +141,13 @@ public:
     static void renderSpaceDisplay();
 
     static void renderIntroduction();
+
+    static void renderRebelsWin();
+
+
+
+
+    static void renderImperyWin();
 };
 
 

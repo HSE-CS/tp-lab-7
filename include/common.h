@@ -25,6 +25,7 @@ enum Priority {
 enum Side {
     REBELS,
     IMPERY,
+    NEUTRAL,
 };
 
 static char picture11[4][3 + 1]{
@@ -157,6 +158,74 @@ namespace tie_fighter {
     static const int priority = HIGH_PRIORITY;
 }
 
+namespace mon_calamari {
+
+}
+
+namespace star_destroyer {
+
+}
+
+namespace asteroid {
+    static const int sizeX = 3;
+    static const int sizeY = 3;
+    static int g = cc(gray, black);
+    const char hitBox[sizeY][sizeX + 1] = {
+        {__hitbox_void,  __hitbox_solid, __hitbox_void,},
+        {__hitbox_void,  __hitbox_solid, __hitbox_void,},
+        {__hitbox_solid, __hitbox_solid, __hitbox_solid,},
+    };
+    static char picture[sizeY][sizeX + 1]{
+        "###",
+        "###",
+        "###",
+    };
+    static const int color[sizeY][sizeX + 1] = {
+        {g, g, g,},
+        {g, g, g,},
+        {g, g, g,},
+    };
+    static const int side = NEUTRAL;
+    static const int priority = LOW_PRIORITY;
+}
+
+namespace millenium_falcon {
+    static const int sizeX = 10;
+    static const int sizeY = 10;
+    static int b = cc(black, blue);
+    static int g = cc(gray, dark_white);
+    static int lg = cc(dark_white, white);
+    static int db = cc(dark_blue, white);
+    const char hitBox[sizeY][sizeX + 1] = {
+    };
+    static char picture[sizeY][sizeX + 1]{
+        "   _ _   ",
+        "  || || A",
+        " | | | |H",
+        "/  |_|  \\",
+        "|-  H  -|",
+        "| =-0-= |",
+        "| [_ _] |",
+        "\\-     -/",
+        " -=====- ",
+        "  #####  ",
+    };
+    static const int color[sizeY][sizeX + 1] = {
+        {-1, -1, -1, lg, -1, lg, -1, -1, -1, -1,},
+        {-1, -1, lg, lg, -1, lg, lg, -1, db, -1,},
+        {-1, lg, lg, lg, -1, lg, lg, lg, db, -1,},
+        {lg, lg, lg, lg, lg, lg, lg, lg, lg, -1,},
+        {g,  g,  lg, lg, lg, lg, lg, g,  g,  -1,},
+        {lg, lg, g,  g,  lg, g,  g,  lg, lg, -1,},
+        {g,  g,  lg, lg, lg, lg, lg, g,  g,  -1,},
+        {g,  lg, lg, lg, lg, lg, lg, lg, g,  -1,},
+        {-1, lg, lg, g,  g,  g,  lg, lg, -1, -1,},
+        {-1, -1, b,  b,  b,  b,  b,  -1, -1, -1,},
+    };
+    static const int side = REBELS;
+    static const int priority = HIGH_PRIORITY;
+}
+
 namespace whizzbangRebels {
     static const int sizeX = 3;
     static const int sizeY = 3;
@@ -171,9 +240,9 @@ namespace whizzbangRebels {
         " | ",
     };
     static const int color[sizeY][sizeX + 1] = {
-        {-1,               cc(red, orange),   -1},
+        {-1,              cc(red, orange),   -1},
         {cc(red, orange), cc(white, yellow), cc(red, orange)},
-        {-1,               cc(red, orange),   -1},
+        {-1,              cc(red, orange),   -1},
     };
     static const int side = REBELS;
     static const int priority = HIGH_PRIORITY;
@@ -399,6 +468,34 @@ public:
         whizzbangImpery::color,
         whizzbangImpery::side,
         whizzbangImpery::priority
+    ) {};
+};
+
+class MilleniumFalcon : public StaticObject {
+private:
+public:
+    MilleniumFalcon() : StaticObject(
+        millenium_falcon::sizeX,
+        millenium_falcon::sizeY,
+        millenium_falcon::hitBox,
+        millenium_falcon::picture,
+        millenium_falcon::color,
+        millenium_falcon::side,
+        millenium_falcon::priority
+    ) {};
+};
+
+class Asteroid : public StaticObject {
+private:
+public:
+    Asteroid() : StaticObject(
+        asteroid::sizeX,
+        asteroid::sizeY,
+        asteroid::hitBox,
+        asteroid::picture,
+        asteroid::color,
+        asteroid::side,
+        asteroid::priority
     ) {};
 };
 

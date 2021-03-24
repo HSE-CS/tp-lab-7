@@ -3,6 +3,7 @@
 //
 
 #include <random>
+#include <thread>
 
 #include "../include/Space.h"
 #include "../include/Objects.h"
@@ -182,12 +183,14 @@ Object *Space::shoot(Object *ship) {
     Object *whizzbang;
     if (ship->getSide() == REBELS) {
         whizzbang = new Object(WhizzbangRebels(), SUPER);
-    } else {
+        playMusicFile("rebelsfire.wav", 1);
+    } else if (ship->getSide() == IMPERY) {
         whizzbang = new Object(WhizzbangImpery(), SUPER);
+        playMusicFile("imperyfire.wav", 1);
     }
     whizzbang->setDirection(ship->getDirection());
-    whizzbang->setPosX(ship->getPosX());
-    whizzbang->setPosy(ship->getPosY());
+    whizzbang->setPosX((ship->getPosX() + ship->getSizeX() / 2 - 1) % displayWidth);
+    whizzbang->setPosy((ship->getPosY() + ship->getSizeY() / 2 - 1) % displayHeight);
     return whizzbang;
 }
 
@@ -220,6 +223,7 @@ void Space::explode(int x, int y, int radius) {
             }
         }
     }
+    playMusicFile("explode.wav", 1);
     Movie::wait(0.1);
     Movie::setAreaToNormalCondition(x - radius, y - radius, x + radius, y + radius);
 }
@@ -230,7 +234,7 @@ Object *Space::scan(Object *ship, int depth) {
             for (int j = ship->getPosX(); j < ship->getPosX() + ship->getSizeX(); ++j) {
                 auto obj = this->space[(i + displayHeight) % displayHeight][j % displayWidth]->getObject();
                 if (obj != nullptr) {
-                    if (obj->getSide() != ship->getSide()) {
+                    if (obj->getSide() != ship->getSide() && !obj->destroyed) {
                         return obj;
                     }
                 }
@@ -242,7 +246,7 @@ Object *Space::scan(Object *ship, int depth) {
             for (int j = ship->getPosY(); j < ship->getPosX() + ship->getSizeX(); ++j) {
                 auto obj = this->space[(i + displayHeight) % displayHeight][j % displayWidth]->getObject();
                 if (obj != nullptr) {
-                    if (obj->getSide() != ship->getSide()) {
+                    if (obj->getSide() != ship->getSide() && !obj->destroyed) {
                         return obj;
                     }
                 }
@@ -254,7 +258,7 @@ Object *Space::scan(Object *ship, int depth) {
             for (int j = ship->getPosX() + ship->getSizeX(); j < ship->getPosX() + ship->getSizeX() + depth; ++j) {
                 auto obj = this->space[i % displayHeight][j % displayWidth]->getObject();
                 if (obj != nullptr) {
-                    if (obj->getSide() != ship->getSide()) {
+                    if (obj->getSide() != ship->getSide() && !obj->destroyed) {
                         return obj;
                     }
                 }
@@ -266,7 +270,7 @@ Object *Space::scan(Object *ship, int depth) {
             for (int j = ship->getPosX() - 1; j > ship->getPosX() - depth; --j) {
                 auto obj = this->space[i % displayHeight][(j + displayWidth) % displayWidth]->getObject();
                 if (obj != nullptr) {
-                    if (obj->getSide() != ship->getSide()) {
+                    if (obj->getSide() != ship->getSide() && !obj->destroyed) {
                         return obj;
                     }
                 }
@@ -281,6 +285,7 @@ void Space::addObject(Object *obj) {
 }
 
 void Space::removeObject(Object *obj) {
+    obj->destroyed = true;
     for (uint_fast32_t i = 0; i < this->objects.size(); ++i) {
         if (objects[i] == obj) {
             objects.erase(objects.begin() + i);
@@ -325,6 +330,65 @@ void Space::hit(Object *whizzbang, Object *target) {
 
 double Space::dist(int x1, int y1, int x2, int y2) {
     return sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2));
+}
+
+int Space::countSideObject(int side) {
+    int counter = 0;
+    for (auto x : objects) {
+        if (x->getSide() == side) {
+            counter++;
+        }
+    }
+    return counter;
+}
+
+void Space::generateAsteroidField(int count) {
+    std::random_device gen;
+    for (int i = 0; i < count; ++i) {
+        auto asteroid = new Object(Asteroid(), ZERO_SPEED);
+        asteroid->setPosX(gen() % 40 + 80);
+        asteroid->setPosy(gen() % 60);
+        asteroid->setDirection(NONE);
+        objects.push_back(asteroid);
+    }
+}
+
+void Space::setCellsForObject(Object *obj) {
+    for (int i = obj->getPosY(); i < obj->getPosY() + obj->getSizeY(); ++i) {
+        for (int j = obj->getPosX(); j < obj->getPosX() + obj->getSizeX(); ++j) {
+            this->space[i % displayHeight][j % displayWidth]->setObject(obj);
+        }
+    }
+}
+
+void Space::generateArmy(int rebels, int impery) {
+    std::random_device gen;
+    int xwings = 0, tiefighters = 0, falcon = 0;
+    if (rebels > 3) {
+        rebels--;
+        falcon = 1;
+        xwings = rebels;
+    }
+    tiefighters = impery;
+    for (int i = 0; i < xwings; ++i) {
+        auto *xwing = new Object(XWing(), HIGH_SPEED);
+        xwing->setPosX(i * 8 + 5 + gen() % 5);
+        xwing->setPosy(10 + gen() % 10);
+        this->addObject(xwing);
+    }
+    if (falcon > 0) {
+        auto m_falcon = new Object(MilleniumFalcon(), MEDIUM_SPEED);
+        m_falcon->setPosX(xwings * 4);
+        m_falcon->setPosy(25 + gen() % 10);
+        this->addObject(m_falcon);
+    }
+    for (int i = 0; i < tiefighters; ++i) {
+        auto tie_fighter = new Object(TieFighter(), HIGH_SPEED);
+        tie_fighter->setPosX(displayWidth - (i + 1) * 6);
+        tie_fighter->setPosy(40 + gen() % 10);
+        tie_fighter->setDirection(DOWN);
+        this->addObject(tie_fighter);
+    }
 }
 
 Scene::Scene(int sceneNumber) {
@@ -565,3 +629,10 @@ void Movie::renderIntroduction() {
     }
 }
 
+void Movie::renderImperyWin() {
+
+}
+
+void Movie::renderRebelsWin() {
+
+}

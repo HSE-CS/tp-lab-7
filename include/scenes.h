@@ -6,6 +6,7 @@
 #define TP_LAB_7_SCENES_H
 
 #include <iostream>
+#include <thread>
 #include <map>
 #include <string>
 #include <random>
@@ -15,15 +16,27 @@
 static const int displayHeight = 60;
 static const int displayWidth = 200;
 
+static bool isMusicPlayedRightNow = false;
+
+static void waitForMusicEnd(int sec) {
+    Sleep(1000 * sec);
+    isMusicPlayedRightNow = false;
+}
+
 //static const int displayHeight = 30;
 //static const int displayWidth = 50;
 
-static void playMusicFile(char *name) {
-    PlaySound(name, NULL, SND_FILENAME | SND_ASYNC);
+static void playMusicFile(char *name, int sec = 100) {
+    if (!isMusicPlayedRightNow) {
+        PlaySound(name, NULL, SND_FILENAME | SND_ASYNC);
+        // isMusicPlayedRightNow = true;
+        // std::thread t(waitForMusicEnd, sec);
+    }
 }
 
 static void stopMusic() {
     PlaySound(NULL, 0, 0);
+    isMusicPlayedRightNow = false;
 }
 
 enum SceneNumber {
@@ -913,7 +926,7 @@ static char display[displayHeight][displayWidth + 1]{};
 
 static int displayColor[displayHeight][displayWidth + 1]{};
 
-static const char startSpacePicture[displayHeight + 150][displayWidth + 1 + 150] = {
+static char startSpacePicture[displayHeight][displayWidth + 1] = {
     /* 0 */
     "                *            ***                      *                        *                 *             *  *    *       *      *       *                       *      *            *             ",
     /* 1 */

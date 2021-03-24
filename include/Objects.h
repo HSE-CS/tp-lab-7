@@ -9,6 +9,7 @@
 #include "scenes.h"
 
 enum Speed {
+    ZERO_SPEED,
     ULTRA_LOW,
     LOW_SPEED,
     MEDIUM_SPEED,
@@ -37,9 +38,11 @@ private:
     std::string pilotName;
     int posX, posY;
     int speed, direction;
-    int energy = 10000;
+    int energy = 1000;
 
 public:
+    bool destroyed = false;
+
     explicit Object(const StaticObject &object, int speed);
 
     void render(int x, int y);
