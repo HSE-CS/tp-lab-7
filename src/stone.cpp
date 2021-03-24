@@ -52,7 +52,7 @@ char Stone::get_info_object() {
 }
 
 
-//Coral
+// Coral
 
 void Coral::set_time() {
     this->time = 1;
@@ -77,7 +77,7 @@ void Coral::init(Cell* c) {
     this->setReprod();
 }
 
-// If a free cell is found nearby, we try to add a new coral once 
+// If a free cell is found nearby, we try to add a new coral once
 // every 150 years
 void Coral::reproduction() {
     if (this->reprod_posib > 0) {

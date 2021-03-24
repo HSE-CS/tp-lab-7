@@ -3,14 +3,15 @@
 #ifndef INCLUDE_OCEAN_H_
 #define INCLUDE_OCEAN_H_
 
+#include <list>
+#include <ctime>
+
 #include "common.h"
 #include "cell.h"
 #include "object.h"
 #include "stone.h"
 #include "prey.h"
 #include "predator.h"
-#include <list>
-#include <ctime>
 
 class Ocean {
  private:
@@ -31,4 +32,4 @@ class Ocean {
 
 void swapObj(int fist, int second, std::list<Object*>* objects);
 
-#endif // INCLUDE_OCEAN_H_
+#endif  // INCLUDE_OCEAN_H_

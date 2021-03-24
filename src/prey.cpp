@@ -51,7 +51,6 @@ void Prey::reproduction() {
 
                         if ((p.i < 0 || p.i > N - 1) ||
                             (p.j < 0 || p.j > M - 1)) {
-
                             p.i -= n;
                             p.j -= m;
                             continue;
@@ -64,7 +63,6 @@ void Prey::reproduction() {
 
                                 if (fish->getGender() == 1 &&
                                     fish->time > 30) {
-
                                     fishes++;
                                     break;
 

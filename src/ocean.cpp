@@ -1,9 +1,10 @@
 // Copyright 2021 soda
 
+#include <vector>
+
 #include "common.h"
 #include "ocean.h"
-#include "Windows.h"
-#include <vector>
+#include "windows.h"
 
 // Ocean constructor, with the creation of cells and boundary walls
 Ocean::Ocean() {
@@ -127,8 +128,10 @@ void Ocean::Create_WORLD() {
     }
 }
 
-// Shuffle a few random objects, as many as possible, but performance is greatly reduced, 
-// then delete the objects that died last time, if the object is alive, then let it live.
+// Shuffle a few random objects, as many as possible,
+// but performance is greatly reduced,
+// then delete the objects that died last time, if the
+// object is alive, then let it live.
 void Ocean::run() {
     while (true) {
         // breakpoint
@@ -198,7 +201,7 @@ void Ocean::print() const {
     std::cout << buf;
     std::cout << this->time << std::endl;
     // std::cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
-};
+}
 
 void Ocean::delObj(const Object* obj) {
     this->objects.erase(std::remove(this->objects.begin(),

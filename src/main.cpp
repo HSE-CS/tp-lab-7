@@ -2,7 +2,8 @@
 
 #include "ocean.h"
 
-// Ñreating and launching the ocean
+// Creating and launching the ocean
+
 int main() {
     Ocean MyOcean;
     MyOcean.Create_WORLD();

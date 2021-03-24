@@ -57,7 +57,6 @@ void Predator::reproduction() {
 
                             if ((p.i < 0 || p.i > N - 1) ||
                                 (p.j < 0 || p.j > M - 1)) {
-
                                 p.i -= n;
                                 p.j -= m;
                                 continue;
@@ -68,13 +67,11 @@ void Predator::reproduction() {
                             if (now_cell->getObject() != nullptr) {
                                 if (now_cell->getObject()->get_objType()
                                     == 3) {
-
                                     Predator* fish = reinterpret_cast
                                         <Predator*>(now_cell->getObject());
 
                                     if (fish->getGender() == 1 &&
                                         fish->time > 50) {
-
                                         fishes++;
                                         break;
                                     } else {
@@ -106,7 +103,6 @@ void Predator::reproduction() {
                                 p.j += m;
                                 if ((p.i < 0 || p.i > N - 1) ||
                                     (p.j < 0 || p.j > M - 1)) {
-
                                     p.i -= n;
                                     p.j -= m;
                                     continue;
@@ -142,8 +138,10 @@ void Predator::reproduction() {
 }
 
 // If a fish is found in a radius of 1, then we immediately eat it, if not,
-// then we check the radius of 2, and start chasing, if there are no fish in a radius of 2, 
+// then we check the radius of 2, and start chasing,
+// if there are no fish in a radius of 2,
 // then we just move.
+
 void Predator::hant() {
     Pair p = this->cell->getCord();
     int fishes = 0;
@@ -189,8 +187,7 @@ void Predator::hant() {
             this->cell->delObj();
             this->setCell(now_cell);
         }
-    }
-    else if (!fishes) {
+    } else if (!fishes) {
         for (int n = -2; n <= 2; n++) {
             for (int m = -2; m <= 2; m++) {
                 p.i += n;
@@ -244,23 +241,20 @@ void Predator::hant() {
                 now_cell->setObject(this);
                 this->cell->delObj();
                 this->setCell(now_cell);
-            }
-
-            else if (now_cell->getObject() != nullptr) {
+            } else if (now_cell->getObject() != nullptr) {
                 Pair chek = vect;
                 int flag = 0;
                 for (int i = -1; i <= 1; i++) {
                     for (int j = -1; j <= 1; j++) {
-                        if (std::abs((int)chek.i + i - (int)my_cord.i) == 1) {
+                        if (std::abs(static_cast<int>(chek.i) +
+                            i - static_cast<int>(my_cord.i)) == 1) {
                             if (std::abs((int)chek.j + j -
-                                (int)my_cord.j) == 1) {
-
+                                static_cast<int>(my_cord.j)) == 1) {
                                 chek.i += i;
                                 chek.j += j;
 
                                 if ((chek.i < 0 || chek.i > N - 1) ||
                                     (chek.j < 0 || chek.j > M - 1)) {
-
                                     chek.i -= i;
                                     chek.j -= j;
                                     continue;
@@ -282,7 +276,9 @@ void Predator::hant() {
                     if (flag) break;
                 }
             }
-        } else this->move();
+        } else {
+            this->move();
+        }
     }
 }
 
@@ -328,8 +324,7 @@ void Predator::live() {
         this->reproduction();
         time++;
         hunger++;
-    }
-    else if (this->getHunger() >= 60) {
+    } else if (this->getHunger() >= 60) {
         this->die();
     } else {
         this->die();

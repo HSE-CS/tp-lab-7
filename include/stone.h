@@ -102,7 +102,7 @@ class Stone : public Object {
 
 
 class Coral : public Object {
-private:
+ private:
     size_t time;
     size_t reprod_posib;
 
@@ -121,4 +121,4 @@ private:
     char get_info_object();
 };
 
-#endif // INCLUDE_STONE_H_
+#endif  // INCLUDE_STONE_H_

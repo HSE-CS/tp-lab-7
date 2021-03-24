@@ -9,9 +9,9 @@
 #include "ocean.h"
 
 
-class Prey : public Object
-{
-    //fields: - (1) lifetime; (3) number of descendants available for reproduction.
+class Prey : public Object {
+    // fields: - (1) lifetime; (3) number of descendants
+    // available for reproduction.
  private:
     size_t time;
     size_t gender;
@@ -35,4 +35,4 @@ class Prey : public Object
     char get_info_object();
 };
 
-#endif // INCLUDE_PREY_H_
+#endif  // INCLUDE_PREY_H_

@@ -29,7 +29,7 @@ class Object {
     ~Object() {
         cell = nullptr;
         objType = -1;
-    };
+    }
     virtual void live() = 0;
     virtual void print_object() = 0;
     virtual char get_info_object() = 0;
@@ -37,4 +37,4 @@ class Object {
     virtual int get_objType() = 0;
 };
 
-#endif // INCLUDE_COMMON_H_
+#endif  // INCLUDE_OBJECT_H_

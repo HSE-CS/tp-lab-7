@@ -38,4 +38,4 @@ class Predator : public Object {
     char get_info_object();
 };
 
-#endif // INCLUDE_PREDATOR_H_
+#endif  // INCLUDE_PREDATOR_H_
