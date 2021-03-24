@@ -18,7 +18,6 @@ class Ocean {
 
 private:
     Cell **cells;
-    std::list<Object *> stuff;
 
 public:
     Ocean();
