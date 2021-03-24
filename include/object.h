@@ -1,5 +1,7 @@
-#ifndef _OBJECT_H_
-#define _OBJECT_H_
+// Copyright 2021 soda
+
+#ifndef INCLUDE_OBJECT_H_
+#define INCLUDE_OBJECT_H_
 
 #include "common.h"
 
@@ -14,25 +16,25 @@ enum class ObjType { STONE, CORAL, PREY, PREDATOR, WALL_W, WALL_G };
 
 class Cell;
 
-class Object
-{
+class Object {
  protected:
-	Cell* cell;
-	int objType;
+    Cell* cell;
+    int objType;
 
  public:
-	Object() {
-		cell = nullptr;
-		objType = -1;
-	}
-	~Object() {
-		cell = nullptr;
-		objType = -1;
-	};
-	virtual void live() = 0;
-	virtual void print_object() = 0;
-	virtual char get_info_object() = 0;
-	void setCell(Cell* cl);
-	virtual int get_objType() = 0;
+    Object() {
+        cell = nullptr;
+        objType = -1;
+    }
+    ~Object() {
+        cell = nullptr;
+        objType = -1;
+    };
+    virtual void live() = 0;
+    virtual void print_object() = 0;
+    virtual char get_info_object() = 0;
+    void setCell(Cell* cl);
+    virtual int get_objType() = 0;
 };
-#endif
+
+#endif // INCLUDE_COMMON_H_

@@ -1,3 +1,5 @@
+// Copyright 2021 soda
+
 #include "predator.h"
 #include "object.h"
 
@@ -14,15 +16,16 @@ void Predator::setCell(Cell* c) {
 }
 
 void Predator::setGender() {
-    size_t gend = rand() % 2 + 1;
+    size_t gend = rand_r(0) % 2 + 1;
     this->gender = gend;
 }
 
 void Predator::setPosib() {
-    if (this->gender == 1)
+    if (this->gender == 1) {
         this->reprod_posib = 0;
-    else
-        this->reprod_posib = rand() % 3 + 1;
+    } else {
+        this->reprod_posib = rand_r(0) % 3 + 1;
+    }
 }
 
 void Predator::setHuger(size_t hung) {
@@ -51,32 +54,40 @@ void Predator::reproduction() {
                         for (int m = -1; m <= 1; m++) {
                             p.i += n;
                             p.j += m;
-                            if ((p.i < 0 || p.i > N - 1) || (p.j < 0 || p.j > M - 1)) {
+
+                            if ((p.i < 0 || p.i > N - 1) ||
+                                (p.j < 0 || p.j > M - 1)) {
+
                                 p.i -= n;
                                 p.j -= m;
                                 continue;
                             }
-                            Cell* now_cell = this->cell->getOcean()->get_cell(p);
+                            Cell* now_cell =
+                                this->cell->getOcean()->get_cell(p);
+
                             if (now_cell->getObject() != nullptr) {
-                                if (now_cell->getObject()->get_objType() == 3) {
-                                    Predator* fish = reinterpret_cast<Predator*>(now_cell->getObject());
-                                    if (fish->getGender() == 1 && fish->time > 50) {
+                                if (now_cell->getObject()->get_objType()
+                                    == 3) {
+
+                                    Predator* fish = reinterpret_cast
+                                        <Predator*>(now_cell->getObject());
+
+                                    if (fish->getGender() == 1 &&
+                                        fish->time > 50) {
+
                                         fishes++;
                                         break;
-                                    }
-                                    else {
+                                    } else {
                                         p.i -= n;
                                         p.j -= m;
                                         continue;
                                     }
-                                }
-                                else {
+                                } else {
                                     p.i -= n;
                                     p.j -= m;
                                     continue;
                                 }
-                            }
-                            else {
+                            } else {
                                 p.i -= n;
                                 p.j -= m;
                                 continue;
@@ -93,17 +104,20 @@ void Predator::reproduction() {
                             for (int m = -1; m <= 1; m++) {
                                 p.i += n;
                                 p.j += m;
-                                if ((p.i < 0 || p.i > N - 1) || (p.j < 0 || p.j > M - 1)) {
+                                if ((p.i < 0 || p.i > N - 1) ||
+                                    (p.j < 0 || p.j > M - 1)) {
+
                                     p.i -= n;
                                     p.j -= m;
                                     continue;
                                 }
-                                Cell* now_cell = this->cell->getOcean()->get_cell(p);
+                                Cell* now_cell =
+                                    this->cell->getOcean()->get_cell(p);
+
                                 if (now_cell->getObject() == nullptr) {
                                     suc = 1;
                                     break;
-                                }
-                                else {
+                                } else {
                                     p.i -= n;
                                     p.j -= m;
                                 }
@@ -113,7 +127,8 @@ void Predator::reproduction() {
                         }
                         if (suc) {
                             (*pos)--;
-                            Cell* now_cell = this->cell->getOcean()->get_cell(p);
+                            Cell* now_cell =
+                                this->cell->getOcean()->get_cell(p);
                             Predator* new_fish = new Predator;
                             new_fish->init(now_cell);
                             now_cell->setObject(new_fish);
@@ -146,14 +161,12 @@ void Predator::hant() {
                 if (now_cell->getObject()->get_objType() == 2) {
                     fishes++;
                     break;
-                }
-                else {
+                } else {
                     p.i -= n;
                     p.j -= m;
                     continue;
                 }
-            }
-            else {
+            } else {
                 p.i -= n;
                 p.j -= m;
                 continue;
@@ -192,14 +205,12 @@ void Predator::hant() {
                     if (now_cell->getObject()->get_objType() == 2) {
                         fishes++;
                         break;
-                    }
-                    else {
+                    } else {
                         p.i -= n;
                         p.j -= m;
                         continue;
                     }
-                }
-                else {
+                } else {
                     p.i -= n;
                     p.j -= m;
                     continue;
@@ -241,16 +252,23 @@ void Predator::hant() {
                 for (int i = -1; i <= 1; i++) {
                     for (int j = -1; j <= 1; j++) {
                         if (std::abs((int)chek.i + i - (int)my_cord.i) == 1) {
-                            if (std::abs((int)chek.j + j - (int)my_cord.j) == 1) {
+                            if (std::abs((int)chek.j + j -
+                                (int)my_cord.j) == 1) {
+
                                 chek.i += i;
                                 chek.j += j;
-                                if ((chek.i < 0 || chek.i > N - 1) || (chek.j < 0 || chek.j > M - 1)) {
+
+                                if ((chek.i < 0 || chek.i > N - 1) ||
+                                    (chek.j < 0 || chek.j > M - 1)) {
+
                                     chek.i -= i;
                                     chek.j -= j;
                                     continue;
                                 }
 
-                                Cell* new_cell_try = this->cell->getOcean()->get_cell(chek);
+                                Cell* new_cell_try =
+                                    this->cell->getOcean()->get_cell(chek);
+
                                 if (new_cell_try->getObject() == nullptr) {
                                     new_cell_try->setObject(this);
                                     this->cell->delObj();
@@ -264,8 +282,7 @@ void Predator::hant() {
                     if (flag) break;
                 }
             }
-        }
-        else this->move();
+        } else this->move();
     }
 }
 
@@ -273,8 +290,8 @@ void Predator::hant() {
 void Predator::move() {
     Pair p = this->cell->getCord();
     for (int n = 0; n <= 8; n++) {
-        int i = rand() % 3 - 1;
-        int j = rand() % 3 - 1;
+        int i = rand_r(0) % 3 - 1;
+        int j = rand_r(0) % 3 - 1;
         p.i += i;
         p.j += j;
 
@@ -282,16 +299,14 @@ void Predator::move() {
             p.i -= i;
             p.j -= j;
             continue;
-        }
-        else {
+        } else {
             Cell* now_cell = this->cell->getOcean()->get_cell(p);
             if (now_cell->getObject() == nullptr) {
                 now_cell->setObject(this);
                 this->cell->delObj();
                 this->setCell(now_cell);
                 break;
-            }
-            else {
+            } else {
                 p.i -= i;
                 p.j -= j;
                 continue;
@@ -303,21 +318,20 @@ void Predator::move() {
 // Predator lives on average 175 times, has a hunger field, hunts when hungry,
 // breeds less than Prey, can die of hunger
 void Predator::live() {
-    size_t time_for_live = rand() % 100 + 150;
+    size_t time_for_live = rand_r(0) % 100 + 150;
     if (time <= time_for_live && this->getHunger() < 60) {
         if (this->getHunger() <= 4) {
             this->move();
-        }
-        else
+        } else {
             this->hant();
+        }
         this->reproduction();
         time++;
         hunger++;
     }
     else if (this->getHunger() >= 60) {
         this->die();
-    }
-    else {
+    } else {
         this->die();
     }
 }

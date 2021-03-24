@@ -1,6 +1,8 @@
+// Copyright 2021 soda
+
 #include "stone.h"
 
-//Stone
+// Stone
 
 void Stone::set_time() {
     this->time = 1;
@@ -23,10 +25,10 @@ void Stone::init(Cell* c) {
 void Stone::live() {
     time++;
     if (time == 100000) {
-        int res = rand() % 2;
-        if (res)
+        int res = rand_r(0) % 2;
+        if (res) {
             time = 1;
-        else {
+        } else {
             this->die();
         }
     }
@@ -50,7 +52,6 @@ char Stone::get_info_object() {
 }
 
 
-
 //Coral
 
 void Coral::set_time() {
@@ -66,7 +67,7 @@ void Coral::setCell(Cell* c) {
 }
 
 void Coral::setReprod() {
-    this->reprod_posib = rand() % 7 + 1;
+    this->reprod_posib = rand_r(0) % 7 + 1;
 }
 
 void Coral::init(Cell* c) {
@@ -76,7 +77,8 @@ void Coral::init(Cell* c) {
     this->setReprod();
 }
 
-//If a free cell is found nearby, we try to add a new coral once every 150 years
+// If a free cell is found nearby, we try to add a new coral once 
+// every 150 years
 void Coral::reproduction() {
     if (this->reprod_posib > 0) {
         if (this->time > 50) {
@@ -86,7 +88,8 @@ void Coral::reproduction() {
                 for (int m = -1; m <= 1; m++) {
                     p.i += n;
                     p.j += m;
-                    if ((p.i < 0 || p.i > N - 1) || (p.j < 0 || p.j > M - 1)) {
+                    if ((p.i < 0 || p.i > N - 1) ||
+                        (p.j < 0 || p.j > M - 1)) {
                         p.i -= n;
                         p.j -= m;
                         continue;
@@ -101,8 +104,7 @@ void Coral::reproduction() {
                         this->cell->getOcean()->addObject(new_coral);
                         suc++;
                         break;
-                    }
-                    else {
+                    } else {
                         p.i -= n;
                         p.j -= m;
                         continue;
@@ -114,16 +116,18 @@ void Coral::reproduction() {
     }
 }
 
-//The average life time of a corolla is 300 times, which is about reproducing 2 descendants,
-//in general, the coral colony will grow slowly, but it is possible that the corals will die out.
+// The average life time of a corolla is 300 times, which is about
+// reproducing 2 descendants,
+// in general, the coral colony will grow slowly, but it is
+// possible that the corals will die out.
+
 void Coral::live() {
-    size_t time_for_live = (rand() % 312) + 139;
+    size_t time_for_live = (rand_r(0) % 312) + 139;
     if (time <= time_for_live) {
         time++;
         if (time % 150 == 0)
             this->reproduction();
-    }
-    else {
+    } else {
         this->die();
     }
 }
@@ -148,4 +152,3 @@ void Coral::print_object() {
 char Coral::get_info_object() {
     return CORAL_N;
 }
-

@@ -1,31 +1,33 @@
+// Copyright 2021 soda
+
 #include "cell.h"
 #include "ocean.h"
 
 void Cell::setObject(Object* obj) {
-	this->obj = obj;
+    this->obj = obj;
 }
 
 void Cell::init(Pair p, Ocean* oc) {
-	crd = p;
-	ocean = oc;
+    crd = p;
+    ocean = oc;
 }
 
 Object* Cell::getObject() const {
-	return this->obj;
+    return this->obj;
 }
 
 Ocean* Cell::getOcean() {
-	return this->ocean;
+    return this->ocean;
 }
 
 Pair Cell::getCord() {
-	return this->crd;
+    return this->crd;
 }
 
 void Cell::killMe(Object* fdel) {
-	this->obj = nullptr;
+    this->obj = nullptr;
 }
 
 void Cell::delObj() {
-	this->obj = nullptr;
+    this->obj = nullptr;
 }

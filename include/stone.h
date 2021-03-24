@@ -1,15 +1,15 @@
-#ifndef _STONE_H_
-#define _STONE_H_
+// Copyright 2021 soda
+
+#ifndef INCLUDE_STONE_H_
+#define INCLUDE_STONE_H_
 
 #include "common.h"
 #include "object.h"
 #include "cell.h"
 #include "ocean.h"
 
-
-//Vertical wall class, for the ocean border
-class Wall_W : public Object
-{
+// Vertical wall class, for the ocean border
+class Wall_W : public Object {
  private:
     size_t time = 0;
 
@@ -46,9 +46,8 @@ class Wall_W : public Object
 };
 
 
-//Horizontal wall class, for the ocean border
-class Wall_G : public Object
-{
+// Horizontal wall class, for the ocean border
+class Wall_G : public Object {
  private:
     size_t time = 0;
 
@@ -85,8 +84,7 @@ class Wall_G : public Object
 };
 
 
-class Stone : public Object
-{
+class Stone : public Object {
  private:
     size_t time;
 
@@ -103,8 +101,7 @@ class Stone : public Object
 };
 
 
-class Coral : public Object
-{
+class Coral : public Object {
 private:
     size_t time;
     size_t reprod_posib;
@@ -123,4 +120,5 @@ private:
     int get_objType();
     char get_info_object();
 };
-#endif
+
+#endif // INCLUDE_STONE_H_

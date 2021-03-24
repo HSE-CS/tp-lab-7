@@ -1,5 +1,7 @@
-#ifndef _PREDATOR_H_
-#define _PREDATOR_H_
+// Copyright 2021 soda
+
+#ifndef INCLUDE_PREDATOR_H_
+#define INCLUDE_PREDATOR_H_
 
 #include "common.h"
 #include "object.h"
@@ -7,9 +9,8 @@
 #include "ocean.h"
 
 
-class Predator : public Object
-{
-//fields: - (1) lifetime; (3) number of descendants available for reproduction.
+class Predator : public Object {
+// fields: - (1) lifetime; (3) number of descendants available for reproduction.
  private:
     size_t time;
     size_t gender;
@@ -36,4 +37,5 @@ class Predator : public Object
     int get_objType();
     char get_info_object();
 };
-#endif
+
+#endif // INCLUDE_PREDATOR_H_

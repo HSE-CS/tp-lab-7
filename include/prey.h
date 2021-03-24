@@ -1,5 +1,7 @@
-#ifndef _PREY_H_
-#define _PREY_H_
+// Copyright 2021 soda
+
+#ifndef INCLUDE_PREY_H_
+#define INCLUDE_PREY_H_
 
 #include "common.h"
 #include "object.h"
@@ -32,4 +34,5 @@ class Prey : public Object
     int get_objType();
     char get_info_object();
 };
-#endif
+
+#endif // INCLUDE_PREY_H_
