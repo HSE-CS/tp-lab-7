@@ -19,8 +19,8 @@ struct coord_t {
 };
 
 // Common output
-#define OUTPUT_CYCLE_COUNT ULONG_MAX  // max count of cycles
-#define OUTPUT_CYCLE_SLEEP 40         // millisec
+#define OUTPUT_CYCLE_COUNT WINT_MAX  // max count of cycles
+#define OUTPUT_CYCLE_SLEEP 40        // millisec
 
 #define OUTPUT_SIGN_STONE (char)254  // ■
 #define OUTPUT_SIGN_PREY '-'
