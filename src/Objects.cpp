@@ -151,35 +151,10 @@ void Object::turn(int side1) {
     }
 }
 
-//void Object::move(int iteration) {
-//    if (this->speed == HIGH_SPEED) {
-//        relativeMove();
-//    }
-//    if (this->speed == MEDIUM_SPEED) {
-//        if (iteration % 2 == 0) {
-//            relativeMove();
-//        }
-//    }
-//    if (this->speed == LOW_SPEED) {
-//        if (iteration % 3 == 0) {
-//            relativeMove();
-//        }
-//    }
-//}
-//
-//void Object::relativeMove() {
-//    switch (this->direction) {
-//        case UP:
-//            moveUp();
-//            break;
-//        case DOWN:
-//            moveDown();
-//            break;
-//        case LEFT:
-//            moveLeft();
-//            break;
-//        case RIGHT:
-//            moveRight();
-//            break;
-//    }
-//}
+void Object::setEnergy(int energy1) {
+    this->energy = energy1;
+}
+
+int Object::getEnergy() {
+    return this->energy;
+}

@@ -18,13 +18,13 @@ static const int displayWidth = 200;
 //static const int displayHeight = 30;
 //static const int displayWidth = 50;
 
-//static void playMusicFile(char *name) {
-//    PlaySound(name, NULL, SND_FILENAME | SND_ASYNC);
-//}
-//
-//static void stopMusic() {
-//    PlaySound(NULL, 0, 0);
-//}
+static void playMusicFile(char *name) {
+    PlaySound(name, NULL, SND_FILENAME | SND_ASYNC);
+}
+
+static void stopMusic() {
+    PlaySound(NULL, 0, 0);
+}
 
 enum SceneNumber {
     TEST,

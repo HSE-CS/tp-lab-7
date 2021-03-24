@@ -172,7 +172,7 @@ namespace whizzbangRebels {
     };
     static const int color[sizeY][sizeX + 1] = {
         {-1,               cc(red, orange),   -1},
-        {-cc(red, orange), cc(white, yellow), cc(red, orange)},
+        {cc(red, orange), cc(white, yellow), cc(red, orange)},
         {-1,               cc(red, orange),   -1},
     };
     static const int side = REBELS;

@@ -14,7 +14,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3394e718-d3c4-4a57-b27e-888fadba13d6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/src/CMakeFiles/tp-lab-7.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/src/CMakeFiles/tp-lab-7.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/src/CMakeFiles/tp-lab-7.dir/Objects.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/src/CMakeFiles/tp-lab-7.dir/Objects.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/src/CMakeFiles/tp-lab-7.dir/Space.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/src/CMakeFiles/tp-lab-7.dir/Space.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/src/CMakeFiles/tp-lab-7.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/src/CMakeFiles/tp-lab-7.dir/objects.a" afterDir="false" />
@@ -58,7 +57,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/CMakeLists.txt" />
+    <property name="last_opened_file_path" value="E:/Clion/SolveTasks/CMakeLists.txt" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -111,7 +110,9 @@
       <workItem from="1615163539911" duration="35827000" />
       <workItem from="1615497787902" duration="12844000" />
       <workItem from="1615639762693" duration="1066000" />
-      <workItem from="1615785233428" duration="28819000" />
+      <workItem from="1615785233428" duration="32427000" />
+      <workItem from="1616244206032" duration="5171000" />
+      <workItem from="1616582041194" duration="9650000" />
     </task>
     <servers />
   </component>

@@ -57,14 +57,27 @@ private:
     std::vector<std::vector<Cell *>> space;
     std::vector<std::vector<char>> prevCondition;
     std::vector<std::vector<char>> nextCondition;
+    std::vector<Object *> objects;
 public:
     explicit Space();
 
-    Object *shoot(Object *ship, Object *target);
+    static Object *shoot(Object *ship);
 
     void destroy(Object *object);
 
     void destroyWithExplosion(Object *object);
+
+    static void explode(int x, int y, int radius);
+
+    Object* scan(Object *whizzbang);  // Unsafe function
+
+    void hit(Object *whizzbang, Object *target);
+
+    void addObject(Object *obj);
+
+    void removeObject(Object *obj);
+
+    std::vector<Object *> *getObjects();
 
     Object *scan(Object *ship, int depth);
 
@@ -83,6 +96,8 @@ public:
     void setCell(int x, int y, Cell *cell);
 
     Cell *getCell(int x, int y);
+
+    static double dist(int a, int b, int c, int d);
 };
 
 class Scene {

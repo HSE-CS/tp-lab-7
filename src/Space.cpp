@@ -2,6 +2,8 @@
 // Created by Данил on 04.03.2021.
 //
 
+#include <random>
+
 #include "../include/Space.h"
 #include "../include/Objects.h"
 
@@ -91,6 +93,10 @@ Cell *Space::getCell(int x, int y) {
 }
 
 void Space::move(Object *object, int iteration) {
+    if (object->getSpeed() == SUPER) {
+        relativeMove(object);
+        relativeMove(object);
+    }
     if (object->getSpeed() == HIGH_SPEED) {
         relativeMove(object);
     }
@@ -104,9 +110,15 @@ void Space::move(Object *object, int iteration) {
             relativeMove(object);
         }
     }
+    if (object->getSpeed() == ULTRA_LOW) {
+        if (iteration % 10 == 0) {
+            relativeMove(object);
+        }
+    }
 }
 
 void Space::relativeMove(Object *object) {
+    object->setEnergy(object->getEnergy() - 1);
     Movie::setAreaToNormalCondition(
         object->getPosX(),
         object->getPosY(),
@@ -166,7 +178,7 @@ void Space::moveRight(Object *object) {
     }
 }
 
-Object *Space::shoot(Object *ship, Object *target) {
+Object *Space::shoot(Object *ship) {
     Object *whizzbang;
     if (ship->getSide() == REBELS) {
         whizzbang = new Object(WhizzbangRebels(), SUPER);
@@ -174,15 +186,45 @@ Object *Space::shoot(Object *ship, Object *target) {
         whizzbang = new Object(WhizzbangImpery(), SUPER);
     }
     whizzbang->setDirection(ship->getDirection());
+    whizzbang->setPosX(ship->getPosX());
+    whizzbang->setPosy(ship->getPosY());
     return whizzbang;
 }
 
 void Space::destroy(Object *object) {
+    this->removeObject(object);
+}
 
+void Space::destroyWithExplosion(Object *object) {
+    this->removeObject(object);
+    explode(object->getPosX() + object->getSizeX() / 2,
+            object->getPosY() + object->getSizeY() / 2,
+            object->getSizeX());
+}
+
+void Space::explode(int x, int y, int radius) {
+    int colors[3] = {
+        cc(black, yellow),
+        cc(black, orange),
+        cc(black, red),
+    };
+    std::random_device gen;
+    for (int i = y - radius; i < y + radius; ++i) {
+        for (int j = x - radius; j < x + radius; ++j) {
+            int newI = (i + displayHeight) % displayHeight;
+            int newJ = (j + displayWidth) % displayWidth;
+            if (dist(x, y, newJ, newI) < radius) {
+                setCursorPosition(newJ, newI);
+                setConsoleColour(colors[gen() % 3]);
+                std::cout << "# H + @ * "[gen() % 10];
+            }
+        }
+    }
+    Movie::wait(0.1);
+    Movie::setAreaToNormalCondition(x - radius, y - radius, x + radius, y + radius);
 }
 
 Object *Space::scan(Object *ship, int depth) {
-    int scanResult = 0;
     if (ship->getDirection() == UP) {
         for (int i = ship->getPosY() - 1; i > ship->getPosY() - 1 - depth; --i) {
             for (int j = ship->getPosX(); j < ship->getPosX() + ship->getSizeX(); ++j) {
@@ -207,7 +249,82 @@ Object *Space::scan(Object *ship, int depth) {
             }
         }
     }
+    if (ship->getDirection() == RIGHT) {
+        for (int i = ship->getPosY(); i < ship->getPosY() + ship->getSizeY(); ++i) {
+            for (int j = ship->getPosX() + ship->getSizeX(); j < ship->getPosX() + ship->getSizeX() + depth; ++j) {
+                auto obj = this->space[i % displayHeight][j % displayWidth]->getObject();
+                if (obj != nullptr) {
+                    if (obj->getSide() != ship->getSide()) {
+                        return obj;
+                    }
+                }
+            }
+        }
+    }
+    if (ship->getDirection() == LEFT) {
+        for (int i = ship->getPosY(); i < ship->getPosY() + ship->getSizeY(); ++i) {
+            for (int j = ship->getPosX() - 1; j > ship->getPosX() - depth; --j) {
+                auto obj = this->space[i % displayHeight][(j + displayWidth) % displayWidth]->getObject();
+                if (obj != nullptr) {
+                    if (obj->getSide() != ship->getSide()) {
+                        return obj;
+                    }
+                }
+            }
+        }
+    }
     return nullptr;
+}
+
+void Space::addObject(Object *obj) {
+    this->objects.push_back(obj);
+}
+
+void Space::removeObject(Object *obj) {
+    for (uint_fast32_t i = 0; i < this->objects.size(); ++i) {
+        if (objects[i] == obj) {
+            objects.erase(objects.begin() + i);
+            Movie::setAreaToNormalCondition(obj->getPosX(),
+                                            obj->getPosY(),
+                                            obj->getPosX() + obj->getSizeX(),
+                                            obj->getPosY() + obj->getSizeY());
+            for (int k = obj->getPosY(); k < obj->getPosY() + obj->getSizeY(); ++k) {
+                for (int j = obj->getPosX(); j < obj->getPosX() + obj->getSizeX(); ++j) {
+                    space[k % displayHeight][j % displayWidth]->setObject(nullptr);
+                }
+            }
+            break;
+        }
+    }
+}
+
+std::vector<Object *> *Space::getObjects() {
+    return &objects;
+}
+
+Object *Space::scan(Object *whizzbang) {
+    for (int i = (whizzbang->getPosY() - 1 + displayHeight) % displayHeight;
+         i < (whizzbang->getPosY() - 1 + 5 + displayHeight) % displayHeight; ++i) {
+        for (int j = (whizzbang->getPosX() - 1 + displayWidth) % displayWidth;
+             j < (whizzbang->getPosX() - 1 + 5 + displayWidth) % displayWidth; ++j) {
+            auto obj = space[i % displayHeight][j % displayWidth]->getObject();
+            if (obj != nullptr) {
+                if (obj->getSide() != whizzbang->getSide() && obj->getSpeed() != SUPER) {
+                    return obj;
+                }
+            }
+        }
+    }
+    return nullptr;
+}
+
+void Space::hit(Object *whizzbang, Object *target) {
+    destroy(whizzbang);
+    destroyWithExplosion(target);
+}
+
+double Space::dist(int x1, int y1, int x2, int y2) {
+    return sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2));
 }
 
 Scene::Scene(int sceneNumber) {

@@ -9,6 +9,7 @@
 #include "scenes.h"
 
 enum Speed {
+    ULTRA_LOW,
     LOW_SPEED,
     MEDIUM_SPEED,
     HIGH_SPEED,
@@ -16,10 +17,10 @@ enum Speed {
 };
 
 enum Direction {
-    LEFT,
-    RIGHT,
-    UP,
-    DOWN,
+    LEFT = 0,
+    UP = 1,
+    RIGHT = 2,
+    DOWN = 3,
     NONE,
 };
 
@@ -36,6 +37,8 @@ private:
     std::string pilotName;
     int posX, posY;
     int speed, direction;
+    int energy = 10000;
+
 public:
     explicit Object(const StaticObject &object, int speed);
 
@@ -48,6 +51,10 @@ public:
     static int getId();
 
     int getSizeY() const;
+
+    void setEnergy(int energy);
+
+    int getEnergy();
 
     void setSizeY(int sizeY);
 

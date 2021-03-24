@@ -56,6 +56,12 @@ windows.h
 MMSystem.h
 -
 
+G:/Projects/tp-lab-7/src/Objects.cpp
+../include/Objects.h
+G:/Projects/tp-lab-7/include/Objects.h
+../include/common.h
+G:/Projects/tp-lab-7/include/common.h
+
 G:/Projects/tp-lab-7/src/Space.cpp
 ../include/Space.h
 G:/Projects/tp-lab-7/include/Space.h
