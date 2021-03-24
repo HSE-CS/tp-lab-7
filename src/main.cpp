@@ -119,7 +119,7 @@ void game() {
                 }
             }
         }
-        Movie::wait(0.2);
+        Movie::wait(0.01);
         if (s.countSideObject(REBELS) == 0) {
             playMusicFile("imperytheme.wav");
             Movie::renderImperyWin();
