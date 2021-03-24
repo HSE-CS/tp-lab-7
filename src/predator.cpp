@@ -248,7 +248,7 @@ void Predator::hant() {
                     for (int j = -1; j <= 1; j++) {
                         if (std::abs(static_cast<int>(chek.i) +
                             i - static_cast<int>(my_cord.i)) == 1) {
-                            if (std::abs((int)chek.j + j -
+                            if (std::abs(static_cast<int>(chek.j) + j -
                                 static_cast<int>(my_cord.j)) == 1) {
                                 chek.i += i;
                                 chek.j += j;

@@ -1,6 +1,7 @@
 // Copyright 2021 soda
 
 #include <vector>
+#include <algorithm>
 
 #include "../include/common.h"
 #include "../include/ocean.h"
