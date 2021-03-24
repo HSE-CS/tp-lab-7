@@ -1,3 +1,4 @@
+// Copyright 2021 Kasyanov
 #include "ocean.h"
 
 

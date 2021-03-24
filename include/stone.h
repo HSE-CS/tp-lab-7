@@ -1,12 +1,13 @@
-#ifndef _STONE_H_
-#define _STONE_H_
+// Copyright 2021 Kasyanov
+#ifndef INCLUDE_STONE_H_
+#define INCLUDE_STONE_H_
 
 #include "object.h"
 
 class Stone : public Object {
-public:
-    Stone(Cell* = nullptr);
+ public:
+    explicit Stone(Cell* = nullptr);
     virtual void live();
 };
 
-#endif
+#endif // INCLUDE_STONE_H_

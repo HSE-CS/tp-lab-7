@@ -1,3 +1,4 @@
+// Copyright 2021 Kasyanov
 #include "cell.h"
 
 void Cell::init(std::pair<size_t, size_t> p, Ocean* oc) {

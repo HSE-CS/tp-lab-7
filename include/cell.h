@@ -1,19 +1,22 @@
-#ifndef _CELL_H_
-#define _CELL_H_
+// Copyright 2021 Kasyanov
+#ifndef INCLUDE_CELL_H_
+#define INCLUDE_CELL_H_
 
+#include <utility>
 #include "common.h"
 #include "object.h"
-#include <utility>
 
 class Ocean;
 
 class Cell {
     friend Ocean;
-private:
+
+ private:
     std::pair<size_t, size_t> crd;
     Object *obj;
     Ocean *ocean;
-public:
+
+ public:
     explicit Cell(std::pair<size_t, size_t> p = {0, 0}, Ocean *oc = nullptr) :
             crd(p),
             obj(nullptr),
@@ -37,4 +40,4 @@ public:
 
 };
 
-#endif
+#endif // INCLUDE_CELL_H_

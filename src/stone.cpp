@@ -1,3 +1,4 @@
+// Copyright 2021 Kasyanov
 #include "stone.h"
 #include "cell.h"
 

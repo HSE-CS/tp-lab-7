@@ -1,25 +1,26 @@
-#ifndef _OCEAN_H_
-#define _OCEAN_H_
+// Copyright 2021 Kasyanov
+#ifndef INCLUDE_OCEAN_H_
+#define INCLUDE_OCEAN_H_
 
-#include "common.h"
-#include "cell.h"
-#include "prey.h"
-#include "predator.h"
 #include <list>
 #include <iostream>
 #include <vector>
 #include <algorithm>
 #include <random>
 #include <chrono>
+#include "common.h"
+#include "cell.h"
+#include "prey.h"
+#include "predator.h"
 
 class Ocean {
     friend Prey;
     friend Predator;
 
-private:
+ private:
     Cell **cells;
 
-public:
+ public:
     Ocean();
 
     ~Ocean();
@@ -33,4 +34,4 @@ public:
     void run();
 };
 
-#endif
+#endif // INCLUDE_OCEAN_H_

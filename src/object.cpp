@@ -1,3 +1,4 @@
+// Copyright 2021 Kasyanov
 #include "object.h"
 
 Object::Object(Cell * _cell, ObjType _type) {

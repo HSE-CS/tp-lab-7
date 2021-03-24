@@ -1,8 +1,9 @@
-#include "ocean.h"
-#include "stone.h"
+// Copyright 2021 Kasyanov
 #include <string>
 #include <chrono>
 #include <thread>
+#include "ocean.h"
+#include "stone.h"
 
 Ocean::Ocean() {
     cells = new Cell *[N];
@@ -26,7 +27,7 @@ void Ocean::print() const {
         }
         std::cout << '\n';
     }
-    std::cout << "===================================================================\n\n";
+    std::cout << "==============================================================\n\n";
 }
 
 void Ocean::addObjects() {
@@ -63,7 +64,8 @@ void Ocean::run() {
     while (true) {
         std::vector<int> vec(N * M);
         for (int i = 0; i < N * M; ++i) { vec[i] = i; }
-        unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+        unsigned seed = std::chrono::system_clock::now().
+                time_since_epoch().count();
         std::shuffle(vec.begin(), vec.end(), std::default_random_engine(seed));
         for (int m = 0; m < N * M; ++m) {
             int i = vec[m] / M;

@@ -1,10 +1,11 @@
-#include "predator.h"
-#include "cell.h"
-#include "ocean.h"
+// Copyright 2021 Kasyanov
 #include <vector>
 #include <algorithm>
 #include <random>
 #include <chrono>
+#include "predator.h"
+#include "cell.h"
+#include "ocean.h"
 
 #define default_progenty 10;
 
@@ -22,7 +23,7 @@ void Predator::live() {
     auto ocean = this->cell->getOcean();
     --life;
     --progeny_time;
-    for (auto opt: step) {
+    for (auto opt : step) {
         int i = this->cell->getX();
         int j = this->cell->getY();
         if (life < 0) {

@@ -1,12 +1,13 @@
-#ifndef _PREDATOR_H_
-#define _PREDATOR_H_
+// Copyright 2021 Kasyanov
+#ifndef INCLUDE_PREDATOR_H_
+#define INCLUDE_PREDATOR_H_
 
 #include "object.h"
 
 class Predator : public Object {
-public:
-    Predator(Cell* = nullptr);
+ public:
+    explicit Predator(Cell* = nullptr);
     virtual void live();
 };
 
-#endif
+#endif // INCLUDE_PREDATOR_H_

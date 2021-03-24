@@ -1,3 +1,4 @@
+// Copyright 2021 Kasyanov
 #include "prey.h"
 #include "cell.h"
 #include "ocean.h"
@@ -18,7 +19,7 @@ void Prey::live() {
     std::shuffle(step.begin(), step.end(), std::default_random_engine(seed));
     auto ocean = this->cell->getOcean();
     progeny_time--;
-    for (auto opt: step) {
+    for (auto opt : step) {
         int i = this->cell->getX();
         int j = this->cell->getY();
         if (opt == 1) {

@@ -1,12 +1,13 @@
-#ifndef _PREY_H_
-#define _PREY_H_
+// Copyright 2021 Kasyanov
+#ifndef INCLUDE_PREY_H_
+#define INCLUDE_PREY_H_
 
 #include "object.h"
 
 class Prey : public Object {
-public:
-    Prey(Cell* = nullptr);
+ public:
+    explicit Prey(Cell* = nullptr);
     virtual void live();
 };
 
-#endif
+#endif // INCLUDE_PREY_H_
