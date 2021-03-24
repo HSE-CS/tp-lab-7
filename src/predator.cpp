@@ -29,7 +29,7 @@ void Predator::live() {
         this->breeding();
         Life_time--;
     } else {
-        this->cell->killMe(); 
+        this->cell->killMe();
     }
 }
 

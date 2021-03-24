@@ -43,7 +43,6 @@ void Ocean::addObjects(size_t number_objects) {
         }
         this->cells[x][y].setObject(obj);
         this->stuff.push_back(obj);
-
     }
 }
 void Ocean::print() const {
