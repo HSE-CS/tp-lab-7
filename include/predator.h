@@ -1,10 +1,24 @@
-//  Copyright © 2021 Ksuvot. All rights reserved.
+//  Copyright © 2021 Ksuvot
+#ifndef INCLUDE_PREDATOR_H_
+#define INCLUDE_PREDATOR_H_
 
-#ifndef TP_LAB_7_SRC_PREDATOR_H_
-#define TP_LAB_7_SRC_PREDATOR_H_
+#include "Ocean.h"
+#include "Common.h"
 
-class predator {
+class Object;
 
+class Predator : public Object {
+ private:
+     int eat;
+     bool eating;
+
+ public:
+     Predator(Pair pair, Cell* cell) :
+         Object(ObjType::PREDATOR, pair, cell),
+         eat(10), eating(false) {}
+         ~Predator() override = default;
+     friend Ocean;
+     void live() override;
+     Object* Searching(Ocean* ocean);
 };
-
-#endif //TP_LAB_7_SRC_PREDATOR_H_
+#endif  // INCLUDE_PREDATOR_H_

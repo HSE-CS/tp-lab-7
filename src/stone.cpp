@@ -1,3 +1,9 @@
-//  Copyright © 2021 Ksuvot. All rights reserved.
+//  Copyright © 2021 Ksuvot
+#include "Stone.h"
 
-#include "../include/Stone.h"
+void STONE::live() {
+  speed -= std::rand() % 1;
+    if (speed == 0) {
+        cell->setObject(nullptr);
+    }
+}
