@@ -10,4 +10,4 @@ class Prey : public Object {
     virtual void live();
 };
 
-#endif // INCLUDE_PREY_H_
+#endif  // INCLUDE_PREY_H_

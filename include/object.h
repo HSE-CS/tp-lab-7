@@ -31,4 +31,4 @@ class Object {
     void setCell(Cell*);
 };
 
-#endif // INCLUDE_OBJECT_H_
+#endif  // INCLUDE_OBJECT_H_

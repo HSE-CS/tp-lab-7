@@ -1,11 +1,13 @@
 // Copyright 2021 Kasyanov
-#include "prey.h"
-#include "cell.h"
-#include "ocean.h"
+
 #include <vector>
 #include <algorithm>
 #include <random>
 #include <chrono>
+
+#include "prey.h"
+#include "cell.h"
+#include "ocean.h"
 
 Prey::Prey(Cell* _cell) {
     cell = _cell;

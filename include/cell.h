@@ -3,6 +3,7 @@
 #define INCLUDE_CELL_H_
 
 #include <utility>
+
 #include "common.h"
 #include "object.h"
 
@@ -37,7 +38,6 @@ class Cell {
     Ocean* getOcean() const;
 
     friend std::ostream &operator<<(std::ostream &out, const Cell &cell);
-
 };
 
-#endif // INCLUDE_CELL_H_
+#endif  // INCLUDE_CELL_H_

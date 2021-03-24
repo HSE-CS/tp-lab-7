@@ -10,4 +10,4 @@ class Predator : public Object {
     virtual void live();
 };
 
-#endif // INCLUDE_PREDATOR_H_
+#endif  // INCLUDE_PREDATOR_H_

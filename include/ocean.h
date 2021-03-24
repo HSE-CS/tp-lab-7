@@ -34,4 +34,4 @@ class Ocean {
     void run();
 };
 
-#endif // INCLUDE_OCEAN_H_
+#endif  // INCLUDE_OCEAN_H_

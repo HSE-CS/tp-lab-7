@@ -10,4 +10,4 @@ class Stone : public Object {
     virtual void live();
 };
 
-#endif // INCLUDE_STONE_H_
+#endif  // INCLUDE_STONE_H_

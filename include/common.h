@@ -7,4 +7,4 @@
 const size_t N = 20;
 const size_t M = 50;
 
-#endif // INCLUDE_COMMON_H_
+#endif  // INCLUDE_COMMON_H_
