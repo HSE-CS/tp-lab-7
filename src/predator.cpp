@@ -27,7 +27,6 @@ void Predator::live() {
         int j = this->cell->getY();
         if (life < 0) {
             ocean->cells[i][j].killMe();
-            ocean->stuff.remove(this);
             break;
         }
         if (opt == 1) {
@@ -38,7 +37,6 @@ void Predator::live() {
                 ocean->getNear(i - 1, j + 1) == ObjType::PREY) {
                 if (ocean->getNear(i - 1, j + 1) == ObjType::PREY) {
                     life += 5;
-                    ocean->stuff.remove(ocean->cells[i - 1][j + 1].getObject());
                 }
                 this->setCell(&ocean->cells[i - 1][j + 1]);
                 ocean->cells[i][j].killMe();
@@ -47,7 +45,6 @@ void Predator::live() {
                     progeny_time = default_progenty;
                     auto* new_predator = new Predator(&ocean->cells[i][j]);
                     ocean->cells[i][j].setObject(new_predator);
-                    ocean->stuff.push_back(new_predator);
                 }
                 break;
             }
@@ -60,7 +57,6 @@ void Predator::live() {
                 ocean->getNear(i, j + 1) == ObjType::PREY) {
                 if (ocean->getNear(i, j + 1) == ObjType::PREY) {
                     life += 5;
-                    ocean->stuff.remove(ocean->cells[i][j + 1].getObject());
                 }
                 this->setCell(&ocean->cells[i][j + 1]);
                 ocean->cells[i][j].killMe();
@@ -69,7 +65,6 @@ void Predator::live() {
                     progeny_time = default_progenty;
                     auto* new_predator = new Predator(&ocean->cells[i][j]);
                     ocean->cells[i][j].setObject(new_predator);
-                    ocean->stuff.push_back(new_predator);
                 }
                 break;
             }
@@ -82,7 +77,6 @@ void Predator::live() {
                 ocean->getNear(i + 1, j + 1) == ObjType::PREY) {
                 if (ocean->getNear(i + 1, j + 1) == ObjType::PREY) {
                     life += 5;
-                    ocean->stuff.remove(ocean->cells[i + 1][j + 1].getObject());
                 }
                 this->setCell(&ocean->cells[i + 1][j + 1]);
                 ocean->cells[i][j].killMe();
@@ -91,7 +85,6 @@ void Predator::live() {
                     progeny_time = default_progenty;
                     auto* new_predator = new Predator(&ocean->cells[i][j]);
                     ocean->cells[i][j].setObject(new_predator);
-                    ocean->stuff.push_back(new_predator);
                 }
                 break;
             }
@@ -104,7 +97,6 @@ void Predator::live() {
                 ocean->getNear(i + 1, j) == ObjType::PREY) {
                 if (ocean->getNear(i + 1, j) == ObjType::PREY) {
                     life += 5;
-                    ocean->stuff.remove(ocean->cells[i + 1][j].getObject());
                 }
                 this->setCell(&ocean->cells[i + 1][j]);
                 ocean->cells[i][j].killMe();
@@ -113,7 +105,6 @@ void Predator::live() {
                     progeny_time = default_progenty;
                     auto* new_predator = new Predator(&ocean->cells[i][j]);
                     ocean->cells[i][j].setObject(new_predator);
-                    ocean->stuff.push_back(new_predator);
                 }
                 break;
             }
@@ -126,7 +117,6 @@ void Predator::live() {
                 ocean->getNear(i + 1, j - 1) == ObjType::PREY) {
                 if (ocean->getNear(i + 1, j - 1) == ObjType::PREY) {
                     life += 5;
-                    ocean->stuff.remove(ocean->cells[i + 1][j - 1].getObject());
                 }
                 this->setCell(&ocean->cells[i + 1][j - 1]);
                 ocean->cells[i][j].killMe();
@@ -135,7 +125,6 @@ void Predator::live() {
                     progeny_time = default_progenty;
                     auto* new_predator = new Predator(&ocean->cells[i][j]);
                     ocean->cells[i][j].setObject(new_predator);
-                    ocean->stuff.push_back(new_predator);
                 }
                 break;
             }
@@ -148,7 +137,6 @@ void Predator::live() {
                 ocean->getNear(i, j - 1) == ObjType::PREY) {
                 if (ocean->getNear(i, j - 1) == ObjType::PREY) {
                     life += 5;
-                    ocean->stuff.remove(ocean->cells[i][j - 1].getObject());
                 }
                 this->setCell(&ocean->cells[i][j - 1]);
                 ocean->cells[i][j].killMe();
@@ -157,7 +145,6 @@ void Predator::live() {
                     progeny_time = default_progenty;
                     auto* new_predator = new Predator(&ocean->cells[i][j]);
                     ocean->cells[i][j].setObject(new_predator);
-                    ocean->stuff.push_back(new_predator);
                 }
                 break;
             }
@@ -170,7 +157,6 @@ void Predator::live() {
                 ocean->getNear(i - 1, j - 1) == ObjType::PREY) {
                 if (ocean->getNear(i - 1, j - 1) == ObjType::PREY) {
                     life += 5;
-                    ocean->stuff.remove(ocean->cells[i - 1][j - 1].getObject());
                 }
                 this->setCell(&ocean->cells[i - 1][j - 1]);
                 ocean->cells[i][j].killMe();
@@ -179,7 +165,6 @@ void Predator::live() {
                     progeny_time = default_progenty;
                     auto* new_predator = new Predator(&ocean->cells[i][j]);
                     ocean->cells[i][j].setObject(new_predator);
-                    ocean->stuff.push_back(new_predator);
                 }
                 break;
             }
@@ -192,7 +177,6 @@ void Predator::live() {
                 ocean->getNear(i - 1, j) == ObjType::PREY) {
                 if (ocean->getNear(i - 1, j) == ObjType::PREY) {
                     life += 5;
-                    ocean->stuff.remove(ocean->cells[i - 1][j].getObject());
                 }
                 this->setCell(&ocean->cells[i - 1][j]);
                 ocean->cells[i][j].killMe();
@@ -201,7 +185,6 @@ void Predator::live() {
                     progeny_time = default_progenty;
                     auto* new_predator = new Predator(&ocean->cells[i][j]);
                     ocean->cells[i][j].setObject(new_predator);
-                    ocean->stuff.push_back(new_predator);
                 }
                 break;
             }

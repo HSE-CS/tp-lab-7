@@ -33,7 +33,6 @@ void Prey::live() {
                     progeny_time = 5;
                     auto* new_prey = new Prey(&ocean->cells[i][j]);
                     ocean->cells[i][j].setObject(new_prey);
-                    ocean->stuff.push_back(new_prey);
                 }
                 break;
             }
@@ -50,7 +49,6 @@ void Prey::live() {
                     progeny_time = 5;
                     auto* new_prey = new Prey(&ocean->cells[i][j]);
                     ocean->cells[i][j].setObject(new_prey);
-                    ocean->stuff.push_back(new_prey);
                 }
                 break;
             }
@@ -67,7 +65,6 @@ void Prey::live() {
                     progeny_time = 5;
                     auto* new_prey = new Prey(&ocean->cells[i][j]);
                     ocean->cells[i][j].setObject(new_prey);
-                    ocean->stuff.push_back(new_prey);
                 }
                 break;
             }
@@ -84,7 +81,6 @@ void Prey::live() {
                     progeny_time = 5;
                     auto* new_prey = new Prey(&ocean->cells[i][j]);
                     ocean->cells[i][j].setObject(new_prey);
-                    ocean->stuff.push_back(new_prey);
                 }
                 break;
             }
@@ -101,7 +97,6 @@ void Prey::live() {
                     progeny_time = 5;
                     auto* new_prey = new Prey(&ocean->cells[i][j]);
                     ocean->cells[i][j].setObject(new_prey);
-                    ocean->stuff.push_back(new_prey);
                 }
                 break;
             }
@@ -118,7 +113,6 @@ void Prey::live() {
                     progeny_time = 5;
                     auto* new_prey = new Prey(&ocean->cells[i][j]);
                     ocean->cells[i][j].setObject(new_prey);
-                    ocean->stuff.push_back(new_prey);
                 }
                 break;
             }
@@ -135,7 +129,6 @@ void Prey::live() {
                     progeny_time = 5;
                     auto* new_prey = new Prey(&ocean->cells[i][j]);
                     ocean->cells[i][j].setObject(new_prey);
-                    ocean->stuff.push_back(new_prey);
                 }
                 break;
             }
@@ -152,7 +145,6 @@ void Prey::live() {
                     progeny_time = 5;
                     auto* new_prey = new Prey(&ocean->cells[i][j]);
                     ocean->cells[i][j].setObject(new_prey);
-                    ocean->stuff.push_back(new_prey);
                 }
                 break;
             }
