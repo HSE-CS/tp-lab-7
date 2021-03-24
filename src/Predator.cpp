@@ -12,7 +12,7 @@ void Predator::eat() {
 }
 
 void Predator::live() {
-  size_t timeHungry = 0;
+  int timeHungry = 0;
   if (lifeTime-- != 0 && !hungry) {
     eat();
     if (!hungry) {
@@ -21,8 +21,9 @@ void Predator::live() {
     }
     if (lifeTime % timeToReproduce == 0 && hungry) {
       reproduce();
-    } else
+    } else {
       move();
+    }
     if (timeHungry == 3)
       hungry = true;
   } else {

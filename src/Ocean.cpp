@@ -1,6 +1,7 @@
 // Copyright 2021 Dumarevskaya
 #include "Ocean.h"
 #include <iostream>
+#include <stdlib.h>
 //#include <unistd.h>
 
 void Ocean::print() const {
@@ -23,8 +24,8 @@ void Ocean::addObject(Object* new_object) {
 }
 
 void Ocean::run() {
-  size_t countOFpredator = 0;
-  size_t countOFprey = 0;
+  int countOFpredator = 0;
+  int countOFprey = 0;
   initOcean();
 
   while (true) {
@@ -63,13 +64,15 @@ Cell* Ocean::getCell(int x, int y) {
 }
 
 void Ocean::initOcean() {
-  size_t countOFstone = rand() % (N * M);
-  size_t countOFprey = countOFstone + rand() % (N * M);
-  size_t countOFpredator = countOFprey + countOFstone + rand() % (N * M);
+  int seed = time(NULL);
+  int* seed_p = &seed;
+  int countOFstone = rand_r(seed_p) % (N * M);
+  int countOFprey = countOFstone + rand_r(seed_p) % (N * M);
+  int countOFpredator = countOFprey + countOFstone + rand_r(seed_p) % (N * M);
   for (int i = 0; i < countOFstone; i++) {
     while (true) {
-      size_t x = rand() % M;
-      size_t y = rand() % N;
+      int x = rand_r(seed_p) % M;
+      int y = rand_r(seed_p) % N;
       if (cells[x][y].getObject() == nullptr) {
         Stone* new_stone = new Stone(&cells[x][y]);
         cells[x][y].setObject(new_stone);
@@ -80,8 +83,8 @@ void Ocean::initOcean() {
   }
   for (int i = 0; i < countOFprey; i++) {
     while (true) {
-      size_t x = rand() % M;
-      size_t y = rand() % N;
+      int x = rand_r(seed_p) % M;
+      int y = rand_r(seed_p) % N;
       if (cells[x][y].getObject() == nullptr) {
         Prey* new_prey = new Prey(&cells[x][y]);
         cells[x][y].setObject(new_prey);
@@ -91,8 +94,8 @@ void Ocean::initOcean() {
     }
   }for (int i = 0; i < countOFstone; i++) {
     while (true) {
-      size_t x = rand() % M;
-      size_t y = rand() % N;
+      int x = rand_r(seed_p) % M;
+      int y = rand_r(seed_p) % N;
       if (cells[x][y].getObject() == nullptr) {
         Predator* new_predator = new Predator(&cells[x][y]);
         cells[x][y].setObject(new_predator);

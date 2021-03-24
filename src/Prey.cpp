@@ -1,7 +1,6 @@
 // Copyright 2021 Dumarevskaya
 #include "Prey.h"
 #include <iostream>
-//#include <ctime>
 
 void Prey::live() {
   if (lifeTime-- != 0) {

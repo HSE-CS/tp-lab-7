@@ -24,7 +24,7 @@ class Object {
   Cell *cell;
   ObjType type;
  public:
-  Object(Cell* new_cell = nullptr) : cell{ new_cell } {}
+  explicit Object(Cell* new_cell = nullptr) : cell{ new_cell } {}
   ~Object() {}
   virtual void live() = 0;
   void setCell(Cell*);

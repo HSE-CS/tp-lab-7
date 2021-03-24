@@ -2,14 +2,17 @@
 #ifndef INCLUDE_OCEAN_H_
 #define INCLUDE_OCEAN_H_
 
-#include "common.h"
-#include "Cell.h"
 #include <list>
+
+#include "common.h"
+//#include "Cell.h"
 #include "Prey.h"
 #include "Stone.h"
 #include "Predator.h"
-#include "Object.h"
+//#include "Object.h"
 
+class Cell;
+class Object;
 class Ocean {
 
  private:

@@ -2,18 +2,18 @@
 #ifndef INCLUDE_COMMON_H_
 #define INCLUDE_COMMON_H_
 
-typedef size_t coord_t;
+// typedef size_t coord_t;
 
 struct Pair {
-	coord_t x; // 0..M-1
-	coord_t y; // 0..N-1
+  int x;  // 0..M-1
+  int y;  // 0..N-1
 };
 
-const size_t N = 100;
-const size_t M = 100;
-const size_t PREY_LIFE = 20;
-const size_t PREY_BREED = 10;
-const size_t PREDATOR_LIFE = 30;
-const size_t PREDATOR_BREED = 15;
+const int N = 100;
+const int M = 100;
+const int PREY_LIFE = 20;
+const int PREY_BREED = 10;
+const int PREDATOR_LIFE = 30;
+const int PREDATOR_BREED = 15;
 
-#endif  // INCLUDE_COMMON_H_
+#endif  // INCLUDE_COMMON_H

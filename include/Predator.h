@@ -3,7 +3,10 @@
 #define INCLUDE_PREDATOR_H_
 
 #include "Prey.h"
-#include "Cell.h"
+//#include "Cell.h"
+//#include "common.h"
+
+class Prey;
 
 class Predator : public Prey {
  private:

@@ -1,6 +1,8 @@
+// Copyright 2021 Dumarevskaya
 #include "Cell.h"
 #include <vector>
-#include <cstdlib>
+#include <ctime>
+#include <stdlib.h>
 
 void Cell::init(Pair p, Ocean* oc) {
   crd = p;
@@ -26,13 +28,17 @@ Cell* Cell::findEmptyAround() {
       for (int i = 0; i < 2; i++) {
         for (int j = 0; j < 2; j++) {
           if (i != 0 && j != 0) {
-            if (ocean->getCell(crd.x - i, crd.y - j)->obj->getObjType() == ObjType::EMPTY)
+            if (ocean->getCell(crd.x - i, crd.y - j)->obj->getObjType()
+              == ObjType::EMPTY)
               emptyCells.push_back(ocean->getCell(crd.x - i, crd.y - j));
-            if (ocean->getCell(crd.x + i, crd.y + j)->obj->getObjType() == ObjType::EMPTY)
+            if (ocean->getCell(crd.x + i, crd.y + j)->obj->getObjType()
+              == ObjType::EMPTY)
               emptyCells.push_back(ocean->getCell(crd.x + i, crd.y + j));
-            if (ocean->getCell(crd.x - i, crd.y + j)->obj->getObjType() == ObjType::EMPTY)
+            if (ocean->getCell(crd.x - i, crd.y + j)->obj->getObjType()
+              == ObjType::EMPTY)
               emptyCells.push_back(ocean->getCell(crd.x - i, crd.y + j));
-            if (ocean->getCell(crd.x + i, crd.y - j)->obj->getObjType() == ObjType::EMPTY)
+            if (ocean->getCell(crd.x + i, crd.y - j)->obj->getObjType()
+              == ObjType::EMPTY)
               emptyCells.push_back(ocean->getCell(crd.x + i, crd.y - j));
           }
         }
@@ -42,9 +48,11 @@ Cell* Cell::findEmptyAround() {
         for (int i = 0; i < 2; i++) {
           for (int j = 0; j < 2; j++) {
             if (i != 0 && j != 0) {
-              if (ocean->getCell(crd.x - i, crd.y - j)->obj->getObjType() == ObjType::EMPTY)
+              if (ocean->getCell(crd.x - i, crd.y - j)->obj->getObjType()
+                == ObjType::EMPTY)
                 emptyCells.push_back(ocean->getCell(crd.x - i, crd.y - j));
-              if (ocean->getCell(crd.x + i, crd.y - j)->obj->getObjType() == ObjType::EMPTY)
+              if (ocean->getCell(crd.x + i, crd.y - j)->obj->getObjType()
+                == ObjType::EMPTY)
                 emptyCells.push_back(ocean->getCell(crd.x + i, crd.y - j));
             }
           }
@@ -53,9 +61,11 @@ Cell* Cell::findEmptyAround() {
         for (int i = 0; i < 2; i++) {
           for (int j = 0; j < 2; j++) {
             if (i != 0 && j != 0) {
-              if (ocean->getCell(crd.x + i, crd.y + j)->obj->getObjType() == ObjType::EMPTY)
+              if (ocean->getCell(crd.x + i, crd.y + j)->obj->getObjType()
+                == ObjType::EMPTY)
                 emptyCells.push_back(ocean->getCell(crd.x + i, crd.y + j));
-              if (ocean->getCell(crd.x - i, crd.y + j)->obj->getObjType() == ObjType::EMPTY)
+              if (ocean->getCell(crd.x - i, crd.y + j)->obj->getObjType()
+                == ObjType::EMPTY)
                 emptyCells.push_back(ocean->getCell(crd.x - i, crd.y + j));
             }
           }
@@ -67,9 +77,11 @@ Cell* Cell::findEmptyAround() {
       for (int i = 0; i < 2; i++) {
         for (int j = 0; j < 2; j++) {
           if (i != 0 && j != 0) {
-            if (ocean->getCell(crd.x - i, crd.y - j)->obj->getObjType() == ObjType::EMPTY)
+            if (ocean->getCell(crd.x - i, crd.y - j)->obj->getObjType()
+              == ObjType::EMPTY)
               emptyCells.push_back(ocean->getCell(crd.x - i, crd.y - j));
-            if (ocean->getCell(crd.x, crd.y + j)->obj->getObjType() == ObjType::EMPTY)
+            if (ocean->getCell(crd.x, crd.y + j)->obj->getObjType()
+              == ObjType::EMPTY)
               emptyCells.push_back(ocean->getCell(crd.x, crd.y + j));
           }
         }
@@ -79,7 +91,8 @@ Cell* Cell::findEmptyAround() {
         for (int i = 0; i < 2; i++) {
           for (int j = 0; j < 2; j++) {
             if (i != 0 && j != 0) {
-              if (ocean->getCell(crd.x - i, crd.y - j)->obj->getObjType() == ObjType::EMPTY)
+              if (ocean->getCell(crd.x - i, crd.y - j)->obj->getObjType()
+                == ObjType::EMPTY)
                 emptyCells.push_back(ocean->getCell(crd.x - i, crd.y - j));
             }
           }
@@ -88,7 +101,8 @@ Cell* Cell::findEmptyAround() {
         for (int i = 0; i < 2; i++) {
           for (int j = 0; j < 2; j++) {
             if (i != 0 && j != 0) {
-              if (ocean->getCell(crd.x - i, crd.y + j)->obj->getObjType() == ObjType::EMPTY)
+              if (ocean->getCell(crd.x - i, crd.y + j)->obj->getObjType()
+                == ObjType::EMPTY)
                 emptyCells.push_back(ocean->getCell(crd.x - i, crd.y + j));
             }
           }
@@ -100,9 +114,11 @@ Cell* Cell::findEmptyAround() {
       for (int i = 0; i < 2; i++) {
         for (int j = 0; j < 2; j++) {
           if (i != 0 && j != 0) {
-            if (ocean->getCell(crd.x + i, crd.y + j)->obj->getObjType() == ObjType::EMPTY)
+            if (ocean->getCell(crd.x + i, crd.y + j)->obj->getObjType()
+              == ObjType::EMPTY)
               emptyCells.push_back(ocean->getCell(crd.x + i, crd.y + j));
-            if (ocean->getCell(crd.x + i, crd.y - j)->obj->getObjType() == ObjType::EMPTY)
+            if (ocean->getCell(crd.x + i, crd.y - j)->obj->getObjType()
+              == ObjType::EMPTY)
               emptyCells.push_back(ocean->getCell(crd.x + i, crd.y - j));
           }
         }
@@ -112,7 +128,8 @@ Cell* Cell::findEmptyAround() {
         for (int i = 0; i < 2; i++) {
           for (int j = 0; j < 2; j++) {
             if (i != 0 && j != 0) {
-              if (ocean->getCell(crd.x + i, crd.y - j)->obj->getObjType() == ObjType::EMPTY)
+              if (ocean->getCell(crd.x + i, crd.y - j)->obj->getObjType()
+                == ObjType::EMPTY)
                 emptyCells.push_back(ocean->getCell(crd.x + i, crd.y - j));
             }
           }
@@ -121,7 +138,8 @@ Cell* Cell::findEmptyAround() {
         for (int i = 0; i < 2; i++) {
           for (int j = 0; j < 2; j++) {
             if (i != 0 && j != 0) {
-              if (ocean->getCell(crd.x + i, crd.y + j)->obj->getObjType() == ObjType::EMPTY)
+              if (ocean->getCell(crd.x + i, crd.y + j)->obj->getObjType()
+                == ObjType::EMPTY)
                 emptyCells.push_back(ocean->getCell(crd.x + i, crd.y + j));
             }
           }
@@ -131,7 +149,9 @@ Cell* Cell::findEmptyAround() {
   }
   if (emptyCells.empty())
     return nullptr;
-  int random_choice = rand() % emptyCells.size();
+  int seed = time(NULL);
+  int* seed_p = &seed;
+  int random_choice = rand_r(seed_p) % emptyCells.size();
   return emptyCells[random_choice];
 }
 
@@ -142,13 +162,17 @@ Cell* Cell::findPreyAround() {
       for (int i = 0; i < 2; i++) {
         for (int j = 0; j < 2; j++) {
           if (i != 0 && j != 0) {
-            if (ocean->getCell(crd.x - i, crd.y - j)->obj->getObjType() == ObjType::PREY)
+            if (ocean->getCell(crd.x - i, crd.y - j)->obj->getObjType()
+              == ObjType::PREY)
               victims.push_back(ocean->getCell(crd.x - i, crd.y - j));
-            if (ocean->getCell(crd.x + i, crd.y + j)->obj->getObjType() == ObjType::PREY)
+            if (ocean->getCell(crd.x + i, crd.y + j)->obj->getObjType()
+              == ObjType::PREY)
               victims.push_back(ocean->getCell(crd.x + i, crd.y + j));
-            if (ocean->getCell(crd.x - i, crd.y + j)->obj->getObjType() == ObjType::PREY)
+            if (ocean->getCell(crd.x - i, crd.y + j)->obj->getObjType()
+              == ObjType::PREY)
               victims.push_back(ocean->getCell(crd.x - i, crd.y + j));
-            if (ocean->getCell(crd.x + i, crd.y - j)->obj->getObjType() == ObjType::PREY)
+            if (ocean->getCell(crd.x + i, crd.y - j)->obj->getObjType()
+              == ObjType::PREY)
               victims.push_back(ocean->getCell(crd.x + i, crd.y - j));
           }
         }
@@ -158,9 +182,11 @@ Cell* Cell::findPreyAround() {
         for (int i = 0; i < 2; i++) {
           for (int j = 0; j < 2; j++) {
             if (i != 0 && j != 0) {
-              if (ocean->getCell(crd.x - i, crd.y - j)->obj->getObjType() == ObjType::PREY)
+              if (ocean->getCell(crd.x - i, crd.y - j)->obj->getObjType()
+                == ObjType::PREY)
                 victims.push_back(ocean->getCell(crd.x - i, crd.y - j));
-              if (ocean->getCell(crd.x + i, crd.y - j)->obj->getObjType() == ObjType::PREY)
+              if (ocean->getCell(crd.x + i, crd.y - j)->obj->getObjType()
+                == ObjType::PREY)
                 victims.push_back(ocean->getCell(crd.x + i, crd.y - j));
             }
           }
@@ -169,9 +195,11 @@ Cell* Cell::findPreyAround() {
         for (int i = 0; i < 2; i++) {
           for (int j = 0; j < 2; j++) {
             if (i != 0 && j != 0) {
-              if (ocean->getCell(crd.x + i, crd.y + j)->obj->getObjType() == ObjType::PREY)
+              if (ocean->getCell(crd.x + i, crd.y + j)->obj->getObjType()
+                == ObjType::PREY)
                 victims.push_back(ocean->getCell(crd.x + i, crd.y + j));
-              if (ocean->getCell(crd.x - i, crd.y + j)->obj->getObjType() == ObjType::PREY)
+              if (ocean->getCell(crd.x - i, crd.y + j)->obj->getObjType()
+                == ObjType::PREY)
                 victims.push_back(ocean->getCell(crd.x - i, crd.y + j));
             }
           }
@@ -183,9 +211,11 @@ Cell* Cell::findPreyAround() {
       for (int i = 0; i < 2; i++) {
         for (int j = 0; j < 2; j++) {
           if (i != 0 && j != 0) {
-            if (ocean->getCell(crd.x - i, crd.y - j)->obj->getObjType() == ObjType::PREY)
+            if (ocean->getCell(crd.x - i, crd.y - j)->obj->getObjType()
+              == ObjType::PREY)
               victims.push_back(ocean->getCell(crd.x - i, crd.y - j));
-            if (ocean->getCell(crd.x, crd.y + j)->obj->getObjType() == ObjType::PREY)
+            if (ocean->getCell(crd.x, crd.y + j)->obj->getObjType()
+              == ObjType::PREY)
               victims.push_back(ocean->getCell(crd.x, crd.y + j));
           }
         }
@@ -195,7 +225,8 @@ Cell* Cell::findPreyAround() {
         for (int i = 0; i < 2; i++) {
           for (int j = 0; j < 2; j++) {
             if (i != 0 && j != 0) {
-              if (ocean->getCell(crd.x - i, crd.y - j)->obj->getObjType() == ObjType::PREY)
+              if (ocean->getCell(crd.x - i, crd.y - j)->obj->getObjType()
+                == ObjType::PREY)
                 victims.push_back(ocean->getCell(crd.x - i, crd.y - j));
             }
           }
@@ -204,7 +235,8 @@ Cell* Cell::findPreyAround() {
         for (int i = 0; i < 2; i++) {
           for (int j = 0; j < 2; j++) {
             if (i != 0 && j != 0) {
-              if (ocean->getCell(crd.x - i, crd.y + j)->obj->getObjType() == ObjType::PREY)
+              if (ocean->getCell(crd.x - i, crd.y + j)->obj->getObjType()
+                == ObjType::PREY)
                 victims.push_back(ocean->getCell(crd.x - i, crd.y + j));
             }
           }
@@ -216,9 +248,11 @@ Cell* Cell::findPreyAround() {
       for (int i = 0; i < 2; i++) {
         for (int j = 0; j < 2; j++) {
           if (i != 0 && j != 0) {
-            if (ocean->getCell(crd.x + i, crd.y + j)->obj->getObjType() == ObjType::PREY)
+            if (ocean->getCell(crd.x + i, crd.y + j)->obj->getObjType()
+              == ObjType::PREY)
               victims.push_back(ocean->getCell(crd.x + i, crd.y + j));
-            if (ocean->getCell(crd.x + i, crd.y - j)->obj->getObjType() == ObjType::PREY)
+            if (ocean->getCell(crd.x + i, crd.y - j)->obj->getObjType()
+              == ObjType::PREY)
               victims.push_back(ocean->getCell(crd.x + i, crd.y - j));
           }
         }
@@ -228,7 +262,8 @@ Cell* Cell::findPreyAround() {
         for (int i = 0; i < 2; i++) {
           for (int j = 0; j < 2; j++) {
             if (i != 0 && j != 0) {
-              if (ocean->getCell(crd.x + i, crd.y - j)->obj->getObjType() == ObjType::PREY)
+              if (ocean->getCell(crd.x + i, crd.y - j)->obj->getObjType()
+                == ObjType::PREY)
                 victims.push_back(ocean->getCell(crd.x + i, crd.y - j));
             }
           }
@@ -237,7 +272,8 @@ Cell* Cell::findPreyAround() {
         for (int i = 0; i < 2; i++) {
           for (int j = 0; j < 2; j++) {
             if (i != 0 && j != 0) {
-              if (ocean->getCell(crd.x + i, crd.y + j)->obj->getObjType() == ObjType::PREY)
+              if (ocean->getCell(crd.x + i, crd.y + j)->obj->getObjType()
+                == ObjType::PREY)
                 victims.push_back(ocean->getCell(crd.x + i, crd.y + j));
             }
           }
@@ -247,7 +283,9 @@ Cell* Cell::findPreyAround() {
   }
   if (victims.empty())
     return nullptr;
-  int random_choice = rand() % victims.size();
+  int seed = time(NULL);
+  int* seed_p = &seed;
+  int random_choice = rand_r(seed_p) % victims.size();
   return victims[random_choice];
 }
 
