@@ -25,10 +25,10 @@ Ocean::Ocean(size_t M, size_t N,
 }
 void Ocean::addObjects(size_t number_objects) {
     for (size_t i = 0; i < number_objects; i++) {
-        time(nullptr);
-        int x = rand_r() % M;
-        int y = rand_r() % N;
-        int type_probability = rand_r() % 100;
+        unsigned int seed = time(nullptr);
+        int x = rand_r(&seed) % M;
+        int y = rand_r(&seed) % N;
+        int type_probability = rand_r(&seed) % 100;
         if (this->cells[x][y].getObject()) {
             continue;
         }
