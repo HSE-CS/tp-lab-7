@@ -2,15 +2,11 @@
 #ifndef INCLUDE_STONE_H_
 #define INCLUDE_STONE_H_
 
-//#include "Object.h"
-#include "Cell.h"
-
-class Cell;
-class Object;
+#include "Object.h"
 
 class Stone : public Object {
  public:
-  explicit Stone(Cell* cell) : Object(cell) {}
+  explicit Stone(Cell* cell) : Object(ObjType::STONE, cell) {}
   ~Stone() {}
   void live() override;
 };

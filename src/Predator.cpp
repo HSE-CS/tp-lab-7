@@ -1,5 +1,6 @@
 // Copyright 2021 Dumarevskaya
 #include "Predator.h"
+#include "Cell.h"
 
 void Predator::eat() {
   Prey* victim = new Prey(cell->findPreyAround());

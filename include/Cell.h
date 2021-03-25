@@ -4,11 +4,10 @@
 
 #include "common.h"
 #include "Object.h"
-#include "Ocean.h"
 
 class Ocean;
-class Object;
 class Cell {
+  friend Ocean;
  private:
   Pair crd;
   Object* obj;
@@ -18,7 +17,6 @@ class Cell {
   explicit Cell(Pair p = { 0, 0 }, Ocean* oc = nullptr) :
     crd(p),
     obj(nullptr),
-    //obj->setObjType(ObjType::EMPTY),
     ocean(oc) {}
   ~Cell() {}
   void init(Pair p, Ocean* oc);

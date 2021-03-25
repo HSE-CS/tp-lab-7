@@ -2,19 +2,14 @@
 #ifndef INCLUDE_PREY_H_
 #define INCLUDE_PREY_H_
 
-//#include "Object.h"
-//#include "common.h"
-#include "Cell.h"
-
-class Object;
-class Cell;
+#include "Object.h"
 
 class Prey : public Object {
  protected:
   int lifeTime;
   int timeToReproduce;
  public:
-  Prey(Cell* cell) : Object(cell) {
+  Prey(Cell* cell, ObjType type = ObjType::PREY) : Object(type, cell) { 
     lifeTime = PREY_LIFE;
     timeToReproduce = PREY_BREED;
   }

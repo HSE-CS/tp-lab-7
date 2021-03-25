@@ -3,16 +3,12 @@
 #define INCLUDE_PREDATOR_H_
 
 #include "Prey.h"
-//#include "Cell.h"
-//#include "common.h"
-
-class Prey;
 
 class Predator : public Prey {
  private:
   bool hungry;
  public:
-  explicit Predator(Cell* cell) : Prey{ cell } {
+  explicit Predator(Cell* cell) : Prey{ cell, ObjType::PREDATOR} {
     timeToReproduce = PREDATOR_BREED;
     lifeTime = PREDATOR_BREED;
     hungry = true;

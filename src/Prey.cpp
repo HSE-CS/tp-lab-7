@@ -1,5 +1,7 @@
 // Copyright 2021 Dumarevskaya
 #include "Prey.h"
+#include "Ocean.h"
+#include "Cell.h"
 #include <iostream>
 
 void Prey::live() {

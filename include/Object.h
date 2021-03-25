@@ -2,8 +2,7 @@
 #ifndef INCLUDE_OBJECT_H_
 #define INCLUDE_OBJECT_H_
 
-#include "common.h"
-#include "Cell.h"
+#include "common.h" 
 
 #define STONE_N '#'
 #define PREY_N 'f'
@@ -24,8 +23,11 @@ class Object {
   Cell *cell;
   ObjType type;
  public:
-  explicit Object(Cell* new_cell = nullptr) : cell{ new_cell } {}
-  ~Object() {}
+  explicit Object(ObjType ot, Cell* new_cell = nullptr)
+    : type{ ot }, cell{ new_cell }{}
+  ~Object() {
+    cell = nullptr;
+  }
   virtual void live() = 0;
   void setCell(Cell*);
   void setObjType(ObjType);

@@ -3,16 +3,11 @@
 #define INCLUDE_OCEAN_H_
 
 #include <list>
-
-#include "common.h"
-//#include "Cell.h"
-#include "Prey.h"
+#include "Cell.h"
 #include "Stone.h"
 #include "Predator.h"
-//#include "Object.h"
+#include "Object.h"
 
-class Cell;
-class Object;
 class Ocean {
 
  private:
@@ -24,7 +19,7 @@ class Ocean {
   Ocean() {
     cells = new Cell * [M];
     for (int i = 0; i < M; i++) {
-      cells[i] = new Cell[M];
+      cells[i] = new Cell[N];
       for (int j = 0; j < N; j++) {
         cells[i][j].init({j, i}, this);
       }
