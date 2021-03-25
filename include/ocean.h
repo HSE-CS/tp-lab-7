@@ -9,10 +9,12 @@
 #include "common.h"
 #include "cell.h"
 
+class Cell;
+
 class Ocean {
  private:
     Cell** cells;
-    std::list<Object*> stuff;
+    //std::list<Object*> stuff;
 
  public:
     Ocean();
