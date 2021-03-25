@@ -67,7 +67,7 @@ void Ocean::run()
 {
     for(int n=1; n<= 100; n++)
 	{
-		system("cls");
+		//system("cls");
         std::cout << "\nItteration: " << n << std::endl;
 		print();
 		std::list<Object*>::iterator i = stuff.begin();
