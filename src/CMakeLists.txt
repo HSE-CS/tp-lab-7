@@ -1,5 +1,5 @@
 set(header_path "${${PROJECT_NAME}_SOURCE_DIR}/include")
-set(header ${header_path}/Ocean.h ${header_path}/Cell.h ${header_path}/common.h ${header_path}/Prey.h ${header_path}/Predator.h ${header_path}/Stone.h)
+set(header ${header_path}/Ocean.h ${header_path}/Cell.h ${header_path}/common.h ${header_path}/Prey.h ${header_path}/Predator.h ${header_path}/Stone.h ${header_path}/Object.h)
 set(src Ocean.cpp Cell.cpp Predator.cpp Prey.cpp Stone.cpp Object.cpp)
 
 
