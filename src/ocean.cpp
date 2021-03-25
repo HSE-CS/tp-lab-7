@@ -1,4 +1,5 @@
 // Copyright GN 2021
+#include <stdlib.h>
 #include <algorithm>
 #include <vector>
 #include <ctime>
