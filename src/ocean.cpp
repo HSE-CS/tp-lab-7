@@ -7,7 +7,8 @@
 #include <vector>
 #include <iostream>
 #include <stdlib.h> 
-#include <random> 
+#include <algorithm>
+#include <random>
 
 Cell **Ocean::getCells() {
     return cells;
@@ -30,7 +31,7 @@ std::vector<srt> getShuffle(int numStones, int numPreys, int numPredators) {
     }
     
     srand(unsigned(time(0)));
-    random_shuffle(v.begin(), v.end());
+    shuffle(v.begin(), v.end(), std::default_random_engine(0));
     return v;
 }
 
