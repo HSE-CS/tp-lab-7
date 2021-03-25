@@ -35,9 +35,9 @@ void World::init(int seed) {
 }
 
 World::~World() {
-  //  for (Object* o : objects) {
-  //    delete o;
-  //  }
+  for (Object* o : objects) {
+    delete o;
+  }
 }
 
 void World::replace(Object* object, int x, int y) {
