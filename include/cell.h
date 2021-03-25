@@ -1,7 +1,7 @@
 // Copyright 2021 MalininDmitry
 
-#ifndef CELL_H_
-#define CELL_H_
+#ifndef INCLUDE_CELL_H_
+#define INCLUDE_CELL_H_
 #include "common.h"
 #include "object.h"
 #include "ocean.h"

@@ -10,7 +10,7 @@
 #define PREDATOR_N 'S'
 #define NOTHING_N '.'
 
-enum class ObjType {STONE,CORAL,PREY,PREDATOR,NOTHING};
+enum class ObjType {STONE, CORAL, PREY, PREDATOR, NOTHING};
 class Cell;
 class Object {
  protected:
