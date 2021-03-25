@@ -15,7 +15,7 @@ class Ocean {
   std::list<Object*> deleteObject;
 
  public:
-  explicit Ocean() {
+  Ocean() {
     cells = new Cell * [M];
     for (int i = 0; i < M; i++) {
       cells[i] = new Cell[N];

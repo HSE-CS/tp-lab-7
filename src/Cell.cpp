@@ -1,8 +1,8 @@
 // Copyright 2021 Dumarevskaya
-#include <vector>
-#include <ctime>
 #include <stdlib.h>
 #include <random>
+#include <vector>
+#include <ctime>
 #include "Cell.h"
 #include "Ocean.h"
 
