@@ -29,12 +29,12 @@ void Ocean::print() const {
 }
 void Ocean::addObjects(unsigned int n, ObjType type) {
     while (n > 0) {
-        std::random_device ran;
-        unsigned int x = rand() % M;
-        unsigned int y = rand() % N;
-        if (cells[y][x].getObject())
+        int seed1 = 0;
+        unsigned int x = /*rand() % M;*/(rand_r(&seed1) % M);
+        unsigned int y = /*rand() % N;*/(rand_r(&seed1) % N);
+        if (cells[y][x].getObject()) {
             continue;
-        else {
+        } else {
             Object * born = nullptr;
             switch (type) {
                 case ObjType::STONE:
