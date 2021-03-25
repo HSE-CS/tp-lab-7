@@ -1,9 +1,10 @@
-//Copyright GN 2021
+// Copyright GN 2021
 
 #ifndef _OCEAN_H_
 #define _OCEAN_H_
+INCLUDE_OCEAN_H_
 
-
+#include <list>
 #include "common.h"
 #include "cell.h"
 #include "Object.h"
@@ -11,7 +12,6 @@
 #include "prey.h"
 #include "predator.h"
 
-#include <list>
 
 class Ocean {
  private:
@@ -34,4 +34,4 @@ class Ocean {
   Cell* getCell(Pair);
 };
 
-#endif
+#endif  // INCLUDE_OCEAN_H_

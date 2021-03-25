@@ -1,7 +1,7 @@
 // Copyright GN 2021
 #ifndef _PREDATOR_H_
 #define _PREDATOR_H_
-
+INCLUDE_PREDATOR_H_
 #include "prey.h"
 
 class Predator : public Object {
@@ -23,4 +23,4 @@ class Predator : public Object {
   int getObjectINT();
   char getObjectChar();
 };
-#endif
+#endif  // INCLUDE_PREDATOR_H_

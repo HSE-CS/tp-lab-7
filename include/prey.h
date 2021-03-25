@@ -2,7 +2,7 @@
 
 #ifndef _PREY_H_
 #define _PREY_H_
-
+INCLUDE_PREY_H_
 #include "common.h"
 #include "Object.h"
 #include "cell.h"
@@ -26,4 +26,4 @@ class Prey : public Object{
     virtual int getObjectINT();
   virtual char getObjectChar();
 };
-#endif
+#endif  // INCLUDE_PREY_H_

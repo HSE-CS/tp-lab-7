@@ -1,7 +1,7 @@
 // Copyright GN 2021
 #ifndef _STONE_H_
 #define _STONE_H_
-
+INCLUDE_STONE_H_
 #include "common.h"
 #include "Object.h"
 #include "cell.h"
@@ -20,18 +20,17 @@ class Stone : public Object {
 };
 
 
-class Coral : public Object
-{
-private:
-    size_t time_of_life = 1;
+class Coral : public Object {
+ private:
+  size_t time_of_life = 1;
 
  public:
-    void setObjectType();
-    void live();
-    void printObject();
-    void setCell(Cell* c);
-    void init(Cell* c);
-    int getObjectINT();
-    char getObjectChar();
+  void setObjectType();
+  void live();
+  void printObject();
+  void setCell(Cell* c);
+  void init(Cell* c);
+  int getObjectINT();
+  char getObjectChar();
 };
-#endif
+#endif  // INCLUDE_STONE_H_
