@@ -20,10 +20,10 @@ class Object {
     Cell *cell;
 
  public:
-    explicit Object(Cell* = nullptr);
-    virtual ~Object();
+    explicit Object(Cell* objToSet) { this->cell = objToSet; };
+    virtual ~Object() { this->cell = nullptr; };
     virtual void live() = 0;
-    void setCell(Cell*);
+    void setCell(Cell* objToSet) { this->cell = objToSet; };
 };
 
 #endif  //  INCLUDE_OBJECT_H

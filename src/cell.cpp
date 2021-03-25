@@ -4,7 +4,7 @@
 
 
 Object * Cell::getObject() const {
-
+    return this->object;
 }
 void Cell::init(Pair p, Ocean *ocean) {
     this->coordinates = p;
