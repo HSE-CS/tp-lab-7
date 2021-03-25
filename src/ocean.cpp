@@ -17,10 +17,20 @@ Ocean::Ocean() {
 }
 
 Ocean::~Ocean() {
-
+    for (size_t i = 0; i < N; ++i) {
+        delete[] this->cells[i];
+    }
+    delete[] this->cells;
 }
-void Ocean::run() {
 
+void Ocean::run() {
+    while (true) {
+        for (size_t i = 0; i < N; ++i) {
+            for (size_t j = 0; j < M; ++j) {
+                this->cells[i][j].object->live();
+            }
+        }
+    }
 }
 void Ocean::addObjects() {
 

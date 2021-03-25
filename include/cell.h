@@ -22,6 +22,7 @@ class Cell {
     Object* getObject() const;
     void setObject(Object*);
     void killMe();
+    bool isFree();
 
 };
 
