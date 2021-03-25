@@ -117,7 +117,9 @@ void Ocean::run() {
     if (!cPredator) {
       break;
     }
-    system("CLS");
+    if (system("CLS")) {
+      
+    }
     for (Object* obj : this->stuff) {
       if (obj->getCell()) {
         obj->live();
