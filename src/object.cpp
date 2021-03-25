@@ -15,7 +15,9 @@ void Object::setCell(Cell *c) {
     cell = c;
 }
 
-Object::~Object() {}
+Object::~Object() {
+    
+}
 
 ObjType Object::getType() {
     return this->type;

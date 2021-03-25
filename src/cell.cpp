@@ -19,7 +19,6 @@ void Cell::setObject(Object * object) {
 
 void Cell::killMe() {
     this->obj = nullptr;
-
 }
 
 Pair Cell::getCrd() {
