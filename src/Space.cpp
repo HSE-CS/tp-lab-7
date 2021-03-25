@@ -372,19 +372,19 @@ void Space::generateArmy(int rebels, int impery) {
     tiefighters = impery;
     for (int i = 0; i < xwings; ++i) {
         auto *xwing = new Object(XWing(), HIGH_SPEED);
-        xwing->setPosX(i * 8 + 5 + gen() % 5);
+        xwing->setPosX((i * 8) % displayWidth + 5 + gen() % 5);
         xwing->setPosy(10 + gen() % 10);
         this->addObject(xwing);
     }
     if (falcon > 0) {
         auto m_falcon = new Object(MilleniumFalcon(), MEDIUM_SPEED);
-        m_falcon->setPosX(xwings * 4);
+        m_falcon->setPosX((xwings * 4) % displayWidth);
         m_falcon->setPosy(25 + gen() % 10);
         this->addObject(m_falcon);
     }
     for (int i = 0; i < tiefighters; ++i) {
         auto tie_fighter = new Object(TieFighter(), HIGH_SPEED);
-        tie_fighter->setPosX(displayWidth - (i + 1) * 6);
+        tie_fighter->setPosX(((displayWidth - (i + 1) * 6) % displayWidth + displayWidth) % displayWidth);
         tie_fighter->setPosy(40 + gen() % 10);
         tie_fighter->setDirection(DOWN);
         this->addObject(tie_fighter);
@@ -635,4 +635,34 @@ void Movie::renderImperyWin() {
 
 void Movie::renderRebelsWin() {
 
+}
+
+void Movie::downToBattle() {
+    setConsoleColour(cc(black, white));
+    std::random_device gen;
+    for (int iteration = 0; iteration < 30; ++iteration) {
+        for (int i = 0; i < displayHeight - 1; ++i) {
+            for (int j = 0; j < displayWidth; ++j) {
+                setCursorPosition(j, i);
+                if (display[i][j] == '*' && display[i + 1][j] == ' ') {
+                    display[i][j] = ' ';
+                } else if (display[i][j] == ' ' && display[i + 1][j] == '*') {
+                    display[i][j] = '*';
+                } else if (display[i][j] == '*' && display[i + 1][j] == '*') {
+                    //
+                } else if (display[i][j] == ' ' && display[i + 1][j] == ' ') {
+                    //
+                }
+                if (Space::dist(j, i, displayWidth / 2, displayHeight * 2 + 30 - iteration) <
+                    sqrt(pow(displayHeight, 2) + pow(displayWidth / 2, 2))) {
+                    display[i + 7 * (60 - i) / 10][j] = '#';
+                }
+            }
+        }
+        for (int i = 0; i < displayWidth; ++i) {
+            display[displayHeight - 1][i] = gen() % 15 == 0 ? '*' : ' ';
+        }
+        renderSpaceDisplay();
+        wait(.5);
+    }
 }

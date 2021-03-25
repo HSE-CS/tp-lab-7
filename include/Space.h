@@ -142,10 +142,9 @@ public:
 
     static void renderIntroduction();
 
+    static void downToBattle();
+
     static void renderRebelsWin();
-
-
-
 
     static void renderImperyWin();
 };

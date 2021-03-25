@@ -72,7 +72,7 @@ void intro() {
 
 void game() {
     genSpace();
-    srand(time(NULL));
+    srand(time(nullptr));
     ShowConsoleCursor(false);
     std::random_device gen;
     std::mt19937 gen2(rand());
@@ -119,7 +119,7 @@ void game() {
                 }
             }
         }
-        Movie::wait(0.01);
+//        Movie::wait(0.01);
         if (s.countSideObject(REBELS) == 0) {
             playMusicFile("imperytheme.wav");
             Movie::renderImperyWin();
@@ -133,11 +133,16 @@ void game() {
 }
 
 signed main() {
-    intro();
-    game();
-    Movie::wait(30);
+    // intro();
+    //game();
+    Movie::setDisplayToSpace();
+    Movie::renderSpaceDisplay();
+    Movie::downToBattle();
+    Movie::wait(45);
 
     return 0;
 }
 
-// g++ -std=c++17 src/main.cpp include/scenes.h include/common.h include/Objects.h include/Space.h src/Objects.cpp src/Space.cpp -o main -w -pthread -lWinmm
+/*
+g++ -std=c++17 src/main.cpp include/scenes.h include/common.h include/Objects.h include/Space.h src/Objects.cpp src/Space.cpp -o main -w -pthread -lWinmm
+*/
