@@ -14,4 +14,4 @@ struct Pair {
 const size_t N = 40;
 const size_t M = 110;
 
-endif  // INCLUDE_COMMON_H_
+#endif  // INCLUDE_COMMON_H_
