@@ -50,8 +50,8 @@ void Ocean::addObjects(unsigned int n, ObjType type) {
             cells[y][x].setObject(born);
             stuff.push_back(born);
             n--;
-		}
-	}
+        }
+    }
 }
 void Ocean::run() {
     for (int n=1; n<= 100; n++) {
@@ -62,8 +62,7 @@ void Ocean::run() {
             bool isActive = DeleteObj(*i);
             if (!isActive) {
                 stuff.erase(i++);
-            }
-            else {
+            } else {
                 (*i)->live();
                 ++i;
             }
