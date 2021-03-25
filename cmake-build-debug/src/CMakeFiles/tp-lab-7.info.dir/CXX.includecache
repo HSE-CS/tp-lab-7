@@ -7,38 +7,58 @@
 #IncludeRegexTransform: 
 
 C:/Users/nekna/CLionProjects/tp-lab-7/include/Object.h
-common.h
+../include/common.h
 C:/Users/nekna/CLionProjects/tp-lab-7/include/common.h
-cell.h
+../include/cell.h
 C:/Users/nekna/CLionProjects/tp-lab-7/include/cell.h
 
 C:/Users/nekna/CLionProjects/tp-lab-7/include/cell.h
-ocean.h
+../include/ocean.h
 C:/Users/nekna/CLionProjects/tp-lab-7/include/ocean.h
-common.h
+../include/common.h
 C:/Users/nekna/CLionProjects/tp-lab-7/include/common.h
-Object.h
+../include/Object.h
 C:/Users/nekna/CLionProjects/tp-lab-7/include/Object.h
 
 C:/Users/nekna/CLionProjects/tp-lab-7/include/common.h
+typeinfo
+-
+cstdlib
+-
 
 C:/Users/nekna/CLionProjects/tp-lab-7/include/ocean.h
-list
--
 vector
 -
 typeinfo
 -
 iostream
 -
-common.h
+../include/common.h
 C:/Users/nekna/CLionProjects/tp-lab-7/include/common.h
-cell.h
+../include/cell.h
 C:/Users/nekna/CLionProjects/tp-lab-7/include/cell.h
+../include/Object.h
+C:/Users/nekna/CLionProjects/tp-lab-7/include/Object.h
+
+C:/Users/nekna/CLionProjects/tp-lab-7/include/predator.h
+
+C:/Users/nekna/CLionProjects/tp-lab-7/include/prey.h
+
+C:/Users/nekna/CLionProjects/tp-lab-7/include/stone.h
+../include/Object.h
+C:/Users/nekna/CLionProjects/tp-lab-7/include/Object.h
 
 C:/Users/nekna/CLionProjects/tp-lab-7/src/main.cpp
-iostream
--
 ../include/ocean.h
 C:/Users/nekna/CLionProjects/tp-lab-7/include/ocean.h
+../include/cell.h
+C:/Users/nekna/CLionProjects/tp-lab-7/include/cell.h
+../include/Object.h
+C:/Users/nekna/CLionProjects/tp-lab-7/include/Object.h
+../include/stone.h
+C:/Users/nekna/CLionProjects/tp-lab-7/include/stone.h
+../include/prey.h
+C:/Users/nekna/CLionProjects/tp-lab-7/include/prey.h
+../include/predator.h
+C:/Users/nekna/CLionProjects/tp-lab-7/include/predator.h
 

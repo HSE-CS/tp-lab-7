@@ -2,19 +2,19 @@
 #ifndef INCLUDE_OCEAN_H
 #define INCLUDE_OCEAN_H
 
-#include <list>
 #include <vector>
 #include <typeinfo>
 #include <iostream>
-#include "common.h"
-#include "cell.h"
-
+#include "../include/common.h"
+#include "../include/cell.h"
+#include "../include/Object.h"
 class Cell;
+class Object;
 
 class Ocean {
  private:
     Cell** cells;
-    //std::list<Object*> stuff;
+    std::vector<Object*> stuff;
 
  public:
     Ocean();
@@ -22,6 +22,7 @@ class Ocean {
     void print() const;
     void addObjects();
     void run();
+    std::vector<Object*> getFreeAround();
 };
 
 #endif  //  INCLUDE_OCEAN_H

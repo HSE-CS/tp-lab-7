@@ -1,6 +1,8 @@
 //  Copyright 2021 Nikita Naumov
 #ifndef INCLUDE_COMMON_H
 #define INCLUDE_COMMON_H
+#include <typeinfo>
+#include <cstdlib>
 
 typedef size_t coord_t;
 

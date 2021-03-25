@@ -23,3 +23,9 @@ bool Cell::isFree() {
     }
     return true;
 }
+coord_t Cell::getX() {
+    return coordinates.x;
+}
+coord_t Cell::getY() {
+    return coordinates.y;
+}

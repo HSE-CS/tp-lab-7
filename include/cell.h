@@ -2,11 +2,12 @@
 #ifndef INCLUDE_CELL_H
 #define INCLUDE_CELL_H
 
-#include "ocean.h"
-#include "common.h"
-#include "Object.h"
+#include "../include/ocean.h"
+#include "../include/common.h"
+#include "../include/Object.h"
 
 class Ocean;
+class Object;
 
 class Cell {
     friend Ocean;
@@ -23,7 +24,8 @@ class Cell {
     void setObject(Object*);
     void killMe();
     bool isFree();
-
+    coord_t getX();
+    coord_t getY();
 };
 
 #endif  //  INCLUDE_CELL_H

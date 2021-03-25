@@ -24,17 +24,18 @@ Ocean::~Ocean() {
 }
 
 void Ocean::run() {
-    while (true) {
-        for (size_t i = 0; i < N; ++i) {
-            for (size_t j = 0; j < M; ++j) {
-                this->cells[i][j].object->live();
+    std::cout << "Return later, i'm busy" << std::endl;
+}
+void Ocean::addObjects() {
+    for (size_t i = 0; i < N; ++i) {
+        for (size_t j = 0; j < M; ++j) {
+            if (!(cells[i][j].isFree())) {
+                stuff.push_back(cells[i][j].getObject());
             }
         }
     }
 }
-void Ocean::addObjects() {
 
-}
 void Ocean::print() const {
     for (size_t i = 0; i < N; ++i) {
         for (size_t j = 0; j < M; ++j) {

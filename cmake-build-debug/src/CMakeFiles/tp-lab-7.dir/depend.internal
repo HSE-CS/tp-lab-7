@@ -13,4 +13,9 @@ src/CMakeFiles/tp-lab-7.dir/predator.cpp.obj
 src/CMakeFiles/tp-lab-7.dir/prey.cpp.obj
  C:/Users/nekna/CLionProjects/tp-lab-7/src/prey.cpp
 src/CMakeFiles/tp-lab-7.dir/stone.cpp.obj
+ C:/Users/nekna/CLionProjects/tp-lab-7/include/Object.h
+ C:/Users/nekna/CLionProjects/tp-lab-7/include/cell.h
+ C:/Users/nekna/CLionProjects/tp-lab-7/include/common.h
+ C:/Users/nekna/CLionProjects/tp-lab-7/include/ocean.h
+ C:/Users/nekna/CLionProjects/tp-lab-7/include/stone.h
  C:/Users/nekna/CLionProjects/tp-lab-7/src/stone.cpp

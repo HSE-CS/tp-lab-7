@@ -12,5 +12,10 @@ src/CMakeFiles/tp-lab-7.dir/predator.cpp.obj: ../src/predator.cpp
 
 src/CMakeFiles/tp-lab-7.dir/prey.cpp.obj: ../src/prey.cpp
 
+src/CMakeFiles/tp-lab-7.dir/stone.cpp.obj: ../include/Object.h
+src/CMakeFiles/tp-lab-7.dir/stone.cpp.obj: ../include/cell.h
+src/CMakeFiles/tp-lab-7.dir/stone.cpp.obj: ../include/common.h
+src/CMakeFiles/tp-lab-7.dir/stone.cpp.obj: ../include/ocean.h
+src/CMakeFiles/tp-lab-7.dir/stone.cpp.obj: ../include/stone.h
 src/CMakeFiles/tp-lab-7.dir/stone.cpp.obj: ../src/stone.cpp
 
