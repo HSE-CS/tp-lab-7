@@ -6,6 +6,8 @@
 #include "predator.h"
 #include <vector>
 #include <iostream>
+#include <stdlib.h> 
+#include <random> 
 
 Cell **Ocean::getCells() {
     return cells;
