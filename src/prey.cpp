@@ -3,7 +3,7 @@
 #include"prey.h"
 #include"cell.h"
 #include"ocean.h"
-Prey::Prey(Cell* newCell){
+Prey::Prey(Cell* newCell) {
   this->timeToReproduction = std::rand() % 3 + 3;
   this->reproduction = 0;
   this->cell = newCell;

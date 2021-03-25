@@ -1,7 +1,7 @@
 // Copyright NikDemoShow 2021
+#include<iostream>
 #include"predator.h"
 #include"cell.h"
-#include<iostream>
 Predator::Predator(Cell* newCell) {
   this->cell = newCell;
   this->reproduction = 0;
@@ -22,7 +22,7 @@ void Predator::live() {
         this->weelFed -= 2;
       }
     } else {
-      Cell* newCell{ 
+      Cell* newCell{
         this->cell->getFreeNeighbour(this->weelFed <= this->fullWeelFed) };
       if (newCell) {
         this->cell->setObject(nullptr);
