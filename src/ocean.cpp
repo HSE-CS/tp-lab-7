@@ -5,7 +5,6 @@
 #include"cell.h"
 #include"predator.h"
 #include<iostream>
-#include<windows.h>
 #include<algorithm>
 Ocean::Ocean() { 
   this->cells = new Cell*[M];
@@ -118,7 +117,6 @@ void Ocean::run() {
     if (!cPredator) {
       break;
     }
-    Sleep(1000);
     system("CLS");
     for (Object* obj : this->stuff) {
       if (obj->getCell()) {
