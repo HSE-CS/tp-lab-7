@@ -1,8 +1,8 @@
 // Copyright GN 2021
 
-#ifndef _PREY_H_
-#define _PREY_H_
-INCLUDE_PREY_H_
+#ifndef INCLUDE_PREY_H_
+#define INCLUDE_PREY_H_
+
 #include "common.h"
 #include "Object.h"
 #include "cell.h"

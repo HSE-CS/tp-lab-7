@@ -1,7 +1,7 @@
 // Copyright GN 2021
-#ifndef _COMMON_H_
-#define _COMMON_H_
-INCLUDE_COMMON_H_
+#ifndef INCLUDE_COMMON_H_
+#define INCLUDE_COMMON_H_
+
 #include <iostream>
 
 typedef size_t coord_t;

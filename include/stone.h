@@ -1,7 +1,7 @@
 // Copyright GN 2021
-#ifndef _STONE_H_
-#define _STONE_H_
-INCLUDE_STONE_H_
+#ifndef INCLUDE_STONE_H_
+#define INCLUDE_STONE_H_
+
 #include "common.h"
 #include "Object.h"
 #include "cell.h"
