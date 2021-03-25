@@ -1,4 +1,5 @@
 ﻿// Copyright GN 2021
+
 #include "../include/ocean.h"
 class Ocean;
 int main() {

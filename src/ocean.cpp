@@ -1,4 +1,5 @@
 // Copyright GN 2021
+#include <algorithm>
 #include <vector>
 #include <ctime>
 #include "../include/common.h"
