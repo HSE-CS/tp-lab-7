@@ -1,4 +1,4 @@
-//Copyright GN 2021
+// Copyright GN 2021
 #include "../include/predator.h"
 #include "../include/Object.h"
 #include "../include/prey.h"

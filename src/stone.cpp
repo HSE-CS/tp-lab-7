@@ -10,7 +10,7 @@ void Stone::init(Cell* c) {
 void Stone::printObject() { std::cout << STONE_N; }
 int Stone::getObjectINT() { return this->objType; }
 char Stone::getObjectChar() { return STONE_N; }
-void Stone::live(){};
+void Stone::live(){}
 void Coral::setObjectType() { this->objType = 1; }
 void Coral::setCell(Cell* c) { this->cell = c; }
 void Coral::init(Cell* c) {

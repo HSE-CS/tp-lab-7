@@ -1,9 +1,8 @@
-//Copyright GN 2021
-#include "../include/common.h"
-#include "../include/ocean.h"
-
+// Copyright GN 2021
 #include <vector>
 #include <ctime>
+#include "../include/common.h"
+#include "../include/ocean.h"
 
 Ocean::Ocean() {
   this->cells = new Cell*[N];
@@ -25,8 +24,8 @@ void Ocean::generateWorld(int number_of_preys, int number_of_predators,
   for (size_t i = 0; i < number_of_preys; i++) {
     Prey* new_prey = new Prey;
     while (this->getCell(p)->getObject() != nullptr) {
-      p.x_cord = (rand() % (N - 1)) + 1;
-      p.y_cord = (rand() % (M - 1)) + 1;
+      p.x_cord = (rand_r() % (N - 1)) + 1;
+      p.y_cord = (rand_r() % (M - 1)) + 1;
     }
     this->addObject(new_prey);
     Cell* cell = this->getCell(p);
@@ -36,8 +35,8 @@ void Ocean::generateWorld(int number_of_preys, int number_of_predators,
   for (size_t i = 0; i < number_of_predators; i++) {
     Predator* new_predator = new Predator;
     while (this->getCell(p)->getObject() != nullptr) {
-      p.x_cord = (rand() % (N - 2)) + 1;
-      p.y_cord = (rand() % (M - 2)) + 1;
+      p.x_cord = (rand_r() % (N - 2)) + 1;
+      p.y_cord = (rand_r() % (M - 2)) + 1;
     }
     this->addObject(new_predator);
     Cell* cell = this->getCell(p);
@@ -47,8 +46,8 @@ void Ocean::generateWorld(int number_of_preys, int number_of_predators,
   for (size_t i = 0; i < number_of_stones; i++) {
     Stone* time_stone = new Stone;
     while (this->getCell(p)->getObject() != nullptr) {
-      p.x_cord = (rand() % (N - 1)) + 1;
-      p.y_cord = (rand() % (M - 1)) + 1;
+      p.x_cord = (rand_r() % (N - 1)) + 1;
+      p.y_cord = (rand_r() % (M - 1)) + 1;
     }
     this->addObject(time_stone);
     Cell* cell = this->getCell(p);
@@ -58,8 +57,8 @@ void Ocean::generateWorld(int number_of_preys, int number_of_predators,
   for (size_t i = 0; i < number_of_corals; i++) {
     Coral*new_coral = new Coral;
     while (this->getCell(p)->getObject() != nullptr) {
-      p.x_cord = (rand() % (N - 1)) + 1;
-      p.y_cord = (rand() % (M - 1)) + 1;
+      p.x_cord = (rand_r() % (N - 1)) + 1;
+      p.y_cord = (rand_r() % (M - 1)) + 1;
     }
     this->addObject(new_coral);
     Cell* cell = this->getCell(p);
@@ -103,9 +102,7 @@ void Ocean::run() {
     this->print();
   }
 }
-
 void Ocean::addObject(Object* obj) { this->objects.push_back(obj); }
-
 void Ocean::print() const {
   std::string str;
   for (size_t i = 0; i < N; i++) {
@@ -117,5 +114,5 @@ void Ocean::print() const {
     }
     str += '\n';
   }
-	std::cout << str;
-};
+  std::cout << str;
+}
