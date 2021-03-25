@@ -1,4 +1,4 @@
-﻿// Copyright GN 2021
+﻿// Copyright GN 2021  
 #include "../include/ocean.h"
 int main() {
   Ocean ocn1;
