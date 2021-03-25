@@ -3,8 +3,8 @@
 #define INCLUDE_COMMON_H_
 
 #pragma once
-#include <iostream>
 #include <time.h>
+#include <iostream>
 #include <list>
 #include <vector>
 #include <ctime>

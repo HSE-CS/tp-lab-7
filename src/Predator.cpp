@@ -23,12 +23,13 @@ void Predator::move() {
         this->getCell()->Moving();
         newCell->setObject(this);
         this->cell = newCell;
-	}
+    }
 }
 bool Predator::eat() {
     Pair cord = cell->Cord();
     Cell * sacrifice = cell->RADAR();
-    if (sacrifice && !sacrifice->getObject()->is_live() && sacrifice->getObject()->getType()==ObjType::PREY) {
+    if (sacrifice && !sacrifice->getObject()->is_live()
+    && sacrifice->getObject()->getType() == ObjType::PREY) {
         sacrifice->getObject()->readytodie();
         sacrifice->getObject()->setLive(0);
         lifetime += 5;

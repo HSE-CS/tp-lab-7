@@ -14,8 +14,8 @@ class Prey : public Object {
     friend Cell;
     friend Ocean;
  public:
-    Prey(Cell * c);
-    ~Prey() {};
+    explicit Prey(Cell * c);
+    ~Prey() {}
     void live();
     void move();
     void copulation();

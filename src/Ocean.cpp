@@ -3,7 +3,7 @@
 #include "Ocean.h"
 #include "Stone.h"
 #include "Object.h"
-using namespace std;
+
 #include <iostream>
 #include <random>
 Ocean::Ocean() {
@@ -12,7 +12,7 @@ Ocean::Ocean() {
         cells[i] = new Cell[M];
         for (auto j = 0; j < M; j++)
             cells[i][j].init(Pair{ i, j }, this);
-	}
+    }
 }
 void Ocean::AddStuff(Object *obj) {
     stuff.push_back(obj);
@@ -23,14 +23,15 @@ void Ocean::print() const {
         for (auto j = 0; j < M; j++) {
             std::cout << (cells[i][j].getObject() ?
             cells[i][j].getObject()->getSymbol() : '.');
-		}
+        }
         std::cout << std::endl;
-	}
+    }
 }
 void Ocean::addObjects(unsigned int n, ObjType type) {
     while (n > 0) {
-        unsigned int x = rand() % M;
-        unsigned int y = rand() % N;
+        int b=0;
+        unsigned int x = rand_r(&b) % M;
+        unsigned int y = rand_r(&b) % N;
         if (cells[y][x].getObject())
             continue;
         else {
@@ -45,15 +46,15 @@ void Ocean::addObjects(unsigned int n, ObjType type) {
                 case ObjType::PREDATOR:
                     born = new Predator(&cells[y][x]);
                     break;
-			}
-			cells[y][x].setObject(born);
+            }
+            cells[y][x].setObject(born);
             stuff.push_back(born);
             n--;
 		}
 	}
 }
 void Ocean::run() {
-    for(int n=1; n<= 100; n++) {
+    for (int n=1; n<= 100; n++) {
         std::cout << "\nItteration: " << n << std::endl;
         print();
         std::list<Object*>::iterator i = stuff.begin();
@@ -65,9 +66,9 @@ void Ocean::run() {
             else {
                 (*i)->live();
                 ++i;
-			}
-		}
-	}
+            }
+        }
+    }
 }
 bool Ocean::DeleteObj(Object *obj) {
     if (obj->getLive() == 0) {
@@ -79,7 +80,7 @@ bool Ocean::DeleteObj(Object *obj) {
 
 
 Cell * Ocean::Step(Pair crd) {
-    random_device ran;
+    std::random_device ran;
     int xt = crd.x + ran() % 3 - 1;
     int yt = crd.y + ran() % 3 - 1;
     if (xt < N && yt < M) {
@@ -90,13 +91,14 @@ Cell * Ocean::Step(Pair crd) {
 }
 
 Cell * Ocean::Radar(Pair crd) {
-    random_device ran;
+    std::random_device ran;
     int i = 0;
     while (i != 8) {
         int xt = crd.x + ran() % 3 - 1;
         int yt = crd.y + ran() % 3 - 1;
         if (xt < N && yt < M) {
-            if (cells[xt][yt].getObject() && cells[xt][yt].getObject()->getType()==ObjType::PREY)
+            if (cells[xt][yt].getObject() &&
+            cells[xt][yt].getObject()->getType() == ObjType::PREY)
                 return  &cells[xt][yt];
         }
         i++;
@@ -104,8 +106,7 @@ Cell * Ocean::Radar(Pair crd) {
     return nullptr;
 }
 
-Ocean::~Ocean()
-{
+Ocean::~Ocean() {
     for (int i = 0; i < N; i++)
         delete[] cells[i];
     delete[] cells;

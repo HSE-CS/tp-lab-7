@@ -11,8 +11,8 @@
 class Predator : public Object {
     friend Cell;
  public:
-    Predator(Cell * c);
-    ~Predator() {};
+    explicit Predator(Cell * c);
+    ~Predator() {}
     void copulation();
     void live();
     void move();
