@@ -10,17 +10,16 @@
 #include "common.h"
 class Cell;
 class Ocean;
-class Prey : public Object
-{
-	friend Cell;
-	friend Ocean;
-public:
-	Prey(Cell * c);
-	~Prey() {};
-	void live();
-	void move();
-	void copulation();
-	char getSymbol() override;
+class Prey : public Object {
+    friend Cell;
+    friend Ocean;
+ public:
+    Prey(Cell * c);
+    ~Prey() {};
+    void live();
+    void move();
+    void copulation();
+    char getSymbol() override;
 };
 
 #endif  // INCLUDE_PREY_H_

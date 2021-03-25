@@ -4,20 +4,19 @@
 
 #pragma once
 #include <iostream>
+#include <time.h>
 #include <list>
 #include <vector>
 #include <ctime>
-#include <time.h>
 #include <iterator>
 #include <algorithm>
 #include  <string>
 
 typedef size_t coord_t;
 
-struct Pair
-{
-	int x; 
-	int y; 
+struct Pair {
+    int x;
+    int y;
 };
 
 const int LTPrey = 600;

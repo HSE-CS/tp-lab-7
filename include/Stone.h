@@ -8,14 +8,13 @@
 #include "Cell.h"
 #include "Ocean.h"
 #include "common.h"
-class Stone : public Object
-{
-	friend Cell;
-public:
-	Stone(Cell * c);
-	~Stone() {};
-	void live();
-	char getSymbol() override;
+class Stone : public Object {
+    friend Cell;
+ public:
+    Stone(Cell * c);
+    ~Stone() {}
+    void live();
+    char getSymbol() override;
 };
 
 #endif  // INCLUDE_STONE_H_
