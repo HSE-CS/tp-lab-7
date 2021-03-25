@@ -3,7 +3,7 @@
 #define INCLUDE_STONE_H_
 #include"object.h"
 class Stone : public Object {
-public:
+ public:
   Stone();
   void live() override {}
 };

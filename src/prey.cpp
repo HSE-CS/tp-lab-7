@@ -1,8 +1,8 @@
 // Copyright NikDemoShow 2021
+#include<iostream>
 #include"prey.h"
 #include"cell.h"
 #include"ocean.h"
-#include<iostream>
 Prey::Prey(Cell* newCell){
   this->timeToReproduction = std::rand() % 3 + 3;
   this->reproduction = 0;
@@ -18,9 +18,7 @@ void Prey::live() {
         this->cell->addObject(this->type, newCell);
         this->reproduction = 0;
       }
-    
-    }
-    else {
+    } else {
       Cell* newCell{ this->cell->getFreeNeighbour() };
       if (newCell && !newCell->getObject()) {
         this->cell->setObject(nullptr);
@@ -30,8 +28,7 @@ void Prey::live() {
     }
     this->timeLive--;
     this->reproduction++;
-  }
-  else {
+  } else {
     this->cell->setObject(nullptr);
     this->setCell(nullptr);
   }

@@ -1,12 +1,12 @@
 // Copyright NikDemoShow 2021
+#include<iostream>
+#include<algorithm>
 #include"ocean.h"
 #include"prey.h"
 #include"stone.h"
 #include"cell.h"
 #include"predator.h"
-#include<iostream>
-#include<algorithm>
-Ocean::Ocean() { 
+Ocean::Ocean() {
   this->cells = new Cell*[M];
   for (unsigned int i{0}; i < M; ++i) {
     cells[i] = new Cell[N];
@@ -15,11 +15,9 @@ Ocean::Ocean() {
       Object* newObj{nullptr};
       if (chooseNewObj <= prPrey) {
         newObj = new Prey();
-      }
-      else if (chooseNewObj <= prPrey + prStone) {
+      } else if (chooseNewObj <= prPrey + prStone) {
         newObj = new Stone();
-      }
-      else if (chooseNewObj <= prPrey + prStone + prPredator) {
+      } else if (chooseNewObj <= prPrey + prStone + prPredator) {
         newObj = new Predator();
       }
       cells[i][j] = Cell({i, j}, this, newObj);
@@ -32,7 +30,8 @@ Ocean::Ocean() {
   std::random_shuffle(this->stuff.begin(), this->stuff.end());
 }
 Ocean::~Ocean() {
-  for (std::vector<Object*>::iterator it = this->stuff.begin(); it != this->stuff.end();) {
+  for (std::vector<Object*>::iterator it = this->stuff.begin();
+    it != this->stuff.end();) {
     delete* it;
     it = this->stuff.erase(it);
   }
@@ -41,7 +40,8 @@ Ocean::~Ocean() {
   }
   delete[] this->cells;
 }
-Cell* Ocean::getCell(const unsigned int x, const unsigned int y) {return &this->cells[x][y]; }
+Cell* Ocean::getCell(const unsigned int x, const unsigned int y) {
+  return &this->cells[x][y]; }
 void Ocean::addObject(const ObjType type, Cell* newCell) {
   Object* newObj{ nullptr };
   switch (type) {
@@ -65,12 +65,12 @@ void Ocean::addObjects() {
   this->tempStuff.clear();
 }
 void Ocean::delObjects() {
-  for (std::vector<Object*>::iterator it = this->stuff.begin(); it != this->stuff.end();) {
+  for (std::vector<Object*>::iterator it = this->stuff.begin();
+    it != this->stuff.end();) {
     if (!(*it)->getCell()) {
       delete* it;
       it = this->stuff.erase(it);
-    }
-    else {
+    } else {
       ++it;
     }
   }
@@ -93,8 +93,7 @@ void Ocean::print() const {
           default:
             std::cout << '.';
         }
-      }
-      else {
+      } else {
         std::cout << '.';
       }
     }
@@ -109,17 +108,14 @@ void Ocean::run() {
     for (Object* obj : this->stuff) {
       if (obj->getCell()->getObjectType() == ObjType::PREY) {
         cPrey++;
-      }
-      else if (obj->getCell()->getObjectType() == ObjType::PREDATOR) {
+      } else if (obj->getCell()->getObjectType() == ObjType::PREDATOR) {
         cPredator++;
       }
     }
     if (!cPredator) {
       break;
     }
-    if (system("CLS")) {
-      
-    }
+    if (system("CLS")) {}
     for (Object* obj : this->stuff) {
       if (obj->getCell()) {
         obj->live();

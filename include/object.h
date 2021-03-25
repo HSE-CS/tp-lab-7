@@ -10,7 +10,7 @@ class Object {
   Cell *cell;
   ObjType type;
  public:
-  virtual void live() = 0;  // жизнь объекта
+  virtual void live() = 0;
   void setCell(Cell *);
   Cell* getCell();
   friend Cell;

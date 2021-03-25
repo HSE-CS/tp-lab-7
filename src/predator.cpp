@@ -13,16 +13,17 @@ Predator::Predator(Cell* newCell) {
 
 void Predator::live() {
 	if (this->timeLive && this->weelFed) {
-		if (this->reproduction >= this->timeToReproduction && this->weelFed == this->fullWeelFed) {
+		if (this->reproduction >= this->timeToReproduction &&
+			this->weelFed == this->fullWeelFed) {
 			Cell* newCell{ this->cell->getFreeNeighbour() };
 			if (newCell && !newCell->getObject()) {
 				this->cell->addObject(this->type, newCell);
 				this->reproduction = 0;
 				this->weelFed -= 2;
 			}
-		}
-		else {
-			Cell* newCell{ this->cell->getFreeNeighbour(this->weelFed <= this->fullWeelFed) };
+		} else {
+			Cell* newCell{ 
+				this->cell->getFreeNeighbour(this->weelFed <= this->fullWeelFed) };
 			if (newCell) {
 				this->cell->setObject(nullptr);
 				if (newCell->getObject()) {
@@ -36,8 +37,7 @@ void Predator::live() {
 		this->weelFed--;
 		this->timeLive--;
 		this->reproduction++;
-	}
-	else {
+	} else {
 		this->cell->setObject(nullptr);
 		this->setCell(nullptr);
 	}

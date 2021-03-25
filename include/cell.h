@@ -2,9 +2,9 @@
 #ifndef INCLUDE_CELL_H_
 #define INCLUDE_CELL_H_
 
+#include <random>
 #include "object.h"
 #include "common.h"
-#include <random>
 
 class Ocean;
 

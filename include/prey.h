@@ -10,7 +10,6 @@ class Prey : public Object {
  public:
   Prey(Cell* newCell = nullptr);
   void live() override;
-
 };
 
 #endif  // INCLUDE_PREY_H_

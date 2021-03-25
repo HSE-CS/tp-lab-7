@@ -70,7 +70,9 @@ Cell* Cell::getFreeNeighbour(const bool hungry) {
   return newCellForHungry;
 }
 
-Object* Cell::getObject() const{ return this->obj; }
+Object* Cell::getObject() const { return this->obj; }
 ObjType Cell::getObjectType() const {return this->obj->type;}
 void Cell::setObject(Object* newObj) { this->obj = newObj; }
-void Cell::addObject(const ObjType type, Cell* newCell) { this->ocean->addObject(type, newCell); }
+void Cell::addObject(const ObjType type, Cell* newCell) { 
+  this->ocean->addObject(type, newCell); 
+}

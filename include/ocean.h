@@ -5,7 +5,6 @@
 #include <vector>
 #include "common.h"
 
-//class Cell;
 class Object;
 class Cell;
 
