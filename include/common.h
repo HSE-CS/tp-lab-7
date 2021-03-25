@@ -2,13 +2,14 @@
 #ifndef INCLUDE_COMMON_H_
 #define INCLUDE_COMMON_H_
 
+#include <string>
+
+#include "ocean.h"
+
 #define STONE_N '#'
 #define CORAL_N '*'
 #define PREY_N 'f'
 #define PREDATOR_N 'S'
-#include <string>
-#include "ocean.h"
-
 
 typedef size_t coord_t;
 

@@ -1,6 +1,7 @@
 // Copyright 2021 Ilya Urtyukov
 #include <iostream>
 #include <random>
+
 #include "prey.h"
 #include "common.h"
 

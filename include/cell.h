@@ -1,7 +1,9 @@
 // Copyright 2021 Ilya Urtyukov
 #ifndef INCLUDE_CELL_H_
 #define INCLUDE_CELL_H_
+
 #include <iostream>
+
 #include "common.h"
 #include "ocean.h"
 

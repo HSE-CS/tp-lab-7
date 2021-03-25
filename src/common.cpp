@@ -1,5 +1,6 @@
 // Copyright 2021 Ilya Urtyukov
 #include <iostream>
+
 #include "ocean.h"
 #include "predator.h"
 #include "prey.h"

@@ -1,6 +1,7 @@
 // Copyright 2021 Ilya Urtyukov
 #include <iostream>
 #include <list>
+
 #include "ocean.h"
 #include "cell.h"
 #include "prey.h"
