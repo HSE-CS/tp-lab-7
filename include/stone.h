@@ -2,4 +2,8 @@
 #ifndef INCLUDE_STONE_H
 #define INCLUDE_STONE_H
 
+#include "Object.h"
+
+
+
 #endif  //  INCLUDE_STONE_H

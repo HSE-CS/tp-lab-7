@@ -170,6 +170,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/nekna/CLionProjects/tp-lab-7/include/Object.h">
+			<Option target="tp-lab-7"/>
+		</Unit>
 		<Unit filename="C:/Users/nekna/CLionProjects/tp-lab-7/include/cell.h">
 			<Option target="tp-lab-7"/>
 		</Unit>

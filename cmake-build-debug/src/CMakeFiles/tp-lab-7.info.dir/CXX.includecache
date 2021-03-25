@@ -6,5 +6,39 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/nekna/CLionProjects/tp-lab-7/include/Object.h
+common.h
+C:/Users/nekna/CLionProjects/tp-lab-7/include/common.h
+cell.h
+C:/Users/nekna/CLionProjects/tp-lab-7/include/cell.h
+
+C:/Users/nekna/CLionProjects/tp-lab-7/include/cell.h
+ocean.h
+C:/Users/nekna/CLionProjects/tp-lab-7/include/ocean.h
+common.h
+C:/Users/nekna/CLionProjects/tp-lab-7/include/common.h
+Object.h
+C:/Users/nekna/CLionProjects/tp-lab-7/include/Object.h
+
+C:/Users/nekna/CLionProjects/tp-lab-7/include/common.h
+
+C:/Users/nekna/CLionProjects/tp-lab-7/include/ocean.h
+list
+-
+vector
+-
+typeinfo
+-
+iostream
+-
+common.h
+C:/Users/nekna/CLionProjects/tp-lab-7/include/common.h
+cell.h
+C:/Users/nekna/CLionProjects/tp-lab-7/include/cell.h
+
 C:/Users/nekna/CLionProjects/tp-lab-7/src/main.cpp
+iostream
+-
+../include/ocean.h
+C:/Users/nekna/CLionProjects/tp-lab-7/include/ocean.h
 

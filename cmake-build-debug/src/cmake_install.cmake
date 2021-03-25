@@ -54,6 +54,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "C:/Users/nekna/CLionProjects/tp-lab-7/include/prey.h"
     "C:/Users/nekna/CLionProjects/tp-lab-7/include/predator.h"
     "C:/Users/nekna/CLionProjects/tp-lab-7/include/stone.h"
+    "C:/Users/nekna/CLionProjects/tp-lab-7/include/Object.h"
     )
 endif()
 

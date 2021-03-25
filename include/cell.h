@@ -12,10 +12,17 @@ class Cell {
     friend Ocean;
  private:
     Pair coordinates;
-    Object* obj;
-
+    Object* object;
+    Ocean* ocean;
 
  public:
+    explicit Cell(Pair p = {0, 0}, Ocean* ocean = nullptr) :
+                        coordinates(p), object(nullptr), ocean(ocean) {};
+    void init(Pair p, Ocean* ocean);
+    Object* getObject() const;
+    void setObject(Object*);
+    void killMe();
+
 };
 
 #endif  //  INCLUDE_CELL_H
