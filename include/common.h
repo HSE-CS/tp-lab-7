@@ -1,6 +1,6 @@
 // Copyright NikDemoShow 2021
-#ifndef _COMMON_H_
-#define _COMMON_H_
+#ifndef INCLUDE_COMMON_H_
+#define INCLUDE_COMMON_H_
 
 #define STONE_N '#'
 #define CORAL_N '*'
@@ -21,4 +21,4 @@ const unsigned int prPrey = 80;
 const unsigned int prPredator = 2;
 const unsigned int prStone = 10;
 
-#endif // _COMMON_H_
+#endif  // INCLUDE_COMMON_H_

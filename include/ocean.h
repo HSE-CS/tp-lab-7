@@ -1,6 +1,6 @@
 // Copyright NikDemoShow 2021
-#ifndef _OCEAN_H_
-#define _OCEAN_H_
+#ifndef INCLUDE_OCEAN_H_
+#define INCLUDE_OCEAN_H_
 
 #include <vector>
 #include "common.h"
@@ -25,4 +25,4 @@ class Ocean {
   void print() const;
   Cell *getCell(const unsigned int x, const unsigned int y);
 };
-#endif
+#endif  // INCLUDE_OCEAN_H_

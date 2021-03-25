@@ -1,6 +1,6 @@
 // Copyright NikDemoShow 2021
-#ifndef _PREY_H_
-#define _PREY_H_
+#ifndef INCLUDE_PREY_H_
+#define INCLUDE_PREY_H_
 #include"object.h"
 class Prey : public Object {
  public:
@@ -9,8 +9,8 @@ class Prey : public Object {
   unsigned int reproduction;
  public:
   Prey(Cell* newCell = nullptr);
-  virtual void live() override;
+  void live() override;
 
 };
 
-#endif // _PREY_H_
+#endif  // INCLUDE_PREY_H_

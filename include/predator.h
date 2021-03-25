@@ -1,5 +1,6 @@
 // Copyright NikDemoShow 2021
-
+#ifndef INCLUDE_PREDATOR_H_
+#define INCLUDE_PREDATOR_H_
 #include"prey.h"
 class Predator : public Prey {
 private:
@@ -7,5 +8,6 @@ private:
 	unsigned int weelFed;
 public:
 	Predator(Cell* newCell = nullptr);
-	virtual void live() override;
+	void live() override;
 };
+#endif  // INCLUDE_PREDATOR_H_

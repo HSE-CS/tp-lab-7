@@ -1,8 +1,7 @@
 // Copyright NikDemoShow 2021
-#ifndef _CELL_H_
-#define _CELL_H_
+#ifndef INCLUDE_CELL_H_
+#define INCLUDE_CELL_H_
 
-//#include "ocean.h"
 #include "object.h"
 #include "common.h"
 #include <random>
@@ -25,4 +24,4 @@ class Cell {
   Cell* getFreeNeighbour(const bool hugry = false);
   friend Ocean;
 };
-#endif
+#endif  // INCLUDE_CELL_H_

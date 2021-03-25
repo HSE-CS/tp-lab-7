@@ -15,12 +15,10 @@ Cell* Cell::getFreeNeighbour(const bool hungry) {
     if (!newCell->getObject()) {
       if (hungry) {
         newCellForHungry = newCell;
-      }
-      else {
+      } else {
         return newCell;
       }
-    }
-    else {
+    } else {
       if (hungry && newCell->getObjectType() == ObjType::PREY) {
         return newCell;
       }
@@ -32,12 +30,10 @@ Cell* Cell::getFreeNeighbour(const bool hungry) {
     if (!newCell->getObject()) {
       if (hungry && !newCell) {
         newCellForHungry = newCell;
-      }
-      else {
+      } else {
         return newCell;
       }
-    }
-    else {
+    } else {
       if (hungry && newCell->getObjectType() == ObjType::PREY) {
         return newCell;
       }
@@ -49,12 +45,10 @@ Cell* Cell::getFreeNeighbour(const bool hungry) {
     if (!newCell->getObject()) {
       if (hungry && !newCell) {
         newCellForHungry = newCell;
-      }
-      else {
+      } else {
         return newCell;
       }
-    }
-    else {
+    } else {
       if (hungry && newCell->getObjectType() == ObjType::PREY) {
         return newCell;
       }
@@ -67,8 +61,7 @@ Cell* Cell::getFreeNeighbour(const bool hungry) {
       if (!hungry || !newCellForHungry) {
         return newCell;
       }
-    }
-    else {
+    } else {
       if (hungry && newCell->getObjectType() == ObjType::PREY) {
         return newCell;
       }
