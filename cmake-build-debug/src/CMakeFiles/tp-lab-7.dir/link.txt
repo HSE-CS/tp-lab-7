@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -g  -shared -Wl,-soname,libtp-lab-7.so -o libtp-lab-7.so CMakeFiles/tp-lab-7.dir/ocean.cpp.o CMakeFiles/tp-lab-7.dir/cell.cpp.o CMakeFiles/tp-lab-7.dir/predator.cpp.o CMakeFiles/tp-lab-7.dir/prey.cpp.o CMakeFiles/tp-lab-7.dir/stone.cpp.o  -lpthread 

@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/toliman/Projects/HSE-CS/tp-lab-7/include/cell.h
+
+/home/toliman/Projects/HSE-CS/tp-lab-7/include/ocean.h
+
+/home/toliman/Projects/HSE-CS/tp-lab-7/include/predator.h
+
+/home/toliman/Projects/HSE-CS/tp-lab-7/include/prey.h
+
+/home/toliman/Projects/HSE-CS/tp-lab-7/include/stone.h
+
+/home/toliman/Projects/HSE-CS/tp-lab-7/src/cell.cpp
+../include/cell.h
+/home/toliman/Projects/HSE-CS/tp-lab-7/include/cell.h
+
+/home/toliman/Projects/HSE-CS/tp-lab-7/src/ocean.cpp
+../include/ocean.h
+/home/toliman/Projects/HSE-CS/tp-lab-7/include/ocean.h
+
+/home/toliman/Projects/HSE-CS/tp-lab-7/src/predator.cpp
+../include/predator.h
+/home/toliman/Projects/HSE-CS/tp-lab-7/include/predator.h
+
+/home/toliman/Projects/HSE-CS/tp-lab-7/src/prey.cpp
+../include/prey.h
+/home/toliman/Projects/HSE-CS/tp-lab-7/include/prey.h
+
+/home/toliman/Projects/HSE-CS/tp-lab-7/src/stone.cpp
+../include/stone.h
+/home/toliman/Projects/HSE-CS/tp-lab-7/include/stone.h
+

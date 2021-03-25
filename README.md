@@ -64,7 +64,7 @@
 
 Каждый объект в океане отображается на экране определенным символом. Моделирование предполагает случайное распределение в океане заданного количества камней, жерт и хищников (начальное состояние) и пошаговое изменение состояния океана. Все объекты в течении шага делают свой ход. После этого на экран выводится карта океана и процесс зацикливается.
 
-<img src="img/ocean.png">
+<img src="img/Ocean.png">
 
 На приведенном скриншоте показана i-ая итерация океана. Жерты обозначены символом 'f', хищники - 'S'. Видно, что количество жертв существенно больше числа хищников, что создает для последних благоприятные условия для питания и размножения. На экране отображается порядка 5000 объектов.
 
@@ -118,7 +118,7 @@ class Cell;
 class Object
 {
 protected:
-	Cell *cell;
+	Cell *Cell;
 public:
 	Object(Cell * = nullptr);
 	virtual ~Object();
@@ -145,12 +145,12 @@ class Cell
 private:
 	Pair crd;
 	Object *obj;
-	Ocean *ocean;
+	Ocean *Ocean;
 public:
 	explicit Cell(Pair p = { 0, 0 }, Ocean* oc = nullptr) :
 		crd(p),
 		obj(nullptr),
-		ocean(oc) {}
+		Ocean(oc) {}
 	void init(Pair p, Ocean* oc);
 	Object* getObject() const;
 	void setObject(Object*);
@@ -183,11 +183,11 @@ const size_t M = 50;
 ## Состав проекта
 
 - **common.h** - общие макросы, заголовки глобальных функций
-- **cell.h,cell.cpp** - класс **Cell** - ячейка
+- **Cell.h,Cell.cpp** - класс **Cell** - ячейка
 - **stone.h,stone.cpp** - класс **Stone** - скала
 - **prey.h,prey.cpp** - класс **Prey** - жертва
 - **predator.h,predator.cpp** - класс **Predator** - хищник
-- **ocean.h,ocean.cpp** - класс **Ocean** - океан
+- **Ocean.h,Ocean.cpp** - класс **Ocean** - океан
 - **main.cpp** - создание и запуск океана
 - **img/screenshot.png** - скриншот главного окна океана
 
