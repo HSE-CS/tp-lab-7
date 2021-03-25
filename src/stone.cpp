@@ -6,9 +6,7 @@ Stone::Stone(Cell* cell) : Object(cell, ObjType::STONE) {
 }
 
 Stone::~Stone() {
-
 }
 
 void Stone::live() {
-    
 }

@@ -16,7 +16,7 @@ void Object::setCell(Cell *c) {
 }
 
 Object::~Object() {
-    
+
 }
 
 ObjType Object::getType() {

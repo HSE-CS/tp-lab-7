@@ -56,7 +56,6 @@ Ocean::Ocean(int numStones, int numPreys,
         cells[v[i].x][v[i].y].setObject(new
                 Stone{&cells[v[i].x][v[i].y]});
         stuff.push_back(cells[v[i].x][v[i].y].getObject());
-
     }
     for (int i = numStones; i < numStones + numPreys; i++) {
         cells[v[i].x][v[i].y].setObject(new
@@ -66,8 +65,12 @@ Ocean::Ocean(int numStones, int numPreys,
     }
 
     for (int i = numPreys; i < numPreys + numPredators; i++) {
-        cells[v[i].x][v[i].y].setObject(new Predator{live_count, time_reproduction, &cells[v[i].x][v[i].y], satiety, deathByStarvation, ObjType::PREDATOR});
-        stuff.push_back(cells[v[i].x][v[i].y].getObject());
+        cells[v[i].x][v[i].y].setObject(new
+        Predator{live_count, time_reproduction,
+            &cells[v[i].x][v[i].y], satiety,
+            deathByStarvation, ObjType::PREDATOR});
+        stuff.push_back(cells[v[i].x][v[i].y].
+                        getObject());
     }
     std::cout << stuff.size() << std::endl;
 }
@@ -77,7 +80,6 @@ void Ocean::run() {
     for (int i = 0; i < stuff.size(); i++) {
         stuff[i]->live();
     }
-    
 }
 
 void Ocean::addObjects(Object* obj) {
@@ -108,7 +110,7 @@ Ocean::~Ocean() {
     for (Object *o : stuff) {
         delete o;
     }
-    for (int i = 0; i < N; i++){
+    for (int i = 0; i < N; i++) {
         delete cells[i];
     }
     delete cells;

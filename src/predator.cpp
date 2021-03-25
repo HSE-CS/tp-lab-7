@@ -23,66 +23,66 @@ void Predator::go() {
     int x = cell->getCrd().x;
     int y = cell->getCrd().y;
     std::vector<Pair> preyPlaces;
-    if ( ((x-1)>=0) && ((y-1)>=0) &&
+    if ( ((x-1) >= 0) && ((y-1) >= 0) &&
        ((cell->getOcean()->getCells())[x-1][y-1].getObject())
     && (cell->getOcean()->getCells()[x-1][y-1].
         getObject()->getType() == ObjType::PREY) ) {
         preyPlaces.push_back(Pair{(size_t) (x-1),
             (size_t) (y-1)});
-    } // x-1; y-1
-    if ( ((y-1)>=0) && (cell->getOcean()->
+    }  // x-1; y-1
+    if ( ((y-1) >= 0) && (cell->getOcean()->
                        getCells()[x][y-1].getObject())
        && (cell->getOcean()->getCells()[x][y-1].
            getObject()->getType() == ObjType::PREY) ) {
         preyPlaces.push_back(Pair{(size_t) (x),
             (size_t) (y-1)});
-    } // x y-1
-    if ( ((x+1)<M) && ((y-1)>=0)&& (cell->getOcean()->
+    }  // x y-1
+    if ( ((x+1) < M) && ((y-1) >= 0)&& (cell->getOcean()->
     getCells()[x+1][y-1].getObject()) && (cell->
     getOcean()->getCells()[x+1][y-1].getObject()->
     getType() == ObjType::PREY) ) {
         preyPlaces.push_back(Pair{(size_t) (x+1),
             (size_t) (y-1)});
-    } // x+1; y-1
-    if ( ((x-1)>=0)&& (cell->getOcean()->
+    }  // x+1; y-1
+    if ( ((x-1) >= 0)&& (cell->getOcean()->
     getCells()[x-1][y].getObject()) &&
        (cell->getOcean()->getCells()[x-1][y].
         getObject()->getType() == ObjType::PREY) ) {
         preyPlaces.push_back(Pair{(size_t) (x-1),
             (size_t) (y)});
-    } // x-1; y
-    if ( ((x+1)<M)&& (cell->getOcean()->
+    }  // x-1; y
+    if ( ((x+1) < M) && (cell->getOcean()->
                      getCells()[x+1][y].
                      getObject()) &&
        (cell->getOcean()->getCells()[x+1][y].
         getObject()->getType() == ObjType::PREY) ) {
         preyPlaces.push_back(Pair{(size_t) (x+1),
             (size_t) (y)});
-    } // x+1; y
-    if ( ((x-1)>=0) && ((y+1)<N)&& (cell->
+    }  // x+1; y
+    if ( ((x-1) >= 0) && ((y+1) < N)&& (cell->
         getOcean()->getCells()[x-1][y+1].
         getObject()) && (cell->getOcean()->
         getCells()[x-1][y+1].getObject()->
         getType() == ObjType::PREY) ) {
         preyPlaces.push_back(Pair{(size_t) (x-1),
             (size_t) (y+1)});
-    } // x-1; y+1
-    if ( ((y+1)<N)&& (cell->getOcean()->
+    }  // x-1; y+1
+    if ( ((y+1) < N) && (cell->getOcean()->
                       getCells()[x][y+1].
                       getObject()) &&
         (cell->getOcean()->getCells()[x][y+1].
          getObject()->getType() == ObjType::PREY) ) {
         preyPlaces.push_back(Pair{(size_t) (x),
             (size_t) (y+1)});
-    } // x; y+1
-    if ( ((x+1)<M) && ((y+1)<N)&& (cell->
+    }  // x; y+1
+    if ( ((x+1) < M) && ((y+1) < N)&& (cell->
             getOcean()->getCells()[x+1][y+1].
             getObject()) && (cell->getOcean()->
             getCells()[x+1][y+1].getObject()->
             getType() == ObjType::PREY) ) {
         preyPlaces.push_back(Pair{(size_t) (x+1),
             (size_t) (y+1)});
-    } // x+1; y+1
+    }  // x+1; y+1
     if (preyPlaces.size() != 0) {
         int r = rand() % preyPlaces.size();
         coord_t x_coor = preyPlaces[r].x;
@@ -93,61 +93,59 @@ void Predator::go() {
                                         getObject());
         cell->getOcean()->getCells()[x_coor][y_coor].
         killMe();
-        
+
         this->setCell(&(cell->getOcean()->getCells()
                         [x_coor][y_coor]));
-        
+
         cell->getOcean()->getCells()[x_coor][y_coor].
         setObject(this);
 
         cell->getOcean()->getCells()[x][y].killMe();
-        
-        
     } else {
         std::vector<Pair> newWays;
-        if ( ((x-1)>=0) && ((y-1)>=0) && (!cell->
+        if ( ((x-1) >= 0) && ((y-1) >= 0) && (!cell->
             getOcean()->getCells()[x-1][y-1].getObject()) ) {
             newWays.push_back(Pair{(size_t) (x-1),
                 (size_t) (y-1)});
-        } // x-1; y-1
-        if ( ((y-1)>=0) && (!cell->getOcean()->
+        }  // x-1; y-1
+        if ( ((y-1) >= 0) && (!cell->getOcean()->
                 getCells()[x][y-1].getObject()) ) {
             newWays.push_back(Pair{(size_t) (x),
                 (size_t) (y-1)});
-        } // x y-1
-        if ( ((x+1)<M) && ((y-1)>=0) &&
+        }  // x y-1
+        if ( ((x+1) < M) && ((y-1) >= 0) &&
             (!cell->getOcean()->getCells()[x+1][y-1].
              getObject()) ) {
             newWays.push_back(Pair{(size_t) (x+1),
                 (size_t) (y-1)});
-        } // x+1; y-1
-        if ( ((x-1)>=0) && (!cell->getOcean()->
+        }  // x+1; y-1
+        if ( ((x-1) >= 0) && (!cell->getOcean()->
                 getCells()[x-1][y].getObject()) ) {
             newWays.push_back(Pair{(size_t) (x-1),
                 (size_t) (y)});
-        } // x-1; y
-        if ( ((x+1)<M) && (!cell->getOcean()->
+        }  // x-1; y
+        if ( ((x+1) < M) && (!cell->getOcean()->
             getCells()[x+1][y].getObject()) ) {
             newWays.push_back(Pair{(size_t) (x+1),
                 (size_t) (y)});
-        } // x+1; y
-        if ( ((x-1)>=0) && ((y+1)<N) && (!cell->
+        }  // x+1; y
+        if ( ((x-1) >= 0) && ((y+1) < N) && (!cell->
             getOcean()->getCells()[x-1][y+1].
                                         getObject()) ) {
             newWays.push_back(Pair{(size_t) (x-1),
                 (size_t) (y+1)});
-        } // x-1; y+1
-        if ( ((y+1)<N) && (!cell->getOcean()->
+        }  // x-1; y+1
+        if ( ((y+1) < N) && (!cell->getOcean()->
             getCells()[x][y+1].getObject()) ) {
             newWays.push_back(Pair{(size_t) (x),
                 (size_t) (y+1)});
-        } // x; y+1
-        if ( ((x+1)<M) && ((y+1)<N) && (!cell->
+        }  // x; y+1
+        if ( ((x+1) < M) && ((y+1) < N) && (!cell->
             getOcean()->getCells()[x+1][y+1].
                                 getObject()) ) {
             newWays.push_back(Pair{(size_t) (x+1),
                 (size_t) (y+1)});
-        } // x+1; y+1
+        }  // x+1; y+1
         if (newWays.size() != 0) {
             int r = rand() % newWays.size();
             coord_t x_coor = newWays[r].x;
