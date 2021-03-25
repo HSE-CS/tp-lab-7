@@ -10,6 +10,5 @@ int main()
 	oc->addObjects(100, ObjType::PREDATOR);
 	oc->addObjects(150, ObjType::STONE);
 	oc->run();
-	system("pause");
 	return 0;
 }
