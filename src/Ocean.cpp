@@ -29,9 +29,9 @@ void Ocean::print() const {
 }
 void Ocean::addObjects(unsigned int n, ObjType type) {
     while (n > 0) {
-        int b=0;
-        unsigned int x = rand_r(&b) % M;
-        unsigned int y = rand_r(&b) % N;
+        std::random_device ran;
+        unsigned int x = rand() % M;
+        unsigned int y = rand() % N;
         if (cells[y][x].getObject())
             continue;
         else {
