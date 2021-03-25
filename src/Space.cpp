@@ -640,6 +640,12 @@ void Movie::renderRebelsWin() {
 void Movie::downToBattle() {
     setConsoleColour(cc(black, white));
     std::random_device gen;
+    char display_t[displayHeight][displayWidth + 1];
+    for (int i = 0; i < displayHeight - 1; ++i) {
+        for (int j = 0; j < displayWidth; ++j) {
+            display_t[i][j] = display[i][j];
+        }
+    }
     for (int iteration = 0; iteration < 30; ++iteration) {
         for (int i = 0; i < displayHeight - 1; ++i) {
             for (int j = 0; j < displayWidth; ++j) {
@@ -653,16 +659,30 @@ void Movie::downToBattle() {
                 } else if (display[i][j] == ' ' && display[i + 1][j] == ' ') {
                     //
                 }
-                if (Space::dist(j, i, displayWidth / 2, displayHeight * 2 + 30 - iteration) <
-                    sqrt(pow(displayHeight, 2) + pow(displayWidth / 2, 2))) {
-                    display[i + 7 * (60 - i) / 10][j] = '#';
-                }
             }
+
         }
         for (int i = 0; i < displayWidth; ++i) {
             display[displayHeight - 1][i] = gen() % 15 == 0 ? '*' : ' ';
         }
+        for (int i = 0; i < displayHeight - 1; ++i) {
+            for (int j = 0; j < displayWidth; ++j) { display_t[i][j] = display[i][j]; }
+        }
+        for (int i = 0; i < displayHeight; ++i) {
+            for (int j = 0; j < displayWidth; ++j) {
+                if (Space::dist(j, i, displayWidth / 2, displayHeight * 2 + 30 - iteration) <
+                    sqrt(pow(displayHeight, 2) + pow(displayWidth / 2, 2))) {
+//                    setCursorPosition(j, i + 7 * (60 - i) / 10);
+//                    std::cout << '#';
+//                    display[i + 7 * (60 - i) / 10][j] = '#';
+                    display[i / 4 + 44][j] = '#';
+                }
+            }
+        }
         renderSpaceDisplay();
         wait(.5);
+        for (int i = 0; i < displayHeight - 1; ++i) {
+            for (int j = 0; j < displayWidth; ++j) { display[i][j] = display_t[i][j]; }
+        }
     }
 }

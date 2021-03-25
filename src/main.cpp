@@ -132,7 +132,7 @@ void game() {
     }
 }
 
-signed main() {
+int_fast32_t main() {
     // intro();
     //game();
     Movie::setDisplayToSpace();
