@@ -3,7 +3,7 @@
 #define _CELL_H_
 
 //#include "ocean.h"
-#include "Object.h"
+#include "object.h"
 #include "common.h"
 #include <random>
 
