@@ -1,6 +1,6 @@
 //Copyright GN 2021
-#include "common.h"
-#include "ocean.h"
+#include "../include/common.h"
+#include "../include/ocean.h"
 
 #include <vector>
 #include <ctime>

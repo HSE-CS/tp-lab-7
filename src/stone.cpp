@@ -1,5 +1,5 @@
 // Copyright GN 2021
-#include "stone.h"
+#include "../include/stone.h"
 
 void Stone::setObjectType() { this->objType = 0; }
 void Stone::setCell(Cell* c) { this->cell = c; }

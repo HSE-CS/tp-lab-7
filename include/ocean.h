@@ -5,12 +5,12 @@
 
 
 #include <list>
-#include "common.h"
-#include "cell.h"
-#include "Object.h"
-#include "stone.h"
-#include "prey.h"
-#include "predator.h"
+#include "../include/common.h"
+#include "../include/cell.h"
+#include "../include/Object.h"
+#include "../include/stone.h"
+#include "../include/prey.h"
+#include "../include/predator.h"
 
 
 class Ocean {

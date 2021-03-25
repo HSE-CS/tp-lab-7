@@ -1,7 +1,7 @@
 //Copyright GN 2021
-#include "predator.h"
-#include "Object.h"
-#include "prey.h"
+#include "../include/predator.h"
+#include "../include/Object.h"
+#include "../include/prey.h"
 
 void Predator::setObjectType() { this->objType = 3; }
 void Predator::setCell(Cell* c) { this->cell = c; }

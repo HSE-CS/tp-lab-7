@@ -2,8 +2,8 @@
 #ifndef INCLUDE_CELL_H_
 #define INCLUDE_CELL_H_
 
-#include "common.h"
-#include "Object.h"
+#include "../include/common.h"
+#include "../include/Object.h"
 
 class Ocean;
 class Cell {

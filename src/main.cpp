@@ -1,5 +1,5 @@
 ﻿// Copyright GN 2021
-#include "ocean.h"
+#include "../include/ocean.h"
 class Ocean;
 int main() {
   Ocean ocn;
