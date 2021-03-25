@@ -28,7 +28,8 @@ void Prey::live() {
             (time_reproduction == curr_time) &&
             (!cell->getOcean()->getCells()[x][y].
              getObject())) {
-            cell->getOcean()->getCells()[x][y].setObject(new Prey{live_count+curr_time,
+            cell->getOcean()->getCells()[x][y].
+            setObject(new Prey{live_count+curr_time,
                 time_reproduction,
                 &(cell->getOcean()->
                 getCells()[x][y]),
@@ -45,9 +46,10 @@ void Prey::live() {
 }
 
 void Prey::go() {
+    std::random_device rd;
+    std::mt19937 mersenne(rd());
     int x = cell->getCrd().x;
-    int y = cell->getCrd().y;\
-    
+    int y = cell->getCrd().y;
     std::vector<Pair> newWays;
     if ( ((x-1) >= 0) && ((y-1) >= 0) && (!cell->
         getOcean()->getCells()[x-1][y-1].
@@ -93,7 +95,7 @@ void Prey::go() {
             (size_t) (y+1)});
     }  // x+1; y+1
     if (!newWays.empty()) {
-        int r = rand() % newWays.size();
+        int r = mersenne() % newWays.size();
         coord_t x_coor = newWays[r].x;
         coord_t y_coor = newWays[r].y;
         this->setCell(&(cell->getOcean()->

@@ -8,6 +8,7 @@
 #include "object.h"
 #include "ocean.h"
 
+
 Predator::Predator(int live_count,
                    int time_reproduction,
                    Cell * cell, int satiety,
@@ -20,6 +21,8 @@ Predator::Predator(int live_count,
 
 
 void Predator::go() {
+    std::random_device rd;
+    std::mt19937 mersenne(rd());
     int x = cell->getCrd().x;
     int y = cell->getCrd().y;
     std::vector<Pair> preyPlaces;
@@ -84,7 +87,7 @@ void Predator::go() {
             (size_t) (y+1)});
     }  // x+1; y+1
     if (preyPlaces.size() != 0) {
-        int r = rand() % preyPlaces.size();
+        int r = mersenne() % preyPlaces.size();
         coord_t x_coor = preyPlaces[r].x;
         coord_t y_coor = preyPlaces[r].y;
         this->satiety += preyFatContent;
@@ -147,7 +150,7 @@ void Predator::go() {
                 (size_t) (y+1)});
         }  // x+1; y+1
         if (newWays.size() != 0) {
-            int r = rand() % newWays.size();
+            int r = mersenne() % newWays.size();
             coord_t x_coor = newWays[r].x;
             coord_t y_coor = newWays[r].y;
             this->setCell(&(cell->getOcean()->
@@ -156,7 +159,6 @@ void Predator::go() {
             setObject(this);
             cell->getOcean()->getCells()[x][y].killMe();
         }
-        
     }
 }
 
@@ -174,7 +176,6 @@ void Predator::live() {
             && (time_reproduction == curr_time)
              && (!cell->getOcean()->getCells()[x][y].
                  getObject()))) {
-            std::cout << "fdsfd" << std::endl;
             cell->getOcean()->getCells()[x][y].
             setObject(new Predator{live_count+curr_time,
                 time_reproduction,
