@@ -7,7 +7,6 @@
 
 int main() {
 
-
   Ocean ocn1;
 
 
@@ -15,6 +14,5 @@ int main() {
 
 
   ocn1.run();
-
 
 }
