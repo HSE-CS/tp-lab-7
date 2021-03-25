@@ -20,7 +20,8 @@ void Predator::update(World* world, int x, int y) {
           if (phase == 0) {
             if (selected == nullptr) {
               if (satiated) {
-                world->replace(new Predator(lifetime), x, y + 1);
+                world->replace(new Predator(Predator::generateLifetime()), x,
+                               y + 1);
                 satiated = false;
                 return;
               }
@@ -43,7 +44,8 @@ void Predator::update(World* world, int x, int y) {
           if (phase == 0) {
             if (selected == nullptr) {
               if (satiated) {
-                world->replace(new Predator(lifetime), x, y - 1);
+                world->replace(new Predator(Predator::generateLifetime()), x,
+                               y - 1);
                 satiated = false;
                 return;
               }
@@ -66,7 +68,8 @@ void Predator::update(World* world, int x, int y) {
           if (phase == 0) {
             if (selected == nullptr) {
               if (satiated) {
-                world->replace(new Predator(lifetime), x - 1, y);
+                world->replace(new Predator(Predator::generateLifetime()),
+                               x - 1, y);
                 satiated = false;
                 return;
               }
@@ -89,7 +92,8 @@ void Predator::update(World* world, int x, int y) {
           if (phase == 0) {
             if (selected == nullptr) {
               if (satiated) {
-                world->replace(new Predator(lifetime), x + 1, y);
+                world->replace(new Predator(Predator::generateLifetime()),
+                               x + 1, y);
                 satiated = false;
                 return;
               }
@@ -116,4 +120,9 @@ void Predator::update(World* world, int x, int y) {
       done = true;
     }
   } while (!done);
+}
+
+int Predator::generateLifetime() {
+  return PREDATOR_MIN_LIFETIME +
+         std::rand() % (PREDATOR_MAX_LIFETIME - PREDATOR_MIN_LIFETIME);
 }

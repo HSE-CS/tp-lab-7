@@ -21,20 +21,20 @@ int main(int argc, char** argv) {
     if (std::strcmp(argv[current_arg], "-h") == 0) {
       height =
           static_cast<int>(std::strtol(argv[current_arg + 1], nullptr, 10));
-      if (height == 0) {
+      if (height <= 0) {
         std::cout << "invalid height\n";
         std::exit(1);
       }
     } else if (std::strcmp(argv[current_arg], "-w") == 0) {
       width = static_cast<int>(std::strtol(argv[current_arg + 1], nullptr, 10));
-      if (width == 0) {
+      if (width <= 0) {
         std::cout << "invalid width\n";
         std::exit(1);
       }
     } else if (std::strcmp(argv[current_arg], "-m") == 0) {
       max_iterations =
           static_cast<int>(std::strtol(argv[current_arg + 1], nullptr, 10));
-      if (max_iterations == 0) {
+      if (max_iterations <= 0) {
         std::cout << "invalid max iterations count\n";
         std::exit(1);
       }
@@ -53,9 +53,18 @@ int main(int argc, char** argv) {
   World world(width, height);
   world.init(seed);
   std::cout << "\033[?1049h";
-  for (int i = 0; i < max_iterations; ++i) {
+  int i = 0;
+  for (;;) {
+    i += 1;
+    std::cout << "iteration: " << i << "/" << max_iterations << "\n";
     bool done = world.update();
     world.printWorld();
+    if (i >= max_iterations) {
+      std::cout << "\nMax iteration limit reached!\n"
+                << "(press any key to exit)";
+      std::cin.get();
+      break;
+    }
     if (!done) {
       std::this_thread::sleep_for(std::chrono::milliseconds(100));
       std::cout << "\033[3J\033[1;1H";

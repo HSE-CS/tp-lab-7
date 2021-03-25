@@ -5,5 +5,5 @@
 class Stone : public Object {
  public:
   Stone() : Object(ObjectType::STONE){};
-  void update(World* world, int x, int y) override{};
+  void update(World* _world, int _x, int _y) override{};
 };

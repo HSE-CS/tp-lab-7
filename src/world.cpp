@@ -13,9 +13,9 @@ World::World(int width, int height) : width(width), height(height) {
 }
 
 void World::init(int seed) {
-  const int EMPTY = 10;
-  const int STONE = 3;
-  const int PREY = 4;
+  const int EMPTY = 20;
+  const int STONE = 5;
+  const int PREY = 3;
   const int PREDATOR = 1;
   std::srand(seed);
   for (int i = 0; i < width * height; ++i) {
@@ -26,15 +26,9 @@ void World::init(int seed) {
     } else if (type < EMPTY + STONE) {
       o = new Stone;
     } else if (type < EMPTY + STONE + PREY) {
-      o = new Prey(PREY_MIN_REPRODUCTION_RATE +
-                       std::rand() % (PREY_MAX_REPRODUCTION_RATE -
-                                      PREY_MIN_REPRODUCTION_RATE),
-                   PREY_MIN_LIFETIME +
-                       std::rand() % (PREY_MAX_LIFETIME - PREY_MIN_LIFETIME));
+      o = new Prey(Prey::generateReproductionRate(), Prey::generateLifetime());
     } else {
-      o = new Predator(PREDATOR_MIN_LIFETIME +
-                       std::rand() %
-                           (PREDATOR_MAX_LIFETIME - PREDATOR_MIN_LIFETIME));
+      o = new Predator(Predator::generateLifetime());
     }
     objects.emplace_back(o);
   }
@@ -75,7 +69,7 @@ bool World::update() {
   std::cout << "\033[2K"
             << "prey: " << prey.size() << "\n"
             << "\033[2K"
-            << "predators: " << predators.size() << "\n";
+            << "predators: " << predators.size();
   if (prey.empty() || predators.empty()) {
     return true;
   }
@@ -94,7 +88,7 @@ Object* World::getObjectAt(int x, int y) const {
 
 void World::printWorld() const {
   for (int i = 0; i < width * height; ++i) {
-    if (i % width == 0) std::cout << '\n';
+    if (i % width == 0) std::cout << "\n";
     if (objects[i] == nullptr) {
       std::cout << "\033[37m"
                 << "."
@@ -106,11 +100,11 @@ void World::printWorld() const {
     } else if (objects[i]->type == PREDATOR_FISH) {
       if (dynamic_cast<Predator*>(objects[i])->isSatiated()) {
         std::cout << "\033[33m"
-                  << "$"
+                  << ">"
                   << "\033[0m";
       } else {
         std::cout << "\033[31m"
-                  << "$"
+                  << ">"
                   << "\033[0m";
       }
     } else {
