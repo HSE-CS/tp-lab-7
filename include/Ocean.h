@@ -4,7 +4,7 @@
 
 #pragma once
 #include <list>
-#include "common.h"
+#include "Common.h"
 #include "Cell.h"
 #include "Predator.h"
 #include "Stone.h"

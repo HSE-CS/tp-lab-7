@@ -7,7 +7,7 @@
 #include "Object.h"
 #include "Cell.h"
 #include "Ocean.h"
-#include "common.h"
+#include "Common.h"
 class Stone : public Object {
     friend Cell;
  public:

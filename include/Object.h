@@ -2,7 +2,7 @@
 
 #pragma once
 #include <iostream>
-#include "common.h"
+#include "Common.h"
 #define STONE_N '#'
 #define PREY_N 'f'
 #define PREDATOR_N 'S'
