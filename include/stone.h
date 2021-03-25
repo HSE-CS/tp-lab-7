@@ -3,7 +3,7 @@
 #define _STONE_H_
 
 #include "common.h"
-#include "object.h"
+#include "Object.h"
 #include "cell.h"
 #include "ocean.h"
 

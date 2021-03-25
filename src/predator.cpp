@@ -1,6 +1,6 @@
 //Copyright GN 2021
 #include "predator.h"
-#include "object.h"
+#include "Object.h"
 #include "prey.h"
 
 void Predator::setObjectType() { this->objType = 3; }

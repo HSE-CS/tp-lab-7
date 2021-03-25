@@ -1,6 +1,6 @@
 // Copyright GN 2021
 #include "prey.h"
-#include "object.h"
+#include "Object.h"
 
 void Prey::setObjectType() { this->objType = 2; }
 void Prey::setCell(Cell* c) { this->cell = c; }

@@ -6,7 +6,7 @@
 
 #include "common.h"
 #include "cell.h"
-#include "object.h"
+#include "Object.h"
 #include "stone.h"
 #include "prey.h"
 #include "predator.h"
