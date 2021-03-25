@@ -1,10 +1,8 @@
 // Copyright 2021 MalininDmitry
 
-#ifndef _STONE_H_
-#define _STONE_H_
+#ifndef INCLUDE_STONE_H_
+#define INCLUDE_STONE_H_
 #include "object.h"
-#include "cell.h"
-#include "ocean.h"
 
 class Stone : public Object {
  protected:
@@ -15,4 +13,4 @@ class Stone : public Object {
     void live() override;
 };
 
-#endif
+#endif  // INCLUDE_STONE_H_

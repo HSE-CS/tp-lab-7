@@ -1,16 +1,14 @@
 // Copyright 2021 MalininDmitry
 
-#ifndef _CELL_H_
-#define _CELL_H_
-
+#ifndef CELL_H_
+#define CELL_H_
 #include "common.h"
 #include "object.h"
 #include "ocean.h"
 
 class Ocean;
 
-class Cell
-{
+class Cell {
     friend Ocean;
  private:
     Pair crd = {0, 0};
@@ -27,6 +25,5 @@ class Cell
     void killMe();
     Pair getCrd();
     Ocean * getOcean();
-
 };
-#endif
+#endif  // INCLUDE_CELL_H_

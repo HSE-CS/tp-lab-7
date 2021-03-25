@@ -1,8 +1,7 @@
 // Copyright 2021 MalininDmitry
 
-#ifndef _OBJECT_H_
-#define _OBJECT_H_
-
+#ifndef INCLUDE_OBJECT_H_
+#define INCLUDE_OBJECT_H_
 #include "common.h"
 
 #define STONE_N '#'
@@ -12,19 +11,18 @@
 #define NOTHING_N '.'
 
 enum class ObjType {STONE,CORAL,PREY,PREDATOR,NOTHING};
-
 class Cell;
-class Object
-{
-protected:
+class Object {
+ protected:
     Cell *cell;
     ObjType type;
-public:
-    Object(Cell * = nullptr);
+ public:
+    explicit Object(Cell * = nullptr);
     Object(Cell * cell, ObjType type);
     virtual ~Object();
-    virtual void live() = 0; // жизнь объекта
+    virtual void live() = 0;  // жизнь объекта
     void setCell(Cell* cell);
     ObjType getType();
 };
-#endif
+#endif  // INCLUDE_OBJECT_H_
+
