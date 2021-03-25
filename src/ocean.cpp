@@ -25,9 +25,10 @@ void Ocean::generateWorld(int number_of_preys, int number_of_predators,
   Pair p{0, 0};
   for (size_t i = 0; i < number_of_preys; i++) {
     Prey* new_prey = new Prey;
+    unsigned int t = std::time(NULL);
     while (this->getCell(p)->getObject() != nullptr) {
-      p.x_cord = (rand_r() % (N - 1)) + 1;
-      p.y_cord = (rand_r() % (M - 1)) + 1;
+      p.x_cord = (rand_r(&t) % (N - 1)) + 1;
+      p.y_cord = (rand_r(&t) % (M - 1)) + 1;
     }
     this->addObject(new_prey);
     Cell* cell = this->getCell(p);
@@ -36,9 +37,10 @@ void Ocean::generateWorld(int number_of_preys, int number_of_predators,
   }
   for (size_t i = 0; i < number_of_predators; i++) {
     Predator* new_predator = new Predator;
+    unsigned int t = std::time(NULL);
     while (this->getCell(p)->getObject() != nullptr) {
-      p.x_cord = (rand_r() % (N - 2)) + 1;
-      p.y_cord = (rand_r() % (M - 2)) + 1;
+      p.x_cord = (rand_r(&t) % (N - 2)) + 1;
+      p.y_cord = (rand_r(&t) % (M - 2)) + 1;
     }
     this->addObject(new_predator);
     Cell* cell = this->getCell(p);
@@ -47,9 +49,10 @@ void Ocean::generateWorld(int number_of_preys, int number_of_predators,
   }
   for (size_t i = 0; i < number_of_stones; i++) {
     Stone* time_stone = new Stone;
+    unsigned int t = std::time(NULL);
     while (this->getCell(p)->getObject() != nullptr) {
-      p.x_cord = (rand_r() % (N - 1)) + 1;
-      p.y_cord = (rand_r() % (M - 1)) + 1;
+      p.x_cord = (rand_r(&t) % (N - 1)) + 1;
+      p.y_cord = (rand_r(&t) % (M - 1)) + 1;
     }
     this->addObject(time_stone);
     Cell* cell = this->getCell(p);
@@ -58,9 +61,10 @@ void Ocean::generateWorld(int number_of_preys, int number_of_predators,
   }
   for (size_t i = 0; i < number_of_corals; i++) {
     Coral*new_coral = new Coral;
+    unsigned int t = std::time(NULL);
     while (this->getCell(p)->getObject() != nullptr) {
-      p.x_cord = (rand_r() % (N - 1)) + 1;
-      p.y_cord = (rand_r() % (M - 1)) + 1;
+      p.x_cord = (rand_r(&t) % (N - 1)) + 1;
+      p.y_cord = (rand_r(&t) % (M - 1)) + 1;
     }
     this->addObject(new_coral);
     Cell* cell = this->getCell(p);
