@@ -2,7 +2,7 @@
 #ifndef INCLUDE_OBJECT_H_
 #define INCLUDE_OBJECT_H_
 
-#include "common.h" 
+#include "Common.h"
 
 #define STONE_N '#'
 #define PREY_N 'f'
@@ -24,7 +24,7 @@ class Object {
   ObjType type;
  public:
   explicit Object(ObjType ot, Cell* new_cell = nullptr)
-    : type{ ot }, cell{ new_cell }{}
+    : type{ ot }, cell{ new_cell } {}
   ~Object() {
     cell = nullptr;
   }

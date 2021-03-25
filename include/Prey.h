@@ -9,7 +9,7 @@ class Prey : public Object {
   int lifeTime;
   int timeToReproduce;
  public:
-  Prey(Cell* cell, ObjType type = ObjType::PREY) : Object(type, cell) { 
+  explicit Prey(Cell* cell, ObjType type = ObjType::PREY) : Object(type, cell) {
     lifeTime = PREY_LIFE;
     timeToReproduce = PREY_BREED;
   }

@@ -1,8 +1,7 @@
 // Copyright 2021 Dumarevskaya
-#include "Ocean.h"
 #include <random>
 #include <iostream>
-//#include <windows.h>
+#include "Ocean.h"
 
 void Ocean::print() const {
   for (int i = 0; i < M; i++) {
@@ -41,9 +40,7 @@ void Ocean::run() {
         countOFprey++;
       if (obj->getObjType() == ObjType::PREDATOR)
         countOFpredator++;
-      //print();
       deleteObjectFun();
-      //Sleep(1000);
       if (countOFpredator <= 0 || countOFprey <= 0) {
         break;
       }

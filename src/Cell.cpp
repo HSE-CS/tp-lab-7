@@ -1,10 +1,10 @@
 // Copyright 2021 Dumarevskaya
-#include "Cell.h"
-#include "Ocean.h"
 #include <vector>
 #include <ctime>
 #include <stdlib.h>
 #include <random>
+#include "Cell.h"
+#include "Ocean.h"
 
 void Cell::init(Pair p, Ocean* oc) {
   crd = p;

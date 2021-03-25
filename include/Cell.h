@@ -2,7 +2,7 @@
 #ifndef INCLUDE_CELL_H_
 #define INCLUDE_CELL_H_
 
-#include "common.h"
+#include "Common.h"
 #include "Object.h"
 
 class Ocean;

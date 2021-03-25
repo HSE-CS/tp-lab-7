@@ -9,14 +9,13 @@
 #include "Object.h"
 
 class Ocean {
-
  private:
   Cell **cells;
   std::list<Object*> stuff;
   std::list<Object*> deleteObject;
 
  public:
-  Ocean() {
+  explicit Ocean() {
     cells = new Cell * [M];
     for (int i = 0; i < M; i++) {
       cells[i] = new Cell[N];

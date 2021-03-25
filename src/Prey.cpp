@@ -1,8 +1,8 @@
 // Copyright 2021 Dumarevskaya
+#include <iostream>
 #include "Prey.h"
 #include "Ocean.h"
 #include "Cell.h"
-#include <iostream>
 
 void Prey::live() {
   if (lifeTime-- != 0) {
