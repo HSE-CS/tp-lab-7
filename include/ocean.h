@@ -23,6 +23,6 @@ class Ocean {
   void addObjects();
   void delObjects();
   void print() const;
-  Cell *getCell(const size_t x, const size_t y);
+  Cell *getCell(const unsigned int x, const unsigned int y);
 };
 #endif

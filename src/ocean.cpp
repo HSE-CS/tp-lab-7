@@ -8,9 +8,9 @@
 #include<algorithm>
 Ocean::Ocean() { 
   this->cells = new Cell*[M];
-  for (size_t i{0}; i < M; ++i) {
+  for (unsigned int i{0}; i < M; ++i) {
     cells[i] = new Cell[N];
-    for (size_t j{0}; j < N; ++j) {
+    for (unsigned int j{0}; j < N; ++j) {
       int chooseNewObj{std::rand() % 100 + 1};
       Object* newObj{nullptr};
       if (chooseNewObj <= prPrey) {
@@ -36,12 +36,12 @@ Ocean::~Ocean() {
     delete* it;
     it = this->stuff.erase(it);
   }
-  for (size_t i{ 0 }; i < M; ++i) {
+  for (unsigned int i{ 0 }; i < M; ++i) {
     delete[] this->cells[i];
   }
   delete[] this->cells;
 }
-Cell* Ocean::getCell(const size_t x, const size_t y) {return &this->cells[x][y]; }
+Cell* Ocean::getCell(const unsigned int x, const unsigned int y) {return &this->cells[x][y]; }
 void Ocean::addObject(const ObjType type, Cell* newCell) {
   Object* newObj{ nullptr };
   switch (type) {
@@ -76,8 +76,8 @@ void Ocean::delObjects() {
   }
 }
 void Ocean::print() const {
-  for (size_t i{0}; i < M; ++i) {
-    for (size_t j{0}; j < N; ++j) {
+  for (unsigned int i{0}; i < M; ++i) {
+    for (unsigned int j{0}; j < N; ++j) {
       if (this->cells[i][j].getObject()) {
         ObjType currObj{this->cells[i][j].getObjectType()};
         switch (currObj) {

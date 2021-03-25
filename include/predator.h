@@ -1,4 +1,5 @@
 // Copyright NikDemoShow 2021
+
 #include"prey.h"
 class Predator : public Prey {
 private:
