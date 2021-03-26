@@ -29,4 +29,4 @@ class Cell {
     Cell* hunt();
 };
 
-#endif  //  INCLUDE_CELL_H
+#endif  // INCLUDE_CELL_H_

@@ -29,4 +29,4 @@ class Ocean {
     void ClearListOfTheDead();
     Cell* hunt(Pair coordinate);
 };
-#endif  //  INCLUDE_OCEAN_H
+#endif  // INCLUDE_OCEAN_H_

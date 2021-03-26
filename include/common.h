@@ -14,4 +14,4 @@ const int number_objects = 3000;
 const int probability_border_up = 60;
 const int probability_border_down = 40;
 
-#endif  // INCLUDE_CELL_H_
+#endif  // INCLUDE_COMMON_H_
