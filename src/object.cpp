@@ -1,6 +1,6 @@
 // Copyright 2021 mkhorosh
 
-#include "object.h"
+#include "../include/object.h"
 #include <iostream>
 
 void Object::printObj() {

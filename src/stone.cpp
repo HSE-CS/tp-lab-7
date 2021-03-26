@@ -1,6 +1,6 @@
 // Copyright 2021 mkhorosh
 
-#include "stone.h"
+#include "../include/stone.h"
 
 Stone::Stone(ObjType type, Cell *cell) : Object(type, cell) {
   this->type = type;

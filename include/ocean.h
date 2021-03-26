@@ -3,12 +3,12 @@
 #ifndef INCLUDE_OCEAN_H_
 #define INCLUDE_OCEAN_H_
 
-#include "common.h"
-#include "cell.h"
-#include "object.h"
-#include "prey.h"
-#include "predator.h"
-#include "stone.h"
+#include "../include/common.h"
+#include "../include/cell.h"
+#include "../include/object.h"
+#include "../include/prey.h"
+#include "../include/predator.h"
+#include "../include/stone.h"
 #include <vector>
 #include <list>
 
@@ -18,7 +18,7 @@ class Ocean {
   std::list<Object *> stuff;
 
  public:
-  Ocean(int x_size = M, int y_size = N);
+  explicit Ocean(int x_size = M, int y_size = N);
   ~Ocean();
   void print() const;
   void push(Object *o);

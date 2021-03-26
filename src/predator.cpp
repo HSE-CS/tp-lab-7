@@ -1,9 +1,9 @@
 // Copyright 2021 mkhorosh
 
-#include "predator.h"
-#include "cell.h"
+#include "../include/predator.h"
+#include "../include/cell.h"
 #include <time.h>
-#include "ocean.h"
+#include "../include/ocean.h"
 #include <cstdlib>
 
 Predator::Predator(ObjType type, Cell *cell) : Object(type, cell) {

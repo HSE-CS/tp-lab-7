@@ -3,8 +3,8 @@
 #ifndef INCLUDE_PREDATOR_H_
 #define INCLUDE_PREDATOR_H_
 
-#include "object.h"
-#include "cell.h"
+#include "../include/object.h"
+#include "../include/cell.h"
 
 class Predator : public Object {
  private:

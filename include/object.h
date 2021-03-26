@@ -3,7 +3,7 @@
 #ifndef INCLUDE_OBJECT_H_
 #define INCLUDE_OBJECT_H_
 
-#include "common.h"
+#include "../include/common.h"
 
 #define STONE_N 'O'
 #define PREY_N '='
@@ -22,7 +22,7 @@ class Object {
  public:
   explicit Object(ObjType type, Cell *c = nullptr);
   virtual ~Object();
-  virtual void live() = 0; // жизнь объекта
+  virtual void live() = 0;  // жизнь объекта
   void setCell(Cell *c);
   void death();
   bool isAlive();

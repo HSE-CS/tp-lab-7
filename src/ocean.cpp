@@ -1,14 +1,14 @@
 // Copyright 2021 mkhorosh
 
-#include "ocean.h"
-#include "common.h"
+#include "../include/ocean.h"
+#include "../include/common.h"
 #include <vector>
 #include <time.h>
 #include <iostream>
 #include <chrono>
 #include <thread>
 
-Ocean::Ocean(int x_size, int y_size) {
+explicit Ocean::Ocean(int x_size, int y_size) {
   std::vector<std::vector<Cell>> matrix(x_size, std::vector<Cell>(y_size));
   this->cells = matrix;
   for (int i = 0; i < x_size; i++) {
@@ -78,8 +78,8 @@ Ocean::~Ocean() {
 }
 Cell *Ocean::findCell(Pair crd) {
   time(nullptr);
-  int new_x = (crd.x + rand() % 2) % M;
-  int new_y = (crd.y + rand() % 2) % N;
+  int new_x = (crd.x + rand_r() % 2) % M;
+  int new_y = (crd.y + rand_r() % 2) % N;
   return &(this->cells[new_x][new_y]);
 }
 

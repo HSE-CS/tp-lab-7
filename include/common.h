@@ -6,8 +6,8 @@
 //typedef size_t coord_t;
 
 struct Pair {
-  int x; // 0..M-1
-  int y; // 0..N-1
+  int x;  // 0..M-1
+  int y;  // 0..N-1
 };
 
 const int M = 100;
