@@ -1,6 +1,6 @@
 // Copyright 2021 ArinaMonicheva
 
-#include "cell.h"
+#include "include/cell.h"
 
 void Cell::init(coords newCds, Ocean* ocean) {
   currentCds.x = newCds.x;
@@ -15,9 +15,9 @@ Object* Cell::getObject() const {
 }
 
 void Cell::setObject(Object* newInhabitant) {
-  //if (!empty) {
-  //    throw "Alredy occupied";
-  //}
+  if (!empty) {
+      throw "Alredy occupied";
+  }
   inhabitant = newInhabitant;
   empty = false;
 }
