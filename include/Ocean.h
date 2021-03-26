@@ -24,6 +24,7 @@ class Ocean {
     void AddObject(Object* object);
     void run();
     Cell* getCell(Pair pair);
-    void removeObject(Object* object);
+    void removeObject(Object * obj);
+    ~Ocean();
 };
 #endif  // INCLUDE_OCEAN_H_
