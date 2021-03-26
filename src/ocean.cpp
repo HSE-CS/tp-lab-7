@@ -15,7 +15,6 @@ Ocean::Ocean() {
             cells[i][j].init({ i, j }, this);
         }
     }
-}
 Ocean::~Ocean() {
     for (uint i = 0; i < N; i++) {
         delete[] cells[i];
