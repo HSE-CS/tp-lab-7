@@ -7,11 +7,11 @@
 #include <chrono>
 #include <thread>
 
-Ocean::Ocean(size_t x_size, size_t y_size) {
+Ocean::Ocean(int x_size, int y_size) {
   std::vector<std::vector<Cell>> matrix(x_size, std::vector<Cell>(y_size));
   this->cells = matrix;
-  for (coord_t i = 0; i < x_size; i++) {
-    for (coord_t j = 0; j < y_size; j++) {
+  for (int i = 0; i < x_size; i++) {
+    for (int j = 0; j < y_size; j++) {
       Pair p{i, j};
       cells[i][j].init(p, this);
     }
@@ -19,8 +19,8 @@ Ocean::Ocean(size_t x_size, size_t y_size) {
 
 }
 void Ocean::print() const {
-  for (coord_t i = 0; i < cells[0].size(); i++) {
-    for (coord_t j = 0; j < cells.size(); j++) {
+  for (int i = 0; i < cells[0].size(); i++) {
+    for (int j = 0; j < cells.size(); j++) {
       cells[j][i].obj->printObj();
     }
     std::cout << std::endl;

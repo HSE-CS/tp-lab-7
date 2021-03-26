@@ -18,7 +18,7 @@ class Ocean {
   std::list<Object *> stuff;
 
  public:
-  Ocean(size_t x_size = M, size_t y_size = N);
+  Ocean(int x_size = M, int y_size = N);
   ~Ocean();
   void print() const;
   void push(Object *o);
