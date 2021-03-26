@@ -21,7 +21,7 @@ class Object {
     uint repro_time;
 
  public:
-    Object(Cell* c) : cell(c) {}
+    explicit Object(Cell* c) : cell(c) {}
     virtual ~Object() = default;
     virtual bool live() = 0;  // жизнь объекта
     virtual char get_symbol() = 0;

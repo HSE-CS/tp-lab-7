@@ -13,7 +13,7 @@ class Predator : public Object {
     bool yum = false;
 
  public:
-    Predator(Cell* cell) : Object(cell) {
+    explicit Predator(Cell* cell) : Object(cell) {
         obj_type = ObjType::PREDATOR;
         lifetime = predator_lim;
         repro_time = reproduce_time;
