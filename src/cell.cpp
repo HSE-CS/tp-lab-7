@@ -1,7 +1,7 @@
 // Copyright TimurZaytsev 2021
-#include "cell.h"
+#include "../include/cell.h"
 
-#include "ocean.h"
+#include "../include/ocean.h"
 Cell* Cell::getNeighbour(const bool hunger) {
   int x{std::rand() % 3 - 1}, y{(std::rand() % 3 - 1) * (x == 0)};
   while (!(x + y)) {
