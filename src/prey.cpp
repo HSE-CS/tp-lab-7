@@ -10,10 +10,9 @@ Prey::Prey(Cell* thisCell) : Object(thisCell) {
 }
 
 void Prey::live() {
-    if (this->lifespan == 0) {
+    if (this->lifespan <= 0) {
         this->cell->killMe();
-    }
-    if (this->steps == 20) {
+    } else if (this->steps == 20) {
         Ocean* ocean = this->cell->getCurrentOcean();
         std::vector<Cell> nearby = ocean->getNearbyCells(this->cell->getX(), this->cell->getY());
         for (auto cell : nearby) {
@@ -22,11 +21,26 @@ void Prey::live() {
                     Pair curPair; curPair.x = cell.getX(); curPair.y = cell.getY();
                     Cell* newCell = new Cell(curPair, ocean);
                     ocean->setObjectToCell(dynamic_cast<Object*>(new Prey(newCell)),curPair.x,curPair.y);
+                    cooldown = true;
                 }
+                this->steps = 0;
+                --lifespan;
+            }
+        }
+    } else {
+        if (cooldown && (steps == 10)) {
+            cooldown = false;
+        }
+        Ocean* ocean = this->cell->getCurrentOcean();
+        std::vector<Cell> nearby = ocean->getNearbyCells(this->cell->getX(), this->cell->getY());
+        for (auto cell : nearby) {
+            if (cell.isFree()) {
+                cell.setObject(this);
+                cell.killMe();
+                break;
             }
         }
     }
-
 }
 void Prey::setType() {
     this->type = static_cast<ObjType> (2);
