@@ -2,12 +2,12 @@
 #pragma once
 #define OCEAN_H
 #ifdef OCEAN_H
+#include <list>
 #include "../include/common.h"
 #include "../include/cell.h"
 #include "../include/predator.h"
 #include "../include/stone.h"
 #include "../include/prey.h"
-#include <list>
 class Ocean {
  private:
     Cell** cells;

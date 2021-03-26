@@ -1,4 +1,4 @@
-//  Copywright 2021 Kartseva Masha
+//  Copyright 2021 Kartseva Masha
 #pragma once
 #include "../include/object.h"
 #include "../include/cell.h"
@@ -13,7 +13,7 @@ class Prey : public Object {
     friend Ocean;
  public:
     Prey(Cell* c);
-    ~Prey() {};
+    ~Prey() {}
     void live();
     void move();
     void copulation();

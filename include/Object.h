@@ -19,7 +19,7 @@ class Object {
     Cell* cell;
     ObjType type;
  public:
-    Object(Cell* = nullptr);
+    Object(Cell*);
     virtual ~Object() {}
     void setLive(int lifetime);
     void setCell(Cell* cell);

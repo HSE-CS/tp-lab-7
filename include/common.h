@@ -8,6 +8,7 @@
 #include <iterator>
 #include <algorithm>
 #include <string>
+#include <time.h>
 
 typedef size_t coord_t;
 

@@ -1,4 +1,4 @@
-//  Copywright 2021 Kartseva Masha
+//  Copyright 2021 Kartseva Masha
 #pragma once
 #include "../include/object.h"
 #include "../include/cell.h"
@@ -10,7 +10,7 @@ class Stone : public Object {
     friend Cell;
  public:
     Stone(Cell* c);
-    ~Stone() {};
+    ~Stone() {}
     void live();
     char getSymbol() override;
 };

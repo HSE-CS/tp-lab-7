@@ -5,8 +5,9 @@ Predator::Predator(Cell* c) :Object(c) {
     type = ObjType::PREDATOR;
 }
 void Predator::live() {
-    if (eat() != true && lifetime > 2)  lifetime -= 2;
-    else lifetime--;
+    if (eat() != true && lifetime > 2) 
+    lifetime -= 2; else
+    lifetime--;
     move();
     if (lifetime < 0.1 * LTPredator) copulation();
 }
@@ -25,7 +26,8 @@ bool Predator::eat() {
     Pair cord = cell->Cord();
 
     Cell* sacrifice = cell->RADAR();
-    if (sacrifice && !sacrifice->getObject()->is_live() && sacrifice->getObject()->getType() == ObjType::PREY) {
+    if (sacrifice && !sacrifice->getObject()->is_live()
+    && sacrifice->getObject()->getType() == ObjType::PREY) {
         sacrifice->getObject()->readytodie();
         sacrifice->getObject()->setLive(0);
         lifetime += 5;

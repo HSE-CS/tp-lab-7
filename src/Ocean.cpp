@@ -1,9 +1,9 @@
 //  Copyright 2021 Kartseva Masha
+#include <iostream>
+#include <random>
 #include "../include/ocean.h"
 #include "../include/stone.h"
 #include "../include/object.h"
-#include <iostream>
-#include <random>
 Ocean::Ocean() {
     cells = new Cell * [N];
     for (auto i = 0; i < N; i++) {
@@ -78,7 +78,7 @@ bool Ocean::DeleteObj(Object* obj) {
 
 
 Cell* Ocean::Step(Pair crd) {
-    random_device ran;
+    std::random_device ran;
     int xt = crd.x + ran() % 3 - 1;
     int yt = crd.y + ran() % 3 - 1;
     if (xt < N && yt < M) {
@@ -88,7 +88,7 @@ Cell* Ocean::Step(Pair crd) {
 }
 
 Cell* Ocean::Radar(Pair crd) {
-    random_device ran;
+    std::random_device ran;
     int i = 0;
     while (i != 8) {
         int xt = crd.x + ran() % 3 - 1;
