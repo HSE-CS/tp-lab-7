@@ -4,6 +4,8 @@
 
 #include "../include/object.h"
 
+class Object;
+
 class Stone : public Object {
  public:
   explicit Stone(Cell *_cell = nullptr) : Object(_cell) { type = STONE; }

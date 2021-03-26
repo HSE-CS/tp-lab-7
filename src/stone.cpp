@@ -2,4 +2,4 @@
 
 #include "../include/stone.h"
 
-void Stone::live() { return }
+void Stone::live() { int a = 5; }
