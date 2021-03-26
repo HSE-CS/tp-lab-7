@@ -1,4 +1,4 @@
-#pragma once// Copyright NikDemoShow 2021
+// Copyright TimurZaytsev 2021
 #ifndef INCLUDE_COMMON_H_
 #define INCLUDE_COMMON_H_
 
