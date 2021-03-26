@@ -1,9 +1,9 @@
 // Copyright 2020 PollyllyZh
 #include <random>
 #include <ctime>
-#include "../include/cean.h"
+#include "../include/ocean.h"
 #include "../include/stone.h"
-#include "../include/Object.h"
+#include "../include/object.h"
 #include "../include/common.h"
 Ocean::Ocean() {
     cells = new Cell * [N];
