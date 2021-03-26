@@ -1,6 +1,6 @@
 // Copyright 2020 S. BOR
 
-#include "include/predator.h"
+#include "../include/predator.h"
 #include <iostream>
 #include <exception>
 

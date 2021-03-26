@@ -1,6 +1,6 @@
 // Copyright 2020 S. BOR
 
-#include "include/cell.h"
+#include "../include/cell.h"
 
 Cell::Cell(Coords coords, Ocean *ocean) {
   this->coords = coords;
