@@ -8,7 +8,7 @@
 class Stone : public Object {
     friend Cell;
  public:
-    Stone(Cell * c);
+    explicit Stone(Cell * c);
     ~Stone() {}
     void live();
     char getSymbol() override;
