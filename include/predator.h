@@ -3,11 +3,11 @@
 #ifndef INCLUDE_PREDATOR_H_
 #define INCLUDE_PREDATOR_H_
 
-#include "include/prey.h"
+#include "../include/prey.h"
 
 class Predator : public Prey {
  public:
-  Predator(Cell* newCell);
+  explicit Predator(Cell* newCell);
   ~Predator() = default;
   virtual bool tryToMove();
   virtual void live();
