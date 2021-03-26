@@ -1,8 +1,8 @@
 // Copyright 2021 ArinaMonicheva
 
 #include <iostream>
-#include "ocean.h"
-#include "predator.h"
+#include "include/ocean.h"
+#include "include/predator.h"
 
 Ocean::Ocean(int width, int height) {
   this->height = height;
@@ -109,8 +109,8 @@ void Ocean::addObjects(int quantity, int type,
   srand(time(n));
 
   while(quantity) {
-    int y = rand() % availableCoords.size(), x =
-     rand() % availableCoords[y].size();
+    int y = r_rand(&seed) % availableCoords.size(), x =
+     r_rand(&seed) % availableCoords[y].size();
     if (x > 0) {
       Object* temp = nullptr;
       switch (type) {
