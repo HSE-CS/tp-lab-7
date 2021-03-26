@@ -1,4 +1,4 @@
-// Copyright NikDemoShow 2021
+// Copyright TimurZaytsev 2021
 #include "object.h"
 
 #include "cell.h"
