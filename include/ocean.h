@@ -4,7 +4,7 @@
 
 #include <vector>
 
-#include "common.h"
+#include "../include/common.h"
 
 class Object;
 class Cell;
