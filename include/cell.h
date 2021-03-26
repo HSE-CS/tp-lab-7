@@ -30,7 +30,6 @@ class Cell {
   [[nodiscard]] Ocean *getOcean() const;
   void setObject(Object *object);
   Cell *findMove();
-
 };
 
 #endif  //  INCLUDE_CELL_H_

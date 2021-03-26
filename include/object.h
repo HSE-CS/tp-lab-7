@@ -30,9 +30,6 @@ class Object {
   void setObjType(ObjType objTypeValue);
   virtual ~Object();
   virtual void live() = 0;
-
-
-
 };
 
 #endif  //  INCLUDE_OBJECT_H_

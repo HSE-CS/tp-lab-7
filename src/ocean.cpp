@@ -2,9 +2,10 @@
 //
 // Created by sharg on 20.03.2021.
 //
-#include <random>
 #include <zconf.h>
+#include <random>
 #include "../include/ocean.h"
+
 static std::mt19937_64 rang;
 
 Ocean::Ocean() {
@@ -107,7 +108,7 @@ void Ocean::print() const {
     for (int itN = 0; itN < N; itN++) {
       Object *object = cells[itM][itN].getObject();
       if (object == nullptr) {
-        std::cout << EMPTY_N ;
+        std::cout << EMPTY_N;
       } else {
         ObjType type = object->getObjType();
         if (type == ObjType::PREDATOR) {

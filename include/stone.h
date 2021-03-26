@@ -14,8 +14,6 @@ class Stone : public Object {
       Object(type, cell),
       ot(type) {}
   void live() override;
-
-
 };
 
 #endif  //  INCLUDE_STONE_H_

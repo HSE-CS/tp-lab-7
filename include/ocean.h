@@ -18,11 +18,9 @@ class Ocean {
   std::list<Object *> stuff;
   std::vector<Object *> DeletedEntities;
  public:
-
   void fill(float percentPrey = 0.5,
             float percentPredator = 0.1,
             float percentStone = 0.1);
-
   void addObjects(Object *newObj);
   void deleteObj();
   void addDeletedEntities(Object *obj);
@@ -31,7 +29,6 @@ class Ocean {
   void print() const;
   Ocean();
   ~Ocean();
-
 };
 
 #endif  //  INCLUDE_OCEAN_H_
