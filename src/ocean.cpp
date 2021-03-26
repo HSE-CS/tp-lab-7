@@ -1,6 +1,7 @@
 // Copyright 2021 mkhorosh
 
 #include "ocean.h"
+#include "common.h"
 #include <vector>
 #include <time.h>
 #include <iostream>
