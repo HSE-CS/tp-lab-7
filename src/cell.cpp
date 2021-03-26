@@ -1,4 +1,5 @@
 #include "cell.h"
+#include "object.h"
 
 void Cell::init(Pair p, Ocean* oc)
 {
@@ -9,6 +10,11 @@ void Cell::init(Pair p, Ocean* oc)
 Object* Cell::getObject() const
 {
   return obj;
+}
+
+Ocean* Cell::getOcean() const
+{
+  return ocean;
 }
 
 void Cell::setObject(Object* o)
