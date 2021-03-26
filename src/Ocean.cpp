@@ -99,5 +99,4 @@ void Ocean::removeObject(Object* object) {
             objects.erase(iter + i);
         }
     }
-
 }
