@@ -6,9 +6,7 @@ Object::Object(Cell * c) {
     this->cell = c;
 }
 
-Object::~Object() {
-
-}
+Object::~Object() {}
 
 ObjType Object::getType() const {
     return this->type;

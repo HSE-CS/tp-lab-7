@@ -3,10 +3,11 @@
 #include <iostream>
 #include <sstream>
 #include <algorithm>
+#include <random>
 #include "../include/ocean.h"
 
 Ocean::Ocean() {
-    rand.seed(44);
+    rand_r(reinterpret_cast<unsigned int *>(44));
     stuff = std::vector<Object*>{};
     cells = new Cell*[N];
     for (int i = 0; i < N; i++) {
@@ -20,7 +21,8 @@ Ocean::Ocean() {
 void Ocean::addObjects() {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < M; j++) {
-            if (rand() % 100 <= ENTITY_CREATION) {
+            if (rand_r(reinterpret_cast<unsigned int *>(44))
+                % 100 <= ENTITY_CREATION) {
                 int entType = static_cast<int>(rand() % (
                         STONE_CREATION + CORAL_CREATION +
                         PREDATOR_CREATION + PREY_CREATION));

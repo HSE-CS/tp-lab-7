@@ -33,60 +33,69 @@ void Predator::hunt() {
     int x = cell->getCrd().x_coord;
     int y = cell->getCrd().y_coord;
     std::vector<Pair> dirs;
-    Object *ocean = cell->getOcean()->getCells()[(x + N - 1) % N][(y + M - 1) %
-                                                                  M].getObject();
+    Object *ocean = cell->getOcean()->getCells()
+            [(x + N - 1) % N][(y + M - 1) %M]
+            .getObject();
     if (ocean && ocean->getType() == ObjType::PREY) {
         dirs.push_back
-        (Pair{(int) (x + N - 1) % N, (int) (y + M - 1) % M});
+        (Pair{static_cast<int>(x + N - 1) % N,
+              static_cast<int>(y + M - 1) % M});
     }
     ocean = cell->getOcean()->getCells()
             [(x + N + 1) % N][(y + M + 1) %M]
             .getObject();
     if (ocean && ocean->getType() == ObjType::PREY) {
         dirs.push_back
-        (Pair{(int) (x + N + 1) % N, (int) (y + M + 1) % M});
+        (Pair{static_cast<int>(x + N + 1) % N,
+              static_cast<int>(y + M + 1) % M});
     }
     ocean = cell->getOcean()->getCells()
             [(x + N) % N][(y + M - 1) %M]
             .getObject();
     if (ocean && ocean->getType() == ObjType::PREY) {
         dirs.push_back
-        (Pair{(int) (x + N) % N, (int) (y + M - 1) % M});
+        (Pair{static_cast<int>(x + N) % N,
+              static_cast<int>(y + M - 1) % M});
     }
     ocean = cell->getOcean()->getCells()
             [(x + N - 1) % N][(y + M) %M]
             .getObject();
     if (ocean && ocean->getType() == ObjType::PREY) {
         dirs.push_back
-        (Pair{(int) (x + N - 1) % N, (int) (y + M) % M});
+        (Pair{static_cast<int>(x + N - 1) % N,
+              static_cast<int>(y + M) % M});
     }
     ocean = cell->getOcean()->getCells()
             [(x + N) % N][(y + M + 1) %M]
             .getObject();
     if (ocean && ocean->getType() == ObjType::PREY) {
         dirs.push_back
-        (Pair{(int) (x + N) % N, (int) (y + M + 1) % M});
+        (Pair{static_cast<int>(x + N) % N,
+              static_cast<int>(y + M + 1) % M});
     }
     ocean = cell->getOcean()->getCells()
             [(x + N + 1) % N][(y + M) %M]
             .getObject();
     if (ocean && ocean->getType() == ObjType::PREY) {
         dirs.push_back
-        (Pair{(int) (x + N + 1) % N, (int) (y + M) % M});
+        (Pair{static_cast<int>(x + N + 1) % N,
+              static_cast<int>(y + M) % M});
     }
     ocean = cell->getOcean()->getCells()
             [(x + N + 1) % N][(y + M - 1) %M]
             .getObject();
     if (ocean && ocean->getType() == ObjType::PREY) {
         dirs.push_back
-        (Pair{(int) (x + N + 1) % N, (int) (y + M - 1) % M});
+        (Pair{static_cast<int>(x + N + 1) % N,
+              static_cast<int>(y + M - 1) % M});
     }
     ocean = cell->getOcean()->getCells()
             [(x + N - 1) % N][(y + M + 1) %M]
             .getObject();
     if (ocean && ocean->getType() == ObjType::PREY) {
         dirs.push_back
-        (Pair{(int) (x + N - 1) % N, (int) (y + M + 1) % M});
+        (Pair{static_cast<int>(x + N - 1) % N,
+              static_cast<int>(y + M + 1) % M});
     }
     if (!dirs.empty()) {
         Pair newDir =
@@ -102,7 +111,8 @@ void Predator::hunt() {
                 static_cast<int>(cells[new_x_coord][new_y_coord]
                 .getObject()->getRemainLive() +
                 PREDATOR_EATING_REWARD));
-        cells[new_x_coord][new_y_coord].getObject()->setCell(&cells[new_x_coord][new_y_coord]);
+        cells[new_x_coord][new_y_coord]
+        .getObject()->setCell(&cells[new_x_coord][new_y_coord]);
         cells[x][y].killMe();
     }
 }

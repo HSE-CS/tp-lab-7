@@ -15,9 +15,11 @@ void Prey::live() {
     if (!cell->getOcean()->getCells()[new_x_coord][new_y_coord].getObject() &&
         cell->getOcean()->rand() % 100 < PREY_AMOUNT) {
         cell->getOcean()->getCells()[new_x_coord][new_y_coord].setObject(
-                new Prey{&cell->getOcean()->getCells()[new_x_coord][new_y_coord]});
+                new Prey{&cell->getOcean()->getCells()
+                [new_x_coord][new_y_coord]});
         cell->getOcean()->temp_stuff.push_back(
-                cell->getOcean()->getCells()[new_x_coord][new_y_coord].getObject());
+                cell->getOcean()->getCells()
+                [new_x_coord][new_y_coord].getObject());
     }
 }
 
@@ -120,8 +122,10 @@ void Coral::live() {
             cell->getOcean()->rand() % 100 <
             CORAL_AMOUNT) {
         move();
-        if (x_coord != cell->getCrd().x_coord || y_coord != cell->getCrd().y_coord) {
-            Cell *_cell = &cell->getOcean()->getCells()[x_coord][y_coord];
+        if (x_coord != cell->getCrd().x_coord ||
+            y_coord != cell->getCrd().y_coord) {
+            Cell *_cell = &cell->getOcean()->getCells()
+                    [x_coord][y_coord];
             _cell->setObject(new Coral{_cell});
             int temporary_life_duration = remain_live;
             remain_live = _cell->getObject()->getRemainLive();
