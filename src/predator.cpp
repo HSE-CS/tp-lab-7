@@ -31,7 +31,7 @@ void Predator::live() {
 void Predator::die() {
     Pair crd = this->cell->getCrd();
     this->cell->getOcean()->
-		setPredators(this->cell->getOcean()->getPredators() - 1);
+        setPredators(this->cell->getOcean()->getPredators() - 1);
     this->cell->getOcean()->setCell(crd.x, crd.y, nullptr);
     this->cell->getOcean()->deleteObj(this);}
 

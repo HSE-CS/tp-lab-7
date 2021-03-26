@@ -1,6 +1,5 @@
 // Copyright 2021 Nikolaev Ivan
 
-#include <Windows.h>
 #include <stdio.h>
 #include <iostream>
 #include "../include/ocean.h"
@@ -110,23 +109,21 @@ void Ocean::addObjects() {
 }
 
 void Ocean::print() const {
-    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
             Object* object = cells[i][j].getObject();
             if (object == nullptr) {
-                SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 1));
-                std::cout << "~";
+                std::cout << "\x1B[34m~\033[0m";
             } else {
                 char symbol = object->getSymbol();
                 if (symbol == 'S') {
-                    SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 4));
+                    std::cout << "\x1B[31mS\033[0m";
                 } else if (symbol == 'f') {
-                    SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 10));
+                    std::cout << "\x1B[92mf\033[0m";
+                } else if (symbol == '*') {
+                    std::cout << "\x1B[32m*\033[0m";
                 }
-                std::cout << symbol;
             }
-            SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 15));
         }
         std::cout << std::endl;
     }
