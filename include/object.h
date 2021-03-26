@@ -1,7 +1,7 @@
 // Copyright 2021 Shirokov Alexander
 
-#ifndef _OBJECT_H_
-#define _OBJECT_H_
+#ifndef INCLUDE_OBJECT_H_
+#define INCLUDE_OBJECT_H_
 
 #include "../include/common.h"
 
@@ -20,13 +20,13 @@ class Object {
   char symbol;
 
  public:
-  Object(Cell* cell = nullptr);
+  explicit Object(Cell* cell = nullptr);
   virtual ~Object();
-  virtual void live() = 0; // жизнь объекта
-  void setCell(Cell*);
+  virtual void live() = 0;
+  void setCell(Cell* cell);
   Cell* getCell();
   void setType(ObjType type);
   ObjType getType();
   char getSymbol();
 };
-#endif
+#endif  // INCLUDE_OBJECT_H_

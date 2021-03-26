@@ -1,7 +1,7 @@
 // Copyright 2021 Shirokov Alexander
 
-#ifndef _CELL_H_
-#define _CELL_H_
+#ifndef INCLUDE_CELL_H_
+#define INCLUDE_CELL_H_
 
 #include "../include/common.h"
 #include "../include/object.h"
@@ -9,8 +9,7 @@
 
 class Ocean;
 
-class Cell
-{
+class Cell {
   friend Ocean;
  private:
   Pair crd;
@@ -29,4 +28,4 @@ class Cell
   Cell* findPlace();
   Cell* findPrey();
 };
-#endif
+#endif  // INCLUDE_CELL_H_

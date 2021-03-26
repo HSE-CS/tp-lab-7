@@ -20,9 +20,8 @@ void Prey::live() {
     }
     this->timeToDie--;
     this->reproduce();
-  }
-  else {
-    this->cell->killMe(); 
+  } else {
+    this->cell->killMe();
   }
 }
 
@@ -35,8 +34,7 @@ void Prey::reproduce() {
       tmp->getOcean()->addObject(newPrey);
     }
     this->timeToReproduce = preyReproduction;
-  }
-  else {
+  } else {
     this->timeToReproduce--;
   }
 }

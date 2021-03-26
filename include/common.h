@@ -1,15 +1,14 @@
 // Copyright 2021 Shirokov Alexander
 
-#ifndef _COMMON_H_
-#define _COMMON_H_
+#ifndef INCLUDE_COMMON_H_
+#define INCLUDE_COMMON_H_
 
-struct Pair
-{
-  unsigned x; // 0..M-1
-  unsigned y; // 0..N-1
+struct Pair {
+  unsigned x; 
+  unsigned y; 
 };
 
 const unsigned N = 45;
 const unsigned M = 210;
 
-#endif
+#endif  // INCLUDE_COMMON_H_

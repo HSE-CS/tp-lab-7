@@ -6,16 +6,16 @@
 #include "../include/object.h"
 
 class Coral : public Object {
-protected:
-	unsigned timeToDie;
-	unsigned timeToReproduce;
+ protected:
+  unsigned timeToDie;
+  unsigned timeToReproduce;
 
-public:
-	const int coralLife = 10;
-	const int coralReproduction = 6;
-	explicit Coral(Cell* cell);
-	void live() override;
-	virtual void reproduce();
+ public:
+  const int coralLife = 10;
+  const int coralReproduction = 6;
+  explicit Coral(Cell* cell);
+  void live() override;
+  virtual void reproduce();
 };
 
-#endif
+#endif  // INCLUDE_CORAL_H_

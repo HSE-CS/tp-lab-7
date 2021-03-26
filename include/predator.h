@@ -18,4 +18,4 @@ class Predator : public Prey {
   void reproduce() override;
 };
 
-#endif
+#endif  // INCLUDE_PREDATOR_H_

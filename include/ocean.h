@@ -1,11 +1,11 @@
 // Copyright 2021 Shirokov Alexander
 
-#ifndef _OCEAN_H_
-#define _OCEAN_H_
+#ifndef INCLUDE_OCEAN_H_
+#define INCLUDE_OCEAN_H_
 
+#include <list>
 #include "../include/common.h"
 #include "../include/cell.h"
-#include <list>
 
 class Ocean {
  private:
@@ -27,4 +27,4 @@ class Ocean {
   Cell* findEmpty(Pair crd);
   Cell* findPrey(Pair crd);
 };
-#endif
+#endif  // INCLUDE_OCEAN_H_

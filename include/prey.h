@@ -18,4 +18,4 @@ class Prey : public Object {
   virtual void reproduce();
 };
 
-#endif
+#endif  // INCLUDE_PREY_H_

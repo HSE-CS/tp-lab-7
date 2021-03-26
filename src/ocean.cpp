@@ -10,8 +10,8 @@
 #include "../include/coral.h"
 // #include <Windows.h>
 
-Ocean::Ocean(unsigned N, unsigned M, unsigned Predators, unsigned Preys, unsigned Stones, unsigned Corals) 
-  : size{N, M} {
+Ocean::Ocean(unsigned N, unsigned M, unsigned Predators, unsigned Preys,
+  unsigned Stones, unsigned Corals) : size{N, M} {
   cells = new Cell * [N];
   for (int i = 0; i < N; i++) {
     cells[i] = new Cell[M];
@@ -41,8 +41,7 @@ void Ocean::print() const {
     for (int j = 0; j < size.y; j++) {
       if (cells[i][j].getObject() != nullptr) {
         std::cout << cells[i][j].getObject()->getSymbol();
-      }
-      else {
+      } else {
         std::cout << '.';
       }
     }
@@ -90,8 +89,8 @@ void Ocean::addObject(Object* obj) {
 void Ocean::run() {
   this->print();
   std::cout << "Iteration: 1";
-  //Sleep(3000);
-  //system("cls");
+  //  Sleep(3000);
+  //  system("cls");
   int iteration = 2;
   while (this->stuff.size() != 0) {
     for (auto& obj : this->stuff) {
@@ -101,8 +100,8 @@ void Ocean::run() {
     this->print();
     std::cout << "Iteration: " << iteration;
     iteration++;
-    //Sleep(3000);
-    //system("cls");
+    //  Sleep(3000);
+    //  system("cls");
   }
 }
 
@@ -132,8 +131,7 @@ Cell* Ocean::findEmpty(Pair crd) {
   }
   if (cells.empty()) {
     return nullptr;
-  }
-  else {
+  } else {
     return cells[rand() % cells.size()];
   }
 }
@@ -151,8 +149,7 @@ Cell* Ocean::findPrey(Pair crd) {
   }
   if (food.empty()) {
     return nullptr;
-  }
-  else {
+  } else {
     return food[rand() % food.size()];
   }
 }

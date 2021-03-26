@@ -1,10 +1,9 @@
 // Copyright 2021 Shirokov Alexander
 
-#include "predator.h"
+#include "../include/predator.h"
 #include "../include/cell.h"
 
 Predator::Predator(Cell* cell) : Prey{ cell }, eaten{ 0 } {
-  //this->isHungry = false;
   this->setType(ObjType::PREDATOR);
   this->timeToDie = predatorLife;
   this->timeToReproduce = predatorReproduction;
@@ -12,7 +11,7 @@ Predator::Predator(Cell* cell) : Prey{ cell }, eaten{ 0 } {
 
 void Predator::live() {
   if (this->timeToDie > 0) {
-      Cell* tmp = this->cell->findPrey();
+    Cell* tmp = this->cell->findPrey();
     if (tmp != nullptr) {
       this->eaten += 1;
       tmp->killMe();
@@ -20,8 +19,7 @@ void Predator::live() {
       this->cell = tmp;
       this->cell->setObject(this);
       this->timeToDie += 1;
-    }
-    else {
+    } else {
       tmp = this->cell->findPlace();
       if (tmp != nullptr) {
         this->cell->setObject(nullptr);
@@ -31,8 +29,7 @@ void Predator::live() {
     }
     this->timeToDie--;
     this->reproduce();
-  }
-  else {
+  } else {
     this->cell->killMe();
   }
 }
@@ -47,8 +44,7 @@ void Predator::reproduce() {
     }
     this->timeToReproduce = preyReproduction;
     this->eaten -= predatorUpgrade;
-  }
-  else {
+  } else {
     this->timeToReproduce--;
   }
 }
