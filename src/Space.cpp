@@ -630,11 +630,33 @@ void Movie::renderIntroduction() {
 }
 
 void Movie::renderImperyWin() {
-
+    setConsoleColour(cc(red, black));
+    for (int i = 0; i < displayHeight; ++i) {
+        for (int j = 0; j < displayWidth; ++j) {
+            setCursorPosition(j, i);
+            if (__s_logo_back::imperyBackground[i][j]=='x') {
+                setConsoleColour(cc(red, red));
+            } else {
+                setConsoleColour(cc(black, black));
+            }
+            std::cout<<' ';
+        }
+    }
 }
 
 void Movie::renderRebelsWin() {
-
+    setConsoleColour(cc(green, black));
+    for (int i = 0; i < displayHeight; ++i) {
+        for (int j = 0; j < displayWidth; ++j) {
+            setCursorPosition(j, i);
+            if (__s_logo_back::rebelsBackground[i][j]=='x') {
+                setConsoleColour(cc(green, green));
+            } else {
+                setConsoleColour(cc(black, black));
+            }
+            std::cout<<' ';
+        }
+    }
 }
 
 void Movie::downToBattle() {
@@ -649,7 +671,6 @@ void Movie::downToBattle() {
     for (int iteration = 0; iteration < 30; ++iteration) {
         for (int i = 0; i < displayHeight - 1; ++i) {
             for (int j = 0; j < displayWidth; ++j) {
-                setCursorPosition(j, i);
                 if (display[i][j] == '*' && display[i + 1][j] == ' ') {
                     display[i][j] = ' ';
                 } else if (display[i][j] == ' ' && display[i + 1][j] == '*') {
@@ -660,7 +681,6 @@ void Movie::downToBattle() {
                     //
                 }
             }
-
         }
         for (int i = 0; i < displayWidth; ++i) {
             display[displayHeight - 1][i] = gen() % 15 == 0 ? '*' : ' ';
@@ -672,10 +692,7 @@ void Movie::downToBattle() {
             for (int j = 0; j < displayWidth; ++j) {
                 if (Space::dist(j, i, displayWidth / 2, displayHeight * 2 + 30 - iteration) <
                     sqrt(pow(displayHeight, 2) + pow(displayWidth / 2, 2))) {
-//                    setCursorPosition(j, i + 7 * (60 - i) / 10);
-//                    std::cout << '#';
-//                    display[i + 7 * (60 - i) / 10][j] = '#';
-                    display[i / 4 + 44][j] = '#';
+                    // display[i / 4 + 44][j] = '#';
                 }
             }
         }

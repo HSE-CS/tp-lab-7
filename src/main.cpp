@@ -66,25 +66,26 @@ void intro() {
     st.render(400, true);
     Movie::setAreaToNormalCondition(80, 25, 120, 35);
     Movie::renderIntroduction();
-    ShowConsoleCursor(true);
-    system("color 07");
+//Movie::downToBattle();
+//    ShowConsoleCursor(true);
+//    system("color 07");
 }
 
 void game() {
+    Movie::wait(8);
     genSpace();
+//    Movie::renderSpaceDisplay();
     srand(time(nullptr));
     ShowConsoleCursor(false);
     std::random_device gen;
-    std::mt19937 gen2(rand());
-//    Movie::setDisplayToSpace();
-//    Movie::renderSpaceDisplay();
+    std::mt19937 gen2(rand() + 19);
     Space s;
-    s.generateAsteroidField(20);
+    s.generateAsteroidField(25);
     for (auto x : *s.getObjects()) {
         x->render(x->getPosX(), x->getPosY());
         s.setCellsForObject(x);
     }
-    s.generateArmy(5, 5);
+    s.generateArmy(4, 7);
     for (int i = 0; i < 1000; ++i) {
         for (auto x : *s.getObjects()) {
             s.move(x, i);
@@ -119,7 +120,7 @@ void game() {
                 }
             }
         }
-//        Movie::wait(0.01);
+        Movie::wait(0.005);
         if (s.countSideObject(REBELS) == 0) {
             playMusicFile("imperytheme.wav");
             Movie::renderImperyWin();
@@ -133,12 +134,9 @@ void game() {
 }
 
 int_fast32_t main() {
-    // intro();
-    //game();
-    Movie::setDisplayToSpace();
-    Movie::renderSpaceDisplay();
-    Movie::downToBattle();
-    Movie::wait(45);
+    intro();
+    game();
+    Movie::wait(20);
 
     return 0;
 }
