@@ -1,6 +1,6 @@
 // Copyright 2021 Schenikova
 
-#include "include/ocean.h"
+#include "../include/ocean.h"
 #include <random>
 // #include <system>
 

@@ -1,6 +1,6 @@
 // Copyright 2021 Schenikova
 
-#include "include/predator.h"
+#include "../include/predator.h"
 
 void Predator::step() {
   int x = this->cell->coords.x;
@@ -18,7 +18,7 @@ void Predator::step() {
               return;
             }
           }
-        }    
+        }
       }
       catch(const std::exception& e) {
         // std::cerr << e.what() << '\n';
@@ -34,7 +34,7 @@ void Predator::step() {
             this->cell->ocean->cells[i][j].setObject(this);
             return;
           }
-        }  
+        }
       }
       catch(const std::exception& e) {
         // std::cerr << e.what() << '\n';
@@ -43,7 +43,7 @@ void Predator::step() {
   }
 }
 
-void Predator::create(){
+void Predator::create() {
   int x = this->cell->coords.x;
   int y = this->cell->coords.y;
   for (size_t i = x - 1; i <= x + 1; i++) {
@@ -55,7 +55,7 @@ void Predator::create(){
             this->cell->ocean->cells[i][j].setObject(tmp);
             return;
           }
-        }  
+        }
       }
       catch(const std::exception& e) {
       }
@@ -65,7 +65,7 @@ void Predator::create(){
 
 void Predator::live() {
   isHungry = true;
-  if(!this->numberOfLive) {
+  if (!this->numberOfLive) {
     this->cell->killMe();
     return;
   }

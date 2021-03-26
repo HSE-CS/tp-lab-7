@@ -1,10 +1,10 @@
 // Copyright 2021 Schenikova
 #include <vector>
 
-#include "include/predator.h"
-#include "include/prey.h"
-#include "include/ocean.h"
-#include "include/stone.h"
+#include "../include/predator.h"
+#include "../include/prey.h"
+#include "../include/ocean.h"
+#include "../include/stone.h"
 
 int main() {
     Ocean* ocean = new Ocean;

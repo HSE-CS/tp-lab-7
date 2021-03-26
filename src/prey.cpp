@@ -1,7 +1,7 @@
 // Copyright 2021 Schenikova
 #include <exception>
 
-#include "include/prey.h"
+#include "../include/prey.h"
 
 void Prey::step() {
   int x = this->cell->coords.x;
@@ -15,7 +15,7 @@ void Prey::step() {
             this->cell->ocean->cells[i][j].setObject(this);
             return;
           }
-        }  
+        }
       }
       catch(const std::exception& e) {
       }
@@ -23,7 +23,7 @@ void Prey::step() {
   }
 }
 
-void Prey::create(){
+void Prey::create() {
   int x = this->cell->coords.x;
   int y = this->cell->coords.y;
   for (int i = x - 1; i <= x + 1; i++) {
@@ -36,7 +36,7 @@ void Prey::create(){
             // this->cell->ocean->addObjects(std::vector<Object *>{tmp});
             return;
           }
-        }  
+        }
       }
       catch(const std::exception& e) {
       }
@@ -54,7 +54,7 @@ void Prey::live() {
   if (!((this->len - this->numberOfLive) % this->through)) {
     // std::cout << "wtf";
     create();
-  }  
+  }
 }
 
 void Prey::printInfo() {

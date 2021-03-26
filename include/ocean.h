@@ -5,10 +5,10 @@
 #include <list>
 #include <vector>
 #include <iostream>
-#include <unistd.h> 
+#include <unistd.h>
 
-#include "include/common.h"
-#include "include/cell.h"
+#include "./common.h"
+#include "./cell.h"
 
 class Cell;
 class Object;
@@ -23,7 +23,7 @@ class Ocean {
   int countPredator = 0;
   std::list<Object*> delList;
  public:
- 	Ocean();
+  Ocean();
   ~Ocean();
   void print();
   void addObjects(std::vector<Object*> objects);

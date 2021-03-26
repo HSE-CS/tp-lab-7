@@ -2,7 +2,7 @@
 #ifndef INCLUDE_PREDATOR_H_
 #define INCLUDE_PREDATOR_H_
 
-#include "include/cell.h"
+#include "./cell.h"
 
 class Predator : public Object{
  private:
