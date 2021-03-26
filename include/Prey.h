@@ -1,22 +1,23 @@
 //  Copyright 2021 Kartseva Masha
 #pragma once
-#define INCLUDE_PREY_H
-#ifdef INCLUDE_PREY_H
-#include "../include/object.h"
-#include "../include/cell.h"
-#include "../include/ocean.h"
-#include "../include/common.h"
+#define PREY_H
+#ifdef PREY_H
+#include "Object.h"
+#include "Cell.h"
+#include "Ocean.h"
+#include "Common.h"
+#include <iostream>
 class Cell;
 class Ocean;
 class Prey : public Object {
     friend Cell;
     friend Ocean;
- public:
-    explicit Prey(Cell* c);
-    ~Prey() {}
+public:
+    Prey(Cell* c);
+    ~Prey() {};
     void live();
     void move();
     void copulation();
     char getSymbol() override;
 };
-#endif  // INCLUDE_PREY_H
+#endif // PREY_H

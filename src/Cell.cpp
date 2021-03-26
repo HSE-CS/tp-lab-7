@@ -1,6 +1,5 @@
 //  Copyright 2021 Kartseva Masha
-#include "../include/cell.h"
-
+#include "Cell.h"
 void Cell::init(Pair p, Ocean* oc) {
     crd = p;
     ocean = oc;

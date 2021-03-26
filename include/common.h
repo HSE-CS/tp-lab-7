@@ -1,15 +1,14 @@
 //  Copyright 2021 Kartseva Masha
 #pragma once
-#define INCLUDE_COMMON_H
-#ifdef INCLUDE_COMMON_H
-#include <iostream>
+#define COMMON_H
+#ifdef COMMON_H
 #include <list>
 #include <vector>
 #include <ctime>
+#include <time.h>
 #include <iterator>
 #include <algorithm>
 #include <string>
-
 typedef size_t coord_t;
 
 struct Pair {
@@ -24,5 +23,4 @@ const int LTStone = 10000;
 
 const size_t N = 20;
 const  size_t M = 30;
-
-#endif // INCLUDE_COMMON_H
+#endif  // COMMON_H

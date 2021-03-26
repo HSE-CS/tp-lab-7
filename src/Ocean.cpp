@@ -1,9 +1,8 @@
 //  Copyright 2021 Kartseva Masha
+#include "Ocean.h"
 #include <iostream>
 #include <random>
-#include "../include/ocean.h"
-#include "../include/stone.h"
-#include "../include/object.h"
+
 Ocean::Ocean() {
     cells = new Cell * [N];
     for (auto i = 0; i < N; i++) {
@@ -30,7 +29,8 @@ void Ocean::addObjects(unsigned int n, ObjType type) {
         std::random_device ran;
         unsigned int x = ran() % M;
         unsigned int y = ran() % N;
-        if (cells[y][x].getObject()) { continue;
+        if (cells[y][x].getObject()) {
+            continue;
         } else {
             Object* born = nullptr;
             switch (type) {
@@ -56,13 +56,14 @@ void Ocean::run() {
         system("cls");
         clock_t now = clock();
         print();
-        while (clock() < now + CLOCKS_PER_SEC / 10) {}
+        while (clock() < now + CLOCKS_PER_SEC / 10) {};
         std::list<Object*>::iterator i = stuff.begin();
         while (i != stuff.end()) {
             bool isActive = DeleteObj(*i);
             if (!isActive) {
                 stuff.erase(i++);
-            } else {
+            }
+            else {
                 (*i)->live();
                 ++i;
             }
@@ -96,7 +97,7 @@ Cell* Ocean::Radar(Pair crd) {
         int yt = crd.y + ran() % 3 - 1;
         if (xt < N && yt < M) {
             if (cells[xt][yt].getObject() &&
-            cells[xt][yt].getObject()->getType() == ObjType::PREY)
+                cells[xt][yt].getObject()->getType() == ObjType::PREY)
                 return  &cells[xt][yt];
         }
         i++;

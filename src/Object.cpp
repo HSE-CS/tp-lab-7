@@ -1,6 +1,5 @@
 //  Copyright 2021 Kartseva Masha
-#include "../include/object.h"
-
+#include "Object.h"
 Object::Object(Cell* cell) {
     this->cell = cell;
 }
@@ -8,6 +7,7 @@ Object::Object(Cell* cell) {
 void Object::setCell(Cell* cell) {
     this->cell = cell;
 }
+
 Cell* Object::getCell() {
     return cell;
 }
@@ -19,9 +19,11 @@ unsigned int Object::getLive() {
 void Object::setLive(int lifetime) {
     this->lifetime = lifetime;
 }
+
 bool Object::is_live() {
     return dead;
 }
+
 void Object::readytodie() {
     dead = true;
 }

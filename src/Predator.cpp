@@ -1,14 +1,15 @@
 //  Copyright 2021 Kartseva Masha
-#include "../include/predator.h"
+#include "Predator.h"
 Predator::Predator(Cell* c) :Object(c) {
     this->lifetime = LTPredator;
     type = ObjType::PREDATOR;
 }
 void Predator::live() {
-    if (eat() != true && lifetime > 2) { lifetime -= 2;
+    if (eat() != true && lifetime > 2) {
+        lifetime -= 2;
     } else {
         lifetime--;
-        }
+    }
     move();
     if (lifetime < 0.1 * LTPredator) copulation();
 }
@@ -28,7 +29,7 @@ bool Predator::eat() {
 
     Cell* sacrifice = cell->RADAR();
     if (sacrifice && !sacrifice->getObject()->is_live()
-    && sacrifice->getObject()->getType() == ObjType::PREY) {
+        && sacrifice->getObject()->getType() == ObjType::PREY) {
         sacrifice->getObject()->readytodie();
         sacrifice->getObject()->setLive(0);
         lifetime += 5;

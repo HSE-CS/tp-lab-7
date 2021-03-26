@@ -1,18 +1,21 @@
 //  Copyright 2021 Kartseva Masha
 #pragma once
-#define INCLUDE_OCEAN_H
-#ifdef INCLUDE_OCEAN_H
+#define OCEAN_H
+#ifdef OCEAN_H
+#include "Cell.h"
+#include "Common.h"
+#include "Predator.h"
+#include "Prey.h"
+#include "Stone.h"
+#include "Object.h"
 #include <list>
-#include "../include/common.h"
-#include "../include/cell.h"
-#include "../include/predator.h"
-#include "../include/stone.h"
-#include "../include/prey.h"
+#include <iostream>
+#include <random>
 class Ocean {
- private:
+private:
     Cell** cells;
     std::list<Object*> stuff;
- public:
+public:
     Ocean();
     ~Ocean();
     void AddStuff(Object* obj);
@@ -23,4 +26,4 @@ class Ocean {
     Cell* Step(Pair crd);
     Cell* Radar(Pair cord);
 };
-#endif  // INCLUDE_OCEAN_H
+#endif  // OCEAN_H
