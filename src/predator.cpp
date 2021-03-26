@@ -9,13 +9,15 @@ bool Predator::tryEat() {
     for (int j = currentCell->coords.y - 1; j <= currentCell->coords.y + 1;
     j++) {
       try {
-        if (i >= 0 && i < N && j >= 0 && j < M)
-          if (currentCell->ocean->cells[i][j]->getObject() != nullptr)
+        if (i >= 0 && i < N && j >= 0 && j < M) {
+          if (currentCell->ocean->cells[i][j]->getObject() != nullptr) {
             if (currentCell->ocean->cells[i][j]->getObject()->isPrey()) {
               delete currentCell->ocean->cells[i][j]->getObject();
               currentCell->ocean->cells[i][j]->setObject(nullptr);
               return true;
             }
+          }
+        }
       }
       catch (std::exception e) { }
     }
@@ -24,8 +26,7 @@ bool Predator::tryEat() {
 
 void Predator::step() {
   for (int i = currentCell->coords.x - 1; i <= currentCell->coords.x + 1; i++)
-    for (int j = currentCell->coords.y - 1; j <= currentCell->coords.y + 1;
-    j++) {
+    for (int j = currentCell->coords.y - 1; j <= currentCell->coords.y + 1; j++) {
       try {
         if (i >= 0 && i < N && j >= 0 && j < M)
           if (currentCell->ocean->cells[i][j]->getObject() == nullptr) {
@@ -40,8 +41,7 @@ void Predator::step() {
 
 void Predator::createNew() {
   for (int i = currentCell->coords.x - 1; i <= currentCell->coords.x + 1; i++)
-    for (int j = currentCell->coords.y - 1; j <= currentCell->coords.y + 1;
-    j++) {
+    for (int j = currentCell->coords.y - 1; j <= currentCell->coords.y + 1; j++) {
       try {
         if (i >= 0 && i < N && j >= 0 && j < M)
           if (currentCell->ocean->cells[i][j]->getObject() == nullptr) {

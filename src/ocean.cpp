@@ -17,7 +17,7 @@ Ocean::Ocean() {
 }
 
 void Ocean::addObject(Object * obj, int i, int j) {
-  cells[i][j]->setObject(obj);  
+  cells[i][j]->setObject(obj);
 }
 
 void Ocean::run() {

@@ -11,3 +11,4 @@ const unsigned M = 50;
 const unsigned N = 50;
 
 #endif  // INCLUDE_COMMON_H_
+

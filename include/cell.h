@@ -4,7 +4,6 @@
 
 #include "common.h"
 
-
 class Cell;
 class Ocean;
 class Prey;

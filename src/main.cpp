@@ -1,10 +1,10 @@
 // Copyright 2020 S. BOR
 
+#include <random>
 #include "predator.h"
 #include "prey.h"
 #include "stone.h"
 #include "ocean.h"
-#include <random>
 
 int main() {
   Ocean* ocean = new Ocean();
