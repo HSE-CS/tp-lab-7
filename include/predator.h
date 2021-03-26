@@ -2,8 +2,8 @@
 #ifndef INCLUDE_PREDATOR_H_
 #define INCLUDE_PREDATOR_H_
 
-#include "cell.h"
-#include "ocean.h"
+#include "include/cell.h"
+#include "include/ocean.h"
 
 
 class Predator : public Object {

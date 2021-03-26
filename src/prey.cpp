@@ -1,6 +1,6 @@
 // Copyright 2020 S. BOR
 
-#include "prey.h"
+#include "include/prey.h"
 #include <iostream>
 #include <exception>
 
