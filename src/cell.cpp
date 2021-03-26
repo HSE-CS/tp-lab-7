@@ -20,6 +20,7 @@ void Cell::print() {
 }
 
 void Cell::killMe(){
+  ocean->removeObj(obj);
   delete obj;
   this->obj = nullptr;
 }

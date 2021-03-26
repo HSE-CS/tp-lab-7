@@ -5,6 +5,7 @@
 Prey::Prey(Cell *cell_, size_t lifeTime_, size_t breedCoolDawn_)
     : Object(cell_, ObjType::PREY) {
   lifeTime = lifeTime_;
+  cell->setObject(this);
   breedTime = breedCoolDawn_;
   breedCoolDawn = breedCoolDawn_;
 }

@@ -11,7 +11,7 @@ struct Pair {
   coord_t y;  // 0..N-1
 };
 
-const size_t N = 5;
-const size_t M = 5;
+const size_t N = 25;
+const size_t M = 80;
 
 #endif  // _INCLUDE_COMMON_H_

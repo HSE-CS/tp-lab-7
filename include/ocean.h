@@ -3,11 +3,15 @@
 
 #include <vector>
 #include <iostream>
+#include <chrono>
+#include <thread>
+
 
 #include "Cell.h"
 #include "common.h"
 #include "stone.h"
 #include "prey.h"
+#include "predator.h"
 
 class Cell;
 class Object;
@@ -21,15 +25,21 @@ class Ocean {
   size_t preyLife;
   size_t preyCoolDawn;
   size_t predatorLife;
+  size_t predatorCoolDawn;
+  size_t predatorHunger;
 
  public:
-  Ocean();
+  explicit Ocean(size_t preyLife_ = 14, size_t preyCoolDawn_ = 3,
+                 size_t predatorLife_ = 7, size_t predatorCoolDawn_ = 4,
+                 size_t predatorHunger_= 5);
   ~Ocean();
   void print() const;
   void addObjects(size_t number, ObjType type);
-  void pushObject(Object* obj);
+  void removeObj(Object *obj);
+  void pushObject(Object *obj);
   void run();
   bool check();
   std::vector<Cell *> emptyCells(Pair point);
+  std::vector<Cell *> preyCells(Pair point);
 };
 #endif  // _INCLUDE_OCEAN_H_
