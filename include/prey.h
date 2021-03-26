@@ -2,8 +2,8 @@
 #ifndef INCLUDE_PREY_H_
 #define INCLUDE_PREY_H_
 
-#include "include/cell.h"
-#include "include/ocean.h"
+#include "./cell.h"
+#include "./ocean.h"
 
 class Prey : public Object {
  public:
