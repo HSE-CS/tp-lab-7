@@ -10,7 +10,7 @@ class Prey : public Object {
     int death;
     int timeTodeath;
  public:
-    Prey(Cell* cell, int reproduction, int death) : 
+    Prey(Cell* cell, int reproduction, int death) :
         Object(cell, ObjType::PREY) {
         this->reproduction = reproduction;
         timeToReproduction = reproduction;

@@ -9,7 +9,7 @@ void Predactor::live() {
             isHungry = false;
             timeTodeath = death;
             timeToReproduction--;
-            cell->removeObj();
+            this->cell->removeObj();
             newCell->addObject(this);
             this->cell = newCell;
             return;
@@ -24,10 +24,10 @@ void Predactor::live() {
         if (timeToReproduction == 0) {
             Cell* newCell = reproduct();
             if (newCell) {
-                Object* child = new Predactor(newCell, 
+                Object* child = new Predactor(newCell,
                     timeToReproduction, timeTodeath);
                 child->setCell(newCell);
-                cell->setObject(child);
+                newCell->setObject(child);
             }
             timeToReproduction = reproduction + 1;
         }
@@ -42,7 +42,7 @@ Cell* Predactor::FindPrey() {
         for (int j = -1; j <= 1; j++) {
             Pair pair = { cell->getX() + i, cell->getY() + j };
             Cell* newCell = getNewCell(pair);
-            if (newCell && newCell->getObject() && 
+            if (newCell && newCell->getObject() &&
                 newCell->getObject()->getType() == ObjType::PREY) {
                 return newCell;
             }

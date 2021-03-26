@@ -1,7 +1,6 @@
 // Copyright 2021 Vlad
 #include <ctime>
 #include <iostream>
-#include <stdlib.h>
 #include "Ocean.h"
 #include "Object.h"
 #include "Prey.h"
@@ -75,10 +74,11 @@ void Ocean::AddObject(Object* object) {
 void Ocean::run() {
     for (;;) {
         print();
+        // Sleep(20000)
         for (int i = 0; i < objects.size(); i++) {
-            objects[i]->live();	
+            objects[i]->live();
         }
-        system("cls");  
+       // system("cls");
     }
 }
 
@@ -93,10 +93,11 @@ Cell* Ocean::getCell(Pair pair) {
 void Ocean::removeObject(Object* object) {
     for (int i = 0; i < objects.size(); i++)  {
         Cell* newCell = objects[i]->getCell();
-        if (object->getCell()->getX() == newCell->getX() && 
+        if (object && object->getCell()->getX() == newCell->getX() &&
             object->getCell()->getY() == newCell->getY()) {
             auto iter = objects.cbegin();
             objects.erase(iter + i);
         }
     }
+
 }

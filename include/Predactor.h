@@ -11,7 +11,7 @@ class Predactor : public Object {
     int timeTodeath;
     int timeToReproduction;
  public:
-    Predactor(Cell* cell, int reproduction, int death) : 
+    Predactor(Cell* cell, int reproduction, int death) :
         Object(cell, ObjType::PREDATOR) {
         this->death = death;
         this->reproduction = reproduction;
