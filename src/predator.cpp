@@ -1,9 +1,9 @@
 // Copyright TimurZaytsev 2021
-#include "predator.h"
+#include "../include/predator.h"
 
 #include <iostream>
 
-#include "cell.h"
+#include "../include/cell.h"
 Predator::Predator(Cell* newCell) {
   this->cell = newCell;
   this->reproduct = 0;
