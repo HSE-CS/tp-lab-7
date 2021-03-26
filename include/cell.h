@@ -16,7 +16,8 @@ class Cell {
   Ocean* ocean;
 
  public:
-  explicit Cell(Pair p = {0, 0}, Ocean* oc = nullptr, Object* newObj = nullptr)
+  explicit Cell(Pair p = {0, 0}, Ocean* oc = nullptr,
+                Object* newObj = nullptr)
       : crd(p), obj(newObj), ocean(oc) {}
   Object* getObj() const;
   void setObj(Object*);
