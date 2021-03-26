@@ -11,7 +11,7 @@
 class Predator : public Object {
 private:
     bool yum = false;
-	
+
 public:
     Predator(Cell* cell) : Object(cell) {
         obj_type = ObjType::PREDATOR;

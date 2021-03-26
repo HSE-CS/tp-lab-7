@@ -13,7 +13,7 @@ public:
     Stone(Cell* cell) : Object(cell) {
         obj_type = ObjType::STONE;
         lifetime = stone_lim;
-    };
+    }
     ~Stone() = default;
     bool live() override;
     char get_symbol() override;

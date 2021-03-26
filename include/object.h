@@ -19,14 +19,14 @@ protected:
     uint lifetime;
     ObjType  obj_type;
     uint repro_time;
-	
+
 public:
     Object(Cell* c) : cell(c) {}
     virtual ~Object() = default;
     virtual bool live() = 0;  // жизнь объекта
     virtual char get_symbol() = 0;
-    virtual void move() {};
-    virtual void reproduce() {};
+    virtual void move() {}
+    virtual void reproduce() {}
     Cell* get_cell();
     ObjType get_type();
     void set_lifetime(uint lt);

@@ -9,14 +9,15 @@
 #include "../include/predator.h"
 #include "../include/stone.h"
 
+#include <list>
 
 class Ocean {
     friend Cell;
-	
+
 private:
     Cell** cells;
     std::list<Object*> stuff;
-	
+
 public:
     Ocean();
     ~Ocean();

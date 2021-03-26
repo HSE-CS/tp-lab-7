@@ -33,18 +33,16 @@ void Ocean::print() const {
             if (!cells[i][j].get_object()) {
                 std::cout << ". ";
             }
-            else {
-                if (cells[i][j].get_object()->get_type() == ObjType::PREY) {
-                    num_prey++;
-                }
-                if (cells[i][j].get_object()->get_type() == ObjType::PREDATOR) {
-                    num_predator++;
-                }
-                if (cells[i][j].get_object()->get_type() == ObjType::STONE) {
-                    num_stone++;
-                }
-                std::cout << cells[i][j].get_object()->get_symbol() << " ";
+            if (cells[i][j].get_object()->get_type() == ObjType::PREY) {
+                num_prey++;
             }
+            if (cells[i][j].get_object()->get_type() == ObjType::PREDATOR) {
+                num_predator++;
+            }
+            if (cells[i][j].get_object()->get_type() == ObjType::STONE) {
+                num_stone++;
+            }
+            std::cout << cells[i][j].get_object()->get_symbol() << " ";
         }
         std::cout << std::endl;
     }
