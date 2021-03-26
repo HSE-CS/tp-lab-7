@@ -1,7 +1,7 @@
 //// Copyright 2021 Lukicheva Polina
 
-#ifndef INCLUDE_OBJECT_H_
-#define INCLUDE_OBJECT_H_
+#ifndef OBJECT_H_
+#define OBJECT_H_
 
 #include "../include/common.h"
 #include "../include/ocean.h"
@@ -15,4 +15,4 @@
 
 enum class ObjType { STONE, CORAL, PREY, PREDATOR };
 
-#endif  // INCLUDE_OBJECT_H_
+#endif  // OBJECT_H_
