@@ -6,6 +6,7 @@
 #include "object.h"
 
 #include <vector>
+#include <memory>
 
 class Ocean;
 
