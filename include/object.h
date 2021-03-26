@@ -19,7 +19,10 @@ class Object {
   ObjType type;
 
  public:
-  explicit Object(Cell * = nullptr);
+  explicit Object(Cell *_cell = nullptr) {
+    cell = _cell;
+    type = STONE;
+  };
   virtual void live() = 0;
   void setCell(Cell *);
   ObjType getType() const;

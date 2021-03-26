@@ -2,11 +2,6 @@
 
 #include "../include/object.h"
 
-Object::Object(Cell* _cell = nullptr) {
-  cell = _cell;
-  type = STONE;
-}
-
 void Object::setCell(Cell* _cell) { cell = _cell; }
 
 ObjType Object::getType() const { return type; }
