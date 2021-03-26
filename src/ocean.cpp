@@ -92,7 +92,7 @@ void Ocean::run() {
     ++shift;
     print();
     // std::this_thread::sleep_for(std::chrono::milliseconds(700));
-    system("cls");
+    system("clear");
   }
   print();
 }
