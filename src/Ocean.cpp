@@ -4,7 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <map>
-#include <accctrl.h>
+// #include <accctrl.h>
 
 #include "../include/Ocean.h"
 #include "../include/Stone.h"
@@ -102,7 +102,8 @@ Object *Ocean::getObject(objectType type, Cell* cell) {
 }
 
 void Ocean::printOcean() const {
-    setCursor(0, 0);
+    // setCursor(0, 0);
+    system("cls");
     std::cout << "Ocean (" << step << " step)" << std::endl;
     for (int i = 0; i < OCEAN_Y_SIZE; i++) {
         for (int j = 0; j < OCEAN_X_SIZE; j++) {
@@ -208,7 +209,7 @@ void Ocean::addToStuff(Object *object) {
 }
 
 void Ocean::setCursor(short x, short y) {
-    COORD coord = {x, y};
-    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+    // COORD coord = {x, y};
+    // SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
 
