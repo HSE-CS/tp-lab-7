@@ -7,10 +7,10 @@
 #include "common.h"
 class Stone : public Object
 {
-	friend Cell;
+    friend Cell;
 public:
-	Stone(Cell * c);
-	~Stone() {};
-	void live();
-	char getSymbol() override;
+    Stone(Cell * c);
+    ~Stone() {};
+    void live();
+    char getSymbol() override;
 };

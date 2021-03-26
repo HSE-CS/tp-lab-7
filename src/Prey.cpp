@@ -4,40 +4,39 @@
 
 Prey::Prey(Cell * c) :Object(c)
 {
-	this->lifetime = LTPrey;
-	type = ObjType::PREY;
+    this->lifetime = LTPrey;
+    type = ObjType::PREY;
 }
 void Prey::live()
 {
-	move();
-	if (lifetime < 0.5*LTPrey)
-		copulation();
-	lifetime--;
+    move();
+    if (lifetime < 0.5*LTPrey)
+        copulation();
+    lifetime--;
 }
 char Prey::getSymbol()
 {
-	return PREY_N;
+    return PREY_N;
 }
 void Prey::move()
 {
-	Cell * newCell = cell->FREE();
-	if (newCell)
-	{
-		this->getCell()->Moving();
-		newCell->setObject(this);
-		this->cell = newCell;
-	}
+    Cell * newCell = cell->FREE();
+    if (newCell)
+    {
+        this->getCell()->Moving();
+        newCell->setObject(this);
+        this->cell = newCell;
+    }
 
 }
 void Prey::copulation()
 {
-	Cell * newCell = cell->FREE();
-	if (newCell)
-	{
-	Object * child = new Prey(newCell);
-	newCell->setObject(child);
-	cell->getOcean()->AddStuff(child);
-	}
+    Cell * newCell = cell->FREE();
+    if (newCell)
+    {
+    Object * child = new Prey(newCell);
+    newCell->setObject(child);
+    cell->getOcean()->AddStuff(child);
+    }
 	
-
 }

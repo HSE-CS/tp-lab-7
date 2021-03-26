@@ -7,13 +7,13 @@
 #include "common.h"
 class Predator : public Object
 {
-	friend Cell;
+    friend Cell;
 public:
-	Predator(Cell * c);
-	~Predator() {};
-	void copulation();
-	void live();
-	void move();
-	bool eat();
-	char getSymbol() override;
+    Predator(Cell * c);
+    ~Predator() {};
+    void copulation();
+    void live();
+    void move();
+    bool eat();
+    char getSymbol() override;
 };

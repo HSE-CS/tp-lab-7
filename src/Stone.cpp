@@ -2,14 +2,14 @@
 #include "Stone.h"
 Stone::Stone(Cell * c) :Object(c)
 {
-	this->lifetime = LTStone;
-	type = ObjType::STONE;
+    this->lifetime = LTStone;
+    type = ObjType::STONE;
 };
 void Stone::live()
 {
-	lifetime--;
+    lifetime--;
 };
 char Stone::getSymbol()
 {
-	return STONE_N;
+    return STONE_N;
 };

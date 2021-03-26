@@ -9,13 +9,13 @@ class Cell;
 class Ocean;
 class Prey : public Object
 {
-	friend Cell;
-	friend Ocean;
+    friend Cell;
+    friend Ocean;
 public:
-	Prey(Cell * c);
-	~Prey() {};
-	void live();
-	void move();
-	void copulation();
-	char getSymbol() override;
+    Prey(Cell * c);
+    ~Prey() {};
+    void live();
+    void move();
+    void copulation();
+    char getSymbol() override;
 };

@@ -3,37 +3,37 @@
 
 Object::Object(Cell * cell)
 {
-	this->cell = cell;
+    this->cell = cell;
 };
 
 void Object::setCell(Cell* cell)
 {
-	this->cell = cell;
+    this->cell = cell;
 };
 Cell * Object::getCell()
 {
-	return cell;
+    return cell;
 }
 
 unsigned int Object::getLive()
 {
-	return lifetime;
+    return lifetime;
 }
 
 void Object::setLive(int lifetime)
 {
-	this->lifetime = lifetime;
+    this->lifetime = lifetime;
 }
 bool Object::is_live()
 {
-	return dead;
+    return dead;
 }
 void Object::readytodie()
 {
-	dead = true;
+    dead = true;
 }
 
 ObjType Object::getType()
 {
-	return type;
+    return type;
 }
