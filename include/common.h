@@ -3,8 +3,6 @@
 #ifndef _COMMON_H_
 #define _COMMON_H_
 
-typedef size_t coord_t;
-
 struct Pair
 {
   unsigned x; // 0..M-1
