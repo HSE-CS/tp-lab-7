@@ -36,13 +36,6 @@ Ocean::Ocean(unsigned int _M, unsigned int _N) {
   }
 }
 
-Ocean::~Ocean() {
-  for (size_t i = 0; i < M; i++) {
-    delete[] cells[i];
-  }
-  delete[] cells;
-}
-
 void Ocean::print() const {
   for (size_t i = 0; i < M; i++) {
     for (size_t j = 0; i < N; j++) {
