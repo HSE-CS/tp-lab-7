@@ -17,8 +17,7 @@ class Cell {
   Ocean *ocean;
 
  public:
-  explicit Cell(Pair _p = {static_cast<size_t>(0), static_cast<size_t>(0)},
-                Ocean *_ocean = nullptr)
+  explicit Cell(Pair _p = {0, 0}, Ocean *_ocean = nullptr)
       : crd(_p), obj(nullptr), ocean(_ocean) {}
   Object *getObject() const;
   void setObject(Object *);
