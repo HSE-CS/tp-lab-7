@@ -12,7 +12,6 @@
 #include <ctime>
 #include <random>
 #include <cstdlib>
-#include <cwindows>
 #include "common.h"
 #include "cell.h"
 #include "object.h"

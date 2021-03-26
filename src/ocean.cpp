@@ -95,8 +95,6 @@ void Ocean::createObjects(NATURE _nature, unsigned int _count) {
 }
 
 void Ocean::print() {
-  //  screenCleaner();
-  system("cls");
   for (unsigned int i = 0; i < height; i++) {
     for (unsigned int j = 0; j < width; j++) {
       auto object = cells[i][j]->getObject();
@@ -158,7 +156,6 @@ void Ocean::run(unsigned int _years) {
       }
     }
     print();
-    Sleep(5000);
   }
 }
 
