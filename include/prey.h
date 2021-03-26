@@ -4,6 +4,8 @@
 
 #include "object.h"
 
+#include <memory>
+
 class Prey : public Object {
  public:
     explicit Prey(std::weak_ptr<Cell> cell);

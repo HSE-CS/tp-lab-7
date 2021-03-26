@@ -4,6 +4,8 @@
 
 #include "object.h"
 
+#include <memory>
+
 class Stone : public Object {
  public:
     explicit Stone(std::weak_ptr<Cell> cell);

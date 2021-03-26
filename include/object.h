@@ -27,4 +27,4 @@ class Object : public std::enable_shared_from_this<Object> {
     std::weak_ptr<Cell> cell;
     bool removed = false;
 };
-#endif  // INCLUDE_OBJECT_H
+#endif  // INCLUDE_OBJECT_H_

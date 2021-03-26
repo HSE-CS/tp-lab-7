@@ -5,6 +5,8 @@
 #include "object.h"
 #include "prey.h"
 
+#include <memory>
+
 class Predator : public Prey {
  public:
     explicit Predator(std::weak_ptr<Cell> cell);

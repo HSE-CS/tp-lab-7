@@ -50,4 +50,4 @@ enum class ObjType {
 
 char toChar(const std::shared_ptr<Object> obj);
 
-#endif  // INCLUDE_COMMON_H
+#endif  // INCLUDE_COMMON_H_

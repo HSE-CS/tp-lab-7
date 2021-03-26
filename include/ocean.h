@@ -28,4 +28,4 @@ class Ocean {
     std::vector<std::shared_ptr<Object>> stuff;
 };
 
-#endif  // INCLUDE_OCEAN_H
+#endif  // INCLUDE_OCEAN_H_
