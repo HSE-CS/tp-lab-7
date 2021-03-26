@@ -5,9 +5,9 @@
 #include "../include/object.h"
 
 class Stone : public Object {
-public:
-	explicit Stone(Cell* cell);
-	void live();
+ public:
+        explicit Stone(Cell* cell);
+        void live();
 };
 
 #endif  // INCLUDE_STONE_H_
