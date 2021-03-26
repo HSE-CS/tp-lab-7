@@ -12,7 +12,7 @@ class Predator : public Prey {
  public:
   const int predatorLife = 5;
   const int predatorReproduction = 3;
-  const int const unsigned predatorUpgrade = 2;
+  const int predatorUpgrade = 2;
   explicit Predator(Cell* cell);
   void live() override;
   void reproduce() override;

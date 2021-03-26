@@ -91,7 +91,7 @@ void Ocean::run() {
   this->print();
   std::cout << "Iteration: 1";
   //Sleep(3000);
-  system("cls");
+  //system("cls");
   int iteration = 2;
   while (this->stuff.size() != 0) {
     for (auto& obj : this->stuff) {
@@ -102,7 +102,7 @@ void Ocean::run() {
     std::cout << "Iteration: " << iteration;
     iteration++;
     //Sleep(3000);
-    system("cls");
+    //system("cls");
   }
 }
 
