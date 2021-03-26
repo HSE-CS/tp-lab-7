@@ -1,5 +1,8 @@
 // Copyright 2020 PollyllyZh
-#pragma once
+
+#ifndef INCLUDE_COMMON_H_
+#define INCLUDE_COMMON_H_
+
 #include <iostream>
 #include <list>
 #include <iterator>
@@ -26,3 +29,5 @@ const uint reproduce_time = 4;
 const uint prey_lim = 13;
 const uint predator_lim = 7;
 const uint stone_lim = 500;
+
+#endif  // INCLUDE_COMMON_H_

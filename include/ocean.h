@@ -1,5 +1,8 @@
 // Copyright 2020 PollyllyZh
-#pragma once
+
+#ifndef INCLUDE_OCEAN_H_
+#define INCLUDE_OCEAN_H_
+
 #include "../include/common.h"
 #include "../include/cell.h"
 #include "../include/prey.h"
@@ -25,3 +28,4 @@ public:
     Cell* find_empty(Pair crd);
     Cell* find_prey(Pair crd);
 };
+#endif  // INCLUDE_OCEAN_H_

@@ -1,5 +1,8 @@
 // Copyright 2020 PollyllyZh
-#pragma once
+
+#ifndef INCLUDE_PREY_H_
+#define INCLUDE_PREY_H_
+
 #include "../include/object.h"
 #include "../include/cell.h"
 #include "../include/ocean.h"
@@ -19,3 +22,4 @@ public:
     void reproduce() override;
     char get_symbol() override;
 };
+#endif  // INCLUDE_PREY_H_

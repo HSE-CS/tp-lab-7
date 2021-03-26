@@ -1,7 +1,10 @@
 // Copyright 2020 PollyllyZh
-#pragma once
+#ifndef INCLUDE_CELL_H_
+#define INCLUDE_CELL_H_
+
 #include "../include/object.h"
 #include "../include/ocean.h"
+
 class Cell {
     friend Ocean;
 
@@ -23,3 +26,4 @@ public:
     Cell* get_free_cell();
     Cell* get_prey();
 };
+#endif  // INCLUDE_CELL_H_

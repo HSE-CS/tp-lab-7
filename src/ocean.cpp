@@ -13,7 +13,7 @@ Ocean::Ocean() {
     for (uint i = 0; i < N; i++)
         for (uint j = 0; j < M; j++) {
             cells[i][j].init({ i, j }, this);
-		}
+        }
     }
 }
 Ocean::~Ocean() {

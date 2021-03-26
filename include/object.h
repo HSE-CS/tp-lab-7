@@ -1,5 +1,8 @@
 // Copyright 2020 PollyllyZh
-#pragma once
+
+#ifndef INCLUDE_OBJECT_H_
+#define INCLUDE_OBJECT_H_
+
 #include "../include/common.h"
 
 #define STONE_N '#'
@@ -28,3 +31,4 @@ public:
     ObjType get_type();
     void set_lifetime(uint lt);
 };
+#endif  // INCLUDE_OBJECT_H_

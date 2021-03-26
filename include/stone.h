@@ -1,5 +1,8 @@
 // Copyright 2020 PollyllyZh
-#pragma once
+
+#ifndef INCLUDE_STONE_H_
+#define INCLUDE_STONE_H_
+
 #include "../include/object.h"
 #include "../include/cell.h"
 #include "../include/ocean.h"
@@ -15,3 +18,4 @@ public:
     bool live() override;
     char get_symbol() override;
 };
+#endif  // INCLUDE_STONE_H_

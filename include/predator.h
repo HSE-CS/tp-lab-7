@@ -1,5 +1,8 @@
 // Copyright 2020 PollyllyZh
-#pragma once
+
+#ifndef INCLUDE_PREDATOR_H_
+#define INCLUDE_PREDATOR_H_
+
 #include "../include/common.h"
 #include "../include/ocean.h"
 #include "../include/object.h"
@@ -21,3 +24,4 @@ public:
     char get_symbol() override;
     bool eatTo();
 };
+#endif  // INCLUDE_PREDATOR_H_
