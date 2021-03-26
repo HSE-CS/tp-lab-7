@@ -1,10 +1,10 @@
 //// Copyright 2021 Lukicheva Polina
 
-#ifndef _PREY_H_
-#define _PREY_H_
+#ifndef INCLUDE_PREY_H_
+#define INCLUDE_PREY_H_
 
-#include "stone.h"
-#include "object.h"
+#include "../include/stone.h"
+#include "../include/object.h"
 
 
-#endif
+#endif  // INCLUDE_PREY_H_

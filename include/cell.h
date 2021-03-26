@@ -1,9 +1,9 @@
 //// Copyright 2021 Lukicheva Polina
 
-#ifndef _CELL_H_
-#define _CELL_H_
+#ifndef INCLUDE_CELL_H_
+#define INCLUDE_CELL_H_
 
-#include "common.h"
-#include "Object.h"
+#include "../include/common.h"
+#include "../include/Object.h"
 
-#endif //
+#endif  // INCLUDE_CELL_H_

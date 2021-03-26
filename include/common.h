@@ -1,6 +1,6 @@
 //// Copyright 2021 Lukicheva Polina
-#ifndef _COMMON_H_
-#define _COMMON_H_
+#ifndef INCLUDE_COMMON_H_
+#define INCLUDE_COMMON_H_
 
 
-#endif
+#endif  // INCLUDE_COMMON_H_

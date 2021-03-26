@@ -1,13 +1,13 @@
 //// Copyright 2021 Lukicheva Polina
-#ifndef _OCEAN_H_
-#define _OCEAN_H_
+#ifndef INCLUDE_OCEAN_H_
+#define INCLUDE_OCEAN_H_
 
 
-#include "common.h"
+#include "../include/common.h"
 
-#include "Cell.h"
+#include "../include/Cell.h"
 #include <list>
-#include "object.h"
+#include "../include/object.h"
 
 
-#endif
+#endif  // INCLUDE_OCEAN_H_

@@ -1,10 +1,10 @@
 //// Copyright 2021 Lukicheva Polina
-#ifndef _PREDATOR_H_
-#define _PREDATOR_H_
+#ifndef INCLUDE_PREDATOR_H_
+#define INCLUDE_PREDATOR_H_
 #include <iostream>
 #include <string>
 #include <vector>
-#include "prey.h"
+#include "../include/prey.h"
 
 
-#endif
+#endif  // INCLUDE_PREDATOR_H_
