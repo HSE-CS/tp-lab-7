@@ -63,7 +63,7 @@ bool Prey::moveTo(int x, int y) {
 
 void Prey::move() {
     Pair crd = this->cell->getCrd();
-    int dest = static_cast<int>(gen() % height);
+    int dest = static_cast<int>(gen() % 4);
     bool isMoved = false;
     switch (dest) {
     case 0:
