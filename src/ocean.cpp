@@ -128,7 +128,7 @@ void Ocean::objectStep(Cell *_cell) {
           cells[i - 1][j - 1].obj->getType() != PREDATOR) {
         if (cells[i - 1][j - 1].obj->getType() == PREY) {
           cells[i - 1][j - 1].killMe();
-          ((Predator *)(_cell->obj))->refreshFeed();
+          (reinterpret_cast<Predator *>(_cell->obj))->refreshFeed();
         }
         cells[i - 1][j - 1].obj = _cell->getObject();
         _cell->obj->setCell(&cells[i - 1][j - 1]);
@@ -138,7 +138,7 @@ void Ocean::objectStep(Cell *_cell) {
                  cells[i + 1][j + 1].obj->getType() != PREDATOR) {
         if (cells[i + 1][j + 1].obj->getType() == PREY) {
           cells[i + 1][j + 1].killMe();
-          ((Predator *)(_cell->obj))->refreshFeed();
+          (reinterpret_cast<Predator *>(_cell->obj))->refreshFeed();
         }
         cells[i + 1][j + 1].obj = _cell->getObject();
         _cell->obj->setCell(&cells[i + 1][j + 1]);
@@ -148,7 +148,7 @@ void Ocean::objectStep(Cell *_cell) {
                  cells[i + 1][j - 1].obj->getType() != PREDATOR) {
         if (cells[i + 1][j - 1].obj->getType() == PREY) {
           cells[i + 1][j - 1].killMe();
-          ((Predator *)(_cell->obj))->refreshFeed();
+          (reinterpret_cast<Predator *>(_cell->obj))->refreshFeed();
         }
         cells[i + 1][j - 1].obj = _cell->getObject();
         _cell->obj->setCell(&cells[i + 1][j - 1]);
@@ -158,7 +158,7 @@ void Ocean::objectStep(Cell *_cell) {
                  cells[i - 1][j + 1].obj->getType() != PREDATOR) {
         if (cells[i - 1][j + 1].obj->getType() != PREY) {
           cells[i - 1][j + 1].killMe();
-          ((Predator *)(_cell->obj))->refreshFeed();
+          (reinterpret_cast<Predator *>(_cell->obj))->refreshFeed();
         }
         cells[i - 1][j + 1].obj = _cell->getObject();
         _cell->obj->setCell(&cells[i - 1][j + 1]);
