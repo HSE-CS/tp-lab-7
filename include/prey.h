@@ -13,4 +13,4 @@ class Prey : public Object {
       void breeding();
 };
 
-#endif  // _PREY_H_
+#endif  // INCLUDE_PREY_H_
