@@ -39,6 +39,7 @@ class Ocean {
                                                 {STONE, 1000}};
 
 
+
  public:
     Ocean(unsigned int _height, unsigned int _width);
     ~Ocean();

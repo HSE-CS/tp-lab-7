@@ -5,7 +5,6 @@
 
 Ocean::Ocean(unsigned int _height, unsigned int _width) :
   height(_height), width(_width) {
-  srand(time(0));
   cells.resize(_height);
   for (unsigned int i = 0; i < _height; i++) {
     cells[i].resize(_width);
@@ -78,7 +77,6 @@ void Ocean::deleteObject(Cell *_cell) {
 }
 
 void Ocean::createObjects(NATURE _nature, unsigned int _count) {
-  srand(time(0));
   for(unsigned int i = 0; i < _count; i++) {
     unsigned int x = addOrder.back() / width;
     unsigned int y = addOrder.back() % width;
