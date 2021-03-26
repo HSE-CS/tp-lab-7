@@ -7,9 +7,7 @@
 #include "common.h"
 class Cell;
 class Ocean;
-class Prey : public Object
-
-{
+class Prey : public Object {
     friend Cell;
     friend Ocean;
  public:
@@ -19,4 +17,4 @@ class Prey : public Object
     void move();
     void copulation();
     char getSymbol() override;
-};
+}
