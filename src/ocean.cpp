@@ -21,7 +21,7 @@ Ocean::Ocean(int X, int Y, int number) {
 
 void Ocean::addObjects(int number) {
   for (int i = 0; i < number; i++) {
-    int seed = time(nullptr);
+    unsigned int seed = time(nullptr);
     int x_ = rand_r(&seed) % X;
     int y_ = rand_r(&seed) % Y;
     int prbb = rand_r(&seed) % 100;
