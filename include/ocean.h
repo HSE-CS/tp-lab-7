@@ -3,6 +3,7 @@
 #define INCLUDE_OCEAN_H_
 
 #include "../include/common.h"
+#include "../include/cell.h"
 
 #include "list"
 

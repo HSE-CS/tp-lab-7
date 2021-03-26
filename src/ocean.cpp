@@ -7,7 +7,7 @@
 #include "../include/stone.h"
 #include "../include/cell.h"
 
-#include "stdlib.h"
+#include <stdlib.h>
 #include "algorithm"
 #include "ctime"
 #include "vector"
