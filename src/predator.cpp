@@ -18,8 +18,7 @@ void Predator::live() {
             cell = ptr_cell;
             cell->setObject(this);
             Life_time += 1;
-        }
-        else {
+        } else {
             ptr_cell = cell->seachEmptyPlace();
             if (ptr_cell) {
                 cell->setObject(nullptr);
@@ -29,8 +28,7 @@ void Predator::live() {
         }
         this->breeding();
         Life_time--;
-    }
-    else {
+    } else {
         this->cell->killMe();
     }
 }
