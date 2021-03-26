@@ -27,8 +27,7 @@ void Coral::reproduce() {
       tmp->getOcean()->addObject(newCoral);
     }
     this->timeToReproduce = coralReproduction;
-  }
-  else {
+  } else {
     this->timeToReproduce--;
   }
 }
