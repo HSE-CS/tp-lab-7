@@ -3,7 +3,7 @@
 #ifndef INCLUDE_OBJECT_H_
 #define INCLUDE_OBJECT_H_
 
-#include "include/common.h"
+#include "../include/common.h"
 
 #define STONE_N 'o'
 #define CORAL_N '*'
@@ -18,8 +18,7 @@ enum class ObjType { EMPTY = -1, STONE, PREY, PREDATOR };
 
 class Cell;
 
-class Object
-{
+class Object {
  protected:
   Cell* inCell;
   ObjType type;
