@@ -5,7 +5,7 @@
 
 #include "../include/common.h"
 #include "../include/ocean.h"
-#include "../include/Object.h"
+#include "../include/object.h"
 #include "../include/cell.h"
 
 class Predator : public Object {
