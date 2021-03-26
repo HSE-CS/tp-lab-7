@@ -13,7 +13,6 @@ class Stone : public Object {
     ~Stone() {}
     void live() override;
     char getSymbol() override;
-
 };
 
 #endif  // INCLUDE_STONE_H_
