@@ -28,7 +28,8 @@ void Ocean::addObjects(unsigned int n, ObjType type) {
         unsigned int x = rand_r() % M;
         unsigned int y = rand_r() % N;
         if (cells[y][x].getObject())
-            continue; else {
+            continue; 
+		else {
             Object * born = nullptr;
             switch (type) {
             case ObjType::STONE:
