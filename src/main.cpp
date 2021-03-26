@@ -1,16 +1,15 @@
 // Copyright 2021 Kuznetsov Mikhail
 
 #include <ctime>
-#include <random>
 #include "ocean.h"
 
 int main() {
   srand(time(0));
-  Ocean ocean(20, 168);
+  Ocean ocean(HEIGHT, WIDTH);
   ocean.generateOrder();
-  ocean.createObjects(NATURE::STONE, 370);
-  ocean.createObjects(NATURE::PREY, 980);
-  ocean.createObjects(NATURE::PREDATOR, 520);
-  ocean.run(1000);
+  ocean.createObjects(NATURE::STONE, NUMBEROFSTONES);
+  ocean.createObjects(NATURE::PREY, NUMBEROFPREYS);
+  ocean.createObjects(NATURE::PREDATOR, NUMBEROFPREDATORS);
+  ocean.run(YEARS);
   return 0;
 }
