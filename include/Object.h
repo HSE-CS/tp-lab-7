@@ -21,7 +21,7 @@ class Object;
     ObjType type;
  public:
     Object(Cell * = nullptr)
-    virtual ~Object() {};
+    virtual ~Object() {}
     void setLive(int lifetime);
     void setCell(Cell* cell);
     virtual void live() = 0;
@@ -31,4 +31,4 @@ class Object;
     bool is_live();
     void readytodie();
     ObjType getType();
-};
+}

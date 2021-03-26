@@ -6,9 +6,7 @@
 #include "Ocean.h"
 
 class Ocean;
-class Cell
-
-{
+class Cell {
     friend Ocean;
  private:
     Pair crd;

@@ -5,13 +5,11 @@
 #include "Cell.h"
 #include "Ocean.h"
 #include "common.h"
-class Stone : public Object
-
-{
+class Stone : public Object {
     friend Cell;
  public:
     Stone(Cell * c);
-    ~Stone() {};
+    ~Stone() {}
     void live();
     char getSymbol() override;
-};
+}

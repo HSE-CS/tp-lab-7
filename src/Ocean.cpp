@@ -12,7 +12,7 @@ Ocean::Ocean() {
         for (auto j = 0; j < M; j++)
             cells[i][j].init(Pair{ i, j }, this);
     }
-};
+}
 void Ocean::AddStuff(Object *obj) {
     stuff.push_back(obj);
 }
@@ -25,7 +25,7 @@ void Ocean::print() const {
         }
         std::cout << std::endl;
     }
-};
+}
 void Ocean::addObjects(unsigned int n, ObjType type) {
     while (n > 0) {
         unsigned int x = rand() % M;
@@ -51,7 +51,7 @@ void Ocean::addObjects(unsigned int n, ObjType type) {
             n--;
         }
     }
-};
+}
 void Ocean::run() {
     while (1) {
         system("cls");
@@ -59,12 +59,10 @@ void Ocean::run() {
         print();
         while (clock() < now + CLOCKS_PER_SEC / 10);
         std::list<Object*>::iterator i = stuff.begin();
-        while (i != stuff.end())
-        {
+        while (i != stuff.end()) {
             bool isActive = DeleteObj(*i);
-            if (!isActive)
-            {
-                stuff.erase(i++); 
+            if (!isActive) {
+                stuff.erase(i++);
             }
             else {
                 (*i)->live();
@@ -72,7 +70,7 @@ void Ocean::run() {
             }
         }
     }
-};
+}
 bool Ocean::DeleteObj(Object *obj) {
     if (obj->getLive() == 0) {
         obj->getCell()->killMe();
@@ -100,7 +98,8 @@ Cell * Ocean::Radar(Pair crd) {
         int yt = crd.y + ran() % 3 - 1;
 
         if (xt < N && yt < M) {
-            if (cells[xt][yt].getObject() && cells[xt][yt].getObject()->getType() == ObjType::PREY)
+            if (cells[xt][yt].getObject() 
+				&& cells[xt][yt].getObject()->getType() == ObjType::PREY)
                 return  &cells[xt][yt];
         }
         i++;
@@ -114,4 +113,4 @@ Ocean::~Ocean() {
     delete[] cells;
     for (auto i = stuff.begin(); i != stuff.end(); ++i)
         delete *i;
-};
+}

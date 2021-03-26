@@ -7,9 +7,7 @@
 #include "Stone.h"
 #include "Prey.h"
 #include <list>
-class Ocean
-
-{
+class Ocean {
  private:
     Cell **cells;
     std::list<Object*> stuff;
@@ -23,4 +21,4 @@ class Ocean
     void print() const;
     Cell * Step(Pair crd);
     Cell * Radar(Pair cord);
-};
+}
