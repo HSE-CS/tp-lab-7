@@ -22,5 +22,4 @@ class Cell {
   void setObject(Object* o);
   Pair getCoords();
   Ocean* getOcean();
-	// void killMe();
 };

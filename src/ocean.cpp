@@ -89,7 +89,8 @@ void Ocean::print() const {
                 std::cout << STONE_N;
             } else if (cells[j][i].getObject()->getType() == ObjType::PREY) {
                 std::cout << PREY_N;
-            } else if (cells[j][i].getObject()->getType() == ObjType::PREDATOR) {
+            } else if (cells[j][i].getObject()->getType()
+                            == ObjType::PREDATOR) {
                 std::cout << PREDATOR_N;
             }
         }

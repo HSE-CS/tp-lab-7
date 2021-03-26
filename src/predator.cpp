@@ -21,7 +21,8 @@ Cell* Predator::findPrey() {
         Pair tcrd = { crd.x + offsets[pos].x, crd.y + offsets[pos].y };
         if (checkIfCellExists(tcrd) &&
             cell->getOcean()->getCell(tcrd)->getObject() != nullptr &&
-            cell->getOcean()->getCell(tcrd)->getObject()->getType() == ObjType::PREY) {
+            cell->getOcean()->getCell(tcrd)->getObject()->getType()
+              == ObjType::PREY) {
             return cell->getOcean()->getCell(tcrd);
         } else {
             offsets.erase(offsets.begin() + pos);
