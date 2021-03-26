@@ -3,15 +3,23 @@
 #ifndef _COMMON_H_
 #define _COMMON_H_
 
-typedef size_t coord_t;
+#include <iostream>
 
-struct Pair
-{
-    coord_t x; // 0..M-1
-    coord_t y; // 0..N-1
+typedef int coord_t;
+
+struct Pair {
+  coord_t x;  //  0..M-1
+  coord_t y;  //  0..N-1
 };
 
-const size_t N = 20;
-const size_t M = 50;
+const int N = 20;
+const int M = 20;
 
-#endif
+const int LIFE_TIME_PREDATOR = 15;
+const int TIME_TO_SPAWN_PREDATOR = 3;
+const int TIME_TO_DIE_WITHOUT_FOOD = 3;
+
+const int LIFE_TIME_PREY = 10;
+const int TIME_TO_SPAWN_PREY = 3;
+
+#endif  //  INCLUDE_COMMON_H_

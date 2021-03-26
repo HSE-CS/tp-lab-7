@@ -4,7 +4,7 @@
 #define _OCEAN_H_
 
 #include "common.h"
-#include "Cell.h"
+#include "cell.h"
 #include <list>
 
 class Ocean {
@@ -16,7 +16,8 @@ class Ocean {
     Ocean();
     ~Ocean();
     void print() const;
-    void addObjects(...);
+    void addObjects(Object*);
     void run();
 };
-#endif
+
+#endif  //  INCLUDE_OCEAN_H_

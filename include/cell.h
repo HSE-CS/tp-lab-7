@@ -4,18 +4,19 @@
 #define _CELL_H_
 
 #include "common.h"
-#include "Object.h"
+#include "object.h"
 
 class Ocean;
 
-class Cell
-{
+class Cell {
     friend Ocean;
-private:
+
+ private:
     Pair crd;
     Object *obj;
     Ocean *ocean;
-public:
+
+ public:
     explicit Cell(Pair p = { 0, 0 }, Ocean* oc = nullptr) :
         crd(p),
         obj(nullptr),
@@ -23,7 +24,6 @@ public:
     void init(Pair p, Ocean* oc);
     Object* getObject() const;
     void setObject(Object*);
-    void killMe();
-
 };
-#endif
+
+#endif  //  INCLUDE_CELL_H_
