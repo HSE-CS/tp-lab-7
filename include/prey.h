@@ -1,6 +1,6 @@
 // Copyright dmitrycvetkov 2021
-#ifndef _PREY_H_
-#define _PREY_H_
+#ifndef INCLUDE_PREY_H_
+#define INCLUDE_PREY_H_
 
 #include "object.h"
 
@@ -21,4 +21,4 @@ class Prey : public Object {
     std::size_t reproductionTimer;
 };
 
-#endif  // _PREY_H_
+#endif  // INCLUDE_PREY_H_

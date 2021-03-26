@@ -1,6 +1,6 @@
 // Copyright dmitrycvetkov 2021
-#ifndef _COMMON_H_
-#define _COMMON_H_
+#ifndef INCLUDE_COMMON_H_
+#define INCLUDE_COMMON_H_
 
 #include <cstdint>
 #include <memory>
@@ -50,4 +50,4 @@ enum class ObjType {
 
 char toChar(const std::shared_ptr<Object> obj);
 
-#endif
+#endif  // INCLUDE_COMMON_H

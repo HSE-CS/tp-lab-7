@@ -1,6 +1,6 @@
 // Copyright dmitrycvetkov 2021
-#ifndef _OCEAN_H_
-#define _OCEAN_H_
+#ifndef INCLUDE_OCEAN_H_
+#define INCLUDE_OCEAN_H_
 
 #include <list>
 #include <memory>
@@ -28,4 +28,4 @@ class Ocean {
     std::vector<std::shared_ptr<Object>> stuff;
 };
 
-#endif
+#endif  // INCLUDE_OCEAN_H

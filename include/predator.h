@@ -1,6 +1,6 @@
 // Copyright dmitrycvetkov 2021
-#ifndef _PREDATOR_H_
-#define _PREDATOR_H_
+#ifndef INCLUDE_PREDATOR_H_
+#define INCLUDE_PREDATOR_H_
 
 #include "object.h"
 #include "prey.h"
@@ -19,4 +19,4 @@ class Predator : public Prey {
     bool hunt();
 };
 
-#endif  // _PREDATOR_H_
+#endif  // INCLUDE_PREDATOR_H_
