@@ -10,7 +10,7 @@
 #include <string>
 #include <vector>
 #include <ctime>
-#include <time.h>
+//#include <time.h>
 
 typedef unsigned int uint;
 typedef size_t coord_t;
