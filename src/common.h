@@ -1,5 +1,5 @@
-#ifndef _COMMON_H_
-#define _COMMON_H_
+// Copyright 2021 Ilya Tatsenko
+#pragma once
 
 typedef size_t coord_t;
 
@@ -10,5 +10,3 @@ struct Pair {
 
 const int N = 20;
 const int M = 50;
-
-#endif
