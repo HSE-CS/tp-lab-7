@@ -6,8 +6,8 @@
 typedef size_t coord_t;
 
 typedef struct Coords {
-  coord_t x; // 0..M-1
-  coord_t y; // 0..N-1
+  coord_t x;  // 0..M-1
+  coord_t y;  // 0..N-1
 } coords;
 
 const size_t N = 50;
