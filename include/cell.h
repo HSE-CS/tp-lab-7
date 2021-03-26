@@ -9,12 +9,12 @@ class Ocean;
 
 class Cell {
     friend Ocean;
-private:
-
+ private:
     Object* object;
     Pair coordinates;
     Ocean* ocean;
-public:
+
+ public:
     explicit Cell(Pair p = { 0, 0 }, Ocean* oc = nullptr) :
             coordinates(p), object(nullptr), ocean(oc) {}
     void initialize(Pair p, Ocean* oc);

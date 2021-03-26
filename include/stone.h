@@ -8,11 +8,12 @@
 #include "../include/cell.h"
 
 class Stone : public Object {
-public:
+ public:
     explicit Stone(Cell* cell);
     ~Stone() {}
     void live() override;
     char getSymbol() override;
+
 };
 
 #endif  // INCLUDE_STONE_H_

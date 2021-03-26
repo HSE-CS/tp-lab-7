@@ -10,7 +10,7 @@
 
 class Prey : public Object {
     friend Cell; friend Ocean;
-public:
+ public:
     explicit Prey(Cell* cell);
     ~Prey() {}
     void live();

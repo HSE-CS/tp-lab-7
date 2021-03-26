@@ -14,12 +14,12 @@ class Cell;
 enum class ObjType { PREY, PREDATOR, STONE };
 
 class Object {
-protected:
+ protected:
     Cell* cell;
     int time_of_life;
     bool isDead;
     ObjType type;
-public:
+ public:
     explicit Object(Cell*);
     virtual ~Object() {}
     virtual void live() = 0;

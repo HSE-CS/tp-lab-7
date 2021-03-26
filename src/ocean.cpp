@@ -16,8 +16,8 @@ Ocean::Ocean() {
 
 
 void Ocean::print() const {
-    for (auto i = 0; i < N; i++) {
-        for (auto j = 0; j < M; j++) {
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < M; j++) {
             if (cells[i][j].getObject()) {
                 std::cout << cells[i][j].getObject()->getSymbol();
             } else {
@@ -30,7 +30,7 @@ void Ocean::print() const {
 }
 
 void Ocean::addObjects(unsigned int n, ObjType type) {
-    for (int i = n; i > 0; i--) {
+    for (auto i = n; i > 0; i--) {
         unsigned int seed = time(nullptr);
         unsigned int x = rand_r(&seed) % M;
         unsigned int y = rand_r(&seed) % N;
@@ -54,7 +54,6 @@ void Ocean::addObjects(unsigned int n, ObjType type) {
 
 void Ocean::run() {
     while (true) {
-        std::cout << "\x1b[0m";
         clock_t now = clock();
         print();
         while (clock() < now + CLOCKS_PER_SEC / 10) {
@@ -74,8 +73,8 @@ void Ocean::run() {
 
 Cell* Ocean::transferObject(Pair crd) {
     unsigned int seed = time(nullptr);
-    int x = (crd.x + rand_r(&seed) % 3 - 1) % N;
-    int y = (crd.y + rand_r(&seed) % 3 - 1) % M;
+    int x = (crd.x + std::rand() % 3 - 1) % N;
+    int y = (crd.y + std::rand() % 3 - 1) % M;
     return &cells[x][y];
 }
 Ocean::~Ocean() {

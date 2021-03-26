@@ -7,9 +7,9 @@ class Cell;
 
 class Predator : public Object {
     friend Cell;
-private:
+ private:
     bool isHungry;
-public:
+ public:
     explicit Predator(Cell* c);
     ~Predator() {}
     void live();
