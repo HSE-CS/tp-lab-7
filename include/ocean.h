@@ -43,6 +43,7 @@ class Ocean {
     ~Ocean();
     void print();
     void createObjects(NATURE _nature, unsigned int _count);
+    void generateOrder();
     void addObject(Object* _object);
     void deleteObject(Cell* _cell);
     void run(unsigned int _years);

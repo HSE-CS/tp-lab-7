@@ -5,10 +5,12 @@
 
 Ocean::Ocean(unsigned int _height, unsigned int _width) :
   height(_height), width(_width) {
+  addOrder.resize(_height * _width);
   cells.resize(_height);
   for (unsigned int i = 0; i < _height; i++) {
     cells[i].resize(_width);
     for (unsigned int j = 0; j < _width; j++) {
+      /*
       int temperature = 0;
       if (!i && !j) {
         temperature = std::rand() % 71 - 35;
@@ -29,19 +31,23 @@ Ocean::Ocean(unsigned int _height, unsigned int _width) :
         }
       }
       cells[i][j] = new Cell(this, {i, j}, temperature);
+      */
+      cells[i][j] = new Cell(this, {i, j}, std::rand() % 71 - 35);
     }
   }
-  unsigned int count = _height * _width;
-  addOrder.resize(count);
+}
+
+void Ocean::generateOrder() {
+  unsigned int count = height * width;
   std::vector<unsigned int> residues(count);
-  for (unsigned int i = count - 1; i >= 0; i--) {
+  for (int i = count - 1; i >= 0; i--) {
     residues[i] = std::rand() % (i + 1);
     addOrder[i] = residues[i];
     for (unsigned int j = i + 1; j < count; j++) {
       addOrder[i] += residues[j] + 1;
       addOrder[i] %= (j + 1);
     }
-    //  std::cout << addOrder[i];
+    //  std::cout << addOrder[i] << " ";
   }
 }
 
@@ -91,6 +97,7 @@ void Ocean::createObjects(NATURE _nature, unsigned int _count) {
     }
     cells[x][y]->setObject(object);
     objects.insert(object);
+    //std::cout << i << " ";
   }
 }
 
@@ -114,6 +121,7 @@ void Ocean::run(unsigned int _years) {
   for (unsigned int year = 0; year < _years; year++) {
     for (unsigned int i = 0; i < height; i++) {
       for (unsigned int j = 0; j < width; j++) {
+        /*
         int temperature = 0;
         if (!i && !j) {
           temperature = cells[i][j]->getTemperature() + std::rand() % 11 - 5;
@@ -133,7 +141,9 @@ void Ocean::run(unsigned int _years) {
             temperature = cells[i][j]->getTemperature() + std::rand() % 11 - 5;
           }
         }
-        cells[i][j]->setTemperature(temperature);
+        */
+        cells[i][j]->setTemperature(cells[i][j]->getTemperature()
+                                    + std::rand() % 7 - 3);
       }
     }
 
