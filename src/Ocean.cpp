@@ -99,11 +99,9 @@ void Ocean::removeObject(Object* object) {
             objects.erase(iter + i);
         }
     }
-
 }
 
-Ocean::~Ocean()
-{
+Ocean::~Ocean() {
     for (int i = 0; i < N; i++) {
         delete[] ocean[i];
     }
