@@ -1,5 +1,5 @@
 // Copyright 2021 Krayushkina
-#include "../include/Ocean.h"
+#include "../include/ocean.h"
 #include "../include/Stone.h"
 #include "../include/Object.h"
 Ocean::Ocean() {

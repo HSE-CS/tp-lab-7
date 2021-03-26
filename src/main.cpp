@@ -1,6 +1,6 @@
 // Copyright 2021 Krayushkina
 #include <iostream>
-#include "../include/Ocean.h"
+#include "../include/ocean.h"
 int main() {
     Ocean * oc = new Ocean;
     oc->addObjects(40, ObjType::PREY);

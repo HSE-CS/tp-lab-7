@@ -3,7 +3,7 @@
 
 #include "../include/Object.h"
 #include "../include/Cell.h"
-#include "../include/Ocean.h"
+#include "../include/ocean.h"
 #include "../include/common.h"
 class Stone : public Object {
     friend Cell;

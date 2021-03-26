@@ -3,7 +3,7 @@
 
 #include "../include/common.h"
 #include "../include/Object.h"
-#include "../include/Ocean.h"
+#include "../include/ocean.h"
 
 class Ocean;
 class Cell {
