@@ -1,5 +1,5 @@
 // Copyright 2021 Egor Buzanov
 
-#include "stone.h"
+#include "../include/stone.h"
 
 void Stone::live() {}

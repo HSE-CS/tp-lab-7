@@ -2,8 +2,9 @@
 #ifndef INCLUDE_CELL_H_
 #define INCLUDE_CELL_H_
 
-#include "common.h"
-#include "object.h"
+#include "../include/common.h"
+#include "../include/object.h"
+#include "../include/ocean.h"
 
 class Ocean;
 
@@ -16,11 +17,12 @@ class Cell {
   Ocean *ocean;
 
  public:
-  explicit Cell(Pair _p = {0, 0}, Object *_obj = nullptr,
-                Ocean *_ocean = nullptr)
-      : crd(_p), obj(_obj), ocean(_ocean) {}
+  explicit Cell(Pair _p = {0, 0}, Ocean *_ocean = nullptr)
+      : crd(_p), obj(nullptr), ocean(_ocean) {}
   Object *getObject() const;
   void setObject(Object *);
+  void killMe();
+  Ocean *getOcean() const;
 };
 
 #endif  // INCLUDE_CELL_H_
