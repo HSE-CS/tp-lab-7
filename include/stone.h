@@ -12,4 +12,4 @@ class Stone : public Object {
     ~Stone();
 };
 
-#endif //  INCLUDE_STONE_H_
+#endif  //  INCLUDE_STONE_H_

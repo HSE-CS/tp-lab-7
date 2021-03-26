@@ -5,7 +5,7 @@
 Stone::Stone(Cell * _cell,
              NATURE _nature,
              unsigned int _age) :
-  Object(_cell, _nature, _age){
+  Object(_cell, _nature, _age) {
 }
 
 

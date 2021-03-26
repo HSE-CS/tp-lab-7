@@ -40,10 +40,10 @@ void Prey::live() {
 void Prey::swim() {
   auto area = cell->getArea();
   auto ocean = cell->getOcean();
-  for (auto p: area) {
+  for (auto p : area) {
     auto newCell = ocean->getCell(p.first, p.second);
     auto object = newCell->getObject();
-    if(object == nullptr) {
+    if (object == nullptr) {
         newCell->setObject(this);
         cell->setObject(nullptr);
         break;
