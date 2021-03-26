@@ -4,11 +4,10 @@
 
 #include "../include/common.h"
 #include "../include/object.h"
+#include "../include/ocean.h"
 
 class Ocean;
-
-class Cell
-{
+class Cell {
     friend Ocean;
  private:
     Pair crd;

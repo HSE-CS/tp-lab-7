@@ -6,17 +6,17 @@
 #include "../include/common.h"
 #include "../include/cell.h"
 
-class Ocean
-{
+class Cell;
+class Ocean {
  private:
     Cell **cells;
     std::list<Object*> stuff;
     std::list<Object*> ListOfTheDead;
-    coord_t M, N;
+    int M, N;
     int number_objects;
 
  public:
-    Ocean(coord_t M, coord_t N,  int number_objects);
+    Ocean(int M, int N,  int number_objects);
     ~Ocean();
     void print() const;
     void addObjects(int number_objects);
