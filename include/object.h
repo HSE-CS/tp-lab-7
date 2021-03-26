@@ -6,6 +6,7 @@
 #include "common.h"
 #include "ocean.h"
 #include "object.h"
+#include "cell.h"
 
 #define STONE_N '#'
 #define CORAL_N '*'
@@ -14,24 +15,21 @@
 
 enum class ObjType { STONE, CORAL, PREY, PREDATOR };
 
-class Cell {
-  friend Ocean;
-private:
-  Pair crd;
-  Object* obj;
-  Ocean* ocean;
+class Object {
+protected:
+  Cell* cell;
+  ObjType type;
+  bool dead;
 public:
-  explicit Cell(Pair p = { 0, 0 }, Ocean* oc = nullptr) :
-    crd(p),
-    obj(nullptr),
-    ocean(oc) {}
-  void init(Pair p, Ocean* oc);
-  Object* getObject() const;
-  Ocean* getOcean() const;
-  void setObject(Object* obj);
-  int getX() const;
-  int getY() const;
-  void killMe();
-  bool isEmpty() const;
-};
+  Object(ObjType t, Cell* c) : cell(c)
+    type(t), dead(false) {}
+  virtual ~Object();
+  Cell* getCell();
+  virtual void live() = 0;
+  void setCell(Cell*);
+  virtual void move();
+  void die();
+  ObjType getType();
+
+}
 #endif

@@ -11,5 +11,6 @@ class Stone : public Object {
    explicit Stone(Cell* c) : Object(ObjType::STONE, c) { cell = c; }
    ~Stone();
    void live() override;
+   void setCell(Cell*);
 };
 #endif

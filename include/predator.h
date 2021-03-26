@@ -11,14 +11,13 @@ protected:
 public:
   Predator(Cell* c,
     int health = PREDATOR_LIFE, int multi_ = 3, int hun = 2) :
-    Prey(c) {
+    Prey(c, health, multi_) {
     this->hunger = 3;
     this->type = ObjType::PREDATOR;
   }
   ~Predator();
   void live() override;
   void eat();
-  void multi() override;
   void setCell(Cell*);
 };
 #endif

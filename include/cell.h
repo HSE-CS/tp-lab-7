@@ -8,26 +8,24 @@
 
 class Ocean;
 
-class Cell
-{
-	friend Ocean;
-private:
-	Pair crd;
-	Object* obj;
-	Ocean* ocean;
-public:
-	explicit Cell(Pair p = { 0, 0 }, Ocean* oc = nullptr) :
-		crd(p),
-		obj(nullptr),
-		ocean(oc) {}
-	void init(Pair p, Ocean* oc);
-	Object* getObject() const;
-	Ocean* getOcean() const;
-	void setObject(Object*);
-	void killMe();
-	Cell& getN(int row, int column);
-	Cell* getNany(ObjType* habitant = nullptr);
-	size_t near(ObjType obj);
 
-};
+class Cell {
+  friend Ocean;
+private:
+  Pair crd;
+  Object* obj;
+  Ocean* ocean;
+public:
+  explicit Cell(Pair p = { 0, 0 }, Ocean* oc = nullptr) :
+    crd(p),
+    obj(nullptr),
+    ocean(oc) {}
+  void init(Pair p, Ocean* oc);
+  Object* getObject() const;
+  Ocean* getOcean() const;
+  void setObject(Object* obj);
+  int getX() const;
+  int getY() const;
+  void killMe();
+  bool isEmpty() const;
 #endif //
