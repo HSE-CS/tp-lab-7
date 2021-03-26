@@ -1,4 +1,4 @@
-// Copyright NikDemoShow 2021
+// Copyright TimurZaytsev 2021
 #include "prey.h"
 
 #include <iostream>
