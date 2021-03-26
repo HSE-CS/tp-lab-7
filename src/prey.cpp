@@ -1,6 +1,6 @@
 // Copyright 2021 ArinaMonicheva
 
-#include "prey.h"
+#include "include/prey.h"
 
 Prey::Prey(Cell* newCell) : Stone(newCell) {
   type = ObjType::PREY;
@@ -44,7 +44,7 @@ bool Prey::tryToMove() {  // randfunc
    {(cds.x - 1) % w, cds.y}, {(cds.x + 1) % w, cds.y},
    {cds.x, (cds.y - 1) % h} };
   int attempt = 4;
-  int step = rand() % attempt;
+  int step = rand_r(&seed) % attempt;
 
   while (!inCell->getOcean()->movement(cds, availableSteps[step], this)) {
     availableSteps.erase(availableSteps.begin() + step);
@@ -52,7 +52,7 @@ bool Prey::tryToMove() {  // randfunc
     if (!attempt) {
       break;
     }
-    step = rand() % attempt;
+    step = rand_r(&seed) % attempt;
   }
 
   return attempt;
