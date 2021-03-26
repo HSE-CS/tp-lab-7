@@ -1,10 +1,10 @@
 // Copyright TimurZaytsev 2021
-#include "prey.h"
+#include "../include/prey.h"
 
 #include <iostream>
 
-#include "cell.h"
-#include "ocean.h"
+#include "../include/cell.h"
+#include "../include/ocean.h"
 Prey::Prey(Cell* newCell) {
   this->ReproductionTime = std::rand() % 3 + 4;
   this->reproduct = 0;
