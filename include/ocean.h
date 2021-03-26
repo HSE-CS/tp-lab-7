@@ -8,8 +8,8 @@
 // #include <thread>
 
 
-#include "cell.h"
 #include "common.h"
+#include "cell.h"
 #include "stone.h"
 #include "prey.h"
 #include "predator.h"
