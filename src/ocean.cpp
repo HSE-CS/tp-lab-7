@@ -52,8 +52,8 @@ void Ocean::print() const {
 }
 void Ocean::add_objects(ObjType obj_type, uint num) {
     for (uint i = 0; i < num; ) {
-        auto n = rand() % N;
-        auto m = rand() % M;
+        auto n = rand_r() % N;
+        auto m = rand_r() % M;
 
         if (cells[n][m].get_object())
             continue;
@@ -90,8 +90,8 @@ void Ocean::del_obj(Object* object) {
 Cell* Ocean::find_empty(Pair crd) {
     std::srand(unsigned(std::time(0)));
     for (uint i = 0; i < attempts; i++) {
-        uint x1 = crd.x + rand() % 3 - 1;
-        uint y1 = crd.y + rand() % 3 - 1;
+        uint x1 = crd.x + rand_r() % 3 - 1;
+        uint y1 = crd.y + rand_r() % 3 - 1;
         if (x1 < N && y1 < M)
             if (cells[x1][y1].get_object() == nullptr)
                 return &cells[x1][y1];
@@ -103,8 +103,8 @@ Cell* Ocean::find_prey(Pair crd) {
     std::srand(unsigned(std::time(0)));
 
     for (uint i = 0; i < attempts; i++) {
-        uint x1 = crd.x + rand() % 3 - 1;
-        uint y1 = crd.y + rand() % 3 - 1;
+        uint x1 = crd.x + rand_r() % 3 - 1;
+        uint y1 = crd.y + rand_r() % 3 - 1;
 
         if (x1 < N && y1 < M)
             if (cells[x1][y1].get_object() &&
