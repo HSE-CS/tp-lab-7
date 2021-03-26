@@ -1,6 +1,6 @@
 // Copyright 2021 Grachev Alexander
 
-#ifndef INCLUDE_PREY_H
-#define INCLUDE_PREY_H
+#ifndef INCLUDE_PREY_H_
+#define INCLUDE_PREY_H_
 
-#endif  // INCLUDE_PREY_H
+#endif  // INCLUDE_PREY_H_
