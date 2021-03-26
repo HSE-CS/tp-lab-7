@@ -1,6 +1,6 @@
-// Copyright 2021 FOM
-#include "predator.h"
-#include "cell.h"
+// Copyright 2021 Sozinov Kirill
+#include "../include/predator.h"
+#include "../include/cell.h"
 
 Predator::Predator(Cell* cell) : Prey(cell) {
     this->type = PREDATOR_N;
@@ -18,8 +18,7 @@ void Predator::live() {
             cell = ptr_cell;
             cell->setObject(this);
             Life_time += 1;
-        }
-        else {
+        }else {
             ptr_cell = cell->seachEmptyPlace();
             if (ptr_cell) {
                 cell->setObject(nullptr);
@@ -29,8 +28,7 @@ void Predator::live() {
         }
         this->breeding();
         Life_time--;
-    }
-    else {
+    }else {
         this->cell->killMe();
     }
 }

@@ -2,12 +2,12 @@
 #ifndef INCLUDE_PREY_H_
 #define INCLUDE_PREY_H_
 
-#include "object.h"
+#include "../include/object.h"
 
 class Prey : public Object {
-protected:
+ protected:
     unsigned int Life_time;
-public:
+ public:
     explicit Prey(Cell* cell);
     void live() override;
     void breeding();

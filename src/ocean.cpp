@@ -3,11 +3,11 @@
 #include <iostream>
 #include <vector>
 
-#include "stone.h"
-#include "prey.h"
-#include "predator.h"
-#include "common.h"
-#include "ocean.h"
+#include "../include/stone.h"
+#include "../include/prey.h"
+#include "../include/predator.h"
+#include "../include/common.h"
+#include "../include/ocean.h"
 
 
 Ocean::Ocean(int M, int N,
@@ -36,12 +36,10 @@ void Ocean::addObjects(int number_objects) {
         Object* obj = nullptr;
         if (type_probability > probability_border_up) {
             obj = new Predator(&cells[x][y]);
-        }
-        else if ((type_probability <= probability_border_up) &&
+        }else if ((type_probability <= probability_border_up) &&
             (type_probability >= probability_border_down)) {
             obj = new Stone(&cells[x][y]);
-        }
-        else if (type_probability < probability_border_down) {
+        }else if (type_probability < probability_border_down) {
             obj = new Prey(&cells[x][y]);
         }
         this->cells[x][y].setObject(obj);
@@ -53,8 +51,7 @@ void Ocean::print() const {
         for (int j = 0; j < N; j++) {
             if (!cells[i][j].getObject()) {
                 std::cout << '.';
-            }
-            else {
+            }else {
                 std::cout << cells[i][j].getObject()->getType();
             }
         }
@@ -77,8 +74,7 @@ Cell* Ocean::seachEmptyPlace(Pair coordinate) {
     }
     if (!emptyCells.empty()) {
         return emptyCells[rand() % emptyCells.size()];
-    }
-    else {
+    }else {
         return nullptr;
     }
 }
@@ -127,8 +123,7 @@ Cell* Ocean::hunt(Pair coordinate) {
     }
     if (!preyCells.empty()) {
         return preyCells[rand() % preyCells.size()];
-    }
-    else {
+    }else {
         return nullptr;
     }
 }

@@ -1,5 +1,5 @@
 // Copyright 2021 Sozinov Kirill
-#include "stone.h"
+#include "../include/stone.h"
 
 Stone::Stone(Cell* cell) : Object(cell) {
     this->type = STONE_N;
