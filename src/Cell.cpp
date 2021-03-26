@@ -12,7 +12,7 @@ Object* Cell::getObject() const {
 
 void Cell::setObject(Object* object) {
     this->obj = object;
-    if(ocean != nullptr)
+    if (ocean != nullptr)
         ocean->AddObject(object);
 }
 

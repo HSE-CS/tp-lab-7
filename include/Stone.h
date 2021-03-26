@@ -3,8 +3,8 @@
 #define INCLUDE_STONE_H_
 #include "Object.h"
 class Stone : public Object {
-public:
-    Stone(Cell* cell = nullptr) : Object(cell) {}
+ public:
+    explicit Stone(Cell* cell = nullptr) : Object(cell) {}
     void live() override;
     ~Stone() {}
 };

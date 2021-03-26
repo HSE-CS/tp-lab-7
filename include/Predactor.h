@@ -4,14 +4,15 @@
 #include "Cell.h"
 #include "Object.h"
 class Predactor : public Object {
-private:
+ private:
     bool isHungry = true;
     int death;
     int reproduction;
     int timeTodeath;
     int timeToReproduction;
-public:
-    Predactor(Cell* cell, int reproduction, int death) : Object(cell, ObjType::PREDATOR) {
+ public:
+    Predactor(Cell* cell, int reproduction, int death) : 
+        Object(cell, ObjType::PREDATOR) {
         this->death = death;
         this->reproduction = reproduction;
         timeToReproduction = reproduction;
@@ -20,6 +21,5 @@ public:
     void live() override;
     virtual Cell* FindPrey();
     ~Predactor() {}
-
 };
 #endif  // INCLUDE_PREDACTOR_H_

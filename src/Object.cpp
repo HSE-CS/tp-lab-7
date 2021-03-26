@@ -9,7 +9,7 @@ void Object::setCell(Cell* cell) {
 void Object::move() {
     int x = std::rand() % 3 - 1;
     int y = std::rand() % 3 - 1;
-    Pair pair = { x,y };
+    Pair pair = { x, y };
     Cell* newCell = getNewCell(pair);
     for (int i = 0; i < 20; i++) {
         if (newCell && !newCell->getObject()) {

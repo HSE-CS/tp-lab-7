@@ -4,13 +4,14 @@
 #include "Cell.h"
 #include "Object.h"
 class Prey : public Object {
-private:
+ private:
     int reproduction;
     int timeToReproduction;
     int death;
     int timeTodeath;
-public:
-    Prey(Cell* cell, int reproduction, int death) : Object(cell, ObjType::PREY) {
+ public:
+    Prey(Cell* cell, int reproduction, int death) : 
+        Object(cell, ObjType::PREY) {
         this->reproduction = reproduction;
         timeToReproduction = reproduction;
         this->death = death - 1;

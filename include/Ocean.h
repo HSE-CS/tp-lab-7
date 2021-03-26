@@ -12,13 +12,13 @@ class Cell;
 class Ocean {
     friend Cell;
     friend Object;
-private:
+ private:
     Cell **ocean;
     std::vector<Object*> objects;
     const int N = 20;
     const int M = 50;
     void setObject(Object* obj);
-public:
+ public:
     Ocean(int stone, int prey, int predactor, int reproduction, int death);
     void print() const;
     void AddObject(Object* object);

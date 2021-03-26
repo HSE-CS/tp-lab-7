@@ -6,11 +6,11 @@
 class Cell;
 enum class ObjType { STONE, CORAL, PREY, PREDATOR };
 class Object {
-protected:
+ protected:
     Cell* cell;
     ObjType type;
-public:
-    Object(Cell* cell = nullptr, ObjType type = ObjType::STONE) {
+ public:
+    explicit Object(Cell* cell = nullptr, ObjType type = ObjType::STONE) {
         this->cell = cell;
         this->type = type;
     }
@@ -22,6 +22,5 @@ public:
     ObjType getType();
     Cell* getNewCell(Pair pair);
     Cell* reproduct();
-
 };
 #endif  // INCLUDE_OBJECT_H_

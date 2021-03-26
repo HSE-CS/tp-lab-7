@@ -1,14 +1,14 @@
 // Copyright 2021 Vlad
+#include <ctime>
+#include <iostream>
+#include <stdlib.h>
 #include "Ocean.h"
 #include "Object.h"
 #include "Prey.h"
 #include "Cell.h"
 #include "Predactor.h"
 #include "Stone.h"
-#include <ctime>
-#include <iostream>
-#include "windows.h"
-#include <stdlib.h>
+
 
 void Ocean::setObject(Object* obj) {
     int x = std::rand() % N;
@@ -25,14 +25,12 @@ void Ocean::setObject(Object* obj) {
 }
 
 Ocean::Ocean(int stone, int prey, int predactor, int reproduction, int death) {
-
     ocean = new Cell *[N];
     for (int i = 0; i < N; i++) {
         ocean[i] = new Cell[M];
         for (int j = 0; j < M; j++) {
-            ocean[i][j].init(Pair{ i,j }, this);
+            ocean[i][j].init(Pair{ i, j }, this);
         }
-
     }
     for (int i = 0; i < stone; i++) {
         setObject(new Stone());
@@ -48,8 +46,6 @@ Ocean::Ocean(int stone, int prey, int predactor, int reproduction, int death) {
 void Ocean::print() const {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < M; j++) {
-
-
             if (ocean[i][j].getObject() == nullptr) {
                 std::cout << '.';
                 continue;
@@ -65,7 +61,6 @@ void Ocean::print() const {
                 std::cout << '*';
                 break;
             default:
-                
                 break;
             }
         }
@@ -80,15 +75,11 @@ void Ocean::AddObject(Object* object) {
 void Ocean::run() {
     for (;;) {
         print();
-        Sleep(1000);
         for (int i = 0; i < objects.size(); i++) {
             objects[i]->live();	
         }
-        system("cls");
-
-        
+        system("cls");  
     }
-
 }
 
 Cell* Ocean::getCell(Pair pair) {
@@ -102,7 +93,8 @@ Cell* Ocean::getCell(Pair pair) {
 void Ocean::removeObject(Object* object) {
     for (int i = 0; i < objects.size(); i++)  {
         Cell* newCell = objects[i]->getCell();
-        if (object->getCell()->getX() == newCell->getX() && object->getCell()->getY() == newCell->getY()) {
+        if (object->getCell()->getX() == newCell->getX() && 
+            object->getCell()->getY() == newCell->getY()) {
             auto iter = objects.cbegin();
             objects.erase(iter + i);
         }
