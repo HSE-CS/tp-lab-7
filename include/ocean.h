@@ -3,13 +3,13 @@
 #ifndef INCLUDE_OCEAN_H_
 #define INCLUDE_OCEAN_H_
 
+#include <list>
+
 #include "../include/common.h"
 #include "../include/cell.h"
 #include "../include/prey.h"
 #include "../include/predator.h"
 #include "../include/stone.h"
-
-#include <list>
 
 class Ocean {
     friend Cell;
