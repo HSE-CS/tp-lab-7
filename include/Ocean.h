@@ -1,12 +1,12 @@
 // Copyright 2021 Krayushkina
 #pragma once
 
+#include <list>
 #include "../include/common.h"
 #include "../include/Cell.h"
 #include "../include/Predator.h"
 #include "../include/Stone.h"
 #include "../include/Prey.h"
-#include <list>
 class Ocean {
  private:
     Cell **cells;

@@ -28,8 +28,7 @@ void Ocean::addObjects(unsigned int n, ObjType type) {
         unsigned int x = rand_r() % M;
         unsigned int y = rand_r() % N;
         if (cells[y][x].getObject())
-            continue;
-        else{
+            continue; else {
             Object * born = nullptr;
             switch (type) {
             case ObjType::STONE:
@@ -60,8 +59,7 @@ void Ocean::run() {
             bool isActive = DeleteObj(*i);
             if (!isActive) {
                 stuff.erase(i++);
-            }
-            else {
+            } else {
                 (*i)->live();
                 ++i;
                  }
