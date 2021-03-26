@@ -9,7 +9,7 @@
 class Predator : public Object {
     friend Cell;
  public:
-    Predator(Cell* c);
+    explicit Predator(Cell* c);
     ~Predator() {}
     void copulation();
     void live();
