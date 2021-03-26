@@ -1,0 +1,5 @@
+{
+    "Creature1": {"name": "prey", "amount": "3000", "life": "5", "reproduce": "4", "eat": "-1"},
+    "Creature2": {"name": "predator", "amount": "100", "life": "5", "reproduce": "4", "eat": "4"},
+    "Creature3": {"name": "stone", "amount": "1000", " life": "-1", "reproduce": "-1", "eat": "-1"}
+}

@@ -8,5 +8,5 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
-    - run: pip install cpplint
-    - run: cpplint --recursive .
+    - run: pip install cpplint 
+    - run: cpplint --recursive --exclude include/json.hpp --filter=-build/include_subdir .
