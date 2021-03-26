@@ -1,6 +1,6 @@
 // Copyright 2021 ArinaMonicheva
 
-#include "include/cell.h"
+#include "../include/cell.h"
 
 void Cell::init(coords newCds, Ocean* ocean) {
   currentCds.x = newCds.x;
