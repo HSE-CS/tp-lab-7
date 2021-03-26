@@ -1,5 +1,6 @@
 // Copyright 2020 PollyllyZh
 #include <random>
+#include <ctime>
 #include "../include/ocean.h"
 #include "../include/stone.h"
 #include "../include/object.h"
@@ -51,6 +52,7 @@ void Ocean::print() const {
     std::cout << "stone: " << num_stone << std::endl;
 }
 void Ocean::add_objects(ObjType obj_type, uint num) {
+    unsigned int t = std::time(NULL);
     for (uint i = 0; i < num; ) {
         auto n = rand_r(&t) % N;
         auto m = rand_r(&t) % M;
@@ -89,6 +91,7 @@ void Ocean::del_obj(Object* object) {
 }
 Cell* Ocean::find_empty(Pair crd) {
     std::srand(unsigned(std::time(0)));
+    unsigned int t = std::time(NULL);
     for (uint i = 0; i < attempts; i++) {
         uint x1 = crd.x + rand_r(&t) % 3 - 1;
         uint y1 = crd.y + rand_r(&t) % 3 - 1;
@@ -101,7 +104,7 @@ Cell* Ocean::find_empty(Pair crd) {
 }
 Cell* Ocean::find_prey(Pair crd) {
     std::srand(unsigned(std::time(0)));
-
+    unsigned int t = std::time(NULL);
     for (uint i = 0; i < attempts; i++) {
         uint x1 = crd.x + rand_r(&t) % 3 - 1;
         uint y1 = crd.y + rand_r(&t) % 3 - 1;
