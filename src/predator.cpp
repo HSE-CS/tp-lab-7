@@ -1,6 +1,6 @@
 // Copyright 2021 ArinaMonicheva
 
-#include "predator.h"
+#include "include/predator.h"
 
 Predator::Predator(Cell* newCell) : Prey(newCell) {
   type = ObjType::PREDATOR;
@@ -44,7 +44,7 @@ bool Predator::tryToMove() {
    {(cds.x - 1) % w, cds.y}, {(cds.x + 1) % w, cds.y},
    {cds.x, (cds.y - 1) % h} };
   int attempt = 4;
-  int step = rand() % attempt;
+  int step = rand_r(&seed) % attempt;
   int eated = inCell->getOcean()->movement(cds, availableSteps[step], this);
 
   while (!eated) {
