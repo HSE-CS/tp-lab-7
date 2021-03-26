@@ -1,3 +1,5 @@
+// copyright 2021 Victor Shatilov
+
 #include "../include/cell.h"
 #include "../include/Ocean.h"
 
@@ -34,7 +36,8 @@ void Cell::setOcean(Ocean *ocean1) {
 }
 
 Cell *Cell::getUp() {
-    return this->ocean->getCell(this->x, (this->y - 1 + height) % height);
+    return this->ocean->getCell(this->x,
+                                (this->y - 1 + height) % height);
 }
 
 Cell *Cell::getRight() {
@@ -42,11 +45,13 @@ Cell *Cell::getRight() {
 }
 
 Cell *Cell::getDown() {
-    return this->ocean->getCell(this->x, (this->y + 1 + height) % height);
+    return this->ocean->getCell(this->x,
+                                (this->y + 1 + height) % height);
 }
 
 Cell *Cell::getLeft() {
-    return this->ocean->getCell((this->x - 1 + width) % width, this->y);
+    return this->ocean->getCell((this->x - 1 + width) % width,
+                                this->y);
 }
 
 void Cell::kill() {

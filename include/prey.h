@@ -1,11 +1,14 @@
-#ifndef TP_LAB_7_PREY_H
-#define TP_LAB_7_PREY_H
+// copyright 2021 Victor Shatilov
+
+#ifndef INCLUDE_PREY_H
+#define INCLUDE_PREY_H
 
 #include "common.h"
 
 class prey : public Object {
-public:
-    prey(int x, int y, int energy = startPreyEnergy, int type = PREY, Cell *cell = nullptr);
+ public:
+    prey(int x, int y, int energy = startPreyEnergy,
+         int type = PREY, Cell *cell = nullptr);
 
     virtual void live();
 
@@ -15,4 +18,4 @@ public:
 };
 
 
-#endif //TP_LAB_7_PREY_H
+#endif  // INCLUDE_PREY_H

@@ -77,18 +77,18 @@ include src/CMakeFiles/tp-lab-7.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/CMakeFiles/tp-lab-7.dir/flags.make
 
-src/CMakeFiles/tp-lab-7.dir/ocean.cpp.o: src/CMakeFiles/tp-lab-7.dir/flags.make
-src/CMakeFiles/tp-lab-7.dir/ocean.cpp.o: ../src/ocean.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/toliman/Projects/HSE-CS/tp-lab-7/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/tp-lab-7.dir/ocean.cpp.o"
-	cd /home/toliman/Projects/HSE-CS/tp-lab-7/cmake-build-debug/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tp-lab-7.dir/ocean.cpp.o -c /home/toliman/Projects/HSE-CS/tp-lab-7/src/ocean.cpp
+src/CMakeFiles/tp-lab-7.dir/Ocean.cpp.o: src/CMakeFiles/tp-lab-7.dir/flags.make
+src/CMakeFiles/tp-lab-7.dir/Ocean.cpp.o: ../src/Ocean.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/toliman/Projects/HSE-CS/tp-lab-7/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/tp-lab-7.dir/Ocean.cpp.o"
+	cd /home/toliman/Projects/HSE-CS/tp-lab-7/cmake-build-debug/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tp-lab-7.dir/Ocean.cpp.o -c /home/toliman/Projects/HSE-CS/tp-lab-7/src/Ocean.cpp
 
-src/CMakeFiles/tp-lab-7.dir/ocean.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tp-lab-7.dir/ocean.cpp.i"
-	cd /home/toliman/Projects/HSE-CS/tp-lab-7/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/toliman/Projects/HSE-CS/tp-lab-7/src/ocean.cpp > CMakeFiles/tp-lab-7.dir/ocean.cpp.i
+src/CMakeFiles/tp-lab-7.dir/Ocean.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tp-lab-7.dir/Ocean.cpp.i"
+	cd /home/toliman/Projects/HSE-CS/tp-lab-7/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/toliman/Projects/HSE-CS/tp-lab-7/src/Ocean.cpp > CMakeFiles/tp-lab-7.dir/Ocean.cpp.i
 
-src/CMakeFiles/tp-lab-7.dir/ocean.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tp-lab-7.dir/ocean.cpp.s"
-	cd /home/toliman/Projects/HSE-CS/tp-lab-7/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/toliman/Projects/HSE-CS/tp-lab-7/src/ocean.cpp -o CMakeFiles/tp-lab-7.dir/ocean.cpp.s
+src/CMakeFiles/tp-lab-7.dir/Ocean.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tp-lab-7.dir/Ocean.cpp.s"
+	cd /home/toliman/Projects/HSE-CS/tp-lab-7/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/toliman/Projects/HSE-CS/tp-lab-7/src/Ocean.cpp -o CMakeFiles/tp-lab-7.dir/Ocean.cpp.s
 
 src/CMakeFiles/tp-lab-7.dir/cell.cpp.o: src/CMakeFiles/tp-lab-7.dir/flags.make
 src/CMakeFiles/tp-lab-7.dir/cell.cpp.o: ../src/cell.cpp
@@ -144,7 +144,7 @@ src/CMakeFiles/tp-lab-7.dir/stone.cpp.s: cmake_force
 
 # Object files for target tp-lab-7
 tp__lab__7_OBJECTS = \
-"CMakeFiles/tp-lab-7.dir/ocean.cpp.o" \
+"CMakeFiles/tp-lab-7.dir/Ocean.cpp.o" \
 "CMakeFiles/tp-lab-7.dir/cell.cpp.o" \
 "CMakeFiles/tp-lab-7.dir/predator.cpp.o" \
 "CMakeFiles/tp-lab-7.dir/prey.cpp.o" \
@@ -153,7 +153,7 @@ tp__lab__7_OBJECTS = \
 # External object files for target tp-lab-7
 tp__lab__7_EXTERNAL_OBJECTS =
 
-src/libtp-lab-7.so: src/CMakeFiles/tp-lab-7.dir/ocean.cpp.o
+src/libtp-lab-7.so: src/CMakeFiles/tp-lab-7.dir/Ocean.cpp.o
 src/libtp-lab-7.so: src/CMakeFiles/tp-lab-7.dir/cell.cpp.o
 src/libtp-lab-7.so: src/CMakeFiles/tp-lab-7.dir/predator.cpp.o
 src/libtp-lab-7.so: src/CMakeFiles/tp-lab-7.dir/prey.cpp.o

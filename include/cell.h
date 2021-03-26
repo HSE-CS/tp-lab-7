@@ -1,17 +1,21 @@
-#ifndef TP_LAB_7_CELL_H
-#define TP_LAB_7_CELL_H
+// copyright 2021 Victor Shatilov
+
+#ifndef INCLUDE_CELL_H
+#define INCLUDE_CELL_H
 
 #include "common.h"
 
 class Ocean;
 
 class Cell {
-private:
+ private:
     int x, y;
     Object *object;
     Ocean *ocean;
-public:
-    explicit Cell(int x, int y, Object *object1 = nullptr, Ocean *ocean = nullptr);
+
+ public:
+    explicit Cell(int x, int y, Object *object1 = nullptr,
+                  Ocean *ocean = nullptr);
 
     void kill();
 
@@ -40,5 +44,4 @@ public:
     void setOcean(Ocean *ocean);
 };
 
-
-#endif //TP_LAB_7_CELL_H
+#endif  // INCLUDE_CELL_H

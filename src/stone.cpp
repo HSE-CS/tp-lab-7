@@ -1,3 +1,5 @@
+// copyright 2021 Victor Shatilov
+
 #include "../include/stone.h"
 
 void stone::live() {
@@ -9,7 +11,9 @@ Object *stone::divide() {
     return nullptr;
 }
 
-stone::stone(int x, int y, int type, int energy, Cell *cell) : Object(x, y, energy, type, cell) {
+stone::stone(int x, int y, int energy,
+             int type, Cell *cell) : Object(x, y, energy,
+                                            type, cell) {
 
 }
 

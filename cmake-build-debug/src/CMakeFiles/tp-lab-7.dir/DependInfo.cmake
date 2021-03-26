@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/toliman/Projects/HSE-CS/tp-lab-7/src/Ocean.cpp" "/home/toliman/Projects/HSE-CS/tp-lab-7/cmake-build-debug/src/CMakeFiles/tp-lab-7.dir/Ocean.cpp.o"
   "/home/toliman/Projects/HSE-CS/tp-lab-7/src/cell.cpp" "/home/toliman/Projects/HSE-CS/tp-lab-7/cmake-build-debug/src/CMakeFiles/tp-lab-7.dir/cell.cpp.o"
-  "/home/toliman/Projects/HSE-CS/tp-lab-7/src/ocean.cpp" "/home/toliman/Projects/HSE-CS/tp-lab-7/cmake-build-debug/src/CMakeFiles/tp-lab-7.dir/ocean.cpp.o"
   "/home/toliman/Projects/HSE-CS/tp-lab-7/src/predator.cpp" "/home/toliman/Projects/HSE-CS/tp-lab-7/cmake-build-debug/src/CMakeFiles/tp-lab-7.dir/predator.cpp.o"
   "/home/toliman/Projects/HSE-CS/tp-lab-7/src/prey.cpp" "/home/toliman/Projects/HSE-CS/tp-lab-7/cmake-build-debug/src/CMakeFiles/tp-lab-7.dir/prey.cpp.o"
   "/home/toliman/Projects/HSE-CS/tp-lab-7/src/stone.cpp" "/home/toliman/Projects/HSE-CS/tp-lab-7/cmake-build-debug/src/CMakeFiles/tp-lab-7.dir/stone.cpp.o"

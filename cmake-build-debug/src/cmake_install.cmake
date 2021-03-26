@@ -78,7 +78,7 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE FILE FILES
-    "/home/toliman/Projects/HSE-CS/tp-lab-7/include/ocean.h"
+    "/home/toliman/Projects/HSE-CS/tp-lab-7/include/Ocean.h"
     "/home/toliman/Projects/HSE-CS/tp-lab-7/include/cell.h"
     "/home/toliman/Projects/HSE-CS/tp-lab-7/include/common.h"
     "/home/toliman/Projects/HSE-CS/tp-lab-7/include/prey.h"

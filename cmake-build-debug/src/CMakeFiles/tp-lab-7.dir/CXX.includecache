@@ -6,31 +6,83 @@
 
 #IncludeRegexTransform: 
 
-/home/toliman/Projects/HSE-CS/tp-lab-7/include/cell.h
+../include/common.h
+iostream
+-
+vector
+-
+random
+-
+string
+-
 
-/home/toliman/Projects/HSE-CS/tp-lab-7/include/ocean.h
+/home/toliman/Projects/HSE-CS/tp-lab-7/include/Ocean.h
+common.h
+/home/toliman/Projects/HSE-CS/tp-lab-7/include/common.h
+
+/home/toliman/Projects/HSE-CS/tp-lab-7/include/cell.h
+common.h
+/home/toliman/Projects/HSE-CS/tp-lab-7/include/common.h
+
+/home/toliman/Projects/HSE-CS/tp-lab-7/include/common.h
+iostream
+-
+vector
+-
+random
+-
+string
+-
 
 /home/toliman/Projects/HSE-CS/tp-lab-7/include/predator.h
+common.h
+/home/toliman/Projects/HSE-CS/tp-lab-7/include/common.h
 
 /home/toliman/Projects/HSE-CS/tp-lab-7/include/prey.h
+common.h
+/home/toliman/Projects/HSE-CS/tp-lab-7/include/common.h
 
 /home/toliman/Projects/HSE-CS/tp-lab-7/include/stone.h
+common.h
+/home/toliman/Projects/HSE-CS/tp-lab-7/include/common.h
+
+/home/toliman/Projects/HSE-CS/tp-lab-7/src/Ocean.cpp
+../include/Ocean.h
+/home/toliman/Projects/HSE-CS/tp-lab-7/include/Ocean.h
+../include/cell.h
+/home/toliman/Projects/HSE-CS/tp-lab-7/include/cell.h
+../include/stone.h
+/home/toliman/Projects/HSE-CS/tp-lab-7/include/stone.h
+../include/prey.h
+/home/toliman/Projects/HSE-CS/tp-lab-7/include/prey.h
+../include/predator.h
+/home/toliman/Projects/HSE-CS/tp-lab-7/include/predator.h
+unistd.h
+-
 
 /home/toliman/Projects/HSE-CS/tp-lab-7/src/cell.cpp
 ../include/cell.h
 /home/toliman/Projects/HSE-CS/tp-lab-7/include/cell.h
-
-/home/toliman/Projects/HSE-CS/tp-lab-7/src/ocean.cpp
-../include/ocean.h
-/home/toliman/Projects/HSE-CS/tp-lab-7/include/ocean.h
+../include/Ocean.h
+/home/toliman/Projects/HSE-CS/tp-lab-7/include/Ocean.h
 
 /home/toliman/Projects/HSE-CS/tp-lab-7/src/predator.cpp
 ../include/predator.h
 /home/toliman/Projects/HSE-CS/tp-lab-7/include/predator.h
+../include/cell.h
+/home/toliman/Projects/HSE-CS/tp-lab-7/include/cell.h
+../include/Ocean.h
+/home/toliman/Projects/HSE-CS/tp-lab-7/include/Ocean.h
 
 /home/toliman/Projects/HSE-CS/tp-lab-7/src/prey.cpp
 ../include/prey.h
 /home/toliman/Projects/HSE-CS/tp-lab-7/include/prey.h
+../include/cell.h
+/home/toliman/Projects/HSE-CS/tp-lab-7/include/cell.h
+../include/Ocean.h
+/home/toliman/Projects/HSE-CS/tp-lab-7/include/Ocean.h
+common.h
+/home/toliman/Projects/HSE-CS/tp-lab-7/src/common.h
 
 /home/toliman/Projects/HSE-CS/tp-lab-7/src/stone.cpp
 ../include/stone.h

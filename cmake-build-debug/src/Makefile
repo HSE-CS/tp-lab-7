@@ -206,6 +206,33 @@ tp-lab-7.info/fast:
 	cd /home/toliman/Projects/HSE-CS/tp-lab-7/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/tp-lab-7.info.dir/build.make src/CMakeFiles/tp-lab-7.info.dir/build
 .PHONY : tp-lab-7.info/fast
 
+Ocean.o: Ocean.cpp.o
+
+.PHONY : Ocean.o
+
+# target to build an object file
+Ocean.cpp.o:
+	cd /home/toliman/Projects/HSE-CS/tp-lab-7/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/tp-lab-7.dir/build.make src/CMakeFiles/tp-lab-7.dir/Ocean.cpp.o
+.PHONY : Ocean.cpp.o
+
+Ocean.i: Ocean.cpp.i
+
+.PHONY : Ocean.i
+
+# target to preprocess a source file
+Ocean.cpp.i:
+	cd /home/toliman/Projects/HSE-CS/tp-lab-7/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/tp-lab-7.dir/build.make src/CMakeFiles/tp-lab-7.dir/Ocean.cpp.i
+.PHONY : Ocean.cpp.i
+
+Ocean.s: Ocean.cpp.s
+
+.PHONY : Ocean.s
+
+# target to generate assembly for a file
+Ocean.cpp.s:
+	cd /home/toliman/Projects/HSE-CS/tp-lab-7/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/tp-lab-7.dir/build.make src/CMakeFiles/tp-lab-7.dir/Ocean.cpp.s
+.PHONY : Ocean.cpp.s
+
 cell.o: cell.cpp.o
 
 .PHONY : cell.o
@@ -259,33 +286,6 @@ main.s: main.cpp.s
 main.cpp.s:
 	cd /home/toliman/Projects/HSE-CS/tp-lab-7/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/tp-lab-7.info.dir/build.make src/CMakeFiles/tp-lab-7.info.dir/main.cpp.s
 .PHONY : main.cpp.s
-
-ocean.o: ocean.cpp.o
-
-.PHONY : ocean.o
-
-# target to build an object file
-ocean.cpp.o:
-	cd /home/toliman/Projects/HSE-CS/tp-lab-7/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/tp-lab-7.dir/build.make src/CMakeFiles/tp-lab-7.dir/ocean.cpp.o
-.PHONY : ocean.cpp.o
-
-ocean.i: ocean.cpp.i
-
-.PHONY : ocean.i
-
-# target to preprocess a source file
-ocean.cpp.i:
-	cd /home/toliman/Projects/HSE-CS/tp-lab-7/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/tp-lab-7.dir/build.make src/CMakeFiles/tp-lab-7.dir/ocean.cpp.i
-.PHONY : ocean.cpp.i
-
-ocean.s: ocean.cpp.s
-
-.PHONY : ocean.s
-
-# target to generate assembly for a file
-ocean.cpp.s:
-	cd /home/toliman/Projects/HSE-CS/tp-lab-7/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/tp-lab-7.dir/build.make src/CMakeFiles/tp-lab-7.dir/ocean.cpp.s
-.PHONY : ocean.cpp.s
 
 predator.o: predator.cpp.o
 
@@ -382,15 +382,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... tp-lab-7"
 	@echo "... tp-lab-7.info"
+	@echo "... Ocean.o"
+	@echo "... Ocean.i"
+	@echo "... Ocean.s"
 	@echo "... cell.o"
 	@echo "... cell.i"
 	@echo "... cell.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... ocean.o"
-	@echo "... ocean.i"
-	@echo "... ocean.s"
 	@echo "... predator.o"
 	@echo "... predator.i"
 	@echo "... predator.s"

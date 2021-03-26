@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/tp-lab-7.dir/Ocean.cpp.o"
   "CMakeFiles/tp-lab-7.dir/cell.cpp.o"
-  "CMakeFiles/tp-lab-7.dir/ocean.cpp.o"
   "CMakeFiles/tp-lab-7.dir/predator.cpp.o"
   "CMakeFiles/tp-lab-7.dir/prey.cpp.o"
   "CMakeFiles/tp-lab-7.dir/stone.cpp.o"

@@ -1,12 +1,15 @@
-#ifndef TP_LAB_7_OCEAN_H
-#define TP_LAB_7_OCEAN_H
+// copyright 2021 Victor Shatilov
+
+#ifndef INCLUDE_OCEAN_H
+#define INCLUDE_OCEAN_H
 
 #include "common.h"
 
 class Ocean {
-private:
+ private:
     std::vector<std::vector<Cell *>> water;
-public:
+
+ public:
     explicit Ocean();
 
     void renderOcean();
@@ -21,4 +24,4 @@ public:
 };
 
 
-#endif //TP_LAB_7_OCEAN_H
+#endif  // INCLUDE_OCEAN_H

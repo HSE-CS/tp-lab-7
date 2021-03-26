@@ -1,5 +1,7 @@
-#ifndef TP_LAB_7_COMMON_H
-#define TP_LAB_7_COMMON_H
+// copyright 2021 Victor Shatilov
+
+#ifndef INCLUDE_COMMON_H
+#define INCLUDE_COMMON_H
 
 #include <iostream>
 #include <vector>
@@ -19,7 +21,6 @@ static const int startPredatorEnergy = 100;
 
 enum ObjType {
     STONE,
-    // CORAL,
     PREY,
     PREDATOR,
 };
@@ -34,88 +35,68 @@ enum Direction {
 class Cell;
 
 class Object {
-protected:
+ protected:
     int energy;
     int type;
     Cell *cell;
     int x;
     int y;
-public:
-    explicit Object(int x, int y, int energy, int type, Cell *cell);
+
+ public:
+    explicit Object(int x1, int y1, int energy1,
+                    int type1, Cell *cell1) {
+        this->x = x1;
+        this->y = y1;
+        this->energy = energy1;
+        this->type = type1;
+        this->cell = cell1;
+    }
 
     virtual void live() = 0;
 
     virtual Object *divide() = 0;
 
-    int getX() const;
-
-    void setX(int x);
-
-    int getY() const;
-
-    void setY(int y);
-
-    int getEnergy() const;
-
-    void setEnergy(int energy);
-
-    int getType() const;
-
-    void setType(int type);
-
-    Cell *getCell() const;
-
     virtual char getFiller() = 0;
 
-    void setCell(Cell *cell);
+    int getX() const {
+        return x;
+    }
+
+    void setX(int x1) {
+        Object::x = x1;
+    }
+
+    int getY() const {
+        return y;
+    }
+
+    void setY(int y1) {
+        Object::y = y1;
+    }
+
+    int getEnergy() {
+        return energy;
+    }
+
+    void setEnergy(int energy1) {
+        Object::energy = energy1;
+    }
+
+    int getType() const {
+        return type;
+    }
+
+    void setType(int type1) {
+        Object::type = type1;
+    }
+
+    Cell *getCell() const {
+        return cell;
+    }
+
+    void setCell(Cell *cell1) {
+        Object::cell = cell1;
+    }
 };
 
-Object::Object(int x1, int y1, int energy1, int type1, Cell *cell1) {
-    this->x = x1;
-    this->y = y1;
-    this->energy = energy1;
-    this->type = type1;
-    this->cell = cell1;
-}
-
-int Object::getX() const {
-    return x;
-}
-
-void Object::setX(int x1) {
-    Object::x = x1;
-}
-
-int Object::getY() const {
-    return y;
-}
-
-void Object::setY(int y1) {
-    Object::y = y1;
-}
-
-int Object::getEnergy() const {
-    return energy;
-}
-
-void Object::setEnergy(int energy1) {
-    Object::energy = energy1;
-}
-
-int Object::getType() const {
-    return type;
-}
-
-void Object::setType(int type1) {
-    Object::type = type1;
-}
-
-Cell *Object::getCell() const {
-    return cell;
-}
-
-void Object::setCell(Cell *cell1) {
-    Object::cell = cell1;
-}
-
-#endif //TP_LAB_7_COMMON_H
+#endif  // INCLUDE_COMMON_H

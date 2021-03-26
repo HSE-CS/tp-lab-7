@@ -174,13 +174,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/toliman/Projects/HSE-CS/tp-lab-7/include/Ocean.h">
+			<Option target="tp-lab-7"/>
+		</Unit>
 		<Unit filename="/home/toliman/Projects/HSE-CS/tp-lab-7/include/cell.h">
 			<Option target="tp-lab-7"/>
 		</Unit>
 		<Unit filename="/home/toliman/Projects/HSE-CS/tp-lab-7/include/common.h">
-			<Option target="tp-lab-7"/>
-		</Unit>
-		<Unit filename="/home/toliman/Projects/HSE-CS/tp-lab-7/include/ocean.h">
 			<Option target="tp-lab-7"/>
 		</Unit>
 		<Unit filename="/home/toliman/Projects/HSE-CS/tp-lab-7/include/predator.h">
@@ -192,14 +192,14 @@
 		<Unit filename="/home/toliman/Projects/HSE-CS/tp-lab-7/include/stone.h">
 			<Option target="tp-lab-7"/>
 		</Unit>
+		<Unit filename="/home/toliman/Projects/HSE-CS/tp-lab-7/src/Ocean.cpp">
+			<Option target="tp-lab-7"/>
+		</Unit>
 		<Unit filename="/home/toliman/Projects/HSE-CS/tp-lab-7/src/cell.cpp">
 			<Option target="tp-lab-7"/>
 		</Unit>
 		<Unit filename="/home/toliman/Projects/HSE-CS/tp-lab-7/src/main.cpp">
 			<Option target="tp-lab-7.info"/>
-		</Unit>
-		<Unit filename="/home/toliman/Projects/HSE-CS/tp-lab-7/src/ocean.cpp">
-			<Option target="tp-lab-7"/>
 		</Unit>
 		<Unit filename="/home/toliman/Projects/HSE-CS/tp-lab-7/src/predator.cpp">
 			<Option target="tp-lab-7"/>

@@ -1,8 +1,12 @@
+// copyright 2021 Victor Shatilov
+
 #include "../include/predator.h"
 #include "../include/cell.h"
 #include "../include/Ocean.h"
 
-predator::predator(int x, int y, int energy, int type, Cell *cell) : Object(x, y, energy, type, cell) {
+predator::predator(int x, int y, int energy,
+                   int type, Cell *cell) : Object(x, y, energy,
+                                                  type, cell) {
 
 }
 
@@ -13,34 +17,43 @@ void predator::live() {
 
     // Try to eat someone:
 
-    if (this->cell->getUp()->getObject()->getType() == PREY) {
-        this->cell->setObject(nullptr);
-        this->cell->getUp()->setObject(this);
-        this->y = (y - 1 + height) % height;
-        this->energy += startPreyEnergy / 2;
-        return;
-    }
-    if (this->cell->getRight()->getObject()->getType() == PREY) {
-        this->cell->setObject(nullptr);
-        this->cell->getRight()->setObject(this);
-        this->x = (x + 1) % width;
-        this->energy += startPreyEnergy / 2;
-        return;
-    }
-    if (this->cell->getDown()->getObject()->getType() == PREY) {
-        this->cell->setObject(nullptr);
-        this->cell->getDown()->setObject(this);
-        this->y = (y + 1) % height;
-        this->energy += startPreyEnergy / 2;
-        return;
-    }
-    if (this->cell->getLeft()->getObject()->getType() == PREY) {
-        this->cell->setObject(nullptr);
-        this->cell->getLeft()->setObject(this);
-        this->x = (x - 1 + width) % width;
-        this->energy += startPreyEnergy / 2;
-        return;
-    }
+    if (this->cell->getUp()->getObject() != nullptr)
+        if (this->cell->getUp()->getObject()->getType() == PREY) {
+            this->cell->setObject(nullptr);
+            this->cell->getUp()->setObject(this);
+            this->y = (y - 1 + height) % height;
+            this->energy += startPreyEnergy / 2;
+            setCell(cell->getUp());
+            return;
+        }
+    if (this->cell->getRight()->getObject() != nullptr)
+
+        if (this->cell->getRight()->getObject()->getType() == PREY) {
+            this->cell->setObject(nullptr);
+            this->cell->getRight()->setObject(this);
+            this->x = (x + 1) % width;
+            this->energy += startPreyEnergy / 2;
+            setCell(cell->getRight());
+            return;
+        }
+    if (this->cell->getDown()->getObject() != nullptr)
+        if (this->cell->getDown()->getObject()->getType() == PREY) {
+            this->cell->setObject(nullptr);
+            this->cell->getDown()->setObject(this);
+            this->y = (y + 1) % height;
+            this->energy += startPreyEnergy / 2;
+            setCell(cell->getDown());
+            return;
+        }
+    if (this->cell->getLeft()->getObject() != nullptr)
+        if (this->cell->getLeft()->getObject()->getType() == PREY) {
+            this->cell->setObject(nullptr);
+            this->cell->getLeft()->setObject(this);
+            this->x = (x - 1 + width) % width;
+            this->energy += startPreyEnergy / 2;
+            setCell(cell->getLeft());
+            return;
+        }
 
     // Else move like a prey:
 
@@ -50,6 +63,7 @@ void predator::live() {
                 this->cell->setObject(nullptr);
                 this->cell->getUp()->setObject(this);
                 this->y = (y - 1 + height) % height;
+                setCell(cell->getUp());
             }
             break;
         case RIGHT:
@@ -57,6 +71,7 @@ void predator::live() {
                 this->cell->setObject(nullptr);
                 this->cell->getRight()->setObject(this);
                 this->x = (x + 1) % width;
+                setCell(cell->getRight());
             }
             break;
         case DOWN:
@@ -64,6 +79,7 @@ void predator::live() {
                 this->cell->setObject(nullptr);
                 this->cell->getDown()->setObject(this);
                 this->y = (y + 1) % height;
+                setCell(cell->getDown());
             }
             break;
         case LEFT:
@@ -71,6 +87,7 @@ void predator::live() {
                 this->cell->setObject(nullptr);
                 this->cell->getLeft()->setObject(this);
                 this->x = (x - 1 + width) % width;
+                setCell(cell->getLeft());
             }
             break;
         default:
@@ -83,7 +100,8 @@ Object *predator::divide() {
     Cell *newCell = nullptr;
     for (int i = height - 1; i > -1; --i) {
         for (int j = width - 1; j > -1; --j) {
-            if (this->cell->getOcean()->getCell(j, i)->getObject() == nullptr) {
+            if (this->cell->getOcean()->getCell(j,
+                                                i)->getObject() == nullptr) {
                 newX = j;
                 newY = i;
                 newCell = this->cell->getOcean()->getCell(j, i);
@@ -93,7 +111,8 @@ Object *predator::divide() {
     if (newCell == nullptr) {
         return nullptr;
     }
-    auto child = new predator(newX, newY, startPreyEnergy, PREY, newCell);
+    auto child = new predator(newX, newY, startPreyEnergy,
+                              PREY, newCell);
     newCell->setObject(child);
     this->energy -= startPreyEnergy;
     return child;
