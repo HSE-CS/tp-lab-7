@@ -22,12 +22,23 @@ void Cell::setObject(Object* o)
   obj = o;
 }
 
+int Cell::getX() const
+{
+  return crd.x;
+}
+
+int Cell::getY() const
+{
+  return crd.y;
+}
+
 void Cell::killMe()
 {
   this->obj->setCell(nullptr);
 }
 
-Cell& Cell::getN(int row, int column)
+bool Cell::isEmpty() const
 {
-    // TODO: вставьте здесь оператор return
+  return obj == nullptr;
 }
+
