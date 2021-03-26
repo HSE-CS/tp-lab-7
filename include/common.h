@@ -3,8 +3,8 @@
 #define INCLUDE_COMMON_H_
 
 struct Pair {
-  int64_t x;
-  int64_t y;
+  uint64_t x;
+  uint64_t y;
 };
 
 #endif  // INCLUDE_COMMON_H_
