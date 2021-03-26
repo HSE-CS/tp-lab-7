@@ -9,9 +9,9 @@ Ocean::Ocean(unsigned int _M, unsigned int _N) {
   std::mt19937 mersenne(rd());
   int randomizer = 0;
   cells = new Cell *[M];
-  for (size_t i = 0; i < M; i++) {
+  for (int i = 0; i < M; i++) {
     cells[i] = new Cell[N];
-    for (size_t j = 0; j < N; j++) {
+    for (int j = 0; j < N; j++) {
       Cell new_cell({i, j}, this);
       cells[i][j] = new_cell;
       randomizer = mersenne() % 4;
