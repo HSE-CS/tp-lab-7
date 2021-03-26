@@ -106,8 +106,7 @@ void Ocean::counter(size_t& stoneCount, size_t& preyCount,
     preyCount = 0;
     predatorCount = 0;
     for (Object* obj : stuff) {
-        switch (obj->getSign())
-        {
+        switch (obj->getSign()) {
         case STONE_SYMBOL:
             stoneCount++;
             break;
