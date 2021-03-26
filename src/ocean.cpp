@@ -9,6 +9,7 @@
 #include "../include/common.h"
 #include "../include/cell.h"
 #include "../include/ocean.h"
+#include <SFML/Graphics.hpp>
 
 
 Ocean::Ocean(int M, int N,
@@ -59,18 +60,54 @@ void Ocean::addObjects(int number_objects) {
     }
 }
 
-void Ocean::print() const {
+void Ocean::print(sf::RenderWindow *window) const {
     for (int i = 0; i < M; i++) {
         for (int j = 0; j < N; j++) {
             if (!cells[i][j].getObject()) {
-                std::cout << '.';
+                sf::RectangleShape blackSq(sf::Vector2f(5, 5));
+                blackSq.setFillColor(sf::Color::Black);
+                blackSq.setPosition(5 * j, 5 * i);
+                window->draw(blackSq);
             } else {
-                std::cout << cells[i][j].getObject()->getType();
+                switch (cells[i][j].getObject()->getType()) {
+                    case '#': {
+                        sf::RectangleShape redSq(sf::Vector2f(5, 5));
+                        redSq.setFillColor(sf::Color::Magenta);
+                        redSq.setPosition(5 * j, 5 * i);
+                        window->draw(redSq);
+                        std::cout << "WTF1\n";
+                        break;
+                    }
+                    case '*': {
+                        sf::RectangleShape redSq(sf::Vector2f(5, 5));
+                        redSq.setFillColor(sf::Color::Blue);
+                        redSq.setPosition(5 * j, 5 * i);
+                        window->draw(redSq);
+                        std::cout << "WTF2\n";
+                        break;
+                    }
+                    case 'f': {
+                        sf::RectangleShape redSq(sf::Vector2f(5, 5));
+                        redSq.setFillColor(sf::Color::Green);
+                        redSq.setPosition(5 * j, 5 * i);
+                        window->draw(redSq);
+                        std::cout << "WTF3\n";
+                        break;
+                    }
+                    case 'S': {
+                        sf::RectangleShape redSq(sf::Vector2f(5, 5));
+                        redSq.setFillColor(sf::Color::Red);
+                        redSq.setPosition(5 * j, 5 * i);
+                        window->draw(redSq);
+                        std::cout << "WTF4\n";
+                        break;
+                    }
+                }
             }
         }
-        std::cout << std::endl;
+        // std::cout << std::endl;
     }
-    std::cout << std::endl << std::endl << std::endl;
+    // std::cout << std::endl << std::endl << std::endl;
 }
 
 
@@ -94,13 +131,29 @@ Cell* Ocean::seachEmptyPlace(Pair coordinate) {
 
 
 void Ocean::run() {
-    this->print();
-    while (!this->stuff.empty()) {
-        for (auto& obj : this->stuff) {
-            obj->live();
+    sf::RenderWindow *window;
+    window = new sf::RenderWindow(sf::VideoMode(450, 450), "SFML works!");
+    this->print(window);
+    window->display();
+
+    while (window->isOpen()) {
+        sf::Event event;
+        while (window->pollEvent(event)) {
+            if (event.type == sf::Event::Closed)
+                window->close();
         }
-        this->ClearListOfTheDead();
-        print();
+
+        while (!this->stuff.empty()) {
+            for (auto& obj : this->stuff) {
+                obj->live();
+            }
+            this->ClearListOfTheDead();
+            window->clear(sf::Color::Black);
+            this->print(window);
+            window->display();
+            sf::Time delayTime = sf::milliseconds(1000);
+            sf::sleep(delayTime);
+        }
     }
 }
 

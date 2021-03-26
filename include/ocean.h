@@ -5,6 +5,7 @@
 #include <list>
 #include "../include/common.h"
 #include "../include/cell.h"
+#include <SFML/Graphics.hpp>
 
 class Cell;
 class Ocean {
@@ -18,7 +19,7 @@ class Ocean {
  public:
     Ocean(int M, int N,  int number_objects);
     ~Ocean();
-    void print() const;
+    void print(sf::RenderWindow *window) const;
     void addObjects(int number_objects);
     void run();
 
