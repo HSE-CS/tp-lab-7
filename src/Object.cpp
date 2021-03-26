@@ -1,5 +1,5 @@
-//  Copywright 2021 Kartseva Masha
-#include "Object.h"
+//  Copyright 2021 Kartseva Masha
+#include "../include/object.h"
 
 Object::Object(Cell* cell) {
     this->cell = cell;

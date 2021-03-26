@@ -1,18 +1,18 @@
-//  Copywright 2021 Kartseva Masha
+//  Copyright 2021 Kartseva Masha
 #pragma once
-#include "common.h"
-#include "Object.h"
-#include "Ocean.h"
+#include "../include/common.h"
+#include "../include/object.h"
+#include "../include/ocean.h"
 #define CELL_H
 #ifdef CELL_H
 class Ocean;
 class Cell {
     friend Ocean;
-private:
+ private:
     Pair crd;
     Object* obj = nullptr;
     Ocean* ocean;
-public:
+ public:
     explicit Cell(Pair p = { 0, 0 }, Ocean* oc = nullptr) :
         crd(p),
         obj(nullptr),

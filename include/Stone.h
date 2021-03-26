@@ -1,14 +1,14 @@
 //  Copywright 2021 Kartseva Masha
 #pragma once
-#include "Object.h"
-#include "Cell.h"
-#include "Ocean.h"
-#include "common.h"
+#include "../include/object.h"
+#include "../include/cell.h"
+#include "../include/ocean.h"
+#include "../include/common.h"
 #define STONE_H
 #ifdef STONE_H
 class Stone : public Object {
     friend Cell;
-public:
+ public:
     Stone(Cell* c);
     ~Stone() {};
     void live();

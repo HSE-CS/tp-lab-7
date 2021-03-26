@@ -1,4 +1,4 @@
-//  Copywright 2021 Kartseva Masha
+//  Copyright 2021 Kartseva Masha
 #include "Prey.h"
 #include <iostream>
 

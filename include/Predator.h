@@ -1,14 +1,14 @@
-//  Copywright 2021 Kartseva Masha
+//  Copyright 2021 Kartseva Masha
 #pragma once
-#include "Object.h"
-#include "Cell.h"
-#include "Ocean.h"
-#include "common.h"
+#include "../include/object.h"
+#include "../include/cell.h"
+#include "../include/ocean.h"
+#include "../include/common.h"
 #define PREDATOR_H
 #ifdef PREDATOR_H
 class Predator : public Object {
     friend Cell;
-public:
+ public:
     Predator(Cell* c);
     ~Predator() {};
     void copulation();

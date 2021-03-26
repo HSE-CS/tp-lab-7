@@ -1,6 +1,6 @@
-//  Copywright 2021 Kartseva Masha
+//  Copyright 2021 Kartseva Masha
 #pragma once
-#include "common.h"
+#include "../include/common.h"
 #define STONE_N '#'
 #define PREY_N 'f'
 #define PREDATOR_N 'S'
@@ -13,14 +13,14 @@ class Cell;
 class Object {
     friend Ocean;
     friend Cell;
-protected:
+ protected:
     int lifetime;
     bool dead;
     Cell* cell;
     ObjType type;
-public:
+ public:
     Object(Cell* = nullptr);
-    virtual ~Object() {};
+    virtual ~Object() {}
     void setLive(int lifetime);
     void setCell(Cell* cell);
     virtual void live() = 0;

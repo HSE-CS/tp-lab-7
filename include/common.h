@@ -1,4 +1,4 @@
-//  Copywright 2021 Kartseva Masha
+//  Copyright 2021 Kartseva Masha
 #pragma once
 #include <iostream>
 #include <list>
@@ -7,12 +7,11 @@
 #include <time.h>
 #include <iterator>
 #include <algorithm>
-#include  <string>
+#include <string>
 
 typedef size_t coord_t;
 
-struct Pair
-{
+struct Pair {
     int x;
     int y;
 };

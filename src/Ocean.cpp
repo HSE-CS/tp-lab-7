@@ -1,7 +1,7 @@
-#include "Ocean.h"
-#include "Stone.h"
-#include "Object.h"
-using namespace std;
+//  Copyright 2021 Kartseva Masha
+#include "../include/ocean.h"
+#include "../include/stone.h"
+#include "../include/object.h"
 #include <iostream>
 #include <random>
 Ocean::Ocean() {

@@ -1,5 +1,5 @@
-//  Copywright 2021 Kartseva Masha
-#include "Cell.h"
+//  Copyright 2021 Kartseva Masha
+#include "../include/cell.h"
 
 void Cell::init(Pair p, Ocean* oc) {
     crd = p;
@@ -24,7 +24,6 @@ void Cell::killMe() {
 void Cell::Moving() {
     obj->setCell(nullptr);
     obj = nullptr;
-
 }
 Pair Cell::Cord() {
     return crd;
