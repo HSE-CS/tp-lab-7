@@ -6,7 +6,7 @@
 #include "../include/Predator.h"
 #include "../include/Stone.h"
 #include "../include/Prey.h"
-#include "list<>"
+#include "<list>"
 class Ocean {
  private:
     Cell **cells;
