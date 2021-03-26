@@ -3,10 +3,11 @@
 #ifndef INCLUDE_PREY_H_
 #define INCLUDE_PREY_H_
 
+#include <vector>
+
 #include "../include/Common.h"
 #include "../include/Object.h"
 #include "../include/Cell.h"
-
 
 class Prey : public Object {
  protected:

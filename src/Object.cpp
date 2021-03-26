@@ -60,7 +60,7 @@ int Object::getSize() const {
 }
 
 void Object::death() {
-    if(isAlive()) {
+    if (isAlive()) {
         cell->killMe();
         cell = nullptr;
         alive = false;

@@ -27,9 +27,11 @@ void Ocean::makeOcean() {
 }
 
 void Ocean::createSpecies() {
-    std::map<objectType, int> species = {{STONE, STONE_DEFAULT_POPULATION},
-                                          {PREY, PREY_DEFAULT_POPULATION},
-                                          {PREDATOR, PREDATOR_DEFAULT_POPULATION}};
+    std::map<objectType, int> species = {
+            {STONE, STONE_DEFAULT_POPULATION},
+            {PREY, PREY_DEFAULT_POPULATION},
+            {PREDATOR, PREDATOR_DEFAULT_POPULATION}
+    };
 
     bool clear = true;
     while (clear) {
@@ -135,7 +137,7 @@ std::map<std::string, int> Ocean::calcStuff() const {
                                           {"Predator", 0}};
     for (auto i : stuff) {
         objectType type = i->getType();
-        switch(type) {
+        switch (type) {
             case STONE:
                 species["Stone"]++;
                 break;

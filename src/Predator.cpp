@@ -93,9 +93,13 @@ void Predator::eat(Cell* dest, bool hasFriends) {
         if (dest->getType() == PREDATOR) {
             Cell* strongestPredator = roulette(cell, dest);
             if (strongestPredator == cell) {
-                (static_cast<Predator*>(strongestPredator->getObject()))->eat(dest);
+                (static_cast<Predator*>(
+                        strongestPredator->getObject()
+                ))->eat(dest);
             } else {
-                (static_cast<Predator*>(strongestPredator->getObject()))->eat(cell);
+                (static_cast<Predator*>(
+                        strongestPredator->getObject()
+                ))->eat(cell);
                 return;
             }
         } else {
