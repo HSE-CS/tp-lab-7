@@ -3,6 +3,8 @@
 #ifndef INCLUDE_PREDATOR_H_
 #define INCLUDE_PREDATOR_H_
 
+#include <vector>
+
 #include "../include/Prey.h"
 #include "../include/Common.h"
 #include "../include/Cell.h"
@@ -12,7 +14,7 @@ class Predator : public Prey {
     double satiety = size;
     void move() override;
     void eat(Cell* dest, bool hasFriends);
-    static bool isPrey(Cell* cell) ;
+    static bool isPrey(Cell* cell);
     bool isHungry() const;
     bool isVeryHungry() const;
     static std::vector<Cell*> uniteVectors(std::vector<Cell*> vector1,

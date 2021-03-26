@@ -12,12 +12,12 @@ bool Predator::isHungry() const {
 }
 
 bool Predator::isVeryHungry() const {
-    return satiety < double(size) / 100;
+    return satiety < static_cast<double>(size) / 100;
 }
 
 void Predator::live() {
     if (isAlive()) {
-        if (satiety < double(size) / 10000) {
+        if (satiety < static_cast<double>(size) / 10000) {
             death();
             return;
         }
@@ -40,16 +40,16 @@ void Predator::move() {
             Cell* cellToMove = cell->getCell({ crd.x + i, crd.y + j });
             if (isPrey(cellToMove)) {
                 preyCells.push_back(cellToMove);
-            } else if(isEmpty(cellToMove)) {
+            } else if (isEmpty(cellToMove)) {
                 emptyCells.push_back(cellToMove);
-            } else if(isFriend(cellToMove)) {
+            } else if (isFriend(cellToMove)) {
                 predatorCells.push_back(cellToMove);
             }
         }
     }
 
     std::vector<Cell*> food;
-    if(isVeryHungry()) {
+    if (isVeryHungry()) {
         if (preyCells.empty() && predatorCells.empty()) {
             food = emptyCells;
         } else {
@@ -65,7 +65,7 @@ void Predator::move() {
         food = emptyCells;  // uniteVectors(preyCells, emptyCells);
     }
 
-    if(!food.empty()) {
+    if (!food.empty()) {
         eat(getCell(food), !predatorCells.empty());
     }
 }
@@ -93,9 +93,9 @@ void Predator::eat(Cell* dest, bool hasFriends) {
         if (dest->getType() == PREDATOR) {
             Cell* strongestPredator = roulette(cell, dest);
             if (strongestPredator == cell) {
-                ((Predator*)strongestPredator->getObject())->eat(dest);
+                (static_cast<Predator*>(strongestPredator->getObject()))->eat(dest);
             } else {
-                ((Predator*)strongestPredator->getObject())->eat(cell);
+                (static_cast<Predator*>(strongestPredator->getObject()))->eat(cell);
                 return;
             }
         } else {

@@ -31,7 +31,7 @@ void Prey::move() {
             Cell* cellToMove = cell->getCell({ crd.x + i, crd.y + j });
             if (isEmpty(cellToMove)) {
                 emptyCells.push_back(cellToMove);
-            } else if(isFriend(cellToMove)) {
+            } else if (isFriend(cellToMove)) {
                 hasFriends = true;
             }
         }
@@ -42,7 +42,7 @@ void Prey::move() {
     }
 }
 
-Cell* Prey::getCell(std::vector<Cell*> &availableCells) {
+Cell* Prey::getCell(const std::vector<Cell*> &availableCells) {
     int idx = getRandom(availableCells.size());
     return availableCells[idx];
 }

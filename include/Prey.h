@@ -16,7 +16,7 @@ class Prey : public Object {
     virtual void move();
     bool doReproduction(int cycle = PREY_REPRODUCTION_CYCLE);
     void makeStep(Cell* dest, bool doReproduction, bool hasFriends);
-    static Cell* getCell(std::vector<Cell*>& availableCells);
+    static Cell* getCell(const std::vector<Cell*>& availableCells);
 
  public:
     explicit Prey(Cell* cell, int minSize = 1);

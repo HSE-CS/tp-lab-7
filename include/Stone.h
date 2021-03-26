@@ -10,7 +10,7 @@ class Stone : public Object {
  private:
     int deathAge = DEATH_AGE * (getRandom(DEATH_AGE) + 1);
     bool checkAge();
-    
+
  public:
     explicit Stone(Cell* cell) : Object(STONE, cell) {}
     void live() override;

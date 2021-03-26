@@ -102,7 +102,6 @@ Object *Ocean::getObject(objectType type, Cell* cell) {
 }
 
 void Ocean::printOcean() const {
-    // setCursor(0, 0);
     std::cout << "Ocean (" << step << " step)" << std::endl;
     for (int i = 0; i < OCEAN_Y_SIZE; i++) {
         for (int j = 0; j < OCEAN_X_SIZE; j++) {
@@ -206,9 +205,3 @@ void Ocean::printStats(std::map<std::string, int> stats) {
 void Ocean::addToStuff(Object *object) {
     stuff.push_back(object);
 }
-
-void Ocean::setCursor(short x, short y) {
-    // COORD coord = {x, y};
-    // SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
-}
-

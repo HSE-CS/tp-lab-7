@@ -27,7 +27,7 @@ class Object {
         age = 0;
         size = 0;
         alive = true;
-    };
+    }
     virtual ~Object();
 
     virtual void live() = 0;
