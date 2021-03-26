@@ -1,3 +1,4 @@
+// Copyright 2021 Bogomazov
 #ifndef _OCEAN_H_
 #define _OCEAN_H_
 
@@ -10,12 +11,21 @@ class Ocean
  private:
     Cell **cells;
     std::list<Object*> stuff;
+    std::list<Object*> ListOfTheDead;
+    coord_t M, N;
+    int number_objects;
 
  public:
-    Ocean();
+    Ocean(coord_t M, coord_t N,  int number_objects);
     ~Ocean();
     void print() const;
-    void addObjects(...);
+    void addObjects(int number_objects);
     void run();
+
+    Cell* seachEmptyPlace(Pair coordinate);
+    void addObject(Object* object__);
+    void AddListOfTheDead(Object* object__);
+    void ClearListOfTheDead();
+    Cell* hunt(Pair coordinate);
 };
 #endif
