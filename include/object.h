@@ -2,7 +2,7 @@
 #ifndef INCLUDE_OBJECT_H_
 #define INCLUDE_OBJECT_H_
 
-#include "common.h"
+#include "../include/common.h"
 
 class Cell;
 class Object {
