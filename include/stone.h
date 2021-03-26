@@ -10,7 +10,7 @@
 
 class Stone : public Object {
  public:
-    Stone(Cell* cell) : Object(cell) {
+    explicit Stone(Cell* cell) : Object(cell) {
         obj_type = ObjType::STONE;
         lifetime = stone_lim;
     }
