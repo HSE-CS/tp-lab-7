@@ -9,15 +9,13 @@
 C:/Users/nekna/CLionProjects/tp-lab-7/include/Object.h
 ../include/common.h
 C:/Users/nekna/CLionProjects/tp-lab-7/include/common.h
-../include/cell.h
-C:/Users/nekna/CLionProjects/tp-lab-7/include/cell.h
 
 C:/Users/nekna/CLionProjects/tp-lab-7/include/cell.h
 ../include/ocean.h
 C:/Users/nekna/CLionProjects/tp-lab-7/include/ocean.h
 ../include/common.h
 C:/Users/nekna/CLionProjects/tp-lab-7/include/common.h
-../include/Object.h
+Object.h
 C:/Users/nekna/CLionProjects/tp-lab-7/include/Object.h
 
 C:/Users/nekna/CLionProjects/tp-lab-7/include/common.h
@@ -39,10 +37,14 @@ C:/Users/nekna/CLionProjects/tp-lab-7/include/common.h
 C:/Users/nekna/CLionProjects/tp-lab-7/include/cell.h
 ../include/Object.h
 C:/Users/nekna/CLionProjects/tp-lab-7/include/Object.h
+../include/prey.h
+C:/Users/nekna/CLionProjects/tp-lab-7/include/prey.h
 
 C:/Users/nekna/CLionProjects/tp-lab-7/include/predator.h
 
 C:/Users/nekna/CLionProjects/tp-lab-7/include/prey.h
+../include/Object.h
+C:/Users/nekna/CLionProjects/tp-lab-7/include/Object.h
 
 C:/Users/nekna/CLionProjects/tp-lab-7/include/stone.h
 ../include/Object.h

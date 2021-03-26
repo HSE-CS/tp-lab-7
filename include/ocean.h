@@ -8,6 +8,8 @@
 #include "../include/common.h"
 #include "../include/cell.h"
 #include "../include/Object.h"
+#include "../include/prey.h"
+
 class Cell;
 class Object;
 
@@ -22,7 +24,9 @@ class Ocean {
     void print() const;
     void addObjects();
     void run();
-    std::vector<Object*> getFreeAround();
+    std::vector<Cell> getNearbyCells(int i, int j);
+    Cell* getCell(int i, int j);
+    void setObjectToCell(Object* object, int i, int j);
 };
 
 #endif  //  INCLUDE_OCEAN_H

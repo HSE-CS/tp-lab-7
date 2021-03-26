@@ -29,3 +29,7 @@ coord_t Cell::getX() {
 coord_t Cell::getY() {
     return coordinates.y;
 }
+
+Ocean * Cell::getCurrentOcean() {
+    return this->ocean;
+}

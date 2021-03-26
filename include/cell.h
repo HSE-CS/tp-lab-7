@@ -4,7 +4,7 @@
 
 #include "../include/ocean.h"
 #include "../include/common.h"
-#include "../include/Object.h"
+#include "Object.h"
 
 class Ocean;
 class Object;
@@ -26,6 +26,7 @@ class Cell {
     bool isFree();
     coord_t getX();
     coord_t getY();
+    Ocean* getCurrentOcean();
 };
 
 #endif  //  INCLUDE_CELL_H

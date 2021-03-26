@@ -191,6 +191,9 @@
 		<Unit filename="C:/Users/nekna/CLionProjects/tp-lab-7/include/stone.h">
 			<Option target="tp-lab-7"/>
 		</Unit>
+		<Unit filename="C:/Users/nekna/CLionProjects/tp-lab-7/src/Object.cpp">
+			<Option target="tp-lab-7"/>
+		</Unit>
 		<Unit filename="C:/Users/nekna/CLionProjects/tp-lab-7/src/cell.cpp">
 			<Option target="tp-lab-7"/>
 		</Unit>

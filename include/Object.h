@@ -4,7 +4,6 @@
 #define INCLUDE_OBJECT_H
 
 #include "../include/common.h"
-#include "../include/cell.h"
 
 #define STONE_SYM '#'
 #define CORAL_SYM '*'
@@ -23,15 +22,17 @@ class Cell;
 class Object {
  protected:
     Cell *cell;
-    ObjType type = static_cast<ObjType>(-1);  //  None
+    ObjType type = (ObjType)-1;  //  None
 
  public:
-    explicit Object(Cell* objToSet) { this->cell = objToSet; };
-    virtual ~Object() { this->cell = nullptr; };
+    explicit Object(Cell* objToSet);
+    ~Object();
     virtual void live() = 0;
-    void setCell(Cell* objToSet) { this->cell = objToSet; };
+    void setCell(Cell* objToSet);
     virtual void  setType() = 0;
-    ObjType getType() { return this->type; };
+    ObjType getType();
+
+    void setObjectToCell(Object* object) {}
 };
 
 #endif  //  INCLUDE_OBJECT_H
