@@ -11,7 +11,6 @@ class Ocean;
 class Cell;
 class Object;
 class Object
-
 {
     friend Ocean;
     friend Cell;
