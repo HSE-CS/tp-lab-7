@@ -33,6 +33,8 @@ class Object {
     ObjType getType();
 
     void setObjectToCell(Object* object) {}
+    Cell* getCell();
+    Pair getPair();
 };
 
 #endif  //  INCLUDE_OBJECT_H

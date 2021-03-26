@@ -27,6 +27,7 @@ class Cell {
     coord_t getX();
     coord_t getY();
     Ocean* getCurrentOcean();
+    Pair getPair();
 };
 
 #endif  //  INCLUDE_CELL_H

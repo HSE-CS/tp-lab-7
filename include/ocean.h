@@ -38,5 +38,9 @@ public:
     void setObjectToCell(Object *object, int i, int j);
 
     bool isTherePredatorsOrPreys();
+
+    void addToVector(Object* objToAdd);
+    void removeFromVector(Pair coordPair);
+    Object* returnByCoords(coord_t x, coord_t y);
 };
 #endif  //  INCLUDE_OCEAN_H

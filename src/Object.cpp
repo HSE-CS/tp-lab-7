@@ -10,3 +10,9 @@ Object::Object(Cell *objToSet) {
 Object::~Object() { this->cell = nullptr; }
 void Object::setCell(Cell* objToSet) { this->cell = objToSet; }
 ObjType Object::getType() { return this->type; }
+Cell * Object::getCell() {
+    return this->cell;
+}
+Pair Object::getPair() {
+    return this->cell->getPair();
+}

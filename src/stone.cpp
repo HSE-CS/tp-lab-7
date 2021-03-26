@@ -23,8 +23,12 @@ void Coral::live() {
                 Pair p = {cell.getX(),cell.getY()};
                 Cell* newCell = new Cell(p, thisOcean);
                 thisOcean->setObjectToCell(dynamic_cast<Object*>(new Coral(newCell)),cell.getX(), cell.getY());
+                Object* objToAdd = thisOcean->returnByCoords(cell.getX(), cell.getY());
+                thisOcean->addToVector(objToAdd);
+                lifespan = 0;
             }
         }
+        ++lifespan;
     } else {
         ++lifespan;
     }

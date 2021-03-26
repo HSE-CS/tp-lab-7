@@ -12,7 +12,7 @@ struct Pair {
     coord_t y; // 0..N-1
 };
 
-const size_t N = 20;
-const size_t M = 30;
+const size_t N = 10;
+const size_t M = 10;
 
 #endif  //  INCLUDE_COMMON_H

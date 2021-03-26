@@ -26,6 +26,8 @@ void Predator::live() {
                     Pair curPair = {cells.getX(), cells.getY()};
                     Cell* newCell = new Cell(curPair, thisOcean);
                     thisOcean->setObjectToCell(dynamic_cast<Object*>(new Predator(newCell)),curPair.x,curPair.y);
+                    Object* objToAdd = thisOcean->returnByCoords(curPair.x,curPair.y);
+                    thisOcean->addToVector(objToAdd);
                     this->fullness = 15;
                     this->step = 0;
                     break;
@@ -35,22 +37,22 @@ void Predator::live() {
         for (auto cells : nearby) {
             if (!(cells.isFree())) {
                 Object *obj = cells.getObject();
-                if (obj->getType() == static_cast<ObjType>(2)) {  //  If the object in busy cell is a prey
+                if (obj->getType() == ObjType::PREY) {  //  If the object in busy cell is a prey
                     cells.killMe();
                     this->fullness = 100;
                     cells.setObject(this);
                     this->cell->killMe();
                     break;
-                } else if ((obj->getType() == static_cast<ObjType>(0)) ||
-                (obj->getType() == static_cast<ObjType>(1)) ||
-                        (obj->getType() == static_cast<ObjType>(3))) {  //  If the object in cell is a stone/coral/predator
+                } else if ((obj->getType() == ObjType::STONE) ||
+                           (obj->getType() == ObjType::CORAL) ||
+                        (obj->getType() == ObjType::PREDATOR)) {  //  If the object in cell is a stone/coral/predator
                     --(this->fullness);
                     continue;
                 }
             } else {
                 --(this->fullness);
                 cells.setObject(this);
-                this->cell->killMe();
+                this->cell->setObject(nullptr);
                 break;
             }
         }

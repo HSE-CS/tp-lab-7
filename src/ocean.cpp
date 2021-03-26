@@ -42,7 +42,7 @@ void Ocean::run(int amountOfPredators, int amountOfPreys, int amountOfStones, in
         ++shift;
         std::cout << iteration << std::endl;
         this->print();
-        std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
     }
 }
 void Ocean::addObjects(int amountOfPredators, int amountOfPreys, int amountOfStones, int amountOfCorals) {
@@ -212,4 +212,31 @@ bool Ocean::isTherePredatorsOrPreys() {
         return false;
     }
     return true;
+}
+
+void Ocean::addToVector(Object *objToAdd) {
+    this->stuff.push_back(objToAdd);
+}
+
+void Ocean::removeFromVector(Pair coordPair) {
+    for (size_t i = 0; i < this->stuff.size(); ++i) {
+        Cell* curCell = this->stuff[i]->getCell();
+        int indexToRemove = -1;
+        if (((curCell->getX()) == coordPair.x) && ((curCell->getY()) == coordPair.y)) {
+            indexToRemove = i;
+        }
+        if (indexToRemove > -1) {
+            this->stuff.erase(this->stuff.begin() + indexToRemove);
+        }
+    }
+}
+
+Object * Ocean::returnByCoords(coord_t x, coord_t y) {
+    for (auto objects : this->stuff) {
+        Cell* curCell = objects->getCell();
+        if ((x == curCell->getX())&&(y == curCell->getY())) {
+            return objects;
+        }
+    }
+    return nullptr;
 }

@@ -15,6 +15,7 @@ void Cell::setObject(Object* objToSet) {
 }
 
 void Cell::killMe() {
+    this->ocean->removeFromVector(this->object->getPair());
     this->object = nullptr;
 }
 bool Cell::isFree() {
@@ -32,4 +33,8 @@ coord_t Cell::getY() {
 
 Ocean * Cell::getCurrentOcean() {
     return this->ocean;
+}
+
+Pair Cell::getPair() {
+    return this->coordinates;
 }

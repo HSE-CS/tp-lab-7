@@ -41,7 +41,7 @@ void Prey::live() {
         for (auto cells : nearby) {
             if (cells.isFree()) {
                 cells.setObject(this);
-                this->cell->killMe();
+                this->cell->setObject(nullptr);
                 break;
             }
         }
