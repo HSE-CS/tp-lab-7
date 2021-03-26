@@ -109,7 +109,8 @@ Cell* Ocean::find_prey(Pair crd) {
         uint y1 = crd.y + rand() % 3 - 1;
 
         if (x1 < N && y1 < M)
-            if (cells[x1][y1].get_object() && cells[x1][y1].get_object()->get_type() == ObjType::PREY)
+            if (cells[x1][y1].get_object() &&
+		cells[x1][y1].get_object()->get_type() == ObjType::PREY)
                 return &cells[x1][y1];
     }
     return nullptr;
