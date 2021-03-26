@@ -3,8 +3,8 @@
 #ifndef _PREY_H_
 #define _PREY_H_
 
-#include "stone.h"
-#include "object.h"
+#include "../include/stone.h"
+#include "../include/object.h"
 
 class Prey : public Object {
 private:
