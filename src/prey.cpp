@@ -1,8 +1,8 @@
 // Copyright 2021 VladimirUspensky
 
-#include "prey.h"
-#include "cell.h"
-#include "ocean.h"
+#include "../include/prey.h"
+#include "../include/cell.h"
+#include "../include/ocean.h"
 
 Prey::~Prey() {}
 
@@ -36,62 +36,62 @@ void Prey::move() {
         .getObject()) {
         dirs.push_back
         (Pair{
-            (int) (new_x_coord + N - 1) % N,
-            (int) (new_y_coord + M - 1) % M});
+            static_cast<int>(new_x_coord + N - 1) % N,
+            static_cast<int>(new_y_coord + M - 1) % M});
     }
     if (!cell->getOcean()->getCells()
         [(new_x_coord + N + 1) % N][(new_y_coord + M + 1) %M]
         .getObject()) {
         dirs.push_back
         (Pair{
-            (int) (new_x_coord + N + 1) % N,
-            (int) (new_y_coord + M + 1) % M});
+            static_cast<int>(new_x_coord + N + 1) % N,
+            static_cast<int>(new_y_coord + M + 1) % M});
     }
     if (!cell->getOcean()->getCells()
         [(new_x_coord + N) % N][(new_y_coord + M - 1) %M]
         .getObject()) {dirs.push_back
         (Pair{
-            (int) (new_x_coord + N) % N,
-            (int) (new_y_coord + M - 1) % M});
+            static_cast<int>(new_x_coord + N) % N,
+            static_cast<int>(new_y_coord + M - 1) % M});
     }
     if (!cell->getOcean()->getCells()
         [(new_x_coord + N - 1) % N][(new_y_coord + M) %M]
         .getObject()) {
         dirs.push_back
         (Pair{
-            (int) (new_x_coord + N - 1) % N,
-            (int) (new_y_coord + M) % M});
+            static_cast<int>(new_x_coord + N - 1) % N,
+            static_cast<int>(new_y_coord + M) % M});
     }
     if (!cell->getOcean()->getCells()
         [(new_x_coord + N) % N][(new_y_coord + M + 1) %M]
         .getObject()) {
         dirs.push_back
         (Pair{
-            (int) (new_x_coord + N) % N,
-            (int) (new_y_coord + M + 1) % M});
+            static_cast<int>(new_x_coord + N) % N,
+            static_cast<int>(new_y_coord + M + 1) % M});
     }
     if (!cell->getOcean()->getCells()
         [(new_x_coord + N + 1) % N][(new_y_coord + M) %M].getObject()) {
         dirs.push_back
         (Pair{
-            (int) (new_x_coord + N + 1) % N,
-            (int) (new_y_coord + M) % M});
+            static_cast<int>(new_x_coord + N + 1) % N,
+            static_cast<int>(new_y_coord + M) % M});
     }
     if (!cell->getOcean()->getCells()
         [(new_x_coord + N + 1) % N][(new_y_coord + M - 1) %M]
         .getObject()) {
         dirs.push_back
         (Pair{
-            (int) (new_x_coord + N + 1) % N,
-            (int) (new_y_coord + M - 1) % M});
+            static_cast<int>(new_x_coord + N + 1) % N,
+            static_cast<int>(new_y_coord + M - 1) % M});
     }
     if (!cell->getOcean()->getCells()
         [(new_x_coord + N - 1) % N][(new_y_coord + M + 1) %M]
         .getObject()) {
         dirs.push_back
         (Pair{
-            (int) (new_x_coord + N - 1) % N,
-            (int) (new_y_coord + M + 1) % M});
+            static_cast<int>(new_x_coord + N - 1) % N,
+            static_cast<int>(new_y_coord + M + 1) % M});
     }
     if (!dirs.empty()) {
         Pair newDirs =

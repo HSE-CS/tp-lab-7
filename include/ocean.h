@@ -11,10 +11,10 @@
 #include "stone.h"
 
 class Ocean {
-private:
+ private:
     Cell **cells;
     std::vector<Object*> stuff;
-public:
+ public:
     std::vector<Object*> temp_stuff;
     std::minstd_rand rand;
     Ocean();

@@ -3,7 +3,7 @@
 #include <iostream>
 #include <sstream>
 #include <algorithm>
-#include "ocean.h"
+#include "../include/ocean.h"
 
 Ocean::Ocean() {
     rand.seed(44);

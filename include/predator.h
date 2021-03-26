@@ -6,7 +6,7 @@
 #include "prey.h"
 
 class Predator: public Prey {
-public:
+ public:
     explicit Predator(Cell* c);
     void live() override;
     void hunt();

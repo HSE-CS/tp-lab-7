@@ -1,6 +1,6 @@
 // Copyright 2021 VladimirUspensky
 
-#include "stone.h"
+#include "../include/stone.h"
 
 Stone::Stone(Cell *cell) : Object(cell) {
     type = ObjType::STONE;

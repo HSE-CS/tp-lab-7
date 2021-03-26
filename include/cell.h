@@ -10,11 +10,11 @@ class Ocean;
 
 class Cell {
     friend Ocean;
-private:
+ private:
     Pair crd;
     Object *obj;
     Ocean *ocean;
-public:
+ public:
     explicit Cell(Pair pair = {0, 0 }, Ocean* o = nullptr) :
             crd(pair),
             obj(nullptr),

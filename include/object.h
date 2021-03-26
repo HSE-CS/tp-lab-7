@@ -21,11 +21,11 @@ enum class ObjType {
 class Cell;
 
 class Object {
-protected:
+ protected:
     Cell *cell;
     ObjType type;
     int remain_live;
-public:
+ public:
     explicit Object(Cell * = nullptr);
     Object(const Object &object) : cell(object.cell),
     type(object.type),

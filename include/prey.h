@@ -7,7 +7,7 @@
 #include "object.h"
 
 class Prey: public Object {
-public:
+ public:
     explicit Prey(Cell * cell);
     ~Prey() override;
     void live() override;
@@ -15,7 +15,7 @@ public:
 };
 
 class Coral: public Prey {
-public:
+ public:
     explicit Coral(Cell * cell);
     void live() override;
 };
