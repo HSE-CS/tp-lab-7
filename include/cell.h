@@ -8,12 +8,12 @@
 class Cell {
     friend Ocean;
 
-private:
+ private:
     Pair crd;
     Object* object;
     Ocean* ocean;
 
-public:
+ public:
     explicit Cell(Pair p = { 0, 0 }, Ocean* oc = nullptr) :
         crd(p),
         object(nullptr),
