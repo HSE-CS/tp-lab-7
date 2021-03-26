@@ -44,3 +44,11 @@ void Ocean::addObjects(Object* new_object) {
 void Ocean::run() {
     
 }
+
+bool Ocean::returnCellStatus(Pair arg) {
+    return cells[arg.x][arg.y].isfree;
+}
+
+Cell* Ocean::returnCell(Pair arg) {
+    return &cells[arg.x][arg.y];
+}

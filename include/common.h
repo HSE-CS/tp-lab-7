@@ -1,7 +1,7 @@
 // Copyright [2020] <Olesya Nikolaeva>
 
-#ifndef _COMMON_H_
-#define _COMMON_H_
+#ifndef INCLUDE_COMMON_H_
+#define INCLUDE_COMMON_H_
 
 #include <iostream>
 

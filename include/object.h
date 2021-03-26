@@ -1,7 +1,7 @@
 // Copyright [2020] <Olesya Nikolaeva>
 
-#ifndef _OBJECT_H_
-#define _OBJECT_H_
+#ifndef INCLUDE_OBJECT_H_
+#define INCLUDE_OBJECT_H_
 
 #include "common.h"
 
@@ -28,7 +28,7 @@ class Object {
 
  public:
     explicit Object(ObjType type, Cell *cl = nullptr);
-    virtual ~Object();
+    ~Object();
     virtual void live() = 0; // жизнь объекта
     void setCell(Cell*);
     void setObjType(ObjType);

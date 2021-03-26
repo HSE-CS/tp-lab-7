@@ -7,15 +7,16 @@
 
 class Prey : public Object {
 protected:
-    int lifetime = LIFE_TIME_PREY;
-    int timetospawn = TIME_TO_SPAWN_PREY;
+    int lifetime = 0;
+    int timetospawn = 0;
 public:
-    explicit Prey(Cell* cell, ObjType type = ObjType::PREY) : Object(type, cell) {}
+    explicit Prey(Cell* cell,
+                  ObjType type = ObjType::PREY)
+    : Object(type, cell) {}
     ~Prey() {}
     void live();
     void move();
     void spawn();
-    Cell* getCell();
 };
 
 
