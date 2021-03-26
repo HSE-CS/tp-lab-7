@@ -163,7 +163,7 @@ void Ocean::run() {
                 sizeOfStuff--;
             }
         }
-        system("CLS");
+        int wasCleared = system("CLS");
         print();
     }
 }
