@@ -1,3 +1,5 @@
+// Copyright 2021 Nikolaev Ivan
+
 #ifndef INCLUDE_OBJECT_H_
 #define INCLUDE_OBJECT_H_
 
@@ -7,11 +9,10 @@ enum class ObjType { STONE, CORAL, PREY, PREDATOR };
 
 class Cell;
 class Object {
-protected:
+ protected:
     Cell* cell;
-    //char symbol = 0;
-public:
-    Object(Cell* = nullptr);
+ public:
+    explicit Object(Cell* = nullptr);
     virtual ~Object();
     Cell* getCell();
     void setCell(Cell* cell);

@@ -3,7 +3,6 @@
 #ifndef INCLUDE_OCEAN_H_
 #define INCLUDE_OCEAN_H_
 #include <string>
-#include <stdlib.h>
 #include <list>
 #include "object.h"
 #include "cell.h"
@@ -11,7 +10,7 @@
 #include "stone.h"
 
 class Ocean {
-public:
+ public:
     Ocean();
     Ocean(int height, int width, int preys, int predators, int stones);
     ~Ocean();
@@ -31,7 +30,8 @@ public:
     int getHeight();
     int getWidth();
     void print() const;
-protected:
+
+ protected:
     int height = 0;
     int width = 0;
     int preys = 0;

@@ -7,9 +7,9 @@
 
 class Prey : public Object {
     friend Object;
-public:
+ public:
     Prey();
-    Prey(int health);
+    explicit Prey(int health);
     void live() override;
     void move();
     bool moveTo(int x, int y);
@@ -20,9 +20,9 @@ public:
     bool checkPosition(int x, int y);
     bool checkCellForReproduce(int x, int y);
     void die();
-protected:
+ protected:
     char symbol = 'f';
-private:
+ private:
     int health = 10;
     int maxHealth = 10;
     bool abilityToReproduce = false;

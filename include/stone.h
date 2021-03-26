@@ -6,14 +6,14 @@
 #include "stone.h"
 
 class Stone : public Object {
-protected:
-    char symbol = '*';
-public:
+ public:
     Stone();
     ~Stone();
     void live() override;
     void die() override;
     char getSymbol();
+ protected:
+    char symbol = '*';
 };
 
 #endif  // INCLUDE_STONE_H_

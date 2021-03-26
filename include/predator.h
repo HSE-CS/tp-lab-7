@@ -6,19 +6,18 @@
 #include "prey.h"
 
 class Predator : public Prey {
-public:
+ public:
     Predator();
-    Predator(int health);
+    explicit Predator(int health);
     void live();
     void move();
-//    bool moveTo();
     void leaveOffspring(int x, int y);
     Pair eat();
     void die();
     char getSymbol();
-protected:
+ protected:
     char symbol = 'S';
-private:
+ private:
     int health = 10;
     int maxHealth = 10;
     int satiety = 10;

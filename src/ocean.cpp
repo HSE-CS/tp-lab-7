@@ -117,13 +117,11 @@ void Ocean::print() const {
             if (object == nullptr) {
                 SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 1));
                 std::cout << "~";
-            }
-            else {
+            } else {
                 char symbol = object->getSymbol();
                 if (symbol == 'S') {
                     SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 4));
-                }
-                else if (symbol == 'f') {
+                } else if (symbol == 'f') {
                     SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 10));
                 }
                 std::cout << symbol;

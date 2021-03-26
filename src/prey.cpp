@@ -19,8 +19,7 @@ bool Prey::checkPosition(int x, int y) {
     if (x < 0 || y < 0 || cell->getOcean()->getHeight() <= x ||
         cell->getOcean()->getWidth() <= y) {
         return false;
-    }
-    else {
+    } else {
         return true;
     }
 }
