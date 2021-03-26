@@ -21,8 +21,8 @@ void Prey::update(World& world, int x, int y) {
   }
 }
 
-bool Prey::actOnDirection(World& world, int self_x, int self_y, int target_x,
-                          int target_y, void* extra_data) {
+bool Prey::actOnDirection(World& world, int, int, int target_x, int target_y,
+                          void* extra_data) {
   auto extra = static_cast<ExtraData*>(extra_data);
   Object* selected = world.getObjectAt(target_x, target_y);
   if (selected == nullptr) {

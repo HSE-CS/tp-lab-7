@@ -24,7 +24,7 @@ class Prey : public Living {
                 int lifetime = genLifetime())
       : Living(ObjectType::PREY_FISH, lifetime),
         reproduction_timer(reproduction_rate),
-        reproduction_rate(reproduction_rate){};
+        reproduction_rate(reproduction_rate) {}
   ~Prey() override = default;
   void update(World& world, int x, int y) override;
   static int genReproductionRate();
