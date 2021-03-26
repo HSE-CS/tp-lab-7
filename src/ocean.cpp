@@ -57,7 +57,7 @@ void Ocean::run() {
   int f = 0;
   while (f < 50) {
     f++;
-    system("cls");
+//    system("cls");
     print();
     std::this_thread::sleep_until(std::chrono::system_clock::now() + std::chrono::seconds(1));
     for (std::list<Object *>::iterator i = stuff.begin(); i != stuff.end(); ++i) {
