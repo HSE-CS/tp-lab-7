@@ -1,8 +1,9 @@
+// Copyright 2021 by me
 #include "../include/predator.h"
 #include "../include/cell.h"
 
 Predator::Predator(Cell* cell_, size_t lifeTime_, size_t breedCoolDawn_,
-                   size_t _hungerLimit) : Object(cell_, ObjType::PREDATOR){
+                   size_t _hungerLimit) : Object(cell_, ObjType::PREDATOR) {
   lifeTime = lifeTime_;
   breedCoolDawn = breedCoolDawn_;
   breedTime = breedCoolDawn_;
@@ -12,12 +13,12 @@ Predator::Predator(Cell* cell_, size_t lifeTime_, size_t breedCoolDawn_,
 }
 
 void Predator::live() {
+  --lifeTime;
+  --hunger;
   if (lifeTime == 0 || hunger == 0) {
     death();
     return;
   }
-  --hunger;
-  --lifeTime;
   if (breedTime == 0) {
     Pair old(getCoord());
     breedingTime();

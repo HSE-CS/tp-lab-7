@@ -1,4 +1,5 @@
-#include "..\include\cell.h"
+// Copyright 2021 by me
+#include "../include/cell.h"
 
 void Cell::init(Pair p, Ocean* oc) {
   crd = p;
@@ -19,7 +20,7 @@ void Cell::print() {
   }
 }
 
-void Cell::killMe(){
+void Cell::killMe() {
   ocean->removeObj(obj);
   delete obj;
   this->obj = nullptr;

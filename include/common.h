@@ -1,5 +1,6 @@
-#ifndef _INCLUDE_COMMON_H_
-#define _INCLUDE_COMMON_H_
+// Copyright 2021 by me
+#ifndef INCLUDE_COMMON_H_
+#define INCLUDE_COMMON_H_
 
 #include <iostream>
 #include <typeinfo>
@@ -11,7 +12,7 @@ struct Pair {
   coord_t y;  // 0..N-1
 };
 
-const size_t N = 25;
-const size_t M = 80;
+const size_t N = 40;
+const size_t M = 150;
 
-#endif  // _INCLUDE_COMMON_H_
+#endif  // INCLUDE_COMMON_H_

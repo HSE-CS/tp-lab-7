@@ -1,4 +1,5 @@
-#include "..\include\ocean.h"
+// Copyright 2021 by me
+#include "../include/ocean.h"
 
 Ocean::Ocean(size_t preyLife_, size_t preyCoolDawn_, size_t predatorLife_,
              size_t predatorCoolDawn_, size_t predatorHunger_) {
@@ -83,7 +84,7 @@ void Ocean::run() {
   size_t counter = 0;
   size_t shift = 0;
   while (check()) {
-    system("cls");
+    
     std::cout << counter << "\n";
     ++counter;
     for (size_t i = 0; i < stuff.size(); ++i) {
@@ -92,7 +93,9 @@ void Ocean::run() {
     ++shift;
     print();
     std::this_thread::sleep_for(std::chrono::milliseconds(700));
+    system("cls");
   }
+  print();
 }
 
 bool Ocean::check() {
@@ -106,8 +109,8 @@ bool Ocean::check() {
       }
     }
   }
-  /*std::cout << "Predators: " << predatorCount;
-  std::cout << "\nPreys: " << preyCount << "\n";*/
+  std::cout << "Predators: " << predatorCount;
+  std::cout << "\nPreys: " << preyCount << "\n";
   if (predatorCount * preyCount == 0) return false;
   return true;
 }

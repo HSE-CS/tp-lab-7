@@ -1,5 +1,6 @@
-#ifndef _INCLUDE_OBJECT_H_
-#define _INCLUDE_OBJECT_H_
+// Copyright 2021 by me
+#ifndef INCLUDE_OBJECT_H_
+#define INCLUDE_OBJECT_H_
 
 #include "common.h"
 
@@ -18,7 +19,7 @@ class Object {
   ObjType type = ObjType::EMPTY;
 
  public:
-  explicit Object(Cell *cell_, ObjType type_) : cell(cell_), type(type_){};
+  explicit Object(Cell *cell_, ObjType type_) : cell(cell_), type(type_) {};
   //virtual ~Object();
   virtual void live() = 0;
   void setCell(Cell *);
@@ -28,4 +29,4 @@ class Object {
   ObjType getType();
 };
 
-#endif  // _INCLUDE_OBJECT_H_
+#endif  // INCLUDE_OBJECT_H_

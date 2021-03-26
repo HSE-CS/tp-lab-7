@@ -1,5 +1,6 @@
-#ifndef _INCLUDE_CELL_H_
-#define _INCLUDE_CELL_H_
+// Copyright 2021 by me
+#ifndef INCLUDE_CELL_H_
+#define INCLUDE_CELL_H_
 
 #include "common.h"
 #include "Object.h"
@@ -18,7 +19,7 @@ class Cell {
 
  public:
   explicit Cell(Pair p = {0, 0}, Ocean* oc = nullptr)
-      : crd(p), obj(nullptr), ocean(oc){};
+      : crd(p), obj(nullptr), ocean(oc) {};
   void init(Pair p, Ocean* oc);
   Object* getObject() const;
   Ocean* getOcean();
@@ -28,4 +29,4 @@ class Cell {
   Pair getCoord();
 };
 
-#endif  // _INCLUDE_CELL_H_
+#endif  // INCLUDE_CELL_H_

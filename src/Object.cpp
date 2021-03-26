@@ -1,3 +1,4 @@
+// Copyright 2021 by me
 #include "../include/Object.h"
 #include "../include/cell.h"
 

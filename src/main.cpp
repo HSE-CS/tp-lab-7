@@ -1,3 +1,4 @@
+// Copyright 2021 by me
 #include <iostream>
 
 #include "../include/common.h"
@@ -5,9 +6,9 @@
 
 int main() {
   Ocean oc;
-  oc.addObjects(100, ObjType::STONE);
-  oc.addObjects(400, ObjType::PREY);
-  oc.addObjects(200, ObjType::PREDATOR);
+  oc.addObjects(1000, ObjType::STONE);
+  oc.addObjects(3000, ObjType::PREY);
+  oc.addObjects(1500, ObjType::PREDATOR);
   oc.run();
   return 0;
 }

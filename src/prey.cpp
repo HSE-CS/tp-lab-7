@@ -1,3 +1,4 @@
+// Copyright 2021 by me
 #include "../include/prey.h"
 #include "../include/cell.h"
 
@@ -11,6 +12,7 @@ Prey::Prey(Cell *cell_, size_t lifeTime_, size_t breedCoolDawn_)
 }
 
 void Prey::live() {
+  --lifeTime;
   if (lifeTime == 0) {
     death();
     return;
@@ -25,7 +27,6 @@ void Prey::live() {
     }
   }
   move();
-  --lifeTime;
 }
 
 void Prey::breedingTime() {

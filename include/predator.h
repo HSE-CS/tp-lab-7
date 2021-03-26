@@ -1,5 +1,6 @@
-#ifndef _INCLUDE_PREDATOR_H_
-#define _INCLUDE_PREDATOR_H_
+// Copyright 2021 by me
+#ifndef INCLUDE_PREDATOR_H_
+#define INCLUDE_PREDATOR_H_
 
 #include "Object.h"
 
@@ -20,4 +21,4 @@ class Predator : public Object {
   void move();
 };
 
-#endif  // !_INCLUDE_PREDATOR_H_
+#endif  // INCLUDE_PREDATOR_H_

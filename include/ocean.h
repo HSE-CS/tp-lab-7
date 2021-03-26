@@ -1,5 +1,6 @@
-#ifndef _INCLUDE_OCEAN_H_
-#define _INCLUDE_OCEAN_H_
+// Copyright 2021 by me
+#ifndef INCLUDE_OCEAN_H_
+#define INCLUDE_OCEAN_H_
 
 #include <vector>
 #include <iostream>
@@ -42,4 +43,4 @@ class Ocean {
   std::vector<Cell *> emptyCells(Pair point);
   std::vector<Cell *> preyCells(Pair point);
 };
-#endif  // _INCLUDE_OCEAN_H_
+#endif  // INCLUDE_OCEAN_H_

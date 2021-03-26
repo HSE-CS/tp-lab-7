@@ -1,5 +1,6 @@
-#ifndef _INCLUDE_STONE_H_
-#define _INCLUDE_STONE_H_
+// Copyright 2021 by me
+#ifndef INCLUDE_STONE_H_
+#define INCLUDE_STONE_H_
 
 #include "Object.h"
 
@@ -12,4 +13,4 @@ class Stone : public Object {
 
 };
 
-#endif  // _INCLUDE_STONE_H_
+#endif  // INCLUDE_STONE_H_

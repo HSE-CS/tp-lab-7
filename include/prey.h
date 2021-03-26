@@ -1,5 +1,6 @@
-#ifndef _INCLUDE_PREY_H_
-#define _INCLUDE_PREY_H_
+// Copyright 2021 by me
+#ifndef INCLUDE_PREY_H_
+#define INCLUDE_PREY_H_
 
 #include<typeinfo>
 
@@ -20,4 +21,4 @@ class Prey : public Object {
   void move();
 };
 
-#endif  // !_INCLUDE_PREY_H_
+#endif  // INCLUDE_PREY_H_
