@@ -4,7 +4,6 @@
 #include <iostream>
 #include <vector>
 #include <map>
-#include <conio.h>
 #include <accctrl.h>
 
 #include "../include/Ocean.h"
@@ -195,7 +194,6 @@ void Ocean::run() {
         }
     }
     std::cout << "Stop" << std:: endl;
-    _getch();
 }
 
 void Ocean::printStats(std::map<std::string, int> stats) {
