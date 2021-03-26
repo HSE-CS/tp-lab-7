@@ -19,6 +19,9 @@
 #include "predator.h"
 #include "stone.h"
 
+class Cell;
+class Object;
+
 class Ocean {
   private:
     unsigned int height;  // number of lines
@@ -26,6 +29,15 @@ class Ocean {
     std::vector<std::vector<Cell*>> cells;
     std::vector<unsigned int> addOrder;
     std::set<Object*> objects;
+    std::map<NATURE, char> picture{{UNKNOWN, '.'},
+                                  {PREY, 'f'},
+                                  {PREDATOR, 'S'},
+                                  {STONE, '#'}};
+    std::map<NATURE, unsigned int> longevity{{UNKNOWN, 0},
+                                                {PREY, 20},
+                                                {PREDATOR, 10},
+                                                {STONE, 1000}};
+
 
  public:
     Ocean(unsigned int _height, unsigned int _width);

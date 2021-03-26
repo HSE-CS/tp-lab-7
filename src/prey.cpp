@@ -1,9 +1,8 @@
 // Copyright 2021 Kuznetsov Mikhail
+
 #include "prey.h"
 #include "ocean.h"
 #include "cell.h"
-
-
 
 Prey::Prey(Cell * _cell,
            NATURE _nature,
@@ -11,18 +10,27 @@ Prey::Prey(Cell * _cell,
   Object(_cell, _nature, _age){
 }
 
+
 Prey::~Prey() {
 }
 
+
+
 void Prey::live() {
-  if (age < FEATURES::longevity[nature]) {
+  // if (age < FEATURES::longevity[nature]) {
+  if (age < longevity[nature]) {
     age++;
+    /*
     if (cell->getTemperature() > FEATURES::maxTemperature[nature] ||
       cell->getTemperature() < FEATURES::minTemperature[nature]) {
+    */
+    if (cell->getTemperature() > maxTemperature[nature] ||
+      cell->getTemperature() < minTemperature[nature]) {
       cell->getOcean()->deleteObject(cell);
       return;
     }
-    if (!(age % FEATURES::breedingTime[nature])) {
+    //  if (!(age % FEATURES::breedingTime[nature])) {
+    if (!(age % breedingTime[nature])) {
       this->breed();
     }
     this->swim();

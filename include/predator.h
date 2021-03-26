@@ -9,7 +9,7 @@ class Predator: public Prey {
     explicit Predator(Cell* _cell = nullptr,
                    NATURE _nature = NATURE::PREDATOR,
                    unsigned int _age = 0);
-    ~Predator() override;
+    ~Predator();
     void live() override;
     bool eat();
 };

@@ -1,6 +1,8 @@
 // Copyright 2021 Kuznetsov Mikhail
+
 #include "cell.h"
-#include "ocean.h"
+
+
 
 Cell::Cell(Ocean* _ocean,
           std::pair<unsigned int, unsigned int> _coordinates,
@@ -61,3 +63,4 @@ void Cell::killObject() {
     object = nullptr;
   }
 }
+

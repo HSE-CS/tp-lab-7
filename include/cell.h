@@ -4,8 +4,7 @@
 
 #include <list>
 #include <utility>
-#include "common.h"
-
+#include "ocean.h"
 
 class Ocean;
 class Object;

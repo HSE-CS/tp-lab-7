@@ -1,5 +1,7 @@
 // Copyright 2021 Kuznetsov Mikhail
+
 #include "object.h"
+#include "ocean.h"
 #include "cell.h"
 
 Object::Object(Cell *_cell, NATURE _nature,
@@ -7,6 +9,9 @@ Object::Object(Cell *_cell, NATURE _nature,
   cell(_cell),
   nature(_nature),
   age(_age) {
+}
+
+Object::~Object() {
 }
 
 void Object::setCell(Cell *_cell) {
@@ -34,10 +39,15 @@ unsigned int Object::getAge() {
 }
 
 void Object::live() {
-  if (age < FEATURES::longevity[nature]) {
+  //if (age < FEATURES::longevity[nature]) {
+  if (age < longevity[nature]) {
     age++;
+    /*
     if (cell->getTemperature() > FEATURES::maxTemperature[nature] ||
       cell->getTemperature() < FEATURES::minTemperature[nature]) {
+    */
+    if (cell->getTemperature() > maxTemperature[nature] ||
+      cell->getTemperature() < minTemperature[nature]) {
       cell->getOcean()->deleteObject(cell);
     }
   }

@@ -4,13 +4,12 @@
 
 #include "object.h"
 
-
 class Stone : public Object {
  public:
     explicit Stone(Cell* _cell = nullptr,
                    NATURE _nature = NATURE::STONE,
                    unsigned int _age = 0);
-    ~Stone() override;
+    ~Stone();
 };
 
 

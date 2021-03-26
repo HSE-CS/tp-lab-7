@@ -1,5 +1,7 @@
 // Copyright 2021 Kuznetsov Mikhail
+
 #include "ocean.h"
+
 
 Ocean::Ocean(unsigned int _height, unsigned int _width) :
   height(_height), width(_width) {
@@ -101,9 +103,11 @@ void Ocean::print() {
     for (unsigned int j = 0; j < width; j++) {
       auto object = cells[i][j]->getObject();
       if (nullptr != object) {
-        std::cout << FEATURES::picture[object->getNature()];
+        //  std::cout << FEATURES::picture[object->getNature()];
+        std::cout << picture[object->getNature()];
       } else {
-        std::cout << FEATURES::picture[NATURE::UNKNOWN];
+        // std::cout << FEATURES::picture[NATURE::UNKNOWN];
+        std::cout << picture[NATURE::UNKNOWN];
       }
     }
     std::cout << '\n';
@@ -138,17 +142,18 @@ void Ocean::run(unsigned int _years) {
     }
 
     std::set<Object*> trash;
-    for(auto* object: objects) {
-        if(nullptr == object) {
+    for (auto* object: objects) {
+        if (nullptr == object) {
           trash.insert(object);
           continue;
         }
         object->live();
-        if(object->getAge() == FEATURES::longevity[object->getNature()])
+        //if (object->getAge() == FEATURES::longevity[object->getNature()])
+        if (object->getAge() == longevity[object->getNature()])
           trash.insert(object);
     }
-    for(auto* object: trash) {
-      if(nullptr != object) {
+    for (auto* object: trash) {
+      if (nullptr != object) {
         deleteObject(object->getCell());
       }
       else {

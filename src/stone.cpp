@@ -1,4 +1,5 @@
 // Copyright 2021 Kuznetsov Mikhail
+
 #include "stone.h"
 
 Stone::Stone(Cell * _cell,
@@ -7,8 +8,10 @@ Stone::Stone(Cell * _cell,
   Object(_cell, _nature, _age){
 }
 
+
 Stone::~Stone() {
 }
+
 
 
 
