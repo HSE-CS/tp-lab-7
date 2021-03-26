@@ -5,107 +5,42 @@
 
 #include "world.h"
 
-void Prey::update(World* world, int x, int y) {
-  energy -= 1;
+void Prey::update(World& world, int x, int y) {
   reproduction_timer = std::max(reproduction_timer - 1, 0);
-  if (energy <= 0) {
-    world->replace(nullptr, x, y);
-    return;
+  auto extra_data = ExtraData{-1, -1, 0};
+  scanAdjacent(world, x, y, &extra_data);
+  if (extra_data.last_free_x != -1) {
+    if (reproduction_timer == 0) {
+      if (extra_data.neighbors < 3) {
+        world.replace(new Prey, extra_data.last_free_x, extra_data.last_free_y);
+      }
+      reproduction_timer = reproduction_rate;
+    } else {
+      world.swap(x, y, extra_data.last_free_x, extra_data.last_free_y);
+    }
   }
-  int direction = std::rand() % 4;
-  int end_direction = direction;
-  int neighbors = 0;
-  do {
-    if (neighbors >= 3) {
-      energy /= 2;
-    }
-    switch (direction) {
-      case MoveDirection::DOWN:
-        if (y < world->getHeight() - 1) {
-          Object* selected = world->getObjectAt(x, y + 1);
-          if (selected == nullptr) {
-            if (reproduction_timer == 0) {
-              world->replace(new Prey(Prey::generateReproductionRate(),
-                                      Prey::generateLifetime()),
-                             x, y + 1);
-              reproduction_timer = reproduction_rate;
-            } else {
-              world->swap(x, y + 1, x, y);
-            }
-            return;
-          } else if (selected->type == PREY_FISH) {
-            neighbors += 1;
-          }
-        }
-        break;
-      case MoveDirection::UP:
-        if (y > 0) {
-          Object* selected = world->getObjectAt(x, y - 1);
-          if (selected == nullptr) {
-            if (reproduction_timer == 0) {
-              world->replace(new Prey(Prey::generateReproductionRate(),
-                                      Prey::generateLifetime()),
-                             x, y - 1);
-              reproduction_timer = reproduction_rate;
-            } else {
-              world->swap(x, y - 1, x, y);
-            }
-            return;
-          } else if (selected->type == PREY_FISH) {
-            neighbors += 1;
-          }
-        }
-        break;
-      case MoveDirection::LEFT:
-        if (x > 0) {
-          Object* selected = world->getObjectAt(x - 1, y);
-          if (selected == nullptr) {
-            if (reproduction_timer == 0) {
-              world->replace(new Prey(Prey::generateReproductionRate(),
-                                      Prey::generateLifetime()),
-                             x - 1, y);
-              reproduction_timer = reproduction_rate;
-            } else {
-              world->swap(x - 1, y, x, y);
-            }
-            return;
-          } else if (selected->type == PREY_FISH) {
-            neighbors += 1;
-          }
-        }
-        break;
-      case MoveDirection::RIGHT:
-        if (x < world->getWidth() - 1) {
-          Object* selected = world->getObjectAt(x + 1, y);
-          if (selected == nullptr) {
-            if (reproduction_timer == 0) {
-              world->replace(new Prey(Prey::generateReproductionRate(),
-                                      Prey::generateLifetime()),
-                             x + 1, y);
-              reproduction_timer = reproduction_rate;
-            } else {
-              world->swap(x + 1, y, x, y);
-            }
-            return;
-          } else if (selected->type == PREY_FISH) {
-            neighbors += 1;
-          }
-        }
-        break;
-      default:
-        break;
-    }
-    direction = (direction + 1) % 4;
-  } while (end_direction != direction);
 }
 
-int Prey::generateReproductionRate() {
+bool Prey::actOnDirection(World& world, int self_x, int self_y, int target_x,
+                          int target_y, void* extra_data) {
+  auto extra = static_cast<ExtraData*>(extra_data);
+  Object* selected = world.getObjectAt(target_x, target_y);
+  if (selected == nullptr) {
+    extra->last_free_x = target_x;
+    extra->last_free_y = target_y;
+  } else if (selected->type == ObjectType::PREY_FISH) {
+    extra->neighbors += 1;
+  }
+  return false;
+}
+
+int Prey::genReproductionRate() {
   return PREY_MIN_REPRODUCTION_RATE +
          std::rand() %
              (PREY_MAX_REPRODUCTION_RATE - PREY_MIN_REPRODUCTION_RATE);
 }
 
-int Prey::generateLifetime() {
+int Prey::genLifetime() {
   return PREY_MIN_LIFETIME +
          std::rand() % (PREY_MAX_LIFETIME - PREY_MIN_LIFETIME);
 }

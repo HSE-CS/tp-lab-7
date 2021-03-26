@@ -9,5 +9,5 @@ class Object {
   explicit Object(ObjectType type) : type(type){};
   ObjectType type;
   virtual ~Object() = default;
-  virtual void update(World *world, int x, int y) = 0;
+  virtual void update(World& world, int x, int y) = 0;
 };

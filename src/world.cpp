@@ -8,27 +8,24 @@
 #include "prey.h"
 #include "stone.h"
 
-World::World(int width, int height) : width(width), height(height) {
+World::World(int width, int height, int seed) : width(width), height(height) {
   objects.reserve(width * height);
-}
-
-void World::init(int seed) {
   const int EMPTY = 20;
   const int STONE = 5;
   const int PREY = 3;
   const int PREDATOR = 1;
   std::srand(seed);
   for (int i = 0; i < width * height; ++i) {
-    int type = std::rand() % (EMPTY + STONE + PREY + PREDATOR);
+    int cell_type = std::rand() % (EMPTY + STONE + PREY + PREDATOR);
     Object* o;
-    if (type < EMPTY) {
+    if (cell_type < EMPTY) {
       o = nullptr;
-    } else if (type < EMPTY + STONE) {
+    } else if (cell_type < EMPTY + STONE) {
       o = new Stone;
-    } else if (type < EMPTY + STONE + PREY) {
-      o = new Prey(Prey::generateReproductionRate(), Prey::generateLifetime());
+    } else if (cell_type < EMPTY + STONE + PREY) {
+      o = new Prey;
     } else {
-      o = new Predator(Predator::generateLifetime());
+      o = new Predator;
     }
     objects.emplace_back(o);
   }
@@ -74,10 +71,10 @@ bool World::update() {
     return true;
   }
   for (auto& p : prey) {
-    p.first->update(this, p.second.first, p.second.second);
+    p.first->update(*this, p.second.first, p.second.second);
   }
   for (auto& p : predators) {
-    p.first->update(this, p.second.first, p.second.second);
+    p.first->update(*this, p.second.first, p.second.second);
   }
   return false;
 }

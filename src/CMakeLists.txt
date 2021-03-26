@@ -1,6 +1,6 @@
 set(header_path "${${PROJECT_NAME}_SOURCE_DIR}/include")
 set(header ${header_path}/world.h ${header_path}/object.h ${header_path}/prey.h ${header_path}/predator.h ${header_path}/stone.h)
-set(src world.cpp prey.cpp main.cpp predator.cpp)
+set(src world.cpp prey.cpp main.cpp predator.cpp living.cpp)
 add_compile_options(-Wall -Wextra -pedantic)
 
 

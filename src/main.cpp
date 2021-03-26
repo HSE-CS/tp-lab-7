@@ -50,8 +50,7 @@ int main(int argc, char** argv) {
     }
     current_arg += 2;
   }
-  World world(width, height);
-  world.init(seed);
+  World world(width, height, seed);
   std::cout << "\033[?1049h";
   int i = 0;
   for (;;) {
