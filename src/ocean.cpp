@@ -2,6 +2,13 @@
 
 #include "../include/ocean.h"
 
+#include "../include/cell.h"
+#include "../include/common.h"
+#include "../include/object.h"
+#include "../include/predator.h"
+#include "../include/prey.h"
+#include "../include/stone.h"
+
 Ocean::Ocean(unsigned int _M, unsigned int _N) {
   M = _M;
   N = _N;

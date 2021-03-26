@@ -6,14 +6,8 @@
 #include <list>
 #include <random>
 
-#include "../include/cell.h"
-#include "../include/common.h"
-#include "../include/object.h"
-#include "../include/predator.h"
-#include "../include/prey.h"
-#include "../include/stone.h"
-
 class Cell;
+class Object;
 
 class Ocean {
  private:
