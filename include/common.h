@@ -4,8 +4,8 @@
 #define INCLUDE_COMMON_H_
 
 struct Pair {
-  unsigned x; 
-  unsigned y; 
+  unsigned x;
+  unsigned y;
 };
 
 const unsigned N = 45;

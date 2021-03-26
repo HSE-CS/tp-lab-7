@@ -13,9 +13,9 @@ Coral::Coral(Cell* cell) : Object{ cell } {
 void Coral::live() {
   if (this->timeToDie == 0) {
     this->cell->killMe();
-  }
-  else
+  } else {
     reproduce();
+  }
 }
 
 void Coral::reproduce() {
