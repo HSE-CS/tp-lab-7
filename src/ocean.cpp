@@ -23,7 +23,6 @@ Ocean::Ocean() {
 Ocean::~Ocean() {}
 
 void Ocean::print() const {
-    system("cls");
     for (size_t i = 0; i < N; i++) {
         for (size_t j = 0; j < M; j++) {
             if (cells[j][i]->getObject() != nullptr) {
