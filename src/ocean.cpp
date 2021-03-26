@@ -1,13 +1,13 @@
 // Copyright TimurZaytsev 2021
-#include "ocean.h"
+#include "../include/ocean.h"
 
 #include <algorithm>
 #include <iostream>
 
-#include "cell.h"
-#include "predator.h"
-#include "prey.h"
-#include "stone.h"
+#include "../include/cell.h"
+#include "../include/predator.h"
+#include "../include/prey.h"
+#include "../include/stone.h"
 Ocean::Ocean() {
   this->cells = new Cell*[M];
   for (unsigned int i{0}; i < M; i++) {
