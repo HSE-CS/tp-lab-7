@@ -46,7 +46,7 @@ void Ocean::addObjects(unsigned int n, ObjType type) {
             cells[y][x].setObject(born);
             stuff.push_back(born);
             n--;
-        }
+            }
     }
 }
 void Ocean::run() {
@@ -64,7 +64,7 @@ void Ocean::run() {
             else {
                 (*i)->live();
                 ++i;
-            }
+                 }
         }
     }
 }
