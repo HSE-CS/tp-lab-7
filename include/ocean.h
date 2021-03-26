@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <iostream>
 #include <list>
-// #include <Windows.h>
 #include "../include/cell.h"
 #include "../include/object.h"
 #include "../include/common.h"

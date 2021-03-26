@@ -80,7 +80,6 @@ int Ocean::countPreys() const {
 
 
 void Ocean::print() const {
-    // system("cls");
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < M; j++) {
             if (cells[j][i].getObject() == nullptr) {
@@ -105,7 +104,6 @@ void Ocean::run() {
     while (!stuff.empty()) {
         print();
         std::cout << "Number of iteration: " << i << std::endl;
-        // Sleep(100);
         for (Object* o : stuff) {
             o->live();
         }
