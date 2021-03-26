@@ -18,8 +18,7 @@ void Prey::live() {
         }
         this->breeding();
         Life_time--;
-    }
-    else {
+    } else {
         this->cell->killMe();
     }
 }
