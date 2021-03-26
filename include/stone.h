@@ -8,7 +8,7 @@
 class Stone : public Object {
  private:
  public:
-   explicit Stone();
+   explicit Stone(Cell* c) : Object(ObjType::STONE, c) { cell = c; }
    ~Stone();
    void live() override;
 };

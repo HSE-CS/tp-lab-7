@@ -22,6 +22,7 @@ public:
 		ocean(oc) {}
 	void init(Pair p, Ocean* oc);
 	Object* getObject() const;
+	Ocean* getOcean() const;
 	void setObject(Object*);
 	void killMe();
 	Cell& getN(int row, int column);

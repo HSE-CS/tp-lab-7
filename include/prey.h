@@ -6,14 +6,17 @@
 #include "stone.h"
 #include "object.h"
 
-class Prey : Stone {
+class Prey : public Object {
 private:
   ObjType objT;
-  
+  size_t health;
+  size_t mulP;
 public:
-  explicit Prey();
+  explicit Prey(Cell* cell) : Object(ObjType::PREY, cell) { health = PREY_LIFE, mulP = 3; }
   ~Prey();
+  void move() override;
   void live() override;
+  Cell* getCell();
   
 };
 #endif
