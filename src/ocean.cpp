@@ -2,7 +2,7 @@
 
 #include "../include/ocean.h"
 
-Ocean::Ocean(unsigned int _M = 10, unsigned int _N = 10) {
+Ocean::Ocean(unsigned int _M, unsigned int _N) {
   M = _M;
   N = _N;
   std::random_device rd;

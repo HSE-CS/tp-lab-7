@@ -21,7 +21,7 @@ class Ocean {
   unsigned int N;
 
  public:
-  Ocean(unsigned int _M = 10, unsigned int _N = 10);
+  Ocean(unsigned int _M, unsigned int _N);
   ~Ocean();
   void print() const;
   void AddObject(Object *);
