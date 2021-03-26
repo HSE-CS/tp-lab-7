@@ -22,7 +22,7 @@ class Object {
   explicit Object(Cell *_cell = nullptr) {
     cell = _cell;
     type = STONE;
-  };
+  }
   virtual void live() = 0;
   void setCell(Cell *);
   ObjType getType() const;
