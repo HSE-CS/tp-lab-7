@@ -1,7 +1,7 @@
 // copyright 2021 Victor Shatilov
 
-#ifndef INCLUDE_COMMON_H
-#define INCLUDE_COMMON_H
+#ifndef INCLUDE_COMMON_H_
+#define INCLUDE_COMMON_H_
 
 #include <iostream>
 #include <vector>
@@ -99,4 +99,4 @@ class Object {
     }
 };
 
-#endif  // INCLUDE_COMMON_H
+#endif  // INCLUDE_COMMON_H_

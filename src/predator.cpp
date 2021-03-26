@@ -4,11 +4,10 @@
 #include "../include/cell.h"
 #include "../include/Ocean.h"
 
-predator::predator(int x, int y, int energy,
-                   int type, Cell *cell) : Object(x, y, energy,
-                                                  type, cell) {
-
-}
+predator::predator(int x,
+                   int y,
+                   int energy,
+                   int type, Cell *cell) : Object(x, y, energy, type, cell) {}
 
 void predator::live() {
     this->setEnergy(this->getEnergy() - 1);
@@ -17,7 +16,7 @@ void predator::live() {
 
     // Try to eat someone:
 
-    if (this->cell->getUp()->getObject() != nullptr)
+    if (this->cell->getUp()->getObject() != nullptr) {
         if (this->cell->getUp()->getObject()->getType() == PREY) {
             this->cell->setObject(nullptr);
             this->cell->getUp()->setObject(this);
@@ -26,8 +25,8 @@ void predator::live() {
             setCell(cell->getUp());
             return;
         }
-    if (this->cell->getRight()->getObject() != nullptr)
-
+    }
+    if (this->cell->getRight()->getObject() != nullptr) {
         if (this->cell->getRight()->getObject()->getType() == PREY) {
             this->cell->setObject(nullptr);
             this->cell->getRight()->setObject(this);
@@ -36,7 +35,8 @@ void predator::live() {
             setCell(cell->getRight());
             return;
         }
-    if (this->cell->getDown()->getObject() != nullptr)
+    }
+    if (this->cell->getDown()->getObject() != nullptr) {
         if (this->cell->getDown()->getObject()->getType() == PREY) {
             this->cell->setObject(nullptr);
             this->cell->getDown()->setObject(this);
@@ -45,7 +45,8 @@ void predator::live() {
             setCell(cell->getDown());
             return;
         }
-    if (this->cell->getLeft()->getObject() != nullptr)
+    }
+    if (this->cell->getLeft()->getObject() != nullptr) {
         if (this->cell->getLeft()->getObject()->getType() == PREY) {
             this->cell->setObject(nullptr);
             this->cell->getLeft()->setObject(this);
@@ -54,6 +55,7 @@ void predator::live() {
             setCell(cell->getLeft());
             return;
         }
+    }
 
     // Else move like a prey:
 

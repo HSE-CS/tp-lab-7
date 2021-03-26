@@ -1,12 +1,12 @@
 // copyright 2021 Victor Shatilov
 
+#include<unistd.h>
+
 #include "../include/Ocean.h"
 #include "../include/cell.h"
 #include "../include/stone.h"
 #include "../include/prey.h"
 #include "../include/predator.h"
-
-#include<unistd.h>
 
 Ocean::Ocean() {
     this->water.resize(height);

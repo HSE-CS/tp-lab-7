@@ -1,9 +1,9 @@
 // copyright 2021 Victor Shatilov
 
-#ifndef INCLUDE_CELL_H
-#define INCLUDE_CELL_H
+#ifndef INCLUDE_CELL_H_
+#define INCLUDE_CELL_H_
 
-#include "common.h"
+#include "../include/common.h"
 
 class Ocean;
 
@@ -44,4 +44,4 @@ class Cell {
     void setOcean(Ocean *ocean);
 };
 
-#endif  // INCLUDE_CELL_H
+#endif  // INCLUDE_CELL_H_

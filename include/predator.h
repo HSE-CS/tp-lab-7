@@ -1,9 +1,9 @@
 // copyright 2021 Victor Shatilov
 
-#ifndef INCLUDE_PREDATOR_H
-#define INCLUDE_PREDATOR_H
+#ifndef INCLUDE_PREDATOR_H_
+#define INCLUDE_PREDATOR_H_
 
-#include "common.h"
+#include "../include/common.h"
 
 class predator : public Object {
  public:
@@ -18,4 +18,4 @@ class predator : public Object {
 };
 
 
-#endif  // INCLUDE_PREDATOR_H
+#endif  // INCLUDE_PREDATOR_H_

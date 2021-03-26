@@ -1,9 +1,9 @@
 // copyright 2021 Victor Shatilov
 
-#ifndef INCLUDE_PREY_H
-#define INCLUDE_PREY_H
+#ifndef INCLUDE_PREY_H_
+#define INCLUDE_PREY_H_
 
-#include "common.h"
+#include "../include/common.h"
 
 class prey : public Object {
  public:
@@ -18,4 +18,4 @@ class prey : public Object {
 };
 
 
-#endif  // INCLUDE_PREY_H
+#endif  // INCLUDE_PREY_H_

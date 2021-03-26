@@ -1,9 +1,10 @@
 // copyright 2021 Victor Shatilov
 
-#ifndef INCLUDE_OCEAN_H
-#define INCLUDE_OCEAN_H
+#ifndef INCLUDE_OCEAN_H_
+#define INCLUDE_OCEAN_H_
 
-#include "common.h"
+#include <vector>
+#include "../include/common.h"
 
 class Ocean {
  private:
@@ -24,4 +25,4 @@ class Ocean {
 };
 
 
-#endif  // INCLUDE_OCEAN_H
+#endif  // INCLUDE_OCEAN_H_

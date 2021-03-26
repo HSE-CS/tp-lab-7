@@ -1,9 +1,9 @@
 // copyright 2021 Victor Shatilov
 
-#ifndef INCLUDE_STONE_H
-#define INCLUDE_STONE_H
+#ifndef INCLUDE_STONE_H_
+#define INCLUDE_STONE_H_
 
-#include "common.h"
+#include "../include/common.h"
 
 class stone : public Object {
  public:
@@ -17,4 +17,4 @@ class stone : public Object {
     virtual char getFiller();
 };
 
-#endif  // INCLUDE_STONE_H
+#endif  // INCLUDE_STONE_H_

@@ -4,13 +4,12 @@
 #include "../include/cell.h"
 #include "../include/Ocean.h"
 
-#include "common.h"
+#include "../include/common.h"
 
-prey::prey(int x, int y, int energy,
-           int type, Cell *cell) : Object(x, y,
-                                          energy, type, cell) {
-
-}
+prey::prey(int x,
+           int y,
+           int energy,
+           int type, Cell *cell) : Object(x, y, energy, type, cell) { }
 
 void prey::live() {
     this->setEnergy(this->getEnergy() + 1);
