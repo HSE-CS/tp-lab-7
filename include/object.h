@@ -3,10 +3,10 @@
 #ifndef _OBJECT_H_
 #define _OBJECT_H_
 
-#include "../include/common.h"
-#include "../include/ocean.h"
-#include "../include/object.h"
-#include "../include/cell.h"
+#include "common.h"
+#include "ocean.h"
+#include "object.h"
+#include "cell.h"
 
 #define STONE_N '#'
 #define CORAL_N '*'
@@ -15,21 +15,4 @@
 
 enum class ObjType { STONE, CORAL, PREY, PREDATOR };
 
-class Object {
-protected:
-  Cell* cell;
-  ObjType type;
-  bool dead;
-public:
-  Object(ObjType t, Cell* c) : cell(c)
-    type(t), dead(false) {}
-  virtual ~Object();
-  Cell* getCell();
-  virtual void live() = 0;
-  void setCell(Cell*);
-  virtual void move();
-  void die();
-  ObjType getType();
-
-}
 #endif
