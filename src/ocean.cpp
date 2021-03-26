@@ -110,5 +110,5 @@ Ocean::~Ocean() {
         delete[] cells[i];
     delete[] cells;
     for (auto i = stuff.begin(); i != stuff.end(); ++i)
-        delete *i;
+        delete i;
 }
