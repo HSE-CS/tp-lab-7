@@ -10,7 +10,7 @@ enum class ObjType { STONE, CORAL, PREY, PREDATOR };
 class Ocean;
 class Cell;
 class Object;
-class Object
+
 {
     friend Ocean;
     friend Cell;
