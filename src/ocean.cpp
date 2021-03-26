@@ -1,6 +1,7 @@
 // Copyright 2020 Uskova
 
-#include <windows.h>
+#include <chrono>
+#include <thread>
 #include "ocean.h"
 
 Ocean::Ocean() {
@@ -127,7 +128,7 @@ void Ocean::run() {
     this->cleanDeleteList();
     system("cls");
     this->print();
-    Sleep(1);
+    std::this_thread::sleep_for(std::chrono::seconds(1));
     if (flag1 == 0 || flag2 == 0) {
       exit(0);
     }

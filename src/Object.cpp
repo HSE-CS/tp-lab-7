@@ -23,4 +23,3 @@ void Object::setObjType(ObjType obType) {
 ObjType Object::getType() {
     return this->type;
 }
-
