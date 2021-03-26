@@ -4,9 +4,14 @@
 #include "../include/Object.h"
 #include "../include/cell.h"
 
+void Predator::setType() {
+    this->type = static_cast<ObjType>(3);
+}
+
 Predator::Predator(Cell *thisCell) : Object(thisCell) {
     this->cell = thisCell;
     this->fullness = 100;
+    this->setType();
 }
 
 void Predator::live() {
@@ -37,7 +42,8 @@ void Predator::live() {
                     this->cell->killMe();
                     break;
                 } else if ((obj->getType() == static_cast<ObjType>(0)) ||
-                (obj->getType() == static_cast<ObjType>(1))) {  //  If the object in cell is a stone/coral
+                (obj->getType() == static_cast<ObjType>(1)) ||
+                        (obj->getType() == static_cast<ObjType>(3))) {  //  If the object in cell is a stone/coral/predator
                     --(this->fullness);
                     continue;
                 }
@@ -49,8 +55,4 @@ void Predator::live() {
             }
         }
     }
-}
-
-void Predator::setType() {
-    this->type = static_cast<ObjType>(3);
 }

@@ -3,7 +3,7 @@
 #include "../include/ocean.h"
 
 Ocean::Ocean() {
-    Pair p_new;
+    Pair p_new = {0,0};
     this->cells = new Cell* [N];
     for (size_t i = 0; i < N; ++i) {
         this->cells[i] = new Cell [M];

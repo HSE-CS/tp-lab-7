@@ -4,9 +4,14 @@
 #include "../include/Object.h"
 #include "../include/cell.h"
 
+void Prey::setType() {
+    this->type = static_cast<ObjType> (2);
+}
+
 Prey::Prey(Cell* thisCell) : Object(thisCell) {
         this->cell = thisCell;
         this->lifespan = 80;
+        this->setType();
 }
 
 void Prey::live() {
@@ -42,7 +47,3 @@ void Prey::live() {
         }
     }
 }
-void Prey::setType() {
-    this->type = static_cast<ObjType> (2);
-}
-
