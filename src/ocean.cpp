@@ -3,7 +3,7 @@
 
 Ocean::Ocean(size_t preyLife_, size_t preyCoolDawn_, size_t predatorLife_,
              size_t predatorCoolDawn_, size_t predatorHunger_) {
-  cells = new Cell*[N];
+  cells = new Cell* [N];
   for (size_t i = 0; i < N; ++i) {
     cells[i] = new Cell [M];
     for (size_t j = 0; j < M; ++j) {
@@ -84,7 +84,6 @@ void Ocean::run() {
   size_t counter = 0;
   size_t shift = 0;
   while (check()) {
-    
     std::cout << counter << "\n";
     ++counter;
     for (size_t i = 0; i < stuff.size(); ++i) {

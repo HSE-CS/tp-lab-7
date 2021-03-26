@@ -19,8 +19,7 @@ class Object {
   ObjType type = ObjType::EMPTY;
 
  public:
-  explicit Object(Cell *cell_, ObjType type_) : cell(cell_), type(type_) {};
-  //virtual ~Object();
+  explicit Object(Cell *cell_, ObjType type_) : cell(cell_), type(type_) {}
   virtual void live() = 0;
   void setCell(Cell *);
   void print();

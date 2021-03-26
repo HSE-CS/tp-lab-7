@@ -10,7 +10,6 @@ class Stone : public Object {
  public:
   explicit Stone(Cell *cell_);
   void live() override;
-
 };
 
 #endif  // INCLUDE_STONE_H_

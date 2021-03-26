@@ -8,7 +8,7 @@
 #include <thread>
 
 
-#include "Cell.h"
+#include "cell.h"
 #include "common.h"
 #include "stone.h"
 #include "prey.h"
@@ -32,7 +32,7 @@ class Ocean {
  public:
   explicit Ocean(size_t preyLife_ = 14, size_t preyCoolDawn_ = 3,
                  size_t predatorLife_ = 7, size_t predatorCoolDawn_ = 4,
-                 size_t predatorHunger_= 5);
+                 size_t predatorHunger_ = 5);
   ~Ocean();
   void print() const;
   void addObjects(size_t number, ObjType type);

@@ -1,6 +1,6 @@
 // Copyright 2021 by me
 #include "../include/stone.h"
 
-Stone::Stone(Cell* cell_) : Object(cell_, ObjType::STONE) {};
+Stone::Stone(Cell* cell_) : Object(cell_, ObjType::STONE) {}
 
 void Stone::live() { return; }

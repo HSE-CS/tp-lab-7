@@ -25,4 +25,4 @@ void Cell::killMe() {
   delete obj;
   this->obj = nullptr;
 }
-Pair Cell::getCoord() { return crd; };
+Pair Cell::getCoord() { return crd; }
