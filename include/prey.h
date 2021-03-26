@@ -9,7 +9,7 @@ class Prey : public Object {
   unsigned int reproduct;
 
  public:
-  Prey(Cell* newCell = nullptr);
+  explicit Prey(Cell* newCell = nullptr);
   void live() override;
 };
 
