@@ -3,12 +3,12 @@
 #ifndef INCLUDE_PREY_H_
 #define INCLUDE_PREY_H_
 
-#include "stone.h"
-#include "ocean.h"
-#include "cell.h"
 #include <ctime>
 #include <cstdlib>
 #include <vector>
+#include "include/stone.h"
+#include "include/ocean.h"
+#include "include/cell.h"
 
 class Prey : public Stone {
  public:
