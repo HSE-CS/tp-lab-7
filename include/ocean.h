@@ -5,8 +5,8 @@
 
 #include <list>
 #include <vector>
-#include "common.h"
-#include "Cell.h"
+#include "include/common.h"
+#include "include/Cell.h"
 
 class Ocean {
  private:
