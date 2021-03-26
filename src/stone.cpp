@@ -2,4 +2,4 @@
 
 #include "../include/stone.h"
 
-Stone::Stone(Cell* cell, char sigh) : Object(cell, sigh) {};
+Stone::Stone(Cell* cell, char sigh) : Object(cell, sigh) {}

@@ -2,9 +2,9 @@
 
 #include "../include/object.h"
 
-Object::Object(Cell* cell, char sign) : cell(cell), sign(sign) {};
+Object::Object(Cell* cell, char sign) : cell(cell), sign(sign) {}
 
-Object::~Object() {};
+Object::~Object() {}
 
 void Object::setCell(Cell* cell) {
     this->cell = cell;

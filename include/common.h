@@ -1,7 +1,7 @@
 // Copyright 2021 Stifeev Nikita
 
-#ifndef INCLUDE_COMMON_H
-#define INCLUDE_COMMON_H
+#ifndef INCLUDE_COMMON_H_
+#define INCLUDE_COMMON_H_
 #include <cstddef>
 using std::size_t;
 
@@ -22,4 +22,4 @@ const int PREDATOR_REPRODUCE = 3;
 const int PREDATOR_LIFE_WO_EATING = 7;
 const int PREDATOR_REPRODUCE_WO_EATING = 5;
 
-#endif  // INCLUDE_COMMON_H
+#endif  // INCLUDE_COMMON_H_

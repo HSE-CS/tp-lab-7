@@ -1,7 +1,7 @@
 // Copyright 2021 Stifeev Nikita
 
-#ifndef INCLUDE_PREDATOR_H
-#define INCLUDE_PREDATOR_H
+#ifndef INCLUDE_PREDATOR_H_
+#define INCLUDE_PREDATOR_H_
 
 #include "../include/prey.h"
 
@@ -15,4 +15,4 @@ class Predator : public Prey {
     void hunt();
 };
 
-#endif  // INCLUDE_PREDATOR_H
+#endif  // INCLUDE_PREDATOR_H_

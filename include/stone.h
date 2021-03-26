@@ -1,7 +1,7 @@
 // Copyright 2021 Stifeev Nikita
 
-#ifndef INCLUDE_STONE_H
-#define INCLUDE_STONE_H
+#ifndef INCLUDE_STONE_H_
+#define INCLUDE_STONE_H_
 
 #include "../include/cell.h"
 
@@ -13,4 +13,4 @@ class Stone : public Object {
     };
 };
 
-#endif  // INCLUDE_STONE_H
+#endif  // INCLUDE_STONE_H_

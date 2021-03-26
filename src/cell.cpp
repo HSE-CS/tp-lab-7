@@ -13,7 +13,7 @@ void Cell::setObject(Object* obj) {
 
 Pair Cell::getCrd() {
     return crd;
-};
+}
 
 vector<Cell*>* Cell::getEmptyCells() {
     return ocean->getEmptyCells(this);

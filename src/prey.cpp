@@ -10,13 +10,12 @@ bool Prey::live() {
     iterCounter++;
     vector<Cell*>* emptyCells = cell->getEmptyCells();
     if (emptyCells->size() != 0) {
-        int index = rand() % emptyCells->size();
+        int index = std::rand() % emptyCells->size();
         (*emptyCells)[index]->setObject(this);
         if (iterCounter % PREY_REPRODUCE == 0) {
             auto* child = new Prey(nullptr, PREY_SYMBOL);
             reproduce(emptyCells, index, child);
-        }
-        else {
+        } else {
             cell->setObject(nullptr);
             cell = (*emptyCells)[index];
         }
@@ -31,7 +30,7 @@ void Prey::reproduce(vector<Cell*>* emptyCells, int index,
     cell = (*emptyCells)[index];
     emptyCells->erase(emptyCells->begin() + index);
     emptyCells->push_back(previous_cell);
-    index = rand() % emptyCells->size();
+    index = std::rand() % emptyCells->size();
     child->setCell((*emptyCells)[index]);
     (*emptyCells)[index]->setObject(child);
     (*emptyCells)[index]->addToOcean(child);

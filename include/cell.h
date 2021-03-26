@@ -1,11 +1,11 @@
 // Copyright 2021 Stifeev Nikita
 
-#ifndef INCLUDE_CELL_H
-#define INCLUDE_CELL_H
+#ifndef INCLUDE_CELL_H_
+#define INCLUDE_CELL_H_
 
+#include <vector>
 #include "../include/common.h"
 #include "../include/object.h"
-#include <vector>
 using std::vector;
 
 class Ocean;
@@ -20,7 +20,7 @@ class Cell {
     explicit Cell(Pair p, Ocean* oc) :
         crd(p),
         obj(nullptr),
-        ocean(oc) {};
+        ocean(oc) {}
     Pair getCrd();
     Object* getObject() const;
     void setObject(Object*);

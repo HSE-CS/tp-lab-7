@@ -1,10 +1,10 @@
 // Copyright 2021 Stifeev Nikita
 
-#ifndef INCLUDE_PREY_H
-#define INCLUDE_PREY_H
+#ifndef INCLUDE_PREY_H_
+#define INCLUDE_PREY_H_
 
-#include "../include/object.h"
 #include <vector>
+#include "../include/object.h"
 using std::vector;
 
 class Prey : public Object {
@@ -17,4 +17,4 @@ class Prey : public Object {
     virtual void reproduce(vector<Cell*>*, int, Object*);
 };
 
-#endif  // INCLUDE_PREY_H
+#endif  // INCLUDE_PREY_H_

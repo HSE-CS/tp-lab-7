@@ -1,9 +1,9 @@
 // Copyright 2021 Stifeev Nikita
 
+#include <windows.h>
 #include <iostream>
 #include <cstdlib>
 #include <set>
-#include <windows.h>
 #include "../include/ocean.h"
 #include "../include/stone.h"
 #include "../include/prey.h"
@@ -29,8 +29,7 @@ void Ocean::print() const {
         for (size_t j = 0; j < M; j++) {
             if (cells[j][i]->getObject() != nullptr) {
                 cout << cells[j][i]->getObject()->getSign();
-            }
-            else {
+            } else {
                 cout << CORAL_SYMBOL;
             }
         }
@@ -42,8 +41,8 @@ void Ocean::addObjects(ObjType type, size_t number) {
     for (size_t i = 0; i < number; i++) {
         int x = 0, y = 0;
         while (true) {
-            x = rand() % M;
-            y = rand() % N;
+            x = std::rand() % M;
+            y = std::rand() % N;
             if (cells[x][y]->getObject() == nullptr) {
                 break;
             }
@@ -118,7 +117,6 @@ void Ocean::counter(size_t& stoneCount, size_t& preyCount,
         case PREDATOR_SYMBOL:
             predatorCount++;
             break;
-
         }
     }
 }
