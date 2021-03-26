@@ -170,6 +170,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/nekna/CLionProjects/tp-lab-7/include/None.h">
+			<Option target="tp-lab-7"/>
+		</Unit>
 		<Unit filename="C:/Users/nekna/CLionProjects/tp-lab-7/include/Object.h">
 			<Option target="tp-lab-7"/>
 		</Unit>
@@ -189,6 +192,9 @@
 			<Option target="tp-lab-7"/>
 		</Unit>
 		<Unit filename="C:/Users/nekna/CLionProjects/tp-lab-7/include/stone.h">
+			<Option target="tp-lab-7"/>
+		</Unit>
+		<Unit filename="C:/Users/nekna/CLionProjects/tp-lab-7/src/None.cpp">
 			<Option target="tp-lab-7"/>
 		</Unit>
 		<Unit filename="C:/Users/nekna/CLionProjects/tp-lab-7/src/Object.cpp">

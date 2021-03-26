@@ -1,6 +1,6 @@
 //  Copyright 2021 Nikita Naumov
 
-#include "cell.h"
+#include "../include/cell.h"
 
 
 Object * Cell::getObject() const {

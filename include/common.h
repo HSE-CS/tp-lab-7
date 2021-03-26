@@ -13,6 +13,6 @@ struct Pair {
 };
 
 const size_t N = 20;
-const size_t M = 50;
+const size_t M = 30;
 
 #endif  //  INCLUDE_COMMON_H

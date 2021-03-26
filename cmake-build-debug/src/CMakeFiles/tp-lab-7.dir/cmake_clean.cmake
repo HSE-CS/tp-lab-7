@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/tp-lab-7.dir/None.cpp.obj"
   "CMakeFiles/tp-lab-7.dir/Object.cpp.obj"
   "CMakeFiles/tp-lab-7.dir/cell.cpp.obj"
   "CMakeFiles/tp-lab-7.dir/ocean.cpp.obj"

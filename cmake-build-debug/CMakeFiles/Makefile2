@@ -113,12 +113,12 @@ src/clean: src/CMakeFiles/tp-lab-7.dir/clean
 src/CMakeFiles/tp-lab-7.info.dir/all: src/CMakeFiles/tp-lab-7.dir/all
 	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\tp-lab-7.info.dir\build.make src/CMakeFiles/tp-lab-7.info.dir/depend
 	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\tp-lab-7.info.dir\build.make src/CMakeFiles/tp-lab-7.info.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\nekna\CLionProjects\tp-lab-7\cmake-build-debug\CMakeFiles --progress-num=8,9 "Built target tp-lab-7.info"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\nekna\CLionProjects\tp-lab-7\cmake-build-debug\CMakeFiles --progress-num=9,10 "Built target tp-lab-7.info"
 .PHONY : src/CMakeFiles/tp-lab-7.info.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/tp-lab-7.info.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\nekna\CLionProjects\tp-lab-7\cmake-build-debug\CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\nekna\CLionProjects\tp-lab-7\cmake-build-debug\CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/CMakeFiles/tp-lab-7.info.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\nekna\CLionProjects\tp-lab-7\cmake-build-debug\CMakeFiles 0
 .PHONY : src/CMakeFiles/tp-lab-7.info.dir/rule
@@ -140,12 +140,12 @@ src/CMakeFiles/tp-lab-7.info.dir/clean:
 src/CMakeFiles/tp-lab-7.dir/all:
 	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\tp-lab-7.dir\build.make src/CMakeFiles/tp-lab-7.dir/depend
 	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\tp-lab-7.dir\build.make src/CMakeFiles/tp-lab-7.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\nekna\CLionProjects\tp-lab-7\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target tp-lab-7"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\nekna\CLionProjects\tp-lab-7\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target tp-lab-7"
 .PHONY : src/CMakeFiles/tp-lab-7.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/tp-lab-7.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\nekna\CLionProjects\tp-lab-7\cmake-build-debug\CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\nekna\CLionProjects\tp-lab-7\cmake-build-debug\CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/CMakeFiles/tp-lab-7.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\nekna\CLionProjects\tp-lab-7\cmake-build-debug\CMakeFiles 0
 .PHONY : src/CMakeFiles/tp-lab-7.dir/rule

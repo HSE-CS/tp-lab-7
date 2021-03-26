@@ -7,6 +7,7 @@
 #include "../include/predator.h"
 #include "../include/prey.h"
 #include "../include/stone.h"
+#include "../include/None.h"
 
 Ocean::Ocean() {
     Pair p_new = {0,0};

@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/Users/nekna/CLionProjects/tp-lab-7/src/None.cpp" "C:/Users/nekna/CLionProjects/tp-lab-7/cmake-build-debug/src/CMakeFiles/tp-lab-7.dir/None.cpp.obj"
   "C:/Users/nekna/CLionProjects/tp-lab-7/src/Object.cpp" "C:/Users/nekna/CLionProjects/tp-lab-7/cmake-build-debug/src/CMakeFiles/tp-lab-7.dir/Object.cpp.obj"
   "C:/Users/nekna/CLionProjects/tp-lab-7/src/cell.cpp" "C:/Users/nekna/CLionProjects/tp-lab-7/cmake-build-debug/src/CMakeFiles/tp-lab-7.dir/cell.cpp.obj"
   "C:/Users/nekna/CLionProjects/tp-lab-7/src/ocean.cpp" "C:/Users/nekna/CLionProjects/tp-lab-7/cmake-build-debug/src/CMakeFiles/tp-lab-7.dir/ocean.cpp.obj"

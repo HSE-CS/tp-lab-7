@@ -205,6 +205,33 @@ tp-lab-7/fast:
 	cd /d C:\Users\nekna\CLionProjects\tp-lab-7\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\tp-lab-7.dir\build.make src/CMakeFiles/tp-lab-7.dir/build
 .PHONY : tp-lab-7/fast
 
+None.obj: None.cpp.obj
+
+.PHONY : None.obj
+
+# target to build an object file
+None.cpp.obj:
+	cd /d C:\Users\nekna\CLionProjects\tp-lab-7\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\tp-lab-7.dir\build.make src/CMakeFiles/tp-lab-7.dir/None.cpp.obj
+.PHONY : None.cpp.obj
+
+None.i: None.cpp.i
+
+.PHONY : None.i
+
+# target to preprocess a source file
+None.cpp.i:
+	cd /d C:\Users\nekna\CLionProjects\tp-lab-7\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\tp-lab-7.dir\build.make src/CMakeFiles/tp-lab-7.dir/None.cpp.i
+.PHONY : None.cpp.i
+
+None.s: None.cpp.s
+
+.PHONY : None.s
+
+# target to generate assembly for a file
+None.cpp.s:
+	cd /d C:\Users\nekna\CLionProjects\tp-lab-7\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\tp-lab-7.dir\build.make src/CMakeFiles/tp-lab-7.dir/None.cpp.s
+.PHONY : None.cpp.s
+
 Object.obj: Object.cpp.obj
 
 .PHONY : Object.obj
@@ -408,6 +435,9 @@ help:
 	@echo ... rebuild_cache
 	@echo ... tp-lab-7
 	@echo ... tp-lab-7.info
+	@echo ... None.obj
+	@echo ... None.i
+	@echo ... None.s
 	@echo ... Object.obj
 	@echo ... Object.i
 	@echo ... Object.s
