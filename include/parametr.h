@@ -7,7 +7,6 @@ struct Pair {
   int x{0};
   int y{0};
 };
-
 const int N = 20;
 const int M = 220;
 #endif  // INCLUDE_PARAMETR_H_

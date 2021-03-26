@@ -1,3 +1,5 @@
+//  Copyright 2021 GHA created by Klykov Anton
+
 #include <iostream>
 
 #include "Ocean.h"
