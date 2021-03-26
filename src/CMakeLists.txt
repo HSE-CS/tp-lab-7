@@ -11,7 +11,6 @@ target_include_directories(${PROJECT_NAME}
          ${${PROJECT_NAME}_SOURCE_DIR}/include)
 target_link_libraries(${PROJECT_NAME}
   pthread)
-
   
 add_executable(${PROJECT_NAME}.info main.cpp)
 target_include_directories(${PROJECT_NAME}.info
@@ -19,8 +18,6 @@ target_include_directories(${PROJECT_NAME}.info
          ${${PROJECT_NAME}_SOURCE_DIR}/include)
 target_link_libraries(${PROJECT_NAME}.info
   ${PROJECT_NAME})
-
-
 install(TARGETS ${PROJECT_NAME}
 		LIBRARY DESTINATION "${lib_dest}"
     ARCHIVE DESTINATION "${lib_dest}"
