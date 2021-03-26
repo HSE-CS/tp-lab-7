@@ -9,6 +9,7 @@
 #include "predator.h"
 #include "prey.h"
 #include "stone.h"
+#include "object.h"
 
 class Ocean {
  private:
