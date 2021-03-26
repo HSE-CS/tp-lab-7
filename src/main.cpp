@@ -11,5 +11,6 @@
 int main() {
 	Ocean ocean(50, 50, 12, 90, 20);
 	ocean.run();
+	return 0;
 }
 
