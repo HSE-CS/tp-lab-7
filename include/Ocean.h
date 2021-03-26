@@ -11,7 +11,7 @@ class Ocean {
     std::vector<std::vector<Cell *>> water;
 
  public:
-    explicit Ocean();
+    Ocean();
 
     void renderOcean();
 

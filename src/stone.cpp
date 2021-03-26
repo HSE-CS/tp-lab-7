@@ -15,7 +15,7 @@ stone::stone(int x,
              int y,
              int energy,
              int type,
-             Cell *cell) : Object(x, y, energy,type, cell) { }
+             Cell *cell) : Object(x, y, energy, type, cell) { }
 
 char stone::getFiller() {
     return stone_symbol;
