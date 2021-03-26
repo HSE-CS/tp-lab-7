@@ -18,4 +18,4 @@ struct Pair {
 };
 const size_t N = 5;
 const size_t M = 5;
-#endif // INCLUDE_COMMON_H_
+#endif  // INCLUDE_COMMON_H_

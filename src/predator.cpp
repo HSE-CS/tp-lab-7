@@ -7,7 +7,10 @@
 #include "../include/cell.h"
 #include "../include/ocean.h"
 
-Predator::Predator(Cell *cell1, int health, int prod, int need) : Prey(cell1, health, prod) {
+Predator::Predator(Cell *cell1,
+                   int health,
+                   int prod,
+                   int need) : Prey(cell1, health, prod) {
     this->objType = PREDATOR;
     this->eat = need;
 }
@@ -22,11 +25,11 @@ void Predator::live() {
     if (heal == 0) {
         delete this;
         return;
-    }
+}
 
     kill();
 
-    if(this->eat == 0) {
+    if (this->eat == 0) {
         this->heal = this->heal - 1;
     } else {
         if(this->produceRate > this->produceCounter) {
@@ -36,7 +39,6 @@ void Predator::live() {
             produce();
         }
     }
-
 }
 
 void Predator::produce() {

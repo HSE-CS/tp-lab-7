@@ -13,7 +13,8 @@ class Predator: public Prey {
  protected:
     int eat;
  public:
-    Predator(Cell* cell1, int health = 3, int prod = 2, int need = 2);
+    explicit Predator(Cell* cell1,
+    int health = 3, int prod = 2, int need = 2);
     ~Predator();
     void produce() override;
     void live() override;
@@ -21,4 +22,4 @@ class Predator: public Prey {
     void setCell(Cell*);
 };
 
-#endif // INCLUDE_PREDATOR_H_
+#endif  // INCLUDE_PREDATOR_H_

@@ -1,6 +1,5 @@
 // Copyright 2020 Osmanov Islam
 
-#include <cmath>
 #include <string>
 #include <iostream>
 #include <cmath>
@@ -30,4 +29,3 @@ void Cell::init(Pair p_, Ocean* oc_) {
 void Cell::setObject(Object* curObj) {
     this->obj = curObj;
 }
-

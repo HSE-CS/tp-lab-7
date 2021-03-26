@@ -18,4 +18,4 @@ class Stone : public Object {
     void setCell(Cell*);
 };
 
-#endif // INCLUDE_STONE_H_
+#endif  // INCLUDE_STONE_H_

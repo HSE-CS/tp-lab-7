@@ -11,15 +11,15 @@ class Ocean;
 
 class Cell {
     friend Ocean;
-private:
+ private:
     Pair crd;
     Object* obj;
     Ocean* ocean;
-public:
+ public:
     explicit Cell(Pair par = { 0, 0 }, Ocean* ocean1 = nullptr);
     void init(Pair p, Ocean* oc);
     Object* getObject() const;
     Ocean* getOcean() const;
     void setObject(Object* obj);
 };
-#endif // INCLUDE_CELL_H_
+#endif  // INCLUDE_CELL_H_

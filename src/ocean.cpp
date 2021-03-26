@@ -1,3 +1,5 @@
+// Copyright 2020 Osmanov Islam
+
 #include <time.h>
 #include <fstream>
 #include <string>
@@ -5,7 +7,6 @@
 #include <cstdlib>
 #include <random>
 #include <vector>
-#include <random>
 #include "../include/ocean.h"
 
 Ocean::~Ocean() {
@@ -18,7 +19,6 @@ Ocean::~Ocean() {
 Ocean::Ocean(float preyPercentage,
              float predatorPercentage,
              float stonePercentage) {
-
     cells = new Cell * [N];
     for (int i = 0; i < N; i++) {
         cells[i] = new Cell[M];
@@ -33,13 +33,12 @@ Ocean::Ocean(float preyPercentage,
             simple_rand.seed(time(nullptr));
             int x = simple_rand() % N;
             int y = simple_rand() % M;
-            if(cells[x][y].obj == nullptr) {
+            if (cells[x][y].obj == nullptr) {
                 Prey* curPrey = new Prey(&cells[x][y]);
                 cells[x][y].obj = curPrey;
                 animals.push_back(curPrey);
                 break;
             }
-
         }
     }
 
@@ -49,9 +48,9 @@ Ocean::Ocean(float preyPercentage,
             int x = simple_rand() % N;
             int y = simple_rand() % M;
 
-            if(cells[x][y].obj == nullptr) {
+            if (cells[x][y].obj == nullptr) {
                 Predator* pred = new Predator(&cells[x][y]);
-                cells[x][y].obj = pred ;
+                cells[x][y].obj = pred;
                 animals.push_back(pred);
                 break;
             }
@@ -63,7 +62,7 @@ Ocean::Ocean(float preyPercentage,
             simple_rand.seed(time(nullptr));
             int x = simple_rand() % N;
             int y = simple_rand() % M;
-            if(cells[x][y].obj == nullptr) {
+            if (cells[x][y].obj == nullptr) {
                 Stone* currStone = new Stone(&cells[x][y]);
                 cells[x][y].obj = currStone;
                 animals.push_back(currStone);
@@ -71,7 +70,6 @@ Ocean::Ocean(float preyPercentage,
             }
         }
     }
-
 }
 
 Cell* Ocean::findCell(Cell* cell) {
@@ -97,9 +95,9 @@ void Ocean::print() const {
             else if (cells[i][k].getObject()->getType() == STONE)
                 std::cout << STONE_N;
         }
-        std::cout<<std::endl;
+        std::cout << std::endl;
     }
-    std::cout<<std::endl;
+    std::cout << std::endl;
 }
 
 

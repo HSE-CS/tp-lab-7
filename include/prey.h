@@ -12,11 +12,11 @@ class Prey : public Object {
     int produceCounter = 0;
     int produceRate;
  public:
-    Prey(Cell* cell1, int health = 3, int beed = 2);
+    explicit Prey(Cell* cell1, int health = 3, int beed = 2);
     ~Prey();
     void live() override;
     void move() override;
     virtual void produce();
     void setCell(Cell*);
 };
-#endif // INCLUDE_PREY_H_
+#endif  // INCLUDE_PREY_H_

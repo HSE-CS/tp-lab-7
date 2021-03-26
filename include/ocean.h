@@ -27,4 +27,4 @@ class Ocean {
     Cell* findCell(Cell* cell);
 };
 
-#endif // INCLUDE_OCEAN_H_
+#endif  // INCLUDE_OCEAN_H_
