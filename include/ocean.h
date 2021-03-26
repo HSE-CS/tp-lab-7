@@ -2,10 +2,10 @@
 #ifndef INCLUDE_OCEAN_H_
 #define INCLUDE_OCEAN_H_
 
+#include <unistd.h>
 #include <list>
 #include <vector>
 #include <iostream>
-#include <unistd.h>
 
 #include "./common.h"
 #include "./cell.h"
