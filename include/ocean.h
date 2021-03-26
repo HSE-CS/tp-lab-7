@@ -14,11 +14,11 @@
 class Ocean {
     friend Cell;
 
-private:
+ private:
     Cell** cells;
     std::list<Object*> stuff;
 
-public:
+ public:
     Ocean();
     ~Ocean();
     void print() const;

@@ -9,10 +9,10 @@
 #include "../include/cell.h"
 
 class Predator : public Object {
-private:
+ private:
     bool yum = false;
 
-public:
+ public:
     Predator(Cell* cell) : Object(cell) {
         obj_type = ObjType::PREDATOR;
         lifetime = predator_lim;

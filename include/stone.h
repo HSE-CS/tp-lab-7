@@ -9,7 +9,7 @@
 #include "../include/common.h"
 
 class Stone : public Object {
-public:
+ public:
     Stone(Cell* cell) : Object(cell) {
         obj_type = ObjType::STONE;
         lifetime = stone_lim;

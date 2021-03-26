@@ -11,7 +11,7 @@
 class Cell;
 class Ocean;
 class Prey : public Object {
-public:
+ public:
     Prey(Cell* cell) : Object(cell) {
         obj_type = ObjType::PREY;
         lifetime = prey_lim;

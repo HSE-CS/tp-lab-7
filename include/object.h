@@ -14,13 +14,13 @@ enum class ObjType { STONE, PREY, PREDATOR };
 class Ocean;
 class Cell;
 class Object {
-protected:
+ protected:
     Cell* cell;
     uint lifetime;
     ObjType  obj_type;
     uint repro_time;
 
-public:
+ public:
     Object(Cell* c) : cell(c) {}
     virtual ~Object() = default;
     virtual bool live() = 0;  // жизнь объекта
