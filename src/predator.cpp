@@ -38,7 +38,7 @@ void Predator::die() {
 void Predator::move() {
     Pair crd = this->cell->getCrd();
     Cell** cells = cell->getOcean()->getCells();
-    int dest = rand() % 4;
+    int dest =  static_cast<int>(gen() % 4);
     Pair crd2 = eat();
     if (crd2.x != -1) {
         dest = -1;
@@ -86,7 +86,7 @@ void Predator::leaveOffspring(int x, int y) {
     Object* offspring = this->cell->getOcean()->getCells()[x][y].getObject();
     this->cell->getOcean()->addObject(x, y, offspring);
     this->cell->getOcean()->
-		setPredators(this->cell->getOcean()->getPredators() + 1);
+        setPredators(this->cell->getOcean()->getPredators() + 1);
 }
 
 Pair Predator::eat() {
@@ -95,20 +95,20 @@ Pair Predator::eat() {
     int y = cell->getCrd().y;
     Pair pair = { -1, -1 };
     if (checkPosition(x + 1, y) &&
-		cell->getOcean()->getCells()[x + 1][y].getObject() != nullptr
-		&& cells[x + 1][y].getObject()->getSymbol() == 'f') {
+        cell->getOcean()->getCells()[x + 1][y].getObject() != nullptr
+        && cells[x + 1][y].getObject()->getSymbol() == 'f') {
         pair = { x + 1, y };
     } else if (checkPosition(x, y + 1)
-		&& cell->getOcean()->getCells()[x][y + 1].getObject() != nullptr
-		&& cells[x][y + 1].getObject()->getSymbol() == 'f') {
+        && cell->getOcean()->getCells()[x][y + 1].getObject() != nullptr
+        && cells[x][y + 1].getObject()->getSymbol() == 'f') {
         pair = { x, y + 1 };
     } else if (checkPosition(x, y - 1)
-		&& cell->getOcean()->getCells()[x][y - 1].getObject() != nullptr
-		&& cells[x][y - 1].getObject()->getSymbol() == 'f') {
+        && cell->getOcean()->getCells()[x][y - 1].getObject() != nullptr
+        && cells[x][y - 1].getObject()->getSymbol() == 'f') {
         pair = { x, y - 1 };
     } else if (checkPosition(x - 1, y)
-		&& cell->getOcean()->getCells()[x - 1][y].getObject() != nullptr
-		&& cells[x - 1][y].getObject()->getSymbol() == 'f') {
+        && cell->getOcean()->getCells()[x - 1][y].getObject() != nullptr
+        && cells[x - 1][y].getObject()->getSymbol() == 'f') {
         pair = { x - 1, y };
     }
     if (pair.x != -1) {

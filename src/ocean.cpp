@@ -1,9 +1,9 @@
 // Copyright 2021 Nikolaev Ivan
 
 #include <Windows.h>
+#include <stdio.h>
 #include <iostream>
 #include "../include/ocean.h"
-#include <stdio.h>
 
 Ocean::Ocean() {
     Ocean(40, 80, 500, 500, 20);
