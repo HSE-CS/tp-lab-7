@@ -1,5 +1,5 @@
 // Copyright 2020 PollyllyZh
-#include "../include/object.h"
+#include "../include/Object.h"
 #include "../include/prey.h"
 #include "../include/cell.h"
 bool Prey::live() {

@@ -1,7 +1,7 @@
 // Copyright 2020 PollyllyZh
 #include "../include/common.h"
 #include "../include/cell.h"
-#include "../include/object.h"
+#include "../include/Object.h"
 #include "../include/predator.h"
 bool Predator::live() {
     if (!lifetime--) return false;
