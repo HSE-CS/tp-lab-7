@@ -19,7 +19,6 @@ class Cell {
  public:
   explicit Cell(Pair p = {0, 0}, Ocean *oc = nullptr)
       : crd(p), obj(nullptr), ocean(oc) {}
-  ~Cell();
   Object *getObject() const;
   void setObject(Object *);
   void killMe();
