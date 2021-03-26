@@ -13,6 +13,7 @@
 typedef size_t coord_t;
 
 struct Pair
+
 {
     int x; 
     int y; 

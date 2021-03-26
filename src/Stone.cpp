@@ -1,15 +1,12 @@
 // Copyright 2021 Krayushkina
 #include "Stone.h"
-Stone::Stone(Cell * c) :Object(c)
-{
+Stone::Stone(Cell * c) :Object(c) {
     this->lifetime = LTStone;
     type = ObjType::STONE;
 };
-void Stone::live()
-{
+void Stone::live() {
     lifetime--;
 };
-char Stone::getSymbol()
-{
+char Stone::getSymbol() {
     return STONE_N;
 };

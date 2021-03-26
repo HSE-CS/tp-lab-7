@@ -9,17 +9,18 @@
 enum class ObjType { STONE, CORAL, PREY, PREDATOR };
 class Ocean;
 class Cell;
-class Object
+class Object;
+
 {
     friend Ocean;
     friend Cell;
-protected:
+ protected:
     int lifetime;
     bool dead;
     Cell * cell;
     ObjType type;
-public:
-    Object(Cell * = nullptr);
+ public:
+    Object(Cell * = nullptr)
     virtual ~Object() {};
     void setLive(int lifetime);
     void setCell(Cell* cell);

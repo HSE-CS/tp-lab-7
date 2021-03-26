@@ -1,12 +1,10 @@
 // Copyright 2021 Krayushkina
 #include "Predator.h"
-Predator::Predator(Cell * c) :Object(c)
-{
+Predator::Predator(Cell * c) :Object(c) {
     this->lifetime = LTPredator;
     type = ObjType::PREDATOR;
 }
-void Predator::live()
-{
+void Predator::live() {
     if (eat() != true && lifetime > 2)
         lifetime -= 2;
     else
@@ -15,27 +13,21 @@ void Predator::live()
     if (lifetime < 0.1*LTPredator)
         copulation();
 }
-char Predator::getSymbol()
-{
+char Predator::getSymbol() {
     return PREDATOR_N;
 }
-void Predator::move()
-{
+void Predator::move() {
     Cell * newCell = cell->FREE();
-    if (newCell != nullptr)
-    {
+    if (newCell != nullptr) {
         this->getCell()->Moving();
         newCell->setObject(this);
         this->cell = newCell;
     }
 }
-bool Predator::eat()
-{
+bool Predator::eat() {
     Pair cord = cell->Cord();
-	
     Cell * sacrifice = cell->RADAR();
-    if (sacrifice && !sacrifice->getObject()->is_live() && sacrifice->getObject()->getType()==ObjType::PREY)
-    {
+    if (sacrifice && !sacrifice->getObject()->is_live() && sacrifice->getObject()->getType() == ObjType::PREY) {
         sacrifice->getObject()->readytodie();
         sacrifice->getObject()->setLive(0);
         lifetime += 5;
@@ -43,11 +35,9 @@ bool Predator::eat()
     }
     return false;
 }
-void Predator::copulation()
-{
+void Predator::copulation() {
     Cell * newCell = cell->FREE();
-    if (newCell)
-    {
+    if (newCell) {
     Object * child = new Predator(newCell);
     newCell->setObject(child);
     cell->getOcean()->AddStuff(child);

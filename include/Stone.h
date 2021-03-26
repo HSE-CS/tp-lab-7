@@ -6,9 +6,10 @@
 #include "Ocean.h"
 #include "common.h"
 class Stone : public Object
+
 {
     friend Cell;
-public:
+ public:
     Stone(Cell * c);
     ~Stone() {};
     void live();

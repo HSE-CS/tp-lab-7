@@ -5,46 +5,36 @@
 using namespace std;
 #include <iostream>
 #include <random>
-Ocean::Ocean() 
-{
+Ocean::Ocean() {
     cells = new Cell*[N];
-    for (auto i = 0; i < N; i++)
-    {
+    for (auto i = 0; i < N; i++) {
         cells[i] = new Cell[M];
         for (auto j = 0; j < M; j++)
             cells[i][j].init(Pair{ i, j }, this);
     }
 };
-void Ocean::AddStuff(Object *obj)
-{
+void Ocean::AddStuff(Object *obj) {
     stuff.push_back(obj);
 }
 
-void Ocean::print() const 
-{
-    for (auto i = 0; i < N; i++)
-    {
-        for (auto j = 0; j < M; j++)
-        {
+void Ocean::print() const {
+    for (auto i = 0; i < N; i++) {
+        for (auto j = 0; j < M; j++) {
             std::cout << (cells[i][j].getObject() ?
                 cells[i][j].getObject()->getSymbol() : '.');
         }
         std::cout << std::endl;
     }
 };
-void Ocean::addObjects(unsigned int n, ObjType type) 
-{
-    while (n > 0)
-    {
+void Ocean::addObjects(unsigned int n, ObjType type) {
+    while (n > 0) {
         unsigned int x = rand() % M;
         unsigned int y = rand() % N;
         if (cells[y][x].getObject())
             continue;
-        else
-        {
+        else {
             Object * born = nullptr;
-            switch (type)
-            {
+            switch (type) {
             case ObjType::STONE:
                 born = new Stone(&cells[y][x]);
                 break;
@@ -62,10 +52,8 @@ void Ocean::addObjects(unsigned int n, ObjType type)
         }
     }
 };
-void Ocean::run() 
-{
-    while (1)
-    {
+void Ocean::run() {
+    while (1) {
         system("cls");
         clock_t now = clock();
         print();
@@ -78,48 +66,41 @@ void Ocean::run()
             {
                 stuff.erase(i++); 
             }
-            else
-            {
+            else {
                 (*i)->live();
                 ++i;
             }
         }
     }
 };
-bool Ocean::DeleteObj(Object *obj)
-{
-    if (obj->getLive() == 0)
-    {
+bool Ocean::DeleteObj(Object *obj) {
+    if (obj->getLive() == 0) {
         obj->getCell()->killMe();
         return false;
     }
     return true;
 }
 
-Cell * Ocean::Step(Pair crd)
-{
+Cell * Ocean::Step(Pair crd) {
     random_device ran;
     int xt = crd.x + ran() % 3 - 1;
     int yt = crd.y + ran() % 3 - 1;
-        if (xt < N && yt < M)
-        {
+        if (xt < N && yt < M) {
             if (cells[xt][yt].getObject() == nullptr)
                 return &cells[xt][yt];
         }
         return nullptr;
 }
 
-Cell * Ocean::Radar(Pair crd)
-{
+Cell * Ocean::Radar(Pair crd) {
     random_device ran;
     int i = 0;
     while (i != 8) {
         int xt = crd.x + ran() % 3 - 1;
         int yt = crd.y + ran() % 3 - 1;
 
-        if (xt < N && yt < M)
-        {
-            if (cells[xt][yt].getObject() && cells[xt][yt].getObject()->getType()==ObjType::PREY)
+        if (xt < N && yt < M) {
+            if (cells[xt][yt].getObject() && cells[xt][yt].getObject()->getType() == ObjType::PREY)
                 return  &cells[xt][yt];
         }
         i++;
@@ -127,8 +108,7 @@ Cell * Ocean::Radar(Pair crd)
     return nullptr;
 }
 
-Ocean::~Ocean()
-{
+Ocean::~Ocean() {
     for (int i = 0; i < N; i++)
         delete[] cells[i];
     delete[] cells;

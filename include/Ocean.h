@@ -8,11 +8,12 @@
 #include "Prey.h"
 #include <list>
 class Ocean
+
 {
-private:
+ private:
     Cell **cells;
     std::list<Object*> stuff;
-public:
+ public:
     Ocean();
     ~Ocean();
     void AddStuff(Object *obj);

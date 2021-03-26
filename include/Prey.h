@@ -8,10 +8,11 @@
 class Cell;
 class Ocean;
 class Prey : public Object
+
 {
     friend Cell;
     friend Ocean;
-public:
+ public:
     Prey(Cell * c);
     ~Prey() {};
     void live();

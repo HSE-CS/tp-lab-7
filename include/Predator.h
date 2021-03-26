@@ -6,9 +6,10 @@
 #include "Ocean.h"
 #include "common.h"
 class Predator : public Object
+
 {
     friend Cell;
-public:
+ public:
     Predator(Cell * c);
     ~Predator() {};
     void copulation();
