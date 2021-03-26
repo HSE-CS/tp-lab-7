@@ -2,9 +2,6 @@
 #include "../include/Ocean.h"
 #include "../include/Stone.h"
 #include "../include/Object.h"
-using namespace std;
-#include <iostream>
-#include <random>
 Ocean::Ocean() {
     cells = new Cell*[N];
     for (auto i = 0; i < N; i++) {
@@ -28,8 +25,8 @@ void Ocean::print() const {
 }
 void Ocean::addObjects(unsigned int n, ObjType type) {
     while (n > 0) {
-        unsigned int x = rand() % M;
-        unsigned int y = rand() % N;
+        unsigned int x = rand_r() % M;
+        unsigned int y = rand_r() % N;
         if (cells[y][x].getObject())
             continue;
         else {
@@ -57,7 +54,7 @@ void Ocean::run() {
         system("cls");
         clock_t now = clock();
         print();
-        while (clock{} < now + CLOCKS_PER_SEC / 10);
+        while (clock() < now + CLOCKS_PER_SEC / 10);
         std::list<Object*>::iterator i = stuff.begin();
         while (i != stuff.end()) {
             bool isActive = DeleteObj(*i);
