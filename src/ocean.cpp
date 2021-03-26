@@ -1,6 +1,5 @@
 // Copyright 2021 Stifeev Nikita
 
-#include <windows.h>
 #include <iostream>
 #include <cstdlib>
 #include <set>
@@ -96,7 +95,6 @@ void Ocean::run() {
             stuff.remove(obj);
         }
         counter(stoneCount, preyCount, predatorCount);
-        Sleep(40);
     }
 }
 
