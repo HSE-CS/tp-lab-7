@@ -14,5 +14,5 @@ class Living : public Object {
 
  public:
   Living(ObjectType type, int lifetime)
-      : Object(type), energy(lifetime), lifetime(lifetime){};
+      : Object(type), energy(lifetime), lifetime(lifetime) {}
 };

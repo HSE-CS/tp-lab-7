@@ -17,8 +17,8 @@ class Predator : public Living {
 
  public:
   explicit Predator(int lifetime = genLifetime())
-      : Living(ObjectType::PREDATOR_FISH, lifetime){};
+      : Living(ObjectType::PREDATOR_FISH, lifetime) {}
   void update(World &world, int x, int y) override;
-  bool isSatiated() const { return satiated; };
+  bool isSatiated() const { return satiated; }
   static int genLifetime();
 };
