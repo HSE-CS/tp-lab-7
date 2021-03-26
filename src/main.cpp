@@ -11,6 +11,6 @@ int main() {
   ocean.createObjects(NATURE::STONE, 370);
   ocean.createObjects(NATURE::PREY, 980);
   ocean.createObjects(NATURE::PREDATOR, 520);
-  ocean.run(10);
+  ocean.run(1000);
   return 0;
 }

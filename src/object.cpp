@@ -39,13 +39,8 @@ unsigned int Object::getAge() {
 }
 
 void Object::live() {
-  //  if (age < FEATURES::longevity[nature]) {
   if (age < longevity[nature]) {
     age++;
-    /*
-    if (cell->getTemperature() > FEATURES::maxTemperature[nature] ||
-      cell->getTemperature() < FEATURES::minTemperature[nature]) {
-    */
     if (cell->getTemperature() > maxTemperature[nature] ||
       cell->getTemperature() < minTemperature[nature]) {
       cell->getOcean()->deleteObject(cell);

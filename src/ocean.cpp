@@ -10,28 +10,6 @@ Ocean::Ocean(unsigned int _height, unsigned int _width) :
   for (unsigned int i = 0; i < _height; i++) {
     cells[i].resize(_width);
     for (unsigned int j = 0; j < _width; j++) {
-      /*
-      int temperature = 0;
-      if (!i && !j) {
-        temperature = std::rand() % 71 - 35;
-      } else {
-        auto area = cells[i][j]->getArea();
-        unsigned int cnt = 0;
-        int sum = 0;
-        for (auto c : area) {
-          if (nullptr != cells[c.first][c.second]) {
-            sum += cells[c.first][c.second]->getTemperature();
-            cnt++;
-          }
-        }
-        if (cnt) {
-          temperature = std::rand() % 5 - 2 + sum / cnt;
-        } else {
-          temperature = std::rand() % 71 - 35;
-        }
-      }
-      cells[i][j] = new Cell(this, {i, j}, temperature);
-      */
       cells[i][j] = new Cell(this, {i, j}, std::rand() % 71 - 35);
     }
   }
@@ -47,7 +25,6 @@ void Ocean::generateOrder() {
       addOrder[i] += residues[j] + 1;
       addOrder[i] %= (j + 1);
     }
-    //  std::cout << addOrder[i] << " ";
   }
 }
 
@@ -97,7 +74,6 @@ void Ocean::createObjects(NATURE _nature, unsigned int _count) {
     }
     cells[x][y]->setObject(object);
     objects.insert(object);
-    //std::cout << i << " ";
   }
 }
 
@@ -106,10 +82,8 @@ void Ocean::print() {
     for (unsigned int j = 0; j < width; j++) {
       auto object = cells[i][j]->getObject();
       if (nullptr != object) {
-        //  std::cout << FEATURES::picture[object->getNature()];
         std::cout << picture[object->getNature()];
       } else {
-        //  std::cout << FEATURES::picture[NATURE::UNKNOWN];
         std::cout << picture[NATURE::UNKNOWN];
       }
     }
@@ -121,32 +95,10 @@ void Ocean::run(unsigned int _years) {
   for (unsigned int year = 0; year < _years; year++) {
     for (unsigned int i = 0; i < height; i++) {
       for (unsigned int j = 0; j < width; j++) {
-        /*
-        int temperature = 0;
-        if (!i && !j) {
-          temperature = cells[i][j]->getTemperature() + std::rand() % 11 - 5;
-        } else {
-          auto area = cells[i][j]->getArea();
-          unsigned int cnt = 0;
-          int sum = 0;
-          for (auto c : area) {
-            if (nullptr != cells[c.first][c.second]) {
-              sum += cells[c.first][c.second]->getTemperature();
-              cnt++;
-            }
-          }
-          if (cnt) {
-            temperature = std::rand() % 5 - 2 + sum / cnt;
-          } else {
-            temperature = cells[i][j]->getTemperature() + std::rand() % 11 - 5;
-          }
-        }
-        */
         cells[i][j]->setTemperature(cells[i][j]->getTemperature()
                                     + std::rand() % 7 - 3);
       }
     }
-
     std::set<Object*> trash;
     for (auto* object : objects) {
         if (nullptr == object) {
@@ -154,7 +106,6 @@ void Ocean::run(unsigned int _years) {
           continue;
         }
         object->live();
-        //  if (object->getAge() == FEATURES::longevity[object->getNature()])
         if (object->getAge() == longevity[object->getNature()])
           trash.insert(object);
     }

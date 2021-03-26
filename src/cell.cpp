@@ -2,8 +2,6 @@
 
 #include "cell.h"
 
-
-
 Cell::Cell(Ocean* _ocean,
           std::pair<unsigned int, unsigned int> _coordinates,
           int _temperature) :
