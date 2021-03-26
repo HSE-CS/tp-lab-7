@@ -1,3 +1,3 @@
 //// Copyright 2021 Lukicheva Polina
-#include "object.h"
+#include "../include/object.h"
 

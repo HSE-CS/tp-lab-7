@@ -4,9 +4,9 @@
 #include <string>
 #include <cmath>
 #include <cstdlib>
-#include "prey.h"
-#include "predator.h"
-#include "cell.h"
-#include "ocean.h"
+#include "../include/prey.h"
+#include "../include/predator.h"
+#include "../include/cell.h"
+#include "../include/ocean.h"
 
 

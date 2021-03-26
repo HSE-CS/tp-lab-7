@@ -1,4 +1,4 @@
 //// Copyright 2021 Lukicheva Polina
-#include "prey.h"
-#include "object.h"
+#include "../include/prey.h"
+#include "../include/object.h"
 

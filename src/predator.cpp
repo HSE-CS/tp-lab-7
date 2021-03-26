@@ -1,5 +1,5 @@
 //// Copyright 2021 Lukicheva Polina
-#include "predator.h"
-#include "object.h"
-#include "cell.h"
+#include "../include/predator.h"
+#include "../include/object.h"
+#include "../include/cell.h"
 
