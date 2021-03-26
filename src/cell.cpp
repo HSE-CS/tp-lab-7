@@ -1,3 +1,5 @@
+// Copyright 26.03.21 DenisKabanov
+
 #include "../include/cell.h"
 
 Object *Cell::getObject() const { return obj; }

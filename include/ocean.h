@@ -1,6 +1,7 @@
+// Copyright 26.03.21 DenisKabanov
+
 #ifndef INCLUDE_OCEAN_H_
 #define INCLUDE_OCEAN_H_
-
 #include <list>
 #include "../include/cell.h"
 #include "../include/common.h"
@@ -24,9 +25,7 @@ class Ocean {
   void addObjects(ObjType type, int number);
   Cell *findCellAround(Pair coord);
   void run();
-
   void addObject(Object *);
-
   void addToBlackList(Object *obj);
   void thinTheRanks();
   Cell *findCellWithPrey(Pair coord);

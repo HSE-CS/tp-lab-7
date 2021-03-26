@@ -1,4 +1,4 @@
-// Copyright 2021 VadMack
+// Copyright 26.03.21 DenisKabanov
 
 #ifndef INCLUDE_CELL_H_
 #define INCLUDE_CELL_H_

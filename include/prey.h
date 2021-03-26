@@ -1,3 +1,5 @@
+// Copyright 26.03.21 DenisKabanov
+
 #ifndef INCLUDE_PREY_H_
 #define INCLUDE_PREY_H_
 

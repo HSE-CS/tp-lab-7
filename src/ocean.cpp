@@ -1,3 +1,5 @@
+// Copyright 26.03.21 DenisKabanov
+
 #include <ocean.h>
 #include <zconf.h>
 #include <iostream>

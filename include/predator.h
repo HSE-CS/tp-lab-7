@@ -1,3 +1,5 @@
+// Copyright 26.03.21 DenisKabanov
+
 #ifndef INCLUDE_PREDATOR_H_
 #define INCLUDE_PREDATOR_H_
 

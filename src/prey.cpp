@@ -1,4 +1,7 @@
+// Copyright 26.03.21 DenisKabanov
+
 #include <prey.h>
+
 void Prey::live() {
   if (timeToDie-- > 0) {
     Cell *newCell = cell->findCellAround();
@@ -29,4 +32,5 @@ void Prey::reproduce() {
     }
   }
 }
+
 size_t Prey::GetTimeToDie() const { return timeToDie; }
