@@ -1,5 +1,5 @@
 // Copyright 2021 Krayushkina
-#include "Predator.h"
+#include "../include/Predator.h"
 Predator::Predator(Cell * c) :Object(c) {
     this->lifetime = LTPredator;
     type = ObjType::PREDATOR;

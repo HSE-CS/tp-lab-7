@@ -1,7 +1,7 @@
 // Copyright 2021 Krayushkina
-#include "Ocean.h"
-#include "Stone.h"
-#include "Object.h"
+#include "../include/Ocean.h"
+#include "../include/Stone.h"
+#include "../include/Object.h"
 using namespace std;
 #include <iostream>
 #include <random>

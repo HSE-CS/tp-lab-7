@@ -1,5 +1,5 @@
 // Copyright 2021 Krayushkina
-#include "Prey.h"
+#include "../include/Prey.h"
 #include <iostream>
 
 Prey::Prey(Cell * c) :Object(c) {

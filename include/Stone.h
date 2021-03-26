@@ -1,10 +1,10 @@
 // Copyright 2021 Krayushkina
 #pragma once
 
-#include "Object.h"
-#include "Cell.h"
-#include "Ocean.h"
-#include "common.h"
+#include "../include/Object.h"
+#include "../include/Cell.h"
+#include "../include/Ocean.h"
+#include "../include/common.h"
 class Stone : public Object {
     friend Cell;
  public:

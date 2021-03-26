@@ -1,9 +1,9 @@
 // Copyright 2021 Krayushkina
 #pragma once
 
-#include "common.h"
-#include "Object.h"
-#include "Ocean.h"
+#include "../include/common.h"
+#include "../include/Object.h"
+#include "../include/Ocean.h"
 
 class Ocean;
 class Cell {
