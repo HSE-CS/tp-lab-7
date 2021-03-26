@@ -1,6 +1,6 @@
 // Copyright 2021 Schenikova
 
-#include "ocean.h"
+#include "include/ocean.h"
 #include <random>
 // #include <system>
 
@@ -68,7 +68,7 @@ void Ocean::run() {
     }
     countPredator = 0;
     countPrey = 0;
-  system("clear");
+  // system("clear");
   print();
   sleep(1);
   // delObj();
@@ -86,8 +86,8 @@ void Ocean::run() {
 //     delList.clear();
 // }
 
-	// void Ocean::addToList(Object* obj) {
-  //   delList.push_back(obj);
-  // }
+// void Ocean::addToList(Object* obj) {
+//   delList.push_back(obj);
+// }
 
 

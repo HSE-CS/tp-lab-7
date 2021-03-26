@@ -1,6 +1,6 @@
 // Copyright 2021 Schenikova
 
-#include "stone.h"
+#include "include/stone.h"
 
 void Stone::live() {
   return;

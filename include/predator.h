@@ -2,8 +2,7 @@
 #ifndef INCLUDE_PREDATOR_H_
 #define INCLUDE_PREDATOR_H_
 
-#include "cell.h"
-
+#include "include/cell.h"
 
 class Predator : public Object{
  private:
@@ -16,7 +15,7 @@ class Predator : public Object{
   void live() override;
   void printInfo() override;
   bool IsPredator() override {return true;}
-}; 
+};
 
 
 #endif  // INCLUDE_PREDATOR_H_

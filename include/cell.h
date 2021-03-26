@@ -9,7 +9,7 @@
 #define PREY_N 'f'
 #define PREDATOR_N 'S'
 
-enum class ObjType {STONE,CORAL,PREY,PREDATOR};
+enum class ObjType {STONE, CORAL, PREY, PREDATOR};
 
 class Object;
 class Ocean;
@@ -31,7 +31,7 @@ class Cell {
 		ocean(oc) {}
 	void init(Pair p, Ocean* oc);
 	Object* getObject() const;
-	void setObject(Object* );
+	void setObject(Object*);
 	void killMe();
 };
 
@@ -39,10 +39,10 @@ class Object {
  protected:
 	Cell *cell;
  public:
-	Object(Cell *myCell = nullptr) :
+	explicit Object(Cell *myCell = nullptr) :
     cell(myCell) {}
 	virtual ~Object() {}
-	virtual void live() = 0; // жизнь объекта
+	virtual void live() = 0;
 	virtual bool IsPrey() {return false;}
 	virtual bool IsPredator() {return false;}
 	void setCell(Cell*);

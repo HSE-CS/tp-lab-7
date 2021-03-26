@@ -1,10 +1,10 @@
 // Copyright 2021 Schenikova
-
-#include "predator.h"
-#include "prey.h"
-#include "ocean.h"
-#include "stone.h"
 #include <vector>
+
+#include "include/predator.h"
+#include "include/prey.h"
+#include "include/ocean.h"
+#include "include/stone.h"
 
 int main() {
     Ocean* ocean = new Ocean;
@@ -14,12 +14,12 @@ int main() {
         objects.push_back(new Stone);
         objects.push_back(new Predator);
     }
-    
+
     // for (size_t i = 0; i < 20; i++) {
         ocean->addObjects(objects);
     // }
 
-    
+
     ocean->run();
 }
 
