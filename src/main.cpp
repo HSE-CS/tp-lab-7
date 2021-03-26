@@ -1,6 +1,4 @@
-﻿//  Copyright 2021 Artem Danyaev
-
-
+﻿// Copyright 2021 Artem Danyaev
 #include <iostream>
 #include "../include/ocean.h"
 

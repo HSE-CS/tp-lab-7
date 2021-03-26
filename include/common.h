@@ -6,12 +6,12 @@ struct Pair {
   int y;  // 0..N-1
 };
 
-const size_t N = 35;
-const size_t M = 120;
+const int N = 35;
+const int M = 120;
 
-const size_t numPreys = 100;
-const size_t numPredators = 25;
-const size_t numStones = 100;
+const int numPreys = 100;
+const int numPredators = 25;
+const int numStones = 100;
 
 const int preyLifetime = 10;
 const int preyReprTime = 3;
