@@ -13,6 +13,9 @@
 #include "../include/prey.h"
 #include "../include/stone.h"
 
+class Cell;
+class Object;
+
 class Ocean {
  private:
   Cell **cells;

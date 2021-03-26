@@ -2,4 +2,4 @@
 
 #include "../include/stone.h"
 
-void Stone::live() {}
+void Stone::live() { return }
