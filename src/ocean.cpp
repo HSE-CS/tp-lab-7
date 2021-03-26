@@ -1,9 +1,9 @@
 // Copyright 2021 Nikolaev Ivan
 
-#include <iostream>
-#include "ocean.h"
-#include <stdio.h>
 #include <Windows.h>
+#include <iostream>
+#include "../include/ocean.h"
+#include <stdio.h>
 
 Ocean::Ocean() {
     Ocean(40, 80, 500, 500, 20);
@@ -59,8 +59,8 @@ void Ocean::addPreys() {
         stuff.push_back(prey);
         bool isAdded = false;
         while (!isAdded) {
-            int h = rand() % height;
-            int w = rand() % width;
+            int h = static_cast<int>(gen() % height);
+            int w = static_cast<int>(gen() % width);
             if (cells[h][w].getObject() == nullptr) {
                 cells[h][w].setObject(prey);
                 prey->setCell(&cells[h][w]);
@@ -76,8 +76,8 @@ void Ocean::addPredators() {
         stuff.push_back(predator);
         bool isAdded = false;
         while (!isAdded) {
-            int h = rand() % height;
-            int w = rand() % width;
+            int h = static_cast<int>(gen() % height);
+            int w = static_cast<int>(gen() % width);
             if (cells[h][w].getObject() == nullptr) {
                 cells[h][w].setObject(predator);
                 predator->setCell(&cells[h][w]);
@@ -98,8 +98,8 @@ void Ocean::addObjects() {
         //    stuff.push_back(stone);
         bool isAdded = false;
         while (!isAdded) {
-            int h = rand() % height;
-            int w = rand() % width;
+            int h = static_cast<int>(gen() % height);
+            int w = static_cast<int>(gen() % width);
             if (cells[h][w].getObject() == nullptr) {
                 cells[h][w].setObject(stone);
                 stone->setCell(&cells[h][w]);

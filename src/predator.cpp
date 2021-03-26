@@ -1,9 +1,9 @@
 // Copyright 2021 Nikolaev Ivan
 
 #include <iostream>
-#include "predator.h"
-#include "ocean.h"
-#include "cell.h"
+#include "../include/predator.h"
+#include "../include/ocean.h"
+#include "../include/cell.h"
 
 Predator::Predator() {
     this->symbol = 'S';
@@ -30,7 +30,8 @@ void Predator::live() {
 
 void Predator::die() {
     Pair crd = this->cell->getCrd();
-    this->cell->getOcean()->setPredators(this->cell->getOcean()->getPredators() - 1);
+    this->cell->getOcean()->
+		setPredators(this->cell->getOcean()->getPredators() - 1);
     this->cell->getOcean()->setCell(crd.x, crd.y, nullptr);
     this->cell->getOcean()->deleteObj(this);}
 
@@ -84,7 +85,8 @@ void Predator::leaveOffspring(int x, int y) {
     this->cell->getOcean()->setCell(x, y, new Predator(this->maxHealth));
     Object* offspring = this->cell->getOcean()->getCells()[x][y].getObject();
     this->cell->getOcean()->addObject(x, y, offspring);
-    this->cell->getOcean()->setPredators(this->cell->getOcean()->getPredators() + 1);
+    this->cell->getOcean()->
+		setPredators(this->cell->getOcean()->getPredators() + 1);
 }
 
 Pair Predator::eat() {
@@ -92,16 +94,21 @@ Pair Predator::eat() {
     int x = cell->getCrd().x;
     int y = cell->getCrd().y;
     Pair pair = { -1, -1 };
-    if (checkPosition(x + 1, y) && cell->getOcean()->getCells()[x + 1][y].getObject() != nullptr && cells[x + 1][y].getObject()->getSymbol() == 'f') {
+    if (checkPosition(x + 1, y) &&
+		cell->getOcean()->getCells()[x + 1][y].getObject() != nullptr
+		&& cells[x + 1][y].getObject()->getSymbol() == 'f') {
         pair = { x + 1, y };
-    }
-    else if (checkPosition(x, y + 1) && cell->getOcean()->getCells()[x][y + 1].getObject() != nullptr && cells[x][y + 1].getObject()->getSymbol() == 'f') {
+    } else if (checkPosition(x, y + 1)
+		&& cell->getOcean()->getCells()[x][y + 1].getObject() != nullptr
+		&& cells[x][y + 1].getObject()->getSymbol() == 'f') {
         pair = { x, y + 1 };
-    }
-    else if (checkPosition(x, y - 1) && cell->getOcean()->getCells()[x][y - 1].getObject() != nullptr && cells[x][y - 1].getObject()->getSymbol() == 'f') {
+    } else if (checkPosition(x, y - 1)
+		&& cell->getOcean()->getCells()[x][y - 1].getObject() != nullptr
+		&& cells[x][y - 1].getObject()->getSymbol() == 'f') {
         pair = { x, y - 1 };
-    }
-    else if (checkPosition(x - 1, y) && cell->getOcean()->getCells()[x - 1][y].getObject() != nullptr && cells[x - 1][y].getObject()->getSymbol() == 'f') {
+    } else if (checkPosition(x - 1, y)
+		&& cell->getOcean()->getCells()[x - 1][y].getObject() != nullptr
+		&& cells[x - 1][y].getObject()->getSymbol() == 'f') {
         pair = { x - 1, y };
     }
     if (pair.x != -1) {

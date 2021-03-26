@@ -1,8 +1,8 @@
 // Copyright 2021 Nikolaev Ivan
 
 #include <iostream>
-#include "cell.h"
-#include "ocean.h"
+#include "../include/cell.h"
+#include "../include/ocean.h"
 
 void Cell::init(Pair p, Ocean* oc) {
     crd = p;

@@ -1,9 +1,9 @@
 // Copyright 2021 Nikolaev Ivan
 
 #include <iostream>
-#include "prey.h"
-#include "cell.h"
-#include "ocean.h"
+#include "../include/prey.h"
+#include "../include/cell.h"
+#include "../include/ocean.h"
 
 Prey::Prey() {
     this->symbol = 'f';
@@ -46,7 +46,7 @@ void Prey::die() {
 void Prey::changeCell(int x, int y) {
     Pair oldCrd = this->cell->getCrd();
     this->cell->getOcean()->setCell(oldCrd.x, oldCrd.y, nullptr);
-    this->cell = &this->cell->getOcean()->getCells()[x][y]; // изменить в тек. объекте
+    this->cell = &this->cell->getOcean()->getCells()[x][y];
     this->cell->setCrd({x, y});
     this->cell->getOcean()->setCell(x, y, this);
 }
@@ -63,7 +63,7 @@ bool Prey::moveTo(int x, int y) {
 
 void Prey::move() {
     Pair crd = this->cell->getCrd();
-    int dest = rand() % 4;
+    int dest = static_cast<int>(gen() % height);
     bool isMoved = false;
     switch (dest) {
     case 0:

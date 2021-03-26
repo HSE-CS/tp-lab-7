@@ -1,8 +1,8 @@
 // Copyright 2021 Nikolaev Ivan
 
-#include "ocean.h"
-#include "stone.h"
 #include <iostream>
+#include "../include/ocean.h"
+#include "../include/stone.h"
 
 Stone::Stone() {
 }

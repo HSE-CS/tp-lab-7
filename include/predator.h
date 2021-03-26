@@ -3,7 +3,7 @@
 #ifndef INCLUDE_PREDATOR_H_
 #define INCLUDE_PREDATOR_H_
 #include <string>
-#include "prey.h"
+#include "../include/prey.h"
 
 class Predator : public Prey {
  public:

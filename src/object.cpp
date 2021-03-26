@@ -1,7 +1,7 @@
 // Copyright 2021 Nikolaev Ivan
 
 #include <iostream>
-#include "object.h"
+#include "../include/object.h"
 
 Object::Object(Cell* cell) {
     this->cell = cell;

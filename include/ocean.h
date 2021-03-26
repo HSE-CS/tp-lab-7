@@ -4,10 +4,10 @@
 #define INCLUDE_OCEAN_H_
 #include <string>
 #include <list>
-#include "object.h"
-#include "cell.h"
-#include "predator.h"
-#include "stone.h"
+#include "../include/object.h"
+#include "../include/cell.h"
+#include "../include/predator.h"
+#include "../include/stone.h"
 
 class Ocean {
  public:
