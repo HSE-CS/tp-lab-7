@@ -92,7 +92,7 @@ private:
 public:
 	Ocean();
 	~Ocean();
-	void print() const;
+	void show() const;
 	void addObjects(...);
 	void run();
 };
@@ -170,8 +170,8 @@ typedef size_t coord_t;
 
 struct Pair
 {
-	coord_t x; // 0..M-1
-	coord_t y; // 0..N-1
+	coord_t x_coord; // 0..M-1
+	coord_t y_coord; // 0..N-1
 };
 
 const size_t N = 20;
