@@ -30,9 +30,20 @@ Ocean::~Ocean() {
     delete[] this->cells;
 }
 
-void Ocean::run() {
-    std::cout << "Return later, i'm busy" << std::endl;
-    //std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+void Ocean::run(int amountOfPredators, int amountOfPreys, int amountOfStones, int amountOfCorals) {
+    this->addObjects(amountOfPredators,amountOfPreys,amountOfStones, amountOfCorals);
+    int shift = 0;
+    unsigned iteration = 0;
+    while (this->isTherePredatorsOrPreys()) {
+        ++iteration;
+        for (size_t i = 0; i < this->stuff.size(); ++i) {
+            this->stuff[(i+shift) % (this->stuff.size())]->live();
+        }
+        ++shift;
+        std::cout << iteration << std::endl;
+        this->print();
+        std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+    }
 }
 void Ocean::addObjects(int amountOfPredators, int amountOfPreys, int amountOfStones, int amountOfCorals) {
     for (size_t i = 0; i < (N*M); ++i) {
@@ -72,6 +83,13 @@ void Ocean::addObjects(int amountOfPredators, int amountOfPreys, int amountOfSto
         }
         if (!amountOfPredators && !amountOfStones && !amountOfCorals && !amountOfPreys) {
             break;
+        }
+    }
+    for (size_t i = 0; i < N; ++i) {
+        for (size_t j = 0; j < M; ++j) {
+            if (this->cells[i][j].isFree()){
+                this->cells[i][j].setObject(new None(&(this->cells[i][j])));
+            }
         }
     }
     for (size_t i = 0; i < N; ++i) {
@@ -179,14 +197,19 @@ void Ocean::setObjectToCell(Object* object, int i, int j) {
 Cell* Ocean::getCell(int i, int j) {
     return &(this->cells[i][j]);
 }
-
-int Ocean::getCurrentAmount(Object* obj) {
-    ObjType typeOfNeededObj = obj->getType();
-    int counter = 0;
-    for (auto object : this->stuff) {
-        if (object->getType() == typeOfNeededObj) {
-            ++counter;
+bool Ocean::isTherePredatorsOrPreys() {
+    int predCounter = 0;
+    int preyCounter = 0;
+    for (auto objectOnMap : this->stuff) {
+        if (objectOnMap->getType() == ObjType::PREY) {
+            ++preyCounter;
+        }
+        if (objectOnMap->getType() == ObjType::PREDATOR) {
+            ++predCounter;
         }
     }
-    return counter;
+    if ((predCounter * preyCounter) == 0) {
+        return false;
+    }
+    return true;
 }

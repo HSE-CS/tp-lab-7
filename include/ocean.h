@@ -16,20 +16,27 @@ class Cell;
 class Object;
 
 class Ocean {
- private:
-    Cell** cells;
-    std::vector<Object*> stuff;
+private:
+    Cell **cells;
+    std::vector<Object *> stuff;
 
- public:
+public:
     Ocean();
-    ~Ocean();
-    void print() const;
-    void addObjects(int amountOfPredators, int amountOfPreys, int amountOfStones, int amountOfCorals);
-    void run();
-    std::vector<Cell> getNearbyCells(int i, int j);
-    Cell* getCell(int i, int j);
-    void setObjectToCell(Object* object, int i, int j);
-    int getCurrentAmount(Object*);
-};
 
+    ~Ocean();
+
+    void print() const;
+
+    void addObjects(int amountOfPredators, int amountOfPreys, int amountOfStones, int amountOfCorals);
+
+    void run(int amountOfPredators, int amountOfPreys, int amountOfStones, int amountOfCorals);
+
+    std::vector<Cell> getNearbyCells(int i, int j);
+
+    Cell *getCell(int i, int j);
+
+    void setObjectToCell(Object *object, int i, int j);
+
+    bool isTherePredatorsOrPreys();
+};
 #endif  //  INCLUDE_OCEAN_H

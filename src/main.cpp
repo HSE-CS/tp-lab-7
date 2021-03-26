@@ -11,8 +11,6 @@
 int main() {
     srand(time(NULL));
     Ocean ocean;
-    ocean.addObjects(2,2,2,2);
-    ocean.print();
-    ocean.run();
+    ocean.run(2,2,2,2);
     return 0;
 }

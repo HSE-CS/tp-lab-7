@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/nekna/CLionProjects/tp-lab-7/include/None.h
+Object.h
+C:/Users/nekna/CLionProjects/tp-lab-7/include/Object.h
+
 C:/Users/nekna/CLionProjects/tp-lab-7/include/Object.h
 ../include/common.h
 C:/Users/nekna/CLionProjects/tp-lab-7/include/common.h
@@ -57,6 +61,12 @@ C:/Users/nekna/CLionProjects/tp-lab-7/include/Object.h
 C:/Users/nekna/CLionProjects/tp-lab-7/include/stone.h
 ../include/Object.h
 C:/Users/nekna/CLionProjects/tp-lab-7/include/Object.h
+
+C:/Users/nekna/CLionProjects/tp-lab-7/src/None.cpp
+../include/None.h
+C:/Users/nekna/CLionProjects/tp-lab-7/include/None.h
+../include/ocean.h
+C:/Users/nekna/CLionProjects/tp-lab-7/include/ocean.h
 
 C:/Users/nekna/CLionProjects/tp-lab-7/src/Object.cpp
 ../include/Object.h
