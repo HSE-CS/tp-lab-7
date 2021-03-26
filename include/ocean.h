@@ -11,7 +11,6 @@
 #include "../include/object.h"
 #include "../include/predator.h"
 #include "../include/prey.h"
-#include "../include/stone.h"
 
 class Cell;
 class Object;
