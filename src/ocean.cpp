@@ -7,14 +7,15 @@
 #include "../include/prey.h"
 #include "../include/predator.h"
 #include "../include/common.h"
+#include "../include/cell.h"
 #include "../include/ocean.h"
 
 
-Ocean::Ocean(coord_t M, coord_t N,
-     int number_objects) {
+Ocean::Ocean(int M, int N,
+    int number_objects) {
     this->N = N;
     this->M = M;
-    cells = new Cell * [M];
+    cells = new Cell*[M];
     for (int i = 0; i < M; i++) {
         cells[i] = new Cell[N];
         for (int j = 0; j < N; j++) {
@@ -127,8 +128,8 @@ void Ocean::ClearListOfTheDead() {
 
 Cell* Ocean::hunt(Pair coordinate) {
     std::vector<Cell*> preyCells;
-    for (size_t i = coordinate.x - 1; i <= coordinate.x + 1; i++) {
-        for (size_t j = coordinate.y- 1; j <= coordinate.y + 1; j++) {
+    for (int i = coordinate.x - 1; i <= coordinate.x + 1; i++) {
+        for (int j = coordinate.y- 1; j <= coordinate.y + 1; j++) {
             if (i >= 0 && i < M && j >= 0 && j < N) {
                 if (this->cells[i][j].getObject()) {
                     if (cells[i][j].getObject()->getType() == PREY_N) {
