@@ -12,12 +12,12 @@ class Ocean;
 class Prey : public Object {
     friend Cell;
     friend Ocean;
-public:
-    Prey(Cell* c);
-    ~Prey() {};
+ public:
+    explicit Prey(Cell* c);
+    ~Prey() {}
     void live();
     void move();
     void copulation();
     char getSymbol() override;
 };
-#endif // PREY_H
+#endif  // PREY_H

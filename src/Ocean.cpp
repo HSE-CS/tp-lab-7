@@ -56,14 +56,13 @@ void Ocean::run() {
         system("cls");
         clock_t now = clock();
         print();
-        while (clock() < now + CLOCKS_PER_SEC / 10) {};
+        while (clock() < now + CLOCKS_PER_SEC / 10) {}
         std::list<Object*>::iterator i = stuff.begin();
         while (i != stuff.end()) {
             bool isActive = DeleteObj(*i);
             if (!isActive) {
                 stuff.erase(i++);
-            }
-            else {
+            } else {
                 (*i)->live();
                 ++i;
             }

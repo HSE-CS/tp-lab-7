@@ -19,8 +19,8 @@ class Object {
     Cell* cell;
     ObjType type;
  public:
-    Object(Cell* = nullptr);
-    virtual ~Object() {};
+    explicit Object(Cell* = nullptr);
+    virtual ~Object() {}
     void setLive(int lifetime);
     void setCell(Cell* cell);
     virtual void live() = 0;
@@ -31,4 +31,4 @@ class Object {
     void readytodie();
     ObjType getType();
 };
-#endif // OBJECT_H
+#endif  // OBJECT_H

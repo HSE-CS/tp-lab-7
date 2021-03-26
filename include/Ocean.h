@@ -12,10 +12,10 @@
 #include <iostream>
 #include <random>
 class Ocean {
-private:
+ private:
     Cell** cells;
     std::list<Object*> stuff;
-public:
+ public:
     Ocean();
     ~Ocean();
     void AddStuff(Object* obj);

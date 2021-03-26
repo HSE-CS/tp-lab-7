@@ -2,13 +2,14 @@
 #pragma once
 #define COMMON_H
 #ifdef COMMON_H
+#include <time.h>
 #include <list>
 #include <vector>
 #include <ctime>
-#include <time.h>
+#include <string>
 #include <iterator>
 #include <algorithm>
-#include <string>
+
 typedef size_t coord_t;
 
 struct Pair {

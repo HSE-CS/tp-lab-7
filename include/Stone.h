@@ -8,9 +8,9 @@
 #include "Object.h"
 class Stone : public Object {
     friend Cell;
-public:
-    Stone(Cell* c);
-    ~Stone() {};
+ public:
+    explicit Stone(Cell* c);
+    ~Stone() {}
     void live();
     char getSymbol() override;
 };
