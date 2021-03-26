@@ -5,7 +5,7 @@ Ocean::Ocean(size_t preyLife_, size_t preyCoolDawn_, size_t predatorLife_,
              size_t predatorCoolDawn_, size_t predatorHunger_) {
   cells = new Cell* [N];
   for (size_t i = 0; i < N; ++i) {
-    cells[i] = new Cell [M];
+    cells[i] = new Cell[M];
     for (size_t j = 0; j < M; ++j) {
       cells[i][j].init(Pair{i, j}, this);
     }
@@ -91,7 +91,7 @@ void Ocean::run() {
     }
     ++shift;
     print();
-    std::this_thread::sleep_for(std::chrono::milliseconds(700));
+    // std::this_thread::sleep_for(std::chrono::milliseconds(700));
     system("cls");
   }
   print();
