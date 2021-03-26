@@ -14,8 +14,6 @@
 #include "../include/stone.h"
 
 class Cell;
-class Object;
-class Stone;
 
 class Ocean {
  private:
