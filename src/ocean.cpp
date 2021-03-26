@@ -132,7 +132,7 @@ Cell* Ocean::seachEmptyPlace(Pair coordinate) {
 
 void Ocean::run() {
     sf::RenderWindow *window;
-    window = new sf::RenderWindow(sf::VideoMode(450, 450), "SFML works!");
+    window = new sf::RenderWindow(sf::VideoMode(300, 350), "SFML works!");
     this->print(window);
     window->display();
 
