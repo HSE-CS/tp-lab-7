@@ -1,7 +1,7 @@
 //  Copyright 2021 Kartseva Masha
 #pragma once
-#define PREY_H
-#ifdef PREY_H
+#define INCLUDE_PREY_H
+#ifdef INCLUDE_PREY_H
 #include "../include/object.h"
 #include "../include/cell.h"
 #include "../include/ocean.h"
@@ -19,4 +19,4 @@ class Prey : public Object {
     void copulation();
     char getSymbol() override;
 };
-#endif  // PREY_H
+#endif  // INCLUDE_PREY_H

@@ -1,6 +1,7 @@
 //  Copyright 2021 Kartseva Masha
-#include "../include/prey.h"
+
 #include <iostream>
+#include "../include/prey.h"
 
 Prey::Prey(Cell* c) :Object(c) {
     this->lifetime = LTPrey;

@@ -1,7 +1,7 @@
 //  Copyright 2021 Kartseva Masha
 #pragma once
-#define STONE_H
-#ifdef STONE_H
+#define INCLUDE_STONE_H 
+#ifdef INCLUDE_STONE_H
 #include "../include/object.h"
 #include "../include/cell.h"
 #include "../include/ocean.h"
@@ -14,4 +14,4 @@ class Stone : public Object {
     void live();
     char getSymbol() override;
 };
-#endif  // STONE_H
+#endif  // INCLUDE_STONE_H

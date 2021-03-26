@@ -1,7 +1,7 @@
 //  Copyright 2021 Kartseva Masha
 #pragma once
-#define OCEAN_H
-#ifdef OCEAN_H
+#define INCLUDE_OCEAN_H
+#ifdef INCLUDE_OCEAN_H
 #include <list>
 #include "../include/common.h"
 #include "../include/cell.h"
@@ -23,4 +23,4 @@ class Ocean {
     Cell* Step(Pair crd);
     Cell* Radar(Pair cord);
 };
-#endif  // OCEAN_H
+#endif  // INCLUDE_OCEAN_H

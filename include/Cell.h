@@ -1,7 +1,7 @@
 //  Copyright 2021 Kartseva Masha
 #pragma once
-#define CELL_H
-#ifdef CELL_H
+#define INCLUDE_CELL_H
+#ifdef INCLUDE_CELL_H
 #include "../include/common.h"
 #include "../include/object.h"
 #include "../include/ocean.h"
@@ -27,4 +27,4 @@ class Cell {
     Cell* RADAR();
     Cell* FREE();
 };
-#endif  // CELL_H
+#endif  // INCLUDE_CELL_H

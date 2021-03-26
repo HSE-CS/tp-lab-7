@@ -1,7 +1,7 @@
 //  Copyright 2021 Kartseva Masha
 #pragma once
-#define PREDATOR_H
-#ifdef PREDATOR_H
+#define INCLUDE_PREDATOR_H
+#ifdef INCLUDE_PREDATOR_H
 #include "../include/object.h"
 #include "../include/cell.h"
 #include "../include/ocean.h"
@@ -17,4 +17,4 @@ class Predator : public Object {
     bool eat();
     char getSymbol() override;
 };
-#endif  // PREDATOR_H
+#endif  // INCLUDE_PREDATOR_H

@@ -1,7 +1,7 @@
 //  Copyright 2021 Kartseva Masha
 #pragma once
-#define OBJECT_H
-#ifdef OBJECT_H
+#define INCLUDE_OBJECT_H
+#ifdef INCLUDE_OBJECT_H
 #include "../include/common.h"
 #define STONE_N '#'
 #define PREY_N 'f'
@@ -31,4 +31,4 @@ class Object {
     void readytodie();
     ObjType getType();
 };
-#endif  // OBJECT_H
+#endif  // INCLUDE_OBJECT_H

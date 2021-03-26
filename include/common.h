@@ -1,5 +1,7 @@
 //  Copyright 2021 Kartseva Masha
 #pragma once
+#define INCLUDE_COMMON_H
+#ifdef INCLUDE_COMMON_H
 #include <iostream>
 #include <list>
 #include <vector>
@@ -22,3 +24,5 @@ const int LTStone = 10000;
 
 const size_t N = 20;
 const  size_t M = 30;
+
+#endif // INCLUDE_COMMON_H
