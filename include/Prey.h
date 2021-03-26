@@ -12,7 +12,7 @@ class Prey : public Object {
     friend Ocean;
  public:
     Prey(Cell * c);
-    ~Prey() {};
+    ~Prey() {}
     void live();
     void move();
     void copulation();

@@ -5,13 +5,11 @@
 #include "../include/Cell.h"
 #include "../include/Ocean.h"
 #include "../include/common.h"
-class Predator : public Object
-
-{
+class Predator : public Object {
     friend Cell;
  public:
     Predator(Cell * c);
-    ~Predator() {};
+    ~Predator() {}
     void copulation();
     void live();
     void move();

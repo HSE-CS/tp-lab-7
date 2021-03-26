@@ -57,7 +57,7 @@ void Ocean::run() {
         system("cls");
         clock_t now = clock();
         print();
-        while (clock() < now + CLOCKS_PER_SEC / 10);
+        while (clock{} < now + CLOCKS_PER_SEC / 10);
         std::list<Object*>::iterator i = stuff.begin();
         while (i != stuff.end()) {
             bool isActive = DeleteObj(*i);
@@ -98,8 +98,8 @@ Cell * Ocean::Radar(Pair crd) {
         int yt = crd.y + ran() % 3 - 1;
 
         if (xt < N && yt < M) {
-            if (cells[xt][yt].getObject() 
-				&& cells[xt][yt].getObject()->getType() == ObjType::PREY)
+            if (cells[xt][yt].getObject()
+                && cells[xt][yt].getObject()->getType() == ObjType::PREY)
                 return  &cells[xt][yt];
         }
         i++;
