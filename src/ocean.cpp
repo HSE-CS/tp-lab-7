@@ -1,6 +1,6 @@
 // Copyright 2020 Uskova
 
-#include <windows.h>
+#include <Windows.h>
 #include "ocean.h"
 
 Ocean::Ocean() {
