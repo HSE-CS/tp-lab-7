@@ -2,8 +2,8 @@
 #pragma once
 
 struct Pair {
-  int x;  // 0..M-1
-  int y;  // 0..N-1
+  int x;
+  int y;
 };
 
 const int N = 35;
