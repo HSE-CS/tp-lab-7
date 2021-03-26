@@ -1,6 +1,6 @@
 // Copyright 2020 S. BOR
 
-#include "predator.h"
+#include "include/predator.h"
 #include <iostream>
 #include <exception>
 
@@ -46,11 +46,12 @@ void Predator::createNew() {
     for (int j = currentCell->coords.y - 1;
      j <= currentCell->coords.y + 1; j++) {
       try {
-        if (i >= 0 && i < N && j >= 0 && j < M)
+        if (i >= 0 && i < N && j >= 0 && j < M) {
           if (currentCell->ocean->cells[i][j]->getObject() == nullptr) {
             currentCell->ocean->cells[i][j]->setObject(new Predator);
             return;
           }
+        }
       }
       catch (std::exception e) { }
     }
