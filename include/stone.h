@@ -1,6 +1,6 @@
 // Copyright 2021 Bogomazov
-#ifndef _STONE_H_
-#define _STONE_H_
+#ifndef INCLUDE_STONE_H_
+#define INCLUDE_STONE_H_
 
 #include "../include/object.h"
 
@@ -10,4 +10,4 @@ class Stone : public Object {
     void live();
 };
 
-#endif  // _STONE_H_
+#endif  //  INCLUDE_STONE_H_

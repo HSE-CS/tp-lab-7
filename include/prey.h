@@ -1,6 +1,6 @@
 // Copyright 2021 Bogomazov
-#ifndef _PREY_H_
-#define _PREY_H_
+#ifndef INCLUDE_PREY_H_
+#define INCLUDE_PREY_H_
 
 #include "../include/object.h"
 

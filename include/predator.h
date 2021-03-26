@@ -1,6 +1,6 @@
 // Copyright 2021 Bogomazov
-#ifndef _PREDATOR_H_
-#define _PREDATOR_H_
+#ifndef INCLUDE_PREDATOR_H_
+#define INCLUDE_PREDATOR_H_
 
 #include "../include/prey.h"
 
@@ -13,4 +13,4 @@ class Predator : public Prey {
     void breeding();
 };
 
-#endif  //  PREDATOR_H_
+#endif  //  INCLUDE_PREDATOR_H_

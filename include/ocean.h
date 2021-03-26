@@ -1,6 +1,6 @@
 // Copyright 2021 Bogomazov
-#ifndef _OCEAN_H_
-#define _OCEAN_H_
+#ifndef INCLUDE_OCEAN_H_
+#define INCLUDE_OCEAN_H_
 
 #include <list>
 #include "../include/common.h"
@@ -28,4 +28,4 @@ class Ocean {
     void ClearListOfTheDead();
     Cell* hunt(Pair coordinate);
 };
-#endif
+#endif  //  INCLUDE_OCEAN_H
