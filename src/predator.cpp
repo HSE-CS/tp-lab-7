@@ -1,5 +1,6 @@
 // Copyright 2021 Galex
 
+#include <string>
 #include "../include/predator.h"
 
 void Predator::live() {
@@ -39,4 +40,3 @@ void Predator::move() {
 std::string Predator::getOutput() {
   return "\033[31;41mO\033[0m";
 }
-

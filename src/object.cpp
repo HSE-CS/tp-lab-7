@@ -9,7 +9,6 @@ Object::Object(Cell *c) {
   this->cell = c;
 }
 void Object::live() {
-
 }
 void Object::setType(TYPE t) {
   this->type_ = t;
@@ -18,5 +17,3 @@ TYPE Object::getType() {
   return this->type_;
 }
 Object::~Object() = default;
-
-

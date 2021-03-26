@@ -3,9 +3,10 @@
 #ifndef INCLUDE_PREDATOR_H_
 #define INCLUDE_PREDATOR_H_
 
+#include <string>
 #include "../include/prey.h"
 
-class Predator : public Prey{
+class Predator : public Prey {
  protected:
   int satiety = PREDATOR_MAX_SATIETY - 1;
  public:

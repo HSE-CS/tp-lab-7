@@ -22,8 +22,8 @@ class Ocean {
  public:
   Ocean();
   void print() const;
-  void addObject(Object*);
-  void removeObject(Object*);
+  void addObject(Object* o);
+  void removeObject(Object* o);
   void run();
 };
 

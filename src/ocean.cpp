@@ -9,7 +9,7 @@
 Ocean::Ocean() {
   for (int i = 0; i < ROWS; ++i) {
     for (int j = 0; j < COLUMNS; ++j) {
-      Pair p{};
+      Pair p;
       p.x = i;
       p.y = j;
       this->cells[i][j] = new Cell(p, this);
@@ -20,7 +20,8 @@ Ocean::Ocean() {
     int randX = rand() % ROWS;
     int randY = rand() % COLUMNS;
     if (this->cells[randX][randY]->isFree()) {
-      this->cells[randX][randY]->setObject(new Stone(this->cells[randX][randY]));
+      this->cells[randX][randY]->
+          setObject(new Stone(this->cells[randX][randY]));
       this->numOfStones++;
       stuff.push_back(this->cells[randX][randY]->getObject());
     }
@@ -29,7 +30,8 @@ Ocean::Ocean() {
     int randX = rand() % ROWS;
     int randY = rand() % COLUMNS;
     if (this->cells[randX][randY]->isFree()) {
-      this->cells[randX][randY]->setObject(new Prey(this->cells[randX][randY]));
+      this->cells[randX][randY]->
+          setObject(new Prey(this->cells[randX][randY]));
       this->numOfPreys++;
       stuff.push_back(this->cells[randX][randY]->getObject());
     }
@@ -38,14 +40,15 @@ Ocean::Ocean() {
     int randX = rand() % ROWS;
     int randY = rand() % COLUMNS;
     if (this->cells[randX][randY]->isFree()) {
-      this->cells[randX][randY]->setObject(new Predator(this->cells[randX][randY]));
+      this->cells[randX][randY]->
+      setObject(new Predator(this->cells[randX][randY]));
       this->numOfPredators++;
       stuff.push_back(this->cells[randX][randY]->getObject());
     }
   }
 }
 void Ocean::print() const {
-  //system("clear");
+  system("clear");
   for (int i = 0; i < ROWS; ++i) {
     for (int j = 0; j < COLUMNS; ++j) {
       if (this->cells[i][j]->getObject() != nullptr) {
@@ -73,6 +76,7 @@ void Ocean::run() {
       i->live();
     }
     this->print();
-    std::cout << "Num of Preys - " << this->numOfPreys << " Num of Predators - " << this->numOfPredators << "\n";
+    std::cout << "Num of Preys - " << this->numOfPreys <<
+              " Num of Predators - " << this->numOfPredators << "\n";
   }
 }

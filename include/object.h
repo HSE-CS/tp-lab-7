@@ -4,6 +4,7 @@
 #define INCLUDE_OBJECT_H_
 
 #include <iostream>
+#include <string>
 #include "../include/cell.h"
 #include "../include/common.h"
 
@@ -21,12 +22,12 @@ class Object {
   Cell *cell;
   TYPE type_;
  public:
-  Object(Cell * = nullptr);
+  explicit Object(Cell * = nullptr);
   virtual ~Object();
   virtual void live();
-  void setCell(Cell *);
+  void setCell(Cell *c);
   void setType(TYPE t);
   TYPE getType();
-  virtual std::string getOutput() { return "\033[96;106mO\033[0m"; };
+  virtual std::string getOutput() { return "\033[96;106mO\033[0m"; }
 };
 #endif  // INCLUDE_OBJECT_H_

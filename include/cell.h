@@ -10,7 +10,7 @@
 class Object;
 class Ocean;
 
-class Cell{
+class Cell {
  private:
   Ocean* ocean;
   Object* object;

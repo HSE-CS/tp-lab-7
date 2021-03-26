@@ -13,10 +13,11 @@ void Cell::setObject(Object *obj) {
   this->object = obj;
 }
 bool Cell::isFree() {
-  if(this->object != nullptr){
+  if (this->object != nullptr) {
     return false;
-  }else
+  } else {
     return true;
+  }
 }
 Object *Cell::getObject() {
   return this->object;
@@ -41,52 +42,60 @@ Cell *Cell::checkNeighbour(int neighbour) {
           this->coord.y != 0 &&
           this->ocean->cells[this->coord.x - 1][this->coord.y - 1]->isFree())
         return this->ocean->cells[this->coord.x - 1][this->coord.y - 1];
-      else return nullptr;
+      else
+        return nullptr;
     case 1:
       if (this->coord.x != 0 &&
           this->ocean->cells[this->coord.x - 1][this->coord.y]->isFree())
         return this->ocean->cells[this->coord.x - 1][this->coord.y];
-      else return nullptr;
+      else
+        return nullptr;
     case 2:
       if (this->coord.x != 0 &&
           this->coord.y != COLUMNS - 1 &&
           this->ocean->cells[this->coord.x - 1][this->coord.y + 1]->isFree())
         return this->ocean->cells[this->coord.x - 1][this->coord.y + 1];
-      else return nullptr;
+      else
+        return nullptr;
     case 3:
       if (this->coord.y != 0 &&
           this->ocean->cells[this->coord.x][this->coord.y - 1]->isFree())
         return this->ocean->cells[this->coord.x][this->coord.y - 1];
-      else return nullptr;
+      else
+        return nullptr;
     case 4:
       if (this->coord.y != COLUMNS - 1 &&
           this->ocean->cells[this->coord.x][this->coord.y + 1]->isFree())
         return this->ocean->cells[this->coord.x][this->coord.y + 1];
-      else return nullptr;
+      else
+        return nullptr;
     case 5:
       if (this->coord.x != ROWS - 1 &&
           this->coord.y != 0 &&
           this->ocean->cells[this->coord.x + 1][this->coord.y - 1]->isFree())
         return this->ocean->cells[this->coord.x + 1][this->coord.y - 1];
-      else return nullptr;
+      else
+        return nullptr;
     case 6:
       if (this->coord.x != ROWS - 1 &&
           this->ocean->cells[this->coord.x + 1][this->coord.y]->isFree())
         return this->ocean->cells[this->coord.x + 1][this->coord.y];
-      else return nullptr;
+      else
+        return nullptr;
     case 7:
       if (this->coord.x != ROWS - 1 && this->coord.y != COLUMNS - 1 &&
           this->ocean->cells[this->coord.x + 1][this->coord.y + 1]->isFree())
         return this->ocean->cells[this->coord.x + 1][this->coord.y + 1];
-      else return nullptr;
+      else
+        return nullptr;
   }
   return nullptr;
 }
 void Cell::kill() {
   this->ocean->removeObject(this->getObject());
   switch (this->getObject()->getType()) {
-    case TYPE::PREY: this->ocean->numOfPreys --;
-    case TYPE::PREDATOR: this->ocean->numOfPredators --;
+    case TYPE::PREY: this->ocean->numOfPreys--;
+    case TYPE::PREDATOR: this->ocean->numOfPredators--;
   }
   delete this->object;
   this->setObject(nullptr);
@@ -100,59 +109,66 @@ Cell *Cell::getRandPreyNeighbourCell() {
               this->ocean->cells[this->coord.x - 1][this->coord.y - 1]
                   ->getObject()->type_ == TYPE::PREY))
         return this->ocean->cells[this->coord.x - 1][this->coord.y - 1];
-      else return nullptr;
+      else
+        return nullptr;
     case 1:
       if (this->coord.x != 0 &&
           (this->ocean->cells[this->coord.x - 1][this->coord.y]->isFree() ||
               this->ocean->cells[this->coord.x - 1][this->coord.y]
                   ->getObject()->type_ == TYPE::PREY))
         return this->ocean->cells[this->coord.x - 1][this->coord.y];
-      else return nullptr;
+      else
+        return nullptr;
     case 2:
       if (this->coord.x != 0 && this->coord.y != COLUMNS - 1 &&
           (this->ocean->cells[this->coord.x - 1][this->coord.y + 1]->isFree() ||
               this->ocean->cells[this->coord.x - 1][this->coord.y + 1]
                   ->getObject()->type_ == TYPE::PREY))
         return this->ocean->cells[this->coord.x - 1][this->coord.y + 1];
-      else return nullptr;
+      else
+        return nullptr;
     case 3:
       if (this->coord.y != 0 &&
           (this->ocean->cells[this->coord.x][this->coord.y - 1]->isFree() ||
               this->ocean->cells[this->coord.x][this->coord.y - 1]
                   ->getObject()->type_ == TYPE::PREY))
         return this->ocean->cells[this->coord.x][this->coord.y - 1];
-      else return nullptr;
+      else
+        return nullptr;
     case 4:
       if (this->coord.y != COLUMNS - 1 &&
           (this->ocean->cells[this->coord.x][this->coord.y + 1]->isFree() ||
               this->ocean->cells[this->coord.x][this->coord.y + 1]
                   ->getObject()->type_ == TYPE::PREY))
         return this->ocean->cells[this->coord.x][this->coord.y + 1];
-      else return nullptr;
+      else
+        return nullptr;
     case 5:
-      if (this->coord.x != ROWS -1 && this->coord.y != 0 &&
+      if (this->coord.x != ROWS - 1 && this->coord.y != 0 &&
           (this->ocean->cells[this->coord.x + 1][this->coord.y - 1]->isFree() ||
               this->ocean->cells[this->coord.x + 1][this->coord.y - 1]
                   ->getObject()->type_ == TYPE::PREY))
         return this->ocean->cells[this->coord.x + 1][this->coord.y - 1];
-      else return nullptr;
+      else
+        return nullptr;
     case 6:
       if (this->coord.x != ROWS - 1 &&
           (this->ocean->cells[this->coord.x + 1][this->coord.y]->isFree() ||
               this->ocean->cells[this->coord.x + 1][this->coord.y]
                   ->getObject()->type_ == TYPE::PREY))
         return this->ocean->cells[this->coord.x + 1][this->coord.y];
-      else return nullptr;
+      else
+        return nullptr;
     case 7:
       if (this->coord.x != ROWS - 1 && this->coord.y != COLUMNS - 1 &&
           (this->ocean->cells[this->coord.x + 1][this->coord.y + 1]->isFree() ||
               this->ocean->cells[this->coord.x + 1][this->coord.y + 1]
                   ->getObject()->type_ == TYPE::PREY))
         return this->ocean->cells[this->coord.x + 1][this->coord.y + 1];
-      else return nullptr;
+      else
+        return nullptr;
   }
 }
 Ocean *Cell::getOcean() {
   return this->ocean;
 }
-

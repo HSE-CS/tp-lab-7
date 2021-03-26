@@ -3,11 +3,12 @@
 #ifndef INCLUDE_STONE_H_
 #define INCLUDE_STONE_H_
 
+#include <string>
 #include "../include/object.h"
 
-class Stone : public Object{
+class Stone : public Object {
  public:
-  explicit Stone(Cell* c = nullptr):Object(c){
+  explicit Stone(Cell *c = nullptr) : Object(c) {
     this->type_ = TYPE::STONE;
     this->cell = c;
   }

@@ -3,6 +3,7 @@
 #ifndef INCLUDE_PREY_H_
 #define INCLUDE_PREY_H_
 
+#include <string>
 #include "../include/object.h"
 
 class Prey : public Object {
