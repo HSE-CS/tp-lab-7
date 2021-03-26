@@ -30,4 +30,4 @@ class Cell {
     vector<Cell*>* getPreyCells();
 };
 
-#endif  // INCLUDE_CELL_H
+#endif  // INCLUDE_CELL_H_
