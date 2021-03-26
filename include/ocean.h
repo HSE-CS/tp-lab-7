@@ -18,7 +18,6 @@ class Ocean {
 
  public:
   Ocean(unsigned int _M, unsigned int _N);
-  ~Ocean();
   void print() const;
   void AddObject(Object *);
   void run();
