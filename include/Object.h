@@ -22,7 +22,7 @@ class Cell;
 class Object {
  protected:
     Cell *cell;
-    ObjType type = (ObjType)-1;  //  None
+    ObjType type = static_cast<ObjType>(-1);  //  None
 
  public:
     explicit Object(Cell* objToSet);

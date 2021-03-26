@@ -7,7 +7,8 @@
 class Predator : public Object {
  private:
     int lifespan = 0;
-    int hunger = 100;
+    int fullness = 100;
+    int step = 0;
 
  public:
     Predator(Cell* thisCell);

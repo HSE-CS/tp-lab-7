@@ -4,7 +4,7 @@
 #include "../include/cell.h"
 
 void Stone::live() {
-    if (lifespan == 0) {
+    if (lifespan <= 0) {
         this->cell->killMe();
     }
     --(this->lifespan);
@@ -14,13 +14,13 @@ void Stone::setType() {
 }
 
 void Coral::live() {
-    if (lifespan == 36) {
+    if (lifespan >= 36) {
         int x = this->cell->getX(), y = this->cell->getY();
         Ocean* thisOcean = this->cell->getCurrentOcean();
         std::vector<Cell> nearCells = thisOcean->getNearbyCells(x,y);
         for (auto cell : nearCells) {
             if (cell.isFree()) {
-                Pair p; p.x = cell.getX(); p.y = cell.getY();
+                Pair p = {cell.getX(),cell.getY()};
                 Cell* newCell = new Cell(p, thisOcean);
                 thisOcean->setObjectToCell(dynamic_cast<Object*>(new Coral(newCell)),cell.getX(), cell.getY());
             }
