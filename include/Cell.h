@@ -4,6 +4,7 @@
 #define INCLUDE_CELL_H_
 
 #include "parametr.h"
+
 class Object;
 class Ocean;
 
@@ -23,5 +24,5 @@ class Cell {
   void delObject();
 };
 
-#endif
+#endif  // INCLUDE_CELL_H_
 

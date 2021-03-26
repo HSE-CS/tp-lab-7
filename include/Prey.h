@@ -22,5 +22,4 @@ class Prey : public Object {
   void live() override;
   std::string getName() override;
 };
-
-#endif
+#endif  // INCLUDE_PREY_H_

@@ -5,6 +5,7 @@
 
 #include "Prey.h"
 #include <queue>
+#include <string>
 
 class Predator : public Prey {
  protected:
@@ -19,5 +20,4 @@ class Predator : public Prey {
   void live() override;
   std::string getName() override;
 };
-
-#endif
+#endif  // INCLUDE_PREDATOR_H_

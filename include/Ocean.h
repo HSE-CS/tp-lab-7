@@ -3,13 +3,14 @@
 #ifndef INCLUDE_OCEAN_H_
 #define INCLUDE_OCEAN_H_
 
+#include <iostream>
+#include <vector>
+#include <random>
 #include "Cell.h"
 #include "parametr.h"
 #include "Object.h"
 #include "Factory.h"
-#include <iostream>
-#include <vector>
-#include <random>
+
 class Object;
 class Cell;
 
@@ -31,5 +32,4 @@ class Ocean {
   bool findPrey();
   bool findPredator();
 };
-
-#endif
+#endif  // INCLUDE_OCEAN_H_

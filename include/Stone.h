@@ -17,5 +17,4 @@ class Stone : public Object {
   void live() override;
   std::string getName() override;
 };
-
-#endif
+#endif  // INCLUDE_STONE_H_

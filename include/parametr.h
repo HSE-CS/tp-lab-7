@@ -10,5 +10,4 @@ struct Pair {
 
 const int N = 20;
 const int M = 220;
-
-#endif
+#endif  // INCLUDE_PARAMETR_H_

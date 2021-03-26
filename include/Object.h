@@ -11,7 +11,7 @@ class Cell;
 
 class Object {
  protected:
-  Cell* obj_cell;  //Связь объекта с клеткой
+  Cell* obj_cell;  // Связь объекта с клеткой
 
  public:
   virtual ~Object();
@@ -20,5 +20,4 @@ class Object {
   void SetCell(Cell* cell);
   virtual std::string getName();
 };
-
-#endif 
+#endif  // INCLUDE_OBJECT_H_

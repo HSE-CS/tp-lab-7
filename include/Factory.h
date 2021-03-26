@@ -8,6 +8,7 @@
 #include "Predator.h"
 #include "Stone.h"
 #include <map>
+#include <vector>
 #include <iostream>
 #include <fstream>
 #include <istream>
@@ -71,5 +72,4 @@ class Factory {
     return temporary_objects;
   }
 };
-
-#endif 
+#endif  // INCLUDE_FACTORY_H_

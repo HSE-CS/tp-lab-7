@@ -4,7 +4,7 @@
 #include "Ocean.h"
 Prey::Prey(std::string name, int life,
            int reproduce, Cell* cell)
-          : Object(cell){
+          : Object(cell) {
   lifeTime = life;
   reproduceTime = reproduce;
   p_name = name;
@@ -36,7 +36,7 @@ void Prey::live() {
     temp_ocean->SetMarineCreatures(TemporaryCreatures);
     return;
   }
-  //Если есть куда рожать - рожаем через заданное число итераций
+  // Если есть куда рожать - рожаем через заданное число итераций
   if (reproduce == reproduceTime) {
     reproduce = 0;
     if (y + 1 != M && TemporaryCells[x][y + 1]->getObject() ==
@@ -61,7 +61,7 @@ void Prey::live() {
                                        TemporaryCells[x][y - 1]);
       TemporaryCells[x][y - 1]->SetObject(children_Prey);
       TemporaryCreatures.push_back(children_Prey);
-    } else if (y - 1 == -1){
+    } else if (y - 1 == -1) {
       if (TemporaryCells[x][M - 1]->getObject() == nullptr) {
         Object* children_Prey = new Prey("Prey",
                                          lifeTime, reproduceTime,
@@ -76,7 +76,7 @@ void Prey::live() {
                                        TemporaryCells[x + 1][y]);
       TemporaryCells[x + 1][y]->SetObject(children_Prey);
       TemporaryCreatures.push_back(children_Prey);
-    } else if (x + 1 == N){
+    } else if (x + 1 == N) {
       if (TemporaryCells[0][y]->getObject() == nullptr) {
         Object* children_Prey = new Prey("Prey",
                                          lifeTime, reproduceTime,
@@ -91,7 +91,7 @@ void Prey::live() {
                                        TemporaryCells[x - 1][y]);
       TemporaryCells[x - 1][y]->SetObject(children_Prey);
       TemporaryCreatures.push_back(children_Prey);
-    } else if (x - 1 == -1){
+    } else if (x - 1 == -1) {
       if (TemporaryCells[N - 1][y]->getObject() == nullptr) {
         Object* children_Prey = new Prey("Prey",
                                          lifeTime, reproduceTime,
@@ -101,15 +101,17 @@ void Prey::live() {
       }
     }
   }
-  //Движение
-  //Если мы не у края и справа/слева/сверху/снизу пусто - идем туда, если непусто проверяем другие места
-  //Если мы у края, то проверям свободно ли у другого конца, если да - идем, если нет - не идем.
+  // Движение
+  // Если мы не у края и справа/слева/сверху/снизу 
+  // пусто - идем туда, если непусто проверяем другие места
+  // Если мы у края, то проверям свободно ли у 
+  // другого конца, если да - идем, если нет - не идем.
     if (y + 1 != M && TemporaryCells[x][y + 1]->getObject() ==
         nullptr) {
       TemporaryCells[x][y + 1]->SetObject(this);
       this->SetCell(TemporaryCells[x][y + 1]);
       TemporaryCells[x][y]->delObject();
-    } else if (y + 1 == M){
+    } else if (y + 1 == M) {
       if (TemporaryCells[x][0]->getObject() == nullptr) {
         TemporaryCells[x][0]->SetObject(this);
         this->SetCell(TemporaryCells[x][0]);
@@ -120,7 +122,7 @@ void Prey::live() {
       TemporaryCells[x][y - 1]->SetObject(this);
       this->SetCell(TemporaryCells[x][y - 1]);
       TemporaryCells[x][y]->delObject();
-    } else if (y - 1 == -1){
+    } else if (y - 1 == -1) {
       if (TemporaryCells[x][M - 1]->getObject() == nullptr) {
         TemporaryCells[x][M - 1]->SetObject(this);
         this->SetCell(TemporaryCells[x][M - 1]);
@@ -142,7 +144,7 @@ void Prey::live() {
       TemporaryCells[x - 1][y]->SetObject(this);
       this->SetCell(TemporaryCells[x - 1][y]);
       TemporaryCells[x][y]->delObject();
-    } else if (x - 1 == -1){
+    } else if (x - 1 == -1) {
       if (TemporaryCells[N - 1][y]->getObject() == nullptr) {
         TemporaryCells[N - 1][y]->SetObject(this);
         this->SetCell(TemporaryCells[N - 1][y]);

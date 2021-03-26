@@ -4,7 +4,7 @@
 #include "Ocean.h"
 Predator::Predator(std::string name, std::string pre_name,
                    int eat, int life, int reproduce, Cell* cell)
-                  : Prey(pre_name, life, reproduce, cell){
+                  : Prey(pre_name, life, reproduce, cell) {
   eatTime = eat;
   p_name = name;
 }
@@ -21,8 +21,8 @@ void Predator::live() {
   Ocean* temp_ocean = obj_cell->getOcean();
   std::vector<Object* > TemporaryCreatures =
       obj_cell->getOcean()->GetCreatures();
-  int x = obj_cell->getPair()->x;  //Координаты расположения хищника
-  int y = obj_cell->getPair()->y;  //Координаты расположения хищника
+  int x = obj_cell->getPair()->x;  // Координаты расположения хищника
+  int y = obj_cell->getPair()->y;  // Координаты расположения хищника
   bool SamePlace;
   bool isPrey{false};
   static int reproduce{0};
@@ -54,16 +54,18 @@ void Predator::live() {
                                                TemporaryCells[x][y + 1]);
       TemporaryCells[x][y + 1]->SetObject(children_Predator);
       TemporaryCreatures.push_back(children_Predator);
-    } else if (y + 1 == M){
+    } else if (y + 1 == M) {
       if (TemporaryCells[x][0]->getObject() == nullptr) {
         Object* children_Predator = new Predator
             ("Predator", "Prey",
-                                                 eatTime,  lifeTime, reproduceTime,
+                                                 eatTime,  lifeTime,
+                                                 reproduceTime,
                                                  TemporaryCells[x][0]);
         TemporaryCells[x][0]->SetObject(children_Predator);
         TemporaryCreatures.push_back(children_Predator);
       }
-    } else if (y - 1 != -1 && TemporaryCells[x][y - 1]->getObject() == nullptr) {
+    } else if (y - 1 != -1 && TemporaryCells[x][y - 1]->getObject()
+               == nullptr) {
       Object* children_Predator = new Predator
           ("Predator", "Prey",
                                                eatTime, lifeTime, reproduceTime,
@@ -79,34 +81,38 @@ void Predator::live() {
         TemporaryCells[x][M - 1]->SetObject(children_Predator);
         TemporaryCreatures.push_back(children_Predator);
       }
-    } else if (x + 1 != N && TemporaryCells[x + 1][y]->getObject() == nullptr) {
+    } else if (x + 1 != N && TemporaryCells[x + 1][y]->getObject()
+               == nullptr) {
       Object* children_Predator = new Predator
           ("Predator", "Prey",
                                                eatTime, lifeTime, reproduceTime,
                                                TemporaryCells[x + 1][y]);
       TemporaryCells[x + 1][y]->SetObject(children_Predator);
       TemporaryCreatures.push_back(children_Predator);
-    } else if (x + 1 == N){
+    } else if (x + 1 == N) {
       if (TemporaryCells[0][y]->getObject() == nullptr) {
         Object* children_Predator = new Predator
             ("Predator", "Prey",
-                                                 eatTime, lifeTime, reproduceTime,
+                                                 eatTime, lifeTime,
+                                                 reproduceTime,
                                                  TemporaryCells[0][y]);
         TemporaryCells[0][y]->SetObject(children_Predator);
         TemporaryCreatures.push_back(children_Predator);
       }
-    } else if (x - 1 != -1 && TemporaryCells[x - 1][y]->getObject() == nullptr) {
+    } else if (x - 1 != -1 && TemporaryCells[x - 1][y]->getObject()
+               == nullptr) {
       Object* children_Predator = new Predator
           ("Predator", "Prey",
                                                eatTime, lifeTime, reproduceTime,
                                                TemporaryCells[x - 1][y]);
       TemporaryCells[x - 1][y]->SetObject(children_Predator);
       TemporaryCreatures.push_back(children_Predator);
-    } else if (x - 1 == -1){
+    } else if (x - 1 == -1) {
       if (TemporaryCells[N - 1][y]->getObject() == nullptr) {
         Object* children_Predator = new Predator
             ("Predator", "Prey",
-                                                 eatTime, lifeTime, reproduceTime,
+                                                 eatTime, lifeTime,
+                                                 reproduceTime,
                                                  TemporaryCells[N - 1][y]);
         TemporaryCells[N - 1][y]->SetObject(children_Predator);
         TemporaryCreatures.push_back(children_Predator);
@@ -262,7 +268,7 @@ void Predator::live() {
   if (p.size() == 2 && eat < eatTime) {
     TemporaryCreatures.erase(std::remove(TemporaryCreatures.begin(),
                                          TemporaryCreatures.end(),
-                                         TemporaryCells[coord_prey.x][coord_prey.y]->
+                      TemporaryCells[coord_prey.x][coord_prey.y]->
                                          getObject()),
                              TemporaryCreatures.end());
     delete TemporaryCells[coord_prey.x][coord_prey.y]->
