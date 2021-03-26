@@ -2,7 +2,7 @@
 #pragma once
 
 #include "../include/common.h"
-#include "../include/Object.h"
+#include "../include/object.h"
 #include "../include/ocean.h"
 
 class Ocean;

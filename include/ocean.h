@@ -3,10 +3,10 @@
 
 #include <list>
 #include "../include/common.h"
-#include "../include/Cell.h"
-#include "../include/Predator.h"
-#include "../include/Stone.h"
-#include "../include/Prey.h"
+#include "../include/cell.h"
+#include "../include/predator.h"
+#include "../include/stone.h"
+#include "../include/prey.h"
 class Ocean {
  private:
     Cell **cells;

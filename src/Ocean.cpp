@@ -1,7 +1,7 @@
 // Copyright 2021 Krayushkina
 #include "../include/ocean.h"
-#include "../include/Stone.h"
-#include "../include/Object.h"
+#include "../include/stone.h"
+#include "../include/object.h"
 Ocean::Ocean() {
     cells = new Cell*[N];
     for (auto i = 0; i < N; i++) {

@@ -1,5 +1,5 @@
 // Copyright 2021 Krayushkina
-#include "../include/Object.h"
+#include "../include/object.h"
 
 Object::Object(Cell * cell) {
     this->cell = cell;

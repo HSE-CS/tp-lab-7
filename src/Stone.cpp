@@ -1,5 +1,5 @@
 // Copyright 2021 Krayushkina
-#include "../include/Stone.h"
+#include "../include/stone.h"
 Stone::Stone(Cell * c) :Object(c) {
     this->lifetime = LTStone;
     type = ObjType::STONE;
