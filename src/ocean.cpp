@@ -75,7 +75,6 @@ void Ocean::add_objects(ObjType obj_type, uint num) {
 
         default:
             break;
-
         }
         cells[n][m].set_object(tmp);
         stuff.push_back(tmp);
@@ -88,8 +87,7 @@ void Ocean::add_stuff(Object* object) {
 void Ocean::del_obj(Object* object) {
     object->get_cell()->killMe();
 }
-Cell* Ocean::find_empty(Pair crd)
-{
+Cell* Ocean::find_empty(Pair crd) {
     std::srand(unsigned(std::time(0)));
     for (uint i = 0; i < attempts; i++) {
         uint x1 = crd.x + rand() % 3 - 1;
