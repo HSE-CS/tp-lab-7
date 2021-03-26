@@ -1,5 +1,4 @@
-﻿// Copyright 2021 Artem Danyaev
-#include <iostream>
+﻿#include <iostream>
 #include "../include/ocean.h"
 
 int main() {
