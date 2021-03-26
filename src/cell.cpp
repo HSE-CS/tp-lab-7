@@ -1,5 +1,6 @@
-#include "cell.h"
-#include "object.h"
+//// Copyright 2021 Lukicheva Polina
+#include "../include/cell.h"
+#include "../include/object.h"
 
 void Cell::init(Pair p, Ocean* oc)
 {

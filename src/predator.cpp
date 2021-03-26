@@ -1,6 +1,7 @@
-#include "predator.h"
-#include "object.h"
-#include "cell.h"
+//// Copyright 2021 Lukicheva Polina
+#include "../include/predator.h"
+#include "../include/object.h"
+#include "../include/cell.h"
 
 void Predator::live() {
   int health = 0, multCounter = 0, multiPoint = 0;

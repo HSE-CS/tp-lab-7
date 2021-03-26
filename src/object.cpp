@@ -1,4 +1,5 @@
-#include "object.h"
+//// Copyright 2021 Lukicheva Polina
+#include "../include/object.h"
 
 Object::Object(ObjType type, Cell* cell)
 {

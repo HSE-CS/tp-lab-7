@@ -1,5 +1,5 @@
 //// Copyright 2021 Lukicheva Polina
-#include "stone.h"
+#include "../include/stone.h"
 
 void Stone::live() {
  
