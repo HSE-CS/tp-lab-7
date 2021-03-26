@@ -1,7 +1,7 @@
 // Copyright 2020 PollyllyZh
-#include "stone.h"
-#include "cell.h"
-#include "object.h"
+#include "../include/stone.h"
+#include "../include/cell.h"
+#include "../include/object.h"
 char Stone::get_symbol() {
     return STONE_N;
 }

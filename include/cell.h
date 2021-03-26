@@ -1,7 +1,7 @@
 // Copyright 2020 PollyllyZh
 #pragma once
-#include "object.h"
-#include "ocean.h"
+#include "../include/object.h"
+#include "../include/ocean.h"
 class Cell {
     friend Ocean;
 

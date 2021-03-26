@@ -1,5 +1,5 @@
 // Copyright 2020 PollyllyZh
-#include "object.h"
+#include "../include/object.h"
 Cell* Object::get_cell() {
     return cell;
 }

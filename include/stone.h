@@ -1,9 +1,9 @@
 // Copyright 2020 PollyllyZh
 #pragma once
-#include "object.h"
-#include "cell.h"
-#include "ocean.h"
-#include "common.h"
+#include "../include/object.h"
+#include "../include/cell.h"
+#include "../include/ocean.h"
+#include "../include/common.h"
 
 class Stone : public Object {
 public:

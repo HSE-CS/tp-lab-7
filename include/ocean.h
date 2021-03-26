@@ -1,10 +1,10 @@
 // Copyright 2020 PollyllyZh
 #pragma once
-#include "common.h"
-#include "cell.h"
-#include "prey.h"
-#include "predator.h"
-#include "stone.h"
+#include "../include/common.h"
+#include "../include/cell.h"
+#include "../include/prey.h"
+#include "../include/predator.h"
+#include "../include/stone.h"
 
 
 class Ocean {

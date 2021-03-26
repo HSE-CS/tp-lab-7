@@ -1,5 +1,5 @@
 // Copyright 2020 PollyllyZh
-#include "ocean.h"
+#include "../include/ocean.h"
 int main() {
     Ocean ocean;
     Ocean* pOcean = &ocean;

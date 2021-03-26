@@ -1,9 +1,9 @@
 // Copyright 2020 PollyllyZh
 #pragma once
-#include "common.h"
-#include "ocean.h"
-#include "object.h"
-#include "cell.h"
+#include "../include/common.h"
+#include "../include/ocean.h"
+#include "../include/object.h"
+#include "../include/cell.h"
 
 class Predator : public Object {
 private:

@@ -1,7 +1,7 @@
 // Copyright 2020 PollyllyZh
-#include "object.h"
-#include "prey.h"
-#include "cell.h"
+#include "../include/object.h"
+#include "../include/prey.h"
+#include "../include/cell.h"
 bool Prey::live() {
     if (!lifetime--) return false;
     move();

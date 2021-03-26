@@ -1,9 +1,9 @@
 // Copyright 2020 PollyllyZh
 #include <random>
-#include "ocean.h"
-#include "stone.h"
-#include "object.h"
-#include "common.h"
+#include "../include/ocean.h"
+#include "../include/stone.h"
+#include "../include/object.h"
+#include "../include/common.h"
 Ocean::Ocean() {
     cells = new Cell * [N];
 

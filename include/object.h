@@ -1,6 +1,6 @@
 // Copyright 2020 PollyllyZh
 #pragma once
-#include "common.h"
+#include "../include/common.h"
 
 #define STONE_N '#'
 #define PREY_N 'f'
