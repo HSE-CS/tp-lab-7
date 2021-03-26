@@ -1,7 +1,7 @@
 // Copyright DB 2021
 
-#include "cell.h"
-#include "ocean.h"
+#include "../include/cell.h"
+#include "../include/ocean.h"
 
 class Object;
 

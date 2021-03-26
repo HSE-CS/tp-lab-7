@@ -1,6 +1,6 @@
   // Copyright DB 2021
 
-#include "ocean.h"
+#include "../include/ocean.h"
 
 int main() {
   Ocean ocean1;

@@ -1,16 +1,16 @@
 // Copyright DB 2021
 
-#include "ocean.h"
-#include "common.h"
-#include "predator.h"
-#include "prey.h"
-#include "stone.h"
-#include "cell.h"
+#include "../include/ocean.h"
+#include "../include/common.h"
+#include "../include/predator.h"
+#include "../include/prey.h"
+#include "../include/stone.h"
+#include "../include/cell.h"
 
-#include <stdlib.h>
-#include <algorithm>
-#include <ctime>
-#include <vector>
+#include "stdlib.h"
+#include "algorithm"
+#include "ctime"
+#include "vector"
 
 Ocean::Ocean() {
   this->cells = new Cell*[N];
@@ -33,8 +33,8 @@ void Ocean::generateWorld(int nstones, int ncorals,
   for (size_t i = 0; i < nstones; i++) {
     Stone* tstone = new Stone;
     while (this->getCell(p)->getObject() != nullptr) {
-      p.x_cord = (rand() % (N - 1)) + 1;
-      p.y_cord = (rand() % (M - 1)) + 1;
+      p.x_cord = (std::rand() % (N - 1)) + 1;
+      p.y_cord = (srd::rand() % (M - 1)) + 1;
     }
     this->addObject(tstone);
     Cell* cell = this->getCell(p);
@@ -44,8 +44,8 @@ void Ocean::generateWorld(int nstones, int ncorals,
   for (size_t i = 0; i < ncorals; i++) {
     Coral* ncoral = new Coral;
     while (this->getCell(p)->getObject() != nullptr) {
-      p.x_cord = (rand() % (N - 1)) + 1;
-      p.y_cord = (rand() % (M - 1)) + 1;
+      p.x_cord = (std::rand() % (N - 1)) + 1;
+      p.y_cord = (std::rand() % (M - 1)) + 1;
     }
     this->addObject(ncoral);
     Cell* cell = this->getCell(p);
@@ -55,8 +55,8 @@ void Ocean::generateWorld(int nstones, int ncorals,
   for (size_t i = 0; i < npreys; i++) {
     Prey* nprey = new Prey;
     while (this->getCell(p)->getObject() != nullptr) {
-      p.x_cord = (rand() % (N - 1)) + 1;
-      p.y_cord = (rand() % (M - 1)) + 1;
+      p.x_cord = (std::rand() % (N - 1)) + 1;
+      p.y_cord = (std::rand() % (M - 1)) + 1;
     }
     this->addObject(nprey);
     Cell* cell = this->getCell(p);
@@ -66,8 +66,8 @@ void Ocean::generateWorld(int nstones, int ncorals,
   for (size_t i = 0; i < npredators; i++) {
     Predator* npredator = new Predator;
     while (this->getCell(p)->getObject() != nullptr) {
-      p.x_cord = (rand() % (N - 2)) + 1;
-      p.y_cord = (rand() % (M - 2)) + 1;
+      p.x_cord = (std::rand() % (N - 2)) + 1;
+      p.y_cord = (std::rand() % (M - 2)) + 1;
     }
     this->addObject(npredator);
     Cell* cell = this->getCell(p);

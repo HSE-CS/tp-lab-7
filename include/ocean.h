@@ -2,9 +2,9 @@
 #ifndef INCLUDE_OCEAN_H_
 #define INCLUDE_OCEAN_H_
 
-#include "common.h"
+#include "../include/common.h"
 
-#include <list>
+#include "list"
 
 class Ocean {
  private:

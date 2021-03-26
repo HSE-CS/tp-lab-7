@@ -2,9 +2,9 @@
 #ifndef INCLUDE_STONE_H_
 #define INCLUDE_STONE_H_
 
-#include "cell.h"
-#include "common.h"
-#include "ocean.h"
+#include "../include/cell.h"
+#include "../include/common.h"
+#include "../include/ocean.h"
 
 class Object;
 class Stone : public Object {

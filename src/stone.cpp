@@ -1,6 +1,6 @@
 // Copyright DB 2021
 
-#include "stone.h"
+#include "../include/stone.h"
 
 void Stone::setObjectType() { this->objType = 0; }
 

@@ -1,7 +1,7 @@
 // Copyright DB 2021
 
-#include "prey.h"
-#include "common.h"
+#include "../include/prey.h"
+#include "../include/common.h"
 
 void Prey::setObjectType() { this->objType = 2; }
 
@@ -100,4 +100,3 @@ void Prey::die() {
   this->cell->killMe(this);
   this->objType = -1;
 }
-

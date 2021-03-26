@@ -1,8 +1,8 @@
 // Copyright DB 2021
 
-#include "predator.h"
-#include "common.h"
-#include "prey.h"
+#include "../include/predator.h"
+#include "../include/common.h"
+#include "../include/prey.h"
 
 void Predator::setObjectType() { this->objType = 3; }
 
