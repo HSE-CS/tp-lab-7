@@ -7,6 +7,8 @@
 #include "../include/common.h"
 
 Ocean::Ocean() {
+  unsigned int seed = time(nullptr);
+
   for (int i = 0; i < ROWS; ++i) {
     for (int j = 0; j < COLUMNS; ++j) {
       Pair p;
@@ -17,8 +19,8 @@ Ocean::Ocean() {
   }
 
   while (this->numOfStones < STONES_INIT_NUMBER) {
-    int randX = rand() % ROWS;
-    int randY = rand() % COLUMNS;
+    int randX = rand_r(&seed) % ROWS;
+    int randY = rand_r(&seed) % COLUMNS;
     if (this->cells[randX][randY]->isFree()) {
       this->cells[randX][randY]->
           setObject(new Stone(this->cells[randX][randY]));
@@ -27,8 +29,8 @@ Ocean::Ocean() {
     }
   }
   while (this->numOfPreys < PREYS_INIT_NUMBER) {
-    int randX = rand() % ROWS;
-    int randY = rand() % COLUMNS;
+    int randX = rand_r(&seed) % ROWS;
+    int randY = rand_r(&seed) % COLUMNS;
     if (this->cells[randX][randY]->isFree()) {
       this->cells[randX][randY]->
           setObject(new Prey(this->cells[randX][randY]));
@@ -37,8 +39,8 @@ Ocean::Ocean() {
     }
   }
   while (this->numOfPredators < PREDATORS_INIT_NUMBER) {
-    int randX = rand() % ROWS;
-    int randY = rand() % COLUMNS;
+    int randX = rand_r(&seed) % ROWS;
+    int randY = rand_r(&seed) % COLUMNS;
     if (this->cells[randX][randY]->isFree()) {
       this->cells[randX][randY]->
       setObject(new Predator(this->cells[randX][randY]));
@@ -48,7 +50,6 @@ Ocean::Ocean() {
   }
 }
 void Ocean::print() const {
-  system("clear");
   for (int i = 0; i < ROWS; ++i) {
     for (int j = 0; j < COLUMNS; ++j) {
       if (this->cells[i][j]->getObject() != nullptr) {
