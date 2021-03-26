@@ -7,7 +7,7 @@
 #include "../include/stone.h"
 #include "../include/cell.h"
 
-#include <stdlib.h>
+#include "cstdlib"
 #include "algorithm"
 #include "ctime"
 #include "vector"
@@ -34,7 +34,7 @@ void Ocean::generateWorld(int nstones, int ncorals,
     Stone* tstone = new Stone;
     while (this->getCell(p)->getObject() != nullptr) {
       p.x_cord = (std::rand() % (N - 1)) + 1;
-      p.y_cord = (srd::rand() % (M - 1)) + 1;
+      p.y_cord = (std::rand() % (M - 1)) + 1;
     }
     this->addObject(tstone);
     Cell* cell = this->getCell(p);
