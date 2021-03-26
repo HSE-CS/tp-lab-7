@@ -1,5 +1,17 @@
 // Copyright 2021 Kuznetsov Mikhail
-#ifndef INCLUDE_STONE_H
-#define INCLUDE_STONE_H
+#ifndef INCLUDE_STONE_H_
+#define INCLUDE_STONE_H_
 
-#endif // INCLUDE_STONE_H
+#include "object.h"
+
+
+class Stone : public Object {
+ public:
+    explicit Stone(Cell* _cell = nullptr,
+                   NATURE _nature = NATURE::STONE,
+                   unsigned int _age = 0);
+    ~Stone() override;
+};
+
+
+#endif // INCLUDE_STONE_H_

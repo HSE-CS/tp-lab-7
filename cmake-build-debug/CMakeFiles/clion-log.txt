@@ -1,0 +1,41 @@
+"C:\Program Files\JetBrains\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files (x86)/CodeBlocks/MinGW/bin/mingw32-make.exe" "-DCMAKE_C_COMPILER=C:/Program Files (x86)/CodeBlocks/MinGW/bin/mingw32-gcc.exe" "-DCMAKE_CXX_COMPILER=C:/Program Files (x86)/CodeBlocks/MinGW/bin/mingw32-g++.exe" -G "CodeBlocks - MinGW Makefiles" "C:\ПМИ\2 курс 2020-2021\Технологии программирования 2020-2021 1-4 модули\tp-lab-7"
+-- The C compiler identification is GNU 5.1.0
+-- The CXX compiler identification is GNU 5.1.0
+-- Check for working C compiler: C:/Program Files (x86)/CodeBlocks/MinGW/bin/mingw32-gcc.exe
+-- Check for working C compiler: C:/Program Files (x86)/CodeBlocks/MinGW/bin/mingw32-gcc.exe - broken
+CMake Error at C:/Program Files/JetBrains/CLion 2020.2.3/bin/cmake/win/share/cmake-3.17/Modules/CMakeTestCCompiler.cmake:60 (message):
+  The C compiler
+
+    "C:/Program Files (x86)/CodeBlocks/MinGW/bin/mingw32-gcc.exe"
+
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+    Change Dir: C:/РџРњР�/2 РєСѓСЂСЃ 2020-2021/РўРµС…РЅРѕР»РѕРіРёРё РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёСЏ 2020-2021 1-4 РјРѕРґСѓР»Рё/tp-lab-7/cmake-build-debug/CMakeFiles/CMakeTmp
+    
+    Run Build Command(s):C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe cmTC_66622/fast && C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe  -f CMakeFiles\cmTC_66622.dir\build.make CMakeFiles/cmTC_66622.dir/build
+    mingw32-make.exe[1]: Entering directory 'C:/в•§в• в•љ/2 СЉС”РЃС‘ 2020-2021/в•ҐС…С—СЌСЋС‹СЋСѓС€С€ СЏРЃСЋСѓРЃСЂСЊСЊС€РЃСЋС‚СЂСЌС€В  2020-2021 1-4 СЊСЋС„С”С‹С€/tp-lab-7/cmake-build-debug/CMakeFiles/CMakeTmp'
+    Building C object CMakeFiles/cmTC_66622.dir/testCCompiler.c.obj
+    C:\PROGRA~2\CODEBL~1\MinGW\bin\MI0840~1.EXE    -o CMakeFiles\cmTC_66622.dir\testCCompiler.c.obj   -c "C:\в•ЁРЇв•ЁР¬в•ЁРЁ\2 в•Ёв•‘в•¤Р“в•¤Рђв•¤Р‘ 2020-2021\в•ЁРІв•Ёв•Ўв•¤Р•в•Ёв•њв•Ёв•›в•Ёв•—в•Ёв•›в•Ёв”‚в•Ёв••в•Ёв•• в•Ёв”ђв•¤Рђв•Ёв•›в•Ёв”‚в•¤Рђв•Ёв–‘в•Ёв•ќв•Ёв•ќв•Ёв••в•¤Рђв•Ёв•›в•Ёв–“в•Ёв–‘в•Ёв•њв•Ёв••в•¤Рџ 2020-2021 1-4 в•Ёв•ќв•Ёв•›в•Ёв”¤в•¤Р“в•Ёв•—в•Ёв••\tp-lab-7\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c"
+    MI0840~1.EXE: error: C:\Р¶в–ЂР¶в–„Р¶в•Є\2 Р¶Р¶Tв”њTв””Tв”ґ 2020-2021\Р¶С‚Р¶Р¶Tв”јР¶-Р¶-Р¶РјР¶-Р¶Р¶Р¶РјР¶Рј Р¶РјTв””Р¶-Р¶Р¶Tв””Р¶-Р¶-Р¶-Р¶РјTв””Р¶-Р¶-Р¶-Р¶-Р¶РјTв•§ 2020-2021 1-4 Р¶-Р¶-Р¶+Tв”њР¶РјР¶Рј\tp-lab-7\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c: No such file or directory
+    MI0840~1.EXE: fatal error: no input files
+    compilation terminated.
+    CMakeFiles\cmTC_66622.dir\build.make:84: recipe for target 'CMakeFiles/cmTC_66622.dir/testCCompiler.c.obj' failed
+    mingw32-make.exe[1]: *** [CMakeFiles/cmTC_66622.dir/testCCompiler.c.obj] Error 1
+    mingw32-make.exe[1]: Leaving directory 'C:/в•§в• в•љ/2 СЉС”РЃС‘ 2020-2021/в•ҐС…С—СЌСЋС‹СЋСѓС€С€ СЏРЃСЋСѓРЃСЂСЊСЊС€РЃСЋС‚СЂСЌС€В  2020-2021 1-4 СЊСЋС„С”С‹С€/tp-lab-7/cmake-build-debug/CMakeFiles/CMakeTmp'
+    Makefile:140: recipe for target 'cmTC_66622/fast' failed
+    mingw32-make.exe: *** [cmTC_66622/fast] Error 2
+    
+    
+
+  
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt:2 (project)
+
+
+-- Configuring incomplete, errors occurred!
+See also "C:/РџРњР�/2 РєСѓСЂСЃ 2020-2021/РўРµС…РЅРѕР»РѕРіРёРё РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёСЏ 2020-2021 1-4 РјРѕРґСѓР»Рё/tp-lab-7/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+See also "C:/РџРњР�/2 РєСѓСЂСЃ 2020-2021/РўРµС…РЅРѕР»РѕРіРёРё РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёСЏ 2020-2021 1-4 РјРѕРґСѓР»Рё/tp-lab-7/cmake-build-debug/CMakeFiles/CMakeError.log".
