@@ -1,7 +1,7 @@
 // Copyright TimurZaytsev 2021
 #ifndef INCLUDE_PREDATOR_H_
 #define INCLUDE_PREDATOR_H_
-#include "prey.h"
+#include "../include/prey.h"
 class Predator : public Prey {
  private:
   static const unsigned int fullofEat{7};
