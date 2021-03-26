@@ -2,6 +2,7 @@
 #ifndef INCLUDE_OBJECT_H_
 #define INCLUDE_OBJECT_H_
 
+#include <map>
 #include "common.h"
 
 class Cell;
@@ -35,12 +36,12 @@ class Object {
                                                 {PREY, 40},
                                                 {PREDATOR, 35},
                                                 {STONE, 250}};
+
  public:
     explicit Object(Cell* _cell = nullptr,
                     NATURE _nature = NATURE::UNKNOWN,
                     unsigned int _age = 0);
     ~Object();
-    //virtual ~Object() = 0;
     void setCell(Cell* _cell);
     void setNature(NATURE _nature);
     void setAge(unsigned int _age);

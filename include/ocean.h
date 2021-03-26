@@ -6,12 +6,13 @@
 #include <utility>
 #include <vector>
 #include <set>
+#include <map>
 #include <algorithm>
 #include <iterator>
 #include <ctime>
 #include <random>
-#include <stdlib.h>
-#include <windows.h>
+#include <cstdlib>
+#include <cwindows>
 #include "common.h"
 #include "cell.h"
 #include "object.h"
@@ -23,7 +24,7 @@ class Cell;
 class Object;
 
 class Ocean {
-  private:
+ private:
     unsigned int height;  // number of lines
     unsigned int width;  // number of columns
     std::vector<std::vector<Cell*>> cells;
@@ -38,8 +39,6 @@ class Ocean {
                                                 {PREDATOR, 10},
                                                 {STONE, 1000}};
 
-
-
  public:
     Ocean(unsigned int _height, unsigned int _width);
     ~Ocean();
@@ -51,7 +50,6 @@ class Ocean {
     unsigned int getHeight();
     unsigned int getWidth();
     Cell* getCell(unsigned int _x, unsigned int _y);
-
 };
 
 #endif  // INCLUDE_OCEAN_H_

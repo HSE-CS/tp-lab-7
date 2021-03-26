@@ -41,7 +41,7 @@ Ocean::Ocean(unsigned int _height, unsigned int _width) :
       addOrder[i] += residues[j] + 1;
       addOrder[i] %= (j + 1);
     }
-    //std::cout << addOrder[i];
+    //  std::cout << addOrder[i];
   }
 }
 
@@ -77,7 +77,7 @@ void Ocean::deleteObject(Cell *_cell) {
 }
 
 void Ocean::createObjects(NATURE _nature, unsigned int _count) {
-  for(unsigned int i = 0; i < _count; i++) {
+  for (unsigned int i = 0; i < _count; i++) {
     unsigned int x = addOrder.back() / width;
     unsigned int y = addOrder.back() % width;
     addOrder.pop_back();
@@ -95,7 +95,7 @@ void Ocean::createObjects(NATURE _nature, unsigned int _count) {
 }
 
 void Ocean::print() {
-  //screenCleaner();
+  //  screenCleaner();
   system("cls");
   for (unsigned int i = 0; i < height; i++) {
     for (unsigned int j = 0; j < width; j++) {
@@ -104,7 +104,7 @@ void Ocean::print() {
         //  std::cout << FEATURES::picture[object->getNature()];
         std::cout << picture[object->getNature()];
       } else {
-        // std::cout << FEATURES::picture[NATURE::UNKNOWN];
+        //  std::cout << FEATURES::picture[NATURE::UNKNOWN];
         std::cout << picture[NATURE::UNKNOWN];
       }
     }
@@ -140,21 +140,20 @@ void Ocean::run(unsigned int _years) {
     }
 
     std::set<Object*> trash;
-    for (auto* object: objects) {
+    for (auto* object : objects) {
         if (nullptr == object) {
           trash.insert(object);
           continue;
         }
         object->live();
-        //if (object->getAge() == FEATURES::longevity[object->getNature()])
+        //  if (object->getAge() == FEATURES::longevity[object->getNature()])
         if (object->getAge() == longevity[object->getNature()])
           trash.insert(object);
     }
-    for (auto* object: trash) {
+    for (auto* object : trash) {
       if (nullptr != object) {
         deleteObject(object->getCell());
-      }
-      else {
+      } else {
         objects.erase(object);
       }
     }

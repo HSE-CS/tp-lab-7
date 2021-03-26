@@ -39,7 +39,7 @@ unsigned int Object::getAge() {
 }
 
 void Object::live() {
-  //if (age < FEATURES::longevity[nature]) {
+  //  if (age < FEATURES::longevity[nature]) {
   if (age < longevity[nature]) {
     age++;
     /*

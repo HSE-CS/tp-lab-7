@@ -16,10 +16,10 @@ class Cell {
     std::pair <unsigned int, unsigned int> coordinates;
     int temperature;
  public:
-		explicit Cell(Ocean* _ocean = nullptr,
+    explicit Cell(Ocean* _ocean = nullptr,
                 std::pair<unsigned int, unsigned int> _coordinates = {0, 0},
                 int _temperature = 0);
-		~Cell();
+    ~Cell();
     void setObject(Object* _object);
     void setTemperature(int _temperature);
     Ocean* getOcean();

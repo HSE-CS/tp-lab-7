@@ -7,7 +7,7 @@
 Prey::Prey(Cell * _cell,
            NATURE _nature,
            unsigned int _age) :
-  Object(_cell, _nature, _age){
+  Object(_cell, _nature, _age) {
 }
 
 
@@ -54,10 +54,10 @@ void Prey::swim() {
 void Prey::breed() {
   auto area = cell->getArea();
   auto ocean = cell->getOcean();
-  for (auto p: area) {
+  for (auto p : area) {
     auto newCell = ocean->getCell(p.first, p.second);
     auto object = newCell->getObject();
-    if(object == nullptr) {
+    if (object == nullptr) {
       Prey* prey = new Prey(newCell, NATURE::PREY, 0);
       ocean->addObject(prey);
       newCell->setObject(prey);

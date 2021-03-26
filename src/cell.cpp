@@ -9,7 +9,7 @@ Cell::Cell(Ocean* _ocean,
           int _temperature) :
     ocean(_ocean),
     coordinates(_coordinates),
-    temperature(_temperature){
+    temperature(_temperature) {
     object = nullptr;
 }
 
@@ -41,8 +41,8 @@ int Cell::getTemperature() {
   return temperature;
 }
 
-std::list<std::pair<unsigned int,unsigned int>> Cell::getArea() {
-  std::list<std::pair<unsigned int,unsigned int>> area;
+std::list<std::pair<unsigned int, unsigned int>> Cell::getArea() {
+  std::list<std::pair<unsigned int, unsigned int>> area;
   for (int i = -1; i <= 1; i++) {
     for (int j = -1; j <= 1; j++) {
       if (i || j) {
@@ -58,7 +58,7 @@ std::list<std::pair<unsigned int,unsigned int>> Cell::getArea() {
 }
 
 void Cell::killObject() {
-  if(object) {
+  if (object) {
     delete object;
     object = nullptr;
   }
