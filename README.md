@@ -143,15 +143,15 @@ class Cell
 {
 	friend Ocean;
 private:
-	Pair crd;
-	Object *obj;
+	Pair coordinates;
+	Object *object;
 	Ocean *ocean;
 public:
 	explicit Cell(Pair p = { 0, 0 }, Ocean* oc = nullptr) :
-		crd(p),
-		obj(nullptr),
+		coordinates(p),
+		object(nullptr),
 		ocean(oc) {}
-	void init(Pair p, Ocean* oc);
+	void initialize(Pair p, Ocean* oc);
 	Object* getObject() const;
 	void setObject(Object*);
 	void killMe();
