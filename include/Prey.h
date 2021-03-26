@@ -1,11 +1,11 @@
 //  Copyright 2021 Kartseva Masha
 #pragma once
+#define PREY_H
+#ifdef PREY_H
 #include "../include/object.h"
 #include "../include/cell.h"
 #include "../include/ocean.h"
 #include "../include/common.h"
-#define PREY_H
-#ifdef PREY_H
 class Cell;
 class Ocean;
 class Prey : public Object {

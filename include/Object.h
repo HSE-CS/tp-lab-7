@@ -1,12 +1,12 @@
 //  Copyright 2021 Kartseva Masha
 #pragma once
+#define OBJECT_H
+#ifdef OBJECT_H
 #include "../include/common.h"
 #define STONE_N '#'
 #define PREY_N 'f'
 #define PREDATOR_N 'S'
 #define CORAL_N '*'
-#define OBJECT_H
-#ifdef OBJECT_H
 enum class ObjType { STONE, CORAL, PREY, PREDATOR };
 class Ocean;
 class Cell;

@@ -1,10 +1,10 @@
 //  Copyright 2021 Kartseva Masha
 #pragma once
+#define CELL_H
+#ifdef CELL_H
 #include "../include/common.h"
 #include "../include/object.h"
 #include "../include/ocean.h"
-#define CELL_H
-#ifdef CELL_H
 class Ocean;
 class Cell {
     friend Ocean;

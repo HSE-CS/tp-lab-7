@@ -1,11 +1,11 @@
 //  Copyright 2021 Kartseva Masha
 #pragma once
+#define PREDATOR_H
+#ifdef PREDATOR_H
 #include "../include/object.h"
 #include "../include/cell.h"
 #include "../include/ocean.h"
 #include "../include/common.h"
-#define PREDATOR_H
-#ifdef PREDATOR_H
 class Predator : public Object {
     friend Cell;
  public:

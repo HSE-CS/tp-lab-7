@@ -1,9 +1,9 @@
 //  Copyright 2021 Kartseva Masha
-#include <iostream>
-#include <random>
 #include "../include/ocean.h"
 #include "../include/stone.h"
 #include "../include/object.h"
+#include <iostream>
+#include <random>
 Ocean::Ocean() {
     cells = new Cell * [N];
     for (auto i = 0; i < N; i++) {
