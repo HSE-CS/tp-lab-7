@@ -7,8 +7,7 @@ Stone::Stone(ObjType type, Cell *cell) : Object(type, cell) {
   this->cell = cell;
 }
 Stone::~Stone() {
-
 }
-void Stone::live() {
 
+void Stone::live() {
 }

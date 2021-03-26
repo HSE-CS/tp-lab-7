@@ -3,14 +3,14 @@
 #ifndef INCLUDE_OCEAN_H_
 #define INCLUDE_OCEAN_H_
 
+#include <vector>
+#include <list>
 #include "../include/common.h"
 #include "../include/cell.h"
 #include "../include/object.h"
 #include "../include/prey.h"
 #include "../include/predator.h"
 #include "../include/stone.h"
-#include <vector>
-#include <list>
 
 class Ocean {
  private:

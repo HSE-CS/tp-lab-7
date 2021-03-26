@@ -8,8 +8,8 @@ Prey::Prey(ObjType type, Cell *cell) : Object(type, cell) {
   this->cell = cell;
   life_timer = 0;
 }
-Prey::~Prey() {
 
+Prey::~Prey() {
 }
 void Prey::live() {
   // move

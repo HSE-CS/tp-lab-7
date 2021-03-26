@@ -3,7 +3,7 @@
 #ifndef INCLUDE_COMMON_H_
 #define INCLUDE_COMMON_H_
 
-//typedef size_t coord_t;
+// typedef size_t coord_t;
 
 struct Pair {
   int x;  // 0..M-1

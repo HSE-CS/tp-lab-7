@@ -1,12 +1,12 @@
 // Copyright 2021 mkhorosh
 
-#include "../include/ocean.h"
-#include "../include/common.h"
 #include <vector>
 #include <time.h>
 #include <iostream>
-#include <chrono>
-#include <thread>
+//#include <chrono>
+//#include <thread>
+#include "../include/ocean.h"
+#include "../include/common.h"
 
 Ocean::Ocean(int x_size, int y_size) {
   std::vector<std::vector<Cell>> matrix(x_size, std::vector<Cell>(y_size));
@@ -17,7 +17,6 @@ Ocean::Ocean(int x_size, int y_size) {
       cells[i][j].init(p, this);
     }
   }
-
 }
 void Ocean::print() const {
   for (int i = 0; i < cells[0].size(); i++) {
@@ -29,10 +28,10 @@ void Ocean::print() const {
 }
 void Ocean::addObjects(int stones, int preys, int predators) {
   int n = preys + predators + stones;
-  time(nullptr);
+  unsigned int q = time(nullptr);
   for (int i = n; i > 0; i--) {
-    int x = rand() % M;
-    int y = rand() % N;
+    int x = rand_r(q) % M;
+    int y = rand_r(q) % N;
     if (cells[x][y].getObject()) {
       i++;
       continue;
@@ -59,8 +58,10 @@ void Ocean::run() {
     f++;
 //    system("cls");
     print();
-    std::this_thread::sleep_until(std::chrono::system_clock::now() + std::chrono::seconds(1));
-    for (std::list<Object *>::iterator i = stuff.begin(); i != stuff.end(); ++i) {
+//    std::this_thread::sleep_until(std::chrono::system_clock::now() +
+//    std::chrono::seconds(1));
+    for (std::list<Object *>::iterator i = stuff.begin();
+    i != stuff.end(); ++i) {
       if (!((*i)->isAlive())) {
         (*i)->getCell()->killMe();
       } else {
@@ -73,9 +74,10 @@ void Ocean::run() {
 void Ocean::push(Object *o) {
   stuff.push_back(o);
 }
-Ocean::~Ocean() {
 
+Ocean::~Ocean() {
 }
+
 Cell *Ocean::findCell(Pair crd) {
   unsigned int q = time(nullptr);
   int new_x = (crd.x + rand_r(q) % 2) % M;

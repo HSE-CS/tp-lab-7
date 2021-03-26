@@ -1,10 +1,10 @@
 // Copyright 2021 mkhorosh
 
+#include <cstdlib>
+#include <time.h>
 #include "../include/predator.h"
 #include "../include/cell.h"
-#include <time.h>
 #include "../include/ocean.h"
-#include <cstdlib>
 
 Predator::Predator(ObjType type, Cell *cell) : Object(type, cell) {
   hunger_timer = 0;
@@ -34,5 +34,4 @@ void Predator::live() {
   }
 }
 Predator::~Predator() {
-
 }
