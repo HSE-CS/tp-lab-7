@@ -118,8 +118,6 @@ void Ocean::go() {
     if (!cPr) {
       break;
     }
-    if (system("CLS")) {
-    }
     for (Object* obj : this->s) {
       if (obj->getCell()) {
         obj->live();
