@@ -6,13 +6,13 @@
 #include <ctime>
 #include <cstdlib>
 #include <vector>
-#include "include/stone.h"
-#include "include/ocean.h"
-#include "include/cell.h"
+#include "../include/stone.h"
+#include "../include/ocean.h"
+#include "../include/cell.h"
 
 class Prey : public Stone {
  public:
-  Prey(Cell* newCell);
+  explicit Prey(Cell* newCell);
   ~Prey() = default;
   virtual void live();
   virtual bool tryToMove();
