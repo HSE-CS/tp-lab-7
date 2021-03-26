@@ -39,6 +39,6 @@ void Predator::reproduce() {
       auto *newPredator = new Predator(foundedCell);
       foundedCell->setObject(newPredator);
       foundedCell->GetOcean()->addObject(newPredator);
-	}
+    }
   }
 }
