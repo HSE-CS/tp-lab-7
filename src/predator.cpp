@@ -1,6 +1,6 @@
 // Copyright 2021 Andrey Bakurskii
 
-#include "..\include\predator.h"
+#include "../include/predator.h"
 
 
 Predator::~Predator() {}

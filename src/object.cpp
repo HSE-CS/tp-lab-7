@@ -1,6 +1,6 @@
 // Copyright 2021 Andrey Bakurskii
 
-#include "..\include\object.h"
+#include "../include/object.h"
 
 Object::Object(Cell *c, ObjType ot) {
   this->setCell(c);

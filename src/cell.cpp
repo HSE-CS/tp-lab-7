@@ -1,6 +1,6 @@
 // Copyright 2021 Andrey Bakurskii
 
-#include "..\include\cell.h"
+#include "../include/cell.h"
 
 void Cell::initCell(Pair c, Ocean *oc) {
   this->coord = c;

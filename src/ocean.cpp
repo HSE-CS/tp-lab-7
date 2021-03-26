@@ -1,6 +1,6 @@
 // Copyright 2021 Andrey Bakurskii
 
-#include "..\include\ocean.h"
+#include "../include/ocean.h"
 
 
 void Ocean::run() {}

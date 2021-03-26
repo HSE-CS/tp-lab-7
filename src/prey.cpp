@@ -1,6 +1,6 @@
 // Copyright 2021 Andrey Bakurskii
 
-#include "..\include\prey.h"
+#include "../include/prey.h"
 
 
 void Prey::live() {}

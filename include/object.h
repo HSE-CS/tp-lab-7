@@ -8,8 +8,8 @@
 #define PREDATOR_N 'S'
 #define EMPTY_N '~'
 
-#include "common.h"
-#include "cell.h"
+#include "../include/common.h"
+#include "../include/cell.h"
 
 
 enum class ObjType { STONE, PREY, PREDATOR, EMPTY };

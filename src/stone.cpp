@@ -1,6 +1,6 @@
 // Copyright 2021 Andrey Bakurskii
 
-#include "..\include\stone.h"
+#include "../include/stone.h"
 
 Stone::~Stone() {}
 
