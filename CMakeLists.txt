@@ -10,3 +10,4 @@ set(lib_dest "lib")
 set(include_dest "include/")
 
 add_subdirectory(src)
+add_compile_options(-lsfml-graphics -lsfml-window -lsfml-system)
