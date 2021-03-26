@@ -1,7 +1,7 @@
 //  Copyright 2021 Nikita Naumov
 
 #include "../include/cell.h"
-
+#include "../include/None.h"
 
 Object * Cell::getObject() const {
     return this->object;
@@ -15,8 +15,9 @@ void Cell::setObject(Object* objToSet) {
 }
 
 void Cell::killMe() {
+    None* _none = new None(this);
     this->ocean->removeFromVector(this->object->getPair());
-    this->object = nullptr;
+    this->object = _none;
 }
 bool Cell::isFree() {
     if (this->object) {

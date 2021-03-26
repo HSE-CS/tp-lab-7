@@ -42,7 +42,7 @@ void Ocean::run(int amountOfPredators, int amountOfPreys, int amountOfStones, in
         ++shift;
         std::cout << iteration << std::endl;
         this->print();
-        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     }
 }
 void Ocean::addObjects(int amountOfPredators, int amountOfPreys, int amountOfStones, int amountOfCorals) {

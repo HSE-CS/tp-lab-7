@@ -3,6 +3,7 @@
 #include "../include/predator.h"
 #include "../include/Object.h"
 #include "../include/cell.h"
+#include "../include/None.h"
 
 void Predator::setType() {
     this->type = ObjType::PREDATOR;
@@ -20,15 +21,15 @@ void Predator::live() {
     } else {
         Ocean *thisOcean = this->cell->getCurrentOcean();
         std::vector<Cell> nearby = thisOcean->getNearbyCells(this->cell->getX(), this->cell->getY());
-        if ((this->fullness > 70) && (this->step > 8)) {
+        if ((this->fullness > predatorFullnessToBreed) && (this->step > predatorBreedtime)) {
             for (auto cells : nearby) {
                 if (cells.isFree()) {
                     Pair curPair = {cells.getX(), cells.getY()};
                     Cell* newCell = new Cell(curPair, thisOcean);
-                    thisOcean->setObjectToCell(dynamic_cast<Object*>(new Predator(newCell)),curPair.x,curPair.y);
+                    thisOcean->setObjectToCell(static_cast<Object*>(new Predator(newCell)),curPair.x,curPair.y);
                     Object* objToAdd = thisOcean->returnByCoords(curPair.x,curPair.y);
                     thisOcean->addToVector(objToAdd);
-                    this->fullness = 15;
+                    this->fullness = predatorFullnessAfterBreed;
                     this->step = 0;
                     break;
                 }
@@ -41,7 +42,8 @@ void Predator::live() {
                     cells.killMe();
                     this->fullness = 100;
                     cells.setObject(this);
-                    this->cell->killMe();
+                    None* _none = new None(this->cell);
+                    this->cell->setObject(_none);
                     break;
                 } else if ((obj->getType() == ObjType::STONE) ||
                            (obj->getType() == ObjType::CORAL) ||
@@ -52,7 +54,8 @@ void Predator::live() {
             } else {
                 --(this->fullness);
                 cells.setObject(this);
-                this->cell->setObject(nullptr);
+                None* _none = new None(this->cell);
+                this->cell->setObject(_none);
                 break;
             }
         }

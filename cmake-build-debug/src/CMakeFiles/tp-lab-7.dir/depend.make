@@ -16,6 +16,7 @@ src/CMakeFiles/tp-lab-7.dir/Object.cpp.obj: ../include/ocean.h
 src/CMakeFiles/tp-lab-7.dir/Object.cpp.obj: ../include/prey.h
 src/CMakeFiles/tp-lab-7.dir/Object.cpp.obj: ../src/Object.cpp
 
+src/CMakeFiles/tp-lab-7.dir/cell.cpp.obj: ../include/None.h
 src/CMakeFiles/tp-lab-7.dir/cell.cpp.obj: ../include/Object.h
 src/CMakeFiles/tp-lab-7.dir/cell.cpp.obj: ../include/cell.h
 src/CMakeFiles/tp-lab-7.dir/cell.cpp.obj: ../include/common.h
@@ -24,6 +25,7 @@ src/CMakeFiles/tp-lab-7.dir/cell.cpp.obj: ../include/prey.h
 src/CMakeFiles/tp-lab-7.dir/cell.cpp.obj: ../src/cell.cpp
 
 
+src/CMakeFiles/tp-lab-7.dir/predator.cpp.obj: ../include/None.h
 src/CMakeFiles/tp-lab-7.dir/predator.cpp.obj: ../include/Object.h
 src/CMakeFiles/tp-lab-7.dir/predator.cpp.obj: ../include/cell.h
 src/CMakeFiles/tp-lab-7.dir/predator.cpp.obj: ../include/common.h
@@ -32,6 +34,7 @@ src/CMakeFiles/tp-lab-7.dir/predator.cpp.obj: ../include/predator.h
 src/CMakeFiles/tp-lab-7.dir/predator.cpp.obj: ../include/prey.h
 src/CMakeFiles/tp-lab-7.dir/predator.cpp.obj: ../src/predator.cpp
 
+src/CMakeFiles/tp-lab-7.dir/prey.cpp.obj: ../include/None.h
 src/CMakeFiles/tp-lab-7.dir/prey.cpp.obj: ../include/Object.h
 src/CMakeFiles/tp-lab-7.dir/prey.cpp.obj: ../include/cell.h
 src/CMakeFiles/tp-lab-7.dir/prey.cpp.obj: ../include/common.h

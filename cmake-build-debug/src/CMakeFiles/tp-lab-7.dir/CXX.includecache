@@ -77,6 +77,8 @@ C:/Users/nekna/CLionProjects/tp-lab-7/include/cell.h
 C:/Users/nekna/CLionProjects/tp-lab-7/src/cell.cpp
 ../include/cell.h
 C:/Users/nekna/CLionProjects/tp-lab-7/include/cell.h
+../include/None.h
+C:/Users/nekna/CLionProjects/tp-lab-7/include/None.h
 
 C:/Users/nekna/CLionProjects/tp-lab-7/src/predator.cpp
 ../include/predator.h
@@ -85,6 +87,8 @@ C:/Users/nekna/CLionProjects/tp-lab-7/include/predator.h
 C:/Users/nekna/CLionProjects/tp-lab-7/include/Object.h
 ../include/cell.h
 C:/Users/nekna/CLionProjects/tp-lab-7/include/cell.h
+../include/None.h
+C:/Users/nekna/CLionProjects/tp-lab-7/include/None.h
 
 C:/Users/nekna/CLionProjects/tp-lab-7/src/prey.cpp
 ../include/prey.h
@@ -93,6 +97,8 @@ C:/Users/nekna/CLionProjects/tp-lab-7/include/prey.h
 C:/Users/nekna/CLionProjects/tp-lab-7/include/Object.h
 ../include/cell.h
 C:/Users/nekna/CLionProjects/tp-lab-7/include/cell.h
+../include/None.h
+C:/Users/nekna/CLionProjects/tp-lab-7/include/None.h
 
 C:/Users/nekna/CLionProjects/tp-lab-7/src/stone.cpp
 ../include/stone.h

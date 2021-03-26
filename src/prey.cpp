@@ -3,6 +3,7 @@
 #include "../include/prey.h"
 #include "../include/Object.h"
 #include "../include/cell.h"
+#include "../include/None.h"
 
 void Prey::setType() {
     this->type = ObjType::PREY;
@@ -10,14 +11,14 @@ void Prey::setType() {
 
 Prey::Prey(Cell* thisCell) : Object(thisCell) {
         this->cell = thisCell;
-        this->lifespan = 80;
+        this->lifespan = preyLifespan;
         this->setType();
 }
 
 void Prey::live() {
     if (this->lifespan <= 0) {
         this->cell->killMe();
-    } else if (this->steps >= 20) {
+    } else if (this->steps >= preyBreedtime) {
         Ocean* ocean = this->cell->getCurrentOcean();
         std::vector<Cell> nearby = ocean->getNearbyCells(this->cell->getX(), this->cell->getY());
         for (auto cells : nearby) {
@@ -25,7 +26,7 @@ void Prey::live() {
                 if (cells.isFree()) {
                     Pair curPair = {cells.getX(), cells.getY()};
                     Cell* newCell = new Cell(curPair, ocean);
-                    ocean->setObjectToCell(dynamic_cast<Object*>(new Prey(newCell)),curPair.x,curPair.y);
+                    ocean->setObjectToCell(static_cast<Object*>(new Prey(newCell)),curPair.x,curPair.y);
                     cooldown = true;
                 }
                 this->steps = 0;
@@ -33,7 +34,7 @@ void Prey::live() {
             }
         }
     } else {
-        if (cooldown && (steps == 10)) {
+        if (cooldown && (steps == preyBreedCooldown)) {
             cooldown = false;
         }
         Ocean* ocean = this->cell->getCurrentOcean();
@@ -41,7 +42,8 @@ void Prey::live() {
         for (auto cells : nearby) {
             if (cells.isFree()) {
                 cells.setObject(this);
-                this->cell->setObject(nullptr);
+                None* _none = new None(this->cell);
+                this->cell->setObject(_none);
                 break;
             }
         }

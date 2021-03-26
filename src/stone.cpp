@@ -14,7 +14,7 @@ void Stone::setType() {
 }
 
 void Coral::live() {
-    if (lifespan >= 36) {
+    if (lifespan >= coralTime) {
         int x = this->cell->getX(), y = this->cell->getY();
         Ocean* thisOcean = this->cell->getCurrentOcean();
         std::vector<Cell> nearCells = thisOcean->getNearbyCells(x,y);
