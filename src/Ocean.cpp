@@ -30,8 +30,7 @@ void Ocean::addObjects(unsigned int n, ObjType type) {
         std::random_device ran;
         unsigned int x = ran() % M;
         unsigned int y = ran() % N;
-        if (cells[y][x].getObject()) continue;
-        else {
+        if (cells[y][x].getObject()) continue; else {
             Object* born = nullptr;
             switch (type) {
             case ObjType::STONE:
@@ -56,7 +55,7 @@ void Ocean::run() {
         system("cls");
         clock_t now = clock();
         print();
-        while (clock() < now + CLOCKS_PER_SEC / 10) {};
+        while (clock() < now + CLOCKS_PER_SEC / 10) {}
         std::list<Object*>::iterator i = stuff.begin();
         while (i != stuff.end()) {
             bool isActive = DeleteObj(*i);

@@ -5,8 +5,7 @@ Predator::Predator(Cell* c) :Object(c) {
     type = ObjType::PREDATOR;
 }
 void Predator::live() {
-    if (eat() != true && lifetime > 2) lifetime -= 2; else
-    lifetime--;
+    if (eat() != true && lifetime > 2) lifetime -= 2; else lifetime--;
     move();
     if (lifetime < 0.1 * LTPredator) copulation();
 }
