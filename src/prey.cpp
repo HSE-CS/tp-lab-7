@@ -12,8 +12,7 @@ void Prey::live() {
             cell->setObject(newprey);
             cell->getOcean()->addObject(newprey);
             reprTime = preyReprTime;
-        }
-        else {
+        } else {
             cell->setObject(nullptr);
         }
         cell = newcell;

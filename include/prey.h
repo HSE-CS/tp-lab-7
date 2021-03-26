@@ -5,10 +5,10 @@
 
 class Prey : public Object {
  private:
-	int lifetime = preyLifetime;
-	int reprTime = preyReprTime;
+  int lifetime = preyLifetime;
+  int reprTime = preyReprTime;
 
  public:
-	Prey(Cell* c = nullptr);
-	void live();
+  explicit Prey(Cell* c = nullptr);
+  void live();
 };

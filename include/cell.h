@@ -8,19 +8,19 @@
 class Ocean;
 class Object;
 class Cell {
-	friend Ocean;
+  friend Ocean;
 
  private:
-	Pair crd;
-	Object* obj = nullptr;
-	Ocean* ocean;
+  Pair crd;
+  Object* obj = nullptr;
+  Ocean* ocean;
 
  public:
-	explicit Cell(Pair p = { 0, 0 }, Ocean* oc = nullptr);
-	void init(Pair p, Ocean* oc);
-	Object* getObject() const;
-	void setObject(Object* o);
-	Pair getCoords();
-	Ocean* getOcean();
+  explicit Cell(Pair p = { 0, 0 }, Ocean* oc = nullptr);
+  void init(Pair p, Ocean* oc);
+  Object* getObject() const;
+  void setObject(Object* o);
+  Pair getCoords();
+  Ocean* getOcean();
 	// void killMe();
 };

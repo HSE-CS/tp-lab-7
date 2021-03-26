@@ -5,12 +5,12 @@
 
 class Predator : public Object {
  private:
-	int reprTime = predatorReprTime;
-	int needFoodAfter = predatorNeedFoodAfter;
-	int timeInHunger = 0;
+  int reprTime = predatorReprTime;
+  int needFoodAfter = predatorNeedFoodAfter;
+  int timeInHunger = 0;
 
  public:
-	Predator(Cell* c = nullptr);
-	void live();
-	Cell* findPrey();
+  explicit Predator(Cell* c = nullptr);
+  void live();
+  Cell* findPrey();
 };

@@ -23,8 +23,7 @@ Cell* Predator::findPrey() {
             cell->getOcean()->getCell(tcrd)->getObject() != nullptr &&
             cell->getOcean()->getCell(tcrd)->getObject()->getType() == ObjType::PREY) {
             return cell->getOcean()->getCell(tcrd);
-        }
-        else {
+        } else {
             offsets.erase(offsets.begin() + pos);
         }
     }
@@ -41,13 +40,11 @@ void Predator::live() {
             cell = preyCell;
             needFoodAfter = predatorNeedFoodAfter;
             timeInHunger = 0;
-        }
-        else {
+        } else {
             if (timeInHunger >= predatorLifetimeWithoutFood) {
                 cell->getOcean()->deleteObject(this);
                 cell->setObject(nullptr);
-            }
-            else {
+            } else {
                 timeInHunger++;
                 Cell* newcell = findFreeNeighbour();
                 if (newcell != nullptr) {
@@ -58,8 +55,7 @@ void Predator::live() {
             }
         }
         return;
-    }
-    else {
+    } else {
         Cell* newcell = findFreeNeighbour();
         if (newcell != nullptr) {
             newcell->setObject(this);

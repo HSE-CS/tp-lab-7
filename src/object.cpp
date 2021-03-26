@@ -18,8 +18,7 @@ Cell* Object::findFreeNeighbour() {
             if (i == 0 && j == 0) {
                 continue;
             }
-            
-            offsets.push_back(Pair{ i,j });
+            offsets.push_back(Pair{ i, j });
         }
     }
     while (!offsets.empty()) {
@@ -29,8 +28,7 @@ Cell* Object::findFreeNeighbour() {
         if (checkIfCellExists(tcrd) &&
             cell->getOcean()->getCell(tcrd)->getObject() == nullptr) {
             return cell->getOcean()->getCell(tcrd);
-        }
-        else {
+        } else {
             offsets.erase(offsets.begin() + pos);
         }
     }

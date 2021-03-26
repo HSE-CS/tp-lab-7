@@ -5,6 +5,6 @@
 
 class Stone : public Object {
  public:
-	Stone(Cell* c = nullptr);
-	void live();
+  explicit Stone(Cell* c = nullptr);
+  void live();
 };

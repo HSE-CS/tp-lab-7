@@ -80,19 +80,16 @@ int Ocean::countPreys() const {
 
 
 void Ocean::print() const {
-    //system("cls");
+    // system("cls");
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < M; j++) {
             if (cells[j][i].getObject() == nullptr) {
                 std::cout << ' ';
-            }
-            else if (cells[j][i].getObject()->getType() == ObjType::STONE) {
+            } else if (cells[j][i].getObject()->getType() == ObjType::STONE) {
                 std::cout << STONE_N;
-            }
-            else if (cells[j][i].getObject()->getType() == ObjType::PREY) {
+            } else if (cells[j][i].getObject()->getType() == ObjType::PREY) {
                 std::cout << PREY_N;
-            }
-            else if (cells[j][i].getObject()->getType() == ObjType::PREDATOR) {
+            } else if (cells[j][i].getObject()->getType() == ObjType::PREDATOR) {
                 std::cout << PREDATOR_N;
             }
         }
@@ -107,7 +104,7 @@ void Ocean::run() {
     while (!stuff.empty()) {
         print();
         std::cout << "Number of iteration: " << i << std::endl;
-        //Sleep(100);
+        // Sleep(100);
         for (Object* o : stuff) {
             o->live();
         }

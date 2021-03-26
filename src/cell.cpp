@@ -4,8 +4,8 @@
 Cell::Cell(Pair p, Ocean* oc) : crd(p), ocean(oc) {}
 
 void Cell::init(Pair p, Ocean* oc) {
-	crd = p;
-	ocean = oc;
+  crd = p;
+  ocean = oc;
 }
 
 Object* Cell::getObject() const { return obj; }

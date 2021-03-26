@@ -17,15 +17,14 @@ class Cell;
 
 class Object {
  protected:
-	ObjType type;
-	Cell* cell;
-	Cell* findFreeNeighbour();
-	bool checkIfCellExists(Pair crd);
+  ObjType type;
+  Cell* cell;
+  Cell* findFreeNeighbour();
+  bool checkIfCellExists(Pair crd);
 
  public:
-	explicit Object(ObjType t, Cell* c = nullptr);
-	// virtual ~Object();
-	virtual void live() = 0; // жизнь объекта
-	void setCell(Cell* c);
-	ObjType getType();
+  explicit Object(ObjType t, Cell* c = nullptr);
+  virtual void live() = 0;
+  void setCell(Cell* c);
+  ObjType getType();
 };
