@@ -20,7 +20,7 @@ protected:
 public:
     Object(Cell* c) : cell(c) {}
     virtual ~Object() = default;
-    virtual bool live() = 0; // жизнь объекта
+    virtual bool live() = 0;  // жизнь объекта
     virtual char get_symbol() = 0;
     virtual void move() {};
     virtual void reproduce() {};

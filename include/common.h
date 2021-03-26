@@ -13,8 +13,8 @@ typedef unsigned int uint;
 typedef size_t coord_t;
 
 struct Pair {
-    size_t x; // 0..M-1
-    size_t y; // 0..N-1
+    size_t x;  // 0..M-1
+    size_t y;  // 0..N-1
 };
 
 const size_t N = 40;

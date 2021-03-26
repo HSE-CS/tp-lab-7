@@ -4,12 +4,14 @@ void Cell::init(Pair p, Ocean* oc) {
     this->ocean = oc;
     this->crd = p;
 }
+
 Object* Cell::get_object() {
     return object;
 }
 Ocean* Cell::get_ocean() {
     return ocean;
 }
+
 void Cell::set_object(Object* obj) {
     object = obj;
 }
