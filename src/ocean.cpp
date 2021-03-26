@@ -1,5 +1,5 @@
 // Copyright 2021 Elise
-#include "ocean.h"
+#include "../include/ocean.h"
 
 #include <ctime>
 #include <iostream>
@@ -57,7 +57,7 @@ void Ocean::print() const {
 }
 
 Cell* Ocean::coordinates(Pair crd) {
-   std::vector<Cell*> new_cells;
+  std::vector<Cell*> new_cells;
   for (int i = crd.x_ - 1; i <= crd.x_ + 1; i++) {
     for (int j = crd.y_ - 1; j <= crd.y_ + 1; j++) {
       if (i >= 0 && i < X && j >= 0 && j < Y) {

@@ -1,5 +1,5 @@
 // Copyright 2021 Elise
-#include "predator.h"
+#include "../include/predator.h"
 
 
 Predator::Predator(Cell* cell) : Object(cell) {

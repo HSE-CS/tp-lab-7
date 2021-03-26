@@ -1,6 +1,6 @@
 // Copyright 2021 Elise
-#include "cell.h"
-#include "ocean.h"
+#include "../include/cell.h"
+#include "../include/ocean.h"
 
 void Cell::init(Pair p, Ocean* oc) {
   this->crd = p;
@@ -8,11 +8,11 @@ void Cell::init(Pair p, Ocean* oc) {
 }
 
 Object* Cell::getObject() const {
-	return obj;
+    return obj;
 }
 
 void Cell::setObject(Object* object_new) {
-	this->obj = object_new;
+    this->obj = object_new;
 }
 
 void Cell::killMe() {
@@ -20,13 +20,13 @@ void Cell::killMe() {
 }
 
 Ocean* Cell::getOcean() {
-	return this->ocean;
+    return this->ocean;
 }
 
 Cell* Cell::newCell() {
-	return ocean->coordinates(crd);
+    return ocean->coordinates(crd);
 }
 
 Cell* Cell::lets_go_eat() {
-	return ocean->lets_go_eat({crd.x_, crd.y_});
+    return ocean->lets_go_eat({crd.x_, crd.y_});
 }

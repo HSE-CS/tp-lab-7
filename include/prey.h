@@ -2,10 +2,10 @@
 #ifndef INCLUDE_PREY_H_
 #define INCLUDE_PREY_H_
 
-#include "object.h"
-#include "common.h"
-#include "ocean.h"
-#include "cell.h"
+#include "../include/object.h"
+#include "../include/common.h"
+#include "../include/ocean.h"
+#include "../include/cell.h"
 
 class Prey : public Object {
  protected:

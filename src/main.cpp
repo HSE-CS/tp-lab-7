@@ -1,10 +1,10 @@
 // Copyright 2021 Elise
 #include <iostream>
 
-#include "ocean.h"
+#include "../include/ocean.h"
 
 int main() {
-  Ocean ocean(10, 10, 5);
+  Ocean ocean(100, 100, 70);
   ocean.run();
   return 0;
 }

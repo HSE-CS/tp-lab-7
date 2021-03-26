@@ -4,12 +4,12 @@
 
 #include <list>
 
-#include "cell.h"
-#include "common.h"
-#include "predator.h"
-#include "prey.h"
-#include "stone.h"
-#include "object.h"
+#include "../include/cell.h"
+#include "../include/common.h"
+#include "../include/predator.h"
+#include "../include/prey.h"
+#include "../include/stone.h"
+#include "../include/object.h"
 
 class Ocean {
  private:
@@ -31,4 +31,4 @@ class Ocean {
   Cell* lets_go_eat(Pair coordinate);
 };
 
-#endif  // INCLUDE_OCEAN_H
+#endif  // INCLUDE_OCEAN_H_

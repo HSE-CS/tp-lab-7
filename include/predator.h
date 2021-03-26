@@ -1,9 +1,9 @@
 // Copyright 2021 Elise
 #ifndef INCLUDE_PREDATOR_H_
 #define INCLUDE_PREDATOR_H_
-#include "object.h"
-#include "cell.h"
-#include "ocean.h"
+#include "../include/object.h"
+#include "../include/cell.h"
+#include "../include/ocean.h"
 class Cell;
 
 class Predator : public Object {

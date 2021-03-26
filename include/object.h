@@ -2,7 +2,7 @@
 #ifndef INCLUDE_OBJECT_H_
 #define INCLUDE_OBJECT_H_
 
-#include "common.h"
+#include "../include/common.h"
 
 #define STONE_N '#'
 #define PREY_N 'f'
@@ -18,7 +18,7 @@ class Object {
  public:
   explicit Object(Cell * = nullptr);
   virtual ~Object();
-  virtual void live() = 0;  // жизнь объекта
+  virtual void live() = 0;
   void setCell(Cell *);
   char get_type();
   void set_type(char type);

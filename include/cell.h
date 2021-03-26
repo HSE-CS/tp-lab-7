@@ -2,9 +2,9 @@
 #ifndef INCLUDE_CELL_H_
 #define INCLUDE_CELL_H_
 
-#include "object.h"
-#include "common.h"
-#include "ocean.h"
+#include "../include/object.h"
+#include "../include/common.h"
+#include "../include/ocean.h"
 
 class Ocean;
 
@@ -18,7 +18,7 @@ class Cell {
 
  public:
   explicit Cell(Pair p = {0, 0}, Ocean* oc = nullptr)
-      : crd(p), obj(nullptr), ocean(oc){}
+      : crd(p), obj(nullptr), ocean(oc) {}
   void init(Pair p, Ocean* oc);
   Object* getObject() const;
   void setObject(Object*);

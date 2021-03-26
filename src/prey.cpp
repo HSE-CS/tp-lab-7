@@ -1,10 +1,10 @@
 // Copyright 2021 Elise
-#include "prey.h"
+#include "../include/prey.h"
 
-#include "object.h"
-#include "common.h"
-#include "ocean.h"
-#include "cell.h"
+#include "../include/object.h"
+#include "../include/common.h"
+#include "../include/ocean.h"
+#include "../include/cell.h"
 
 
 Prey::Prey(Cell* cell) : Object(cell) {
