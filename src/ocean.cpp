@@ -8,7 +8,7 @@
 #include <chrono>
 #include <thread>
 
-explicit Ocean::Ocean(int x_size, int y_size) {
+Ocean::Ocean(int x_size, int y_size) {
   std::vector<std::vector<Cell>> matrix(x_size, std::vector<Cell>(y_size));
   this->cells = matrix;
   for (int i = 0; i < x_size; i++) {
@@ -77,9 +77,9 @@ Ocean::~Ocean() {
 
 }
 Cell *Ocean::findCell(Pair crd) {
-  time(nullptr);
-  int new_x = (crd.x + rand_r() % 2) % M;
-  int new_y = (crd.y + rand_r() % 2) % N;
+  unsigned int q = time(nullptr);
+  int new_x = (crd.x + rand_r(q) % 2) % M;
+  int new_y = (crd.y + rand_r(q) % 2) % N;
   return &(this->cells[new_x][new_y]);
 }
 
