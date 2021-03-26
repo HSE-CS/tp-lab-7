@@ -13,7 +13,7 @@ class Stone : public Object {
     Cell* cell;
  public:
     void live() override;
-    Stone(Cell* cell1);
+    explicit Stone(Cell* cell1);
     ~Stone() override {};
     void setCell(Cell*);
 };

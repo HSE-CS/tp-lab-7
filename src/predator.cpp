@@ -32,7 +32,7 @@ void Predator::live() {
     if (this->eat == 0) {
         this->heal = this->heal - 1;
     } else {
-        if(this->produceRate > this->produceCounter) {
+        if (this->produceRate > this->produceCounter) {
             this->produceCounter += this->produceCounter + 1;
         } else {
             this->produceCounter = 0;
@@ -59,7 +59,7 @@ void Predator::setCell(Cell* cell1) {
 void Predator::kill() {
     Cell* kill_cell = this->cell->getOcean()->findCell(this->cell);
 
-    if(kill_cell != nullptr) {
+    if (kill_cell != nullptr) {
         this->eat = this->eat + 1;
         delete kill_cell->getObject();
         kill_cell->setObject(this);

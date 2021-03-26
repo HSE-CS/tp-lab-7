@@ -13,8 +13,7 @@ void Prey::live() {
         delete this;
         return;
     }
-    if(produceRate > produceCounter)
-    {
+    if (produceRate > produceCounter) {
         produceCounter++;
         move();
     } else {
@@ -54,7 +53,6 @@ void Prey::move() {
         moving_cell->setObject(this);
         setCell(moving_cell);
     }
-
 }
 
 void Prey::setCell(Cell* cell1) {
