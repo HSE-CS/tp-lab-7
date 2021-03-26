@@ -15,13 +15,15 @@ C:/Users/nekna/CLionProjects/tp-lab-7/include/cell.h
 C:/Users/nekna/CLionProjects/tp-lab-7/include/ocean.h
 ../include/common.h
 C:/Users/nekna/CLionProjects/tp-lab-7/include/common.h
-Object.h
+../include/Object.h
 C:/Users/nekna/CLionProjects/tp-lab-7/include/Object.h
 
 C:/Users/nekna/CLionProjects/tp-lab-7/include/common.h
 typeinfo
 -
 cstdlib
+-
+ctime
 -
 
 C:/Users/nekna/CLionProjects/tp-lab-7/include/ocean.h
@@ -30,6 +32,10 @@ vector
 typeinfo
 -
 iostream
+-
+chrono
+-
+thread
 -
 ../include/common.h
 C:/Users/nekna/CLionProjects/tp-lab-7/include/common.h
@@ -65,4 +71,6 @@ C:/Users/nekna/CLionProjects/tp-lab-7/include/stone.h
 C:/Users/nekna/CLionProjects/tp-lab-7/include/prey.h
 ../include/predator.h
 C:/Users/nekna/CLionProjects/tp-lab-7/include/predator.h
+../include/common.h
+C:/Users/nekna/CLionProjects/tp-lab-7/include/common.h
 

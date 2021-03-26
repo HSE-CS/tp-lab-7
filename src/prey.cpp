@@ -5,7 +5,7 @@
 #include "../include/cell.h"
 
 void Prey::setType() {
-    this->type = static_cast<ObjType> (2);
+    this->type = ObjType::PREY;
 }
 
 Prey::Prey(Cell* thisCell) : Object(thisCell) {

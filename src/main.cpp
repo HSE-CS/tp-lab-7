@@ -6,12 +6,13 @@
 #include "../include/stone.h"
 #include "../include/prey.h"
 #include "../include/predator.h"
+#include "../include/common.h"
 
 int main() {
-
+    srand(time(NULL));
     Ocean ocean;
+    ocean.addObjects(5,6,7,2);
     ocean.print();
-    //ocean.addObjects();
     ocean.run();
     return 0;
 }

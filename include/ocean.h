@@ -5,6 +5,8 @@
 #include <vector>
 #include <typeinfo>
 #include <iostream>
+#include <chrono>
+#include <thread>
 #include "../include/common.h"
 #include "../include/cell.h"
 #include "../include/Object.h"
@@ -22,11 +24,12 @@ class Ocean {
     Ocean();
     ~Ocean();
     void print() const;
-    void addObjects();
+    void addObjects(int amountOfPredators, int amountOfPreys, int amountOfStones, int amountOfCorals);
     void run();
     std::vector<Cell> getNearbyCells(int i, int j);
     Cell* getCell(int i, int j);
     void setObjectToCell(Object* object, int i, int j);
+    int getCurrentAmount(Object*);
 };
 
 #endif  //  INCLUDE_OCEAN_H

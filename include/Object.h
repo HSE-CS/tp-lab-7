@@ -4,7 +4,7 @@
 #define INCLUDE_OBJECT_H
 
 #include "../include/common.h"
-
+#define NONE_SYM '.'
 #define STONE_SYM '#'
 #define CORAL_SYM '*'
 #define PREY_SYM 'f'
@@ -22,7 +22,7 @@ class Cell;
 class Object {
  protected:
     Cell *cell;
-    ObjType type = static_cast<ObjType>(-1);  //  None
+    ObjType type = ObjType::NONE;  //  None
 
  public:
     explicit Object(Cell* objToSet);

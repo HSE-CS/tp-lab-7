@@ -4,7 +4,7 @@
 
 #include "../include/ocean.h"
 #include "../include/common.h"
-#include "Object.h"
+#include "../include/Object.h"
 
 class Ocean;
 class Object;

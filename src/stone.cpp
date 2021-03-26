@@ -10,7 +10,7 @@ void Stone::live() {
     --(this->lifespan);
 }
 void Stone::setType() {
-    this->type = static_cast<ObjType>(1);  //  Stone is a stone
+    this->type = ObjType::STONE;
 }
 
 void Coral::live() {
@@ -31,5 +31,5 @@ void Coral::live() {
 }
 
 void Coral::setType() {
-    this->type = static_cast<ObjType>(2);
+    this->type = ObjType::CORAL;
 }

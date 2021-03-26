@@ -5,7 +5,7 @@
 #include "../include/cell.h"
 
 void Predator::setType() {
-    this->type = static_cast<ObjType>(3);
+    this->type = ObjType::PREDATOR;
 }
 
 Predator::Predator(Cell *thisCell) : Object(thisCell) {

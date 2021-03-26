@@ -3,6 +3,7 @@
 #define INCLUDE_COMMON_H
 #include <typeinfo>
 #include <cstdlib>
+#include <ctime>
 
 typedef size_t coord_t;
 

@@ -1,6 +1,12 @@
 //  Copyright 2021 Nikita Naumov
 
 #include "../include/ocean.h"
+#include "../include/common.h"
+#include "../include/Object.h"
+#include "../include/cell.h"
+#include "../include/predator.h"
+#include "../include/prey.h"
+#include "../include/stone.h"
 
 Ocean::Ocean() {
     Pair p_new = {0,0};
@@ -25,8 +31,48 @@ Ocean::~Ocean() {
 
 void Ocean::run() {
     std::cout << "Return later, i'm busy" << std::endl;
+    //std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 }
-void Ocean::addObjects() {
+void Ocean::addObjects(int amountOfPredators, int amountOfPreys, int amountOfStones, int amountOfCorals) {
+    for (size_t i = 0; i < (N*M); ++i) {
+        bool flag = false;
+        while (!flag) {
+            flag = false;
+            coord_t x = std::rand() % N;
+            coord_t y = std::rand() % M;
+            if (amountOfStones) {
+                if (this->cells[x][y].isFree()) {
+                    this->cells[x][y].setObject(new Stone(&cells[x][y]));
+                    --amountOfStones;
+                    flag = true;
+                }
+            } else if (amountOfCorals) {
+                if (this->cells[x][y].isFree()) {
+                    this->cells[x][y].setObject(new Coral(&cells[x][y]));
+                    --amountOfCorals;
+                    flag = true;
+                }
+            } else if (amountOfPreys) {
+                if (this->cells[x][y].isFree()) {
+                    this->cells[x][y].setObject(new Prey(&cells[x][y]));
+                    --amountOfPreys;
+                    flag = true;
+                }
+            } else if (amountOfPredators) {
+                if (this->cells[x][y].isFree()) {
+                    this->cells[x][y].setObject(new Predator(&cells[x][y]));
+                    --amountOfPredators;
+                    flag = true;
+                }
+            } else if (!(amountOfPredators) && !(amountOfStones) &&
+                        !(amountOfCorals) && !(amountOfPreys)) {
+                break;
+            }
+        }
+        if (!amountOfPredators && !amountOfStones && !amountOfCorals && !amountOfPreys) {
+            break;
+        }
+    }
     for (size_t i = 0; i < N; ++i) {
         for (size_t j = 0; j < M; ++j) {
             if (!(cells[i][j].isFree())) {
@@ -39,8 +85,25 @@ void Ocean::addObjects() {
 void Ocean::print() const {
     for (size_t i = 0; i < N; ++i) {
         for (size_t j = 0; j < M; ++j) {
-            std::cout << "{" << this->cells[i][j].coordinates.x <<
-                      ";" << this->cells[i][j].coordinates.y << "}\t";
+            Object* object = this->cells[i][j].getObject();
+            ObjType curType = object->getType();
+            switch(curType) {
+                case ObjType::NONE:
+                    std::cout << NONE_SYM;
+                    break;
+                case ObjType::STONE:
+                    std::cout << STONE_SYM;
+                    break;
+                case ObjType::CORAL:
+                    std::cout << CORAL_SYM;
+                    break;
+                case ObjType::PREY:
+                    std::cout << PREY_SYM;
+                    break;
+                case ObjType::PREDATOR:
+                    std::cout << PREDATOR_SYM;
+                    break;
+            }
         }
         std::cout << std::endl;
     }
@@ -114,4 +177,15 @@ void Ocean::setObjectToCell(Object* object, int i, int j) {
 
 Cell* Ocean::getCell(int i, int j) {
     return &(this->cells[i][j]);
+}
+
+int Ocean::getCurrentAmount(Object* obj) {
+    ObjType typeOfNeededObj = obj->getType();
+    int counter = 0;
+    for (auto object : this->stuff) {
+        if (object->getType() == typeOfNeededObj) {
+            ++counter;
+        }
+    }
+    return counter;
 }
