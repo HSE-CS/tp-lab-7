@@ -14,8 +14,8 @@ Object::Object(ObjType curType, Cell *cell1) {
     this->isAlive = false;
 }
 
-void Object::setCell(Cell* cell_) {
-    cell = cell_;
+void Object::setCell(Cell* c) {
+    cell = c;
 }
 
 Object::~Object() {

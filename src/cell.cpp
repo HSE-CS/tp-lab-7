@@ -20,10 +20,10 @@ Cell::Cell(Pair par, Ocean *ocean1) {
     this->obj = nullptr;
 }
 
-void Cell::init(Pair p_, Ocean* oc_) {
-    this->crd = p_;
+void Cell::init(Pair par, Ocean* ocean1) {
+    this->crd = par;
     this->obj = nullptr;
-    this->ocean = oc_;
+    this->ocean = ocean1;
 }
 
 void Cell::setObject(Object* curObj) {
