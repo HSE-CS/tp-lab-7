@@ -51,7 +51,6 @@ void Ocean::addObjects(unsigned int n, ObjType type) {
 }
 void Ocean::run() {
     while (1) {
-        system("clear");
         clock_t now = clock();
         print();
         while {
