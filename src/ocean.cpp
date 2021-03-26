@@ -23,7 +23,8 @@ void Ocean::addObjects() {
         for (int j = 0; j < M; j++) {
             if (rand_r(reinterpret_cast<unsigned int *>(44))
                 % 100 <= ENTITY_CREATION) {
-                int entType = static_cast<int>(rand() % (
+                int entType = static_cast<int>(rand_r
+                        (reinterpret_cast<unsigned int *>(44)) % (
                         STONE_CREATION + CORAL_CREATION +
                         PREDATOR_CREATION + PREY_CREATION));
                 if (entType >=

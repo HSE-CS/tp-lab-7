@@ -3,8 +3,8 @@
 #ifndef INCLUDE_PREY_H_
 #define INCLUDE_PREY_H_
 
-#include "common.h"
-#include "object.h"
+#include "../include/common.h"
+#include "../include/object.h"
 
 class Prey: public Object {
  public:

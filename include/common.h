@@ -6,7 +6,6 @@
 #include <cstddef>
 #include <random>
 
-
 struct Pair {
     int x_coord;
     int y_coord;
