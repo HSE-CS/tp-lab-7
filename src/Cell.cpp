@@ -24,7 +24,6 @@ void Cell::killMe() {
 void Cell::Moving() {
     obj->setCell(nullptr);
     obj = nullptr;
-
 }
 Pair Cell::Cord() {
     return crd;
