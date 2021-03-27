@@ -77,7 +77,7 @@ void Ocean::run() {  //
       continue;
     }
     int flag = 0;
-    std::cout << "------------------------------------------------" << std::endl;
+    std::cout << "---------------------------------------------" << std::endl;
     std::list <Object*> :: iterator i = biosphere.begin();
     while (i != biosphere.end() && biosphere.size()) {
       if ((*i)->livesLeft() > 1 && (*i)->getType() != ObjType::STONE) {
