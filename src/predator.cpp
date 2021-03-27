@@ -1,6 +1,6 @@
 // Copyright 2021 ArinaMonicheva
 
-#include "include/predator.h"
+#include "../include/predator.h"
 
 Predator::Predator(Cell* newCell) : Prey(newCell) {
   type = ObjType::PREDATOR;
@@ -10,10 +10,9 @@ Predator::Predator(Cell* newCell) : Prey(newCell) {
 void Predator::live() {
   bool moved = false;
   Cell* prev = inCell;
-  if (livesCount > 1) { 
+  if (livesCount > 1) {
     moved = tryToMove();
-  } 
-  else if (reproduceCycle == 1) {
+  } else if (reproduceCycle == 1) {
     reproduceCycle = REPRODUCE;
     inCell->freeMe();
     Predator* child = new Predator(inCell);
@@ -36,7 +35,7 @@ bool Predator::tryToMove() {
   time_t* n = NULL;
   unsigned* seed = 0;
   srand(time(n));
-  
+
   coords cds = inCell->getCoords();
   int w = inCell->getOcean()->getWidth();
   int h = inCell->getOcean()->getHeight();
@@ -53,7 +52,7 @@ bool Predator::tryToMove() {
     if (!attempt) {
       break;
     }
-    step = rand() % attempt;
+    step = rand_r(&seed) % attempt;
     eated = inCell->getOcean()->movement(cds, availableSteps[step], this);
   }
 
