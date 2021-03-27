@@ -1,8 +1,8 @@
 // Copyright 2021 ArinaMonicheva
 
 #include <iostream>
-#include "include/ocean.h"
-#include "include/predator.h"
+#include "../include/ocean.h"
+#include "../include/predator.h"
 
 Ocean::Ocean(int width, int height) {
   this->height = height;
@@ -32,7 +32,7 @@ void Ocean::print() const {
         case ObjType::PREDATOR:
           std::cout << PREDATOR_N;
           break;
-        } 
+        }
       } else {
           std::cout << ' ';
         }
@@ -59,7 +59,6 @@ int Ocean::movement(coords prev, coords newCds, Object* existingObject) {
   } else {
     return 0;
   }
-
 }
 
 int Ocean::getWidth() {
@@ -78,7 +77,7 @@ void Ocean::run() {  //
       continue;
     }
     int flag = 0;
-    std::cout << "-------------------------------------------------" << std::endl;
+    std::cout << "------------------------------------------------" << std::endl;
     std::list <Object*> :: iterator i = biosphere.begin();
     while (i != biosphere.end() && biosphere.size()) {
       if ((*i)->livesLeft() > 1 && (*i)->getType() != ObjType::STONE) {
@@ -108,24 +107,24 @@ void Ocean::addObjects(int quantity, int type,
   unsigned* seed = 0;
   srand(time(n));
 
-  while(quantity) {
+  while (quantity) {
     int y = r_rand(&seed) % availableCoords.size(), x =
      r_rand(&seed) % availableCoords[y].size();
     if (x > 0) {
       Object* temp = nullptr;
       switch (type) {
-       case (int)ObjType::STONE: {
+       case static_cast<int>ObjType::STONE: {
         temp = new Stone(&((cells[availableCoords[y][x].y])
          [availableCoords[y][x].x]));
         }
         break;
-       case (int)ObjType::PREY: {
+       case static_cast<int>ObjType::PREY: {
         temp = new Prey(&((cells[availableCoords[y][x].y])
          [availableCoords[y][x].x]));
         addToBiosphere(temp);
         }
         break;
-       case (int)ObjType::PREDATOR: {
+       case static_cast<int>ObjType::PREDATOR: {
         temp = new Predator(
          &((cells[availableCoords[y][x].y])[availableCoords[y][x].x]));
         addToBiosphere(temp);
