@@ -113,18 +113,18 @@ void Ocean::addObjects(int quantity, int type,
     if (x > 0) {
       Object* temp = nullptr;
       switch (type) {
-       case static_cast<int>ObjType::STONE: {
+       case static_cast<int>(ObjType::STONE): {
         temp = new Stone(&((cells[availableCoords[y][x].y])
          [availableCoords[y][x].x]));
         }
         break;
-       case static_cast<int>ObjType::PREY: {
+       case static_cast<int>(ObjType::PREY): {
         temp = new Prey(&((cells[availableCoords[y][x].y])
          [availableCoords[y][x].x]));
         addToBiosphere(temp);
         }
         break;
-       case static_cast<int>ObjType::PREDATOR: {
+       case static_cast<int>(ObjType::PREDATOR): {
         temp = new Predator(
          &((cells[availableCoords[y][x].y])[availableCoords[y][x].x]));
         addToBiosphere(temp);
