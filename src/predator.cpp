@@ -52,7 +52,7 @@ bool Predator::tryToMove() {
     if (!attempt) {
       break;
     }
-    step = rand_r(&eed) % attempt;
+    step = rand_r(seed) % attempt;
     eated = inCell->getOcean()->movement(cds, availableSteps[step], this);
   }
 
