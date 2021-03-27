@@ -15,12 +15,12 @@ struct Pair {
 const size_t N = 10;
 const size_t M = 10;
 
-#define coralTime 20
+#define coralTime 5
 #define preyLifespan 40
 #define preyBreedtime 20
 #define preyBreedCooldown 10
 #define predatorFullnessToBreed 70
 #define predatorBreedtime 7
 #define predatorFullnessAfterBreed 15
-
+#define maxPredatorFullness 30
 #endif  //  INCLUDE_COMMON_H

@@ -20,7 +20,10 @@ void Cell::killMe() {
     this->object = _none;
 }
 bool Cell::isFree() {
-    if (this->object) {
+    if (this->object == nullptr) {
+        return true;
+    }
+    if ((this->object->getType() != ObjType::NONE)) {
         return false;
     }
     return true;

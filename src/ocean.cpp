@@ -1,11 +1,7 @@
 //  Copyright 2021 Nikita Naumov
 
 #include "../include/ocean.h"
-#include "../include/common.h"
-#include "../include/Object.h"
-#include "../include/cell.h"
 #include "../include/predator.h"
-#include "../include/prey.h"
 #include "../include/stone.h"
 #include "../include/None.h"
 

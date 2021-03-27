@@ -1,7 +1,6 @@
 //  Copyright 2021 Nikita Naumov
 
 #include "../include/prey.h"
-#include "../include/Object.h"
 #include "../include/cell.h"
 #include "../include/None.h"
 
@@ -25,27 +24,31 @@ void Prey::live() {
             if (!(this->cooldown)) {
                 if (cells.isFree()) {
                     Pair curPair = {cells.getX(), cells.getY()};
-                    Cell* newCell = new Cell(curPair, ocean);
-                    ocean->setObjectToCell(static_cast<Object*>(new Prey(newCell)),curPair.x,curPair.y);
-                    cooldown = true;
+                    ocean->setObjectToCell(this,curPair.x,curPair.y);
+                    this->cooldown = true;
                 }
                 this->steps = 0;
-                --lifespan;
             }
         }
+        --(this->lifespan);
+        ++(this->steps);
     } else {
-        if (cooldown && (steps == preyBreedCooldown)) {
-            cooldown = false;
+        if (this->cooldown && (steps == preyBreedCooldown)) {
+            this->cooldown = false;
         }
-        Ocean* ocean = this->cell->getCurrentOcean();
-        std::vector<Cell> nearby = ocean->getNearbyCells(this->cell->getX(), this->cell->getY());
+        std::vector<Cell> nearby =
+                (this->cell->getCurrentOcean())->
+                getNearbyCells(this->cell->getX(),this->cell->getY());
         for (auto cells : nearby) {
             if (cells.isFree()) {
+                this->cell = &cells;
                 cells.setObject(this);
                 None* _none = new None(this->cell);
                 this->cell->setObject(_none);
                 break;
             }
         }
+        --(this->lifespan);
+        ++(this->steps);
     }
 }

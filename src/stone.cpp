@@ -20,9 +20,7 @@ void Coral::live() {
         std::vector<Cell> nearCells = thisOcean->getNearbyCells(x,y);
         for (auto cell : nearCells) {
             if (cell.isFree()) {
-                Pair p = {cell.getX(),cell.getY()};
-                Cell* newCell = new Cell(p, thisOcean);
-                thisOcean->setObjectToCell(dynamic_cast<Object*>(new Coral(newCell)),cell.getX(), cell.getY());
+                thisOcean->setObjectToCell(this, cell.getX(), cell.getY());
                 Object* objToAdd = thisOcean->returnByCoords(cell.getX(), cell.getY());
                 thisOcean->addToVector(objToAdd);
                 lifespan = 0;

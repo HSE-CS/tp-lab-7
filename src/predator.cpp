@@ -11,7 +11,7 @@ void Predator::setType() {
 
 Predator::Predator(Cell *thisCell) : Object(thisCell) {
     this->cell = thisCell;
-    this->fullness = 100;
+    this->fullness = maxPredatorFullness;
     this->setType();
 }
 
@@ -25,8 +25,7 @@ void Predator::live() {
             for (auto cells : nearby) {
                 if (cells.isFree()) {
                     Pair curPair = {cells.getX(), cells.getY()};
-                    Cell* newCell = new Cell(curPair, thisOcean);
-                    thisOcean->setObjectToCell(static_cast<Object*>(new Predator(newCell)),curPair.x,curPair.y);
+                    thisOcean->setObjectToCell(this, curPair.x,curPair.y);
                     Object* objToAdd = thisOcean->returnByCoords(curPair.x,curPair.y);
                     thisOcean->addToVector(objToAdd);
                     this->fullness = predatorFullnessAfterBreed;
@@ -48,9 +47,9 @@ void Predator::live() {
                 } else if ((obj->getType() == ObjType::STONE) ||
                            (obj->getType() == ObjType::CORAL) ||
                         (obj->getType() == ObjType::PREDATOR)) {  //  If the object in cell is a stone/coral/predator
-                    --(this->fullness);
                     continue;
                 }
+                --(this->fullness);
             } else {
                 --(this->fullness);
                 cells.setObject(this);
