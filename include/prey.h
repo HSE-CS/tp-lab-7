@@ -11,12 +11,13 @@ protected:
     int timetospawn = 0;
 public:
     explicit Prey(Cell* cell,
-                  ObjType type = ObjType::PREY)
+                  ObjType type)
     : Object(type, cell) {}
     ~Prey() {}
     void live();
     void move();
     void spawn();
+    void lifetimeCheck();
 };
 
 

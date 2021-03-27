@@ -10,7 +10,8 @@ public:
     explicit Stone(Cell* cell,
                    ObjType type = ObjType::STONE)
     : Object(type, cell) {}
-    ~Stone() {}
+    ~Stone();
+    virtual void live();
 };
 
 

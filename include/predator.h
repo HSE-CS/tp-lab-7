@@ -13,14 +13,14 @@ protected:
 public:
     explicit Predator(Cell* cell,
                       ObjType type = ObjType::PREDATOR)
-    : Prey(cell) {
+    : Prey(cell, type) {
         hungrydays = 0;
     }
     ~Predator() {}
     void live();
     void move();
-    void eat();
     void spawn();
+    void lifetimeCheck();
 };
 
 

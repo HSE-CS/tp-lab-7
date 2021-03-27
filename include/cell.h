@@ -24,11 +24,16 @@ class Cell {
         ocean(oc) {}
     void init(Pair p, Ocean* oc);
     void changeStatus(bool);
+    void die();
+    bool movingtoNeighborhood();
+    bool findingPreys();
     Object* getObject() const;
     void setObject(Object*);
     Pair returnLocation();
     bool returnCellfromOcean(Pair);
     Cell* returnCellPointer(Pair);
+    ObjType atSpecificPosition(Pair);
+    Ocean* returnOcean();
 };
 
 #endif  //  INCLUDE_CELL_H_

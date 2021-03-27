@@ -27,7 +27,8 @@ class Object {
     Cell *cell;
 
  public:
-    explicit Object(ObjType type, Cell *cl = nullptr);
+    explicit Object(ObjType objtype, Cell *cl = nullptr)
+    : type{ objtype }, cell{ cl } {}
     ~Object();
     virtual void live() = 0; // жизнь объекта
     void setCell(Cell*);

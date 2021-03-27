@@ -5,6 +5,9 @@
 #include "ocean.h"
 
 int main() {
-    
+    Ocean *ocean = new Ocean();
+    ocean->createOcean(100, 20, 10);
+    ocean->print();
+    ocean->run();
     return 0;
 }
