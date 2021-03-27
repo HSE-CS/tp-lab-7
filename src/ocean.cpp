@@ -1,10 +1,10 @@
 // Copyright 2021 mkhorosh
 
-#include <vector>
 #include <time.h>
+#include <vector>
 #include <iostream>
-//#include <chrono>
-//#include <thread>
+// #include <chrono>
+// #include <thread>
 #include "../include/ocean.h"
 #include "../include/common.h"
 
@@ -28,7 +28,7 @@ void Ocean::print() const {
 }
 void Ocean::addObjects(int stones, int preys, int predators) {
   int n = preys + predators + stones;
-  unsigned int q = time(nullptr);
+  unsigned int *q = time(nullptr);
   for (int i = n; i > 0; i--) {
     int x = rand_r(q) % M;
     int y = rand_r(q) % N;
@@ -61,7 +61,7 @@ void Ocean::run() {
 //    std::this_thread::sleep_until(std::chrono::system_clock::now() +
 //    std::chrono::seconds(1));
     for (std::list<Object *>::iterator i = stuff.begin();
-    i != stuff.end(); ++i) {
+         i != stuff.end(); ++i) {
       if (!((*i)->isAlive())) {
         (*i)->getCell()->killMe();
       } else {
@@ -79,7 +79,7 @@ Ocean::~Ocean() {
 }
 
 Cell *Ocean::findCell(Pair crd) {
-  unsigned int q = time(nullptr);
+  unsigned int *q = time(nullptr);
   int new_x = (crd.x + rand_r(q) % 2) % M;
   int new_y = (crd.y + rand_r(q) % 2) % N;
   return &(this->cells[new_x][new_y]);

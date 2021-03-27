@@ -1,7 +1,7 @@
 // Copyright 2021 mkhorosh
 
-#include <cstdlib>
 #include <time.h>
+#include <cstdlib>
 #include "../include/predator.h"
 #include "../include/cell.h"
 #include "../include/ocean.h"
