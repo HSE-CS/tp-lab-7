@@ -19,7 +19,7 @@ int main() {
 
   for (int i = 0; i < N; i++) {
     for (int j = 0; j < M; j++) {
-      availableCoords[i].push_back({ (coord_t)j, (coord_t)i });
+      availableCoords[i].push_back({ j, i });
     }
   }
 
