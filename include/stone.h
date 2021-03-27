@@ -7,7 +7,6 @@
 class Stone : public Object {
  public:
   explicit Stone(Cell* cell);
-  ~Stone() {};
   void live();
 };
 #endif  // INCLUDE_STONE_H_

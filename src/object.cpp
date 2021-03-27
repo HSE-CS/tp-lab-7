@@ -1,9 +1,9 @@
 // Copyright 2021 Ryzhova
+#include <vector>
+#include <iostream>
 #include "../include/object.h"
 #include "../include/ocean.h"
 #include "../include/cell.h"
-#include <vector>
-#include <iostream>
 
 Object::Object(ObjType type, Cell* cell) {
   this->cell = cell;

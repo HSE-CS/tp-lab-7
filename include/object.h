@@ -8,15 +8,15 @@ class Cell;
 class Pair;
 
 class Object {
-protected:
+ protected:
   Cell *cell;
   ObjType type;
   unsigned int lifetime = 0;
 
  public:
-  Object(ObjType, Cell * = nullptr);
+  explicit Object(ObjType, Cell * = nullptr);
   virtual ~Object();
-  virtual void live() = 0; // жизнь объекта
+  virtual void live() = 0;   // жизнь объекта
   virtual void propagation();
   virtual void moving(Cell*);
   void setCell(Cell*);

@@ -17,13 +17,18 @@
 
 #define TYPE_NUM 3
 
+#include <random>
+
+std::random_device rd;
+std::mt19937 gen(rd());
+
 enum class ObjType {
   STONE, PREY, PREDATOR
 };
 
 struct Pair {
-  unsigned int x; // 0..M-1
-  unsigned int y; // 0..N-1
+  unsigned int x;   // 0..M-1
+  unsigned int y;   // 0..N-1
 };
 
 const unsigned int N = 20;

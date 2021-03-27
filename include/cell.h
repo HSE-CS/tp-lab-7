@@ -17,9 +17,9 @@ class Cell {
 
  public:
   explicit Cell(Pair p = { 0, 0 }, Ocean* oc = nullptr) :
-		crd(p),
-		obj(nullptr),
-		ocean(oc) {}
+	              crd(p),
+                obj(nullptr),
+                ocean(oc) {}
   ~Cell();
   void init(Pair p, Ocean* oc);
   Object* getObject() const;

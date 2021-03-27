@@ -1,11 +1,10 @@
 // Copyright 2021 Ryzhova
+#include <iostream>
 #include "../include/ocean.h"
 #include "../include/prey.h"
 #include "../include/predator.h"
 #include "../include/stone.h"
 #include "../include/common.h"
-
-#include <iostream>
 
 Ocean::Ocean() {
   cells = new Cell*[N];
@@ -25,10 +24,9 @@ Ocean::~Ocean() {
 }
 
 void Ocean::print() const {
-  system("cls");
   for (unsigned int i = 0; i < N; i++) {
     for (unsigned int j = 0; j < M; j++) {
-      switch(cells[i][j].getObject()->getType()) {
+      switch (cells[i][j].getObject()->getType()) {
         case ObjType::STONE:
           std::cout << STONE_N;
         case ObjType::PREDATOR:
@@ -51,15 +49,15 @@ void Ocean::addRandomObject() {
   int flag = 1;
   int i, j;
   while (flag) {
-    i = rand() % N;
-    j = rand() % M;
+    i = gen() % N;
+    j = gen() % M;
     if (cells[i][j].isEmpty())
       flag = 0;
   }
   ObjType types[] = {ObjType::STONE, ObjType::PREY, ObjType::PREDATOR};
-  ObjType type = types[rand() % TYPE_NUM];
+  ObjType type = types[gen() % TYPE_NUM];
   Object* obj = nullptr;
-  switch(type) {
+  switch (type) {
     case ObjType::STONE:
       obj = new Stone(&cells[i][j]);
     case ObjType::PREDATOR:
