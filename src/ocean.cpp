@@ -108,8 +108,8 @@ void Ocean::addObjects(int quantity, int type,
   srand(time(n));
 
   while (quantity) {
-    int y = r_rand(&seed) % availableCoords.size(), x =
-     r_rand(&seed) % availableCoords[y].size();
+    int y = rand_r(&seed) % availableCoords.size(), x =
+     rand_r(&seed) % availableCoords[y].size();
     if (x > 0) {
       Object* temp = nullptr;
       switch (type) {
