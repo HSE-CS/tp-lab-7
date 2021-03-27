@@ -9,9 +9,9 @@ int main() {
 
   Ocean newOcean;
   int available = N * M, tenth = available / 10,
-   stones = tenth + r_rand(&seed) % (available / 5 - tenth),
-   preys = tenth + r_rand(&seed) % (available / 3 - tenth),
-   predators = tenth + r_rand(&seed) % (available / 5 - tenth);
+   stones = tenth + rand_r(seed) % (available / 5 - tenth),
+   preys = tenth + rand_r(seed) % (available / 3 - tenth),
+   predators = tenth + rand_r(seed) % (available / 5 - tenth);
   int arr[3] = { stones, preys, predators };
   int size = 0;
   std::vector < std::vector <coords> > availableCoords(
