@@ -1,6 +1,6 @@
 //  Copyright 2021 Nikita Naumov
-#ifndef INCLUDE_CELL_H
-#define INCLUDE_CELL_H
+#ifndef INCLUDE_CELL_H_
+#define INCLUDE_CELL_H_
 
 #include "../include/ocean.h"
 #include "../include/common.h"
@@ -18,7 +18,7 @@ class Cell {
 
  public:
     explicit Cell(Pair p = {0, 0}, Ocean* ocean = nullptr) :
-                        coordinates(p), object(nullptr), ocean(ocean) {};
+                        coordinates(p), object(nullptr), ocean(ocean) {}
     void init(Pair p, Ocean* ocean);
     Object* getObject() const;
     void setObject(Object*);
@@ -30,4 +30,4 @@ class Cell {
     Pair getPair();
 };
 
-#endif  //  INCLUDE_CELL_H
+#endif  //  INCLUDE_CELL_H_

@@ -1,6 +1,6 @@
 //  Copyright 2021 Nikita Naumov
-#ifndef INCLUDE_COMMON_H
-#define INCLUDE_COMMON_H
+#ifndef INCLUDE_COMMON_H_
+#define INCLUDE_COMMON_H_
 #include <typeinfo>
 #include <cstdlib>
 #include <ctime>
@@ -23,4 +23,4 @@ const size_t M = 10;
 #define predatorBreedtime 7
 #define predatorFullnessAfterBreed 15
 #define maxPredatorFullness 30
-#endif  //  INCLUDE_COMMON_H
+#endif  //  INCLUDE_COMMON_H_

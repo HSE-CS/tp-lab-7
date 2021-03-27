@@ -1,7 +1,7 @@
 //  Copyright 2021 Nikita Naumov
 
-#ifndef INCLUDE_OBJECT_H
-#define INCLUDE_OBJECT_H
+#ifndef INCLUDE_OBJECT_H_
+#define INCLUDE_OBJECT_H_
 
 #include "../include/common.h"
 #define NONE_SYM '.'
@@ -37,4 +37,4 @@ class Object {
     Pair getPair();
 };
 
-#endif  //  INCLUDE_OBJECT_H
+#endif  //  INCLUDE_OBJECT_H_

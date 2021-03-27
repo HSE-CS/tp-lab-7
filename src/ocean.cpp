@@ -6,10 +6,10 @@
 #include "../include/None.h"
 
 Ocean::Ocean() {
-    Pair p_new = {0,0};
-    this->cells = new Cell* [N];
+    Pair p_new = {0, 0};
+    this->cells = new Cell*[N];
     for (size_t i = 0; i < N; ++i) {
-        this->cells[i] = new Cell [M];
+        this->cells[i] = new Cell[M];
     }
     for (size_t i = 0; i < N; ++i) {
         for (size_t j = 0; j < M; ++j) {
@@ -26,8 +26,10 @@ Ocean::~Ocean() {
     delete[] this->cells;
 }
 
-void Ocean::run(int amountOfPredators, int amountOfPreys, int amountOfStones, int amountOfCorals) {
-    this->addObjects(amountOfPredators,amountOfPreys,amountOfStones, amountOfCorals);
+void Ocean::run(int amountOfPredators, int amountOfPreys,
+                int amountOfStones, int amountOfCorals) {
+    this->addObjects(amountOfPredators, amountOfPreys,
+                     amountOfStones, amountOfCorals);
     int shift = 0;
     unsigned iteration = 0;
     while (this->isTherePredatorsOrPreys()) {
@@ -38,10 +40,11 @@ void Ocean::run(int amountOfPredators, int amountOfPreys, int amountOfStones, in
         ++shift;
         std::cout << iteration << std::endl;
         this->print();
-        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        //std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     }
 }
-void Ocean::addObjects(int amountOfPredators, int amountOfPreys, int amountOfStones, int amountOfCorals) {
+void Ocean::addObjects(int amountOfPredators, int amountOfPreys,
+                       int amountOfStones, int amountOfCorals) {
     for (size_t i = 0; i < (N*M); ++i) {
         bool flag = false;
         while (!flag) {
@@ -77,13 +80,14 @@ void Ocean::addObjects(int amountOfPredators, int amountOfPreys, int amountOfSto
                 break;
             }
         }
-        if (!amountOfPredators && !amountOfStones && !amountOfCorals && !amountOfPreys) {
+        if (!amountOfPredators && !amountOfStones &&
+            !amountOfCorals && !amountOfPreys) {
             break;
         }
     }
     for (size_t i = 0; i < N; ++i) {
         for (size_t j = 0; j < M; ++j) {
-            if (this->cells[i][j].isFree()){
+            if (this->cells[i][j].isFree()) {
                 this->cells[i][j].setObject(new None(&(this->cells[i][j])));
             }
         }
@@ -102,7 +106,7 @@ void Ocean::print() const {
         for (size_t j = 0; j < M; ++j) {
             Object* object = this->cells[i][j].getObject();
             ObjType curType = object->getType();
-            switch(curType) {
+            switch (curType) {
                 case ObjType::NONE:
                     std::cout << NONE_SYM;
                     break;
@@ -126,12 +130,12 @@ void Ocean::print() const {
 
 std::vector<Cell> Ocean::getNearbyCells(int i, int j) {
     std::vector<Cell> nearby;
-    if ( i == 0 ) {
+    if (i == 0) {
         if (j == 0) {
             nearby.push_back(this->cells[i+1][j]);
             nearby.push_back(this->cells[i+1][j+1]);
             nearby.push_back(this->cells[i][j+1]);
-        } else if ( j == (M-1)) {
+        } else if (j == (M-1)) {
             nearby.push_back(this->cells[i+1][j]);
             nearby.push_back(this->cells[i+1][j-1]);
             nearby.push_back(this->cells[i][j-1]);
@@ -142,12 +146,12 @@ std::vector<Cell> Ocean::getNearbyCells(int i, int j) {
             nearby.push_back(this->cells[i+1][j]);
             nearby.push_back(this->cells[i+1][j+1]);
         }
-    } else if ( i == (N-1)) {
+    } else if (i == (N-1)) {
         if (j == 0) {
             nearby.push_back(this->cells[i-1][j]);
             nearby.push_back(this->cells[i-1][j+1]);
             nearby.push_back(this->cells[i][j+1]);
-        } else if ( j == (M-1)) {
+        } else if (j == (M-1)) {
             nearby.push_back(this->cells[i-1][j]);
             nearby.push_back(this->cells[i-1][j-1]);
             nearby.push_back(this->cells[i][j-1]);
@@ -218,7 +222,8 @@ void Ocean::removeFromVector(Pair coordPair) {
     for (size_t i = 0; i < this->stuff.size(); ++i) {
         Cell* curCell = this->stuff[i]->getCell();
         int indexToRemove = -1;
-        if (((curCell->getX()) == coordPair.x) && ((curCell->getY()) == coordPair.y)) {
+        if (((curCell->getX()) == coordPair.x) &&
+            ((curCell->getY()) == coordPair.y)) {
             indexToRemove = i;
         }
         if (indexToRemove > -1) {

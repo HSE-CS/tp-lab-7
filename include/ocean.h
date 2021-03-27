@@ -1,12 +1,12 @@
 //  Copyright 2021 Nikita Naumov
-#ifndef INCLUDE_OCEAN_H
-#define INCLUDE_OCEAN_H
+#ifndef INCLUDE_OCEAN_H_
+#define INCLUDE_OCEAN_H_
 
 #include <vector>
 #include <typeinfo>
 #include <iostream>
-#include <chrono>
-#include <thread>
+//#include <chrono>
+//#include <thread>
 #include "../include/common.h"
 #include "../include/cell.h"
 #include "../include/Object.h"
@@ -16,20 +16,22 @@ class Cell;
 class Object;
 
 class Ocean {
-private:
+ private:
     Cell **cells;
     std::vector<Object *> stuff;
 
-public:
+ public:
     Ocean();
 
     ~Ocean();
 
     void print() const;
 
-    void addObjects(int amountOfPredators, int amountOfPreys, int amountOfStones, int amountOfCorals);
+    void addObjects(int amountOfPredators, int amountOfPreys,
+                    int amountOfStones, int amountOfCorals);
 
-    void run(int amountOfPredators, int amountOfPreys, int amountOfStones, int amountOfCorals);
+    void run(int amountOfPredators, int amountOfPreys,
+             int amountOfStones, int amountOfCorals);
 
     std::vector<Cell> getNearbyCells(int i, int j);
 
@@ -43,4 +45,4 @@ public:
     void removeFromVector(Pair coordPair);
     Object* returnByCoords(coord_t x, coord_t y);
 };
-#endif  //  INCLUDE_OCEAN_H
+#endif  //  INCLUDE_OCEAN_H_

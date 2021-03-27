@@ -19,12 +19,13 @@ void Prey::live() {
         this->cell->killMe();
     } else if (this->steps >= preyBreedtime) {
         Ocean* ocean = this->cell->getCurrentOcean();
-        std::vector<Cell> nearby = ocean->getNearbyCells(this->cell->getX(), this->cell->getY());
+        std::vector<Cell> nearby = ocean->getNearbyCells(this->cell->getX(),
+                                                         this->cell->getY());
         for (auto cells : nearby) {
             if (!(this->cooldown)) {
                 if (cells.isFree()) {
                     Pair curPair = {cells.getX(), cells.getY()};
-                    ocean->setObjectToCell(this,curPair.x,curPair.y);
+                    ocean->setObjectToCell(this, curPair.x, curPair.y);
                     this->cooldown = true;
                 }
                 this->steps = 0;
@@ -38,7 +39,7 @@ void Prey::live() {
         }
         std::vector<Cell> nearby =
                 (this->cell->getCurrentOcean())->
-                getNearbyCells(this->cell->getX(),this->cell->getY());
+                getNearbyCells(this->cell->getX(), this->cell->getY());
         for (auto cells : nearby) {
             if (cells.isFree()) {
                 this->cell = &cells;

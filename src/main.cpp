@@ -17,6 +17,6 @@ int main() {
         std::cout << (int)j.getObject()->getType() << std::endl;
         std::cout << j.getPair().x << " "<< j.getPair().y << std::endl;
     }*/
-    ocean.run(2,2,2,2);
+    ocean.run(2, 2, 2, 2);
     return 0;
 }

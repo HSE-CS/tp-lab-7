@@ -20,13 +20,16 @@ void Predator::live() {
         this->cell->killMe();
     } else {
         Ocean *thisOcean = this->cell->getCurrentOcean();
-        std::vector<Cell> nearby = thisOcean->getNearbyCells(this->cell->getX(), this->cell->getY());
-        if ((this->fullness > predatorFullnessToBreed) && (this->step > predatorBreedtime)) {
+        std::vector<Cell> nearby =
+          thisOcean->getNearbyCells(this->cell->getX(), this->cell->getY());
+        if ((this->fullness > predatorFullnessToBreed) &&
+                    (this->step > predatorBreedtime)) {
             for (auto cells : nearby) {
                 if (cells.isFree()) {
                     Pair curPair = {cells.getX(), cells.getY()};
-                    thisOcean->setObjectToCell(this, curPair.x,curPair.y);
-                    Object* objToAdd = thisOcean->returnByCoords(curPair.x,curPair.y);
+                    thisOcean->setObjectToCell(this, curPair.x, curPair.y);
+                    Object* objToAdd =
+                            thisOcean->returnByCoords(curPair.x, curPair.y);
                     thisOcean->addToVector(objToAdd);
                     this->fullness = predatorFullnessAfterBreed;
                     this->step = 0;
