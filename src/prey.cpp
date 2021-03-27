@@ -1,6 +1,6 @@
 // Copyright 2021 ArinaMonicheva
 
-#include "include/prey.h"
+#include "../include/prey.h"
 
 Prey::Prey(Cell* newCell) : Stone(newCell) {
   type = ObjType::PREY;
@@ -10,10 +10,9 @@ Prey::Prey(Cell* newCell) : Stone(newCell) {
 void Prey::live() {
   bool moved = false;
   Cell* prev = inCell;
-  if (livesCount > 1) { 
+  if (livesCount > 1) {
     moved = tryToMove();
-  } 
-  else if (reproduceCycle == 1) {
+  } else if (reproduceCycle == 1) {
     reproduceCycle = P_REPRODUCE;
     inCell->freeMe();
     Prey* child = new Prey(inCell);
@@ -36,7 +35,7 @@ bool Prey::tryToMove() {  // randfunc
   time_t* n = NULL;
   unsigned* seed = 0;
   srand(time(n));
-  
+
   coords cds = inCell->getCoords();
   int w = inCell->getOcean()->getWidth();
   int h = inCell->getOcean()->getHeight();
