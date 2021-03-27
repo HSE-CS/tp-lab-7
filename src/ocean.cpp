@@ -51,6 +51,7 @@ void Ocean::addObjects(unsigned int n, ObjType type) {
 }
 void Ocean::run() {
     while (1) {
+        system("cls");
         clock_t now = clock();
         print();
         while {
@@ -106,6 +107,8 @@ Cell * Ocean::Radar(Pair crd) {
 
 Ocean::~Ocean() {
     for (int i = 0; i < N; i++)
-        delete[] cells[i];
+        delete[] cells[i*];
     delete[] cells;
+    for (auto i = stuff.begin(); i != stuff.end(); ++i)
+        delete i;
 }
