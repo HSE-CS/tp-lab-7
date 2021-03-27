@@ -28,10 +28,10 @@ void Ocean::print() const {
 }
 void Ocean::addObjects(int stones, int preys, int predators) {
   int n = preys + predators + stones;
-  unsigned int *q = time(nullptr);
+  unsigned int q = time(nullptr);
   for (int i = n; i > 0; i--) {
-    int x = rand_r(q) % M;
-    int y = rand_r(q) % N;
+    int x = rand_r(&q) % M;
+    int y = rand_r(&q) % N;
     if (cells[x][y].getObject()) {
       i++;
       continue;
@@ -79,9 +79,9 @@ Ocean::~Ocean() {
 }
 
 Cell *Ocean::findCell(Pair crd) {
-  unsigned int *q = time(nullptr);
-  int new_x = (crd.x + rand_r(q) % 2) % M;
-  int new_y = (crd.y + rand_r(q) % 2) % N;
+  unsigned int q = time(nullptr);
+  int new_x = (crd.x + rand_r(&q) % 2) % M;
+  int new_y = (crd.y + rand_r(&q) % 2) % N;
   return &(this->cells[new_x][new_y]);
 }
 
