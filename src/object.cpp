@@ -1,7 +1,7 @@
 // Copyright 2021 ArinaMonicheva
 
-#include "include/object.h"
-#include "include/cell.h"
+#include "../include/object.h"
+#include "../include/cell.h"
 
 Object::Object(Cell* newCell) {
   type = ObjType::EMPTY;
