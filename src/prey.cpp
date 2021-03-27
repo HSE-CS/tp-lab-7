@@ -43,7 +43,7 @@ bool Prey::tryToMove() {  // randfunc
    {(cds.x - 1) % w, cds.y}, {(cds.x + 1) % w, cds.y},
    {cds.x, (cds.y - 1) % h} };
   int attempt = 4;
-  int step = rand_r(&seed) % attempt;
+  int step = rand_r(seed) % attempt;
 
   while (!inCell->getOcean()->movement(cds, availableSteps[step], this)) {
     availableSteps.erase(availableSteps.begin() + step);
@@ -51,7 +51,7 @@ bool Prey::tryToMove() {  // randfunc
     if (!attempt) {
       break;
     }
-    step = rand_r(&seed) % attempt;
+    step = rand_r(seed) % attempt;
   }
 
   return attempt;
