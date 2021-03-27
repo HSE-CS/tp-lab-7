@@ -18,7 +18,7 @@ class Cell {
 
  public:
   explicit Cell(coords newCds = { 0, 0 }, Ocean* oc = nullptr) :
-    currentCds(newCds), inhabitant(nullptr), ocean(oc), empty(true) {};
+    currentCds(newCds), inhabitant(nullptr), ocean(oc), empty(true) {}
   void init(coords newCds, Ocean* ocean);
   Object* getObject() const;
   void setObject(Object* newInhabitant);
