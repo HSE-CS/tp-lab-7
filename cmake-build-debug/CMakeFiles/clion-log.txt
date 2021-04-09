@@ -1,0 +1,43 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/igy/Desktop/Progs/tp-lab-7
+-- The C compiler identification is AppleClang 12.0.0.12000031
+-- The CXX compiler identification is AppleClang 12.0.0.12000031
+-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc
+-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++
+-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+CMake Error at src/CMakeLists.txt:16 (add_executable):
+  Cannot find source file:
+
+    main.cpp
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .m .M .mm .h .hh .h++ .hm
+  .hpp .hxx .in .txx
+
+
+CMake Error at src/CMakeLists.txt:6 (add_library):
+  Cannot find source file:
+
+    /Users/igy/Desktop/Progs/tp-lab-7/include/ocean.h
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .m .M .mm .h .hh .h++ .hm
+  .hpp .hxx .in .txx
+
+
+CMake Error at src/CMakeLists.txt:16 (add_executable):
+  No SOURCES given to target: tp-lab-7.info
+
+
+CMake Error at src/CMakeLists.txt:6 (add_library):
+  No SOURCES given to target: tp-lab-7
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.
